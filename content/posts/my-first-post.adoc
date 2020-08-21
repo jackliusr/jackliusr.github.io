@@ -1,0 +1,12 @@
+---
+title: "My first post"
+date: 2020-08-21T18:12:00+08:00
+draft: true
+---
+
+= My first adoc post
+
+This is my first adoc post after migration from jekyll to hugo.
+
+* a
+* b

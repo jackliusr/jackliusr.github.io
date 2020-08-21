@@ -1,0 +1,4 @@
+baseURL = "https://jackliusr.github.io"
+languageCode = "en-us"
+title = "My learning and diary"
+theme = 'ananke'
