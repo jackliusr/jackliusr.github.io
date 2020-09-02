@@ -10,3 +10,9 @@ This is my first adoc post after migration from jekyll to hugo.
 
 * a
 * b
+* test
+
+order list testing
+
+. a 
+. b
