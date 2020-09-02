@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tech on My learning and diary</title><link>https://jackliusr.github.io/categories/tech/</link><description>Recent content in tech on My learning and diary</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 15 Aug 2020 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml"/><item><title>Why I stick to jekyll</title><link>https://jackliusr.github.io/posts/2020-08-15-why-i-stick-to-jekyll/</link><pubDate>Sat, 15 Aug 2020 20:00:00 +0800</pubDate><guid>https://jackliusr.github.io/posts/2020-08-15-why-i-stick-to-jekyll/</guid><description>I am a big fan of Tex and asciidoc. Asciidoctor is ruby based and can been easily integrated into jekyll. Hugo currently still has some rough edges in asciidoc integration. Considering the time and effort to switch to Hugo, it is not worth to do that.</description></item><item><title>run redux-saga examples</title><link>https://jackliusr.github.io/posts/2020-07-07-run-redux-saga-example/</link><pubDate>Tue, 07 Jul 2020 20:00:00 +0800</pubDate><guid>https://jackliusr.github.io/posts/2020-07-07-run-redux-saga-example/</guid><description>run redux-saga examples TL;DR:
+yarn yarn build
+I run into module not found issues when I try to run those examples under the repository of redus-saga. Even following comments in github issues and stackoverflow, those solutions don&amp;#8217;t work out.
+Scripts in the package.json of the root folder don&amp;#8217;t work for examples.
+After run yarn &amp;amp;&amp;amp; yarn build, can change directories to those examples and run them.</description></item><item><title>Math jax testing</title><link>https://jackliusr.github.io/posts/2019-02-01-mathjax-test/</link><pubDate>Fri, 01 Feb 2019 20:10:10 +0800</pubDate><guid>https://jackliusr.github.io/posts/2019-02-01-mathjax-test/</guid><description>The difference of two squared numbers
+\$a^2 - b^2 = (a + b )(a - b)\$</description></item><item><title>Twilio Call Status StateChart</title><link>https://jackliusr.github.io/posts/2019-01-25-twiliocallstatusstatechart/</link><pubDate>Fri, 25 Jan 2019 20:00:00 +0800</pubDate><guid>https://jackliusr.github.io/posts/2019-01-25-twiliocallstatusstatechart/</guid><description>I was not familiar with SIP states during the integration of VoIP products such as twilio, plivo and sinch. I am still confused about the state changes after reading documents. Here try to visualize the state change and help me to remember it. The state chart is based on my understanding. It is not necessarily correct. It is just for my reference.
+[*] --&amp;gt; Queued Queued --&amp;gt; Initiated Initiated --&amp;gt; Ringing Ringing --&amp;gt; Answered Answered --&amp;gt; InProgress InProgress --&amp;gt; Completed Initiated --&amp;gt; Busy Busy --&amp;gt; [*] Ringing --&amp;gt; NoAnswer NoAnswer --&amp;gt; [*] Ringing --&amp;gt; Canceled Canceled --&amp;gt; [*] Ringing --&amp;gt; Failed Failed --&amp;gt; [*] Completed --&amp;gt; [*]</description></item><item><title>Unit 1: Experimental Chemistry</title><link>https://jackliusr.github.io/posts/2019-01-19-experimental-chemistry/</link><pubDate>Sat, 19 Jan 2019 20:00:00 +0800</pubDate><guid>https://jackliusr.github.io/posts/2019-01-19-experimental-chemistry/</guid><description>Measurement Physical properties
+SI Units
+Other Common Units
+Common measuring apparatus
+Name
+Symbol
+time
+second
+s
+hour (h)
+minutes(min)
+day
+digital stopwatch
+analogue stopwatch
+mass
+kilogram
+kg
+gram(g)
+tonne(t)</description></item><item><title>Asciidoc diagram samples of UML</title><link>https://jackliusr.github.io/posts/2019-01-11-uml-template/</link><pubDate>Fri, 11 Jan 2019 20:00:00 +0800</pubDate><guid>https://jackliusr.github.io/posts/2019-01-11-uml-template/</guid><description>PlantUML Diagram Class diagram&amp;#8212;&amp;#8203;Relations between Class:
+Type
+Sysmbol
+Extension
+&amp;lt;!--
+Composition
+*--
+Aggregation
+o--
+Asciidoc UML sample
+class BlockProcessor class DiagramBlock class DitaaBlock class PlantUmlBlock BlockProcessor &amp;lt;|-- DiagramBlock DiagramBlock &amp;lt;|-- DitaaBlock DiagramBlock &amp;lt;|-- PlantUmlBlock PlantUML sample
+class Class01 class Class02 class Class03 class Class04 class Class05 class Class06 class Class07 class Class08 class Class09 class Class10 Class01 &amp;lt;|-- Class02 Class03 *-- Class04 Class05 o-- Class06 Class07 .</description></item><item><title>Asynchronization is hard to implement</title><link>https://jackliusr.github.io/posts/2019-01-10-asynchronization-is-hard/</link><pubDate>Thu, 10 Jan 2019 20:00:00 +0800</pubDate><guid>https://jackliusr.github.io/posts/2019-01-10-asynchronization-is-hard/</guid><description>Asynchronization is very hard. It brings benefits with several catches for backend programming. Here is serveral catches and respective solutions. However all those will increase the cost of developments.
+Hard to debug and trace As the process breaks down to serveral asynchronious subprocesses, it is very difficult to relate all information of the process when something goes wrong. An extra overhead correlation Id is needed to adopt to ameliorate this issue.</description></item><item><title>Diagrams samples</title><link>https://jackliusr.github.io/posts/2018-12-20-diagram/</link><pubDate>Thu, 20 Dec 2018 20:00:00 +0800</pubDate><guid>https://jackliusr.github.io/posts/2018-12-20-diagram/</guid><description>Ditaa
++--------+ 0 | | &amp;lt;- start +--------+ 1 | | &amp;lt;- q scans from start to end +--------+ : ..... | +--------+ | | &amp;lt;- end +--------+ &amp;lt;-+ | | | +--------+ | rest of the : ..... | | allocated memory +--------+ | n | | | +--------+ &amp;lt;-+</description></item></channel></rss>
