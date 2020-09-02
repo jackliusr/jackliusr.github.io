@@ -1,6 +1,11 @@
 ---
 title: Asciidoc diagram  samples of UML 
 date: 2019-01-11T20:00:00+08:00
+categories:
+- tech
+tags:
+- asciidoc
+- diagram
 ---
 = Asciidoc diagram  samples of UML 
 

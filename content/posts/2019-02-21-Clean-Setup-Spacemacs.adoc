@@ -1,10 +1,9 @@
+---
+title: Issues of clean setup spacemacs and their solutions
+date: 2019-02-21T20:00:00+08:00
+---
 = Issues of clean setup spacemacs and their solutions
-:show title:
-:page-navtitle: Issues of clean setup spacemacs and their solutions
-:page-excerpt:  Issues of clean setup spacemacs and their solutions
-:page-category: tech
-:page-tags: [emacs, editor]
-:page-root: ../../..
+
 
 
 I encountered the same issue "File error: Cannot open load file, No such file or directory, bind-map" twice in my setup of spacemacs. The issue can be solved several ways which I found from github and clojurians-log.clojureverse.org. I consolidate the reasons and list them below. 

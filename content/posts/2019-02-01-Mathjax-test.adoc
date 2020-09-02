@@ -1,10 +1,14 @@
+---
+title: Math jax testing
+date: 2019-02-01T20:10:10+08:00
+categories:
+- tech
+tags:
+- math
+- laex
+
+---
 = Math jax testing
-:show title:
-:page-navtitle: Test asciidoc STEM setting
-:page-excerpt:  asciidoc STEM examples, it works as a template for later usage.
-:page-category: tech
-:page-tags: [math, latex]
-:page-root: ../../..
 
 
 The difference of two squared numbers

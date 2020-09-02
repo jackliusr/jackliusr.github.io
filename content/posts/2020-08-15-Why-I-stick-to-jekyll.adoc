@@ -1,9 +1,14 @@
+---
+title: Why I stick to jekyll
+date: 2020-08-15T20:00:00+08:00
+categories:
+- tech
+tags:
+- jekyll
+- SSG
+
+---
+
 = Why I stick to jekyll
-:show title:
-:page-navtitle:  stick to jekyll
-:page-excerpt: stick to jekyll 
-:page-category: tech
-:page-tags: [jekyll, SSG]
-:page-root: ../../..
 
 I am a big fan of Tex and asciidoc. Asciidoctor is ruby based and can been easily integrated into jekyll. Hugo currently still has some rough edges in asciidoc integration. Considering the time and effort to switch to Hugo, it is not worth to do that.

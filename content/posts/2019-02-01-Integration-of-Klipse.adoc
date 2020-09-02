@@ -1,10 +1,9 @@
+---
+title: Integration of Klipse
+date: 2019-02-01T20:00:00+08:00
+---
+
 = Integration of Klipse
-:show title:
-:page-navtitle:Integration of Klipse 
-:page-excerpt:  source highlighter and klipse integration
-:page-category: tech
-:page-tags: [klipse]
-:page-root: ../../..
 
 
 [.language-klipse]

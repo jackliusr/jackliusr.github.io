@@ -1,6 +1,11 @@
 ---
 title: "Unit 1: Experimental Chemistry"
 date: 2019-01-19T20:00:00+08:00
+categories:
+- tech
+tags:
+- chemistry
+- asciidoc
 ---
 
 = Unit 1: Experimental Chemistry

@@ -1,6 +1,10 @@
 ---
 title: Atomic Structure
 date: 2019-02-01T20:00:00+08:00
+categories:
+- chemistry
+tags:
+- chemistry
 ---
 
 

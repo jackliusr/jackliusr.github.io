@@ -1,3 +1,8 @@
+---
+title: Error message of rabbitmq is terrible
+date: 2019-03-12T20:00:00+08:00
+---
+
 = Error message of rabbitmq is terrible
 :show title:
 :page-navtitle: Error message of rabbitmq is terrible

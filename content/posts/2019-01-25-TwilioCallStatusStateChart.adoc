@@ -1,6 +1,11 @@
 ---
 title: Twilio Call Status StateChart
 date: 2019-01-25T20:00:00+08:00
+categories:
+- tech
+tags:
+- twilio
+- CPaaS
 ---
 
 = Twilio Call Status StateChart

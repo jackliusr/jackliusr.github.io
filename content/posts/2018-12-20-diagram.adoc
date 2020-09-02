@@ -2,6 +2,10 @@
 title: "Diagrams samples"
 date: 2018-12-20T20:00:00+08:00
 draft: false
+categories:
+- tech
+tags:
+- diagram
 ---
 
 = Diagram entries
