@@ -1,0 +1,19 @@
+= Error message of rabbitmq is terrible
+:show title:
+:page-navtitle: Error message of rabbitmq is terrible
+:page-excerpt:  Rabbitmq linux installation guide is misleading and rabbitma-server give bad error messages 
+:page-category: tech
+:page-tags: [rabbitmq]
+:page-root: ../../..
+
+
+Today I installed RabbitMQ 3.7.13-1. However I always got the following messages when running rabbitmq-server and a dump. The error message doesn't give any clue of root cause. It is none of the cases searched from google such as permission issue, configuration issue etc.
+
+[source, javascript]
+----
+{"init terminating in do_boot",{undef,[{rabbit_prelaunch,start,[],[]},{init,start_em,1,[]},{init,do_boot,3,[]}]}} 
+----
+
+I re-read the installation guide and double-checked steps and configuration. There is no luck.  Reading the release notes from github, I noticed compatibility notes. That is the root cause. I changed erlang from 19.3 to erlang 21 and everything is okay now.
+
+

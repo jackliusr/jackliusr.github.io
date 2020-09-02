@@ -1,0 +1,139 @@
+= Kinetic Particle Theory
+:show title:
+:page-navtitle: Chapter 1: Kinetic Particle Theory
+:page-excerpt:  state of matters, kinetic particle theory and process of state changes... 
+:page-category: chemistry
+:page-tags: [o-level, chemistry]
+:page-root: ../../..
+
+== States of Matter
+
+Matter is substance that has mass and occupies space. All living and non-living things are matter.
+
+State of matter: solid, liquid, gas
+
+[%header, cols="4*"]
+|===
+| Property | Solid | Liquid  | Gas
+
+|Shape | fixed | not fixed | not fixed
+|Volume | fixed | fixed | not fixed
+| Compressibility | Cannot be compressed | cannot be compressed | can be compressed
+|===
+
+Substances can exist in different states of matter under different temperature and pressure conditions.  Changes in temperature and pressure can change the states of matter.  Besides solids, liquids and gases, there are two other states of matter: plasma and the Bose-Einstein condensate. Plasma is similar with gas. However, plasma is made up of particles that electrically charged. A Bose-Einstein condensate is a state of matter that has been cooled to a very low temperature.
+
+== Kinetic Particle Theory
+
+Kinetic particle theory:  All matter is made up of *tiny particles* and that these particles are in *constant random motion*.
+
+why does a substances(solid, liquid, gas) have a fixed/non-fixed shape?
+why does a substance(solid, liquid, gas) have  a fixed/non-fixed volume? 
+[%header, cols=4*]
+|===
+|Characteristic | Solid | Liquid | Gas
+
+| Arrange of particles 
+a|
+
+* orderly
+* closely packed
+* image ?
+
+a|
+
+* disorderly
+* less closely packed than a solid
+* image ? 
+
+a|
+
+* disorderly
+* very far apart
+* image? 
+
+
+|Attractive forces between particles | very strong | strong | very week
+|Kinetic energy of particles | very low | low | high
+|Motion of particles | vibrate and rotate about fixed positions | move freely throughout the liquid | move about rapidly in any direction
+|===
+
+== Changes in state of matter and the kinetic particle theory
+
+Matter can change from one state to another. When matter is heated or cooled, the heat energy taken in or given out causes the energy of the particles to change. As a result, there is a change in state. Changes in state are reversible.
+
+*Energy cannot be created or destroyed, but it can be transferred or converted.* During a change in state of matter, heat energy is converted into kinetic energy of the particles of matter.
+
+=== Melting
+Melting: the process by which a substance changes from a solid to a liquid.
+
+The temperature at which a solid becomes a liquid is called its *melting point*.  Different substances have different melting points.
+
+[%header,cols=5*]
+|===
+|substance | oxygen  | ethanol | ice | iron
+|melting point/^0^C | -219 |- 114 | 0 | 1535
+|===
+
+What happens to the particles of a solid that is heated until it melts ?
+
+How does the temperature of a solid change when it melts?
+heating curve
+
+=== Freezing
+
+Freezing: the process by which a substance changes from a liquid to solid.
+
+The temperature at which a liquid becomes a solid is called its *freezing point*. A pure substance melts and freezes at the same temperature.
+
+Whats happens to the particles of a liquid that is cooled until it freezes?
+
+How does the temperature of a liquid change when it freezes ?
+cooling curve.
+
+==== Boiling
+
+Boiling: the process by which a substance changes from a liquid to a gas at the boiling temperature of the substance.
+
+Boiling point
+
+[%header, cols=5*]
+|===
+|Substance | Oxygen | ethanol | water | iron
+|Boiling point/^0^C | -183 | 78 | 100 | 2750
+|===
+
+
+What happens to the particles of a liquid that is heated until it boils ?
+
+How does the temperature of a liquid change when it boils?
+
+
+==== Evaporation
+The process by which a liquid changes to a gas at temperatures lower than its boiling point.
+
+Evaporation occurs because of some particles have enough energy to escape as a gas from the surface of the liquid.
+
+violate liquid: evaporate quickly at room temperature. They usually have boiling points just above room temperature. Petrol and perfumes are examples of volatile liquids.
+
+In what ways is evaporation different from boiling?
+
+[%header, cols=2*]
+|===
+| Boiling | Evaporation
+|occurs only at boiling point  | occurs at temperatures below boiling point
+|occurs throughout the liquid | occurs only at the surface of the liquid
+| occurs rapidly | occurs slowly
+|===
+
+why do clothes dry faster on a hot day?
+
+==== Condensation
+The process by which a gas changes to a liquid.
+
+What happens to the particles of a gas when the gas condense?
+
+==== Sublimation
+the process by which a solid changes directly to a gas without going through the liquid state.
+
+Sublimation occurs because particles at the surface of the solid have enough energy to escape from the solid as a gas.  examples:  dry ice(solid carbon dioxide), ammonium chloride and iodine

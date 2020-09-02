@@ -1,0 +1,20 @@
+= run redux-saga examples 
+:show title:
+:page-navtitle: run redux-saga examples
+:page-excerpt:  how to build andn redux-saga examples
+:page-category: tech
+:page-tags: [redux, redux-saga, javascript]
+:page-root: ../../..
+
+TL;DR:
+
+yarn 
+yarn build 
+
+
+I run into module not found issues when I try to run those examples under the repository of redus-saga. Even following comments in github issues and stackoverflow, those solutions don't work out. 
+
+Scripts in the package.json of the root folder don't work for examples. 
+
+After run yarn && yarn build, can change directories to those examples and run them.
+

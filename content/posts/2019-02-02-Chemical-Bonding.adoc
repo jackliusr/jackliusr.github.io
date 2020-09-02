@@ -1,0 +1,33 @@
+= Chemical Bonding 
+:show title:
+:page-navtitle: Chapter 6:  Atomic Structure
+:page-excerpt:  Chemical Bonding
+:page-category: chemistry
+:page-tags: [o-level, chemistry, bonding]
+:page-root: ../../..
+
+== The Stable Electronic configuration of a noble gas
+An outer electron or outermost electron is also known as valence electron. Only outer electrons are involved in chemical reactions.
+
+In what way do noble gases behave differently from other chemistry ?
+Noble gases are unreactive because they have fully filled outer shells, that is, they have duplet or octet electronic configuration.
+
+How do atom achieve the electronic configuration of a noble gas?
+
+* losing outer electrons
+* gaining outer electrons; or
+* sharing outer electrons.
+
+When atoms lose or gain electrons, they form *ions*.
+
+== Forming Ions
+
+An ion can either carry positive or negative charge(s).
+
+Metals form positively-charged ions(cations), Non-metals form negatively-charged ions(anions).
+
+Positive ions or *cations* are formed when atoms ~lose electrons~.
+
+Negative ions or *anions* are formed when atoms ~gain electons~.
+
+

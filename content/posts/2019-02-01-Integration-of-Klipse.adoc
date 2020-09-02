@@ -1,0 +1,13 @@
+= Integration of Klipse
+:show title:
+:page-navtitle:Integration of Klipse 
+:page-excerpt:  source highlighter and klipse integration
+:page-category: tech
+:page-tags: [klipse]
+:page-root: ../../..
+
+
+[.language-klipse]
+----
+(+ 1 2)
+----

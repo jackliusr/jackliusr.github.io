@@ -1,0 +1,14 @@
+= Math jax testing
+:show title:
+:page-navtitle: Test asciidoc STEM setting
+:page-excerpt:  asciidoc STEM examples, it works as a template for later usage.
+:page-category: tech
+:page-tags: [math, latex]
+:page-root: ../../..
+
+
+The difference of two squared numbers
+[stem]
+++++
+a^2 - b^2 = (a + b )(a - b)
+++++

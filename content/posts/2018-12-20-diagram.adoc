@@ -1,0 +1,29 @@
+---
+title: "Diagrams samples"
+date: 2018-12-20T20:00:00+08:00
+draft: false
+---
+
+= Diagram entries
+
+Ditaa
+[ditaa,memory,png]
+....
+
+      +--------+
+   0  |        |  <- start
+      +--------+
+   1  |        |  <- q  scans from start to end
+      +--------+
+      :  ..... |
+      +--------+
+      |        |  <- end
+      +--------+  <-+
+      |        |    |
+      +--------+    | rest of the
+      :  ..... |    | allocated memory
+      +--------+    |
+  n   |        |    |
+      +--------+  <-+
+....
+

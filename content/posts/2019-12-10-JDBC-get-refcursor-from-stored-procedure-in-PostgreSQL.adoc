@@ -1,0 +1,42 @@
+= Workaround solution for inout refcursor parameters for stored procedure in postgresql 11 JDBC
+:show title:
+:page-navtitle: Workaround solution for inout refcursor parameters for stored procedure in postgresql 11 JDBC
+:page-excerpt:  Workaround solution for inout refcursor parameters for stored procedure in postgresql 11 JDBC
+:page-category: tech
+:page-tags: [PostgreSQL, JDBC]
+:page-root: ../../..
+
+
+The workaround solution mentioned at https://github.com/pgjdbc/pgjdbc/issues/1413[Issue] doesn't work when inout refcursor parameter is used. 
+
+Here is my workaround solution for that. 
+[source, sql]
+----
+CREATE OR REPLACE PROCEDURE sp_test(INOUT results refcursor)
+ LANGUAGE plpgsql
+ SECURITY DEFINER
+AS $procedure$
+
+begin
+    results := 'cur' ;
+		
+	OPEN results for select generate_series dt
+from generate_series(date'2019-01-01' , date'2019-01-31', interval '1 day');
+	
+end;$procedure$
+;
+----
+
+
+[source, java]
+----
+conn.setAutoCommit(false);
+Statement st = conn.createStatement();
+ResultSet rs0 = st.executeQuery("call sp_test('')");
+ResultSet rs = st.executeQuery("fetch all in cur"); 
+DatabaseMetaData  rsmd = rs.getMetaData();
+log.info("ColumnCount:" + rsmd.getColumnCount().toString());
+rs.last();
+log.info("RowNo:" + rs.getRow().toString());
+
+----

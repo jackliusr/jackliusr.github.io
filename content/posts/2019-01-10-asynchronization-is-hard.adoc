@@ -1,0 +1,25 @@
+---
+title: Asynchronization is hard to implement
+date: 2019-01-10T20:00:00+08:00
+---
+
+
+=  Asynchronization is hard to implement
+
+Asynchronization is very hard. It brings benefits with several catches for backend programming. Here is serveral catches and respective solutions. However all those will increase the cost of developments.
+
+== Hard to debug and trace
+
+As the process breaks down to serveral asynchronious subprocesses, it is very difficult to relate all information of the process when something goes wrong. An extra overhead correlation Id is needed to adopt to ameliorate this issue. 
+
+
+== Transaction consistency
+
+In synchronization model, a process can use database's ACID to implement transaction consistency. In asynchronization model, each sub process is under different transaction scope and it is possible that anyone break and the remaining sub proesses have never gotten channces to complete the remaing. In BPEL lingo, there is the compensation handling. What if things go wrong during the compensation handling? Periodically routine consolidataion process is used to find inconsistence and fix them.  The cost is quite high for small and medium projects.
+
+== Asynchronization is not ncessary to increase efficiency.
+
+Asynchronous programming will not provide benefit and actually will result in more overhead on operations that are primarily CPU operations instead of those that involve network or disk overhead. Architectural level adjustments are needed to increase efficiency.
+
+
+In summary, there is no one size fit all solution. Carefull considerations are needed for facctors such as cost benefit analysis, staff skills, resources, time and process etc. 

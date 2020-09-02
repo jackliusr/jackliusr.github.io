@@ -1,0 +1,73 @@
+---
+title: Atomic Structure
+date: 2019-02-01T20:00:00+08:00
+---
+
+
+= Atomic Structure
+
+== Inside Atoms
+
+All matter is made up of atoms. Atoms are made up of subatomic particles: protons, neutrons and electrons. 
+
+The protons and neutrons
+
+* are tightly packed in the centre of an atom
+* together from the *nucleus* of the atom.
+
+The electrons move rapidly around the nucleus.
+
+[%header,cols=5*]
+|===
+2+| Subatomic particle | Symbol | Relative charge | Relative mass
+.2+| Inside the nucleus | Proton | p | +1 | 1
+                       | Neutron | n | 0 | 1
+| outside the nucleus | electron | e | -1 | 1 / 1840
+|===
+
+== The proton number and nucleon number
+
+*Proton number*: also called the *atomic number*.  It is represented by the symbol *Z*. 
+
+Each element has a unique proton number. No other element has atoms with this proton number.
+
+
+*Nucleon number*: the total number of protons and neutrons in the atom. It is represented by the symbol *A*. The nucleon number is also called *mass number*. This is because the mass of an atom depends on the number of protons and neutrons in the atom's nucleus. The mass of electrons in the atom is said to be negligible. 
+
+=== Isotopes
+Isotopes are atoms of the same element with the same number of protons and electrons, but different number of neutrons.
+
+properties of isotopes:
+
+
+=== Arrangement of Electrons in Atoms
+
+electron shell:
+
+Each electron shell:
+
+* corresponds to a specific energy level;
+* can only hold up to a certain number of electrons.
+
+
+First shell:
+
+* is closest to the nucleus;
+* corresponds to the lowest energy level;
+* can hold a maximum of tow electrons;
+* is always filled first
+
+Second and third shells:
+
+* have increasing energy levels( e.g. the third shell has higher energy than the second shell); 
+* usually hold up to eight electrons each
+* are filled in order --- usually, the second shell is fully filled before the third shell.
+
+
+The arrange of electrons in an atom can be represented using *electronic structure* or *electronic configuration*.
+
+What are valence electrons?
+
+Valence shell or outer shell, valence electrons or outer electrons
+
+periods and groups

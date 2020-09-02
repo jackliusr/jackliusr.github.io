@@ -1,0 +1,59 @@
+---
+title: Asciidoc diagram  samples of UML 
+date: 2019-01-11T20:00:00+08:00
+---
+= Asciidoc diagram  samples of UML 
+
+
+== PlantUML Diagram
+
+
+Class diagram--Relations between Class:
+
+[options="header]
+|===
+| Type   | Sysmbol 
+| Extension | <!-- 
+| Composition | *--
+| Aggregation | o--
+|===
+
+Asciidoc UML sample
+
+[plantuml, diagram-classes, png]
+----
+class BlockProcessor
+class DiagramBlock
+class DitaaBlock
+class PlantUmlBlock
+
+BlockProcessor <|-- DiagramBlock
+DiagramBlock <|-- DitaaBlock
+DiagramBlock <|-- PlantUmlBlock
+
+----
+
+PlantUML sample
+
+[plantuml, diagram-classes, png]
+----
+class Class01
+class Class02
+class Class03
+class Class04
+class Class05
+class Class06
+class Class07
+class Class08
+class Class09
+class Class10
+
+Class01 <|-- Class02
+Class03 *-- Class04
+Class05 o-- Class06
+Class07 .. Class08
+Class09 -- Class10
+
+----
+
+

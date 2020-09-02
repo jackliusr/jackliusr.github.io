@@ -1,0 +1,22 @@
+---
+title: Why I start to write again
+date: 2019-01-01T20:00:00+08:00
+---
+
+= Why I start to write again
+
+
+I read a lot of blogs. However I rarely wrote my blogs about my thoughts and learning experiences as I thought those are lack of originality.
+
+
+I changed my mind after I learned more than ten thousand words using anki and memrise in the past 2 years. A writing can serve multiple purposes even lack of originality and thorough thought. Here is a list of those purposes:   
+
+* Deepen my understanding in the topics and improve efficiency of learning
+* Improve my writing of English
+* Be aware of my progress and boost confidence
+* The writings are as anchors for later review
+
+For those benefits, I should to start to write again. This will be the 2019 new year's resolution.
+
+
+One bonus point, I will use asciidoc, jekyll and spacemacs to write. Kill two birds with one stone. 
