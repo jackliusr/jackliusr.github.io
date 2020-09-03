@@ -5,7 +5,7 @@ categories:
 - tech
 tags:
 - math
-- laex
+- latex 
 
 ---
 = Math jax testing
