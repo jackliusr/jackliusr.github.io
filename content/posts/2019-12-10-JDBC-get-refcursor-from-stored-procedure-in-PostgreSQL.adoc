@@ -2,6 +2,9 @@
 title: Workaround solution for inout refcursor parameters for stored procedure in postgresql 11 JDBC
 date: 2019-12-10T20:00:00+08:00
 ---
+:source-highlighter: rouge
+:rouge-style: molokai
+:icons: font
 
 =  Workaround solution for inout refcursor parameters for stored procedure in postgresql 11 JDBC
 

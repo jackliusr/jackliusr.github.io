@@ -12,7 +12,5 @@ tags:
 
 
 The difference of two squared numbers
-[stem]
-++++
-a^2 - b^2 = (a + b )(a - b)
-++++
+
+$ a^2 - b^2 = (a + b )(a - b) $
