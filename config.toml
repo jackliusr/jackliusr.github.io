@@ -2,6 +2,8 @@ baseURL = "https://jackliusr.github.io"
 languageCode = "en-us"
 title = "My learning and diary"
 theme = 'ananke'
-
+googleAnalytics = "UA-135021270-1"
+disqusShortname = "jackliusr-gh"
 [params]
- custom_css = ["css/prism.css"]
+    custom_css = ["css/prism.css"]
+    show_reading_time = true
