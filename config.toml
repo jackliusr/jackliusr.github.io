@@ -4,6 +4,10 @@ title = "My learning and diary"
 theme = 'ananke'
 googleAnalytics = "UA-135021270-1"
 disqusShortname = "jackliusr-gh"
+
+[permalinks]
+    posts = "/:year/:month/:slug/"
+    page = "/:slug/"
 [params]
     custom_css = ["css/prism.css"]
     show_reading_time = true

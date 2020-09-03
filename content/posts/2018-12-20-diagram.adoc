@@ -11,7 +11,7 @@ tags:
 = Diagram entries
 
 Ditaa
-[ditaa,memory,png]
+[ditaa,memory,format="svg",opts="inline"]
 ....
 
       +--------+

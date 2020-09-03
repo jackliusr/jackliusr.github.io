@@ -1,6 +1,7 @@
 ---
 title: Integration of Klipse
 date: 2019-02-01T20:00:00+08:00
+clojurescript: true
 ---
 
 = Integration of Klipse
