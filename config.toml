@@ -4,4 +4,4 @@ title = "My learning and diary"
 theme = 'ananke'
 
 [params]
- custom_css = ["css/molokai.css", "css/custom.css"]
+ custom_css = ["css/prism.css"]
