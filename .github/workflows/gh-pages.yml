@@ -14,8 +14,14 @@ jobs:
         uses: actions/checkout@master
         with:
           submodules: true
+          fetch-depth: 0
+          
+      - name: build
+        run: docker run --rm --volume $PWD:/src bric3/hugo-builder hugo
+
       - name: Publish Site
-        uses: chabad360/hugo-gh-pages@master
+        uses: peaceiris/actions-gh-pages@v3 
         with:
-          githubToken: ${{ secrets.PERSONAL_TOKEN }}
+          deploy_key: ${{ secrets.PERSONAL_TOKEN }}
           branch: master
+          public_dir: ./public
