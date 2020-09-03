@@ -30,7 +30,7 @@ not fixed
 Compressibility
 Cannot be compressed
 cannot be compressed</description></item><item><title>Math jax testing</title><link>https://jackliusr.github.io/posts/2019-02-01-mathjax-test/</link><pubDate>Fri, 01 Feb 2019 20:10:10 +0800</pubDate><guid>https://jackliusr.github.io/posts/2019-02-01-mathjax-test/</guid><description>The difference of two squared numbers
-\$a^2 - b^2 = (a + b )(a - b)\$</description></item><item><title>Atomic Structure</title><link>https://jackliusr.github.io/posts/2019-02-01-atomic-structure/</link><pubDate>Fri, 01 Feb 2019 20:00:00 +0800</pubDate><guid>https://jackliusr.github.io/posts/2019-02-01-atomic-structure/</guid><description>Inside Atoms All matter is made up of atoms. Atoms are made up of subatomic particles: protons, neutrons and electrons.
+$ a^2 - b^2 = (a + b )(a - b) $</description></item><item><title>Atomic Structure</title><link>https://jackliusr.github.io/posts/2019-02-01-atomic-structure/</link><pubDate>Fri, 01 Feb 2019 20:00:00 +0800</pubDate><guid>https://jackliusr.github.io/posts/2019-02-01-atomic-structure/</guid><description>Inside Atoms All matter is made up of atoms. Atoms are made up of subatomic particles: protons, neutrons and electrons.
 The protons and neutrons
 are tightly packed in the centre of an atom
 together from the nucleus of the atom.
