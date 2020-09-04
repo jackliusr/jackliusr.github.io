@@ -1,30 +1,62 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>asciidoc on My learning and diary</title><link>https://jackliusr.github.io/tags/asciidoc/</link><description>Recent content in asciidoc on My learning and diary</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 19 Jan 2019 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/asciidoc/index.xml" rel="self" type="application/rss+xml"/><item><title>Unit 1: Experimental Chemistry</title><link>https://jackliusr.github.io/posts/2019-01-19-experimental-chemistry/</link><pubDate>Sat, 19 Jan 2019 20:00:00 +0800</pubDate><guid>https://jackliusr.github.io/posts/2019-01-19-experimental-chemistry/</guid><description>Measurement Physical properties
-SI Units
-Other Common Units
-Common measuring apparatus
-Name
-Symbol
-time
-second
-s
-hour (h)
-minutes(min)
-day
-digital stopwatch
-analogue stopwatch
-mass
-kilogram
-kg
-gram(g)
-tonne(t)</description></item><item><title>Asciidoc diagram samples of UML</title><link>https://jackliusr.github.io/posts/2019-01-11-uml-template/</link><pubDate>Fri, 11 Jan 2019 20:00:00 +0800</pubDate><guid>https://jackliusr.github.io/posts/2019-01-11-uml-template/</guid><description>PlantUML Diagram Class diagram&amp;#8212;&amp;#8203;Relations between Class:
-Type
-Sysmbol
-Extension
-&amp;lt;!--
-Composition
-*--
-Aggregation
-o--
-Asciidoc UML sample
-class BlockProcessor class DiagramBlock class DitaaBlock class PlantUmlBlock BlockProcessor &amp;lt;|-- DiagramBlock DiagramBlock &amp;lt;|-- DitaaBlock DiagramBlock &amp;lt;|-- PlantUmlBlock PlantUML sample
-class Class01 class Class02 class Class03 class Class04 class Class05 class Class06 class Class07 class Class08 class Class09 class Class10 Class01 &amp;lt;|-- Class02 Class03 *-- Class04 Class05 o-- Class06 Class07 .</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>asciidoc on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/asciidoc/</link>
+    <description>Recent content in asciidoc on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 19 Jan 2019 20:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://jackliusr.github.io/tags/asciidoc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Unit 1: Experimental Chemistry</title>
+      <link>https://jackliusr.github.io/2019/01/unit-1-experimental-chemistry/</link>
+      <pubDate>Sat, 19 Jan 2019 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/2019/01/unit-1-experimental-chemistry/</guid>
+      <description>Measurement     Physical properties
+ SI Units
+ Other Common Units
+ Common measuring apparatus
+   Name
+ Symbol
+   time
+ second
+ s
+   hour (h)
+  minutes(min)
+  day
+     digital stopwatch
+  analogue stopwatch
+     mass
+ kilogram
+ kg
+   gram(g)
+  tonne(t)</description>
+    </item>
+    
+    <item>
+      <title>Asciidoc diagram  samples of UML</title>
+      <link>https://jackliusr.github.io/2019/01/asciidoc-diagram-samples-of-uml/</link>
+      <pubDate>Fri, 11 Jan 2019 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/2019/01/asciidoc-diagram-samples-of-uml/</guid>
+      <description>PlantUML Diagram Class diagram&amp;#8212;&amp;#8203;Relations between Class:
+     Type
+ Sysmbol
+   Extension
+ &amp;lt;!--
+   Composition
+ *--
+   Aggregation
+ o--
+    Asciidoc UML sample
+ Class01Class02Class03Class04Class05Class06Class07Class08Class09Class10   PlantUML sample
+ Class01Class02Class03Class04Class05Class06Class07Class08Class09Class10     </description>
+    </item>
+    
+  </channel>
+</rss>
