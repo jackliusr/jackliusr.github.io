@@ -20,8 +20,8 @@ jobs:
         run: docker run --rm --volume $PWD:/src jackliusr/hugo-builder hugo
 
       - name: Publish Site
-        uses: peaceiris/actions-gh-pages@v3 
+        uses:  chabad360/hugo-gh-pages@master 
         with:
-          deploy_key: ${{ secrets.PERSONAL_TOKEN }}
-          branch: master
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          publish_branch: master
           public_dir: ./public
