@@ -40,7 +40,7 @@ DiagramBlock <|-- PlantUmlBlock
 
 PlantUML sample
 
-[plantuml, diagram-classes, format="svg",opts="inline"]
+[plantuml,diagram-classes, format="svg",opts="inline"]
 ----
 class Class01
 class Class02

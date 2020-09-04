@@ -13,8 +13,7 @@ tags:
 
 I was not familiar with SIP states during the integration of VoIP products such as twilio, plivo and sinch. I am still confused about the state changes after reading documents. Here try to visualize the state change and help me to remember it.  The state chart is based on my understanding. It is not necessarily correct. It is just for my reference. 
 
-[plantuml, twilio-call-status-statechart,format="svg",opts="inline",  width="400px", height="400px"]
-
+[plantuml, diagram-classes,format="svg",opts="inline"]
 ----
 [*] --> Queued
 Queued --> Initiated
