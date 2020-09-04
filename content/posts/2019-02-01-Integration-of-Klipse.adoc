@@ -1,13 +1,14 @@
 ---
 title: Integration of Klipse
 date: 2019-02-01T20:00:00+08:00
-clojurescript: true
+klipse: true
 ---
 
 = Integration of Klipse
 
-
-[.language-klipse]
-----
-(+ 1 2)
-----
+++++
+<pre>
+<code class="language-eval-clojure">(+ 1 2 3 4 5)
+</code>
+</pre>
+++++
