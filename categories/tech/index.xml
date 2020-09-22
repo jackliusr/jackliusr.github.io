@@ -6,10 +6,20 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 Aug 2020 20:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2020 08:51:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pod CrashLoopBackOff Reason</title>
+      <link>https://jackliusr.github.io/2020/09/pod-crashloopbackoff-reason/</link>
+      <pubDate>Tue, 22 Sep 2020 08:51:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/2020/09/pod-crashloopbackoff-reason/</guid>
+      <description>Today one of my deployments always got CrashLoopBackOff. Searching internet don&amp;#8217;t gave me the root cause of those errors even I went through all the steps. Steps from internets are all about describe, logs, liveProbe etc. I noticed the reason and exit code in last state when I described one of the pod. It should be the focus point to find root cause of CrashBoopBackOff.
+ Containers: nginx: Container ID: containerd://9570e7e67d83692fdbe0e0871919a81222137fcaee2eaecb1eff6b772ec805b1 Image: nginx:1.</description>
+    </item>
     
     <item>
       <title>Why I stick to jekyll</title>
