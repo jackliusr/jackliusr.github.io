@@ -1,0 +1,27 @@
+---
+title: Pod CrashLoopBackOff Reason
+date: 2020-09-22T08:51:00+08:00
+categories:
+- tech
+tags:
+- Kubernetes
+- Troubeshooting
+---
+
+Today one of my deployments always got CrashLoopBackOff. Searching internet don't gave me the root cause of those errors even I went through all the steps. Steps from internets are all about describe, logs, liveProbe etc. I noticed the reason and exit code in last state when I described one of the pod.  It should be the focus point to find root cause of CrashBoopBackOff.
+
+[source,yaml]
+----
+Containers:
+  nginx:
+    Container ID:   containerd://9570e7e67d83692fdbe0e0871919a81222137fcaee2eaecb1eff6b772ec805b1
+    Image:          nginx:1.7.8
+    Image ID:       sha256:9362f6342d6920db0a6a2ccc1b13dd2a99cc6b421055940b48c468cda3494126
+    Port:           <none>
+    Host Port:      <none>
+    State:          Waiting
+      Reason:       CrashLoopBackOff
+    Last State:     Terminated
+      Reason:       Error
+      Exit Code:    139
+----
