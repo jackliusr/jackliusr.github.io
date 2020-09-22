@@ -7,8 +7,8 @@ klipse: true
 = Integration of Klipse
 
 ++++
-<pre>
-<code class="language-eval-clojure">(+ 1 2 3 4 5)
+<pre> 
+<code class="language-klipse">(+ 1 2 3 4 5)
 </code>
 </pre>
 ++++
