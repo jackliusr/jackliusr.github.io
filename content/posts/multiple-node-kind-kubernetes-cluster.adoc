@@ -1,0 +1,37 @@
+---
+title: Create a multiple-nodes KIND kubernetes cluster
+date: 2020-09-25T22:00:00+08:00
+categories:
+- tech
+tags:
+- kubernetes
+- KIND
+
+---
+
+KIND supports configuration items and you can find them at https://kind.sigs.k8s.io/docs/user/configuration.  Following is the outline of the doc.
+
+[quote]
+----
+Cluster-Wide Options ︎
+	Networking:  ︎
+		IP Family ︎
+		API Server: port and listen address
+		Pod Subnet ︎
+		Service Subnet ︎
+		Disable Default CNI: can be used to try other CNI for CKA and CKAD networks
+		kube-proxy mode : iptables, ipvs
+	Nodes: role control-plane, worker
+Per-Node Options ︎
+	Extra Mounts ︎
+	Extra Port Mappings ︎
+	Kubeadm Config Patches: Kubeadm Config Patches, kubeadm  InitConfiguration and  JoinConfiguration
+----
+
+My asciicast is as following: 
+
+++++
+<script id="asciicast-361680" src="https://asciinema.org/a/361680.js" async></script>
+++++
+
+In the coming posts, I will write somethings on more advanced kubernetes configuration. 
