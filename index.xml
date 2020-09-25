@@ -6,10 +6,20 @@
     <description>Recent content on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Sep 2020 08:51:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2020 22:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Create a multiple-nodes KIND kubernetes cluster</title>
+      <link>https://jackliusr.github.io/2020/09/create-a-multiple-nodes-kind-kubernetes-cluster/</link>
+      <pubDate>Fri, 25 Sep 2020 22:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/2020/09/create-a-multiple-nodes-kind-kubernetes-cluster/</guid>
+      <description>KIND supports configuration items and you can find them at https://kind.sigs.k8s.io/docs/user/configuration. Following is the outline of the doc.
+ Cluster-Wide Options ︎ Networking: ︎ IP Family ︎ API Server: port and listen address Pod Subnet ︎ Service Subnet ︎ Disable Default CNI: can be used to try other CNI for CKA and CKAD networks kube-proxy mode : iptables, ipvs Nodes: role control-plane, worker Per-Node Options ︎ Extra Mounts ︎ Extra Port Mappings ︎ Kubeadm Config Patches: Kubeadm Config Patches, kubeadm InitConfiguration and JoinConfiguration   My asciicast is as following:</description>
+    </item>
     
     <item>
       <title>Pod CrashLoopBackOff Reason</title>
