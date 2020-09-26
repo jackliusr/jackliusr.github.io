@@ -12,31 +12,41 @@
     
     
     <item>
+      <title>About Jack Liu S.R.</title>
+      <link>https://jackliusr.github.io/about/</link>
+      <pubDate>Sat, 26 Sep 2020 14:50:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/about/</guid>
+      <description>?
+ </description>
+    </item>
+    
+    <item>
       <title>Create a multiple-nodes KIND kubernetes cluster</title>
-      <link>https://jackliusr.github.io/2020/09/create-a-multiple-nodes-kind-kubernetes-cluster/</link>
+      <link>https://jackliusr.github.io/posts/2020/09/create-a-multiple-nodes-kind-kubernetes-cluster/</link>
       <pubDate>Fri, 25 Sep 2020 22:00:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2020/09/create-a-multiple-nodes-kind-kubernetes-cluster/</guid>
+      <guid>https://jackliusr.github.io/posts/2020/09/create-a-multiple-nodes-kind-kubernetes-cluster/</guid>
       <description>KIND supports configuration items and you can find them at https://kind.sigs.k8s.io/docs/user/configuration. Following is the outline of the doc.
  Cluster-Wide Options ︎ Networking: ︎ IP Family ︎ API Server: port and listen address Pod Subnet ︎ Service Subnet ︎ Disable Default CNI: can be used to try other CNI for CKA and CKAD networks kube-proxy mode : iptables, ipvs Nodes: role control-plane, worker Per-Node Options ︎ Extra Mounts ︎ Extra Port Mappings ︎ Kubeadm Config Patches: Kubeadm Config Patches, kubeadm InitConfiguration and JoinConfiguration   My asciicast is as following:</description>
     </item>
     
     <item>
       <title>Pod CrashLoopBackOff Reason</title>
-      <link>https://jackliusr.github.io/2020/09/pod-crashloopbackoff-reason/</link>
+      <link>https://jackliusr.github.io/posts/2020/09/pod-crashloopbackoff-reason/</link>
       <pubDate>Tue, 22 Sep 2020 08:51:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2020/09/pod-crashloopbackoff-reason/</guid>
+      <guid>https://jackliusr.github.io/posts/2020/09/pod-crashloopbackoff-reason/</guid>
       <description>Today one of my deployments always got CrashLoopBackOff. Searching internet don&amp;#8217;t gave me the root cause of those errors even I went through all the steps. Steps from internets are all about describe, logs, liveProbe etc. I noticed the reason and exit code in last state when I described one of the pod. It should be the focus point to find root cause of CrashBoopBackOff.
  Containers: nginx: Container ID: containerd://9570e7e67d83692fdbe0e0871919a81222137fcaee2eaecb1eff6b772ec805b1 Image: nginx:1.</description>
     </item>
     
     <item>
       <title>My first post</title>
-      <link>https://jackliusr.github.io/2020/08/my-first-post/</link>
+      <link>https://jackliusr.github.io/posts/2020/08/my-first-post/</link>
       <pubDate>Fri, 21 Aug 2020 18:12:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2020/08/my-first-post/</guid>
+      <guid>https://jackliusr.github.io/posts/2020/08/my-first-post/</guid>
       <description>This is my first adoc post after migration from jekyll to hugo.
    a
   b
@@ -50,20 +60,20 @@
     
     <item>
       <title>Why I stick to jekyll</title>
-      <link>https://jackliusr.github.io/2020/08/why-i-stick-to-jekyll/</link>
+      <link>https://jackliusr.github.io/posts/2020/08/why-i-stick-to-jekyll/</link>
       <pubDate>Sat, 15 Aug 2020 20:00:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2020/08/why-i-stick-to-jekyll/</guid>
+      <guid>https://jackliusr.github.io/posts/2020/08/why-i-stick-to-jekyll/</guid>
       <description>I am a big fan of Tex and asciidoc. Asciidoctor is ruby based and can been easily integrated into jekyll. Hugo currently still has some rough edges in asciidoc integration. Considering the time and effort to switch to Hugo, it is not worth to do that.
  </description>
     </item>
     
     <item>
       <title>run redux-saga examples</title>
-      <link>https://jackliusr.github.io/2020/07/run-redux-saga-examples/</link>
+      <link>https://jackliusr.github.io/posts/2020/07/run-redux-saga-examples/</link>
       <pubDate>Tue, 07 Jul 2020 20:00:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2020/07/run-redux-saga-examples/</guid>
+      <guid>https://jackliusr.github.io/posts/2020/07/run-redux-saga-examples/</guid>
       <description>run redux-saga examples TL;DR:
  yarn yarn build
  I run into module not found issues when I try to run those examples under the repository of redus-saga. Even following comments in github issues and stackoverflow, those solutions don&amp;#8217;t work out.
@@ -73,10 +83,10 @@
     
     <item>
       <title>Workaround solution for inout refcursor parameters for stored procedure in postgresql 11 JDBC</title>
-      <link>https://jackliusr.github.io/2019/12/workaround-solution-for-inout-refcursor-parameters-for-stored-procedure-in-postgresql-11-jdbc/</link>
+      <link>https://jackliusr.github.io/posts/2019/12/workaround-solution-for-inout-refcursor-parameters-for-stored-procedure-in-postgresql-11-jdbc/</link>
       <pubDate>Tue, 10 Dec 2019 20:00:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2019/12/workaround-solution-for-inout-refcursor-parameters-for-stored-procedure-in-postgresql-11-jdbc/</guid>
+      <guid>https://jackliusr.github.io/posts/2019/12/workaround-solution-for-inout-refcursor-parameters-for-stored-procedure-in-postgresql-11-jdbc/</guid>
       <description>The workaround solution mentioned at Issue doesn&amp;#8217;t work when inout refcursor parameter is used.
  Here is my workaround solution for that.
  CREATE OR REPLACE PROCEDURE sp_test(INOUT results refcursor) LANGUAGE plpgsql SECURITY DEFINER AS $procedure$ begin results := &#39;cur&#39; ; OPEN results for select generate_series dt from generate_series(date&#39;2019-01-01&#39; , date&#39;2019-01-31&#39;, interval &#39;1 day&#39;); end;$procedure$ ;   conn.setAutoCommit(false); Statement st = conn.createStatement(); ResultSet rs0 = st.executeQuery(&#34;call sp_test(&#39;&#39;)&#34;); ResultSet rs = st.</description>
@@ -84,20 +94,20 @@
     
     <item>
       <title>Error message of rabbitmq is terrible</title>
-      <link>https://jackliusr.github.io/2019/03/error-message-of-rabbitmq-is-terrible/</link>
+      <link>https://jackliusr.github.io/posts/2019/03/error-message-of-rabbitmq-is-terrible/</link>
       <pubDate>Tue, 12 Mar 2019 20:00:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2019/03/error-message-of-rabbitmq-is-terrible/</guid>
+      <guid>https://jackliusr.github.io/posts/2019/03/error-message-of-rabbitmq-is-terrible/</guid>
       <description>Error message of rabbitmq is terrible Today I installed RabbitMQ 3.7.13-1. However I always got the following messages when running rabbitmq-server and a dump. The error message doesn&amp;#8217;t give any clue of root cause. It is none of the cases searched from google such as permission issue, configuration issue etc.
  {&#34;init terminating in do_boot&#34;,{undef,[{rabbit_prelaunch,start,[],[]},{init,start_em,1,[]},{init,do_boot,3,[]}]}}   I re-read the installation guide and double-checked steps and configuration. There is no luck.</description>
     </item>
     
     <item>
       <title>Issues of clean setup spacemacs and their solutions</title>
-      <link>https://jackliusr.github.io/2019/02/issues-of-clean-setup-spacemacs-and-their-solutions/</link>
+      <link>https://jackliusr.github.io/posts/2019/02/issues-of-clean-setup-spacemacs-and-their-solutions/</link>
       <pubDate>Thu, 21 Feb 2019 20:00:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2019/02/issues-of-clean-setup-spacemacs-and-their-solutions/</guid>
+      <guid>https://jackliusr.github.io/posts/2019/02/issues-of-clean-setup-spacemacs-and-their-solutions/</guid>
       <description>I encountered the same issue &#34;File error: Cannot open load file, No such file or directory, bind-map&#34; twice in my setup of spacemacs. The issue can be solved several ways which I found from github and clojurians-log.clojureverse.org. I consolidate the reasons and list them below.
    Timeout: the relevant setting in .spacemacs :- dotspacemacs-elpa-timeout 30
   TLS Certs: emacs --insecure
@@ -106,10 +116,10 @@
     
     <item>
       <title>Chemical Bonding</title>
-      <link>https://jackliusr.github.io/2019/02/chemical-bonding/</link>
+      <link>https://jackliusr.github.io/posts/2019/02/chemical-bonding/</link>
       <pubDate>Sat, 02 Feb 2019 20:00:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2019/02/chemical-bonding/</guid>
+      <guid>https://jackliusr.github.io/posts/2019/02/chemical-bonding/</guid>
       <description>Chemical Bonding The Stable Electronic configuration of a noble gas An outer electron or outermost electron is also known as valence electron. Only outer electrons are involved in chemical reactions.
  In what way do noble gases behave differently from other chemistry ? Noble gases are unreactive because they have fully filled outer shells, that is, they have duplet or octet electronic configuration.
  How do atom achieve the electronic configuration of a noble gas?</description>
@@ -117,10 +127,10 @@
     
     <item>
       <title>Kinetic Particle Theory</title>
-      <link>https://jackliusr.github.io/2019/02/kinetic-particle-theory/</link>
+      <link>https://jackliusr.github.io/posts/2019/02/kinetic-particle-theory/</link>
       <pubDate>Fri, 01 Feb 2019 20:20:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2019/02/kinetic-particle-theory/</guid>
+      <guid>https://jackliusr.github.io/posts/2019/02/kinetic-particle-theory/</guid>
       <description>States of Matter Matter is substance that has mass and occupies space. All living and non-living things are matter.
  State of matter: solid, liquid, gas
      Property Solid Liquid Gas     Shape
@@ -138,10 +148,10 @@
     
     <item>
       <title>Math jax testing</title>
-      <link>https://jackliusr.github.io/2019/02/math-jax-testing/</link>
+      <link>https://jackliusr.github.io/posts/2019/02/math-jax-testing/</link>
       <pubDate>Fri, 01 Feb 2019 20:10:10 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2019/02/math-jax-testing/</guid>
+      <guid>https://jackliusr.github.io/posts/2019/02/math-jax-testing/</guid>
       <description>The difference of two squared numbers
  $ a^2 - b^2 = (a + b )(a - b) $
  </description>
@@ -149,10 +159,10 @@
     
     <item>
       <title>Atomic Structure</title>
-      <link>https://jackliusr.github.io/2019/02/atomic-structure/</link>
+      <link>https://jackliusr.github.io/posts/2019/02/atomic-structure/</link>
       <pubDate>Fri, 01 Feb 2019 20:00:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2019/02/atomic-structure/</guid>
+      <guid>https://jackliusr.github.io/posts/2019/02/atomic-structure/</guid>
       <description>Inside Atoms All matter is made up of atoms. Atoms are made up of subatomic particles: protons, neutrons and electrons.
  The protons and neutrons
    are tightly packed in the centre of an atom
@@ -163,29 +173,29 @@
     
     <item>
       <title>Integration of Klipse</title>
-      <link>https://jackliusr.github.io/2019/02/integration-of-klipse/</link>
+      <link>https://jackliusr.github.io/posts/2019/02/integration-of-klipse/</link>
       <pubDate>Fri, 01 Feb 2019 20:00:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2019/02/integration-of-klipse/</guid>
+      <guid>https://jackliusr.github.io/posts/2019/02/integration-of-klipse/</guid>
       <description> (+ 1 2 3 4 5)   </description>
     </item>
     
     <item>
       <title>Twilio Call Status StateChart</title>
-      <link>https://jackliusr.github.io/2019/01/twilio-call-status-statechart/</link>
+      <link>https://jackliusr.github.io/posts/2019/01/twilio-call-status-statechart/</link>
       <pubDate>Fri, 25 Jan 2019 20:00:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2019/01/twilio-call-status-statechart/</guid>
+      <guid>https://jackliusr.github.io/posts/2019/01/twilio-call-status-statechart/</guid>
       <description>I was not familiar with SIP states during the integration of VoIP products such as twilio, plivo and sinch. I am still confused about the state changes after reading documents. Here try to visualize the state change and help me to remember it. The state chart is based on my understanding. It is not necessarily correct. It is just for my reference.
  QueuedInitiatedRingingAnsweredInProgressCompletedBusyNoAnswerCanceledFailedQueued Queued - - Initiated Initiated - - Ringing Ringing - - Answered Answered - - InProgress InProgress - - Completed Initiated - - Busy Busy - - [*] Ringing - - NoAnswer NoAnswer - - [*] Ringing - - Canceled Canceled - - [*] Ringing - - Failed Failed - - [*] Completed - - [*] @enduml PlantUML version 1.</description>
     </item>
     
     <item>
       <title>Unit 1: Experimental Chemistry</title>
-      <link>https://jackliusr.github.io/2019/01/unit-1-experimental-chemistry/</link>
+      <link>https://jackliusr.github.io/posts/2019/01/unit-1-experimental-chemistry/</link>
       <pubDate>Sat, 19 Jan 2019 20:00:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2019/01/unit-1-experimental-chemistry/</guid>
+      <guid>https://jackliusr.github.io/posts/2019/01/unit-1-experimental-chemistry/</guid>
       <description>Measurement     Physical properties
  SI Units
  Other Common Units
@@ -209,10 +219,10 @@
     
     <item>
       <title>Asciidoc diagram  samples of UML</title>
-      <link>https://jackliusr.github.io/2019/01/asciidoc-diagram-samples-of-uml/</link>
+      <link>https://jackliusr.github.io/posts/2019/01/asciidoc-diagram-samples-of-uml/</link>
       <pubDate>Fri, 11 Jan 2019 20:00:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2019/01/asciidoc-diagram-samples-of-uml/</guid>
+      <guid>https://jackliusr.github.io/posts/2019/01/asciidoc-diagram-samples-of-uml/</guid>
       <description>PlantUML Diagram Class diagram&amp;#8212;&amp;#8203;Relations between Class:
      Type
  Sysmbol
@@ -229,20 +239,20 @@
     
     <item>
       <title>Asynchronization is hard to implement</title>
-      <link>https://jackliusr.github.io/2019/01/asynchronization-is-hard-to-implement/</link>
+      <link>https://jackliusr.github.io/posts/2019/01/asynchronization-is-hard-to-implement/</link>
       <pubDate>Thu, 10 Jan 2019 20:00:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2019/01/asynchronization-is-hard-to-implement/</guid>
+      <guid>https://jackliusr.github.io/posts/2019/01/asynchronization-is-hard-to-implement/</guid>
       <description>Asynchronization is very hard. It brings benefits with several catches for backend programming. Here is serveral catches and respective solutions. However all those will increase the cost of developments.
    Hard to debug and trace As the process breaks down to serveral asynchronious subprocesses, it is very difficult to relate all information of the process when something goes wrong. An extra overhead correlation Id is needed to adopt to ameliorate this issue.</description>
     </item>
     
     <item>
       <title>Why I start to write again</title>
-      <link>https://jackliusr.github.io/2019/01/why-i-start-to-write-again/</link>
+      <link>https://jackliusr.github.io/posts/2019/01/why-i-start-to-write-again/</link>
       <pubDate>Tue, 01 Jan 2019 20:00:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2019/01/why-i-start-to-write-again/</guid>
+      <guid>https://jackliusr.github.io/posts/2019/01/why-i-start-to-write-again/</guid>
       <description>I read a lot of blogs. However I rarely wrote my blogs about my thoughts and learning experiences as I thought those are lack of originality.
  I changed my mind after I learned more than ten thousand words using anki and memrise in the past 2 years. A writing can serve multiple purposes even lack of originality and thorough thought. Here is a list of those purposes:
    Deepen my understanding in the topics and improve efficiency of learning</description>
@@ -250,10 +260,10 @@
     
     <item>
       <title>Diagrams samples</title>
-      <link>https://jackliusr.github.io/2018/12/diagrams-samples/</link>
+      <link>https://jackliusr.github.io/posts/2018/12/diagrams-samples/</link>
       <pubDate>Thu, 20 Dec 2018 20:00:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2018/12/diagrams-samples/</guid>
+      <guid>https://jackliusr.github.io/posts/2018/12/diagrams-samples/</guid>
       <description>Ditaa
  @font-face { font-family: sans-serif; }   </description>
     </item>

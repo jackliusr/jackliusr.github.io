@@ -13,10 +13,10 @@
     
     <item>
       <title>Twilio Call Status StateChart</title>
-      <link>https://jackliusr.github.io/2019/01/twilio-call-status-statechart/</link>
+      <link>https://jackliusr.github.io/posts/2019/01/twilio-call-status-statechart/</link>
       <pubDate>Fri, 25 Jan 2019 20:00:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2019/01/twilio-call-status-statechart/</guid>
+      <guid>https://jackliusr.github.io/posts/2019/01/twilio-call-status-statechart/</guid>
       <description>I was not familiar with SIP states during the integration of VoIP products such as twilio, plivo and sinch. I am still confused about the state changes after reading documents. Here try to visualize the state change and help me to remember it. The state chart is based on my understanding. It is not necessarily correct. It is just for my reference.
  QueuedInitiatedRingingAnsweredInProgressCompletedBusyNoAnswerCanceledFailedQueued Queued - - Initiated Initiated - - Ringing Ringing - - Answered Answered - - InProgress InProgress - - Completed Initiated - - Busy Busy - - [*] Ringing - - NoAnswer NoAnswer - - [*] Ringing - - Canceled Canceled - - [*] Ringing - - Failed Failed - - [*] Completed - - [*] @enduml PlantUML version 1.</description>
     </item>

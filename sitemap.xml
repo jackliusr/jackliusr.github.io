@@ -3,208 +3,303 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2020-09-25T22:00:00+08:00</lastmod>
+    <loc>https://jackliusr.github.io/about/</loc>
+    <lastmod>2020-09-26T14:50:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/2020/09/create-a-multiple-nodes-kind-kubernetes-cluster/</loc>
+    <loc>https://jackliusr.github.io/categories/</loc>
     <lastmod>2020-09-25T22:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/posts/2020/09/create-a-multiple-nodes-kind-kubernetes-cluster/</loc>
+    <lastmod>2020-09-25T22:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jackliusr.github.io/tags/kind/</loc>
     <lastmod>2020-09-25T22:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jackliusr.github.io/tags/kubernetes/</loc>
     <lastmod>2020-09-25T22:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jackliusr.github.io/</loc>
     <lastmod>2020-09-25T22:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jackliusr.github.io/posts/</loc>
     <lastmod>2020-09-25T22:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jackliusr.github.io/tags/</loc>
     <lastmod>2020-09-25T22:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jackliusr.github.io/categories/tech/</loc>
     <lastmod>2020-09-25T22:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/2020/09/pod-crashloopbackoff-reason/</loc>
+    <loc>https://jackliusr.github.io/posts/2020/09/pod-crashloopbackoff-reason/</loc>
     <lastmod>2020-09-22T08:51:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jackliusr.github.io/tags/troubeshooting/</loc>
     <lastmod>2020-09-22T08:51:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/2020/08/my-first-post/</loc>
+    <loc>https://jackliusr.github.io/posts/2020/08/my-first-post/</loc>
     <lastmod>2020-08-21T18:12:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jackliusr.github.io/tags/jekyll/</loc>
     <lastmod>2020-08-15T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jackliusr.github.io/tags/ssg/</loc>
     <lastmod>2020-08-15T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/2020/08/why-i-stick-to-jekyll/</loc>
+    <loc>https://jackliusr.github.io/posts/2020/08/why-i-stick-to-jekyll/</loc>
     <lastmod>2020-08-15T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jackliusr.github.io/tags/javascript/</loc>
     <lastmod>2020-07-07T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jackliusr.github.io/tags/redux/</loc>
     <lastmod>2020-07-07T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jackliusr.github.io/tags/redux-saga/</loc>
     <lastmod>2020-07-07T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/2020/07/run-redux-saga-examples/</loc>
+    <loc>https://jackliusr.github.io/posts/2020/07/run-redux-saga-examples/</loc>
     <lastmod>2020-07-07T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/2019/12/workaround-solution-for-inout-refcursor-parameters-for-stored-procedure-in-postgresql-11-jdbc/</loc>
+    <loc>https://jackliusr.github.io/posts/2019/12/workaround-solution-for-inout-refcursor-parameters-for-stored-procedure-in-postgresql-11-jdbc/</loc>
     <lastmod>2019-12-10T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/2019/03/error-message-of-rabbitmq-is-terrible/</loc>
+    <loc>https://jackliusr.github.io/posts/2019/03/error-message-of-rabbitmq-is-terrible/</loc>
     <lastmod>2019-03-12T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/2019/02/issues-of-clean-setup-spacemacs-and-their-solutions/</loc>
+    <loc>https://jackliusr.github.io/posts/2019/02/issues-of-clean-setup-spacemacs-and-their-solutions/</loc>
     <lastmod>2019-02-21T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/2019/02/chemical-bonding/</loc>
+    <loc>https://jackliusr.github.io/posts/2019/02/chemical-bonding/</loc>
     <lastmod>2019-02-02T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/2019/02/kinetic-particle-theory/</loc>
+    <loc>https://jackliusr.github.io/posts/2019/02/kinetic-particle-theory/</loc>
     <lastmod>2019-02-01T20:20:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jackliusr.github.io/tags/latex/</loc>
     <lastmod>2019-02-01T20:10:10+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jackliusr.github.io/tags/math/</loc>
     <lastmod>2019-02-01T20:10:10+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/2019/02/math-jax-testing/</loc>
+    <loc>https://jackliusr.github.io/posts/2019/02/math-jax-testing/</loc>
     <lastmod>2019-02-01T20:10:10+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/2019/02/atomic-structure/</loc>
+    <loc>https://jackliusr.github.io/posts/2019/02/atomic-structure/</loc>
     <lastmod>2019-02-01T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jackliusr.github.io/tags/chemistry/</loc>
     <lastmod>2019-02-01T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jackliusr.github.io/categories/chemistry/</loc>
     <lastmod>2019-02-01T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/2019/02/integration-of-klipse/</loc>
+    <loc>https://jackliusr.github.io/posts/2019/02/integration-of-klipse/</loc>
     <lastmod>2019-02-01T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jackliusr.github.io/tags/cpaas/</loc>
     <lastmod>2019-01-25T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jackliusr.github.io/tags/twilio/</loc>
     <lastmod>2019-01-25T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/2019/01/twilio-call-status-statechart/</loc>
+    <loc>https://jackliusr.github.io/posts/2019/01/twilio-call-status-statechart/</loc>
     <lastmod>2019-01-25T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jackliusr.github.io/tags/asciidoc/</loc>
     <lastmod>2019-01-19T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/2019/01/unit-1-experimental-chemistry/</loc>
+    <loc>https://jackliusr.github.io/posts/2019/01/unit-1-experimental-chemistry/</loc>
     <lastmod>2019-01-19T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/2019/01/asciidoc-diagram-samples-of-uml/</loc>
+    <loc>https://jackliusr.github.io/posts/2019/01/asciidoc-diagram-samples-of-uml/</loc>
     <lastmod>2019-01-11T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jackliusr.github.io/tags/diagram/</loc>
     <lastmod>2019-01-11T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://jackliusr.github.io/tags/async/</loc>
     <lastmod>2019-01-10T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/2019/01/asynchronization-is-hard-to-implement/</loc>
+    <loc>https://jackliusr.github.io/posts/2019/01/asynchronization-is-hard-to-implement/</loc>
     <lastmod>2019-01-10T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/2019/01/why-i-start-to-write-again/</loc>
+    <loc>https://jackliusr.github.io/posts/2019/01/why-i-start-to-write-again/</loc>
     <lastmod>2019-01-01T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/2018/12/diagrams-samples/</loc>
+    <loc>https://jackliusr.github.io/posts/2018/12/diagrams-samples/</loc>
     <lastmod>2018-12-20T20:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/series/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
 </urlset>

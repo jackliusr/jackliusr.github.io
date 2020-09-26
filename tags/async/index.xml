@@ -13,10 +13,10 @@
     
     <item>
       <title>Asynchronization is hard to implement</title>
-      <link>https://jackliusr.github.io/2019/01/asynchronization-is-hard-to-implement/</link>
+      <link>https://jackliusr.github.io/posts/2019/01/asynchronization-is-hard-to-implement/</link>
       <pubDate>Thu, 10 Jan 2019 20:00:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2019/01/asynchronization-is-hard-to-implement/</guid>
+      <guid>https://jackliusr.github.io/posts/2019/01/asynchronization-is-hard-to-implement/</guid>
       <description>Asynchronization is very hard. It brings benefits with several catches for backend programming. Here is serveral catches and respective solutions. However all those will increase the cost of developments.
    Hard to debug and trace As the process breaks down to serveral asynchronious subprocesses, it is very difficult to relate all information of the process when something goes wrong. An extra overhead correlation Id is needed to adopt to ameliorate this issue.</description>
     </item>

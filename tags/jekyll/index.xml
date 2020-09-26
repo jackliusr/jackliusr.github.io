@@ -13,10 +13,10 @@
     
     <item>
       <title>Why I stick to jekyll</title>
-      <link>https://jackliusr.github.io/2020/08/why-i-stick-to-jekyll/</link>
+      <link>https://jackliusr.github.io/posts/2020/08/why-i-stick-to-jekyll/</link>
       <pubDate>Sat, 15 Aug 2020 20:00:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2020/08/why-i-stick-to-jekyll/</guid>
+      <guid>https://jackliusr.github.io/posts/2020/08/why-i-stick-to-jekyll/</guid>
       <description>I am a big fan of Tex and asciidoc. Asciidoctor is ruby based and can been easily integrated into jekyll. Hugo currently still has some rough edges in asciidoc integration. Considering the time and effort to switch to Hugo, it is not worth to do that.
  </description>
     </item>

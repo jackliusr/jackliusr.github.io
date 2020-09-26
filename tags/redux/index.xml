@@ -13,10 +13,10 @@
     
     <item>
       <title>run redux-saga examples</title>
-      <link>https://jackliusr.github.io/2020/07/run-redux-saga-examples/</link>
+      <link>https://jackliusr.github.io/posts/2020/07/run-redux-saga-examples/</link>
       <pubDate>Tue, 07 Jul 2020 20:00:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/2020/07/run-redux-saga-examples/</guid>
+      <guid>https://jackliusr.github.io/posts/2020/07/run-redux-saga-examples/</guid>
       <description>run redux-saga examples TL;DR:
  yarn yarn build
  I run into module not found issues when I try to run those examples under the repository of redus-saga. Even following comments in github issues and stackoverflow, those solutions don&amp;#8217;t work out.
