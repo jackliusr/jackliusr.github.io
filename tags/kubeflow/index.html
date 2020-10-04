@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Kubernetes | My learning and diary</title>
+    <title>kubeflow | My learning and diary</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="generator" content="Hugo 0.73.0" />
     
@@ -28,19 +28,19 @@
 
     
     
-      <link href="/tags/kubernetes/index.xml" rel="alternate" type="application/rss+xml" title="My learning and diary" />
-      <link href="/tags/kubernetes/index.xml" rel="feed" type="application/rss+xml" title="My learning and diary" />
+      <link href="/tags/kubeflow/index.xml" rel="alternate" type="application/rss+xml" title="My learning and diary" />
+      <link href="/tags/kubeflow/index.xml" rel="feed" type="application/rss+xml" title="My learning and diary" />
       
     
     
-    <meta property="og:title" content="Kubernetes" />
+    <meta property="og:title" content="kubeflow" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://jackliusr.github.io/tags/kubernetes/" />
+<meta property="og:url" content="https://jackliusr.github.io/tags/kubeflow/" />
 <meta property="og:updated_time" content="2020-10-04T10:26:00+08:00" />
-<meta itemprop="name" content="Kubernetes">
+<meta itemprop="name" content="kubeflow">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Kubernetes"/>
+<meta name="twitter:title" content="kubeflow"/>
 <meta name="twitter:description" content=""/>
 
 	
@@ -126,7 +126,7 @@
 
       <div class="tc-l pv3 ph3 ph4-ns">
         <h1 class="f2 f-subheadline-l fw2 light-silver mb0 mt0 lh-title">
-          Kubernetes
+          kubeflow
         </h1>
         
       </div>
@@ -138,7 +138,7 @@
       
   <article class="cf pa3 pa4-m pa4-l">
     <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img mid-gray">
-      <p>Below you will find pages that utilize the taxonomy term “Kubernetes”</p>
+      <p>Below you will find pages that utilize the taxonomy term “kubeflow”</p>
     </div>
   </article>
   <div class="mw8 center">    
@@ -155,42 +155,6 @@
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       # https://www.kubeflow.org/docs/pipelines/installation/localcluster-deployment/#deploying-kubeflow-pipelines # env/platform-agnostic-pns hasn't been publically released, so we install from master temporarily export PIPELINE_VERSION=1.0.1 kubectl apply -k "github.com/kubeflow/pipelines/manifests/kustomize/cluster-scoped-resources?ref=$PIPELINE_VERSION" kubectl wait --for condition=established --timeout=60s crd/applications.app.k8s.io kubectl apply -k "github.com/kubeflow/pipelines/manifests/kustomize/env/platform-agnostic-pns?ref=$PIPELINE_VERSION" # expose gui kubectl port-forward -n kubeflow --address 0.0.0.0 svc/ml-pipeline-ui 8080:80   
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://jackliusr.github.io/posts/2020/09/create-a-multiple-nodes-kind-kubernetes-cluster/" class="link black dim">
-        Create a multiple-nodes KIND kubernetes cluster
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      KIND supports configuration items and you can find them at https://kind.sigs.k8s.io/docs/user/configuration. Following is the outline of the doc.
- Cluster-Wide Options ︎ Networking: ︎ IP Family ︎ API Server: port and listen address Pod Subnet ︎ Service Subnet ︎ Disable Default CNI: can be used to try other CNI for CKA and CKAD networks kube-proxy mode : iptables, ipvs Nodes: role control-plane, worker Per-Node Options ︎ Extra Mounts ︎ Extra Port Mappings ︎ Kubeadm Config Patches: Kubeadm Config Patches, kubeadm InitConfiguration and JoinConfiguration   My asciicast is as following:
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://jackliusr.github.io/posts/2020/09/pod-crashloopbackoff-reason/" class="link black dim">
-        Pod CrashLoopBackOff Reason
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Today one of my deployments always got CrashLoopBackOff. Searching internet don&#8217;t gave me the root cause of those errors even I went through all the steps. Steps from internets are all about describe, logs, liveProbe etc. I noticed the reason and exit code in last state when I described one of the pod. It should be the focus point to find root cause of CrashBoopBackOff.
- Containers: nginx: Container ID: containerd://9570e7e67d83692fdbe0e0871919a81222137fcaee2eaecb1eff6b772ec805b1 Image: nginx:1.
     </div>
   </div>
 </div>

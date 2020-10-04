@@ -37,7 +37,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://jackliusr.github.io/" />
-<meta property="og:updated_time" content="2020-09-25T22:00:00+08:00" />
+<meta property="og:updated_time" content="2020-10-04T10:26:00+08:00" />
 <meta itemprop="name" content="My learning and diary">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="My learning and diary"/>
@@ -170,6 +170,30 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://jackliusr.github.io/posts/2020/10/setup-kubeflow-pipeline-on-local-kind-cluster/" class="color-inherit dim link">
+            Setup kubeflow pipeline on local KIND cluster
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          # https://www.kubeflow.org/docs/pipelines/installation/localcluster-deployment/#deploying-kubeflow-pipelines # env/platform-agnostic-pns hasn't been publically released, so we install from master temporarily export PIPELINE_VERSION=1.0.1 kubectl apply -k "github.com/kubeflow/pipelines/manifests/kustomize/cluster-scoped-resources?ref=$PIPELINE_VERSION" kubectl wait --for condition=established --timeout=60s crd/applications.app.k8s.io kubectl apply -k "github.com/kubeflow/pipelines/manifests/kustomize/env/platform-agnostic-pns?ref=$PIPELINE_VERSION" # expose gui kubectl port-forward -n kubeflow --address 0.0.0.0 svc/ml-pipeline-ui 8080:80   
+        </div>
+          <a href="https://jackliusr.github.io/posts/2020/10/setup-kubeflow-pipeline-on-local-kind-cluster/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="https://jackliusr.github.io/posts/2020/09/create-a-multiple-nodes-kind-kubernetes-cluster/" class="color-inherit dim link">
             Create a multiple-nodes KIND kubernetes cluster
             </a>
@@ -212,44 +236,18 @@
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://jackliusr.github.io/posts/2020/08/my-first-post/" class="color-inherit dim link">
-            My first post
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          This is my first adoc post after migration from jekyll to hugo.
-   a
-  b
-  test
-   order list testing
-  a
-  b
-   third try to test github action
- 
-        </div>
-          <a href="https://jackliusr.github.io/posts/2020/08/my-first-post/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://jackliusr.github.io/posts/2020/08/my-first-post/" class="link black dim">
+              My first post
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://jackliusr.github.io/posts/2020/08/why-i-stick-to-jekyll/" class="link black dim">
@@ -266,12 +264,6 @@
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://jackliusr.github.io/posts/2019/12/workaround-solution-for-inout-refcursor-parameters-for-stored-procedure-in-postgresql-11-jdbc/" class="link black dim">
               Workaround solution for inout refcursor parameters for stored procedure in postgresql 11 JDBC
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://jackliusr.github.io/posts/2019/03/error-message-of-rabbitmq-is-terrible/" class="link black dim">
-              Error message of rabbitmq is terrible
             </a>
           </h2>
         

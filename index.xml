@@ -6,10 +6,19 @@
     <description>Recent content on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Sep 2020 22:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2020 10:26:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Setup kubeflow pipeline on local KIND cluster</title>
+      <link>https://jackliusr.github.io/posts/2020/10/setup-kubeflow-pipeline-on-local-kind-cluster/</link>
+      <pubDate>Sun, 04 Oct 2020 10:26:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2020/10/setup-kubeflow-pipeline-on-local-kind-cluster/</guid>
+      <description># https://www.kubeflow.org/docs/pipelines/installation/localcluster-deployment/#deploying-kubeflow-pipelines # env/platform-agnostic-pns hasn&#39;t been publically released, so we install from master temporarily export PIPELINE_VERSION=1.0.1 kubectl apply -k &#34;github.com/kubeflow/pipelines/manifests/kustomize/cluster-scoped-resources?ref=$PIPELINE_VERSION&#34; kubectl wait --for condition=established --timeout=60s crd/applications.app.k8s.io kubectl apply -k &#34;github.com/kubeflow/pipelines/manifests/kustomize/env/platform-agnostic-pns?ref=$PIPELINE_VERSION&#34; # expose gui kubectl port-forward -n kubeflow --address 0.0.0.0 svc/ml-pipeline-ui 8080:80   </description>
+    </item>
     
     <item>
       <title>About Jack Liu S.R.</title>

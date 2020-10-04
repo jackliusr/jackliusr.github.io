@@ -6,7 +6,7 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Sep 2020 22:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2020 10:26:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,16 +14,25 @@
     <item>
       <title>KIND</title>
       <link>https://jackliusr.github.io/tags/kind/</link>
-      <pubDate>Fri, 25 Sep 2020 22:00:00 +0800</pubDate>
+      <pubDate>Sun, 04 Oct 2020 10:26:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/kind/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>kubernetes</title>
+      <title>kubeflow</title>
+      <link>https://jackliusr.github.io/tags/kubeflow/</link>
+      <pubDate>Sun, 04 Oct 2020 10:26:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/kubeflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
       <link>https://jackliusr.github.io/tags/kubernetes/</link>
-      <pubDate>Fri, 25 Sep 2020 22:00:00 +0800</pubDate>
+      <pubDate>Sun, 04 Oct 2020 10:26:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/kubernetes/</guid>
       <description></description>
