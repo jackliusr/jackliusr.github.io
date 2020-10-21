@@ -6,10 +6,21 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Oct 2020 10:26:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2020 18:10:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>a new way to anti scrapping</title>
+      <link>https://jackliusr.github.io/posts/2020/10/a-new-way-to-anti-scrapping/</link>
+      <pubDate>Wed, 21 Oct 2020 18:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2020/10/a-new-way-to-anti-scrapping/</guid>
+      <description>I loved to read novels. Recently I found that several sites show some garbed characters in square boxes. I went to the original site qidian and those chacters are shown correctly in the orignal site. After little investigation, I found the following information;
+          In above pics, 了&amp;#8217;s HTML entity code is &amp;#58072;, it is not as &amp;#22825;.
+ How does chrome show the characters correctly?</description>
+    </item>
     
     <item>
       <title>Setup kubeflow pipeline on local KIND cluster</title>
