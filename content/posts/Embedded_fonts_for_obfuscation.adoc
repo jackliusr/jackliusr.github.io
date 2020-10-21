@@ -1,0 +1,19 @@
+---
+title: a new way to anti scrapping
+date: 2020-10-21T18:10:00+08:00
+categories:
+- tech
+tags:
+- antiscrapping
+- obfuscation
+- OpenType
+---
+
+I loved to read novels. Recently I found that several sites show some garbed characters in square boxes. I went to the original site qidian and those chacters are shown correctly in the orignal site. After little investigation, I found the following information;
+
+{{< imgur id="jLHDA1U" >}}
+{{< imgur id="FELiHWM" >}}
+
+In above pics, 了's HTML entity code is &#58072;, it is not as &#22825;.
+
+How does chrome show the characters correctly? What's the magic? Initially I thougt it was similar as o'reilly. I set break on subtree modification in chrome to locate the code. However there is no luck. Refreshing the webpage,the content of the page is same as the one from server. Something I missed ? After close look, I noticed there is a style elment before the <section class="read-section jsChapterWrapper j_581616852". Expanded the style element. Voilà, the magic is here.  It use Embedded OpenType to implement that. https://en.wikipedia.org/wiki/Embedded_OpenType
