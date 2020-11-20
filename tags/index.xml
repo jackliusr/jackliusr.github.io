@@ -6,10 +6,46 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Oct 2020 18:10:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2020 13:35:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>debug</title>
+      <link>https://jackliusr.github.io/tags/debug/</link>
+      <pubDate>Fri, 20 Nov 2020 13:35:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/debug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jetbrain</title>
+      <link>https://jackliusr.github.io/tags/jetbrain/</link>
+      <pubDate>Fri, 20 Nov 2020 13:35:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/jetbrain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://jackliusr.github.io/tags/kubernetes/</link>
+      <pubDate>Fri, 20 Nov 2020 13:35:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>skaffold</title>
+      <link>https://jackliusr.github.io/tags/skaffold/</link>
+      <pubDate>Fri, 20 Nov 2020 13:35:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/skaffold/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>antiscrapping</title>
@@ -53,15 +89,6 @@
       <pubDate>Sun, 04 Oct 2020 10:26:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/kubeflow/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kubernetes</title>
-      <link>https://jackliusr.github.io/tags/kubernetes/</link>
-      <pubDate>Sun, 04 Oct 2020 10:26:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/kubernetes/</guid>
       <description></description>
     </item>
     
