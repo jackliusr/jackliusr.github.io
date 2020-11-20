@@ -1,0 +1,37 @@
+---
+title: vscode debug python containers running kubernetes via attachment
+date: 2020-11-20T19:35:00+08:00
+categories:
+- tech
+tags:
+- kubernetes
+- skaffold
+- debug
+- vscode
+- python
+---
+
+
+python-guestbook at https://github.com/GoogleCloudPlatform/cloud-code-samples is used to practice debug python containers in kubernetes.
+
+Google cloud python code vscode plugin 1.7.0 failed to run python on kubernetes or there is no obvious way to do that as depicted in the below pic.
+{{< imgur id="Zo8AUw2" >}}
+
+Steps to make it:
+
+. run 
++
+[source,bash]
+----
+skaffold debug
+----
+. Import ptvsd in the python file to debug, add breakout() before the line to debug
++
+{{< imgur id="UF3H5En" >}}
+. attach to the python pod
++
+{{< imgur id="oqnMLu1" >}}
+. Access the page which will trigger the breakpoint from browser. The actual breakpoint GUI is as the below picture.
++
+{{< imgur id="778xjU1" >}}  
+
