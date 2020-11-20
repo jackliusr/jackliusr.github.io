@@ -6,10 +6,22 @@
     <description>Recent content in debug on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Nov 2020 13:35:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2020 19:35:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jackliusr.github.io/tags/debug/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>vscode debug python containers running kubernetes via attachment</title>
+      <link>https://jackliusr.github.io/posts/2020/11/vscode-debug-python-containers-running-kubernetes-via-attachment/</link>
+      <pubDate>Fri, 20 Nov 2020 19:35:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2020/11/vscode-debug-python-containers-running-kubernetes-via-attachment/</guid>
+      <description>python-guestbook at https://github.com/GoogleCloudPlatform/cloud-code-samples is used to practice debug python containers in kubernetes.
+ Google cloud python code vscode plugin 1.7.0 failed to run python on kubernetes or there is no obvious way to do that as depicted in the below pic.      Steps to make it:
+  run
+skaffold debug     Import ptvsd in the python file to debug, add breakout() before the line to debug</description>
+    </item>
     
     <item>
       <title>Jetbrain debug containers in kubernetes</title>
