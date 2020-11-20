@@ -1,0 +1,20 @@
+---
+title: Jetbrain debug containers in kubernetes
+date: 2020-11-20T13:35:00+08:00
+categories:
+- tech
+tags:
+- kubernetes
+- skaffold
+- debug
+- jetbrain
+---
+
+I can't debug the dockerdev app following the steps in https://blog.jetbrains.com/go/2020/05/11/using-kubernetes-from-goland/, even after I cloned its source code https://github.com/jackliusr/dockerdev/tree/kubernetes-debug.
+
+I read several articles before I tried the aboved one. The successful debug after several trial and errors. I added skaffold.yaml to the project and installed Cloud Code. skaffold.yaml can be found at https://github.com/jackliusr/dockerdev/tree/kubernetes-debug. Other jetbrain configuration can be seen in the below pictures.
+
+{{< imgur id="m3assjd" >}}
+{{< imgur id="qfI0ExI" >}}
+
+cloud code is a very good tool. it make the debug process very smooth.
