@@ -6,10 +6,19 @@
     <description>Recent content in Posts on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Nov 2020 19:35:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 09 Dec 2020 10:35:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>log to stdin of a pod in nested shells</title>
+      <link>https://jackliusr.github.io/posts/2020/12/log-to-stdin-of-a-pod-in-nested-shells/</link>
+      <pubDate>Wed, 09 Dec 2020 10:35:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2020/12/log-to-stdin-of-a-pod-in-nested-shells/</guid>
+      <description>During practicing the lifecycle handlers of pod, I found it is quite difficult to get the logs logged from preStop handlers. Initially I thought terminationMessagePath maybe is the answer, but no such luck. The preStop handler will be run before the pod is deleted. After deleted, there is no way to get the logs unless those logs are kept in other place such as central log servers etc. Those settings are way complex for a simple practice and time-consuming.</description>
+    </item>
     
     <item>
       <title>vscode debug python containers running kubernetes via attachment</title>

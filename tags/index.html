@@ -37,7 +37,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://jackliusr.github.io/tags/" />
-<meta property="og:updated_time" content="2020-11-20T19:35:00+08:00" />
+<meta property="og:updated_time" content="2020-12-09T10:35:00+08:00" />
 <meta itemprop="name" content="Tags">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Tags"/>
@@ -575,6 +575,21 @@ skaffold debug     Import ptvsd in the python file to debug, add breakout() befo
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="https://jackliusr.github.io/posts/2020/12/log-to-stdin-of-a-pod-in-nested-shells/" class="link black dim">
+        log to stdin of a pod in nested shells
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      During practicing the lifecycle handlers of pod, I found it is quite difficult to get the logs logged from preStop handlers. Initially I thought terminationMessagePath maybe is the answer, but no such luck. The preStop handler will be run before the pod is deleted. After deleted, there is no way to get the logs unless those logs are kept in other place such as central log servers etc. Those settings are way complex for a simple practice and time-consuming.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="https://jackliusr.github.io/posts/2020/11/vscode-debug-python-containers-running-kubernetes-via-attachment/" class="link black dim">
         vscode debug python containers running kubernetes via attachment
       </a>
@@ -821,6 +836,28 @@ skaffold debug     Import ptvsd in the python file to debug, add breakout() befo
  I run into module not found issues when I try to run those examples under the repository of redus-saga. Even following comments in github issues and stackoverflow, those solutions don&#8217;t work out.
  Scripts in the package.json of the root folder don&#8217;t work for examples.
  After run yarn &amp;&amp; yarn build, can change directories to those examples and run them.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/shell" class="link blue hover-black">
+            Tag: shell
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://jackliusr.github.io/posts/2020/12/log-to-stdin-of-a-pod-in-nested-shells/" class="link black dim">
+        log to stdin of a pod in nested shells
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      During practicing the lifecycle handlers of pod, I found it is quite difficult to get the logs logged from preStop handlers. Initially I thought terminationMessagePath maybe is the answer, but no such luck. The preStop handler will be run before the pod is deleted. After deleted, there is no way to get the logs unless those logs are kept in other place such as central log servers etc. Those settings are way complex for a simple practice and time-consuming.
     </div>
   </div>
 </div>
