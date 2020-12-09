@@ -203,13 +203,13 @@ metadata:
             command:
             - /bin/sh
             - -c
-            - echo "$$ $(date); from postStart nginx-lifecycle" &gt;&gt; /proc/1/
+            - echo "$$ $(date); from postStart nginx-lifecycle" &gt;&gt; /proc/1/fd/1
         preStop:
           exec:
             command:
             - /bin/sh
             - -c
-            - echo "$$ $(date); from preStop nginx-lifecycle" &gt;&gt; /proc/1/</code></pre>
+            - echo "$$ $(date); from preStop nginx-lifecycle" &gt;&gt; /proc/1/fd/1</code></pre>
 </div>
 </div>
 <div class="paragraph">
