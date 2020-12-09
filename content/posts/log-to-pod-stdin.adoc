@@ -1,6 +1,6 @@
 ---
 title: log to stdin of a pod in nested shells  
-date: 2020-12-09T11:35:00+08:00
+date: 2020-12-09T10:35:00+08:00
 categories:
 - tech
 tags:
