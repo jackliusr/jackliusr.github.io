@@ -1,0 +1,45 @@
+---
+title: log to stdin of a pod in nested shells  
+date: 2020-12-09T11:35:00+08:00
+categories:
+- tech
+tags:
+- kubernetes
+- shell
+---
+
+During practicing the lifecycle handlers of pod, I found it is quite difficult to get the logs logged from preStop handlers. Initially I thought terminationMessagePath maybe is the answer, but no such luck. The preStop handler will be run before the pod is deleted. After deleted, there is no way to get the logs unless those logs are kept in other place such as central log servers etc. Those settings are way complex for a simple practice and time-consuming. How about shell redirection? I suspect those handlers are not run in process 1.  I used to do programming C/C++ code in linux/Solaris and am familiar with /proc file system and process. Maybe I can try something different. Here is my yaml.
+
+[source, yaml]
+----
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-lifecycle
+  spec:
+    containers:
+    - name: nginx
+      image: nginx
+      lifecycle:
+        postStart:
+          exec:
+            command:
+            - /bin/sh
+            - -c
+            - echo "$$ $(date); from postStart nginx-lifecycle" >> /proc/1/
+        preStop:
+          exec:
+            command:
+            - /bin/sh
+            - -c
+            - echo "$$ $(date); from preStop nginx-lifecycle" >> /proc/1/
+          
+----
+
+To see the logs during, run the following command:
+
+[source, bash]
+----
+ kubectl logs nginx-lifecycle -f
+----
+
