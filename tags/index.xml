@@ -6,10 +6,46 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Dec 2020 10:35:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 17 Jan 2021 15:26:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>charts</title>
+      <link>https://jackliusr.github.io/tags/charts/</link>
+      <pubDate>Sun, 17 Jan 2021 15:26:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/charts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vega</title>
+      <link>https://jackliusr.github.io/tags/vega/</link>
+      <pubDate>Sun, 17 Jan 2021 15:26:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/vega/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>viz</title>
+      <link>https://jackliusr.github.io/tags/viz/</link>
+      <pubDate>Sun, 17 Jan 2021 15:26:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/viz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>echarts</title>
+      <link>https://jackliusr.github.io/tags/echarts/</link>
+      <pubDate>Sun, 17 Jan 2021 14:26:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/echarts/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>kubernetes</title>

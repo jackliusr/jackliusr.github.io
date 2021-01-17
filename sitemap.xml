@@ -4,7 +4,77 @@
   
   <url>
     <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2020-12-09T10:35:00+08:00</lastmod>
+    <lastmod>2021-01-17T15:26:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/tags/charts/</loc>
+    <lastmod>2021-01-17T15:26:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/</loc>
+    <lastmod>2021-01-17T15:26:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/posts/</loc>
+    <lastmod>2021-01-17T15:26:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/tags/</loc>
+    <lastmod>2021-01-17T15:26:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/categories/tech/</loc>
+    <lastmod>2021-01-17T15:26:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/tags/vega/</loc>
+    <lastmod>2021-01-17T15:26:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/posts/2021/01/vega-in-hugo/</loc>
+    <lastmod>2021-01-17T15:26:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/tags/viz/</loc>
+    <lastmod>2021-01-17T15:26:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/tags/echarts/</loc>
+    <lastmod>2021-01-17T14:26:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/posts/2021/01/echarts-in-hugo/</loc>
+    <lastmod>2021-01-17T14:26:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -24,35 +94,7 @@
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2020-12-09T10:35:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2020-12-09T10:35:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://jackliusr.github.io/tags/shell/</loc>
-    <lastmod>2020-12-09T10:35:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2020-12-09T10:35:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jackliusr.github.io/categories/tech/</loc>
     <lastmod>2020-12-09T10:35:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

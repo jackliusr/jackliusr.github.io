@@ -6,10 +6,28 @@
     <description>Recent content in Posts on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Dec 2020 10:35:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 17 Jan 2021 15:26:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>vega in hugo</title>
+      <link>https://jackliusr.github.io/posts/2021/01/vega-in-hugo/</link>
+      <pubDate>Sun, 17 Jan 2021 15:26:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2021/01/vega-in-hugo/</guid>
+      <description> var spec = &#39;https:\/\/raw.githubusercontent.com\/vega\/vega\/master\/docs\/examples\/bar-chart.vg.json&#39;; vegaEmbed(&#39;#viz&#39;, spec).then(function(result) { }).catch(console.error);   </description>
+    </item>
+    
+    <item>
+      <title>echarts in hugo</title>
+      <link>https://jackliusr.github.io/posts/2021/01/echarts-in-hugo/</link>
+      <pubDate>Sun, 17 Jan 2021 14:26:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2021/01/echarts-in-hugo/</guid>
+      <description>var myChart = echarts.init(document.getElementById(&#39;echarts400&#39;)); var option = JSON.parse(&#34;\n {\n \&#34;textStyle\&#34;:{\n \&#34;color\&#34;:\&#34;#fff\&#34;\n },\n \&#34;title\&#34;:{\n \&#34;text\&#34;:\&#34;2018年11月国内浏览器数据统计\&#34;,\n \&#34;subtext\&#34;:\&#34;浏览器数据分析\&#34;,\n \&#34;x\&#34;:\&#34;center\&#34;,\n \&#34;textStyle\&#34;:{\n \&#34;color\&#34;:\&#34;#FFffFf\&#34;\n }\n },\n \&#34;tooltip\&#34;:{\n \&#34;trigger\&#34;:\&#34;item\&#34;,\n \&#34;formatter\&#34;:\&#34;{a} \u003cbr/\u003e{b} : {c} ({d}%)\&#34;\n },\n \&#34;legend\&#34;:{\n \&#34;type\&#34;:\&#34;scroll\&#34;,\n \&#34;orient\&#34;:\&#34;vertical\&#34;,\n \&#34;right\&#34;:10,\n \&#34;top\&#34;:120,\n \&#34;bottom\&#34;:20,\n \&#34;data\&#34;:[\n \&#34;Chrome\&#34;,\n \&#34;IE 9.0\&#34;,\n \&#34;IE 11.0\&#34;,\n \&#34;QQ\&#34;,\n \&#34;IE 8.0\&#34;,\n \&#34;2345\&#34;,\n \&#34;搜狗高速\&#34;,\n \&#34;Firefox\&#34;,\n \&#34;Safari\&#34;,\n \&#34;其他\&#34;\n ],\n \&#34;textStyle\&#34;:{\n \&#34;color\&#34;:\&#34;#fff\&#34;\n }\n },\n \&#34;series\&#34;:[\n {\n \&#34;name\&#34;:\&#34;浏览器用户比例\&#34;,\n \&#34;type\&#34;:\&#34;pie\&#34;,\n \&#34;radius\&#34;:\&#34;55%\&#34;,\n \&#34;center\&#34;:[\n \&#34;50%\&#34;,\n \&#34;60%\&#34;\n ],\n \&#34;data\&#34;:[\n {\n \&#34;name\&#34;:\&#34;Chrome\&#34;,\n \&#34;value\&#34;:46.88\n },\n {\n \&#34;</description>
+    </item>
     
     <item>
       <title>log to stdin of a pod in nested shells</title>
