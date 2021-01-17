@@ -1,0 +1,13 @@
+---
+title: vega in hugo
+date: 2021-01-17T15:26:00+08:00
+categories:
+- tech
+tags:
+- viz
+- charts
+- vega
+vega: true
+---
+
+{{<vega id="viz" spec="https://raw.githubusercontent.com/vega/vega/master/docs/examples/bar-chart.vg.json">}}
