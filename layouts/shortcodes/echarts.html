@@ -1,0 +1,7 @@
+<div id="echarts{{ .Get `height` }}" style="width: 100%;height: {{.Get `height`}}px;margin: 0 auto"></div>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.0.1/dist/echarts.min.js"></script>
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('echarts{{ .Get `height` }}'));
+    var option = JSON.parse({{ .Inner }})
+    myChart.setOption(option);
+</script>
