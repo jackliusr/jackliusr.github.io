@@ -1,0 +1,27 @@
+---
+title: nginx ingress and web SAP
+date: 2021-01-18T21:53:00+08:00
+categories:
+- tech
+tags:
+- k8s
+- ingress
+- SPA
+- angular
+- reactjs
+---
+
+Several months ago, I resolved the issue "404 Error on refresh with SPA" by using nginx try_files directive, this time it was quite different as the apps were deployed into kubernetes. I tried nginx.ingress.kubernetes.io/use-regex:true and nginx.ingress.kubernetes.io/rewrite-target: /$1. To avoid to block others to others to use staging environment, I setup an skaffold local development environment to troubeshooting the issue. I tried following annotation as well. 
+
+[source, yaml]
+----
+nginx.ingress.kubernetes.io/configuration-snippet: |
+      try_files $uri $uri/ /index.html; 
+----
+
+I knew it definitely works if I directly put the "try_files $uri $uri/ /index.html;" directive into "/etc/nginx/conf.d/default.conf" of my serivces' pods. It indeed works after I put that way. Then what's the reason? Here is my reply to the https://stackoverflow.com/questions/56107780/how-to-convert-nginx-configuration-to-ingress-kubernetes-yaml-configuration[issue] at stackoverflow.
+
+As nginx ingress controller is in another isolated pod, the generated nginx
+rules in nginx ingress controller can't detect files and resources on your services.
+It just forward the requests to your services. The proper location to put the
+try_files directive should be in the your service's pods.
