@@ -6,10 +6,55 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Jan 2021 15:26:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 18 Jan 2021 21:53:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>angular</title>
+      <link>https://jackliusr.github.io/tags/angular/</link>
+      <pubDate>Mon, 18 Jan 2021 21:53:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/angular/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ingress</title>
+      <link>https://jackliusr.github.io/tags/ingress/</link>
+      <pubDate>Mon, 18 Jan 2021 21:53:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/ingress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>k8s</title>
+      <link>https://jackliusr.github.io/tags/k8s/</link>
+      <pubDate>Mon, 18 Jan 2021 21:53:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/k8s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reactjs</title>
+      <link>https://jackliusr.github.io/tags/reactjs/</link>
+      <pubDate>Mon, 18 Jan 2021 21:53:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/reactjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SPA</title>
+      <link>https://jackliusr.github.io/tags/spa/</link>
+      <pubDate>Mon, 18 Jan 2021 21:53:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/spa/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>charts</title>

@@ -37,7 +37,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://jackliusr.github.io/" />
-<meta property="og:updated_time" content="2021-01-17T15:26:00+08:00" />
+<meta property="og:updated_time" content="2021-01-18T21:53:00+08:00" />
 <meta itemprop="name" content="My learning and diary">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="My learning and diary"/>
@@ -174,6 +174,31 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://jackliusr.github.io/posts/2021/01/nginx-ingress-and-web-sap/" class="color-inherit dim link">
+            nginx ingress and web SAP
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Several months ago, I resolved the issue "404 Error on refresh with SPA" by using nginx try_files directive, this time it was quite different as the apps were deployed into kubernetes. I tried nginx.ingress.kubernetes.io/use-regex:true and nginx.ingress.kubernetes.io/rewrite-target: /$1. To avoid to block others to others to use staging environment, I setup an skaffold local development environment to troubeshooting the issue. I tried following annotation as well.
+ nginx.ingress.kubernetes.io/configuration-snippet: | try_files $uri $uri/ /index.
+        </div>
+          <a href="https://jackliusr.github.io/posts/2021/01/nginx-ingress-and-web-sap/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="https://jackliusr.github.io/posts/2021/01/vega-in-hugo/" class="color-inherit dim link">
             vega in hugo
             </a>
@@ -214,36 +239,18 @@
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://jackliusr.github.io/posts/2020/12/log-to-stdin-of-a-pod-in-nested-shells/" class="color-inherit dim link">
-            log to stdin of a pod in nested shells
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          During practicing the lifecycle handlers of pod, I found it is quite difficult to get the logs logged from preStop handlers. Initially I thought terminationMessagePath maybe is the answer, but no such luck. The preStop handler will be run before the pod is deleted. After deleted, there is no way to get the logs unless those logs are kept in other place such as central log servers etc. Those settings are way complex for a simple practice and time-consuming.
-        </div>
-          <a href="https://jackliusr.github.io/posts/2020/12/log-to-stdin-of-a-pod-in-nested-shells/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://jackliusr.github.io/posts/2020/12/log-to-stdin-of-a-pod-in-nested-shells/" class="link black dim">
+              log to stdin of a pod in nested shells
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://jackliusr.github.io/posts/2020/11/vscode-debug-python-containers-running-kubernetes-via-attachment/" class="link black dim">
@@ -260,12 +267,6 @@
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://jackliusr.github.io/posts/2020/10/a-new-way-to-anti-scrapping/" class="link black dim">
               a new way to anti scrapping
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://jackliusr.github.io/posts/2020/10/setup-kubeflow-pipeline-on-local-kind-cluster/" class="link black dim">
-              Setup kubeflow pipeline on local KIND cluster
             </a>
           </h2>
         

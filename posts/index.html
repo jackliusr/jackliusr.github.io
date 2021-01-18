@@ -37,7 +37,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/" />
-<meta property="og:updated_time" content="2021-01-17T15:26:00+08:00" />
+<meta property="og:updated_time" content="2021-01-18T21:53:00+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
@@ -143,6 +143,22 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://jackliusr.github.io/posts/2021/01/nginx-ingress-and-web-sap/" class="link black dim">
+        nginx ingress and web SAP
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Several months ago, I resolved the issue "404 Error on refresh with SPA" by using nginx try_files directive, this time it was quite different as the apps were deployed into kubernetes. I tried nginx.ingress.kubernetes.io/use-regex:true and nginx.ingress.kubernetes.io/rewrite-target: /$1. To avoid to block others to others to use staging environment, I setup an skaffold local development environment to troubeshooting the issue. I tried following annotation as well.
+ nginx.ingress.kubernetes.io/configuration-snippet: | try_files $uri $uri/ /index.
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -283,29 +299,6 @@ skaffold debug     Import ptvsd in the python file to debug, add breakout() befo
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Today one of my deployments always got CrashLoopBackOff. Searching internet don&#8217;t gave me the root cause of those errors even I went through all the steps. Steps from internets are all about describe, logs, liveProbe etc. I noticed the reason and exit code in last state when I described one of the pod. It should be the focus point to find root cause of CrashBoopBackOff.
  Containers: nginx: Container ID: containerd://9570e7e67d83692fdbe0e0871919a81222137fcaee2eaecb1eff6b772ec805b1 Image: nginx:1.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://jackliusr.github.io/posts/2020/08/my-first-post/" class="link black dim">
-        My first post
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      This is my first adoc post after migration from jekyll to hugo.
-   a
-  b
-  test
-   order list testing
-  a
-  b
-   third try to test github action
- 
     </div>
   </div>
 </div>
