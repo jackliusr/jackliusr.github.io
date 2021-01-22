@@ -1,5 +1,5 @@
 ---
-title: nginx ingress and web SAP
+title: nginx ingress and SPA sites
 date: 2021-01-18T21:53:00+08:00
 categories:
 - tech
