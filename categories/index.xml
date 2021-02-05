@@ -6,10 +6,19 @@
     <description>Recent content in Categories on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Jan 2021 21:53:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 05 Feb 2021 11:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jackliusr.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>invest</title>
+      <link>https://jackliusr.github.io/categories/invest/</link>
+      <pubDate>Fri, 05 Feb 2021 11:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/categories/invest/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>tech</title>
