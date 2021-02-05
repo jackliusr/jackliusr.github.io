@@ -1,0 +1,17 @@
+---
+title: "Stock Grey market dynamic"
+date: 2021-02-05T11:00:00+08:00
+categories:
+- invest
+tags:
+- stock
+- dynamic
+- grey market
+---
+
+Here are the grey market dynamics trading kuaishou in futu and first day in stock. Don't be gready. Most likely the professional/instutional traders in grey market outsmart you, they don't leave profit margin for you considering the dynamic in first day trading.
+
+image::images/dynamic_grey_market.jpg[gray market dynamic]
+image::images/first-day-dynamic.png[first day dynamic]
+
+
