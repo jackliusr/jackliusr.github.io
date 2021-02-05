@@ -11,7 +11,7 @@ tags:
 
 Here are the grey market dynamics trading kuaishou in futu and first day in stock. Don't be gready. Most likely the professional/instutional traders in grey market outsmart you, they don't leave profit margin for you considering the dynamic in first day trading.
 
-image::https://jackliusr.github.io/images/dynamic_grey_market.jpg[gray market dynamic]
-image::https://jackliusr.github.io/images/first-day-dynamic.png[first day dynamic]
+image::https://jackliusr.github.io/diagram/dynamic_grey_market.jpg[gray market dynamic]
+image::https://jackliusr.github.io/diagram/first-day-dynamic.png[first day dynamic]
 
 
