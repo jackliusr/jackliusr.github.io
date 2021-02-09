@@ -13,5 +13,7 @@ Here are the grey market dynamics trading kuaishou in futu and first day in stoc
 
 image::https://jackliusr.github.io/diagram/dynamic_grey_market.jpg[gray market dynamic]
 image::https://jackliusr.github.io/diagram/first-day-dynamic.png[first day dynamic]
+image::https://jackliusr.github.io/diagram/kuaishou-day02.jpg[2nd day dynamic]
+image::https://jackliusr.github.io/diagram/kuaishou-day03.jpg[3rd day dynamic]
 
 
