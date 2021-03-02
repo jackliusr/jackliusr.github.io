@@ -1,0 +1,51 @@
+---
+title: "Exposing TCP and UDP services in nginx ingress"
+date: 2021-03-02T17:00:00+08:00
+categories:
+- tech
+tags:
+- ingress
+- nginx
+- kubernetes
+---
+
+== Add command line flags in ingress controller:
+
+. --tcp-services-configmap
+. --udp-services-configmap
+
+== Create configmap
+
+[source, yaml]
+----
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: tcp-services
+    namespace: ingress-nginx
+data:
+    5432: "default/postgres:5432"
+----
+
+== Patch the ingress-nginx-controller to allow port 5432
+
+[source, yaml]
+----
+spec:
+  template:
+    spec:
+      containers:
+        - name: controller
+          ports:
+            - containerPort: 6379
+              hostPort: 6379
+
+----
+
+== Add inbound rule to security group of node groups
+
+== Reference:
+
+https://minikube.sigs.k8s.io/docs/tutorials/nginx_tcp_udp_ingress/#configuring-tcp-and-udp-services-with-the-nginx-ingress-controller
+
+https://kubernetes.github.io/ingress-nginx/user-guide/exposing-tcp-udp-services/#exposing-tcp-and-udp-services
