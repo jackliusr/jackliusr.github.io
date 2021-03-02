@@ -6,10 +6,21 @@
     <description>Recent content in kubernetes on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Dec 2020 10:35:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 02 Mar 2021 17:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jackliusr.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Exposing TCP and UDP services in nginx ingress</title>
+      <link>https://jackliusr.github.io/posts/2021/03/exposing-tcp-and-udp-services-in-nginx-ingress/</link>
+      <pubDate>Tue, 02 Mar 2021 17:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2021/03/exposing-tcp-and-udp-services-in-nginx-ingress/</guid>
+      <description>Add command line flags in ingress controller:  --tcp-services-configmap
+  --udp-services-configmap
+     Create configmap apiVersion: v1 kind: ConfigMap metadata: name: tcp-services namespace: ingress-nginx data: 5432: &#34;default/postgres:5432&#34;     Patch the ingress-nginx-controller to allow port 5432 spec: template: spec: containers: - name: controller ports: - containerPort: 6379 hostPort: 6379     Add inbound rule to security group of node groups   Reference: https://minikube.</description>
+    </item>
     
     <item>
       <title>log to stdin of a pod in nested shells</title>

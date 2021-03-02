@@ -4,7 +4,63 @@
   
   <url>
     <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2021-02-05T11:00:00+08:00</lastmod>
+    <lastmod>2021-03-02T17:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/posts/2021/03/exposing-tcp-and-udp-services-in-nginx-ingress/</loc>
+    <lastmod>2021-03-02T17:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/tags/ingress/</loc>
+    <lastmod>2021-03-02T17:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/tags/kubernetes/</loc>
+    <lastmod>2021-03-02T17:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/</loc>
+    <lastmod>2021-03-02T17:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/tags/nginx/</loc>
+    <lastmod>2021-03-02T17:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/posts/</loc>
+    <lastmod>2021-03-02T17:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/tags/</loc>
+    <lastmod>2021-03-02T17:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/categories/tech/</loc>
+    <lastmod>2021-03-02T17:00:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -31,20 +87,6 @@
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2021-02-05T11:00:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2021-02-05T11:00:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://jackliusr.github.io/tags/stock/</loc>
     <lastmod>2021-02-05T11:00:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -59,21 +101,7 @@
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2021-02-05T11:00:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://jackliusr.github.io/tags/angular/</loc>
-    <lastmod>2021-01-18T21:53:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jackliusr.github.io/tags/ingress/</loc>
     <lastmod>2021-01-18T21:53:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -102,13 +130,6 @@
   
   <url>
     <loc>https://jackliusr.github.io/tags/spa/</loc>
-    <lastmod>2021-01-18T21:53:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jackliusr.github.io/categories/tech/</loc>
     <lastmod>2021-01-18T21:53:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -152,13 +173,6 @@
   <url>
     <loc>https://jackliusr.github.io/posts/2021/01/echarts-in-hugo/</loc>
     <lastmod>2021-01-17T14:26:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jackliusr.github.io/tags/kubernetes/</loc>
-    <lastmod>2020-12-09T10:35:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

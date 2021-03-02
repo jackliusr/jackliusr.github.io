@@ -6,10 +6,37 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Feb 2021 11:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 02 Mar 2021 17:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ingress</title>
+      <link>https://jackliusr.github.io/tags/ingress/</link>
+      <pubDate>Tue, 02 Mar 2021 17:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/ingress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://jackliusr.github.io/tags/kubernetes/</link>
+      <pubDate>Tue, 02 Mar 2021 17:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>https://jackliusr.github.io/tags/nginx/</link>
+      <pubDate>Tue, 02 Mar 2021 17:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/nginx/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>dynamic</title>
@@ -44,15 +71,6 @@
       <pubDate>Mon, 18 Jan 2021 21:53:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/angular/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ingress</title>
-      <link>https://jackliusr.github.io/tags/ingress/</link>
-      <pubDate>Mon, 18 Jan 2021 21:53:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/ingress/</guid>
       <description></description>
     </item>
     
@@ -116,15 +134,6 @@
       <pubDate>Sun, 17 Jan 2021 14:26:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/echarts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kubernetes</title>
-      <link>https://jackliusr.github.io/tags/kubernetes/</link>
-      <pubDate>Wed, 09 Dec 2020 10:35:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/kubernetes/</guid>
       <description></description>
     </item>
     
