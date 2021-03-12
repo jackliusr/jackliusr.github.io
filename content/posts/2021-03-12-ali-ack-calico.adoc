@@ -1,0 +1,22 @@
+---
+title: "Install calico cni in alicloud ack and advanced dns troubleshooting in kubernetes"
+date: 2021-03-12T19:00:00+08:00
+categories:
+- tech
+tags:
+- kubernetes
+- calico
+- alicloud
+- ack
+---
+
+2 weeks I started to learn alicloud to prepare the migration from aws to alicloud. I started the migration this week.  Our applications are deployed on kubernetes, I focused on ACK first. The setup journey was bumpy, and most of the issues can be resolved by googling and trial loops. The most difficult one is that dns resolution issue.
+
+I tried the steps in "Debugging DNS Resolution" footnote:dns-debugging-resolution[https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/]. All steps were good except the nslookup step. I got ";;connection timed out; no servers could be reached" error.After googling I found the issue #347 footnote:issue-347[https://github.com/kubernetes/dns/issues/347], however there is no solutions there. After reading several articles about dns issues, I found this article "How to Inspect Kubernetes Networking" footnote:how-to-inspect-kubernetes-networking[https://www.alibabacloud.com/blog/how-to-inspect-kubernetes-networking_594236]. Running " nsenter –t 14346 –n dig kubernetes.default.svc.cluster.local @10.30.0.10" on two pods on seperate nodes. it can only be successfully resolved on pods which are at the same node with coredns pods.
+
+[source, bash]
+----
+kubectl -n kube-system delete ds flannel-ds
+kubectl apply -f https://docs.projectcalico.org/manifests/calico-vxlan.yaml
+kubectl delete delete pods all -A
+----
