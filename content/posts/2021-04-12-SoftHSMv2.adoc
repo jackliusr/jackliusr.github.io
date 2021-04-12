@@ -1,0 +1,15 @@
+date: 2021-04-12T16:00:00+08:00
+categories:
+- tech
+tags:
+- Vault
+- HSM
+- cryptography
+- security
+---
+
+Secrets Management is the strong suit of Hashicorp vault. Open source edition is little limited comparing to cloud and enterprise edition, and cloud and enterprise editions sometimes are not allowed due to some reasons. https://github.com/banzaicloud/bank-vaults[bank-vaults] seems a promising solution based on open source edition of Hashicorp Vault.
+
+Advanced usage of vault will involve HSM and https://github.com/opendnssec/SoftHSMv2[SoftHSM] is good start point without spending several hundards bucks. Besides, HSM is widely used in Financial sector, blockchain and cryptocurrency. It is worth to master it.
+
+Enough background information now, following is the steps I used to build SoftHSMv2 can be found at https://raw.githubusercontent.com/jackliusr/SoftHSMv2/develop/Dockerfile[Dockerfile]
