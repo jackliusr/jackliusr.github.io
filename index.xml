@@ -379,5 +379,16 @@ skaffold debug     Import ptvsd in the python file to debug, add breakout() befo
  @font-face { font-family: sans-serif; }   </description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://jackliusr.github.io/posts/1/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/1/01/</guid>
+      <description>date: 2021-04-12T16:00:00+08:00 categories: - tech tags: - Vault - HSM - cryptography - security ---
+ Secrets Management is the strong suit of Hashicorp vault. Open source edition is little limited comparing to cloud and enterprise edition, and cloud and enterprise editions sometimes are not allowed due to some reasons. bank-vaults seems a promising solution based on open source edition of Hashicorp Vault.
+ Advanced usage of vault will involve HSM and SoftHSM is good start point without spending several hundards bucks.</description>
+    </item>
+    
   </channel>
 </rss>
