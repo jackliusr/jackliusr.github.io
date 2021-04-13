@@ -1,3 +1,5 @@
+---
+title: Setup softHSM2
 date: 2021-04-12T16:00:00+08:00
 categories:
 - tech
@@ -13,3 +15,16 @@ Secrets Management is the strong suit of Hashicorp vault. Open source edition is
 Advanced usage of vault will involve HSM and https://github.com/opendnssec/SoftHSMv2[SoftHSM] is good start point without spending several hundards bucks. Besides, HSM is widely used in Financial sector, blockchain and cryptocurrency. It is worth to master it.
 
 Enough background information now, following is the steps I used to build SoftHSMv2 can be found at https://raw.githubusercontent.com/jackliusr/SoftHSMv2/develop/Dockerfile[Dockerfile]
+
+[source, bash]
+----
+apt-get install -y \
+    automake \
+    build-essential \
+    libssl-dev \
+    libtool 
+	
+./autogen.sh
+./configure
+sudo make install
+----
