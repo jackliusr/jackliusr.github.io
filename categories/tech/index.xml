@@ -6,10 +6,20 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Mar 2021 19:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 12 Apr 2021 16:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Setup softHSM2</title>
+      <link>https://jackliusr.github.io/posts/2021/04/setup-softhsm2/</link>
+      <pubDate>Mon, 12 Apr 2021 16:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2021/04/setup-softhsm2/</guid>
+      <description>Secrets Management is the strong suit of Hashicorp vault. Open source edition is little limited comparing to cloud and enterprise edition, and cloud and enterprise editions sometimes are not allowed due to some reasons. bank-vaults seems a promising solution based on open source edition of Hashicorp Vault.
+ Advanced usage of vault will involve HSM and SoftHSM is good start point without spending several hundards bucks. Besides, HSM is widely used in Financial sector, blockchain and cryptocurrency.</description>
+    </item>
     
     <item>
       <title>Install calico cni in alicloud ack and advanced dns troubleshooting in kubernetes</title>

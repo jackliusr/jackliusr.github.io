@@ -3,6 +3,76 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://jackliusr.github.io/categories/</loc>
+    <lastmod>2021-04-12T16:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/tags/cryptography/</loc>
+    <lastmod>2021-04-12T16:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/tags/hsm/</loc>
+    <lastmod>2021-04-12T16:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/</loc>
+    <lastmod>2021-04-12T16:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/posts/</loc>
+    <lastmod>2021-04-12T16:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/tags/security/</loc>
+    <lastmod>2021-04-12T16:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/posts/2021/04/setup-softhsm2/</loc>
+    <lastmod>2021-04-12T16:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/tags/</loc>
+    <lastmod>2021-04-12T16:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/categories/tech/</loc>
+    <lastmod>2021-04-12T16:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jackliusr.github.io/tags/vault/</loc>
+    <lastmod>2021-04-12T16:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://jackliusr.github.io/tags/ack/</loc>
     <lastmod>2021-03-12T19:00:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -24,13 +94,6 @@
   </url>
   
   <url>
-    <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2021-03-12T19:00:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://jackliusr.github.io/posts/2021/03/install-calico-cni-in-alicloud-ack-and-advanced-dns-troubleshooting-in-kubernetes/</loc>
     <lastmod>2021-03-12T19:00:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -39,34 +102,6 @@
   
   <url>
     <loc>https://jackliusr.github.io/tags/kubernetes/</loc>
-    <lastmod>2021-03-12T19:00:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2021-03-12T19:00:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2021-03-12T19:00:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2021-03-12T19:00:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jackliusr.github.io/categories/tech/</loc>
     <lastmod>2021-03-12T19:00:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -558,12 +593,6 @@
   <url>
     <loc>https://jackliusr.github.io/posts/2018/12/diagrams-samples/</loc>
     <lastmod>2018-12-20T20:00:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jackliusr.github.io/posts/1/01/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
