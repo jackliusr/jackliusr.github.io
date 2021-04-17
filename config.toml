@@ -22,6 +22,9 @@ changefreq = "monthly"
 filename = "sitemap.xml"
 priority = 0.5
 
+[markup]
+  [markup.asciidocExt]
+preserveTOC = true
 
 [menu]
 
@@ -66,3 +69,5 @@ post = "<span class='alert'>New!</span>"
 pre = "<i class='fa fa-road'></i>"
 url = "/notes/"
 weight = -90
+
+

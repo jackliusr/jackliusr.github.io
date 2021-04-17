@@ -1,0 +1,57 @@
+---
+title: DCF Myths
+date: 2021-04-17T12:40:00+08:00
+categories:
+- investment
+tags:
+- DCF
+---
+= DCF Myths
+:toc:
+
+
+== DCF Myth 1: If you have a D(discount rate) and a CF (cash flow), you have a DCF!
+
+=== Consistency Tests for DCF
+
+\[
+  \text{Value of Asset}= {sum_{y=1}^n{\frac {E(CF_y)} {(1+r)^y} }}
+\]
+
+. Unit Consistency
+.. Equity vs Firm
+.. Pre-tax vs post-tax
+.. Norminal vs Real
+.. Currency
+. Input consistency: valuation triangle
+. Narrative consistency
+
+=== Hall of shame
+
+. Chimera
+. Dreamstate
+. Dissonant
+. Trojan Horse (or Drag Queen)
+. Kabuki of For-show
+. Robo
+. Mutant
+
+=== DCF checklist
+
+== DCF Myth 2: A DCF is an exercise in modeling and number crunching!
+
+=== Connecting Stories to Numbers: The Process
+
+image::https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBKERldmVsb3AgYSBuYXJyYXRpdmUgZm9yIHRoZSBidXNpbmVzcyB0aGF0IHlvdSBhcmUgdmFsdWluZykgLS0-IEIoVGVzdCB0aGUgbmFycmF0aXZlIHRvIHNlZSBpZiBpdCBpcyBwb3NzaWJsZSwgcGxhdXNpYmxlIGFuZCBwcm9iYWJsZSlcbiAgICBCIC0tPiBDKENvbnZlcnQgdGhlIG5hcnJhdGl2ZSBpbnRvIGRyaXZlcnMgb2YgdmFsdWUpXG4gICAgQyAtLT4gRChDb25uZWN0IHRoZSBkcml2ZXJzIG9mIHZhbHVlIHRvIGEgdmFsdWF0aW9uKVxuICAgIEQgLS0-IEUoS2VlcCB0aGUgZmVlZGJhY2sgbG9vcCBvcGVuKVxuICAgIEUgLS0-IEEiLCJtZXJtYWlkIjp7fSwidXBkYXRlRWRpdG9yIjpmYWxzZX0[flowchart,600,600]
+
+=== Tie to the life cycle: The Investor Angle
+=== Tie to the Life Cycle: Implications for managers
+
+. Narrative control
+. Narrative consistency
+. Bar Mitzvah Moments
+
+Reference:
+
+http://aswathdamodaran.blogspot.com/2015/02/dcf-myth-1-if-you-have-ddiscount-rate.html[DCF Myth 1: If you have a D(discount rate) and a CF (cash flow), you have a DCF!]
+http://aswathdamodaran.blogspot.com/2015/08/dcf-myth-2-dcf-is-exercise-in-modeling.html[DCF Myth 2: A DCF is an exercise in modeling and number crunching!]
