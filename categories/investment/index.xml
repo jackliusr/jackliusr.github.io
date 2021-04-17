@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>investment on My learning and diary</title>
+    <link>https://jackliusr.github.io/categories/investment/</link>
+    <description>Recent content in investment on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 Apr 2021 12:40:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://jackliusr.github.io/categories/investment/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DCF Myths</title>
+      <link>https://jackliusr.github.io/notes/dcf-myth/</link>
+      <pubDate>Sat, 17 Apr 2021 12:40:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/notes/dcf-myth/</guid>
+      <description>DCF Myth 1: If you have a D(discount rate) and a CF (cash flow), you have a DCF! Consistency Tests for DCF Hall of shame DCF checklist   DCF Myth 2: A DCF is an exercise in modeling and number crunching! Connecting Stories to Numbers: The Process Tie to the life cycle: The Investor Angle Tie to the Life Cycle: Implications for managers     DCF Myth 1: If you have a D(discount rate) and a CF (cash flow), you have a DCF!</description>
+    </item>
+    
+  </channel>
+</rss>
