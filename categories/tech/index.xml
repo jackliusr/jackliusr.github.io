@@ -6,10 +6,23 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Apr 2021 16:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 24 Apr 2021 11:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Setup opencv in windows</title>
+      <link>https://jackliusr.github.io/posts/2021/04/setup-opencv-in-windows/</link>
+      <pubDate>Sat, 24 Apr 2021 11:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2021/04/setup-opencv-in-windows/</guid>
+      <description> Download opencv release package https://github.com/opencv/opencv/releases/download/4.5.2/opencv-4.5.2-vc14_vc15.exe
+  run the downloaded executable, and say install it at c:\software\opencv
+  run opencv\build\setup_vars_opencv4.cmd
+   After above steps, your environment is ready. However there is a caveat, the environment is ephemeral.
+ </description>
+    </item>
     
     <item>
       <title>Setup softHSM2</title>

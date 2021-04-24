@@ -6,10 +6,19 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 17 Apr 2021 12:40:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 24 Apr 2021 11:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>opencv</title>
+      <link>https://jackliusr.github.io/tags/opencv/</link>
+      <pubDate>Sat, 24 Apr 2021 11:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/opencv/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>DCF</title>

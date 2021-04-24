@@ -37,7 +37,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/" />
-<meta property="og:updated_time" content="2021-04-12T16:00:00+08:00" />
+<meta property="og:updated_time" content="2021-04-24T11:00:00+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
@@ -143,6 +143,23 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://jackliusr.github.io/posts/2020/11/jetbrain-debug-containers-in-kubernetes/" class="link black dim">
+        Jetbrain debug containers in kubernetes
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I can&#8217;t debug the dockerdev app following the steps in https://blog.jetbrains.com/go/2020/05/11/using-kubernetes-from-goland/, even after I cloned its source code https://github.com/jackliusr/dockerdev/tree/kubernetes-debug.
+ I read several articles before I tried the aboved one. The successful debug after several trial and errors. I added skaffold.yaml to the project and installed Cloud Code. skaffold.yaml can be found at https://github.com/jackliusr/dockerdev/tree/kubernetes-debug. Other jetbrain configuration can be seen in the below pictures.
+          cloud code is a very good tool.
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -294,24 +311,6 @@
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Error message of rabbitmq is terrible Today I installed RabbitMQ 3.7.13-1. However I always got the following messages when running rabbitmq-server and a dump. The error message doesn&#8217;t give any clue of root cause. It is none of the cases searched from google such as permission issue, configuration issue etc.
  {"init terminating in do_boot",{undef,[{rabbit_prelaunch,start,[],[]},{init,start_em,1,[]},{init,do_boot,3,[]}]}}   I re-read the installation guide and double-checked steps and configuration. There is no luck.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://jackliusr.github.io/posts/2019/02/issues-of-clean-setup-spacemacs-and-their-solutions/" class="link black dim">
-        Issues of clean setup spacemacs and their solutions
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      I encountered the same issue "File error: Cannot open load file, No such file or directory, bind-map" twice in my setup of spacemacs. The issue can be solved several ways which I found from github and clojurians-log.clojureverse.org. I consolidate the reasons and list them below.
-   Timeout: the relevant setting in .spacemacs :- dotspacemacs-elpa-timeout 30
-  TLS Certs: emacs --insecure
-  Permanent TLS Certs: the relevant setting in .
     </div>
   </div>
 </div>

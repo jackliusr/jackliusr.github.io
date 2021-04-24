@@ -37,7 +37,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://jackliusr.github.io/" />
-<meta property="og:updated_time" content="2021-04-17T12:40:00+08:00" />
+<meta property="og:updated_time" content="2021-04-24T11:00:00+08:00" />
 <meta itemprop="name" content="My learning and diary">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="My learning and diary"/>
@@ -174,6 +174,34 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://jackliusr.github.io/posts/2021/04/setup-opencv-in-windows/" class="color-inherit dim link">
+            Setup opencv in windows
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+           Download opencv release package https://github.com/opencv/opencv/releases/download/4.5.2/opencv-4.5.2-vc14_vc15.exe
+  run the downloaded executable, and say install it at c:\software\opencv
+  run opencv\build\setup_vars_opencv4.cmd
+   After above steps, your environment is ready. However there is a caveat, the environment is ephemeral.
+ 
+        </div>
+          <a href="https://jackliusr.github.io/posts/2021/04/setup-opencv-in-windows/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="https://jackliusr.github.io/posts/2021/04/setup-softhsm2/" class="color-inherit dim link">
             Setup softHSM2
             </a>
@@ -216,38 +244,18 @@
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://jackliusr.github.io/posts/2021/03/exposing-tcp-and-udp-services-in-nginx-ingress/" class="color-inherit dim link">
-            Exposing TCP and UDP services in nginx ingress
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Add command line flags in ingress controller:  --tcp-services-configmap
-  --udp-services-configmap
-     Create configmap apiVersion: v1 kind: ConfigMap metadata: name: tcp-services namespace: ingress-nginx data: 5432: "default/postgres:5432"     Patch the ingress-nginx-controller to allow port 5432 spec: template: spec: containers: - name: controller ports: - containerPort: 6379 hostPort: 6379     Add inbound rule to security group of node groups   Reference: https://minikube.
-        </div>
-          <a href="https://jackliusr.github.io/posts/2021/03/exposing-tcp-and-udp-services-in-nginx-ingress/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://jackliusr.github.io/posts/2021/03/exposing-tcp-and-udp-services-in-nginx-ingress/" class="link black dim">
+              Exposing TCP and UDP services in nginx ingress
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://jackliusr.github.io/posts/2021/02/stock-grey-market-dynamic/" class="link black dim">
@@ -264,12 +272,6 @@
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://jackliusr.github.io/posts/2021/01/vega-in-hugo/" class="link black dim">
               vega in hugo
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://jackliusr.github.io/posts/2021/01/echarts-in-hugo/" class="link black dim">
-              echarts in hugo
             </a>
           </h2>
         
