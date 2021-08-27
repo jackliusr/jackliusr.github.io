@@ -5,6 +5,8 @@ theme = 'ananke'
 googleAnalytics = "UA-135021270-1"
 disqusShortname = "jackliusr-gh"
 
+enableRobotsTXT = true
+
 [permalinks]
     posts = "/posts/:year/:month/:slug/"
     page = "/:slug/"
