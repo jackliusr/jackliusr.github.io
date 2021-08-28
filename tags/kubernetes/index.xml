@@ -6,11 +6,7 @@
     <description>Recent content in kubernetes on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Mar 2021 19:00:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://jackliusr.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 12 Mar 2021 19:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Install calico cni in alicloud ack and advanced dns troubleshooting in kubernetes</title>
       <link>https://jackliusr.github.io/posts/2021/03/install-calico-cni-in-alicloud-ack-and-advanced-dns-troubleshooting-in-kubernetes/</link>
@@ -18,7 +14,7 @@
       
       <guid>https://jackliusr.github.io/posts/2021/03/install-calico-cni-in-alicloud-ack-and-advanced-dns-troubleshooting-in-kubernetes/</guid>
       <description>2 weeks I started to learn alicloud to prepare the migration from aws to alicloud. I started the migration this week. Our applications are deployed on kubernetes, I focused on ACK first. The setup journey was bumpy, and most of the issues can be resolved by googling and trial loops. The most difficult one is that dns resolution issue.
- I tried the steps in &#34;Debugging DNS Resolution&#34; [1]. All steps were good except the nslookup step.</description>
+ I tried the steps in &amp;#34;Debugging DNS Resolution&amp;#34; [1]. All steps were good except the nslookup step.</description>
     </item>
     
     <item>
@@ -29,7 +25,7 @@
       <guid>https://jackliusr.github.io/posts/2021/03/exposing-tcp-and-udp-services-in-nginx-ingress/</guid>
       <description>Add command line flags in ingress controller:  --tcp-services-configmap
   --udp-services-configmap
-     Create configmap apiVersion: v1 kind: ConfigMap metadata: name: tcp-services namespace: ingress-nginx data: 5432: &#34;default/postgres:5432&#34;     Patch the ingress-nginx-controller to allow port 5432 spec: template: spec: containers: - name: controller ports: - containerPort: 6379 hostPort: 6379     Add inbound rule to security group of node groups   Reference: https://minikube.</description>
+     Create configmap apiVersion: v1 kind: ConfigMap metadata: name: tcp-services namespace: ingress-nginx data: 5432: &amp;#34;default/postgres:5432&amp;#34;     Patch the ingress-nginx-controller to allow port 5432 spec: template: spec: containers: - name: controller ports: - containerPort: 6379 hostPort: 6379     Add inbound rule to security group of node groups   Reference: https://minikube.</description>
     </item>
     
     <item>
@@ -59,7 +55,7 @@ skaffold debug     Import ptvsd in the python file to debug, add breakout() befo
       <pubDate>Fri, 20 Nov 2020 13:35:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/posts/2020/11/jetbrain-debug-containers-in-kubernetes/</guid>
-      <description>I can&amp;#8217;t debug the dockerdev app following the steps in https://blog.jetbrains.com/go/2020/05/11/using-kubernetes-from-goland/, even after I cloned its source code https://github.com/jackliusr/dockerdev/tree/kubernetes-debug.
+      <description>I can’t debug the dockerdev app following the steps in https://blog.jetbrains.com/go/2020/05/11/using-kubernetes-from-goland/, even after I cloned its source code https://github.com/jackliusr/dockerdev/tree/kubernetes-debug.
  I read several articles before I tried the aboved one. The successful debug after several trial and errors. I added skaffold.yaml to the project and installed Cloud Code. skaffold.yaml can be found at https://github.com/jackliusr/dockerdev/tree/kubernetes-debug. Other jetbrain configuration can be seen in the below pictures.
           cloud code is a very good tool.</description>
     </item>
@@ -70,7 +66,7 @@ skaffold debug     Import ptvsd in the python file to debug, add breakout() befo
       <pubDate>Sun, 04 Oct 2020 10:26:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/posts/2020/10/setup-kubeflow-pipeline-on-local-kind-cluster/</guid>
-      <description># https://www.kubeflow.org/docs/pipelines/installation/localcluster-deployment/#deploying-kubeflow-pipelines # env/platform-agnostic-pns hasn&#39;t been publically released, so we install from master temporarily export PIPELINE_VERSION=1.0.1 kubectl apply -k &#34;github.com/kubeflow/pipelines/manifests/kustomize/cluster-scoped-resources?ref=$PIPELINE_VERSION&#34; kubectl wait --for condition=established --timeout=60s crd/applications.app.k8s.io kubectl apply -k &#34;github.com/kubeflow/pipelines/manifests/kustomize/env/platform-agnostic-pns?ref=$PIPELINE_VERSION&#34; # expose gui kubectl port-forward -n kubeflow --address 0.0.0.0 svc/ml-pipeline-ui 8080:80   </description>
+      <description># https://www.kubeflow.org/docs/pipelines/installation/localcluster-deployment/#deploying-kubeflow-pipelines # env/platform-agnostic-pns hasn&amp;#39;t been publically released, so we install from master temporarily export PIPELINE_VERSION=1.0.1 kubectl apply -k &amp;#34;github.com/kubeflow/pipelines/manifests/kustomize/cluster-scoped-resources?ref=$PIPELINE_VERSION&amp;#34; kubectl wait --for condition=established --timeout=60s crd/applications.app.k8s.io kubectl apply -k &amp;#34;github.com/kubeflow/pipelines/manifests/kustomize/env/platform-agnostic-pns?ref=$PIPELINE_VERSION&amp;#34; # expose gui kubectl port-forward -n kubeflow --address 0.0.0.0 svc/ml-pipeline-ui 8080:80   </description>
     </item>
     
     <item>
@@ -89,7 +85,7 @@ skaffold debug     Import ptvsd in the python file to debug, add breakout() befo
       <pubDate>Tue, 22 Sep 2020 08:51:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/posts/2020/09/pod-crashloopbackoff-reason/</guid>
-      <description>Today one of my deployments always got CrashLoopBackOff. Searching internet don&amp;#8217;t gave me the root cause of those errors even I went through all the steps. Steps from internets are all about describe, logs, liveProbe etc. I noticed the reason and exit code in last state when I described one of the pod. It should be the focus point to find root cause of CrashBoopBackOff.
+      <description>Today one of my deployments always got CrashLoopBackOff. Searching internet don’t gave me the root cause of those errors even I went through all the steps. Steps from internets are all about describe, logs, liveProbe etc. I noticed the reason and exit code in last state when I described one of the pod. It should be the focus point to find root cause of CrashBoopBackOff.
  Containers: nginx: Container ID: containerd://9570e7e67d83692fdbe0e0871919a81222137fcaee2eaecb1eff6b772ec805b1 Image: nginx:1.</description>
     </item>
     

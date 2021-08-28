@@ -6,18 +6,14 @@
     <description>Recent content in k8s on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Jan 2021 21:53:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://jackliusr.github.io/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 18 Jan 2021 21:53:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>nginx ingress and SPA sites</title>
       <link>https://jackliusr.github.io/posts/2021/01/nginx-ingress-and-spa-sites/</link>
       <pubDate>Mon, 18 Jan 2021 21:53:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/posts/2021/01/nginx-ingress-and-spa-sites/</guid>
-      <description>Several months ago, I resolved the issue &#34;404 Error on refresh with SPA&#34; by using nginx try_files directive, this time it was quite different as the apps were deployed into kubernetes. I tried nginx.ingress.kubernetes.io/use-regex:true and nginx.ingress.kubernetes.io/rewrite-target: /$1. To avoid to block others to others to use staging environment, I setup an skaffold local development environment to troubeshooting the issue. I tried following annotation as well.
+      <description>Several months ago, I resolved the issue &amp;#34;404 Error on refresh with SPA&amp;#34; by using nginx try_files directive, this time it was quite different as the apps were deployed into kubernetes. I tried nginx.ingress.kubernetes.io/use-regex:true and nginx.ingress.kubernetes.io/rewrite-target: /$1. To avoid to block others to others to use staging environment, I setup an skaffold local development environment to troubeshooting the issue. I tried following annotation as well.
  nginx.ingress.kubernetes.io/configuration-snippet: | try_files $uri $uri/ /index.</description>
     </item>
     

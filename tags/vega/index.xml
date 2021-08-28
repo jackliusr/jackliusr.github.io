@@ -6,11 +6,7 @@
     <description>Recent content in vega on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Jan 2021 15:26:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://jackliusr.github.io/tags/vega/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 17 Jan 2021 15:26:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/vega/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>vega in hugo</title>
       <link>https://jackliusr.github.io/posts/2021/01/vega-in-hugo/</link>

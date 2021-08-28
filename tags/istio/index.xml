@@ -6,18 +6,14 @@
     <description>Recent content in istio on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Aug 2021 09:10:10 +0800</lastBuildDate>
-    
-	<atom:link href="https://jackliusr.github.io/tags/istio/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 28 Aug 2021 09:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/istio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apply proxy protocol listener filters to specific ports in istio</title>
       <link>https://jackliusr.github.io/posts/2021/08/apply-proxy-protocol-listener-filters-to-specific-ports-in-istio/</link>
       <pubDate>Sat, 28 Aug 2021 09:10:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/posts/2021/08/apply-proxy-protocol-listener-filters-to-specific-ports-in-istio/</guid>
-      <description>Two days ago, our web applications need to get clients&#39; real IP address. Our sites is hosted in kubernetes, isito is used for ingress controll. behind cloud load balancers, it is not easy to make it work.
+      <description>Two days ago, our web applications need to get clients&amp;#39; real IP address. Our sites is hosted in kubernetes, isito is used for ingress controll. behind cloud load balancers, it is not easy to make it work.
  There are two ways to do that in alibaba classic load balancer: http/https listeners, and TCP listeners with proxy protocol
  HTTPS listeners is crossed out due to certificate issue. HTTPS listeners can use integrated certificates or self uploaded certificates.</description>
     </item>

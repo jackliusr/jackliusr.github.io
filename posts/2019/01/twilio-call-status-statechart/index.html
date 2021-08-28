@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Twilio Call Status StateChart | My learning and diary</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="I was not familiar with SIP states during the integration of VoIP products such as twilio, plivo and sinch. I am still confused about the state changes after reading documents. Here try to visualize the state change and help me to remember it. The state chart is based on my understanding. It is not necessarily correct. It is just for my reference.
+ QueuedInitiatedRingingAnsweredInProgressCompletedBusyNoAnswerCanceledFailed   ">
+    <meta name="generator" content="Hugo 0.87.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Twilio Call Status StateChart" />
+<meta property="og:description" content="I was not familiar with SIP states during the integration of VoIP products such as twilio, plivo and sinch. I am still confused about the state changes after reading documents. Here try to visualize the state change and help me to remember it. The state chart is based on my understanding. It is not necessarily correct. It is just for my reference.
+ QueuedInitiatedRingingAnsweredInProgressCompletedBusyNoAnswerCanceledFailed   " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jackliusr.github.io/posts/2019/01/twilio-call-status-statechart/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-01-25T20:00:00+08:00" />
+<meta property="article:modified_time" content="2019-01-25T20:00:00+08:00" />
+
+<meta itemprop="name" content="Twilio Call Status StateChart">
+<meta itemprop="description" content="I was not familiar with SIP states during the integration of VoIP products such as twilio, plivo and sinch. I am still confused about the state changes after reading documents. Here try to visualize the state change and help me to remember it. The state chart is based on my understanding. It is not necessarily correct. It is just for my reference.
+ QueuedInitiatedRingingAnsweredInProgressCompletedBusyNoAnswerCanceledFailed   "><meta itemprop="datePublished" content="2019-01-25T20:00:00+08:00" />
+<meta itemprop="dateModified" content="2019-01-25T20:00:00+08:00" />
+<meta itemprop="wordCount" content="63">
+<meta itemprop="keywords" content="twilio,CPaaS," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Twilio Call Status StateChart"/>
+<meta name="twitter:description" content="I was not familiar with SIP states during the integration of VoIP products such as twilio, plivo and sinch. I am still confused about the state changes after reading documents. Here try to visualize the state change and help me to remember it. The state chart is based on my understanding. It is not necessarily correct. It is just for my reference.
+ QueuedInitiatedRingingAnsweredInProgressCompletedBusyNoAnswerCanceledFailed   "/>
+
+	
+
+
+
+
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My learning and diary
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/notes/" title="Notes page">
+              Notes
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/readinglists/" title="Books page">
+              Books
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/categories/" title="Categories page">
+              Categories
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tags/" title="Tags page">
+              Tags
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://jackliusr.github.io/posts/2019/01/twilio-call-status-statechart/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://jackliusr.github.io/posts/2019/01/twilio-call-status-statechart/&amp;text=Twilio%20Call%20Status%20StateChart" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://jackliusr.github.io/posts/2019/01/twilio-call-status-statechart/&amp;title=Twilio%20Call%20Status%20StateChart" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Twilio Call Status StateChart</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-01-25T20:00:00+08:00">January 25, 2019</time>
+
+      
+      
+        <span class="f6 mv4 dib tracked"> - 1 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 63 words</span>
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
+<p>I was not familiar with SIP states during the integration of VoIP products such as twilio, plivo and sinch. I am still confused about the state changes after reading documents. Here try to visualize the state change and help me to remember it.  The state chart is based on my understanding. It is not necessarily correct. It is just for my reference.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<svg contentscripttype="application/ecmascript" contentstyletype="text/css" preserveAspectRatio="none" version="1.1" viewBox="0 0 473 778" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" zoomAndPan="magnify" width="473" height="778"><defs><filter height="300%" id="fqnei6ivsv5ry" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"></feGaussianBlur><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"></feColorMatrix><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"></feOffset><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"></feBlend></filter></defs><g><ellipse cx="339" cy="16" fill="#000000" filter="url(#fqnei6ivsv5ry)" rx="10" ry="10" style="stroke:none;stroke-width:1.0;"></ellipse><g id="Queued"><rect fill="#FEFECE" filter="url(#fqnei6ivsv5ry)" height="50" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="76" x="301" y="86"></rect><line style="stroke:#A80036;stroke-width:1.5;" x1="301" x2="377" y1="112.2969" y2="112.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="311" y="103.9951">Queued</text></g><g id="Initiated"><rect fill="#FEFECE" filter="url(#fqnei6ivsv5ry)" height="50" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="74" x="302" y="196"></rect><line style="stroke:#A80036;stroke-width:1.5;" x1="302" x2="376" y1="222.2969" y2="222.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54" x="312" y="213.9951">Initiated</text></g><g id="Ringing"><rect fill="#FEFECE" filter="url(#fqnei6ivsv5ry)" height="50" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="72" x="220" y="306"></rect><line style="stroke:#A80036;stroke-width:1.5;" x1="220" x2="292" y1="332.2969" y2="332.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="230" y="323.9951">Ringing</text></g><g id="Answered"><rect fill="#FEFECE" filter="url(#fqnei6ivsv5ry)" height="50" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="89" x="16.5" y="416"></rect><line style="stroke:#A80036;stroke-width:1.5;" x1="16.5" x2="105.5" y1="442.2969" y2="442.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69" x="26.5" y="433.9951">Answered</text></g><g id="InProgress"><rect fill="#FEFECE" filter="url(#fqnei6ivsv5ry)" height="50" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="94" x="11" y="526"></rect><line style="stroke:#A80036;stroke-width:1.5;" x1="11" x2="105" y1="552.2969" y2="552.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="21" y="543.9951">InProgress</text></g><g id="Completed"><rect fill="#FEFECE" filter="url(#fqnei6ivsv5ry)" height="50" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="96" x="7" y="636"></rect><line style="stroke:#A80036;stroke-width:1.5;" x1="7" x2="103" y1="662.2969" y2="662.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="17" y="653.9951">Completed</text></g><g id="Busy"><rect fill="#FEFECE" filter="url(#fqnei6ivsv5ry)" height="50" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="54" x="405" y="526"></rect><line style="stroke:#A80036;stroke-width:1.5;" x1="405" x2="459" y1="552.2969" y2="552.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34" x="415" y="543.9951">Busy</text></g><ellipse cx="281" cy="756" filter="url(#fqnei6ivsv5ry)" rx="10" ry="10" style="stroke:#000000;stroke-width:1.0;fill:none;"></ellipse><ellipse cx="281.5" cy="756.5" fill="#000000" rx="6" ry="6" style="stroke:none;stroke-width:1.0;"></ellipse><g id="NoAnswer"><rect fill="#FEFECE" filter="url(#fqnei6ivsv5ry)" height="50" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="90" x="138" y="636"></rect><line style="stroke:#A80036;stroke-width:1.5;" x1="138" x2="228" y1="662.2969" y2="662.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="148" y="653.9951">NoAnswer</text></g><g id="Canceled"><rect fill="#FEFECE" filter="url(#fqnei6ivsv5ry)" height="50" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="85" x="213.5" y="526"></rect><line style="stroke:#A80036;stroke-width:1.5;" x1="213.5" x2="298.5" y1="552.2969" y2="552.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65" x="223.5" y="543.9951">Canceled</text></g><g id="Failed"><rect fill="#FEFECE" filter="url(#fqnei6ivsv5ry)" height="50" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="60" x="314" y="416"></rect><line style="stroke:#A80036;stroke-width:1.5;" x1="314" x2="374" y1="442.2969" y2="442.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="324" y="433.9951">Failed</text></g><path d="M339,26.26 C339,38.86 339,61.98 339,80.74 " fill="none" id="*start-to-Queued" style="stroke:#A80036;stroke-width:1.0;"></path><polygon fill="#A80036" points="339,85.91,343,76.91,339,80.91,335,76.91,339,85.91" style="stroke:#A80036;stroke-width:1.0;"></polygon><path d="M339,136.24 C339,152.36 339,173.62 339,190.69 " fill="none" id="Queued-to-Initiated" style="stroke:#A80036;stroke-width:1.0;"></path><polygon fill="#A80036" points="339,195.84,343,186.84,339,190.84,335,186.84,339,195.84" style="stroke:#A80036;stroke-width:1.0;"></polygon><path d="M320.37,246.24 C307.77,262.63 291.08,284.36 277.85,301.57 " fill="none" id="Initiated-to-Ringing" style="stroke:#A80036;stroke-width:1.0;"></path><polygon fill="#A80036" points="274.56,305.84,283.2195,301.1482,277.6099,301.8779,276.8802,296.2683,274.56,305.84" style="stroke:#A80036;stroke-width:1.0;"></polygon><path d="M219.78,352.06 C188.58,369.34 143.3,394.42 109.07,413.38 " fill="none" id="Ringing-to-Answered" style="stroke:#A80036;stroke-width:1.0;"></path><polygon fill="#A80036" points="104.53,415.89,114.34,415.0158,108.9008,413.4618,110.4548,408.0226,104.53,415.89" style="stroke:#A80036;stroke-width:1.0;"></polygon><path d="M60.33,466.24 C59.88,482.36 59.29,503.62 58.81,520.69 " fill="none" id="Answered-to-InProgress" style="stroke:#A80036;stroke-width:1.0;"></path><polygon fill="#A80036" points="58.67,525.84,62.9,516.9458,58.7985,520.8417,54.9027,516.7402,58.67,525.84" style="stroke:#A80036;stroke-width:1.0;"></polygon><path d="M57.33,576.24 C56.88,592.36 56.29,613.62 55.81,630.69 " fill="none" id="InProgress-to-Completed" style="stroke:#A80036;stroke-width:1.0;"></path><polygon fill="#A80036" points="55.67,635.84,59.9,626.9458,55.7985,630.8417,51.9027,626.7402,55.67,635.84" style="stroke:#A80036;stroke-width:1.0;"></polygon><path d="M345.84,246.12 C362.57,305.12 405.51,456.56 423.68,520.65 " fill="none" id="Initiated-to-Busy" style="stroke:#A80036;stroke-width:1.0;"></path><polygon fill="#A80036" points="425.15,525.85,426.558,516.1023,423.7934,521.0376,418.8581,518.2729,425.15,525.85" style="stroke:#A80036;stroke-width:1.0;"></polygon><path d="M426.69,576.12 C419.46,604.7 404.33,652.62 378,686 C354.54,715.74 314.94,738.27 294.35,748.66 " fill="none" id="Busy-to-*end" style="stroke:#A80036;stroke-width:1.0;"></path><polygon fill="#A80036" points="289.78,750.93,299.6198,750.5079,294.2578,748.7053,296.0604,743.3434,289.78,750.93" style="stroke:#A80036;stroke-width:1.0;"></polygon><path d="M246.81,356.09 C233.36,392.36 208.57,463.44 196,526 C188.88,561.45 185.62,602.98 184.15,630.31 " fill="none" id="Ringing-to-NoAnswer" style="stroke:#A80036;stroke-width:1.0;"></path><polygon fill="#A80036" points="183.88,635.57,188.3383,626.788,184.1375,630.5766,180.3489,626.3759,183.88,635.57" style="stroke:#A80036;stroke-width:1.0;"></polygon><path d="M208.49,686.19 C228.61,705.28 255.65,730.94 270.36,744.91 " fill="none" id="NoAnswer-to-*end" style="stroke:#A80036;stroke-width:1.0;"></path><polygon fill="#A80036" points="274.17,748.52,270.3944,739.4236,270.5429,745.0785,264.888,745.227,274.17,748.52" style="stroke:#A80036;stroke-width:1.0;"></polygon><path d="M256,356.16 C256,396.43 256,477.12 256,520.61 " fill="none" id="Ringing-to-Canceled" style="stroke:#A80036;stroke-width:1.0;"></path><polygon fill="#A80036" points="256,525.73,260,516.73,256,520.73,252,516.73,256,525.73" style="stroke:#A80036;stroke-width:1.0;"></polygon><path d="M258.97,576.08 C264.22,618.75 275.01,706.36 279.24,740.72 " fill="none" id="Canceled-to-*end" style="stroke:#A80036;stroke-width:1.0;"></path><polygon fill="#A80036" points="279.86,745.76,282.7528,736.3456,279.2609,740.796,274.8104,737.3041,279.86,745.76" style="stroke:#A80036;stroke-width:1.0;"></polygon><path d="M275.75,356.24 C289.11,372.63 306.81,394.36 320.83,411.57 " fill="none" id="Ringing-to-Failed" style="stroke:#A80036;stroke-width:1.0;"></path><polygon fill="#A80036" points="324.32,415.84,321.7491,406.3326,321.167,411.9594,315.5402,411.3773,324.32,415.84" style="stroke:#A80036;stroke-width:1.0;"></polygon><path d="M339.39,466.27 C331.02,510.18 312.63,605.67 296,686 C292.05,705.08 287.22,727.06 284.13,740.98 " fill="none" id="Failed-to-*end" style="stroke:#A80036;stroke-width:1.0;"></path><polygon fill="#A80036" points="283,746.08,288.862,738.1657,284.0877,741.1997,281.0536,736.4254,283,746.08" style="stroke:#A80036;stroke-width:1.0;"></polygon><path d="M103.21,681.84 C155.38,703.31 235.39,736.23 267.23,749.34 " fill="none" id="Completed-to-*end" style="stroke:#A80036;stroke-width:1.0;"></path><polygon fill="#A80036" points="271.92,751.26,265.1132,744.1419,267.2945,749.3613,262.0752,751.5427,271.92,751.26" style="stroke:#A80036;stroke-width:1.0;"></polygon></g></svg>
+</div>
+</div>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/twilio" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">twilio</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/cpaas" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">CPaaS</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jackliusr-gh" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jackliusr.github.io" >
+    &copy;  My learning and diary 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+<script>
+ MathJax = {
+     tex: {
+         inlineMath: [['$', '$'], ['\\(', '\\)']]
+     }
+ };
+ </script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<link rel="stylesheet"
+  href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+
+
+  </body>
+</html>
