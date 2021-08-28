@@ -6,6 +6,7 @@ googleAnalytics = "UA-135021270-1"
 disqusShortname = "jackliusr-gh"
 
 enableRobotsTXT = true
+env = "production"
 
 [permalinks]
     posts = "/posts/:year/:month/:slug/"

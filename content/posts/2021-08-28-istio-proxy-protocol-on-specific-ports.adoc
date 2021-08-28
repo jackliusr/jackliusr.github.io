@@ -1,0 +1,63 @@
+---
+title: Apply proxy protocol listener filters to specific ports in istio
+date: 2021-08-28T09:10:10+08:00
+categories:
+- tech
+tags:
+- istio
+- envoy
+- proxy-protocol
+---
+
+Two days ago, our web applications need to get clients' real IP address.  Our sites is hosted in kubernetes, isito is used for ingress controll. behind cloud load balancers, it is not easy to make it work.
+
+There are two ways to do that in alibaba classic load balancer:   http/https listeners, and TCP listeners with proxy protocol
+
+HTTPS listeners is crossed out due to certificate issue. HTTPS listeners can use integrated certificates or self uploaded certificates. Integrated certificates costs much. I go to the free certificates from letsencypt. The valid duration of a certificate from letsencrypt is 90 days and I don't want to update the certificate manually. It leaves me the only option: TCP listeners with proxy protocol.
+
+TCP listeners with proxy protocol:
+
+
+First, I need to configure load balancers to use proxy protocol for some ports. The default created listeners are not configured with proxy protocol. Manually update 80/443 listeners with proxy protocol support.
+{{< imgur id="Kwx5pSS" >}}
+
+Second, setup isito proxy protocol support. I could set it up following the istio document https://istio.io/latest/docs/ops/configuration/traffic-management/network-topologies/["Configuring Gateway Network Topology"], however it broke other applications. Our mysql database can't be acccessed from office now.
+
+What should I do now, a new load balancer for other applications or an envoy filter which applys to specific ports 80/443 only? Traffic from a new load balancer will go to the istio-ingressgateway as well, and the envoyfilter created according istio documents will apply to all listeners. It ends up with the proxy protocol filter as well. It cannot be avoided.
+
+Proxy protoocol envoy filter. I tried filter_disabled(destination_port_range) and upgrading istio to latest version. In version 1.8, listener_filters can be added in the correct listeners and I thought I was on the right track, but the traffic didn't get through. So I decided to upgrade istio to latest version and now things got worse. the filter was added to all listeners. I tried 80/443, 8080/8443, service ports, node ports in start and end values of destination_port_range, there is no luck. I noticed the match in configPatches when reading https://istio.io/latest/docs/reference/config/networking/envoy-filter/[Envoy Filter]. An idea popped in to my mind. Can I put the filter using match? It works and the yaml is as following
+
+
+[source, yaml]
+----
+apiVersion: networking.istio.io/v1alpha3
+kind: EnvoyFilter
+metadata:
+  name: proxy-protocol
+  namespace: istio-system
+spec:
+  configPatches:
+  - applyTo: LISTENER
+    match:
+       listener:
+          name: "0.0.0.0_8080"
+    patch:
+      operation: MERGE
+      value:
+        listener_filters:
+        - name: envoy.listener.proxy_protocol
+        - name: envoy.listener.tls_inspector
+  - applyTo: LISTENER
+    match:
+       listener:
+          name: "0.0.0.0_8443"
+    patch:
+      operation: MERGE
+      value:
+        listener_filters:
+        - name: envoy.listener.proxy_protocol
+        - name: envoy.listener.tls_inspector
+  workloadSelector:
+    labels:
+       istio: ingressgateway
+----
