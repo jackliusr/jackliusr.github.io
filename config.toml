@@ -1,7 +1,7 @@
 baseURL = "https://jackliusr.github.io"
 languageCode = "en-us"
 title = "My learning and diary"
-theme = 'ananke'
+theme = ["github.com/theNewDynamic/gohugo-theme-ananke"]
 googleAnalytics = "UA-135021270-1"
 disqusShortname = "jackliusr-gh"
 
@@ -12,7 +12,6 @@ env = "production"
     posts = "/posts/:year/:month/:slug/"
     page = "/:slug/"
 [params]
-    custom_css = ["css/prism.css"]
     show_reading_time = true
 
 [taxonomies]
@@ -72,5 +71,3 @@ post = "<span class='alert'>New!</span>"
 pre = "<i class='fa fa-road'></i>"
 url = "/notes/"
 weight = -90
-
-
