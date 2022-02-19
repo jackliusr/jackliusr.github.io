@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/</link>
+    <description>Recent content in Tags on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Aug 2021 09:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>envoy</title>
+      <link>https://jackliusr.github.io/tags/envoy/</link>
+      <pubDate>Sat, 28 Aug 2021 09:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/envoy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>istio</title>
+      <link>https://jackliusr.github.io/tags/istio/</link>
+      <pubDate>Sat, 28 Aug 2021 09:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/istio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>proxy-protocol</title>
+      <link>https://jackliusr.github.io/tags/proxy-protocol/</link>
+      <pubDate>Sat, 28 Aug 2021 09:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/proxy-protocol/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opencv</title>
+      <link>https://jackliusr.github.io/tags/opencv/</link>
+      <pubDate>Sat, 24 Apr 2021 11:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/opencv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DCF</title>
+      <link>https://jackliusr.github.io/tags/dcf/</link>
+      <pubDate>Sat, 17 Apr 2021 12:40:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/dcf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cryptography</title>
+      <link>https://jackliusr.github.io/tags/cryptography/</link>
+      <pubDate>Mon, 12 Apr 2021 16:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/cryptography/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HSM</title>
+      <link>https://jackliusr.github.io/tags/hsm/</link>
+      <pubDate>Mon, 12 Apr 2021 16:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/hsm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://jackliusr.github.io/tags/security/</link>
+      <pubDate>Mon, 12 Apr 2021 16:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vault</title>
+      <link>https://jackliusr.github.io/tags/vault/</link>
+      <pubDate>Mon, 12 Apr 2021 16:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/vault/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ack</title>
+      <link>https://jackliusr.github.io/tags/ack/</link>
+      <pubDate>Fri, 12 Mar 2021 19:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/ack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>alicloud</title>
+      <link>https://jackliusr.github.io/tags/alicloud/</link>
+      <pubDate>Fri, 12 Mar 2021 19:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/alicloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>calico</title>
+      <link>https://jackliusr.github.io/tags/calico/</link>
+      <pubDate>Fri, 12 Mar 2021 19:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/calico/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://jackliusr.github.io/tags/kubernetes/</link>
+      <pubDate>Fri, 12 Mar 2021 19:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ingress</title>
+      <link>https://jackliusr.github.io/tags/ingress/</link>
+      <pubDate>Tue, 02 Mar 2021 17:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/ingress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>https://jackliusr.github.io/tags/nginx/</link>
+      <pubDate>Tue, 02 Mar 2021 17:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dynamic</title>
+      <link>https://jackliusr.github.io/tags/dynamic/</link>
+      <pubDate>Fri, 05 Feb 2021 11:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/dynamic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>grey market</title>
+      <link>https://jackliusr.github.io/tags/grey-market/</link>
+      <pubDate>Fri, 05 Feb 2021 11:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/grey-market/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stock</title>
+      <link>https://jackliusr.github.io/tags/stock/</link>
+      <pubDate>Fri, 05 Feb 2021 11:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/stock/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>angular</title>
+      <link>https://jackliusr.github.io/tags/angular/</link>
+      <pubDate>Mon, 18 Jan 2021 21:53:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/angular/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>k8s</title>
+      <link>https://jackliusr.github.io/tags/k8s/</link>
+      <pubDate>Mon, 18 Jan 2021 21:53:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/k8s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reactjs</title>
+      <link>https://jackliusr.github.io/tags/reactjs/</link>
+      <pubDate>Mon, 18 Jan 2021 21:53:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/reactjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SPA</title>
+      <link>https://jackliusr.github.io/tags/spa/</link>
+      <pubDate>Mon, 18 Jan 2021 21:53:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/spa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>charts</title>
+      <link>https://jackliusr.github.io/tags/charts/</link>
+      <pubDate>Sun, 17 Jan 2021 15:26:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/charts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vega</title>
+      <link>https://jackliusr.github.io/tags/vega/</link>
+      <pubDate>Sun, 17 Jan 2021 15:26:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/vega/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>viz</title>
+      <link>https://jackliusr.github.io/tags/viz/</link>
+      <pubDate>Sun, 17 Jan 2021 15:26:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/viz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>echarts</title>
+      <link>https://jackliusr.github.io/tags/echarts/</link>
+      <pubDate>Sun, 17 Jan 2021 14:26:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/echarts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shell</title>
+      <link>https://jackliusr.github.io/tags/shell/</link>
+      <pubDate>Wed, 09 Dec 2020 10:35:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>debug</title>
+      <link>https://jackliusr.github.io/tags/debug/</link>
+      <pubDate>Fri, 20 Nov 2020 19:35:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/debug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://jackliusr.github.io/tags/python/</link>
+      <pubDate>Fri, 20 Nov 2020 19:35:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>skaffold</title>
+      <link>https://jackliusr.github.io/tags/skaffold/</link>
+      <pubDate>Fri, 20 Nov 2020 19:35:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/skaffold/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vscode</title>
+      <link>https://jackliusr.github.io/tags/vscode/</link>
+      <pubDate>Fri, 20 Nov 2020 19:35:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/vscode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jetbrain</title>
+      <link>https://jackliusr.github.io/tags/jetbrain/</link>
+      <pubDate>Fri, 20 Nov 2020 13:35:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/jetbrain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>antiscrapping</title>
+      <link>https://jackliusr.github.io/tags/antiscrapping/</link>
+      <pubDate>Wed, 21 Oct 2020 18:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/antiscrapping/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>obfuscation</title>
+      <link>https://jackliusr.github.io/tags/obfuscation/</link>
+      <pubDate>Wed, 21 Oct 2020 18:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/obfuscation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OpenType</title>
+      <link>https://jackliusr.github.io/tags/opentype/</link>
+      <pubDate>Wed, 21 Oct 2020 18:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/opentype/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>KIND</title>
+      <link>https://jackliusr.github.io/tags/kind/</link>
+      <pubDate>Sun, 04 Oct 2020 10:26:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/kind/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubeflow</title>
+      <link>https://jackliusr.github.io/tags/kubeflow/</link>
+      <pubDate>Sun, 04 Oct 2020 10:26:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/kubeflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Troubeshooting</title>
+      <link>https://jackliusr.github.io/tags/troubeshooting/</link>
+      <pubDate>Tue, 22 Sep 2020 08:51:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/troubeshooting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jekyll</title>
+      <link>https://jackliusr.github.io/tags/jekyll/</link>
+      <pubDate>Sat, 15 Aug 2020 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/jekyll/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SSG</title>
+      <link>https://jackliusr.github.io/tags/ssg/</link>
+      <pubDate>Sat, 15 Aug 2020 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/ssg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://jackliusr.github.io/tags/javascript/</link>
+      <pubDate>Tue, 07 Jul 2020 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redux</title>
+      <link>https://jackliusr.github.io/tags/redux/</link>
+      <pubDate>Tue, 07 Jul 2020 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/redux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redux-saga</title>
+      <link>https://jackliusr.github.io/tags/redux-saga/</link>
+      <pubDate>Tue, 07 Jul 2020 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/redux-saga/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>latex</title>
+      <link>https://jackliusr.github.io/tags/latex/</link>
+      <pubDate>Fri, 01 Feb 2019 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/latex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>math</title>
+      <link>https://jackliusr.github.io/tags/math/</link>
+      <pubDate>Fri, 01 Feb 2019 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>chemistry</title>
+      <link>https://jackliusr.github.io/tags/chemistry/</link>
+      <pubDate>Fri, 01 Feb 2019 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/chemistry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CPaaS</title>
+      <link>https://jackliusr.github.io/tags/cpaas/</link>
+      <pubDate>Fri, 25 Jan 2019 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/cpaas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>twilio</title>
+      <link>https://jackliusr.github.io/tags/twilio/</link>
+      <pubDate>Fri, 25 Jan 2019 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/twilio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>asciidoc</title>
+      <link>https://jackliusr.github.io/tags/asciidoc/</link>
+      <pubDate>Sat, 19 Jan 2019 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/asciidoc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>diagram</title>
+      <link>https://jackliusr.github.io/tags/diagram/</link>
+      <pubDate>Fri, 11 Jan 2019 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/diagram/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>async</title>
+      <link>https://jackliusr.github.io/tags/async/</link>
+      <pubDate>Thu, 10 Jan 2019 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/async/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

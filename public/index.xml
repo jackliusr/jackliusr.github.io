@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My learning and diary</title>
+    <link>https://jackliusr.github.io/</link>
+    <description>Recent content on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Aug 2021 09:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apply proxy protocol listener filters to specific ports in istio</title>
+      <link>https://jackliusr.github.io/posts/2021/08/apply-proxy-protocol-listener-filters-to-specific-ports-in-istio/</link>
+      <pubDate>Sat, 28 Aug 2021 09:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2021/08/apply-proxy-protocol-listener-filters-to-specific-ports-in-istio/</guid>
+      <description>Two days ago, our web applications need to get clients&amp;#39; real IP address. Our sites is hosted in kubernetes, isito is used for ingress controll. behind cloud load balancers, it is not easy to make it work.
+ There are two ways to do that in alibaba classic load balancer: http/https listeners, and TCP listeners with proxy protocol
+ HTTPS listeners is crossed out due to certificate issue. HTTPS listeners can use integrated certificates or self uploaded certificates.</description>
+    </item>
+    
+    <item>
+      <title>Setup opencv in windows</title>
+      <link>https://jackliusr.github.io/posts/2021/04/setup-opencv-in-windows/</link>
+      <pubDate>Sat, 24 Apr 2021 11:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2021/04/setup-opencv-in-windows/</guid>
+      <description> Download opencv release package https://github.com/opencv/opencv/releases/download/4.5.2/opencv-4.5.2-vc14_vc15.exe
+  run the downloaded executable, and say install it at c:\software\opencv
+  run opencv\build\setup_vars_opencv4.cmd
+   After above steps, your environment is ready. However there is a caveat, the environment is ephemeral.
+ </description>
+    </item>
+    
+    <item>
+      <title>DCF Myths</title>
+      <link>https://jackliusr.github.io/notes/dcf-myth/</link>
+      <pubDate>Sat, 17 Apr 2021 12:40:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/notes/dcf-myth/</guid>
+      <description>Table of Contents DCF Myth 1: If you have a D(discount rate) and a CF (cash flow), you have a DCF! Consistency Tests for DCF Hall of shame DCF checklist   DCF Myth 2: A DCF is an exercise in modeling and number crunching! Connecting Stories to Numbers: The Process Tie to the life cycle: The Investor Angle Tie to the Life Cycle: Implications for managers     DCF Myth 1: If you have a D(discount rate) and a CF (cash flow), you have a DCF!</description>
+    </item>
+    
+    <item>
+      <title>Setup softHSM2</title>
+      <link>https://jackliusr.github.io/posts/2021/04/setup-softhsm2/</link>
+      <pubDate>Mon, 12 Apr 2021 16:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2021/04/setup-softhsm2/</guid>
+      <description>Secrets Management is the strong suit of Hashicorp vault. Open source edition is little limited comparing to cloud and enterprise edition, and cloud and enterprise editions sometimes are not allowed due to some reasons. bank-vaults seems a promising solution based on open source edition of Hashicorp Vault.
+ Advanced usage of vault will involve HSM and SoftHSM is good start point without spending several hundards bucks. Besides, HSM is widely used in Financial sector, blockchain and cryptocurrency.</description>
+    </item>
+    
+    <item>
+      <title>Install calico cni in alicloud ack and advanced dns troubleshooting in kubernetes</title>
+      <link>https://jackliusr.github.io/posts/2021/03/install-calico-cni-in-alicloud-ack-and-advanced-dns-troubleshooting-in-kubernetes/</link>
+      <pubDate>Fri, 12 Mar 2021 19:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2021/03/install-calico-cni-in-alicloud-ack-and-advanced-dns-troubleshooting-in-kubernetes/</guid>
+      <description>2 weeks I started to learn alicloud to prepare the migration from aws to alicloud. I started the migration this week. Our applications are deployed on kubernetes, I focused on ACK first. The setup journey was bumpy, and most of the issues can be resolved by googling and trial loops. The most difficult one is that dns resolution issue.
+ I tried the steps in &amp;#34;Debugging DNS Resolution&amp;#34; [1]. All steps were good except the nslookup step.</description>
+    </item>
+    
+    <item>
+      <title>Exposing TCP and UDP services in nginx ingress</title>
+      <link>https://jackliusr.github.io/posts/2021/03/exposing-tcp-and-udp-services-in-nginx-ingress/</link>
+      <pubDate>Tue, 02 Mar 2021 17:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2021/03/exposing-tcp-and-udp-services-in-nginx-ingress/</guid>
+      <description>Add command line flags in ingress controller:  --tcp-services-configmap
+  --udp-services-configmap
+     Create configmap apiVersion: v1 kind: ConfigMap metadata: name: tcp-services namespace: ingress-nginx data: 5432: &amp;#34;default/postgres:5432&amp;#34;     Patch the ingress-nginx-controller to allow port 5432 spec: template: spec: containers: - name: controller ports: - containerPort: 6379 hostPort: 6379     Add inbound rule to security group of node groups   Reference: https://minikube.</description>
+    </item>
+    
+    <item>
+      <title>Stock Grey market dynamic</title>
+      <link>https://jackliusr.github.io/posts/2021/02/stock-grey-market-dynamic/</link>
+      <pubDate>Fri, 05 Feb 2021 11:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2021/02/stock-grey-market-dynamic/</guid>
+      <description>Here are the grey market dynamics trading kuaishou in futu and first day in stock. Don’t be gready. Most likely the professional/instutional traders in grey market outsmart you, they don’t leave profit margin for you considering the dynamic in first day trading.
+         </description>
+    </item>
+    
+    <item>
+      <title>nginx ingress and SPA sites</title>
+      <link>https://jackliusr.github.io/posts/2021/01/nginx-ingress-and-spa-sites/</link>
+      <pubDate>Mon, 18 Jan 2021 21:53:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2021/01/nginx-ingress-and-spa-sites/</guid>
+      <description>Several months ago, I resolved the issue &amp;#34;404 Error on refresh with SPA&amp;#34; by using nginx try_files directive, this time it was quite different as the apps were deployed into kubernetes. I tried nginx.ingress.kubernetes.io/use-regex:true and nginx.ingress.kubernetes.io/rewrite-target: /$1. To avoid to block others to others to use staging environment, I setup an skaffold local development environment to troubeshooting the issue. I tried following annotation as well.
+ nginx.ingress.kubernetes.io/configuration-snippet: | try_files $uri $uri/ /index.</description>
+    </item>
+    
+    <item>
+      <title>vega in hugo</title>
+      <link>https://jackliusr.github.io/posts/2021/01/vega-in-hugo/</link>
+      <pubDate>Sun, 17 Jan 2021 15:26:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2021/01/vega-in-hugo/</guid>
+      <description> var spec = &#39;https:\/\/raw.githubusercontent.com\/vega\/vega\/master\/docs\/examples\/bar-chart.vg.json&#39;; vegaEmbed(&#39;#viz&#39;, spec).then(function(result) { }).catch(console.error);   </description>
+    </item>
+    
+    <item>
+      <title>echarts in hugo</title>
+      <link>https://jackliusr.github.io/posts/2021/01/echarts-in-hugo/</link>
+      <pubDate>Sun, 17 Jan 2021 14:26:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2021/01/echarts-in-hugo/</guid>
+      <description>var myChart = echarts.init(document.getElementById(&#39;echarts400&#39;)); var option = JSON.parse(&#34;\n {\n \&#34;textStyle\&#34;:{\n \&#34;color\&#34;:\&#34;#fff\&#34;\n },\n \&#34;title\&#34;:{\n \&#34;text\&#34;:\&#34;2018年11月国内浏览器数据统计\&#34;,\n \&#34;subtext\&#34;:\&#34;浏览器数据分析\&#34;,\n \&#34;x\&#34;:\&#34;center\&#34;,\n \&#34;textStyle\&#34;:{\n \&#34;color\&#34;:\&#34;#FFffFf\&#34;\n }\n },\n \&#34;tooltip\&#34;:{\n \&#34;trigger\&#34;:\&#34;item\&#34;,\n \&#34;formatter\&#34;:\&#34;{a} \u003cbr/\u003e{b} : {c} ({d}%)\&#34;\n },\n \&#34;legend\&#34;:{\n \&#34;type\&#34;:\&#34;scroll\&#34;,\n \&#34;orient\&#34;:\&#34;vertical\&#34;,\n \&#34;right\&#34;:10,\n \&#34;top\&#34;:120,\n \&#34;bottom\&#34;:20,\n \&#34;data\&#34;:[\n \&#34;Chrome\&#34;,\n \&#34;IE 9.0\&#34;,\n \&#34;IE 11.0\&#34;,\n \&#34;QQ\&#34;,\n \&#34;IE 8.0\&#34;,\n \&#34;2345\&#34;,\n \&#34;搜狗高速\&#34;,\n \&#34;Firefox\&#34;,\n \&#34;Safari\&#34;,\n \&#34;其他\&#34;\n ],\n \&#34;textStyle\&#34;:{\n \&#34;color\&#34;:\&#34;#fff\&#34;\n }\n },\n \&#34;series\&#34;:[\n {\n \&#34;name\&#34;:\&#34;浏览器用户比例\&#34;,\n \&#34;type\&#34;:\&#34;pie\&#34;,\n \&#34;radius\&#34;:\&#34;55%\&#34;,\n \&#34;center\&#34;:[\n \&#34;50%\&#34;,\n \&#34;60%\&#34;\n ],\n \&#34;data\&#34;:[\n {\n \&#34;name\&#34;:\&#34;Chrome\&#34;,\n \&#34;value\&#34;:46.88\n },\n {\n \&#34;</description>
+    </item>
+    
+    <item>
+      <title>log to stdin of a pod in nested shells</title>
+      <link>https://jackliusr.github.io/posts/2020/12/log-to-stdin-of-a-pod-in-nested-shells/</link>
+      <pubDate>Wed, 09 Dec 2020 10:35:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2020/12/log-to-stdin-of-a-pod-in-nested-shells/</guid>
+      <description>During practicing the lifecycle handlers of pod, I found it is quite difficult to get the logs logged from preStop handlers. Initially I thought terminationMessagePath maybe is the answer, but no such luck. The preStop handler will be run before the pod is deleted. After deleted, there is no way to get the logs unless those logs are kept in other place such as central log servers etc. Those settings are way complex for a simple practice and time-consuming.</description>
+    </item>
+    
+    <item>
+      <title>vscode debug python containers running kubernetes via attachment</title>
+      <link>https://jackliusr.github.io/posts/2020/11/vscode-debug-python-containers-running-kubernetes-via-attachment/</link>
+      <pubDate>Fri, 20 Nov 2020 19:35:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2020/11/vscode-debug-python-containers-running-kubernetes-via-attachment/</guid>
+      <description>python-guestbook at https://github.com/GoogleCloudPlatform/cloud-code-samples is used to practice debug python containers in kubernetes.
+ Google cloud python code vscode plugin 1.7.0 failed to run python on kubernetes or there is no obvious way to do that as depicted in the below pic.      Steps to make it:
+  run
+skaffold debug     Import ptvsd in the python file to debug, add breakout() before the line to debug</description>
+    </item>
+    
+    <item>
+      <title>Jetbrain debug containers in kubernetes</title>
+      <link>https://jackliusr.github.io/posts/2020/11/jetbrain-debug-containers-in-kubernetes/</link>
+      <pubDate>Fri, 20 Nov 2020 13:35:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2020/11/jetbrain-debug-containers-in-kubernetes/</guid>
+      <description>I can’t debug the dockerdev app following the steps in https://blog.jetbrains.com/go/2020/05/11/using-kubernetes-from-goland/, even after I cloned its source code https://github.com/jackliusr/dockerdev/tree/kubernetes-debug.
+ I read several articles before I tried the aboved one. The successful debug after several trial and errors. I added skaffold.yaml to the project and installed Cloud Code. skaffold.yaml can be found at https://github.com/jackliusr/dockerdev/tree/kubernetes-debug. Other jetbrain configuration can be seen in the below pictures.
+          cloud code is a very good tool.</description>
+    </item>
+    
+    <item>
+      <title>a new way to anti scrapping</title>
+      <link>https://jackliusr.github.io/posts/2020/10/a-new-way-to-anti-scrapping/</link>
+      <pubDate>Wed, 21 Oct 2020 18:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2020/10/a-new-way-to-anti-scrapping/</guid>
+      <description>I loved to read novels. Recently I found that several sites show some garbed characters in square boxes. I went to the original site qidian and those chacters are shown correctly in the orignal site. After little investigation, I found the following information;
+          In above pics, 了’s HTML entity code is , it is not as 天.
+ How does chrome show the characters correctly?</description>
+    </item>
+    
+    <item>
+      <title>Setup kubeflow pipeline on local KIND cluster</title>
+      <link>https://jackliusr.github.io/posts/2020/10/setup-kubeflow-pipeline-on-local-kind-cluster/</link>
+      <pubDate>Sun, 04 Oct 2020 10:26:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2020/10/setup-kubeflow-pipeline-on-local-kind-cluster/</guid>
+      <description># https://www.kubeflow.org/docs/pipelines/installation/localcluster-deployment/#deploying-kubeflow-pipelines # env/platform-agnostic-pns hasn&amp;#39;t been publically released, so we install from master temporarily export PIPELINE_VERSION=1.0.1 kubectl apply -k &amp;#34;github.com/kubeflow/pipelines/manifests/kustomize/cluster-scoped-resources?ref=$PIPELINE_VERSION&amp;#34; kubectl wait --for condition=established --timeout=60s crd/applications.app.k8s.io kubectl apply -k &amp;#34;github.com/kubeflow/pipelines/manifests/kustomize/env/platform-agnostic-pns?ref=$PIPELINE_VERSION&amp;#34; # expose gui kubectl port-forward -n kubeflow --address 0.0.0.0 svc/ml-pipeline-ui 8080:80   </description>
+    </item>
+    
+    <item>
+      <title>About Jack Liu S.R.</title>
+      <link>https://jackliusr.github.io/about/</link>
+      <pubDate>Sat, 26 Sep 2020 14:50:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/about/</guid>
+      <description>?
+ </description>
+    </item>
+    
+    <item>
+      <title>Create a multiple-nodes KIND kubernetes cluster</title>
+      <link>https://jackliusr.github.io/posts/2020/09/create-a-multiple-nodes-kind-kubernetes-cluster/</link>
+      <pubDate>Fri, 25 Sep 2020 22:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2020/09/create-a-multiple-nodes-kind-kubernetes-cluster/</guid>
+      <description>KIND supports configuration items and you can find them at https://kind.sigs.k8s.io/docs/user/configuration. Following is the outline of the doc.
+ Cluster-Wide Options ︎ Networking: ︎ IP Family ︎ API Server: port and listen address Pod Subnet ︎ Service Subnet ︎ Disable Default CNI: can be used to try other CNI for CKA and CKAD networks kube-proxy mode : iptables, ipvs Nodes: role control-plane, worker Per-Node Options ︎ Extra Mounts ︎ Extra Port Mappings ︎ Kubeadm Config Patches: Kubeadm Config Patches, kubeadm InitConfiguration and JoinConfiguration   My asciicast is as following:</description>
+    </item>
+    
+    <item>
+      <title>Pod CrashLoopBackOff Reason</title>
+      <link>https://jackliusr.github.io/posts/2020/09/pod-crashloopbackoff-reason/</link>
+      <pubDate>Tue, 22 Sep 2020 08:51:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2020/09/pod-crashloopbackoff-reason/</guid>
+      <description>Today one of my deployments always got CrashLoopBackOff. Searching internet don’t gave me the root cause of those errors even I went through all the steps. Steps from internets are all about describe, logs, liveProbe etc. I noticed the reason and exit code in last state when I described one of the pod. It should be the focus point to find root cause of CrashBoopBackOff.
+ Containers: nginx: Container ID: containerd://9570e7e67d83692fdbe0e0871919a81222137fcaee2eaecb1eff6b772ec805b1 Image: nginx:1.</description>
+    </item>
+    
+    <item>
+      <title>My first post</title>
+      <link>https://jackliusr.github.io/posts/2020/08/my-first-post/</link>
+      <pubDate>Fri, 21 Aug 2020 18:12:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2020/08/my-first-post/</guid>
+      <description>This is my first adoc post after migration from jekyll to hugo.
+   a
+  b
+  test
+   order list testing
+  a
+  b
+   third try to test github action
+ </description>
+    </item>
+    
+    <item>
+      <title>Why I stick to jekyll</title>
+      <link>https://jackliusr.github.io/posts/2020/08/why-i-stick-to-jekyll/</link>
+      <pubDate>Sat, 15 Aug 2020 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2020/08/why-i-stick-to-jekyll/</guid>
+      <description>I am a big fan of Tex and asciidoc. Asciidoctor is ruby based and can been easily integrated into jekyll. Hugo currently still has some rough edges in asciidoc integration. Considering the time and effort to switch to Hugo, it is not worth to do that.
+ </description>
+    </item>
+    
+    <item>
+      <title>run redux-saga examples</title>
+      <link>https://jackliusr.github.io/posts/2020/07/run-redux-saga-examples/</link>
+      <pubDate>Tue, 07 Jul 2020 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2020/07/run-redux-saga-examples/</guid>
+      <description>run redux-saga examples TL;DR:
+ yarn yarn build
+ I run into module not found issues when I try to run those examples under the repository of redus-saga. Even following comments in github issues and stackoverflow, those solutions don’t work out.
+ Scripts in the package.json of the root folder don’t work for examples.
+ After run yarn &amp;amp;&amp;amp; yarn build, can change directories to those examples and run them.</description>
+    </item>
+    
+    <item>
+      <title>Workaround solution for inout refcursor parameters for stored procedure in postgresql 11 JDBC</title>
+      <link>https://jackliusr.github.io/posts/2019/12/workaround-solution-for-inout-refcursor-parameters-for-stored-procedure-in-postgresql-11-jdbc/</link>
+      <pubDate>Tue, 10 Dec 2019 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2019/12/workaround-solution-for-inout-refcursor-parameters-for-stored-procedure-in-postgresql-11-jdbc/</guid>
+      <description>The workaround solution mentioned at Issue doesn’t work when inout refcursor parameter is used.
+ Here is my workaround solution for that.
+ CREATE OR REPLACE PROCEDURE sp_test(INOUT results refcursor) LANGUAGE plpgsql SECURITY DEFINER AS $procedure$ begin results := &amp;#39;cur&amp;#39; ; OPEN results for select generate_series dt from generate_series(date&amp;#39;2019-01-01&amp;#39; , date&amp;#39;2019-01-31&amp;#39;, interval &amp;#39;1 day&amp;#39;); end;$procedure$ ;   conn.setAutoCommit(false); Statement st = conn.createStatement(); ResultSet rs0 = st.executeQuery(&amp;#34;call sp_test(&amp;#39;&amp;#39;)&amp;#34;); ResultSet rs = st.</description>
+    </item>
+    
+    <item>
+      <title>Error message of rabbitmq is terrible</title>
+      <link>https://jackliusr.github.io/posts/2019/03/error-message-of-rabbitmq-is-terrible/</link>
+      <pubDate>Tue, 12 Mar 2019 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2019/03/error-message-of-rabbitmq-is-terrible/</guid>
+      <description>Error message of rabbitmq is terrible Today I installed RabbitMQ 3.7.13-1. However I always got the following messages when running rabbitmq-server and a dump. The error message doesn’t give any clue of root cause. It is none of the cases searched from google such as permission issue, configuration issue etc.
+ {&amp;#34;init terminating in do_boot&amp;#34;,{undef,[{rabbit_prelaunch,start,[],[]},{init,start_em,1,[]},{init,do_boot,3,[]}]}}   I re-read the installation guide and double-checked steps and configuration. There is no luck.</description>
+    </item>
+    
+    <item>
+      <title>Issues of clean setup spacemacs and their solutions</title>
+      <link>https://jackliusr.github.io/posts/2019/02/issues-of-clean-setup-spacemacs-and-their-solutions/</link>
+      <pubDate>Thu, 21 Feb 2019 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2019/02/issues-of-clean-setup-spacemacs-and-their-solutions/</guid>
+      <description>I encountered the same issue &amp;#34;File error: Cannot open load file, No such file or directory, bind-map&amp;#34; twice in my setup of spacemacs. The issue can be solved several ways which I found from github and clojurians-log.clojureverse.org. I consolidate the reasons and list them below.
+   Timeout: the relevant setting in .spacemacs :- dotspacemacs-elpa-timeout 30
+  TLS Certs: emacs --insecure
+  Permanent TLS Certs: the relevant setting in .</description>
+    </item>
+    
+    <item>
+      <title>Chemical Bonding</title>
+      <link>https://jackliusr.github.io/posts/2019/02/chemical-bonding/</link>
+      <pubDate>Sat, 02 Feb 2019 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2019/02/chemical-bonding/</guid>
+      <description>Chemical Bonding The Stable Electronic configuration of a noble gas An outer electron or outermost electron is also known as valence electron. Only outer electrons are involved in chemical reactions.
+ In what way do noble gases behave differently from other chemistry ? Noble gases are unreactive because they have fully filled outer shells, that is, they have duplet or octet electronic configuration.
+ How do atom achieve the electronic configuration of a noble gas?</description>
+    </item>
+    
+    <item>
+      <title>Kinetic Particle Theory</title>
+      <link>https://jackliusr.github.io/posts/2019/02/kinetic-particle-theory/</link>
+      <pubDate>Fri, 01 Feb 2019 20:20:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2019/02/kinetic-particle-theory/</guid>
+      <description>States of Matter Matter is substance that has mass and occupies space. All living and non-living things are matter.
+ State of matter: solid, liquid, gas
+     Property Solid Liquid Gas     Shape
+ fixed
+ not fixed
+ not fixed
+   Volume
+ fixed
+ fixed
+ not fixed
+   Compressibility
+ Cannot be compressed
+ cannot be compressed</description>
+    </item>
+    
+    <item>
+      <title>Math jax testing</title>
+      <link>https://jackliusr.github.io/posts/2019/02/math-jax-testing/</link>
+      <pubDate>Fri, 01 Feb 2019 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2019/02/math-jax-testing/</guid>
+      <description>The difference of two squared numbers
+ $ a^2 - b^2 = (a + b )(a - b) $
+ </description>
+    </item>
+    
+    <item>
+      <title>Atomic Structure</title>
+      <link>https://jackliusr.github.io/posts/2019/02/atomic-structure/</link>
+      <pubDate>Fri, 01 Feb 2019 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2019/02/atomic-structure/</guid>
+      <description>Inside Atoms All matter is made up of atoms. Atoms are made up of subatomic particles: protons, neutrons and electrons.
+ The protons and neutrons
+   are tightly packed in the centre of an atom
+  together from the nucleus of the atom.
+   The electrons move rapidly around the nucleus.
+     Subatomic particle Symbol Relative charge Relative mass     Inside the nucleus</description>
+    </item>
+    
+    <item>
+      <title>Integration of Klipse</title>
+      <link>https://jackliusr.github.io/posts/2019/02/integration-of-klipse/</link>
+      <pubDate>Fri, 01 Feb 2019 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2019/02/integration-of-klipse/</guid>
+      <description>(+ 1 2 3 4 5)   </description>
+    </item>
+    
+    <item>
+      <title>Twilio Call Status StateChart</title>
+      <link>https://jackliusr.github.io/posts/2019/01/twilio-call-status-statechart/</link>
+      <pubDate>Fri, 25 Jan 2019 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2019/01/twilio-call-status-statechart/</guid>
+      <description>I was not familiar with SIP states during the integration of VoIP products such as twilio, plivo and sinch. I am still confused about the state changes after reading documents. Here try to visualize the state change and help me to remember it. The state chart is based on my understanding. It is not necessarily correct. It is just for my reference.
+ [*] --&amp;gt; Queued Queued --&amp;gt; Initiated Initiated --&amp;gt; Ringing Ringing --&amp;gt; Answered Answered --&amp;gt; InProgress InProgress --&amp;gt; Completed Initiated --&amp;gt; Busy Busy --&amp;gt; [*] Ringing --&amp;gt; NoAnswer NoAnswer --&amp;gt; [*] Ringing --&amp;gt; Canceled Canceled --&amp;gt; [*] Ringing --&amp;gt; Failed Failed --&amp;gt; [*] Completed --&amp;gt; [*]   </description>
+    </item>
+    
+    <item>
+      <title>Unit 1: Experimental Chemistry</title>
+      <link>https://jackliusr.github.io/posts/2019/01/unit-1-experimental-chemistry/</link>
+      <pubDate>Sat, 19 Jan 2019 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2019/01/unit-1-experimental-chemistry/</guid>
+      <description>Measurement     Physical properties
+ SI Units
+ Other Common Units
+ Common measuring apparatus
+   Name
+ Symbol
+   time
+ second
+ s
+   hour (h)
+  minutes(min)
+  day
+     digital stopwatch
+  analogue stopwatch
+     mass
+ kilogram
+ kg
+   gram(g)
+  tonne(t)</description>
+    </item>
+    
+    <item>
+      <title>Asciidoc diagram  samples of UML</title>
+      <link>https://jackliusr.github.io/posts/2019/01/asciidoc-diagram-samples-of-uml/</link>
+      <pubDate>Fri, 11 Jan 2019 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2019/01/asciidoc-diagram-samples-of-uml/</guid>
+      <description>PlantUML Diagram Class diagram—​Relations between Class:
+     Type
+ Sysmbol
+   Extension
+ &amp;lt;!--
+   Composition
+ *--
+   Aggregation
+ o--
+    Asciidoc UML sample
+ class BlockProcessor class DiagramBlock class DitaaBlock class PlantUmlBlock BlockProcessor &amp;lt;|-- DiagramBlock DiagramBlock &amp;lt;|-- DitaaBlock DiagramBlock &amp;lt;|-- PlantUmlBlock   PlantUML sample
+ class Class01 class Class02 class Class03 class Class04 class Class05 class Class06 class Class07 class Class08 class Class09 class Class10 Class01 &amp;lt;|-- Class02 Class03 *-- Class04 Class05 o-- Class06 Class07 .</description>
+    </item>
+    
+    <item>
+      <title>Asynchronization is hard to implement</title>
+      <link>https://jackliusr.github.io/posts/2019/01/asynchronization-is-hard-to-implement/</link>
+      <pubDate>Thu, 10 Jan 2019 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2019/01/asynchronization-is-hard-to-implement/</guid>
+      <description>Asynchronization is very hard. It brings benefits with several catches for backend programming. Here is serveral catches and respective solutions. However all those will increase the cost of developments.
+   Hard to debug and trace As the process breaks down to serveral asynchronious subprocesses, it is very difficult to relate all information of the process when something goes wrong. An extra overhead correlation Id is needed to adopt to ameliorate this issue.</description>
+    </item>
+    
+    <item>
+      <title>Why I start to write again</title>
+      <link>https://jackliusr.github.io/posts/2019/01/why-i-start-to-write-again/</link>
+      <pubDate>Tue, 01 Jan 2019 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2019/01/why-i-start-to-write-again/</guid>
+      <description>I read a lot of blogs. However I rarely wrote my blogs about my thoughts and learning experiences as I thought those are lack of originality.
+ I changed my mind after I learned more than ten thousand words using anki and memrise in the past 2 years. A writing can serve multiple purposes even lack of originality and thorough thought. Here is a list of those purposes:
+   Deepen my understanding in the topics and improve efficiency of learning</description>
+    </item>
+    
+    <item>
+      <title>Diagrams samples</title>
+      <link>https://jackliusr.github.io/posts/2018/12/diagrams-samples/</link>
+      <pubDate>Thu, 20 Dec 2018 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2018/12/diagrams-samples/</guid>
+      <description>Ditaa
+  +--------+ 0 | | &amp;lt;- start +--------+ 1 | | &amp;lt;- q scans from start to end +--------+ : ..... | +--------+ | | &amp;lt;- end +--------+ &amp;lt;-+ | | | +--------+ | rest of the : ..... | | allocated memory +--------+ | n | | | +--------+ &amp;lt;-+   </description>
+    </item>
+    
+  </channel>
+</rss>

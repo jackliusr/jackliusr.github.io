@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kubernetes on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/kubernetes/</link>
+    <description>Recent content in kubernetes on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 12 Mar 2021 19:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install calico cni in alicloud ack and advanced dns troubleshooting in kubernetes</title>
+      <link>https://jackliusr.github.io/posts/2021/03/install-calico-cni-in-alicloud-ack-and-advanced-dns-troubleshooting-in-kubernetes/</link>
+      <pubDate>Fri, 12 Mar 2021 19:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2021/03/install-calico-cni-in-alicloud-ack-and-advanced-dns-troubleshooting-in-kubernetes/</guid>
+      <description>2 weeks I started to learn alicloud to prepare the migration from aws to alicloud. I started the migration this week. Our applications are deployed on kubernetes, I focused on ACK first. The setup journey was bumpy, and most of the issues can be resolved by googling and trial loops. The most difficult one is that dns resolution issue.
+ I tried the steps in &amp;#34;Debugging DNS Resolution&amp;#34; [1]. All steps were good except the nslookup step.</description>
+    </item>
+    
+    <item>
+      <title>Exposing TCP and UDP services in nginx ingress</title>
+      <link>https://jackliusr.github.io/posts/2021/03/exposing-tcp-and-udp-services-in-nginx-ingress/</link>
+      <pubDate>Tue, 02 Mar 2021 17:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2021/03/exposing-tcp-and-udp-services-in-nginx-ingress/</guid>
+      <description>Add command line flags in ingress controller:  --tcp-services-configmap
+  --udp-services-configmap
+     Create configmap apiVersion: v1 kind: ConfigMap metadata: name: tcp-services namespace: ingress-nginx data: 5432: &amp;#34;default/postgres:5432&amp;#34;     Patch the ingress-nginx-controller to allow port 5432 spec: template: spec: containers: - name: controller ports: - containerPort: 6379 hostPort: 6379     Add inbound rule to security group of node groups   Reference: https://minikube.</description>
+    </item>
+    
+    <item>
+      <title>log to stdin of a pod in nested shells</title>
+      <link>https://jackliusr.github.io/posts/2020/12/log-to-stdin-of-a-pod-in-nested-shells/</link>
+      <pubDate>Wed, 09 Dec 2020 10:35:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2020/12/log-to-stdin-of-a-pod-in-nested-shells/</guid>
+      <description>During practicing the lifecycle handlers of pod, I found it is quite difficult to get the logs logged from preStop handlers. Initially I thought terminationMessagePath maybe is the answer, but no such luck. The preStop handler will be run before the pod is deleted. After deleted, there is no way to get the logs unless those logs are kept in other place such as central log servers etc. Those settings are way complex for a simple practice and time-consuming.</description>
+    </item>
+    
+    <item>
+      <title>vscode debug python containers running kubernetes via attachment</title>
+      <link>https://jackliusr.github.io/posts/2020/11/vscode-debug-python-containers-running-kubernetes-via-attachment/</link>
+      <pubDate>Fri, 20 Nov 2020 19:35:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2020/11/vscode-debug-python-containers-running-kubernetes-via-attachment/</guid>
+      <description>python-guestbook at https://github.com/GoogleCloudPlatform/cloud-code-samples is used to practice debug python containers in kubernetes.
+ Google cloud python code vscode plugin 1.7.0 failed to run python on kubernetes or there is no obvious way to do that as depicted in the below pic.      Steps to make it:
+  run
+skaffold debug     Import ptvsd in the python file to debug, add breakout() before the line to debug</description>
+    </item>
+    
+    <item>
+      <title>Jetbrain debug containers in kubernetes</title>
+      <link>https://jackliusr.github.io/posts/2020/11/jetbrain-debug-containers-in-kubernetes/</link>
+      <pubDate>Fri, 20 Nov 2020 13:35:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2020/11/jetbrain-debug-containers-in-kubernetes/</guid>
+      <description>I can’t debug the dockerdev app following the steps in https://blog.jetbrains.com/go/2020/05/11/using-kubernetes-from-goland/, even after I cloned its source code https://github.com/jackliusr/dockerdev/tree/kubernetes-debug.
+ I read several articles before I tried the aboved one. The successful debug after several trial and errors. I added skaffold.yaml to the project and installed Cloud Code. skaffold.yaml can be found at https://github.com/jackliusr/dockerdev/tree/kubernetes-debug. Other jetbrain configuration can be seen in the below pictures.
+          cloud code is a very good tool.</description>
+    </item>
+    
+    <item>
+      <title>Setup kubeflow pipeline on local KIND cluster</title>
+      <link>https://jackliusr.github.io/posts/2020/10/setup-kubeflow-pipeline-on-local-kind-cluster/</link>
+      <pubDate>Sun, 04 Oct 2020 10:26:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2020/10/setup-kubeflow-pipeline-on-local-kind-cluster/</guid>
+      <description># https://www.kubeflow.org/docs/pipelines/installation/localcluster-deployment/#deploying-kubeflow-pipelines # env/platform-agnostic-pns hasn&amp;#39;t been publically released, so we install from master temporarily export PIPELINE_VERSION=1.0.1 kubectl apply -k &amp;#34;github.com/kubeflow/pipelines/manifests/kustomize/cluster-scoped-resources?ref=$PIPELINE_VERSION&amp;#34; kubectl wait --for condition=established --timeout=60s crd/applications.app.k8s.io kubectl apply -k &amp;#34;github.com/kubeflow/pipelines/manifests/kustomize/env/platform-agnostic-pns?ref=$PIPELINE_VERSION&amp;#34; # expose gui kubectl port-forward -n kubeflow --address 0.0.0.0 svc/ml-pipeline-ui 8080:80   </description>
+    </item>
+    
+    <item>
+      <title>Create a multiple-nodes KIND kubernetes cluster</title>
+      <link>https://jackliusr.github.io/posts/2020/09/create-a-multiple-nodes-kind-kubernetes-cluster/</link>
+      <pubDate>Fri, 25 Sep 2020 22:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2020/09/create-a-multiple-nodes-kind-kubernetes-cluster/</guid>
+      <description>KIND supports configuration items and you can find them at https://kind.sigs.k8s.io/docs/user/configuration. Following is the outline of the doc.
+ Cluster-Wide Options ︎ Networking: ︎ IP Family ︎ API Server: port and listen address Pod Subnet ︎ Service Subnet ︎ Disable Default CNI: can be used to try other CNI for CKA and CKAD networks kube-proxy mode : iptables, ipvs Nodes: role control-plane, worker Per-Node Options ︎ Extra Mounts ︎ Extra Port Mappings ︎ Kubeadm Config Patches: Kubeadm Config Patches, kubeadm InitConfiguration and JoinConfiguration   My asciicast is as following:</description>
+    </item>
+    
+    <item>
+      <title>Pod CrashLoopBackOff Reason</title>
+      <link>https://jackliusr.github.io/posts/2020/09/pod-crashloopbackoff-reason/</link>
+      <pubDate>Tue, 22 Sep 2020 08:51:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2020/09/pod-crashloopbackoff-reason/</guid>
+      <description>Today one of my deployments always got CrashLoopBackOff. Searching internet don’t gave me the root cause of those errors even I went through all the steps. Steps from internets are all about describe, logs, liveProbe etc. I noticed the reason and exit code in last state when I described one of the pod. It should be the focus point to find root cause of CrashBoopBackOff.
+ Containers: nginx: Container ID: containerd://9570e7e67d83692fdbe0e0871919a81222137fcaee2eaecb1eff6b772ec805b1 Image: nginx:1.</description>
+    </item>
+    
+  </channel>
+</rss>

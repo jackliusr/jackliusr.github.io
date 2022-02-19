@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>chemistry on My learning and diary</title>
+    <link>https://jackliusr.github.io/categories/chemistry/</link>
+    <description>Recent content in chemistry on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Feb 2019 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/chemistry/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Atomic Structure</title>
+      <link>https://jackliusr.github.io/posts/2019/02/atomic-structure/</link>
+      <pubDate>Fri, 01 Feb 2019 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2019/02/atomic-structure/</guid>
+      <description>Inside Atoms All matter is made up of atoms. Atoms are made up of subatomic particles: protons, neutrons and electrons.
+ The protons and neutrons
+   are tightly packed in the centre of an atom
+  together from the nucleus of the atom.
+   The electrons move rapidly around the nucleus.
+     Subatomic particle Symbol Relative charge Relative mass     Inside the nucleus</description>
+    </item>
+    
+  </channel>
+</rss>

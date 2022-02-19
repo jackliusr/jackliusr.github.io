@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kubeflow on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/kubeflow/</link>
+    <description>Recent content in kubeflow on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 Oct 2020 10:26:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/kubeflow/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup kubeflow pipeline on local KIND cluster</title>
+      <link>https://jackliusr.github.io/posts/2020/10/setup-kubeflow-pipeline-on-local-kind-cluster/</link>
+      <pubDate>Sun, 04 Oct 2020 10:26:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2020/10/setup-kubeflow-pipeline-on-local-kind-cluster/</guid>
+      <description># https://www.kubeflow.org/docs/pipelines/installation/localcluster-deployment/#deploying-kubeflow-pipelines # env/platform-agnostic-pns hasn&amp;#39;t been publically released, so we install from master temporarily export PIPELINE_VERSION=1.0.1 kubectl apply -k &amp;#34;github.com/kubeflow/pipelines/manifests/kustomize/cluster-scoped-resources?ref=$PIPELINE_VERSION&amp;#34; kubectl wait --for condition=established --timeout=60s crd/applications.app.k8s.io kubectl apply -k &amp;#34;github.com/kubeflow/pipelines/manifests/kustomize/env/platform-agnostic-pns?ref=$PIPELINE_VERSION&amp;#34; # expose gui kubectl port-forward -n kubeflow --address 0.0.0.0 svc/ml-pipeline-ui 8080:80   </description>
+    </item>
+    
+  </channel>
+</rss>
