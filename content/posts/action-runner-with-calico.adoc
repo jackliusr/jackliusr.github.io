@@ -1,0 +1,47 @@
+---
+title: Configuration action runner in eks+calico environment
+date: 2022-02-19T13:10:10+08:00
+categories:
+- tech
+tags:
+- eks
+- calico
+- action-runner
+- github-action
+---
+
+Last week I setup our staging kubernetes environment, however the once worked version of runnerset yaml configuration didn't work. I tried different combination of controller and summerwind/actions-runner-dind image, fully customized template portion with RUNNER_xxx arguments. I still got "Http response code: NotFound from 'POST https://api.github.com/actions/runner-registration'" for every combination of those combinations in the logs of runner pods. I thought RunnerDeployment is stateless and less complex than RunnerSet. I gave it a try. This time, I got a differnet error message "failed calling webhook "mutate.runner.actions.summerwind.dev"" when I created a RunnerDeployment. 
+
+In Nov 2021, I encountered the same kind of errors when I installed cert-manager in same configuration of environments EKS+Calico(networking and policy). You can find at here https://medium.com/@jackliusr/configure-cert-manager-and-godaddy-webhook-on-eks-with-calico-vxlan-e36ffcd95b0a[Configure cert-manager and godaddy webhook on eks with calico-vxlan]. I knew how to handle this error.
+
+I downloaded the manifest yaml from https://github.com/actions-runner-controller/actions-runner-controller/releases/download/v0.21.0/actions-runner-controller.yaml[actions-runner-controller.yaml] and created one kustomization.yaml and json patch file to add hostNetwork. Here is my configuration. 
+
+```json
+// controller-manager-patch.json
+[
+    {
+        "op": "add",
+        "path": "/spec/template/spec/hostNetwork",
+        "value": true
+    }
+]
+```
+
+```yaml
+# kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- actions-runner-controller.yaml
+- controller-manager.yaml
+
+patches:
+- path: controller-manager-patch.json
+  target:
+    group: apps
+    version: v1
+    kind: Deployment
+    name: controller-manager
+```
+
+https://github.com/actions-runner-controller/actions-runner-controller[actions-runner-controller] is a great project. I used it in three projects. I intended to use it in my future projects as well and I may encounter the same issue in the future. I created an https://github.com/actions-runner-controller/actions-runner-controller/issues/1132[issue] for me or others to track down the issue. 
