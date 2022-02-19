@@ -8,11 +8,11 @@
     <language>en-us</language>
     <lastBuildDate>Sat, 19 Feb 2022 13:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/eks/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Configuration action runner in eks&#43;calico environment</title>
-      <link>https://jackliusr.github.io/posts/2022/02/configuration-action-runner-in-eks-calico-environment/</link>
+      <title>Configure action runner in eks&#43;calico environment</title>
+      <link>https://jackliusr.github.io/posts/2022/02/configure-action-runner-in-eks-calico-environment/</link>
       <pubDate>Sat, 19 Feb 2022 13:10:10 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/posts/2022/02/configuration-action-runner-in-eks-calico-environment/</guid>
+      <guid>https://jackliusr.github.io/posts/2022/02/configure-action-runner-in-eks-calico-environment/</guid>
       <description>Last week I setup our staging kubernetes environment, however the once worked version of runnerset yaml configuration didn’t work. I tried different combination of controller and summerwind/actions-runner-dind image, fully customized template portion with RUNNER_xxx arguments. I still got &amp;#34;Http response code: NotFound from &amp;#39;POST https://api.github.com/actions/runner-registration&amp;#39;&amp;#34; for every combination of those combinations in the logs of runner pods. I thought RunnerDeployment is stateless and less complex than RunnerSet. I gave it a try.</description>
     </item>
     
