@@ -1,5 +1,5 @@
 ---
-title: Configuration action runner in eks+calico environment
+title: Configure action runner in eks+calico environment
 date: 2022-02-19T13:10:10+08:00
 categories:
 - tech
