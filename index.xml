@@ -6,7 +6,16 @@
     <description>Recent content on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Feb 2022 13:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Feb 2022 22:30:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What can you bring to the company?</title>
+      <link>https://jackliusr.github.io/notes/what-can-you-bring-to-the-company/</link>
+      <pubDate>Wed, 23 Feb 2022 22:30:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/notes/what-can-you-bring-to-the-company/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Configure action runner in eks&#43;calico environment</title>
       <link>https://jackliusr.github.io/posts/2022/02/configure-action-runner-in-eks-calico-environment/</link>
@@ -47,6 +56,31 @@
       
       <guid>https://jackliusr.github.io/notes/dcf-myth/</guid>
       <description>DCF Myth 1: If you have a D(discount rate) and a CF (cash flow), you have a DCF! Consistency Tests for DCF Hall of shame DCF checklist   DCF Myth 2: A DCF is an exercise in modeling and number crunching! Connecting Stories to Numbers: The Process Tie to the life cycle: The Investor Angle Tie to the Life Cycle: Implications for managers     DCF Myth 1: If you have a D(discount rate) and a CF (cash flow), you have a DCF!</description>
+    </item>
+    
+    <item>
+      <title>Private Internet Access</title>
+      <link>https://jackliusr.github.io/notes/pia/</link>
+      <pubDate>Sat, 17 Apr 2021 12:40:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/notes/pia/</guid>
+      <description>Private Internet Access Desktop Client window dev environemnt   https://www.qt.io/download-qt-installer [1]
+       1. https://github.com/pia-foss/desktop   </description>
+    </item>
+    
+    <item>
+      <title>Tryton</title>
+      <link>https://jackliusr.github.io/notes/tryton/</link>
+      <pubDate>Sat, 17 Apr 2021 12:40:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/notes/tryton/</guid>
+      <description>Tryton WSGI   dev: werkzeug
+  prod: µwsgi[1]
+   Deployment: nginx for static assets and tls termination, µwsgi for service
+  HA &amp;amp; Load Balancing   race-condition[2]
+  cron: distributed ?
+    Training https://github.com/coopengo/tryton-training
+     1. https://discuss.tryton.org/t/wsgi-server-choice/2766/3  2. https://discuss.tryton.org/t/multiple-tryton-server-backend-with-nginx-frontend/3843   </description>
     </item>
     
     <item>

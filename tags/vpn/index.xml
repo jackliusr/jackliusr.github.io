@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VPN on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/vpn/</link>
+    <description>Recent content in VPN on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 Apr 2021 12:40:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/vpn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Private Internet Access</title>
+      <link>https://jackliusr.github.io/notes/pia/</link>
+      <pubDate>Sat, 17 Apr 2021 12:40:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/notes/pia/</guid>
+      <description>Private Internet Access Desktop Client window dev environemnt   https://www.qt.io/download-qt-installer [1]
+       1. https://github.com/pia-foss/desktop   </description>
+    </item>
+    
+  </channel>
+</rss>
