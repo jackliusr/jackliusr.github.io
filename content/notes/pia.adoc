@@ -1,0 +1,13 @@
+---
+title: Private Internet Access
+date: 2021-04-17T12:40:00+08:00
+categories:
+- tech
+tags:
+- VPN
+---
+## Private Internet Access Desktop Client 
+
+### window dev environemnt
+ * https://www.qt.io/download-qt-installer
+footnote:pia-foss-desktip[https://github.com/pia-foss/desktop]

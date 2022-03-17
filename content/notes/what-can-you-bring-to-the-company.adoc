@@ -1,0 +1,10 @@
+---
+title: What can you bring to the company?
+date: 2022-02-23T22:30:00+08:00
+categories:
+- career 
+tags:
+- interview 
+---
+= What can you bring to the company
+

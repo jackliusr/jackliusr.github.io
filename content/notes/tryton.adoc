@@ -1,0 +1,27 @@
+---
+title: Tryton
+date: 2021-04-17T12:40:00+08:00
+categories:
+- tech
+tags:
+- ERP
+- Framework
+---
+
+## Tryton
+
+### WSGI
+
+* dev: werkzeug
+* prod: µwsgifootnote:µwsgi[https://discuss.tryton.org/t/wsgi-server-choice/2766/3]
+
+Deployment: nginx for static assets and tls termination, µwsgi for service
+
+### HA & Load Balancing
+
+* race-conditionfootnote:race-condition[https://discuss.tryton.org/t/multiple-tryton-server-backend-with-nginx-frontend/3843]
+* cron:  distributed ?
+
+### Training
+
+https://github.com/coopengo/tryton-training
