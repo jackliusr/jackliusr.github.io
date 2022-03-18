@@ -9,5 +9,8 @@ tags:
 ## Private Internet Access Desktop Client 
 
 ### window dev environemnt
- * https://www.qt.io/download-qt-installer
+
+* https://www.qt.io/download-qt-installer
+* https://stackoverflow.com/questions/15639781/how-to-find-the-qt5-cmake-module-on-windows[How to find the Qt5 CMake module on Windows]
+
 footnote:pia-foss-desktip[https://github.com/pia-foss/desktop]
