@@ -6,7 +6,20 @@
     <description>Recent content in Posts on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Feb 2022 13:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Apr 2022 19:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Windows Subsystem for Android</title>
+      <link>https://jackliusr.github.io/posts/2022/04/install-windows-subsystem-for-android/</link>
+      <pubDate>Mon, 11 Apr 2022 19:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/04/install-windows-subsystem-for-android/</guid>
+      <description>Install WAS  Upgrade to windows 11 latest version (GA, Preview, Evaluation etc).
+  Upgrade microsoft appstore to latest version
+  Setting→Time &amp;amp; Language → Langage &amp;amp; Region → Region: USA
+  Open AppStore, Search Amazon Appstore and install Amazon Appstore. it will install Windows Subsystem for Android as well.
+     Install applications as user using Amazon AppStore  Register as Amazon US user</description>
+    </item>
+    
     <item>
       <title>Configure action runner in eks&#43;calico environment</title>
       <link>https://jackliusr.github.io/posts/2022/02/configure-action-runner-in-eks-calico-environment/</link>
