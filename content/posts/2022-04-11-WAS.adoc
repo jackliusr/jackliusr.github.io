@@ -1,0 +1,31 @@
+---
+title: Install Windows Subsystem for Android 
+date: 2022-04-11T19:10:10+08:00
+categories:
+- tech
+tags:
+- android
+- windows
+---
+
+== Install WAS
+. Upgrade to windows 11 latest version (GA, Preview, Evaluation etc).
+. Upgrade microsoft appstore to latest version
+. Setting->Time & Language -> Langage & Region -> Region: USA
+. Open AppStore, Search Amazon Appstore and install Amazon Appstore. it will install Windows Subsystem for Android as well.
+
+== Install applications as user using Amazon AppStore
+. Register as Amazon US user
+. Search apps in Amazon AppStore and install them.
+
+== Install app using adb
+```bash
+adb install app-qa-debug.apk
+```
+
+== Install app using wsa_pacman
+
+Windows Subsystem for Android^TM^ settings-> Developer Mode: On
+
+* https://www.microsoft.com/zh-cn/p/wsa%E5%B7%A5%E5%85%B7%E7%AE%B1/9ppsp2mkvtgt[WSA 工具箱]
+* https://github.com/alesimula/wsa_pacman[WSA Pacman ]
