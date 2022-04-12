@@ -6,7 +6,70 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Apr 2022 19:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Apr 2022 19:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bazel</title>
+      <link>https://jackliusr.github.io/tags/bazel/</link>
+      <pubDate>Tue, 12 Apr 2022 19:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/bazel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cd</title>
+      <link>https://jackliusr.github.io/tags/cd/</link>
+      <pubDate>Tue, 12 Apr 2022 19:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/cd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ci</title>
+      <link>https://jackliusr.github.io/tags/ci/</link>
+      <pubDate>Tue, 12 Apr 2022 19:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/ci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pipeline</title>
+      <link>https://jackliusr.github.io/tags/pipeline/</link>
+      <pubDate>Tue, 12 Apr 2022 19:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/pipeline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>skaffold</title>
+      <link>https://jackliusr.github.io/tags/skaffold/</link>
+      <pubDate>Tue, 12 Apr 2022 19:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/skaffold/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Starlark</title>
+      <link>https://jackliusr.github.io/tags/starlark/</link>
+      <pubDate>Tue, 12 Apr 2022 19:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/starlark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tilt</title>
+      <link>https://jackliusr.github.io/tags/tilt/</link>
+      <pubDate>Tue, 12 Apr 2022 19:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/tilt/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>android</title>
       <link>https://jackliusr.github.io/tags/android/</link>
@@ -346,15 +409,6 @@
       <pubDate>Fri, 20 Nov 2020 19:35:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>skaffold</title>
-      <link>https://jackliusr.github.io/tags/skaffold/</link>
-      <pubDate>Fri, 20 Nov 2020 19:35:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/skaffold/</guid>
       <description></description>
     </item>
     

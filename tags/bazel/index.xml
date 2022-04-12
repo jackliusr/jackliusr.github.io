@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bazel on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/bazel/</link>
+    <description>Recent content in bazel on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Apr 2022 19:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/bazel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reflection on the usage of bazel</title>
+      <link>https://jackliusr.github.io/posts/2022/04/reflection-on-the-usage-of-bazel/</link>
+      <pubDate>Tue, 12 Apr 2022 19:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/04/reflection-on-the-usage-of-bazel/</guid>
+      <description>TLDR: Bazel is definitely worth to use on your projects even though it has minimum supports of some languages such as C#.
+   Prologue Before I was interested in bazel, I always thought why bother to learn a new building system even I knew that kubernetes once was built with bazel. 4 months ago, I was involved in a micro service structured project. I was dissatisfied with dev workflow using skaffold and I looked other options in the market.</description>
+    </item>
+    
+  </channel>
+</rss>
