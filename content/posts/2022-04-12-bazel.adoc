@@ -1,0 +1,70 @@
+---
+title: Reflection on the usage of bazel
+date: 2022-04-12T19:10:10+08:00
+categories:
+- tech
+tags:
+- bazel
+- ci
+- cd
+- pipeline
+- Starlark
+- tilt
+- skaffold
+---
+
+== TLDR: 
+
+Bazel is definitely worth to use on your projects even though it has minimum supports of some languages such as C#.
+
+== Prologue
+
+Before I was interested in bazel, I always thought why bother to learn a new building system even I knew that kubernetes once was built with bazel. 4 months ago, I was involved in a micro service structured project. I was dissatisfied with dev workflow using skaffold and I looked other options in the market.  Then I found https://tilt.dev[tilt]. Maybe the usage of tilt in kubernetes Cluster API project weight in my choice to tilt when I found that https://cluster-api.sigs.k8s.io/developer/tilt.html[tilt is used in dev workflow in kubernetes cluster API project]. 
+
+== Begin to use Tilt
+
+Tilt has following features. The good parts I liked most are  docker-compose and Starlark supports beside kubernetes. You can write Starlark scripts to your workflow and it will make life easier. My initial local dev environment is based on docker-compose and Tilt seems is the perfect fit. I spent 2 days set up my tilt environment. The impression of tilt is a wow moment. I never thought that container based development can't be this way. This experiences made me thought that it maybe is about time to dig deeper to learn Starlark and bazel.
+
+* Very Holistic
+* Orderly Orchestration
+* Magic UI
+* live_update
+* Code in Flow
+* Faster Workflow
+* Snapshots
+* Built-In Best Practices
+* Painless Onboarding
+* Quantified Dev Experie
+
+== Begin to use Starlark and bazel
+
+Starlark is a dialect of Python. I used python for my data processing, data mining and machine learning projects, I  quickly picked up the language and started to use startlark to practice bazel.
+
+[quote]
+Starlark (formerly known as Skylark) is a language intended for use as a configuration language. It was designed for the Bazel build system.
+
+I used bazel on following projects and learned a thing or two.
+
+* https://github.com/jackliusr/v2ray-lab:    docker_compose, envoy
+* https://github.com/jackliusr/bazel-learning:   Java
+* https://github.com/jackliusr/go-grpc-bazel-docker:     golang and grpc
+* https://github.com/jackliusr/microservices-demo:       java,golang,python, nodejs, c#
+* company private project:  golang, javascript, nodejs, vue
+
+== Cost and benefit analysis
+
+=== Costs
+
+* Cost: 1-2 man-day. Maybe cost more depending on the size of projects.
+
+=== Benefits
+
+* Time saving: https://engineering.grab.com/how-grab-is-blazing-through-the-super-app-bazel-migration[40% decrease on the build time] the total benefits will be multiplied with the number of your engineers and the lifetime of the projects. The time saving is substantial.
+* Cost of building machines: Reduce the usage time of machines. It can be translated to reduce costs if those building machines are on-demard cloud resources.
+* Morale: Fast feedback loop makes engineers happy. In turn they are in good mode.
+* Productivity: Fast feedback loop, make engineers most times in the flow state and get more things done.
+* Confidency with test coverage.
+
+== Epilogue: Is it Worth it All?
+
+I will say it worth it considering the experience I using bazel, the cost and benefits. You can find the same conclusion https://engineering.grab.com/how-grab-is-blazing-through-the-super-app-bazel-migration#is-it-worth-it-all[here] from grab
