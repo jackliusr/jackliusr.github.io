@@ -24,19 +24,25 @@ adb connect YOUR_IP_ADDRESS
 According to https://levelup.gitconnected.com/will-windows-subsystem-for-android-replace-emulators-d93ab4dbcb14[How to use Windows Subsystem for Android as a development tool], there are several ways to run flutter apps in WSA.
 
 === Android studio
-  When I try to run a project of my company in Android studio, I kept get the error "An unexpected packet was received before the handshake".  However the simple project  in https://docs.flutter.dev/get-started/codelab#step-1-create-the-starter-flutter-app[Write your first Flutter app, part 1] is fine.
+
+When I try to run a project of my company in Android studio, I kept get the error "An unexpected packet was received before the handshake".  However the simple project  in https://docs.flutter.dev/get-started/codelab#step-1-create-the-starter-flutter-app[Write your first Flutter app, part 1] is fine.
 
 === VSCode
-  I can successfully run it.
+
+I can successfully run it. VSCode consume less resources than Android Studio
 
 === flutter
+
+It is the lightest way to run. 
 
 ```batch
 flutter run -d Subsystem
 ```
 
 
-== WSA consume less resources than Android Emulator. 
+== WSA vs Android Emulator. 
+
+WSA consume less resources than Android Emulator.
 
 {{< imgur id="3lYwhmt" >}}
 
