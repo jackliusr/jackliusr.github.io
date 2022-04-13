@@ -6,7 +6,52 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Apr 2022 19:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Apr 2022 19:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>android</title>
+      <link>https://jackliusr.github.io/tags/android/</link>
+      <pubDate>Wed, 13 Apr 2022 19:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>flutter</title>
+      <link>https://jackliusr.github.io/tags/flutter/</link>
+      <pubDate>Wed, 13 Apr 2022 19:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/flutter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>subsystem</title>
+      <link>https://jackliusr.github.io/tags/subsystem/</link>
+      <pubDate>Wed, 13 Apr 2022 19:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/subsystem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://jackliusr.github.io/tags/windows/</link>
+      <pubDate>Wed, 13 Apr 2022 19:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WSA</title>
+      <link>https://jackliusr.github.io/tags/wsa/</link>
+      <pubDate>Wed, 13 Apr 2022 19:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/wsa/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>bazel</title>
       <link>https://jackliusr.github.io/tags/bazel/</link>
@@ -67,24 +112,6 @@
       <pubDate>Tue, 12 Apr 2022 19:10:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/tilt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>android</title>
-      <link>https://jackliusr.github.io/tags/android/</link>
-      <pubDate>Mon, 11 Apr 2022 19:10:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/android/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>windows</title>
-      <link>https://jackliusr.github.io/tags/windows/</link>
-      <pubDate>Mon, 11 Apr 2022 19:10:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/windows/</guid>
       <description></description>
     </item>
     
