@@ -1,0 +1,45 @@
+---
+title: Run a flutter app on Windows Subsystem for Android 
+date: 2022-04-13T19:10:10+08:00
+categories:
+- tech
+tags:
+- android
+- windows
+- flutter
+- subsystem
+- WSA
+---
+
+== Keep WSA running
+
+WSA seems sometimes will exit after a while idle time. I need to run the following command to keep it running.
+
+```batch
+adb connect YOUR_IP_ADDRESS
+```
+
+==  Run App
+
+According to https://levelup.gitconnected.com/will-windows-subsystem-for-android-replace-emulators-d93ab4dbcb14[How to use Windows Subsystem for Android as a development tool], there are several ways to run flutter apps in WSA.
+
+=== Android studio
+  When I try to run a project of my company in Android studio, I kept get the error "An unexpected packet was received before the handshake".  However the simple project  in https://docs.flutter.dev/get-started/codelab#step-1-create-the-starter-flutter-app[Write your first Flutter app, part 1] is fine.
+
+=== VSCode
+  I can successfully run it.
+
+=== flutter
+
+```batch
+flutter run -d Subsystem
+```
+
+
+== WSA consume less resources than Android Emulator. 
+
+{{< imgur id="3lYwhmt" >}}
+
+== Reference
+* https://levelup.gitconnected.com/will-windows-subsystem-for-android-replace-emulators-d93ab4dbcb14[How to use Windows Subsystem for Android as a development tool]
+* https://docs.flutter.dev/get-started/codelab#step-1-create-the-starter-flutter-app[Write your first Flutter app, part 1]
