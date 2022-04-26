@@ -39,7 +39,7 @@
 <meta itemprop="description" content="Dapr development is quite difficult to setup correctly. You can get the idea from (this issue) as the issue is still open now since it was created.
  I followed the instruction to install dapr vs code extension in dapr. My environment is WSL based. I tried several times to try to debug the dapr applications and failed. I noticed in the following screenshot that there was a warning icon before kubernetes."><meta itemprop="datePublished" content="2022-04-26T19:10:10+08:00" />
 <meta itemprop="dateModified" content="2022-04-26T19:10:10+08:00" />
-<meta itemprop="wordCount" content="211">
+<meta itemprop="wordCount" content="205">
 <meta itemprop="keywords" content="kubernetes,WSL,dapr,vscode," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Setup vscode development for dapr in WSL"/>
 <meta name="twitter:description" content="Dapr development is quite difficult to setup correctly. You can get the idea from (this issue) as the issue is still open now since it was created.
@@ -197,7 +197,7 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 1 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 211 words</span>
+        <span class="f6 mv4 dib tracked"> - 205 words</span>
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
@@ -207,7 +207,13 @@ if (!doNotTrack) {
 <p>I followed the <a href="https://docs.dapr.io/developing-applications/ides/vscode/vscode-dapr-extension/">instruction</a> to install dapr vs code extension in dapr. My environment is WSL based. I tried several times to try to debug the dapr applications and failed. I noticed in the following screenshot that there was a warning icon before kubernetes. I got &#39;Failed to update dependencies: The &#34;streams&#34; argument must be specified. &#39; error when I clicked the warning icon.</p>
 </div>
 <div class="paragraph">
-<p>{{ &lt; imgur id=&#34;dsa4LMH&#34; &gt; }}</p>
+<div class="embed imgur-image">
+<blockquote class="imgur-embed-pub" lang="en" data-id="dsa4LMH" data-context="false">
+<a href="//imgur.com/dsa4LMH"></a>
+</blockquote>
+<script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+</div>
+
 </div>
 <div class="paragraph">
 <p>I googled internet and finally reached the <a href="https://github.com/microsoft/mindaro/issues/32">issue</a> after serveral failed attempts from other solutions in the internet. There are several solutions in the issue, none of them works on my case. I combined serveral ideas from this issue and got the solution to my case. Here is my solution to the issue in WSL.</p>
