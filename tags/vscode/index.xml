@@ -6,7 +6,17 @@
     <description>Recent content in vscode on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Nov 2020 19:35:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Apr 2022 19:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup vscode development for dapr in WSL</title>
+      <link>https://jackliusr.github.io/posts/2022/04/setup-vscode-development-for-dapr-in-wsl/</link>
+      <pubDate>Tue, 26 Apr 2022 19:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/04/setup-vscode-development-for-dapr-in-wsl/</guid>
+      <description>Dapr development is quite difficult to setup correctly. You can get the idea from (this issue) as the issue is still open now since it was created.
+ I followed the instruction to install dapr vs code extension in dapr. My environment is WSL based. I tried several times to try to debug the dapr applications and failed. I noticed in the following screenshot that there was a warning icon before kubernetes.</description>
+    </item>
+    
     <item>
       <title>vscode debug python containers running kubernetes via attachment</title>
       <link>https://jackliusr.github.io/posts/2020/11/vscode-debug-python-containers-running-kubernetes-via-attachment/</link>
