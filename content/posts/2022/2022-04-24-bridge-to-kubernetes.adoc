@@ -1,0 +1,32 @@
+---
+title: Setup vscode development for dapr in WSL
+date: 2022-04-26T19:10:10+08:00
+categories:
+- tech
+tags:
+- kubernetes
+- WSL
+- dapr
+- vscode
+---
+
+
+Dapr development is quite difficult to setup correctly. You can get the idea from (https://github.com/microsoft/mindaro/issues/32[this] issue) as the issue is still open now since it was created.
+
+I followed the https://docs.dapr.io/developing-applications/ides/vscode/vscode-dapr-extension/[instruction] to install dapr vs code extension in dapr. My environment is WSL based. I tried several times to try to debug the dapr applications and failed. I noticed in the following screenshot that there was a warning icon before kubernetes. I got 'Failed to update dependencies: The "streams" argument must be specified. ' error when I clicked the warning icon. 
+
+{{ < imgur id="dsa4LMH" > }}
+
+I googled internet and finally reached the https://github.com/microsoft/mindaro/issues/32[issue] after serveral failed attempts from other solutions in the internet. There are several solutions in the issue, none of them works on my case. I combined serveral ideas from this issue and got the solution to my case. Here is my solution to the issue in WSL.
+
+* Get output of "Bridge To Kubernetes"
++
+{{< imgur id="YwPAH3g" >}}
+
+* Open the log file of "Bridge To Kubernetes" 
+* Find the link of lks.json
+* Open lks.json and locate the url of lpk-linux.zip
+* Download lpk-linux.zip and unzip lpk-linux.zip
+* Move lpk as ~/.config/Code/User/globalStorage/mindaro.mindaro/file-downloader-downloads/binaries
+* chmod +x the 3 files: bridge,kubectl/linux/kubectl and EndpointManager/EndpointManager
+* export BRIDGE_BUILD_PATH=.config/Code/User/globalStorage/mindaro.mindaro/file-downloader-downloads/binaries: bridgetokubernetes can't correctly locate the binaries as it detects the environemtn as WSL.
