@@ -1,0 +1,37 @@
+---
+title: 
+date: 2022-05-08T21:10:10+08:00
+categories:
+- tech
+tags:
+- kubernetes
+---
+
+Today I encountered a strange issue with one kubernete cluster. Newly created pods are not created on a newly joined node. There is no errors in logs of pods and the node, events of kubernete. All seems normal. I created a simple nginx pod with nodeName as the problematic node. The pod can be scheduled and created in the node. However the pod was kept in CrashloopBackOff state. There is definitely something wrong with server. Things I looked are normal in my eyes. 
+
+* events
+* pod logs
+* node status: describe node
+* systemctl status kubelet
+* journalctl -xeu kubelet
+* systemctl status docker
+* journalctl -xeu docker
+
+[quote]
+====
+A reboot is a good last resort when all else fails
+====
+
+The famous quote when I coding C/C++ in the past came to my mind, I rebooted the problematic node and everyting was okay after that. It may not be an elegant and practical solution in production cluster. Think further, what will I do if I encounter that in product cluster? 
+
+In production, I may not have the enough time to troubleshooting, the cost of totally shutdowning an service may be expensive. Several factors  weighted in. A practical solution for production setting is as following: 
+
+. multiple replicas
+. create a new node
+. cordon the problematic node
+. delete old pods
+. migrate the pod to the new node (kubernetes automatically)
+
+
+
+In hindsight, It is possible that it is caused communications issues between the node and master nodes. Next time, I will dig the logs at master nodes first.
