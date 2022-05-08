@@ -6,7 +6,16 @@
     <description>Recent content in kubernetes on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Apr 2022 19:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 May 2022 21:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://jackliusr.github.io/posts/2022/05/</link>
+      <pubDate>Sun, 08 May 2022 21:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/05/</guid>
+      <description>Today I encountered a strange issue with one kubernete cluster. Newly created pods are not created on a newly joined node. There is no errors in logs of pods and the node, events of kubernete. All seems normal. I created a simple nginx pod with nodeName as the problematic node. The pod can be scheduled and created in the node. However the pod was kept in CrashloopBackOff state. There is definitely something wrong with server.</description>
+    </item>
+    
     <item>
       <title>Setup vscode development for dapr in WSL</title>
       <link>https://jackliusr.github.io/posts/2022/04/setup-vscode-development-for-dapr-in-wsl/</link>
