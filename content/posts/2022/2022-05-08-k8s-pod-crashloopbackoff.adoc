@@ -1,5 +1,5 @@
 ---
-title: A strange issue of kubernetes: New pod kept in CrashloopBackOff in newly joined node.
+title: A strange issue of kubernetes- New pod kept in CrashloopBackOff in newly joined node.
 date: 2022-05-08T21:10:10+08:00
 categories:
 - tech
