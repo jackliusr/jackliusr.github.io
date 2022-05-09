@@ -1,5 +1,5 @@
 ---
-title: 
+title: A strange issue of kubernetes: New pod kept in CrashloopBackOff in newly joined node.
 date: 2022-05-08T21:10:10+08:00
 categories:
 - tech
@@ -16,6 +16,7 @@ Today I encountered a strange issue with one kubernete cluster. Newly created po
 * journalctl -xeu kubelet
 * systemctl status docker
 * journalctl -xeu docker
+* docker ps/logs
 
 [quote]
 ====
