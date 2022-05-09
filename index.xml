@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 08 May 2022 21:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>A strange issue of kubernetes- New pod kept in CrashloopBackOff in newly joined node.</title>
+      <title>A strange issue of kubernetes: New pod kept in CrashloopBackOff in newly joined node.</title>
       <link>https://jackliusr.github.io/posts/2022/05/a-strange-issue-of-kubernetes-new-pod-kept-in-crashloopbackoff-in-newly-joined-node./</link>
       <pubDate>Sun, 08 May 2022 21:10:10 +0800</pubDate>
       
