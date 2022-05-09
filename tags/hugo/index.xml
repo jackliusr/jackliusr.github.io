@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>jekyll on My learning and diary</title>
-    <link>https://jackliusr.github.io/tags/jekyll/</link>
-    <description>Recent content in jekyll on My learning and diary</description>
+    <title>Hugo on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/hugo/</link>
+    <description>Recent content in Hugo on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Why I migrate my blog from Jekyll to Hugo</title>
       <link>https://jackliusr.github.io/posts/2022/05/why-i-migrate-my-blog-from-jekyll-to-hugo/</link>
@@ -15,16 +15,6 @@
       <guid>https://jackliusr.github.io/posts/2022/05/why-i-migrate-my-blog-from-jekyll-to-hugo/</guid>
       <description>I wrote my blogs using Jekyll at this domain time almost two years occasionally from 2018 until 2020. I didn’t think to move to Hugo before it was used in one of my company project. After two or three weeks, I had a thought why not move to Hugo considering several benefits.
  For the uninitiated, Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.</description>
-    </item>
-    
-    <item>
-      <title>Why I stick to jekyll</title>
-      <link>https://jackliusr.github.io/posts/2020/08/why-i-stick-to-jekyll/</link>
-      <pubDate>Sat, 15 Aug 2020 20:00:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/posts/2020/08/why-i-stick-to-jekyll/</guid>
-      <description>I am a big fan of Tex and asciidoc. Asciidoctor is ruby based and can been easily integrated into jekyll. Hugo currently still has some rough edges in asciidoc integration. Considering the time and effort to switch to Hugo, it is not worth to do that.
- </description>
     </item>
     
   </channel>
