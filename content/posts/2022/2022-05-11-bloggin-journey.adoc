@@ -1,0 +1,18 @@
+---
+title: My blogging journey
+date: 2022-05-11T19:10:10+08:00
+categories:
+- tech
+tags:
+- blogging
+---
+
+Usually I don't want to blog about something, espicially I don't contribute some original things to internet. Of couse, there are other reasons as well.
+
+There were many reasons which stopped me in the past to writing. One was that my vocabulary was limited. I started my blogging actitivies back to https://jackliusr.blogspot.com/2004/[2004]. At that time, my vocabulary was limited, I think the size of my vocabulary was in the range from 6000-7000 and most words were memorize in isolated way. I didn't know how to express my thought in the proper way and I shied away from writing those simple blogs. You can find my old blogs at https://jackliusr.blogspot.com[here].
+
+Thinking back, I missed many benefits of writing  when I didn't keep writing. 
+
+I started to use https://apps.ankiweb.net/[anki] to memorize vocabulary from Jan 2016. Since then, I basically use anki daily and until recently I started to hava a feeling that I can write something better than before and started to write again. The real reason, I think the blogging can be anchors for later recall. 
+
+Even though, I don't write daily, I wrote more frequent than before. I will do it more in the future.
