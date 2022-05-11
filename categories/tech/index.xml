@@ -6,7 +6,17 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 May 2022 19:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My blogging journey</title>
+      <link>https://jackliusr.github.io/posts/2022/05/my-blogging-journey/</link>
+      <pubDate>Wed, 11 May 2022 19:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/05/my-blogging-journey/</guid>
+      <description>Usually I don’t want to blog about something, espicially I don’t contribute some original things to internet. Of couse, there are other reasons as well.
+ There were many reasons which stopped me in the past to writing. One was that my vocabulary was limited. I started my blogging actitivies back to 2004. At that time, my vocabulary was limited, I think the size of my vocabulary was in the range from 6000-7000 and most words were memorize in isolated way.</description>
+    </item>
+    
     <item>
       <title>Why I migrate my blog from Jekyll to Hugo</title>
       <link>https://jackliusr.github.io/posts/2022/05/why-i-migrate-my-blog-from-jekyll-to-hugo/</link>
