@@ -35,13 +35,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2021/03/exposing-tcp-and-udp-services-in-nginx-ingress/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-03-02T17:00:00+08:00" />
-<meta property="article:modified_time" content="2021-03-02T17:00:00+08:00" />
+<meta property="article:modified_time" content="2022-04-13T22:26:04+08:00" />
 
 <meta itemprop="name" content="Exposing TCP and UDP services in nginx ingress">
 <meta itemprop="description" content="Add command line flags in ingress controller:  --tcp-services-configmap
   --udp-services-configmap
      Create configmap apiVersion: v1 kind: ConfigMap metadata: name: tcp-services namespace: ingress-nginx data: 5432: &#34;default/postgres:5432&#34;     Patch the ingress-nginx-controller to allow port 5432 spec: template: spec: containers: - name: controller ports: - containerPort: 6379 hostPort: 6379     Add inbound rule to security group of node groups   Reference: https://minikube."><meta itemprop="datePublished" content="2021-03-02T17:00:00+08:00" />
-<meta itemprop="dateModified" content="2021-03-02T17:00:00+08:00" />
+<meta itemprop="dateModified" content="2022-04-13T22:26:04+08:00" />
 <meta itemprop="wordCount" content="55">
 <meta itemprop="keywords" content="ingress,nginx,kubernetes," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Exposing TCP and UDP services in nginx ingress"/>
@@ -388,5 +388,7 @@ data:
 
 
 
+
+  <p style="font-size: small; color: grey;">Page version: 813d3b12e60094f9153cfd884c97f8a6db4c49b2 2022-04-13</p>
   </body>
 </html>

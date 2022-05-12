@@ -31,11 +31,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2020/10/setup-kubeflow-pipeline-on-local-kind-cluster/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-10-04T10:26:00+08:00" />
-<meta property="article:modified_time" content="2020-10-04T10:26:00+08:00" />
+<meta property="article:modified_time" content="2022-04-13T22:30:26+08:00" />
 
 <meta itemprop="name" content="Setup kubeflow pipeline on local KIND cluster">
 <meta itemprop="description" content="# https://www.kubeflow.org/docs/pipelines/installation/localcluster-deployment/#deploying-kubeflow-pipelines # env/platform-agnostic-pns hasn&#39;t been publically released, so we install from master temporarily export PIPELINE_VERSION=1.0.1 kubectl apply -k &#34;github.com/kubeflow/pipelines/manifests/kustomize/cluster-scoped-resources?ref=$PIPELINE_VERSION&#34; kubectl wait --for condition=established --timeout=60s crd/applications.app.k8s.io kubectl apply -k &#34;github.com/kubeflow/pipelines/manifests/kustomize/env/platform-agnostic-pns?ref=$PIPELINE_VERSION&#34; # expose gui kubectl port-forward -n kubeflow --address 0.0.0.0 svc/ml-pipeline-ui 8080:80   "><meta itemprop="datePublished" content="2020-10-04T10:26:00+08:00" />
-<meta itemprop="dateModified" content="2020-10-04T10:26:00+08:00" />
+<meta itemprop="dateModified" content="2022-04-13T22:30:26+08:00" />
 <meta itemprop="wordCount" content="41">
 <meta itemprop="keywords" content="Kubernetes,KIND,kubeflow," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Setup kubeflow pipeline on local KIND cluster"/>
@@ -316,5 +316,7 @@ kubectl port-forward -n kubeflow --address 0.0.0.0 svc/ml-pipeline-ui 8080:80</c
 
 
 
+
+  <p style="font-size: small; color: grey;">Page version: 47cd2fcd36f03fdfd16b67250d096c2f0168e631 2022-04-13</p>
   </body>
 </html>

@@ -35,13 +35,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2019/12/workaround-solution-for-inout-refcursor-parameters-for-stored-procedure-in-postgresql-11-jdbc/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-12-10T20:00:00+08:00" />
-<meta property="article:modified_time" content="2019-12-10T20:00:00+08:00" />
+<meta property="article:modified_time" content="2022-04-13T22:30:26+08:00" />
 
 <meta itemprop="name" content="Workaround solution for inout refcursor parameters for stored procedure in postgresql 11 JDBC">
 <meta itemprop="description" content="The workaround solution mentioned at Issue doesn’t work when inout refcursor parameter is used.
  Here is my workaround solution for that.
  CREATE OR REPLACE PROCEDURE sp_test(INOUT results refcursor) LANGUAGE plpgsql SECURITY DEFINER AS $procedure$ begin results := &#39;cur&#39; ; OPEN results for select generate_series dt from generate_series(date&#39;2019-01-01&#39; , date&#39;2019-01-31&#39;, interval &#39;1 day&#39;); end;$procedure$ ;   conn.setAutoCommit(false); Statement st = conn.createStatement(); ResultSet rs0 = st.executeQuery(&#34;call sp_test(&#39;&#39;)&#34;); ResultSet rs = st."><meta itemprop="datePublished" content="2019-12-10T20:00:00+08:00" />
-<meta itemprop="dateModified" content="2019-12-10T20:00:00+08:00" />
+<meta itemprop="dateModified" content="2022-04-13T22:30:26+08:00" />
 <meta itemprop="wordCount" content="82">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Workaround solution for inout refcursor parameters for stored procedure in postgresql 11 JDBC"/>
@@ -319,5 +319,7 @@ log.info(&#34;RowNo:&#34; + rs.getRow().toString());</code></pre>
 
 
 
+
+  <p style="font-size: small; color: grey;">Page version: 47cd2fcd36f03fdfd16b67250d096c2f0168e631 2022-04-13</p>
   </body>
 </html>
