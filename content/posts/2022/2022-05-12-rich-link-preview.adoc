@@ -43,7 +43,7 @@ Now it is clear, the question is how to clear or regenerate those cached content
 
 For the timing being, I only got so far and don't get the way to resolve my initial problem. However it still was a interesting journey. 
 
-Thanks for reading. Please leave a message if you find 
+Thanks for reading. Please leave a message if you find a way to do so in skype. 
 
 
 == Reference 
