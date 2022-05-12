@@ -6,7 +6,17 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 May 2022 19:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 May 2022 19:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rich link preview and IM apps</title>
+      <link>https://jackliusr.github.io/posts/2022/05/rich-link-preview-and-im-apps/</link>
+      <pubDate>Thu, 12 May 2022 19:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/05/rich-link-preview-and-im-apps/</guid>
+      <description>Two days ago, I have a fun journey to find more about rich link preview features in social media, web apps and IM apps.
+ The journey began with that the shared link of one of my company sites in skype was shown without pictures, just a plain link. Searching the feature of skype &amp;#34;link preview&amp;#34;, I found https://socialsharepreview.com/. I knew what missed in the homepage as in the following list.</description>
+    </item>
+    
     <item>
       <title>My blogging journey</title>
       <link>https://jackliusr.github.io/posts/2022/05/my-blogging-journey/</link>
