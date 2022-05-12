@@ -4,7 +4,7 @@ title = "My learning and diary"
 theme = ["github.com/theNewDynamic/gohugo-theme-ananke"]
 googleAnalytics = "UA-135021270-1"
 disqusShortname = "jackliusr-gh"
-
+enableGitInfo = true
 enableRobotsTXT = true
 env = "production"
 

@@ -46,5 +46,8 @@
       {{ block "main" . }}{{ end }}
     </main>
     {{ block "footer" . }}{{ partialCached "site-footer.html" . }}{{ end }}
+{{ with .GitInfo }}
+  <p style="font-size: small; color: grey;">Page version: {{ .Hash }} {{ .CommitDate.Format "2006-01-02"}}</p>
+{{- end }}
   </body>
 </html>
