@@ -1,0 +1,54 @@
+---
+title: Rich link preview and IM apps 
+date: 2022-05-12T19:10:10+08:00
+categories:
+- tech
+tags:
+- opengraph
+- IM
+---
+
+Two days ago, I have a fun journey to find more about rich link preview features in social media, web apps and IM apps. 
+
+The journey began with that the shared link of one of my company sites in skype was shown without pictures, just a plain link. Searching the feature of skype "link preview", I found https://socialsharepreview.com/. I knew what missed in the homepage as in the following list. 
+
+* og:title
+* og:type
+* og.image
+* og.url
+* twitter:card 
+
+[source,html]
+----
+<head>
+<title>Flutter Hero Animations </title>
+<meta property="og:title" content="Flutter Hero Animations">
+<meta property="og:type" content="video.other">
+<meta property="og:image" content="https://files.betamax.raywenderlich.com/attachments/collections/222/0c45fb39-9f82-406f-9237-fc1a07a7af15.png">
+<meta property="og:description" content="<p>Learn and understand how to use the Hero widget in Flutter to animate beautiful screen transitions for your apps.</p>
+">
+<meta property="og:site_name" content="raywenderlich.com">
+<link rel="icon" type="image/png" href="/favicon.png">
+...
+</head>
+
+----
+
+To my surprise, the link in skype still was a normal link even it was shown correctly in https://socialsharepreview.com. I shared another website and found the picture of the site was served from https://sa1-urlp.secure.skypeassets.com/ in the web version of skype at https://web.skype.com/.
+
+Searching around the internet using keywords "Link previews server client generate  regenerate", I noticed the link https://blog.0day.rocks/link-previews-in-im-apps-and-privacy-d32e6056095b[Link previews in IM apps and privacy]. In the article, I learnt that some apps generated the preview at client sides, some at the server side. The logical result of serve side is that those contents are cached at server side. 
+
+Now it is clear, the question is how to clear or regenerate those cached contents. The thing is that not all of those services provide the ways to do so. I only found one telegram bot @WebpageBot and didn't find others in IMs.
+
+
+For the timing being, I only got so far and don't get the way to resolve my initial problem. However it still was a interesting journey. 
+
+Thanks for reading. Please leave a message if you find 
+
+
+== Reference 
+* https://socialsharepreview.com/
+* https://www.opengraph.xyz/
+* https://metatags.io/
+* https://blog.0day.rocks/link-previews-in-im-apps-and-privacy-d32e6056095b
+* https://airtable.com/shrm7b9UwV4H26Xzr/tbl1R9if7jvsbzb2d/viwxX5qzwaUPUULl4
