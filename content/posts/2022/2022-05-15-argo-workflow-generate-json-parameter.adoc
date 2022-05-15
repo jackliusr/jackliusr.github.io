@@ -1,0 +1,174 @@
+---
+title: "Argo-workflows: Generate dynamic json list"
+date: 2022-05-15T13:10:10+08:00
+categories:
+- tech
+tags:
+- argo-workflow
+- recipe
+- jq
+- python
+---
+
+== The journey
+I worked on a dapr microservice project which need to read a list from a file and do some useful things. Argo-workflow supports loop over a list of items, however one of my steps always got "invalid character 'G' looking for beginning of value" before going to next step in the workflow template.  The step is as following: 
+
+[source, yaml]
+----
+- name: get-deps
+    inputs:
+      parameters:
+      - name: changes
+    script:
+      image: ubuntu:latest
+      command: [bash]
+      #args: ["echo result was: {{inputs.parameters.message}}"]
+      source: |
+        which jq || (apt-get update -y && apt-get install -y jq)
+        cd /src/api2
+        grep -Po "(?<=Local\/)src.*" changes.txt  > local_changes.txt
+        grep -Po "(?<=Global\/)src.*" changes.txt  > global_changes.txt
+        find ./Local/ -name Dockerfile | xargs grep -f local_changes.txt  > local_dockerfiles.txt
+        find ./Global/ -name Dockerfile | xargs grep -f global_changes.txt  > global_dockerfiles.txt
+        grep -o '^.*Dockerfile' local_dockerfiles.txt  | sort | uniq > ulocal_dockerfiles.txt
+        grep -o '^.*Dockerfile' global_dockerfiles.txt  | sort | uniq > uglobal_dockerfiles.txt
+        #cat ulocal_dockerfiles.txt uglobal_dockerfiles.txt > u_dockerfiles.txt
+        jq -Rsc '[ split("\n") [] |select(length >0) ]' u_dockerfiles.txt
+      volumeMounts:
+        - mountPath: /src
+          name: src
+----
+
+Then I scratched my head for the cause of it. argo-workflow document show loops, however the examples are fixed items. My case is a dynamic one.  I found a dynamic one from https://stackoverflow.com/a/60592330.  After reading this, I added one more step in my Workflow and adjust the parameter value of the next step, my workflow works now.
+
+[source,yaml]
+----
+  - name: filejson
+    script:
+      image: python:alpine3.6
+      command: [python]
+      source: |
+        import json
+        import sys
+        my_file = open("/src/api2/u_dockerfiles.txt", "r")
+
+        # reading the file
+        data = my_file.read()
+
+        # replacing end splitting the text
+        # when newline ('\n') is seen.
+        data_into_list = data.split("\n")
+        result =[f for f in data_into_list if len(f) >0]
+        json.dump(result, sys.stdout)
+        my_file.close()
+      volumeMounts:
+        - mountPath: /src
+          name: src
+----
+
+I was still curious about the cause and I didn't want to use one extra step and a heavier python image as a single binary jq can get the work done. I played around with https://github.com/argoproj/argo-workflows/blob/master/examples/loops-param-argument.yaml and finally I figure out the reason. 
+
+[source, yaml]
+----
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: loops-param-arg-
+spec:
+  entrypoint: loop-param-arg-example
+  serviceAccountName: argo
+  templates:
+  - name: loop-param-arg-example
+    steps:
+    - - name: jq
+        template: jq-list
+    - - name: test-linux
+        template: cat-os-release
+        arguments:
+          parameters:
+          - name: image
+            value: "{{item}}"
+        withParam: "{{steps.jq.outputs.parameters.json}}"
+
+  - name: jq-list
+    script:
+      image: ubuntu:latest
+      command: [bash]
+      source: |
+        which jq || (apt-get update -y && apt-get install jq -y)
+        cat <<EOF | jq -Rsc '[ split("\n") [] |select(length >0) ]'  > /tmp/result.json
+        debian
+        alpine
+        ubuntu
+        EOF
+    outputs:
+      parameters:
+         - name: json
+           valueFrom:
+             path: /tmp/result.json
+  - name: cat-os-release
+    inputs:
+      parameters:
+      - name: image
+    script:
+      image: ubuntu:latest
+      command: [bash]
+      source: |
+        echo 'image: {{  inputs.parameters.image }}'
+----
+
+== Lessons learned
+* outputs.result:   collecting outputs (specifically the *stdout* result) from a pod, not your last statement. For the step jq-list, its outputs.result would be as following
++
+[literal]
+----
+Get:1 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
+Get:2 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+Get:3 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [61.0 kB]
+Get:4 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [109 kB]
+Get:5 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [84.2 kB]
+Get:6 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [90.7 kB]
+Get:7 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [61.3 kB]
+Get:8 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
+Get:9 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1792 kB]
+Get:10 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
+Get:11 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+Get:12 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [68.6 kB]
+Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [97.6 kB]
+Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [157 kB]
+Fetched 20.8 MB in 6s (3485 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libjq1 libonig5
+The following NEW packages will be installed:
+  jq libjq1 libonig5
+0 upgraded, 3 newly installed, 0 to remove and 3 not upgraded.
+Need to get 357 kB of archives.
+After this operation, 1087 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 libonig5 amd64 6.9.7.1-2build1 [172 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy/main amd64 libjq1 amd64 1.6-2.1ubuntu3 [133 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy/main amd64 jq amd64 1.6-2.1ubuntu3 [52.5 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 357 kB in 2s (222 kB/s)
+Selecting previously unselected package libonig5:amd64.
+(Reading database ... 4395 files and directories currently installed.)
+Preparing to unpack .../libonig5_6.9.7.1-2build1_amd64.deb ...
+Unpacking libonig5:amd64 (6.9.7.1-2build1) ...
+Selecting previously unselected package libjq1:amd64.
+Preparing to unpack .../libjq1_1.6-2.1ubuntu3_amd64.deb ...
+Unpacking libjq1:amd64 (1.6-2.1ubuntu3) ...
+Selecting previously unselected package jq.
+Preparing to unpack .../jq_1.6-2.1ubuntu3_amd64.deb ...
+Unpacking jq (1.6-2.1ubuntu3) ...
+Setting up libonig5:amd64 (6.9.7.1-2build1) ...
+Setting up libjq1:amd64 (1.6-2.1ubuntu3) ...
+Setting up jq (1.6-2.1ubuntu3) ...
+Processing triggers for libc-bin (2.35-0ubuntu3) ...
+["debian","alpine","ubuntu"]
+
+----
+* output parameters: as result has above limitatios, one or many output parameters can be used.
+* use artifacts for content larger than 256 kB. https://github.com/argoproj/argo-workflows/blob/master/examples/handle-large-output-results.yaml
