@@ -1,6 +1,6 @@
 ---
 title: "Argo-workflows: Generate dynamic json list"
-date: 2022-05-15T13:10:10+08:00
+date: 2022-05-15T12:10:10+08:00
 categories:
 - tech
 tags:
