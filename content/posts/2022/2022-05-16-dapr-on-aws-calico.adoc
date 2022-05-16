@@ -1,6 +1,6 @@
 ---
 title: Setup dapr on AWS and calico
-date: 2022-05-12T19:10:10+08:00
+date: 2022-05-16T20:10:10+08:00
 categories:
 - tech
 tags:
