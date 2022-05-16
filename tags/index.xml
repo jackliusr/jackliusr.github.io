@@ -6,7 +6,43 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 May 2022 12:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>aws</title>
+      <link>https://jackliusr.github.io/tags/aws/</link>
+      <pubDate>Mon, 16 May 2022 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>calico</title>
+      <link>https://jackliusr.github.io/tags/calico/</link>
+      <pubDate>Mon, 16 May 2022 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/calico/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dapr</title>
+      <link>https://jackliusr.github.io/tags/dapr/</link>
+      <pubDate>Mon, 16 May 2022 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/dapr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>eks</title>
+      <link>https://jackliusr.github.io/tags/eks/</link>
+      <pubDate>Mon, 16 May 2022 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/eks/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>argo-workflow</title>
       <link>https://jackliusr.github.io/tags/argo-workflow/</link>
@@ -40,42 +76,6 @@
       <pubDate>Sun, 15 May 2022 12:10:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/recipe/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>aws</title>
-      <link>https://jackliusr.github.io/tags/aws/</link>
-      <pubDate>Thu, 12 May 2022 19:10:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/aws/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>calico</title>
-      <link>https://jackliusr.github.io/tags/calico/</link>
-      <pubDate>Thu, 12 May 2022 19:10:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/calico/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>dapr</title>
-      <link>https://jackliusr.github.io/tags/dapr/</link>
-      <pubDate>Thu, 12 May 2022 19:10:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/dapr/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>eks</title>
-      <link>https://jackliusr.github.io/tags/eks/</link>
-      <pubDate>Thu, 12 May 2022 19:10:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/eks/</guid>
       <description></description>
     </item>
     

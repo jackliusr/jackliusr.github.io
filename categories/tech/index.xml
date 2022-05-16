@@ -6,7 +6,17 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 May 2022 12:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup dapr on AWS and calico</title>
+      <link>https://jackliusr.github.io/posts/2022/05/setup-dapr-on-aws-and-calico/</link>
+      <pubDate>Mon, 16 May 2022 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/05/setup-dapr-on-aws-and-calico/</guid>
+      <description>Low resource usage Our system had low resource usage, however my several pods got stucked in ContainerCreating state. Kubernetes events show that &amp;#34;add cmd: failed to assign an IP address to container&amp;#34;. &amp;#34;kubectl top nodes&amp;#34; still shows the usage of resources still low.
+ jackl@LAPTOP-IIHUF2DR:~$ k --context jack.l@test-dev.ap-southeast-1.eksctl.io top nodes NAME CPU(cores) CPU% MEMORY(bytes) MEMORY% ip-192-168-102-109.ap-southeast-1.compute.internal 143m 7% 3217Mi 45% ip-192-168-110-171.ap-southeast-1.compute.internal 117m 6% 2892Mi 41%     Migrate to calico  Recreate cluster without nodegroups</description>
+    </item>
+    
     <item>
       <title>Argo-workflows: Generate dynamic json list</title>
       <link>https://jackliusr.github.io/posts/2022/05/argo-workflows-generate-dynamic-json-list/</link>
@@ -25,16 +35,6 @@
       <guid>https://jackliusr.github.io/posts/2022/05/rich-link-preview-and-im-apps/</guid>
       <description>Two days ago, I have a fun journey to find more about rich link preview features in social media, web apps and IM apps.
  The journey began with that the shared link of one of my company sites in skype was shown without pictures, just a plain link. Searching the feature of skype &amp;#34;link preview&amp;#34;, I found https://socialsharepreview.com/. I knew what missed in the homepage as in the following list.</description>
-    </item>
-    
-    <item>
-      <title>Setup dapr on AWS and calico</title>
-      <link>https://jackliusr.github.io/posts/2022/05/setup-dapr-on-aws-and-calico/</link>
-      <pubDate>Thu, 12 May 2022 19:10:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/posts/2022/05/setup-dapr-on-aws-and-calico/</guid>
-      <description>Low resource usage Our system had low resource usage, however my several pods got stucked in ContainerCreating state. Kubernetes events show that &amp;#34;add cmd: failed to assign an IP address to container&amp;#34;. &amp;#34;kubectl top nodes&amp;#34; still shows the usage of resources still low.
- jackl@LAPTOP-IIHUF2DR:~$ k --context jack.l@test-dev.ap-southeast-1.eksctl.io top nodes NAME CPU(cores) CPU% MEMORY(bytes) MEMORY% ip-192-168-102-109.ap-southeast-1.compute.internal 143m 7% 3217Mi 45% ip-192-168-110-171.ap-southeast-1.compute.internal 117m 6% 2892Mi 41%     Migrate to calico  Recreate cluster without nodegroups</description>
     </item>
     
     <item>
