@@ -1,0 +1,15 @@
+---
+title: Setup bluetooth mouses in mac air with three not-existing devices
+date: 2022-05-17T20:10:10+08:00
+categories:
+- tech
+tags:
+- MacAir
+- mouse
+- bluetooth
+---
+
+
+I heard from my colleagues that MacAir M1 is picky about mice and you can find many threads in reddit about this if you use the keywords "reddit mac air m1 mouse issues bluetooth" to search. Today is my lucky day, I encountered the issue too. 
+
+This morning, I brought my MacAir to office and used the mouse of company. 
