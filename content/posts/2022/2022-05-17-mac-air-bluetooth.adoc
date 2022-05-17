@@ -9,7 +9,10 @@ tags:
 - bluetooth
 ---
 
-
 I heard from my colleagues that MacAir M1 is picky about mice and you can find many threads in reddit about this if you use the keywords "reddit mac air m1 mouse issues bluetooth" to search. Today is my lucky day, I encountered the issue too. 
 
-This morning, I brought my MacAir to office and used the mouse of company. 
+This morning, I brought my Mac Air to office and used the mouse of company. The bluethooth kept spinning and the mouse can't connect. I reset the mouse several times, there was still no luck. I used MacBook pro several years and Mac Air occasionally for surfing internet at home without a mouse, not in work settings.  The mouse issue was not a big issure to stop me to do my work, I could live with it for one day. However I still prefer to use a mouse. 
+
+After hours, I went to yishun challenger shop and bought a logitech m650. I tried the mouse, however the bluethooth kept spinning as well. Considering the mouse I newly bought, the chance of that the mouse is something wrong is rare. I thought I should to look into other unusual places. Having that in mind, I noticed that there were three old devices in the bluetooth dialog. I did use those old devices anymore, I could remove those devices and clean up that dialog. To my surprise, the mouse appeared in the dialog after I removed one old devices. I thought it would be better off to remove other old bluetooth devices and make the system running smoother and so I did it.
+
+It is a boring writing about my issue, anyway I hope it would be helpful to peoples in the similar situation as me. 
