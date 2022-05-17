@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mouse on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/mouse/</link>
+    <description>Recent content in mouse on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/mouse/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup bluetooth mouses in mac air with three not-existing devices</title>
+      <link>https://jackliusr.github.io/posts/2022/05/setup-bluetooth-mouses-in-mac-air-with-three-not-existing-devices/</link>
+      <pubDate>Tue, 17 May 2022 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/05/setup-bluetooth-mouses-in-mac-air-with-three-not-existing-devices/</guid>
+      <description>I heard from my colleagues that MacAir M1 is picky about mice and you can find many threads in reddit about this if you use the keywords &amp;#34;reddit mac air m1 mouse issues bluetooth&amp;#34; to search. Today is my lucky day, I encountered the issue too.
+ This morning, I brought my MacAir to office and used the mouse of company.
+ </description>
+    </item>
+    
+  </channel>
+</rss>
