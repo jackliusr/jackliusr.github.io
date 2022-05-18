@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>argo-events on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/argo-events/</link>
+    <description>Recent content in argo-events on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/argo-events/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Workaround the limitation of authorization header of webhook in argo-events</title>
+      <link>https://jackliusr.github.io/posts/2022/05/workaround-the-limitation-of-authorization-header-of-webhook-in-argo-events/</link>
+      <pubDate>Wed, 18 May 2022 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/05/workaround-the-limitation-of-authorization-header-of-webhook-in-argo-events/</guid>
+      <description>Webhook of argo-events supports authentication, however the field is fixed in header. If your callers don’t do that way, you are screwed. Recently days, I was trying to integrate gitee with argo-workflow and argo-events. I hit the wall here.
+ TOKEN=&amp;#34;Bearer af3qqs321f2ddwf1e2e67dfda3fs&amp;#34; curl -X POST -H &amp;#34;Authorization: $TOKEN&amp;#34; -d &amp;#34;{your data}&amp;#34; http://xxxxx:12000/example   I kept reading the documents for serveral days and the knowledge sinked in, I got the idea that filters maybe can be used for that as a workaround solution.</description>
+    </item>
+    
+  </channel>
+</rss>
