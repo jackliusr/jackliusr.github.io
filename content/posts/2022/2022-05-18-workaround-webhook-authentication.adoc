@@ -1,0 +1,48 @@
+---
+title: Workaround the limitation of authorization header of webhook in argo-events
+date: 2022-05-18T20:10:10+08:00
+categories:
+- tech
+tags:
+- Webhook
+- Authorization
+- argo-events
+---
+
+Webhook of argo-events supports authentication, however the field is fixed in header. If your callers don't do that way, you are screwed. Recently days, I was trying to integrate gitee with argo-workflow and argo-events.  I hit the wall here. 
+
+[source,bash]
+----
+TOKEN="Bearer af3qqs321f2ddwf1e2e67dfda3fs"
+
+curl -X POST -H "Authorization: $TOKEN" -d "{your data}" http://xxxxx:12000/example
+----
+
+
+I kept reading the documents for serveral days and the knowledge sinked in, I got the idea that filters maybe can be used for that as a workaround solution.  Here is my sensor files. It works like a charm.
+
+[source,yaml]
+----
+apiVersion: argoproj.io/v1alpha1
+kind: Sensor
+metadata:
+  name: webhook
+spec:
+  template:
+    serviceAccountName: operate-workflow-sa
+  dependencies:
+    - name: test-dep
+      eventSourceName: webhook
+      eventName: example
+      filters:
+        data:
+          - path: header.X-Gitee-Token
+            type: string
+            value:
+              - "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+----
+
+== Reference: 
+* https://argoproj.github.io/argo-events/eventsources/webhook-authentication/
+* https://argoproj.github.io/argo-events/sensors/filters/data/
+* https://docs.gitea.io/en-us/webhooks/
