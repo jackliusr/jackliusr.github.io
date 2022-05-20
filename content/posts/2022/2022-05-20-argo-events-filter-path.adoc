@@ -1,0 +1,144 @@
+---
+title: "Argo-event filters: expr filter in action"
+date: 2022-05-20T20:10:10+08:00
+categories:
+- tech
+tags:
+- headers
+- gjson
+- argo-events
+- golang
+- gjson
+- kubectl
+---
+
+Today I found my argo-events sensor executed triggers which I was not intended to. In the logs, I found that ref fields of those non-intended triggers all started with "refs/heads/dev". I checked again with document and found this surprising truth: 
+[quote]
+----
+If data type is string, you can pass either an exact value or a regex. In any case that value will be evaluated as a regex.
+----
+
+Considing my following data filter, no wonder it triggers more than I expected.  I am good at regular expression, and I thought it was very easy to fix it by just changing the string "refs/heads/dev" to  "^refs/heads/dev$". Guess what ? It didn't work as expected either, it got even worse. "refs/heads/dev" didn't work too.
+
+[source,yaml]
+----
+ data:
+   - path: header.X-Gitee-Token
+     type: string
+     value:
+       - "xxxxxxxxxxxxxx"
+   - path: body.ref
+     type: string
+     value:
+       - "refs/heads/dev"
+----
+
+
+To get more control on the valuation part, I sought to script filters, but unsuccessfully. I will write another blog about script filter another day. Today I will focus the one I got it work. My initial expr filter was as following. 
+
+[source,yaml]
+----
+      filters:
+        exprs:
+        - expr:  token == "xxxxxxxxxx" && ref == "refs/heads/dev"
+          fields: 
+          - path: "header.X-Gitee-Token"
+            name: token
+          - path: "body.ref"
+            name: ref
+----
+
+My test script is as following: 
+[source, bash]
+----
+curl -X POST \
+  http://internal.dev.global.qm.dogzhang.com/webhook/example \
+  -H 'Content-Type: application/json' \
+  -H 'X-Gitee-Token: xxxxxxxxxxxxxxxx' \
+  -d '{"ref": "refs/heads/dev","after": "e54310a38beb520be37f045345e0a04aba4c89b1"}'
+----
+
+It didn't work as well. There was no way to go back to data filter and script filter. I cloned argo-events source code and added my test cases into "sensors/dependencies/filter_data_test.go". Here is my initia test cases: 
+[source,golang]
+----
+{
+			name: "gitokeen (different than expr logical operator)",
+			event: &v1alpha1.Event{
+				Data: []byte(`{"header": {"X-Gitee-Token": "xxxxxxxxxxxxxxxxx"},"body": {"ref": "refs/heads/main","after": "e54310a38beb520be37f045345e0a04aba4c89b1"} }`),
+			},
+			filters: []v1alpha1.ExprFilter{
+				{
+					Expr: `token == "af3qqs321f2ddwf1e2e67dfda3fs" &&  ref == "refs/heads/dev"`,
+					Fields: []v1alpha1.PayloadField{
+						{
+							Path: "header.X-Gitee-Token",
+							Name: "token",
+						},
+						{
+							Path: "body.ref",
+							Name: "ref",
+						},
+					},
+				},
+			},
+			operator:       v1alpha1.EmptyLogicalOperator,
+			expectedResult: true,
+			expectedErrMsg: "",
+		},	
+----
+
+The above test case failed to pass when running the following test.
+[source, bash]
+----
+go test -v -race ./sensors/dependencies/ -timeout 30s -run '^TestFilterExpr$'
+----
+
+To get the issues to simplest form, I removed codes related to token, and It can pass the test. Now I knew that there is something wrong with the token path. But how?
+
+Luckily, I could find the messages in sensor logs ( kubectl logs webhook-sensor-z88bq-8cc544ffd-qdclj), I copied the messages and pasted it into json viewer, and I noticed that all header fields are in array form. It is obvious now that I should change the path to a correct path to access a value in an array.
+
+Search "filterExpr" function which is used in "sensors/dependencies/filter_data_test.go", you will locate it at  https://github.com/argoproj/argo-events/blob/fd18e81854956bbb0c662a9dd4d230c026e41b36/sensors/dependencies/filter.go#L109. After reading the code, I went to gjson site and found the correct path syntax to access a value in array. 
+
+Here is my final working test case. 
+[source, golang]
+----
+		{
+			name: "gitokeen (different than expr logical operator)",
+			event: &v1alpha1.Event{
+				Data: []byte(`{"header":{"Accept":["*/*"],"Content-Length":["77"],"Content-Type":["application/json"],"User-Agent":["curl/7.68.0"],"X-Forwarded-For":["220.255.181.173"],"X-Forwarded-Host":["internal.dev.global.qm.dogzhang.com"],"X-Forwarded-Port":["80"],"X-Forwarded-Proto":["http"],"X-Forwarded-Scheme":["http"],"X-Gitee-Token":["xxxxxxxxxxxxxxxxxxxx"],"X-Real-Ip":["220.255.181.173"],"X-Request-Id":["cd76199c5936c678ed1dfb75f2718d01"],"X-Scheme":["http"]},"body":{"ref":"refs/heads/dev","after":"e54310a38beb520be37f045345e0a04aba4c89b1"}}`),
+			},
+			filters: []v1alpha1.ExprFilter{
+				{
+					Expr: `token == "af3qqs321f2ddwf1e2e67dfda3fs" &&  ref == "refs/heads/dev"`,
+					Fields: []v1alpha1.PayloadField{
+						{
+							Path: "header.X-Gitee-Token.0",
+							Name: "token",
+						},
+						{
+							Path: "body.ref",
+							Name: "ref",
+						},
+					},
+				},
+			},
+			operator:       v1alpha1.EmptyLogicalOperator,
+			expectedResult: true,
+			expectedErrMsg: "",
+		},	
+	}
+----
+
+After the working test case passed the test, I figured out the expr filter in my sensor yaml. Here is my working filter. 
+
+[source, yaml]
+----
+      filters:
+        exprs:
+        - expr:  token == "xxxxxxxxxxxxx" && ref == "refs/heads/dev"
+          fields: 
+          - path: "header.X-Gitee-Token.0"
+            name: token
+          - path: "body.ref"
+            name: ref  
+----
