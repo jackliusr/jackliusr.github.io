@@ -6,7 +6,17 @@
     <description>Recent content in argo-events on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/argo-events/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/argo-events/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Argo-event filters: expr filter in action</title>
+      <link>https://jackliusr.github.io/posts/2022/05/argo-event-filters-expr-filter-in-action/</link>
+      <pubDate>Fri, 20 May 2022 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/05/argo-event-filters-expr-filter-in-action/</guid>
+      <description>Today I found my argo-events sensor executed triggers which I was not intended to. In the logs, I found that ref fields of those non-intended triggers all started with &amp;#34;refs/heads/dev&amp;#34;. I checked again with document and found this surprising truth:
+ If data type is string, you can pass either an exact value or a regex. In any case that value will be evaluated as a regex.   Considing my following data filter, no wonder it triggers more than I expected.</description>
+    </item>
+    
     <item>
       <title>Workaround the limitation of authorization header of webhook in argo-events</title>
       <link>https://jackliusr.github.io/posts/2022/05/workaround-the-limitation-of-authorization-header-of-webhook-in-argo-events/</link>

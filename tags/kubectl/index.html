@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>argo-events | My learning and diary</title>
+    <title>kubectl | My learning and diary</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="">
     <meta name="generator" content="Hugo 0.87.0" />
@@ -26,19 +26,19 @@
 
     
     
-      <link href="/tags/argo-events/index.xml" rel="alternate" type="application/rss+xml" title="My learning and diary" />
-      <link href="/tags/argo-events/index.xml" rel="feed" type="application/rss+xml" title="My learning and diary" />
+      <link href="/tags/kubectl/index.xml" rel="alternate" type="application/rss+xml" title="My learning and diary" />
+      <link href="/tags/kubectl/index.xml" rel="feed" type="application/rss+xml" title="My learning and diary" />
       
     
     
-    <meta property="og:title" content="argo-events" />
+    <meta property="og:title" content="kubectl" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://jackliusr.github.io/tags/argo-events/" />
+<meta property="og:url" content="https://jackliusr.github.io/tags/kubectl/" />
 
-<meta itemprop="name" content="argo-events">
+<meta itemprop="name" content="kubectl">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="argo-events"/>
+<meta name="twitter:title" content="kubectl"/>
 <meta name="twitter:description" content=""/>
 
       
@@ -141,7 +141,7 @@ if (!doNotTrack) {
 
       <div class="tc-l pv3 ph3 ph4-ns">
         <h1 class="f2 f-subheadline-l fw2 light-silver mb0 mt0 lh-title">
-          argo-events
+          kubectl
         </h1>
         
       </div>
@@ -153,7 +153,7 @@ if (!doNotTrack) {
       
   <article class="cf pa3 pa4-m pa4-l">
     <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img mid-gray">
-      <p>Below you will find pages that utilize the taxonomy term “argo-events”</p>
+      <p>Below you will find pages that utilize the taxonomy term “kubectl”</p>
     </div>
   </article>
   <div class="mw8 center">    
@@ -171,24 +171,6 @@ if (!doNotTrack) {
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Today I found my argo-events sensor executed triggers which I was not intended to. In the logs, I found that ref fields of those non-intended triggers all started with &#34;refs/heads/dev&#34;. I checked again with document and found this surprising truth:
  If data type is string, you can pass either an exact value or a regex. In any case that value will be evaluated as a regex.   Considing my following data filter, no wonder it triggers more than I expected.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/05/workaround-the-limitation-of-authorization-header-of-webhook-in-argo-events/" class="link black dim">
-        Workaround the limitation of authorization header of webhook in argo-events
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Webhook of argo-events supports authentication, however the field is fixed in header. If your callers don’t do that way, you are screwed. Recently days, I was trying to integrate gitee with argo-workflow and argo-events. I hit the wall here.
- TOKEN=&#34;Bearer af3qqs321f2ddwf1e2e67dfda3fs&#34; curl -X POST -H &#34;Authorization: $TOKEN&#34; -d &#34;{your data}&#34; http://xxxxx:12000/example   I kept reading the documents for serveral days and the knowledge sinked in, I got the idea that filters maybe can be used for that as a workaround solution.
     </div>
   </div>
 </div>

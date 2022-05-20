@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gjson on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/gjson/</link>
+    <description>Recent content in gjson on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/gjson/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Argo-event filters: expr filter in action</title>
+      <link>https://jackliusr.github.io/posts/2022/05/argo-event-filters-expr-filter-in-action/</link>
+      <pubDate>Fri, 20 May 2022 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/05/argo-event-filters-expr-filter-in-action/</guid>
+      <description>Today I found my argo-events sensor executed triggers which I was not intended to. In the logs, I found that ref fields of those non-intended triggers all started with &amp;#34;refs/heads/dev&amp;#34;. I checked again with document and found this surprising truth:
+ If data type is string, you can pass either an exact value or a regex. In any case that value will be evaluated as a regex.   Considing my following data filter, no wonder it triggers more than I expected.</description>
+    </item>
+    
+  </channel>
+</rss>
