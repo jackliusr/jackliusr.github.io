@@ -52,7 +52,7 @@ My test script is as following:
 [source, bash]
 ----
 curl -X POST \
-  http://internal.dev.global.qm.dogzhang.com/webhook/example \
+  http://internal.dev.example.com/webhook/example \
   -H 'Content-Type: application/json' \
   -H 'X-Gitee-Token: xxxxxxxxxxxxxxxx' \
   -d '{"ref": "refs/heads/dev","after": "e54310a38beb520be37f045345e0a04aba4c89b1"}'
@@ -105,7 +105,7 @@ Here is my final working test case.
 		{
 			name: "gitokeen (different than expr logical operator)",
 			event: &v1alpha1.Event{
-				Data: []byte(`{"header":{"Accept":["*/*"],"Content-Length":["77"],"Content-Type":["application/json"],"User-Agent":["curl/7.68.0"],"X-Forwarded-For":["220.255.181.173"],"X-Forwarded-Host":["internal.dev.global.qm.dogzhang.com"],"X-Forwarded-Port":["80"],"X-Forwarded-Proto":["http"],"X-Forwarded-Scheme":["http"],"X-Gitee-Token":["xxxxxxxxxxxxxxxxxxxx"],"X-Real-Ip":["220.255.181.173"],"X-Request-Id":["cd76199c5936c678ed1dfb75f2718d01"],"X-Scheme":["http"]},"body":{"ref":"refs/heads/dev","after":"e54310a38beb520be37f045345e0a04aba4c89b1"}}`),
+				Data: []byte(`{"header":{"Accept":["*/*"],"Content-Length":["77"],"Content-Type":["application/json"],"User-Agent":["curl/7.68.0"],"X-Forwarded-For":["220.255.181.173"],"X-Forwarded-Host":["internal.dev.example.com"],"X-Forwarded-Port":["80"],"X-Forwarded-Proto":["http"],"X-Forwarded-Scheme":["http"],"X-Gitee-Token":["xxxxxxxxxxxxxxxxxxxx"],"X-Real-Ip":["220.255.181.173"],"X-Request-Id":["cd76199c5936c678ed1dfb75f2718d01"],"X-Scheme":["http"]},"body":{"ref":"refs/heads/dev","after":"e54310a38beb520be37f045345e0a04aba4c89b1"}}`),
 			},
 			filters: []v1alpha1.ExprFilter{
 				{
