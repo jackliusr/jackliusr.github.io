@@ -192,6 +192,7 @@ if (!doNotTrack) {
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
           Today I found my argo-events sensor executed triggers which I was not intended to. In the logs, I found that ref fields of those non-intended triggers all started with &#34;refs/heads/dev&#34;. I checked again with document and found this surprising truth:
+ https://argoproj.github.io/argo-events/sensors/filters/data/#:~:text=If%20data%20type%20is%20string%2C%20you%20can%20pass%20either%20an%20exact%20value%20or%20a%20regex.%20In%20any%20case%20that%20value%20will%20be%20evaluated%20as%20a%20regex.
  If data type is string, you can pass either an exact value or a regex. In any case that value will be evaluated as a regex.   Considing my following data filter, no wonder it triggers more than I expected.
         </div>
           <a href="/posts/2022/05/argo-event-filters-expr-filter-in-action/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
