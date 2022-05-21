@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/git/</link>
+    <description>Recent content in git on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>argo-workflow: secrets for git</title>
+      <link>https://jackliusr.github.io/posts/2022/05/argo-workflow-secrets-for-git/</link>
+      <pubDate>Sat, 21 May 2022 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/05/argo-workflow-secrets-for-git/</guid>
+      <description>I needed to clone one of my private repositories in one workflow of argo-workflows. I did’t figure a way to mount git artifact into a shared volume at that time. I sought to other options and find https://github.com/argoproj/argo-workflows/issues/1428 and https://www.jeffgeerling.com/blog/2019/mounting-kubernetes-secret-single-file-inside-pod.
+ The comment https://github.com/argoproj/argo-workflows/issues/1428#issuecomment-775911838 gives an example to add user name and password into https url. Upon I checked the logs, I found that user and password are shown in the logs of a workflow.</description>
+    </item>
+    
+  </channel>
+</rss>
