@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>argo-workflows on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/argo-workflows/</link>
+    <description>Recent content in argo-workflows on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/argo-workflows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reflection on implementation of CICD using argo-workflows</title>
+      <link>https://jackliusr.github.io/posts/2022/05/reflection-on-implementation-of-cicd-using-argo-workflows/</link>
+      <pubDate>Sun, 22 May 2022 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/05/reflection-on-implementation-of-cicd-using-argo-workflows/</guid>
+      <description>I had some projects on github, gitlab and gitee. Their CI pipelines are quite different. To save the troubles and times, it is a natural choice to seek other options to unify on one solution.
+ At first, I looked into jenkins x. However it is quite heavy and with opinions. Considering its Maturity Level Matrix, I am not sure I can make it happen in my limited after hours times.</description>
+    </item>
+    
+  </channel>
+</rss>

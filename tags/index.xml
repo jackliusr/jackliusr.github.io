@@ -6,7 +6,43 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>argo-events</title>
+      <link>https://jackliusr.github.io/tags/argo-events/</link>
+      <pubDate>Sun, 22 May 2022 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/argo-events/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>argo-workflows</title>
+      <link>https://jackliusr.github.io/tags/argo-workflows/</link>
+      <pubDate>Sun, 22 May 2022 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/argo-workflows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cicd</title>
+      <link>https://jackliusr.github.io/tags/cicd/</link>
+      <pubDate>Sun, 22 May 2022 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/cicd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jsonpath</title>
+      <link>https://jackliusr.github.io/tags/jsonpath/</link>
+      <pubDate>Sun, 22 May 2022 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/jsonpath/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>.netrc</title>
       <link>https://jackliusr.github.io/tags/.netrc/</link>
@@ -40,15 +76,6 @@
       <pubDate>Sat, 21 May 2022 20:10:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/secret/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>argo-events</title>
-      <link>https://jackliusr.github.io/tags/argo-events/</link>
-      <pubDate>Fri, 20 May 2022 20:10:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/argo-events/</guid>
       <description></description>
     </item>
     

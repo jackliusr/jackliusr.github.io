@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Reflection on implementation of CICD using argo-workflows | My learning and diary</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="I had some projects on github, gitlab and gitee. Their CI pipelines are quite different. To save the troubles and times, it is a natural choice to seek other options to unify on one solution.
+ At first, I looked into jenkins x. However it is quite heavy and with opinions. Considering its Maturity Level Matrix, I am not sure I can make it happen in my limited after hours times.">
+    <meta name="generator" content="Hugo 0.87.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.abe0b1c07d5e33565b0f9b998a7b1b5228b709f36af363e2766bc8035f2237b7.css" >
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Reflection on implementation of CICD using argo-workflows" />
+<meta property="og:description" content="I had some projects on github, gitlab and gitee. Their CI pipelines are quite different. To save the troubles and times, it is a natural choice to seek other options to unify on one solution.
+ At first, I looked into jenkins x. However it is quite heavy and with opinions. Considering its Maturity Level Matrix, I am not sure I can make it happen in my limited after hours times." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jackliusr.github.io/posts/2022/05/reflection-on-implementation-of-cicd-using-argo-workflows/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-05-22T20:10:10+08:00" />
+<meta property="article:modified_time" content="2022-05-22T22:26:02+08:00" />
+
+<meta itemprop="name" content="Reflection on implementation of CICD using argo-workflows">
+<meta itemprop="description" content="I had some projects on github, gitlab and gitee. Their CI pipelines are quite different. To save the troubles and times, it is a natural choice to seek other options to unify on one solution.
+ At first, I looked into jenkins x. However it is quite heavy and with opinions. Considering its Maturity Level Matrix, I am not sure I can make it happen in my limited after hours times."><meta itemprop="datePublished" content="2022-05-22T20:10:10+08:00" />
+<meta itemprop="dateModified" content="2022-05-22T22:26:02+08:00" />
+<meta itemprop="wordCount" content="747">
+<meta itemprop="keywords" content="cicd,argo-events,argo-workflows,jsonpath," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Reflection on implementation of CICD using argo-workflows"/>
+<meta name="twitter:description" content="I had some projects on github, gitlab and gitee. Their CI pipelines are quite different. To save the troubles and times, it is a natural choice to seek other options to unify on one solution.
+ At first, I looked into jenkins x. However it is quite heavy and with opinions. Considering its Maturity Level Matrix, I am not sure I can make it happen in my limited after hours times."/>
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-135021270-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+	
+
+
+
+
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My learning and diary
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/notes/" title="Notes page">
+              Notes
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/readinglists/" title="Books page">
+              Books
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/categories/" title="Categories page">
+              Categories
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tags/" title="Tags page">
+              Tags
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://jackliusr.github.io/posts/2022/05/reflection-on-implementation-of-cicd-using-argo-workflows/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://jackliusr.github.io/posts/2022/05/reflection-on-implementation-of-cicd-using-argo-workflows/&amp;text=Reflection%20on%20implementation%20of%20CICD%20using%20argo-workflows" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://jackliusr.github.io/posts/2022/05/reflection-on-implementation-of-cicd-using-argo-workflows/&amp;title=Reflection%20on%20implementation%20of%20CICD%20using%20argo-workflows" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Reflection on implementation of CICD using argo-workflows</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2022-05-22T20:10:10+08:00">May 22, 2022</time>
+
+      
+      
+        <span class="f6 mv4 dib tracked"> - 4 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 747 words</span>
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
+<p>I had some projects on github, gitlab and gitee. Their CI pipelines are quite different. To save the troubles and times, it is a natural choice to seek other options to unify on one solution.</p>
+</div>
+<div class="paragraph">
+<p>At first, I looked into jenkins x. However it is quite heavy and with opinions. Considering its <a href="https://jenkins-x.io/v3/about/maturity-matrix/">Maturity Level Matrix</a>, I am not sure I can make it happen in my limited after hours times. I used &#34;jenkins x vs&#34; as keywords to search in google, tekton popped up. I made some progress on making a CI pipeline using tekton. The thing is that tekton is too primitive. It is almost same as working from scratch to build a CI pipeline. That is not what I want. I just wanted to create a CI pipeline.</p>
+</div>
+<div class="paragraph">
+<p>I never thought that argo-workfow can be used as a CI pipeline until I saw on youtube 
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/UMaivwrAyTA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+. I used argo-workfow in kubeflow in the past, however I overlooked cicd part. Now it is time to dig deeper on this.</p>
+</div>
+<div class="paragraph">
+<p>I followed the &#34;get started&#34; and tutorials, the user experiences are better than tekton. I started to do the actual integration for my projects especially for gitee integration. The journey was not quite smoothy, I encountered several issues before the CI pipepline is fully functional.</p>
+</div>
+<div class="sect1">
+<h2 id="_git_artifact_on_volumes"><a class="anchor" href="#_git_artifact_on_volumes"></a><a class="link" href="#_git_artifact_on_volumes">Git artifact on volumes</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I followed the example of git artifact and volume examples successfully, however it got conflicts when I put them together. Once I got it right, later I forgot it. I figured out this way later when I worked out another way to do the same thing.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">  volumeClaimTemplates:
+  - metadata:
+      name: workdir
+    spec:
+      accessModes: [ &#34;ReadWriteOnce&#34; ]
+      resources:
+        requests:
+          storage: 1Gi
+  - name: git-clone
+    inputs:
+      artifacts:
+      - name: argo-source
+        path: /src/source
+        git:
+          repo: https://github.com/argoproj/argo-workflows.git
+          revision: &#34;v2.1.1&#34;
+    container:
+      image: golang:1.18
+      command: [ sh, -euxc ]
+      args:
+       - |
+
+      workingDir: /src
+      env:
+      volumeMounts:
+      - mountPath: /src
+        name: workdir</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_git_secrets"><a class="anchor" href="#_git_secrets"></a><a class="link" href="#_git_secrets">Git Secrets</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When you are using private repositories, there are several ways to resolve credential issues with that in argo-workflows.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>git artifacts: usernameSecret, passwordSecret, sshPrivateKeySecret</p>
+</li>
+<li>
+<p>pass user name and password in url: <a href="https://$(USERNAME):$(PASSWORD)@example.com/jackliusr/demo.git" class="bare">https://$(USERNAME):$(PASSWORD)@example.com/jackliusr/demo.git</a>. Based on many sources, it is secure to do so. However I found that the user name and password are shown in logs when I run &#34;argo logs workflow&#34;</p>
+</li>
+<li>
+<p>.netrc: mount netrc secrets to /root/.netrc</p>
+</li>
+<li>
+<p>ssh private key: issues with this way: add third-party public keys or ignore the security check.</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;"/>
+<col style="width: 33.3333%;"/>
+<col style="width: 33.3334%;"/>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">method</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">secure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tradeof</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">git artifacts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">good</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a lot of boilerplate code, possible to use .netrc to avoid boilerplate codes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pass user name and password in url</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">not good</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a lot of boilerplate code</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.netrc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">good</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bigger impacts i password is lost than ssh private keys</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ssh private keys</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">very secure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">issues with this way: add third-party public keys or ignore the security check.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_paths_in_argo_workflows_and_argo_events_are_jsonpath"><a class="anchor" href="#_paths_in_argo_workflows_and_argo_events_are_jsonpath"></a><a class="link" href="#_paths_in_argo_workflows_and_argo_events_are_jsonpath">paths in argo-workflows and argo-events are jsonpath</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>path in in argo-workflows and argo-events are in jsonpath style.</strong></p>
+</div>
+<div class="paragraph">
+<p>I falled in the trap thought it followed the normal path with dot as path seperator. The documents don’t explicitly state that. I overlooked the detail of path in examples until I encountered some events which are not filtered out. I spent  some time to figure out that. I even downloaded argo-events source code and looked into the code. In the code, I found gjson is used. Now I knew it is jsonpath. I think I am good at jsonpath as I used in many places such as jsonpatch, kubectl etc before this integration. The path issue is resolved now.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_fields_are_arrays_in_data_header_in_webhooks"><a class="anchor" href="#_fields_are_arrays_in_data_header_in_webhooks"></a><a class="link" href="#_fields_are_arrays_in_data_header_in_webhooks">fields are arrays in data.header in webhooks.</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This was a big surprise to me. I scratched my head many times and didn’t find the answers in the internet. I copied the logged messages from argo-event webhook event sources, and put the messages into my test cases in argo-events source code. After several runs of the test cases, I noticed that fields actually are arrays in data.header in the logged messages, not a simple field.  I spent quite some time on this issue.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_kustomize_image_provides_more_tools_than_you_expected"><a class="anchor" href="#_kustomize_image_provides_more_tools_than_you_expected"></a><a class="link" href="#_kustomize_image_provides_more_tools_than_you_expected">kustomize image provides more tools than you expected</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>My workflow takes longer time than I expected. I sought to ways to reduce the time. I noticed that git is used in golang image in one step in my workflow, I thought I may use the same principles to other image and save me some time. I looked into the <a href="https://us.gcr.io/k8s-artifacts-prod/kustomize/kustomize@sha256:75ccf9a833ca288c17b20ef61052dc8aefd6b99790585cef08734686e8062ebb">kustomize</a> image and it provides more than only kustomize.</p>
+</div>
+<div class="paragraph">
+<p>I used sh, xargs, cd, cat, git tools in the image  and save another step troubles and some time.</p>
+</div>
+</div>
+</div>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/cicd" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">cicd</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/argo-events" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">argo-events</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/argo-workflows" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">argo-workflows</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/jsonpath" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">jsonpath</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jackliusr-gh" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/2022/05/argo-event-filters-expr-filter-in-action/">Argo-event filters: expr filter in action</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/2022/05/workaround-the-limitation-of-authorization-header-of-webhook-in-argo-events/">Workaround the limitation of authorization header of webhook in argo-events</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jackliusr.github.io" >
+    &copy;  My learning and diary 2022 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+<script>
+ MathJax = {
+     tex: {
+         inlineMath: [['$', '$'], ['\\(', '\\)']]
+     }
+ };
+ </script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<link rel="stylesheet"
+  href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+
+
+
+  <p style="font-size: small; color: grey;">Page version: fd07e70d85c11eb91265523daa1c41bcf31aaec5 2022-05-22</p>
+  </body>
+</html>

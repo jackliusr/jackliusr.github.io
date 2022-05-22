@@ -186,6 +186,31 @@ if (!doNotTrack) {
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/2022/05/reflection-on-implementation-of-cicd-using-argo-workflows/" class="color-inherit dim link">
+            Reflection on implementation of CICD using argo-workflows
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          I had some projects on github, gitlab and gitee. Their CI pipelines are quite different. To save the troubles and times, it is a natural choice to seek other options to unify on one solution.
+ At first, I looked into jenkins x. However it is quite heavy and with opinions. Considering its Maturity Level Matrix, I am not sure I can make it happen in my limited after hours times.
+        </div>
+          <a href="/posts/2022/05/reflection-on-implementation-of-cicd-using-argo-workflows/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/2022/05/argo-workflow-secrets-for-git/" class="color-inherit dim link">
             argo-workflow: secrets for git
             </a>
@@ -229,37 +254,18 @@ if (!doNotTrack) {
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2022/05/workaround-the-limitation-of-authorization-header-of-webhook-in-argo-events/" class="color-inherit dim link">
-            Workaround the limitation of authorization header of webhook in argo-events
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Webhook of argo-events supports authentication, however the field is fixed in header. If your callers don’t do that way, you are screwed. Recently days, I was trying to integrate gitee with argo-workflow and argo-events. I hit the wall here.
- TOKEN=&#34;Bearer af3qqs321f2ddwf1e2e67dfda3fs&#34; curl -X POST -H &#34;Authorization: $TOKEN&#34; -d &#34;{your data}&#34; http://xxxxx:12000/example   I kept reading the documents for serveral days and the knowledge sinked in, I got the idea that filters maybe can be used for that as a workaround solution.
-        </div>
-          <a href="/posts/2022/05/workaround-the-limitation-of-authorization-header-of-webhook-in-argo-events/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/2022/05/workaround-the-limitation-of-authorization-header-of-webhook-in-argo-events/" class="link black dim">
+              Workaround the limitation of authorization header of webhook in argo-events
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2022/05/setup-bluetooth-mouses-in-mac-air-with-three-not-existing-devices/" class="link black dim">
@@ -276,12 +282,6 @@ if (!doNotTrack) {
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2022/05/argo-workflows-generate-dynamic-json-list/" class="link black dim">
               Argo-workflows: Generate dynamic json list
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/2022/05/rich-link-preview-and-im-apps/" class="link black dim">
-              Rich link preview and IM apps
             </a>
           </h2>
         
