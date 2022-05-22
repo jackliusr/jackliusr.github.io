@@ -1,0 +1,102 @@
+---
+title: Reflection on implementation of CICD using argo-workflows
+date: 2022-05-22T20:10:10+08:00
+categories:
+- tech
+tags:
+- cicd
+- argo-events
+- argo-workflows
+- jsonpath
+---
+
+I had some projects on github, gitlab and gitee. Their CI pipelines are quite different. To save the troubles and times, it is a natural choice to seek other options to unify on one solution. 
+
+At first, I looked into jenkins x. However it is quite heavy and with opinions. Considering its https://jenkins-x.io/v3/about/maturity-matrix/[Maturity Level Matrix], I am not sure I can make it happen in my limited after hours times. I used "jenkins x vs" as keywords to search in google, tekton popped up. I made some progress on making a CI pipeline using tekton. The thing is that tekton is too primitive. It is almost same as working from scratch to build a CI pipeline. That is not what I want. I just wanted to create a CI pipeline. 
+
+I never thought that argo-workfow can be used as a CI pipeline until I saw on youtube {{< youtube UMaivwrAyTA >}}. I used argo-workfow in kubeflow in the past, however I overlooked cicd part. Now it is time to dig deeper on this. 
+
+I followed the "get started" and tutorials, the user experiences are better than tekton. I started to do the actual integration for my projects especially for gitee integration. The journey was not quite smoothy, I encountered several issues before the CI pipepline is fully functional. 
+
+== Git artifact on volumes
+
+I followed the example of git artifact and volume examples successfully, however it got conflicts when I put them together. Once I got it right, later I forgot it. I figured out this way later when I worked out another way to do the same thing.
+[source,yaml]
+----
+  volumeClaimTemplates:
+  - metadata:
+      name: workdir
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi 
+  - name: git-clone       
+    inputs:
+      artifacts:
+      - name: argo-source
+        path: /src/source
+        git:
+          repo: https://github.com/argoproj/argo-workflows.git
+          revision: "v2.1.1"  
+    container:
+      image: golang:1.18
+      command: [ sh, -euxc ]
+      args:
+       - |
+
+      workingDir: /src
+      env:
+      volumeMounts:
+      - mountPath: /src
+        name: workdir          
+----
+
+== Git Secrets
+
+When you are using private repositories, there are several ways to resolve credential issues with that in argo-workflows.
+
+* git artifacts: usernameSecret, passwordSecret, sshPrivateKeySecret 
+* pass user name and password in url: https://$(USERNAME):$(PASSWORD)@example.com/jackliusr/demo.git. Based on many sources, it is secure to do so. However I found that the user name and password are shown in logs when I run "argo logs workflow"
+* .netrc: mount netrc secrets to /root/.netrc
+* ssh private key: issues with this way: add third-party public keys or ignore the security check.
+
+[cols="1,1,1"]
+|===
+| method
+| secure
+| tradeof
+
+| git artifacts
+| good
+| a lot of boilerplate code, possible to use .netrc to avoid boilerplate codes
+
+| pass user name and password in url
+| not good
+| a lot of boilerplate code
+
+| .netrc
+| good
+| bigger impacts i password is lost than ssh private keys
+
+| ssh private keys
+| very secure
+|  issues with this way: add third-party public keys or ignore the security check.
+
+|===
+
+== paths in argo-workflows and argo-events are jsonpath
+
+*path in in argo-workflows and argo-events are in jsonpath style.*
+
+I falled in the trap thought it followed the normal path with dot as path seperator. The documents don't explicitly state that. I overlooked the detail of path in examples until I encountered some events which are not filtered out. I spent  some time to figure out that. I even downloaded argo-events source code and looked into the code. In the code, I found gjson is used. Now I knew it is jsonpath. I think I am good at jsonpath as I used in many places such as jsonpatch, kubectl etc before this integration. The path issue is resolved now.
+
+== fields are arrays in data.header in webhooks.
+
+This was a big surprise to me. I scratched my head many times and didn't find the answers in the internet. I copied the logged messages from argo-event webhook event sources, and put the messages into my test cases in argo-events source code. After several runs of the test cases, I noticed that fields actually are arrays in data.header in the logged messages, not a simple field.  I spent quite some time on this issue.
+
+== kustomize image provides more tools than you expected
+
+My workflow takes longer time than I expected. I sought to ways to reduce the time. I noticed that git is used in golang image in one step in my workflow, I thought I may use the same principles to other image and save me some time. I looked into the https://us.gcr.io/k8s-artifacts-prod/kustomize/kustomize@sha256:75ccf9a833ca288c17b20ef61052dc8aefd6b99790585cef08734686e8062ebb[kustomize] image and it provides more than only kustomize. 
+
+I used sh, xargs, cd, cat, git tools in the image  and save another step troubles and some time.
