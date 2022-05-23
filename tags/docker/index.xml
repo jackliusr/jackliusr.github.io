@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/docker/</link>
+    <description>Recent content in docker on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker buildx multi-context, multi-platform, multi-stage and secrets in action</title>
+      <link>https://jackliusr.github.io/posts/2022/05/docker-buildx-multi-context-multi-platform-multi-stage-and-secrets-in-action/</link>
+      <pubDate>Mon, 23 May 2022 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/05/docker-buildx-multi-context-multi-platform-multi-stage-and-secrets-in-action/</guid>
+      <description>Prologue Today I migrated several golang projects to golang 1.18. I had several hiccups today. Let’s called docker buildx multi-context, multi-platform, multi-stage and secrets in action.
+   Multi-platform I started to look into one iOS and android app of our projects one week ago, and started to use Mac Air M1. Mac Air M1 is arm64 based, however our production environment is amd64 based. I had to do some changes to make the images built on my or my colleagues&amp;#39; machine can be runnable in production environment.</description>
+    </item>
+    
+  </channel>
+</rss>
