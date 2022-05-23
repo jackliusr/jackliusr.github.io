@@ -1,0 +1,79 @@
+---
+title: docker buildx multi-context, multi-platform, multi-stage and secrets in action
+date: 2022-05-23T20:10:10+08:00
+categories:
+- tech
+tags:
+- docker
+- buildx
+- makefile
+---
+
+
+== Prologue
+
+Today I migrated several golang projects to golang 1.18. I had several hiccups today. Let's called docker buildx multi-context, multi-platform, multi-stage and secrets in action. 
+
+== Multi-platform
+
+I started to look into one iOS and android app of our projects one week ago, and https://jackliusr.github.io/posts/2022/05/setup-bluetooth-mouses-in-mac-air-with-three-not-existing-devices/[started to use Mac Air M1]. Mac Air M1 is arm64 based, however our production environment is amd64 based. I had to do some changes to make the images built on my or my colleagues' machine can be runnable in production environment. Once when I had a small chat with my colleague https://www.linkedin.com/in/liu-chongliang-bba85aa4/?originalSubdomain=sg[Liu Chongliang] during lunch time, he said that docker buildx supports multiple platform. Now it is the perfect time to make it happen. https://www.docker.com/blog/faster-multi-platform-builds-dockerfile-cross-compilation-guide/[Faster Multi-Platform Builds: Dockerfile Cross-Compilation Guide] gives a perfect performant guide on how to do it. It's definitely worth a read. You can find https://www.docker.com/blog/faster-multi-platform-builds-dockerfile-cross-compilation-guide/[the exact minimal working example].
+
+== Multi-stage
+
+There is nothing to tell. I am familiar with multi-stage build years ago, and it is extensively used in our github action CI pipelines.
+
+== Multi-context and Secrets
+
+Private repositories are used in several projects and there are dependencies among them. Multi-context can help to resolve the multiple repositories issues. Secrets such as .netrc and .gitconfig could be security concerns if I directly put them in the images, I looked into other options and found https://docs.docker.com/engine/reference/commandline/buildx_build/#file[here]. I tried to use "~/.netrc" and "~/.gitconfig" to pass secrets howeve it didn't work. I don't want to hardcoded the file or symbolic link as the makefile and dockerfile wil be used not only in my laptop, but also my colleague's laptop. The issue hanged over my heads in my MRT trip to home. Maybe I could put the creation of netrc and gitconfig symbolic link in the makefile when I was walking to home. There are several ways to make it work. I chose https://stackoverflow.com/a/47828799/1101691[the purest one].
+
+Here is my multi-context and secret solution: 
+
+=== .gitignore
+
+[source,ini]
+----
+# .gitignore
+netrc
+gitconfig
+----
+
+=== makefile
+
+[source,makefile]
+----
+dockerx:
+ifeq (,$(wildcard ./netrc))
+	ln -s ~/.netrc netrc
+endif
+ifeq (,$(wildcard ./gitconfig))
+	ln -s ~/.gitconfig gitconfig
+endif
+	docker buildx build --platform=linux/amd64 --secret id=netrc,src=netrc --secret id=gitconfig,src=gitconfig \
+	--build-context api=../api \
+    -t server .
+----
+
+=== Dockerfile
+
+[source,Dockerfile]
+----
+# syntax=docker/dockerfile:1
+
+FROM  --platform=$BUILDPLATFORM golang:1.18.2-alpine as build
+WORKDIR /src
+ARG TARGETOS TARGETARCH
+RUN apk --no-cache add build-base git
+RUN go env -w GOPRIVATE="gitlab.com,code.example.com/jackliusr/api"
+RUN --mount=target=./server \ 
+    --mount=from=api,target=./api \
+    --mount=type=cache,target=/root/.cache/go-build \
+    --mount=type=cache,target=/go/pkg \
+    --mount=type=secret,id=netrc,dst=/root/.netrc \
+    --mount=type=secret,id=gitconfig,dst=/root/.gitconfig \
+    GOOS=$TARGETOS GOARCH=$TARGETARCH CGO_ENABLED=0 \
+    cd /src/server  && go build -o /out/server cmd/main.go
+----
+
+== Epilogue
+
+After a half day hard work, my multi-context, multi-platform, multi-stage and secrets docker build is working. It is a very exciting  momonent when you archive something successfully after some hard works.
