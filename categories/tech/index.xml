@@ -6,7 +6,16 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First trial mermaid Diagrams in hugo</title>
+      <link>https://jackliusr.github.io/posts/2022/05/first-trial-mermaid-diagrams-in-hugo/</link>
+      <pubDate>Tue, 24 May 2022 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/05/first-trial-mermaid-diagrams-in-hugo/</guid>
+      <description>Since I read the textual UML in the 2015 techradar, I am a big fan of it. I used plantuml in my technical writing in Asia Fusion Technology. Later I found asciidoc, and I wanted to combine the two together. I regularly read techradar from thoughtworks and found mermaidjs in NOV 2018 techradar. However it was little hard to integrate that into my site at that time. Today I knew Hugo supports Mermaid Diagrams easily.</description>
+    </item>
+    
     <item>
       <title>docker buildx multi-context, multi-platform, multi-stage and secrets in action</title>
       <link>https://jackliusr.github.io/posts/2022/05/docker-buildx-multi-context-multi-platform-multi-stage-and-secrets-in-action/</link>
@@ -470,7 +479,7 @@ skaffold debug     Import ptvsd in the python file to debug, add breakout() befo
       
       <guid>https://jackliusr.github.io/posts/2018/12/diagrams-samples/</guid>
       <description>Ditaa
- @font-face { font-family: sans-serif; }0 start1 q scans from start to end.....endrest of theallocated memory.....n    </description>
+ 0 start1 q scans from start to end.....endrest of theallocated memory.....n    </description>
     </item>
     
   </channel>

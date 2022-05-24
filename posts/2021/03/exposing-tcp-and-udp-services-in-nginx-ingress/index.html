@@ -9,7 +9,7 @@
     <meta name="description" content="Add command line flags in ingress controller:  --tcp-services-configmap
   --udp-services-configmap
      Create configmap apiVersion: v1 kind: ConfigMap metadata: name: tcp-services namespace: ingress-nginx data: 5432: &#34;default/postgres:5432&#34;     Patch the ingress-nginx-controller to allow port 5432 spec: template: spec: containers: - name: controller ports: - containerPort: 6379 hostPort: 6379     Add inbound rule to security group of node groups   Reference: https://minikube.">
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.99.1" />
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -288,7 +288,7 @@ data:
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

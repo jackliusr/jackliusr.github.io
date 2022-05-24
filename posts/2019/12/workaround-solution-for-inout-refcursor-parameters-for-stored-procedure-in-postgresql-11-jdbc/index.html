@@ -9,7 +9,7 @@
     <meta name="description" content="The workaround solution mentioned at Issue doesn’t work when inout refcursor parameter is used.
  Here is my workaround solution for that.
  CREATE OR REPLACE PROCEDURE sp_test(INOUT results refcursor) LANGUAGE plpgsql SECURITY DEFINER AS $procedure$ begin results := &#39;cur&#39; ; OPEN results for select generate_series dt from generate_series(date&#39;2019-01-01&#39; , date&#39;2019-01-31&#39;, interval &#39;1 day&#39;); end;$procedure$ ;   conn.setAutoCommit(false); Statement st = conn.createStatement(); ResultSet rs0 = st.executeQuery(&#34;call sp_test(&#39;&#39;)&#34;); ResultSet rs = st.">
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.99.1" />
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -246,7 +246,7 @@ log.info(&#34;RowNo:&#34; + rs.getRow().toString());</code></pre>
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

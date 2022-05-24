@@ -7,7 +7,7 @@
     <title>A strange issue of kubernetes: New pod kept in CrashloopBackOff in newly joined node. | My learning and diary</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Today I encountered a strange issue with one kubernete cluster. Newly created pods are not created on a newly joined node. There is no errors in logs of pods and the node, events of kubernete. All seems normal. I created a simple nginx pod with nodeName as the problematic node. The pod can be scheduled and created in the node. However the pod was kept in CrashloopBackOff state. There is definitely something wrong with server.">
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.99.1" />
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -273,7 +273,7 @@ if (!doNotTrack) {
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

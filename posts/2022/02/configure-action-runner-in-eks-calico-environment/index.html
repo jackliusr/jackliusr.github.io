@@ -7,7 +7,7 @@
     <title>Configure action runner in eks&#43;calico environment | My learning and diary</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Last week I setup our staging kubernetes environment, however the once worked version of runnerset yaml configuration didn’t work. I tried different combination of controller and summerwind/actions-runner-dind image, fully customized template portion with RUNNER_xxx arguments. I still got &#34;Http response code: NotFound from &#39;POST https://api.github.com/actions/runner-registration&#39;&#34; for every combination of those combinations in the logs of runner pods. I thought RunnerDeployment is stateless and less complex than RunnerSet. I gave it a try.">
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.99.1" />
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -261,7 +261,7 @@ patches:
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
