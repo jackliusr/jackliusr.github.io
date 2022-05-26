@@ -1,4 +1,5 @@
 .secrets
 .asciidoctor
+.hugo_build.lock
 resources/
 public/
