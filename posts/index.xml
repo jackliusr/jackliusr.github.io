@@ -6,7 +6,21 @@
     <description>Recent content in Posts on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>projected volumes in argo-workflow</title>
+      <link>https://jackliusr.github.io/posts/2022/05/projected-volumes-in-argo-workflow/</link>
+      <pubDate>Thu, 26 May 2022 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/05/projected-volumes-in-argo-workflow/</guid>
+      <description>Yesterday I added gitconfig volume and mounted to /root. However today the logs of the workflow shows netrc is mounted to /root as well. They are conflicted. Kubernetes supports projected volume which supports following types. my netrc and gitconfig are in the list.
+   secret
+  downwardAPI
+  configMap
+  serviceAccountToken
+   I made the small tweak to hello world sample workflow. Here is the my demo workflow with projected volumes.</description>
+    </item>
+    
     <item>
       <title>First trial mermaid Diagrams in hugo</title>
       <link>https://jackliusr.github.io/posts/2022/05/first-trial-mermaid-diagrams-in-hugo/</link>
