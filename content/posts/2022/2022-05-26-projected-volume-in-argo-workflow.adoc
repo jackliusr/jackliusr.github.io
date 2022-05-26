@@ -1,0 +1,77 @@
+---
+title: projected volumes in argo-workflow
+date: 2022-05-26T20:10:10+08:00
+categories:
+- tech
+tags:
+- argo-workflow
+- projected-volume
+---
+
+Yesterday I added gitconfig volume and mounted to /root. However today the logs of the workflow shows  netrc is mounted to /root as well. They are conflicted. Kubernetes supports projected volume which supports following types. my netrc and gitconfig are in the list. 
+
+* secret
+* downwardAPI
+* configMap
+* serviceAccountToken
+
+I made the small tweak to hello world sample workflow. Here is the my demo  workflow with projected volumes.
+
+[source, yaml]
+----
+apiVersion: v1
+data:
+  .netrc: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: netrc
+---
+apiVersion: v1
+data:
+  .gitconfig: "[user]\n\tname = Jack Liu shurui\n\temail = jack.l@gmail.com"
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: ghconfig-cm
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: wf-demo-
+spec:
+  entrypoint: whalesay          # invoke the whalesay template
+  volumes:
+  - name: projected-vol
+    projected:
+      sources:
+      - secret:
+          name: netrc
+          items:
+          - key: .netrc
+            path: .netrc 
+      - configMap:
+          name: ghconfig-cm
+          items:
+          - key: .gitconfig
+            path: .gitconfig              
+  templates:
+    - name: whalesay              # name of the template
+      container:
+        image: golang:1.18
+        command: [ sh, -euxc ]
+        args: 
+        - |
+          echo ".netrc"
+          cat /root/.netrc
+          echo ".gitconfig"
+          cat /root/.gitconfig
+        resources: # limit the resources
+          limits:
+            memory: 32Mi
+            cpu: 100m
+        volumeMounts:
+        - mountPath: /root
+          name:  projected-vol  
+----
