@@ -6,7 +6,17 @@
     <description>Recent content in kubernetes on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 May 2022 21:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 May 2022 19:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes and immutable infrastructure: docker image digest and image labels</title>
+      <link>https://jackliusr.github.io/posts/2022/05/kubernetes-and-immutable-infrastructure-docker-image-digest-and-image-labels/</link>
+      <pubDate>Fri, 27 May 2022 19:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/05/kubernetes-and-immutable-infrastructure-docker-image-digest-and-image-labels/</guid>
+      <description>Summary: use digest as way to refer to docker images in kubernetes resources, put commit id in image labels.
+ An idempotency and immutable infrastructure has a slew of benefits. I am a firm believer of it and I did my best to keep several projects in that way. In the past few weeks, I helped one friend to resolve system structure, performance issue and development experience of one of his projects.</description>
+    </item>
+    
     <item>
       <title>A strange issue of kubernetes: New pod kept in CrashloopBackOff in newly joined node.</title>
       <link>https://jackliusr.github.io/posts/2022/05/a-strange-issue-of-kubernetes-new-pod-kept-in-crashloopbackoff-in-newly-joined-node./</link>

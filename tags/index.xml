@@ -6,7 +6,34 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 May 2022 19:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker</title>
+      <link>https://jackliusr.github.io/tags/docker/</link>
+      <pubDate>Fri, 27 May 2022 19:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>immutable-infrastructure</title>
+      <link>https://jackliusr.github.io/tags/immutable-infrastructure/</link>
+      <pubDate>Fri, 27 May 2022 19:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/immutable-infrastructure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://jackliusr.github.io/tags/kubernetes/</link>
+      <pubDate>Fri, 27 May 2022 19:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>argo-workflow</title>
       <link>https://jackliusr.github.io/tags/argo-workflow/</link>
@@ -49,15 +76,6 @@
       <pubDate>Mon, 23 May 2022 20:10:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/buildx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://jackliusr.github.io/tags/docker/</link>
-      <pubDate>Mon, 23 May 2022 20:10:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/docker/</guid>
       <description></description>
     </item>
     
@@ -319,15 +337,6 @@
       <pubDate>Mon, 09 May 2022 20:10:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/jekyll/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kubernetes</title>
-      <link>https://jackliusr.github.io/tags/kubernetes/</link>
-      <pubDate>Sun, 08 May 2022 21:10:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/kubernetes/</guid>
       <description></description>
     </item>
     

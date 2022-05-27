@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>immutable-infrastructure on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/immutable-infrastructure/</link>
+    <description>Recent content in immutable-infrastructure on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 May 2022 19:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/immutable-infrastructure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes and immutable infrastructure: docker image digest and image labels</title>
+      <link>https://jackliusr.github.io/posts/2022/05/kubernetes-and-immutable-infrastructure-docker-image-digest-and-image-labels/</link>
+      <pubDate>Fri, 27 May 2022 19:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/05/kubernetes-and-immutable-infrastructure-docker-image-digest-and-image-labels/</guid>
+      <description>Summary: use digest as way to refer to docker images in kubernetes resources, put commit id in image labels.
+ An idempotency and immutable infrastructure has a slew of benefits. I am a firm believer of it and I did my best to keep several projects in that way. In the past few weeks, I helped one friend to resolve system structure, performance issue and development experience of one of his projects.</description>
+    </item>
+    
+  </channel>
+</rss>
