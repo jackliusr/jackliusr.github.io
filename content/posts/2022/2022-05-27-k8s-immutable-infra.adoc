@@ -1,0 +1,37 @@
+---
+title: "Kubernetes and immutable infrastructure: docker image digest and image labels"
+date: 2022-05-27T19:10:10+08:00
+categories:
+- tech
+tags:
+- Kubernetes
+- docker
+- immutable-infrastructure
+---
+
+Summary: use digest as way to refer to docker images in kubernetes resources, put commit id in image labels.
+
+An idempotency and immutable infrastructure has a slew of benefits. I am a firm believer of it and I did my best to keep several projects in that way. In the past few weeks, I helped one friend to resolve system structure, performance issue and development experience of one of his projects. The first thing caught my attention when I read the code is that the deployment script always tags the latest images as '1.0.0'. After several builds, I could find that there were several images in the same repository are tagged <none> and the new ones was tagged as "1.0.0".  That practice doesn't follow the immutable infrastructure principle, I wanted to do it in my way. 
+
+In the past, I used commit id as tag in my images, and I put the image tags into kustomization files. This time, I had a second thought if there is a better way after two years passed. Took a close look at https://docs.docker.com/engine/reference/run/#general-form[the general form of "docker run" command], there are two ways to refer a specific image: tag and digest. Tag can point to any digest and it can be changed. This tag mutability can cause https://sysdig.com/blog/toctou-tag-mutability/[some issues] .
+
+* non-deterministic deployment
+* Time-of-check Time-of-use (TOCTOU)
+
+Apparently commit id as tag has those issues.  I should use image digests in my kubernetes resources. There still is one issue I want to address-How to put the commit id into images to help later troubleshooting or locating the commit. The solution is as following: 
+
+https://stackoverflow.com/questions/51770930/git-commit-hash-in-dockerfile-as-label[git commit hash in dockerfile as label]
+[source, bash]
+----
+docker build --build-arg GIT_COMMIT=$(git rev-parse --short HEAD)
+----
+
+https://gist.github.com/leanderjanssen/dda386fc9e8667ff2d97fc0d56b6f51e[Example of using LABEL and ARG in a Dockerfile]
+[source, dockerfile]
+----
+ARG GIT_COMMIT=unknown
+LABEL git-commit=$GIT_COMMIT
+
+ENV GIT_COMMIT=$GIT_COMMIT
+----
+
