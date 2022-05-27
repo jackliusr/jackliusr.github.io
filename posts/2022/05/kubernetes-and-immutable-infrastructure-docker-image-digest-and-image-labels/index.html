@@ -6,7 +6,7 @@
     
     <title>Kubernetes and immutable infrastructure: docker image digest and image labels | My learning and diary</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Summary: use digest as way to refer to docker images in kubernetes resources, put commit id in image labels.
+    <meta name="description" content="Summary: use digest as the way to refer to docker images in kubernetes resources, put commit id in image labels.
  An idempotency and immutable infrastructure has a slew of benefits. I am a firm believer of it and I did my best to keep several projects in that way. In the past few weeks, I helped one friend to resolve system structure, performance issue and development experience of one of his projects.">
     <meta name="generator" content="Hugo 0.99.1" />
     
@@ -28,21 +28,21 @@
     
     
     <meta property="og:title" content="Kubernetes and immutable infrastructure: docker image digest and image labels" />
-<meta property="og:description" content="Summary: use digest as way to refer to docker images in kubernetes resources, put commit id in image labels.
+<meta property="og:description" content="Summary: use digest as the way to refer to docker images in kubernetes resources, put commit id in image labels.
  An idempotency and immutable infrastructure has a slew of benefits. I am a firm believer of it and I did my best to keep several projects in that way. In the past few weeks, I helped one friend to resolve system structure, performance issue and development experience of one of his projects." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2022/05/kubernetes-and-immutable-infrastructure-docker-image-digest-and-image-labels/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-05-27T19:10:10+08:00" />
-<meta property="article:modified_time" content="2022-05-27T21:02:31+08:00" />
+<meta property="article:modified_time" content="2022-05-27T21:47:41+08:00" />
 
 <meta itemprop="name" content="Kubernetes and immutable infrastructure: docker image digest and image labels">
-<meta itemprop="description" content="Summary: use digest as way to refer to docker images in kubernetes resources, put commit id in image labels.
+<meta itemprop="description" content="Summary: use digest as the way to refer to docker images in kubernetes resources, put commit id in image labels.
  An idempotency and immutable infrastructure has a slew of benefits. I am a firm believer of it and I did my best to keep several projects in that way. In the past few weeks, I helped one friend to resolve system structure, performance issue and development experience of one of his projects."><meta itemprop="datePublished" content="2022-05-27T19:10:10+08:00" />
-<meta itemprop="dateModified" content="2022-05-27T21:02:31+08:00" />
-<meta itemprop="wordCount" content="297">
+<meta itemprop="dateModified" content="2022-05-27T21:47:41+08:00" />
+<meta itemprop="wordCount" content="299">
 <meta itemprop="keywords" content="Kubernetes,docker,immutable-infrastructure," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kubernetes and immutable infrastructure: docker image digest and image labels"/>
-<meta name="twitter:description" content="Summary: use digest as way to refer to docker images in kubernetes resources, put commit id in image labels.
+<meta name="twitter:description" content="Summary: use digest as the way to refer to docker images in kubernetes resources, put commit id in image labels.
  An idempotency and immutable infrastructure has a slew of benefits. I am a firm believer of it and I did my best to keep several projects in that way. In the past few weeks, I helped one friend to resolve system structure, performance issue and development experience of one of his projects."/>
 
       
@@ -197,14 +197,14 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 2 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 297 words</span>
+        <span class="f6 mv4 dib tracked"> - 299 words</span>
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
-<p>Summary: use digest as way to refer to docker images in kubernetes resources, put commit id in image labels.</p>
+<p>Summary: use digest as the way to refer to docker images in kubernetes resources, put commit id in image labels.</p>
 </div>
 <div class="paragraph">
-<p>An idempotency and immutable infrastructure has a slew of benefits. I am a firm believer of it and I did my best to keep several projects in that way. In the past few weeks, I helped one friend to resolve system structure, performance issue and development experience of one of his projects. The first thing caught my attention when I read the code is that the deployment script always tags the latest images as &#39;1.0.0&#39;. After several builds, I could find that there were several images in the same repository are tagged &lt;none&gt; and the new ones was tagged as &#34;1.0.0&#34;.  That practice doesn’t follow the immutable infrastructure principle, I wanted to do it in my way.</p>
+<p>An idempotency and immutable infrastructure has a slew of benefits. I am a firm believer of it and I did my best to keep several projects in that way. In the past few weeks, I helped one friend to resolve system structure, performance issue and development experience of one of his projects. The first thing caught my attention when I read the code is that the deployment script always tags the latest images as &#39;1.0.0&#39;. After several builds, I could find that there were several images in the same repository are tagged &lt;none&gt; and the new ones was tagged as &#34;1.0.0&#34;.  That practice doesn’t follow the immutable infrastructure principle, I wanted to do it in a better way.</p>
 </div>
 <div class="paragraph">
 <p>In the past, I used commit id as tag in my images, and I put the image tags into kustomization files. This time, I had a second thought if there is a better way after two years passed. Took a close look at <a href="https://docs.docker.com/engine/reference/run/#general-form">the general form of &#34;docker run&#34; command</a>, there are two ways to refer a specific image: tag and digest. Tag can point to any digest and it can be changed. This tag mutability can cause <a href="https://sysdig.com/blog/toctou-tag-mutability/">some issues</a> .</p>
@@ -353,6 +353,6 @@ ENV GIT_COMMIT=$GIT_COMMIT</code></pre>
 
 
 
-  <p style="font-size: small; color: grey;">Page version: 78ee7a59bff2219259d541f9eb53c2814bfe5aad 2022-05-27</p>
+  <p style="font-size: small; color: grey;">Page version: 0e868527a6e1c0304dc9c0aeab36ca39cbc83878 2022-05-27</p>
   </body>
 </html>
