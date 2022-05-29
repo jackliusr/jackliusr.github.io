@@ -13,6 +13,7 @@ tags:
 I wrote this on September 7, 2021 and published https://www.linkedin.com/pulse/istio-envoy-passthrough-goes-wrong-when-port-80-used-smtp-liu-/[it] on linkedin. However I found that it can be hard to search if I put there. so I put here anoter copy
 
 TLDR: if your external SMTP is using port 80 instead of standard ports in an istio mesh, create a Service Entry for the external SMTP.
+
 These two days, a strange timeout issue happened in one of our kubernetes clusters when trying to send emails via SMTP even though the same configuration works perfectly on our development machines.
 
 At first, I thought it was due to SecureSocketOptions.startTLS. I changed it to SecureSocketOptions.Auto, but no luck.
