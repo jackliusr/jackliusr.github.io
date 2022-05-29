@@ -1,0 +1,129 @@
+---
+title: "Istio Envoy passthrough goes wrong when port 80 are used for SMTP protocol instead of standard ports"
+date: 2022-05-29T17:10:10+08:00
+categories:
+- tech
+tags:
+- Kubernetes
+- Istio
+- Envoy
+- SMTP
+---
+
+I wrote this on September 7, 2021 and published https://www.linkedin.com/pulse/istio-envoy-passthrough-goes-wrong-when-port-80-used-smtp-liu-/[it] on linkedin. However I found that it can be hard to search if I put there. so I put here anoter copy
+
+TLDR: if your external SMTP is using port 80 instead of standard ports in an istio mesh, create a Service Entry for the external SMTP.
+These two days, a strange timeout issue happened in one of our kubernetes clusters when trying to send emails via SMTP even though the same configuration works perfectly on our development machines.
+
+At first, I thought it was due to SecureSocketOptions.startTLS. I changed it to SecureSocketOptions.Auto, but no luck.
+Then I did a basic troubleshooting step by running telnet at first and the connections can be established successfully. I didn't have any clue at that time and thought the quick way to resolve an issue was usually to raise a support ticket. That was my first thought. Support guys only asked me the basic questions and asked me to do the same thing(telnet) again even after I gave the output of swaks. The guys were clueless like me. I rolled up my sleeves and started to do it the hard way.
+
+Many places can go wrong in the whole network route path. I listed out the places and sorted them out from easy to hard to debug. The order is nodes, node iptables, pods.
+
+NOTE: swaks can send emails successfully, so there was no issue here.
+
+NOTE:  iptables: I didn't see any anomaly in the output of "iptables -S"
+
+----
+-P INPUT ACCEP
+-P FORWARD ACCEPT
+-P OUTPUT ACCEPT
+-N DOCKER
+-N DOCKER-ISOLATION-STAGE-1
+-N DOCKER-ISOLATION-STAGE-2
+-N DOCKER-USER
+-N KUBE-FIREWALL
+-N KUBE-FORWARD
+-N KUBE-KUBELET-CANARY
+-A INPUT -j KUBE-FIREWALL
+-A FORWARD -m comment --comment "kubernetes forwarding rules" -j KUBE-FORWARD
+-A FORWARD -j DOCKER-USER
+-A FORWARD -j DOCKER-ISOLATION-STAGE-1
+-A FORWARD -o docker0 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -o docker0 -j DOCKER
+-A FORWARD -i docker0 ! -o docker0 -j ACCEPT
+-A FORWARD -i docker0 -o docker0 -j ACCEPT
+-A FORWARD -s 10.148.0.0/16 -j ACCEPT
+-A FORWARD -d 10.148.0.0/16 -j ACCEPT
+-A OUTPUT -j KUBE-FIREWALL
+-A DOCKER-ISOLATION-STAGE-1 -i docker0 ! -o docker0 -j DOCKER-ISOLATION-STAGE-2
+-A DOCKER-ISOLATION-STAGE-1 -j RETURN
+-A DOCKER-ISOLATION-STAGE-2 -o docker0 -j DROP
+-A DOCKER-ISOLATION-STAGE-2 -j RETURN
+-A DOCKER-USER -j RETURN
+-A KUBE-FIREWALL -m comment --comment "kubernetes firewall for dropping marked packets" -m mark --mark 0x8000/0x8000 -j DROP
+-A KUBE-FIREWALL ! -s 127.0.0.0/8 -d 127.0.0.0/8 -m comment --comment "block incoming localnet connections" -m conntrack ! --ctstate RELATED,ESTABLISHED,DNAT -j DROP
+-A KUBE-FORWARD -m comment --comment "kubernetes forwarding rules" -m mark --mark 0x4000/0x4000 -j ACCEPT
+-A KUBE-FORWARD -m comment --comment "kubernetes forwarding conntrack pod source rule" -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+-A KUBE-FORWARD -m comment --comment "kubernetes forwarding conntrack pod destination rule" -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPTT
+----
+
+Pod:
+
+[source,bash]
+----
+# find which node the pod is running on
+kubectl get pods -o
+---- 
+
+I used tcpdump at the pod node to capture TCP traffic to see what happened after connections are established from the pod. The odd thing was that there was no traffic when connections were established from the pod and after that.
+
+----
+tcpdump "src ##.##.##.##"
+tcpdump "dst ##.##.##.##"
+----
+
+A typical SMTP interaction is as follows, copied from  https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol#SMTP_transport_example[Wikipedia].
+
+----
+S: 220 smtp.example.com ESMTP Postfi
+C: HELO relay.example.com
+S: 250 smtp.example.com, I am glad to meet you
+C: MAIL FROM:<bob@example.com>
+S: 250 Ok
+C: RCPT TO:<alice@example.com>
+S: 250 Ok
+C: RCPT TO:<theboss@example.com>
+S: 250 Ok
+C: DATA
+S: 354 End data with <CR><LF>.<CR><LF>
+C: From: "Bob Example" <bob@example.com>
+C: To: Alice Example <alice@example.com>
+C: Cc: theboss@example.com
+C: Date: Tue, 15 Jan 2008 16:02:43 -0500
+C: Subject: Test message
+C: 
+C: Hello Alice.
+C: This is a test message with 5 header fields and 4 lines in the message body.
+C: Your friend,
+C: Bob
+C: .
+S: 250 Ok: queued as 12345
+C: QUIT
+S: 221 Bye
+{The server closes the connection}
+----
+
+Telnet session stopped at waiting for 220 response. An idea popped into my mind. What will happen if I send EHLO or HELO after a connection was established? The whole SMTP interaction can be completed successfully after the EHLO message was sent. The traffic captured in the pod node confirmed that.
+
+I compared the typical HTTP request/response flow with SMTP. I had a theory that istio doesn't actually make the connection to the SMTP server before it gets the HTTP request as istio consider the connection is HTTP protocol based. It is a deadlock. SMTP client and istio are waiting for each other. It is time to re-read the istio documentation and focus on egress traffic management.
+
+
+I didn't pay much attention to egress traffic management during setting up our istio mesh. after reading https://istio.io/latest/docs/tasks/traffic-management/egress/egress-control/#controlled-access-to-external-services[Controlled access to external services], I thought ServiceEntry is the key to resolve this issue. I created a ServiceEntry for the SMTP server and the issue was resolved. Here is my serviceentry yaml. 
+
+[source,yaml]
+----
+apiVersion: networking.istio.io/v1alpha
+kind: ServiceEntry
+metadata:
+  name: smtpdm-aaa
+spec:
+  hosts:
+  - "aaa.aaa.com"
+  addresses:
+  -  ##.##.##.##/32
+  ports:
+  - number: 80
+    name: smtp
+    protocol: TCP
+----
