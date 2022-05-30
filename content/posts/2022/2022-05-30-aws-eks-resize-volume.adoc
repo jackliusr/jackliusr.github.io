@@ -16,9 +16,9 @@ According to https://kubernetes.io/blog/2022/05/05/volume-expansion-ga/[doc], I 
 
 I googled similar cases and found alll following the way described in https://kubernetes.io/blog/2022/05/05/volume-expansion-ga/[doc]. I logged an issue https://github.com/kubernetes-sigs/aws-ebs-csi-driver/issues/1252[here] for my case. I hope I can get some explanation from there.
 
-My quick fix is that I changed my pvc again with a small increase of the size. The size of file system is increased well. Even the issue is fixed, I am still curious about that.
+My quick fix is that I changed my pvc again with a small increase of the size. The size of file system is increased as well. Even the issue is fixed, I am still curious about that.
 
-In the search result pages, I found an interesting article  https://pet2cattle.com/2021/04/k8s-volumes-and-mounts[How kubernetes hides away the volumeMounts complexity] from https://pet2cattle.com/2021/05/aws-eks-expand-pv[AWS EKS: How to resize Persistent Volumes]. Is is more interessting to figure out what's happened behind the scene like this one below.  How is it implemented that /dev/nvme0n1p1 is mounted different points?
+In the search result pages, I found an interesting article  https://pet2cattle.com/2021/04/k8s-volumes-and-mounts[How kubernetes hides away the volumeMounts complexity] from https://pet2cattle.com/2021/05/aws-eks-expand-pv[AWS EKS: How to resize Persistent Volumes]. Is is more interessting to figure out what's happened behind the scene like this one below.  How is it implemented that /dev/nvme0n1p1 is mounted at different mount points?
 
 ----
 /usr/share/nginx/html # df -h
