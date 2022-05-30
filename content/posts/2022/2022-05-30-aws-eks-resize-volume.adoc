@@ -1,0 +1,42 @@
+---
+title: "Resize Pod volumes in eks"
+date: 2022-05-30T20:10:10+08:00
+categories:
+- tech
+tags:
+- Kubernetes
+- aws
+- eks
+- volume
+---
+
+I did resize volume of kubernetes in the past, however I encountered an interesting issue when I did the resizing in different way. 
+
+According to https://kubernetes.io/blog/2022/05/05/volume-expansion-ga/[doc], I should only change the requested size in pvc. Today I changed the size of pv first, then pvc.  Here was the interesting thing: all things of pv and pvc are fine, but the size of the file system in pod was not changed.  I tried several way to do the online filesystem resizing by entering into the pod, and failed due to the image repository setting. I will try it another day. 
+
+I googled similar cases and found alll following the way described in https://kubernetes.io/blog/2022/05/05/volume-expansion-ga/[doc]. I logged an issue https://github.com/kubernetes-sigs/aws-ebs-csi-driver/issues/1252[here] for my case. I hope I can get some explanation from there.
+
+My quick fix is that I changed my pvc again with a small increase of the size. The size of file system is increased well. Even the issue is fixed, I am still curious about that.
+
+In the search result pages, I found an interesting article  https://pet2cattle.com/2021/04/k8s-volumes-and-mounts[How kubernetes hides away the volumeMounts complexity] from https://pet2cattle.com/2021/05/aws-eks-expand-pv[AWS EKS: How to resize Persistent Volumes]. Is is more interessting to figure out what's happened behind the scene like this one below.  How is it implemented that /dev/nvme0n1p1 is mounted different points?
+
+----
+/usr/share/nginx/html # df -h
+Filesystem                Size      Used Available Use% Mounted on
+overlay                  80.0G     34.5G     45.5G  43% /
+tmpfs                    64.0M         0     64.0M   0% /dev
+tmpfs                     3.7G         0      3.7G   0% /sys/fs/cgroup
+/dev/nvme0n1p1           80.0G     34.5G     45.5G  43% /dev/termination-log
+/dev/nvme0n1p1           80.0G     34.5G     45.5G  43% /etc/resolv.conf
+/dev/nvme0n1p1           80.0G     34.5G     45.5G  43% /etc/hostname
+/dev/nvme0n1p1           80.0G     34.5G     45.5G  43% /etc/hosts
+shm                      64.0M         0     64.0M   0% /dev/shm
+tmpfs                     3.7G     12.0K      3.7G   0% /run/secrets/kubernetes.io/serviceaccount
+tmpfs                     3.7G         0      3.7G   0% /proc/acpi
+tmpfs                    64.0M         0     64.0M   0% /proc/kcore
+tmpfs                    64.0M         0     64.0M   0% /proc/keys
+tmpfs                    64.0M         0     64.0M   0% /proc/latency_stats
+tmpfs                    64.0M         0     64.0M   0% /proc/timer_list
+tmpfs                    64.0M         0     64.0M   0% /proc/sched_debug
+tmpfs                     3.7G         0      3.7G   0% /sys/firmware
+----
