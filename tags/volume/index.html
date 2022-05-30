@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>eks | My learning and diary</title>
+    <title>volume | My learning and diary</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="">
     <meta name="generator" content="Hugo 0.99.1" />
@@ -26,19 +26,19 @@
 
     
     
-      <link href="/tags/eks/index.xml" rel="alternate" type="application/rss+xml" title="My learning and diary" />
-      <link href="/tags/eks/index.xml" rel="feed" type="application/rss+xml" title="My learning and diary" />
+      <link href="/tags/volume/index.xml" rel="alternate" type="application/rss+xml" title="My learning and diary" />
+      <link href="/tags/volume/index.xml" rel="feed" type="application/rss+xml" title="My learning and diary" />
       
     
     
-    <meta property="og:title" content="eks" />
+    <meta property="og:title" content="volume" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://jackliusr.github.io/tags/eks/" />
+<meta property="og:url" content="https://jackliusr.github.io/tags/volume/" />
 
-<meta itemprop="name" content="eks">
+<meta itemprop="name" content="volume">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="eks"/>
+<meta name="twitter:title" content="volume"/>
 <meta name="twitter:description" content=""/>
 
       
@@ -141,7 +141,7 @@ if (!doNotTrack) {
 
       <div class="tc-l pv3 ph3 ph4-ns">
         <h1 class="f2 f-subheadline-l fw2 light-silver mb0 mt0 lh-title">
-          eks
+          volume
         </h1>
         
       </div>
@@ -153,28 +153,11 @@ if (!doNotTrack) {
       
   <article class="cf pa3 pa4-m pa4-l">
     <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img mid-gray">
-      <p>Below you will find pages that utilize the taxonomy term “eks”</p>
+      <p>Below you will find pages that utilize the taxonomy term “volume”</p>
     </div>
   </article>
   <div class="mw8 center">    
     <section class="flex-ns flex-wrap justify-around mt5">
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/05/get-back-my-missed-keypair-of-eks/" class="link black dim">
-        Get back my missed keypair of EKS
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Today I needed to scale one of my kubernetes clusterss. Those keys are not in my new laptop since I used Mac Air M1. I didn’t see the increase of nodes several minutes after I run the eksctl scale command. I logged into aws console and found there were several &#34;Failed&#34; messages in activity history of the autoscaling group. All the failed messages shown &#34;Launching a new EC2 instance. Status Reason: The aaaa-nodegroup-ng-1-67:8e:b8:8e:33:83:93:68 key pair does not exist.
-    </div>
-  </div>
-</div>
-
-        </div>
       
         <div class="relative w-100  mb4 bg-white">
           <div class="relative w-100 mb4 bg-white nested-copy-line-height">
@@ -188,41 +171,6 @@ if (!doNotTrack) {
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       I did resize volume of kubernetes in the past, however I encountered an interesting issue when I did the resizing in different way.
  According to doc, I should only change the requested size in pvc. Today I changed the size of pv first, then pvc. Here was the interesting thing: all things of pv and pvc are fine, but the size of the file system in pod was not changed.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/05/setup-dapr-on-aws-and-calico/" class="link black dim">
-        Setup dapr on AWS and calico
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Low resource usage Our system had low resource usage, however my several pods got stucked in ContainerCreating state. Kubernetes events show that &#34;add cmd: failed to assign an IP address to container&#34;. &#34;kubectl top nodes&#34; still shows the usage of resources still low.
- jackl@LAPTOP-IIHUF2DR:~$ k --context jack.l@test-dev.ap-southeast-1.eksctl.io top nodes NAME CPU(cores) CPU% MEMORY(bytes) MEMORY% ip-192-168-102-109.ap-southeast-1.compute.internal 143m 7% 3217Mi 45% ip-192-168-110-171.ap-southeast-1.compute.internal 117m 6% 2892Mi 41%     Migrate to calico  Recreate cluster without nodegroups
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/02/configure-action-runner-in-eks-calico-environment/" class="link black dim">
-        Configure action runner in eks&#43;calico environment
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Last week I setup our staging kubernetes environment, however the once worked version of runnerset yaml configuration didn’t work. I tried different combination of controller and summerwind/actions-runner-dind image, fully customized template portion with RUNNER_xxx arguments. I still got &#34;Http response code: NotFound from &#39;POST https://api.github.com/actions/runner-registration&#39;&#34; for every combination of those combinations in the logs of runner pods. I thought RunnerDeployment is stateless and less complex than RunnerSet. I gave it a try.
     </div>
   </div>
 </div>

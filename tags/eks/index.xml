@@ -17,6 +17,16 @@
     </item>
     
     <item>
+      <title>Resize Pod volumes in eks</title>
+      <link>https://jackliusr.github.io/posts/2022/05/resize-pod-volumes-in-eks/</link>
+      <pubDate>Mon, 30 May 2022 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/05/resize-pod-volumes-in-eks/</guid>
+      <description>I did resize volume of kubernetes in the past, however I encountered an interesting issue when I did the resizing in different way.
+ According to doc, I should only change the requested size in pvc. Today I changed the size of pv first, then pvc. Here was the interesting thing: all things of pv and pvc are fine, but the size of the file system in pod was not changed.</description>
+    </item>
+    
+    <item>
       <title>Setup dapr on AWS and calico</title>
       <link>https://jackliusr.github.io/posts/2022/05/setup-dapr-on-aws-and-calico/</link>
       <pubDate>Mon, 16 May 2022 20:10:10 +0800</pubDate>

@@ -210,6 +210,31 @@ if (!doNotTrack) {
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/2022/05/resize-pod-volumes-in-eks/" class="color-inherit dim link">
+            Resize Pod volumes in eks
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          I did resize volume of kubernetes in the past, however I encountered an interesting issue when I did the resizing in different way.
+ According to doc, I should only change the requested size in pvc. Today I changed the size of pv first, then pvc. Here was the interesting thing: all things of pv and pvc are fine, but the size of the file system in pod was not changed.
+        </div>
+          <a href="/posts/2022/05/resize-pod-volumes-in-eks/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/2022/05/istio-envoy-passthrough-goes-wrong-when-port-80-are-used-for-smtp-protocol-instead-of-standard-ports/" class="color-inherit dim link">
             Istio Envoy passthrough goes wrong when port 80 are used for SMTP protocol instead of standard ports
             </a>
@@ -228,37 +253,18 @@ if (!doNotTrack) {
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2022/05/kubernetes-and-immutable-infrastructure-docker-image-digest-and-image-labels/" class="color-inherit dim link">
-            Kubernetes and immutable infrastructure: docker image digest and image labels
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Summary: use digest as the way to refer to docker images in kubernetes resources, put commit id in image labels.
- An idempotency and immutable infrastructure has a slew of benefits. I am a firm believer of it and I did my best to keep several projects in that way. In the past few weeks, I helped one friend to resolve system structure, performance issue and development experience of one of his projects.
-        </div>
-          <a href="/posts/2022/05/kubernetes-and-immutable-infrastructure-docker-image-digest-and-image-labels/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/2022/05/kubernetes-and-immutable-infrastructure-docker-image-digest-and-image-labels/" class="link black dim">
+              Kubernetes and immutable infrastructure: docker image digest and image labels
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2022/05/projected-volumes-in-argo-workflow/" class="link black dim">
@@ -275,12 +281,6 @@ if (!doNotTrack) {
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2022/05/docker-buildx-multi-context-multi-platform-multi-stage-and-secrets-in-action/" class="link black dim">
               docker buildx multi-context, multi-platform, multi-stage and secrets in action
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/2022/05/reflection-on-implementation-of-cicd-using-argo-workflows/" class="link black dim">
-              Reflection on implementation of CICD using argo-workflows
             </a>
           </h2>
         
