@@ -1,0 +1,22 @@
+---
+title: "Get back my missed keypair of EKS"
+date: 2022-05-30T20:10:10+08:00
+categories:
+- tech
+tags:
+- Kubernetes
+- aws
+- eks
+- keypair
+---
+
+Today I needed to scale one of my kubernetes clusterss. Those keys are not in my new laptop since I used https://jackliusr.github.io/posts/2022/05/setup-bluetooth-mouses-in-mac-air-with-three-not-existing-devices/[Mac Air M1]. I didn't see the increase of nodes several minutes after I run the eksctl scale command. I logged into  aws console and found there were several "Failed" messages in activity history of the autoscaling group. All the failed messages shown "Launching a new EC2 instance. Status Reason: The aaaa-nodegroup-ng-1-67:8e:b8:8e:33:83:93:68:26:23:e3:2e:28:bd:e2:37 key pair does not exist. Launching EC2 instance failed."
+
+Now I knew what's wrong. I didn't delete my keypairs and didn't know what's happened to the keypair. The keypairs just are not there in the ec2 keypair console. There was no time to figure out that. The first thing in my mind is how to regenerate the keypairs without breaking existing nodes.  I still have the bootstrap script of this cluster. In the boostrap scripts, one of my public key is used in publicKeyPath. As I said, my laptop is a new environment. I didn't have the corresponding pub key in my machine, but I have the corresponding private key.  The logical action is to regenerate the public key from the private key as the following script.
+
+[source, bash]
+----
+ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub
+----
+
+In ec2 keypair console, I imported my public key as aaaa-nodegroup-ng-1-67:8e:b8:8e:33:83:93:68:26:23:e3:2e:28:bd:e2:37. I re-run my eksctl scale command, and this time, everything is okay now.
