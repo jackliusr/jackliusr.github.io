@@ -1,0 +1,50 @@
+---
+title: "same device mounted on differences mount points"
+date: 2022-05-30T23:01:10+08:00
+categories:
+- tech
+tags:
+- Kubernetes
+- pod
+- mount
+- container
+---
+
+As in my previous https://jackliusr.github.io/posts/2022/05/resize-pod-volumes-in-eks/[article], I gave the following information of my pod. I still have some time before bed, I couldn't help to seek the reason of that.
+
+[source, bash]
+----
+/usr/share/nginx/html # df -h
+Filesystem                Size      Used Available Use% Mounted on
+overlay                  80.0G     34.5G     45.5G  43% /
+tmpfs                    64.0M         0     64.0M   0% /dev
+tmpfs                     3.7G         0      3.7G   0% /sys/fs/cgroup
+/dev/nvme0n1p1           80.0G     34.5G     45.5G  43% /dev/termination-log
+/dev/nvme0n1p1           80.0G     34.5G     45.5G  43% /etc/resolv.conf
+/dev/nvme0n1p1           80.0G     34.5G     45.5G  43% /etc/hostname
+/dev/nvme0n1p1           80.0G     34.5G     45.5G  43% /etc/hosts
+shm                      64.0M         0     64.0M   0% /dev/shm
+tmpfs                     3.7G     12.0K      3.7G   0% /run/secrets/kubernetes.io/serviceaccount
+tmpfs                     3.7G         0      3.7G   0% /proc/acpi
+tmpfs                    64.0M         0     64.0M   0% /proc/kcore
+tmpfs                    64.0M         0     64.0M   0% /proc/keys
+tmpfs                    64.0M         0     64.0M   0% /proc/latency_stats
+tmpfs                    64.0M         0     64.0M   0% /proc/timer_list
+tmpfs                    64.0M         0     64.0M   0% /proc/sched_debug
+tmpfs                     3.7G         0      3.7G   0% /sys/firmware
+----
+
+
+https://serverfault.com/questions/838435/linux-same-device-mounted-on-differences-mount-points[Linux: same device mounted on differences mount points] gave me the direction to look: bind mount. Since I couldn't find /dev/nvme0n1p1 in the /etc/mtab of my pod, I continued to look for other information. Later I found that findmnt can list all the mounts including bind mount. Here is the results.
+
+[source, bash]
+----
+/usr/share/nginx/html # findmnt --real --verbose
+TARGET               SOURCE                                                                                                                  FSTYPE OPTIONS
+/dev/termination-log /dev/nvme0n1p1[/var/lib/kubelet/pods/c7eb6eb6-951c-43f8-9efe-4869d64a7edf/containers/webclient/af0905e1]                xfs    rw,noatime,attr2,inode64,logbufs=8,logbsize=32k,noquota
+/etc/resolv.conf     /dev/nvme0n1p1[/var/lib/docker/containers/7834807dda525874ef8234c9b2f293a953dc2e6a0798387ccf056f7139af04ba/resolv.conf] xfs    rw,noatime,attr2,inode64,logbufs=8,logbsize=32k,noquota
+/etc/hostname        /dev/nvme0n1p1[/var/lib/docker/containers/7834807dda525874ef8234c9b2f293a953dc2e6a0798387ccf056f7139af04ba/hostname]    xfs    rw,noatime,attr2,inode64,logbufs=8,logbsize=32k,noquota
+/etc/hosts           /dev/nvme0n1p1[/var/lib/kubelet/pods/c7eb6eb6-951c-43f8-9efe-4869d64a7edf/etc-hosts]                                    xfs    rw,noatime,attr2,inode64,logbufs=8,logbsize=32k,noquota
+----
+
+It seems that kubelet and docker do the magic to do bind mounting.  Next time, I will dig deeper in this area. It's time to go bed now.
