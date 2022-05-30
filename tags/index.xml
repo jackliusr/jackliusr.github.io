@@ -6,7 +6,43 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 May 2022 22:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 May 2022 23:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>container</title>
+      <link>https://jackliusr.github.io/tags/container/</link>
+      <pubDate>Mon, 30 May 2022 23:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://jackliusr.github.io/tags/kubernetes/</link>
+      <pubDate>Mon, 30 May 2022 23:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mount</title>
+      <link>https://jackliusr.github.io/tags/mount/</link>
+      <pubDate>Mon, 30 May 2022 23:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/mount/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pod</title>
+      <link>https://jackliusr.github.io/tags/pod/</link>
+      <pubDate>Mon, 30 May 2022 23:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/pod/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>aws</title>
       <link>https://jackliusr.github.io/tags/aws/</link>
@@ -22,15 +58,6 @@
       <pubDate>Mon, 30 May 2022 22:10:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/eks/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kubernetes</title>
-      <link>https://jackliusr.github.io/tags/kubernetes/</link>
-      <pubDate>Mon, 30 May 2022 22:10:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/kubernetes/</guid>
       <description></description>
     </item>
     

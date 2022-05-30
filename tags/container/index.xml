@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>container on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/container/</link>
+    <description>Recent content in container on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 May 2022 23:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/container/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>same device mounted on differences mount points</title>
+      <link>https://jackliusr.github.io/posts/2022/05/same-device-mounted-on-differences-mount-points/</link>
+      <pubDate>Mon, 30 May 2022 23:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/05/same-device-mounted-on-differences-mount-points/</guid>
+      <description>As in my previous article, I gave the following information of my pod. I still have some time before bed, I couldn’t help to seek the reason of that.
+ /usr/share/nginx/html # df -h Filesystem Size Used Available Use% Mounted on overlay 80.0G 34.5G 45.5G 43% / tmpfs 64.0M 0 64.0M 0% /dev tmpfs 3.7G 0 3.7G 0% /sys/fs/cgroup /dev/nvme0n1p1 80.0G 34.5G 45.5G 43% /dev/termination-log /dev/nvme0n1p1 80.0G 34.5G 45.5G 43% /etc/resolv.</description>
+    </item>
+    
+  </channel>
+</rss>
