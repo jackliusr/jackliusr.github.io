@@ -186,6 +186,30 @@ if (!doNotTrack) {
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/2022/05/get-back-my-missed-keypair-of-eks/" class="color-inherit dim link">
+            Get back my missed keypair of EKS
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Today I needed to scale one of my kubernetes clusterss. Those keys are not in my new laptop since I used Mac Air M1. I didn’t see the increase of nodes several minutes after I run the eksctl scale command. I logged into aws console and found there were several &#34;Failed&#34; messages in activity history of the autoscaling group. All the failed messages shown &#34;Launching a new EC2 instance. Status Reason: The aaaa-nodegroup-ng-1-67:8e:b8:8e:33:83:93:68:26:23:e3:2e:28:bd:e2:37 key pair does not exist.
+        </div>
+          <a href="/posts/2022/05/get-back-my-missed-keypair-of-eks/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/2022/05/istio-envoy-passthrough-goes-wrong-when-port-80-are-used-for-smtp-protocol-instead-of-standard-ports/" class="color-inherit dim link">
             Istio Envoy passthrough goes wrong when port 80 are used for SMTP protocol instead of standard ports
             </a>
@@ -229,41 +253,18 @@ if (!doNotTrack) {
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2022/05/projected-volumes-in-argo-workflow/" class="color-inherit dim link">
-            projected volumes in argo-workflow
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Yesterday I added gitconfig volume and mounted to /root. However today the logs of the workflow shows netrc is mounted to /root as well. They are conflicted. Kubernetes supports projected volume which supports following types. my netrc and gitconfig are in the list.
-   secret
-  downwardAPI
-  configMap
-  serviceAccountToken
-   I made the small tweak to hello world sample workflow. Here is the my demo workflow with projected volumes.
-        </div>
-          <a href="/posts/2022/05/projected-volumes-in-argo-workflow/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/2022/05/projected-volumes-in-argo-workflow/" class="link black dim">
+              projected volumes in argo-workflow
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2022/05/first-trial-mermaid-diagrams-in-hugo/" class="link black dim">
@@ -280,12 +281,6 @@ if (!doNotTrack) {
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2022/05/reflection-on-implementation-of-cicd-using-argo-workflows/" class="link black dim">
               Reflection on implementation of CICD using argo-workflows
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/2022/05/argo-workflow-secrets-for-git/" class="link black dim">
-              argo-workflow: secrets for git
             </a>
           </h2>
         
