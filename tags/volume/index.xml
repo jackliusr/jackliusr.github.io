@@ -6,11 +6,11 @@
     <description>Recent content in volume on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/volume/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 May 2022 22:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/volume/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Resize Pod volumes in eks</title>
       <link>https://jackliusr.github.io/posts/2022/05/resize-pod-volumes-in-eks/</link>
-      <pubDate>Mon, 30 May 2022 20:10:10 +0800</pubDate>
+      <pubDate>Mon, 30 May 2022 22:10:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/posts/2022/05/resize-pod-volumes-in-eks/</guid>
       <description>I did resize volume of kubernetes in the past, however I encountered an interesting issue when I did the resizing in different way.
