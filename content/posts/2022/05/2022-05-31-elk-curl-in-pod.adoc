@@ -1,0 +1,43 @@
+---
+title: "Curl elk in pods to delete indices"
+date: 2022-05-17:01:10+08:00
+categories:
+- tech
+tags:
+- Kubernetes
+- pod
+- elk
+---
+
+
+Today my staging kibana didn't show logs. I made the decision to work out a solution to solve issue in hard way this time. I don't want me in the same situation without solutoins. 
+
+When things go wrong, you can't login kibana to do management or maintainance works. The left option is managing the data from the command line. In the past I figured out to use curl cli in pod to get some information of elk. However I don't figure out how to make it work again by deleting indices etc. Today I do that here.
+
+
+First, get the user elastic's password from the secrets 
+
+[source,bash]
+----
+kubectl get secret elastic-istio-es-elastic-user -o jsonpath='{.data.elastic}' |base64 -d;echo '\n'
+----
+
+[source, bash]
+----
+# enter into the elastic pod
+kubectl exec -it elastic-istio-es-default-0 -- /bin/bash
+
+# put user name and password into .netrc 
+cat<<EOF  > /root/.netrc
+machine $(hostname -i)
+login elastic
+password ${pwd}
+EOF
+
+# list the indices
+curl -X GET -n $(hostname -i):9200/_cat/indices | grep filebeat
+# in my case, i want to delete index filebeat-7.14.0-2022.04.27-000021
+curl -n -X DELETE "$(hostname -i):9200/filebeat-7.14.0-2022.04.30-000022?pretty"
+# verify
+curl -X GET -n $(hostname -i):9200/_cat/indices | grep filebeat
+----
