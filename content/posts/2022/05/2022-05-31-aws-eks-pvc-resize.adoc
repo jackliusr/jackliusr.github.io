@@ -27,4 +27,4 @@ In https://jackliusr.github.io/posts/2022/05/same-device-mounted-on-differences-
 
 What if /dev/nvme1n1 is directly from the host machine?  I logged into those nodes and indeed found those devices /dev/nvme1n1. The strange thing was that I didn't find any errors related volumes in kubelet.log and messages.log either. I gave it a try:  running resize2fs in the hosted machines, and verified in those pods. This time, the size of the file system in those pods changed. 
 
-Even after two years of extensively usage of kubernetes in production/staging/development environemtn, there are always somethings puzzle me. 
+Even after two years of extensively usage of kubernetes in production/staging/development environments, there are always somethings puzzle me. 
