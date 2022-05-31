@@ -17,5 +17,15 @@
  /usr/share/nginx/html # df -h Filesystem Size Used Available Use% Mounted on overlay 80.0G 34.5G 45.5G 43% / tmpfs 64.0M 0 64.0M 0% /dev tmpfs 3.7G 0 3.7G 0% /sys/fs/cgroup /dev/nvme0n1p1 80.0G 34.5G 45.5G 43% /dev/termination-log /dev/nvme0n1p1 80.0G 34.5G 45.5G 43% /etc/resolv.</description>
     </item>
     
+    <item>
+      <title>Curl elk in pods to delete indices</title>
+      <link>https://jackliusr.github.io/posts/1/01/curl-elk-in-pods-to-delete-indices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/1/01/curl-elk-in-pods-to-delete-indices/</guid>
+      <description>Today my staging kibana didn’t show logs. I made the decision to work out a solution to solve issue in hard way this time. I don’t want me in the same situation without solutoins.
+ When things go wrong, you can’t login kibana to do management or maintainance works. The left option is managing the data from the command line. In the past I figured out to use curl cli in pod to get some information of elk.</description>
+    </item>
+    
   </channel>
 </rss>
