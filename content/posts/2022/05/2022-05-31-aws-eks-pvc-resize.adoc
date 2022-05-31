@@ -1,6 +1,6 @@
 ---
 title: "Resize volumes when PVCs and PVs are okay and the size of file systems in pods doesn't change"
-date: 2022-05-31T23:01:10+08:00
+date: 2022-05-31T20:01:10+08:00
 categories:
 - tech
 tags:
