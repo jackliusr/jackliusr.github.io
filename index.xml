@@ -6,7 +6,17 @@
     <description>Recent content on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 31 May 2022 15:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 May 2022 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Resize volumes when PVCs and PVs are okay and the size of file systems in pods doesn&#39;t change</title>
+      <link>https://jackliusr.github.io/posts/2022/05/resize-volumes-when-pvcs-and-pvs-are-okay-and-the-size-of-file-systems-in-pods-doesnt-change/</link>
+      <pubDate>Tue, 31 May 2022 20:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/05/resize-volumes-when-pvcs-and-pvs-are-okay-and-the-size-of-file-systems-in-pods-doesnt-change/</guid>
+      <description>Here is an issue with aws-ebs-csi-driver: The size of file system doesn’t change when pvc is expanded. I got the same issue when I tried to do the Curl elk in pods to delete indices this afternoon. I got the message &amp;#34;resize2fs 1.44.5 (15-Dec-2018) open: No such file or directory while opening /dev/nvme1n1&amp;#34; as well when I tried to resize the file system /dev/nvme1n1 in my pod.
+ As the issue is about csidriver, it is not in the the result of running command &amp;#34;kubectl get csidriver&amp;#34; on my cluster.</description>
+    </item>
+    
     <item>
       <title>Curl elk in pods to delete indices</title>
       <link>https://jackliusr.github.io/posts/2022/05/curl-elk-in-pods-to-delete-indices/</link>

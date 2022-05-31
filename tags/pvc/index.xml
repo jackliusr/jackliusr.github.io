@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mount on My learning and diary</title>
-    <link>https://jackliusr.github.io/tags/mount/</link>
-    <description>Recent content in mount on My learning and diary</description>
+    <title>pvc on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/pvc/</link>
+    <description>Recent content in pvc on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 31 May 2022 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/mount/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 May 2022 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/pvc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Resize volumes when PVCs and PVs are okay and the size of file systems in pods doesn&#39;t change</title>
       <link>https://jackliusr.github.io/posts/2022/05/resize-volumes-when-pvcs-and-pvs-are-okay-and-the-size-of-file-systems-in-pods-doesnt-change/</link>
@@ -15,16 +15,6 @@
       <guid>https://jackliusr.github.io/posts/2022/05/resize-volumes-when-pvcs-and-pvs-are-okay-and-the-size-of-file-systems-in-pods-doesnt-change/</guid>
       <description>Here is an issue with aws-ebs-csi-driver: The size of file system doesn’t change when pvc is expanded. I got the same issue when I tried to do the Curl elk in pods to delete indices this afternoon. I got the message &amp;#34;resize2fs 1.44.5 (15-Dec-2018) open: No such file or directory while opening /dev/nvme1n1&amp;#34; as well when I tried to resize the file system /dev/nvme1n1 in my pod.
  As the issue is about csidriver, it is not in the the result of running command &amp;#34;kubectl get csidriver&amp;#34; on my cluster.</description>
-    </item>
-    
-    <item>
-      <title>same device mounted on differences mount points</title>
-      <link>https://jackliusr.github.io/posts/2022/05/same-device-mounted-on-differences-mount-points/</link>
-      <pubDate>Mon, 30 May 2022 23:01:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/posts/2022/05/same-device-mounted-on-differences-mount-points/</guid>
-      <description>As in my previous article, I gave the following information of my pod. I still have some time before bed, I couldn’t help to seek the reason of that.
- /usr/share/nginx/html # df -h Filesystem Size Used Available Use% Mounted on overlay 80.0G 34.5G 45.5G 43% / tmpfs 64.0M 0 64.0M 0% /dev tmpfs 3.7G 0 3.7G 0% /sys/fs/cgroup /dev/nvme0n1p1 80.0G 34.5G 45.5G 43% /dev/termination-log /dev/nvme0n1p1 80.0G 34.5G 45.5G 43% /etc/resolv.</description>
     </item>
     
   </channel>
