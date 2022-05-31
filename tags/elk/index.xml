@@ -5,13 +5,14 @@
     <link>https://jackliusr.github.io/tags/elk/</link>
     <description>Recent content in elk on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://jackliusr.github.io/tags/elk/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Tue, 31 May 2022 15:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/elk/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Curl elk in pods to delete indices</title>
-      <link>https://jackliusr.github.io/posts/1/01/curl-elk-in-pods-to-delete-indices/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://jackliusr.github.io/posts/2022/05/curl-elk-in-pods-to-delete-indices/</link>
+      <pubDate>Tue, 31 May 2022 15:01:10 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/posts/1/01/curl-elk-in-pods-to-delete-indices/</guid>
+      <guid>https://jackliusr.github.io/posts/2022/05/curl-elk-in-pods-to-delete-indices/</guid>
       <description>Today my staging kibana didn’t show logs. I made the decision to work out a solution to solve issue in hard way this time. I don’t want me in the same situation without solutoins.
  When things go wrong, you can’t login kibana to do management or maintainance works. The left option is managing the data from the command line. In the past I figured out to use curl cli in pod to get some information of elk.</description>
     </item>
