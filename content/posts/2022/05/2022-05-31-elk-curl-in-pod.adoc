@@ -1,6 +1,6 @@
 ---
 title: "Curl elk in pods to delete indices"
-date: 2022-05-17:01:10+08:00
+date: 2022-05-31T15:01:10+08:00
 categories:
 - tech
 tags:
