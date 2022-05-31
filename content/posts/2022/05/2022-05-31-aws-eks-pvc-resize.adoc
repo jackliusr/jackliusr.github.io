@@ -1,0 +1,30 @@
+---
+title: "Resize volumes when PVCs and PVs are okay and the size of file systems in pods doesn't change"
+date: 2022-05-31T23:01:10+08:00
+categories:
+- tech
+tags:
+- Kubernetes
+- pod
+- mount
+- pvc
+---
+
+Here is an issue with aws-ebs-csi-driver: https://github.com/kubernetes-sigs/aws-ebs-csi-driver/issues/1095#issuecomment-946936727[The size of file system doesn't change when pvc is expanded]. I got the same issue when I tried to do the https://jackliusr.github.io/posts/2022/05/curl-elk-in-pods-to-delete-indices/[Curl elk in pods to delete indices] this afternoon. I got the message  "resize2fs 1.44.5 (15-Dec-2018) open: No such file or directory while opening /dev/nvme1n1" as well when I tried to resize the file system /dev/nvme1n1 in my pod.
+
+As the issue is about csidriver, it is not in the the result of running command "kubectl get csidriver" on my cluster. I checked pv,pvc, pod, events and logs of api servers. There was nothing wrong with volumes. In the https://github.com/kubernetes-sigs/aws-ebs-csi-driver/issues/1095[issue], https://github.com/kubernetes-sigs/aws-ebs-csi-driver/issues/1095#issuecomment-947534818[korae29 resolved the issue by upgrading csi driver]. I couldn't do that way as esb csi driver is not used in my cluster as shown in the following yaml.
+
+[source, yaml]
+----
+# annotations of my pv 
+  annotations:
+    kubernetes.io/createdby: aws-ebs-dynamic-provisioner
+    pv.kubernetes.io/bound-by-controller: "yes"
+    pv.kubernetes.io/provisioned-by: kubernetes.io/aws-ebs
+----
+
+In https://jackliusr.github.io/posts/2022/05/same-device-mounted-on-differences-mount-points/[same device mounted on differences mount points], I knew something about bind mounts. I suspected maybe that was the bind mount. I installed util-linux and run findmnt. I didn't find that. 
+
+What if /dev/nvme1n1 is directly from the host machine?  I logged into those nodes and indeed found those devices /dev/nvme1n1. The strange thing was that I didn't find any errors related volumes in kubelet.log and messages.log either. I gave it a try:  running resize2fs in the hosted machines, and verified in those pods. This time, the size of the file system in those pods changed. 
+
+Even after two years of extensively usage of kubernetes in production/staging/development environemtn, there are always somethings puzzle me. 
