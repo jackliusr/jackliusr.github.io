@@ -1,0 +1,37 @@
+---
+title: "Reflection on kubernete usage"
+date: 2022-06-02T21:01:10+08:00
+categories:
+- tech
+tags:
+- Kubernetes
+- ecosystem
+---
+
+Today I explained the current infrastructure fleet configurations to our devops team, I have the thought to make a reflection on the things or lessons I learnt in the past and think about what should I do in the next.
+
+The technologies and tools I used in my projects is as following. There are still a lot of things to learn considering the list in my https://github.com/jackliusr/k8s[list] and the huge ecosystem of kubernetes. 
+
+* kubernetes
+* kubectl
+* kustomize
+* cert-manager
+* argo-cd
+* istio
+* godaddy-webhook
+* eksctl
+* elk(filebeat, elasticsearch, kibinan)
+* metrics-server
+* sealed-secrets
+* action-runner
+* helm
+* argo-workflow
+* argo-events
+* jsonpatch
+* jsonpath
+* jq
+* yq
+* letsencrypt 
+* ACME (HTTP01, DNS1)
+* dapr
+
