@@ -35,3 +35,6 @@ The technologies and tools I used in my projects is as following. There are stil
 * ACME (HTTP01, DNS1)
 * dapr
 
+In the past, I studied Oracle database and passed the Oracle DBA certificate. When I lead a DBA team for several 24x7 projects, I noticed the knowledges and skills needed to fullfil the role are much more than the certificates such as OS, license management, license terms, storage, SAN, interconnection between SAN and servers, volume manages etc. This time, I didn't consider to attend the kubernetes exams considering my past experience leading a DBA team.  The actual usage kubernetes involved more than the curriculum in the exams.
+
+When systems move to kubernetes, many things change as well and they need to be done differently. I think the whole ecosystem is evolving around this and try to make the process smoother and less painful. However the ecosystem evolve so fast, there are fractions among them. same functionalities may have serveral implementation with their quirks. Those are not covered in the exams as well. The knowledge holes of this needed to be filled by one's own researches and studies.
