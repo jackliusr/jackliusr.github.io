@@ -1,0 +1,31 @@
+---
+title: "Create another user and grant proper permissions in aws rds mysql"
+date: 2022-06-07T16:01:10+08:00
+categories:
+- tech
+tags:
+- aws
+- rds
+- mysql
+---
+
+
+When I tried to create an user for application instead of giving out the master user and its password. I got "Error Code: 1045. Access denied for user 'mysqladmin'@'%' (using password: YES)" when I run "GRANT ALL PRIVILEGES ON demodb.* TO 'appadmin'@'%';". 
+
+I tried the method in https://aws.amazon.com/premiumsupport/knowledge-center/duplicate-master-user-mysql/[How do I create another master user for my Amazon RDS DB instance that is running MySQL?], it is for creating another master user with more permissions than an app db user.
+
+
+Several discussions in stackoverflow don't give me the appropriate list of permissions. Here is my list of permissions for this case. 
+
+[source, sql]
+----
+CREATE USER 'mysqladmin'@'%' IDENTIFIED BY 'aaabbbccc';
+GRANT CREATE, DROP, INDEX, ALTER, CREATE TEMPORARY TABLES, CREATE VIEW, EVENT, TRIGGER, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, EXECUTE ON demodb.* 
+TO 'mysqladmin'@'%' ;
+flush privileges;
+----
+
+
+
+== Reference
+https://aws.amazon.com/premiumsupport/knowledge-center/duplicate-master-user-mysql/[How do I create another master user for my Amazon RDS DB instance that is running MySQL?]
