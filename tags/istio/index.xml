@@ -6,7 +6,17 @@
     <description>Recent content in istio on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 May 2022 17:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/istio/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Jun 2022 11:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/istio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>istio virtual service with tls - Connection reset by peer</title>
+      <link>https://jackliusr.github.io/posts/2022/06/istio-virtual-service-with-tls-connection-reset-by-peer/</link>
+      <pubDate>Tue, 07 Jun 2022 11:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/06/istio-virtual-service-with-tls-connection-reset-by-peer/</guid>
+      <description>I got following similar errors when setup my istio clusters.
+ Mark bundle as not supporting multiuse 301 istio 301 or 404 error:02FFF036:system library:func(4095):Connection reset by peer * Trying 20.190.14.28:443... * TCP_NODELAY set * Connected to kiali.example.com (20.190.14.28) port 443 (#0) * ALPN, offering http/1.1 * successfully set certificate verify locations: * CAfile: /home/ng/anaconda3/ssl/cacert.pem CApath: none * TLSv1.3 (OUT), TLS handshake, Client hello (1): * OpenSSL SSL_connect: Connection reset by peer in connection to kiali.</description>
+    </item>
+    
     <item>
       <title>Istio Envoy passthrough goes wrong when port 80 are used for SMTP protocol instead of standard ports</title>
       <link>https://jackliusr.github.io/posts/2022/05/istio-envoy-passthrough-goes-wrong-when-port-80-are-used-for-smtp-protocol-instead-of-standard-ports/</link>
