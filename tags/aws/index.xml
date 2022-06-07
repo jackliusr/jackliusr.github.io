@@ -6,7 +6,17 @@
     <description>Recent content in aws on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 May 2022 22:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Jun 2022 16:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create another user and grant proper permissions in aws rds mysql</title>
+      <link>https://jackliusr.github.io/posts/2022/06/create-another-user-and-grant-proper-permissions-in-aws-rds-mysql/</link>
+      <pubDate>Tue, 07 Jun 2022 16:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/06/create-another-user-and-grant-proper-permissions-in-aws-rds-mysql/</guid>
+      <description>When I tried to create an user for application instead of giving out the master user and its password. I got &amp;#34;Error Code: 1045. Access denied for user &amp;#39;mysqladmin&amp;#39;@&amp;#39;%&amp;#39; (using password: YES)&amp;#34; when I run &amp;#34;GRANT ALL PRIVILEGES ON demodb.* TO &amp;#39;appadmin&amp;#39;@&amp;#39;%&amp;#39;;&amp;#34;.
+ I tried the method in How do I create another master user for my Amazon RDS DB instance that is running MySQL?, it is for creating another master user with more permissions than an app db user.</description>
+    </item>
+    
     <item>
       <title>Resize Pod volumes in eks</title>
       <link>https://jackliusr.github.io/posts/2022/05/resize-pod-volumes-in-eks/</link>
