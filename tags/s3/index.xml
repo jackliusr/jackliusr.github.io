@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>s3 on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/s3/</link>
+    <description>Recent content in s3 on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 08 Jun 2022 08:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/s3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Make a S3 bucket public</title>
+      <link>https://jackliusr.github.io/posts/2022/06/make-a-s3-bucket-public/</link>
+      <pubDate>Wed, 08 Jun 2022 08:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/06/make-a-s3-bucket-public/</guid>
+      <description>Turn off &amp;#34;Block public access (bucket settings)&amp;#34;        Access control list (ACL): give Everyone (public access) object lists and bucket ACL read.          Policy Policy to attach to a role, so the role can be used to upload resources and put the ACL on the uploaded objects.
+ { &amp;#34;Version&amp;#34;: &amp;#34;2012-10-17&amp;#34;, &amp;#34;Statement&amp;#34;: [ { &amp;#34;Sid&amp;#34;: &amp;#34;VisualEditor0&amp;#34;, &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;, &amp;#34;Action&amp;#34;: &amp;#34;s3:ListBucket&amp;#34;, &amp;#34;Resource&amp;#34;: &amp;#34;arn:aws:s3:::demo&amp;#34; }, { &amp;#34;Sid&amp;#34;: &amp;#34;VisualEditor1&amp;#34;, &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;, &amp;#34;Action&amp;#34;: [ &amp;#34;s3:PutObject&amp;#34;, &amp;#34;s3:GetObject&amp;#34;, &amp;#34;s3:DeleteObject&amp;#34; ], &amp;#34;Resource&amp;#34;: &amp;#34;arn:aws:s3:::demo/*&amp;#34; }, { &amp;#34;Sid&amp;#34;: &amp;#34;VisualEditor2&amp;#34;, &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;, &amp;#34;Action&amp;#34;: &amp;#34;s3:ListBucket&amp;#34;, &amp;#34;Resource&amp;#34;: &amp;#34;arn:aws:s3:::demo-public&amp;#34; }, { &amp;#34;Sid&amp;#34;: &amp;#34;VisualEditor3&amp;#34;, &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;, &amp;#34;Action&amp;#34;: [ &amp;#34;s3:PutObject&amp;#34;, &amp;#34;s3:GetObject&amp;#34;, &amp;#34;s3:DeleteObject&amp;#34;, &amp;#34;s3:PutObjectAcl&amp;#34; ], &amp;#34;Resource&amp;#34;: &amp;#34;arn:aws:s3:::demo-public/*&amp;#34; } ] }     Uploading command line bash scripts aws s3 sync --acl public-read local-dir/ s3://demo-public/test/   C# source code using (var client = new AmazonS3Client(RegionEndpoint.</description>
+    </item>
+    
+  </channel>
+</rss>

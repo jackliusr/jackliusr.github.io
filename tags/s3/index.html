@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>aws | My learning and diary</title>
+    <title>s3 | My learning and diary</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="">
     <meta name="generator" content="Hugo 0.99.1" />
@@ -26,19 +26,19 @@
 
     
     
-      <link href="/tags/aws/index.xml" rel="alternate" type="application/rss+xml" title="My learning and diary" />
-      <link href="/tags/aws/index.xml" rel="feed" type="application/rss+xml" title="My learning and diary" />
+      <link href="/tags/s3/index.xml" rel="alternate" type="application/rss+xml" title="My learning and diary" />
+      <link href="/tags/s3/index.xml" rel="feed" type="application/rss+xml" title="My learning and diary" />
       
     
     
-    <meta property="og:title" content="aws" />
+    <meta property="og:title" content="s3" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://jackliusr.github.io/tags/aws/" />
+<meta property="og:url" content="https://jackliusr.github.io/tags/s3/" />
 
-<meta itemprop="name" content="aws">
+<meta itemprop="name" content="s3">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="aws"/>
+<meta name="twitter:title" content="s3"/>
 <meta name="twitter:description" content=""/>
 
       
@@ -141,7 +141,7 @@ if (!doNotTrack) {
 
       <div class="tc-l pv3 ph3 ph4-ns">
         <h1 class="f2 f-subheadline-l fw2 light-silver mb0 mt0 lh-title">
-          aws
+          s3
         </h1>
         
       </div>
@@ -153,7 +153,7 @@ if (!doNotTrack) {
       
   <article class="cf pa3 pa4-m pa4-l">
     <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img mid-gray">
-      <p>Below you will find pages that utilize the taxonomy term “aws”</p>
+      <p>Below you will find pages that utilize the taxonomy term “s3”</p>
     </div>
   </article>
   <div class="mw8 center">    
@@ -171,77 +171,6 @@ if (!doNotTrack) {
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Turn off &#34;Block public access (bucket settings)&#34;        Access control list (ACL): give Everyone (public access) object lists and bucket ACL read.          Policy Policy to attach to a role, so the role can be used to upload resources and put the ACL on the uploaded objects.
  { &#34;Version&#34;: &#34;2012-10-17&#34;, &#34;Statement&#34;: [ { &#34;Sid&#34;: &#34;VisualEditor0&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: &#34;s3:ListBucket&#34;, &#34;Resource&#34;: &#34;arn:aws:s3:::demo&#34; }, { &#34;Sid&#34;: &#34;VisualEditor1&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: [ &#34;s3:PutObject&#34;, &#34;s3:GetObject&#34;, &#34;s3:DeleteObject&#34; ], &#34;Resource&#34;: &#34;arn:aws:s3:::demo/*&#34; }, { &#34;Sid&#34;: &#34;VisualEditor2&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: &#34;s3:ListBucket&#34;, &#34;Resource&#34;: &#34;arn:aws:s3:::demo-public&#34; }, { &#34;Sid&#34;: &#34;VisualEditor3&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: [ &#34;s3:PutObject&#34;, &#34;s3:GetObject&#34;, &#34;s3:DeleteObject&#34;, &#34;s3:PutObjectAcl&#34; ], &#34;Resource&#34;: &#34;arn:aws:s3:::demo-public/*&#34; } ] }     Uploading command line bash scripts aws s3 sync --acl public-read local-dir/ s3://demo-public/test/   C# source code using (var client = new AmazonS3Client(RegionEndpoint.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/06/create-another-user-and-grant-proper-permissions-in-aws-rds-mysql/" class="link black dim">
-        Create another user and grant proper permissions in aws rds mysql
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      When I tried to create an user for application instead of giving out the master user and its password. I got &#34;Error Code: 1045. Access denied for user &#39;mysqladmin&#39;@&#39;%&#39; (using password: YES)&#34; when I run &#34;GRANT ALL PRIVILEGES ON demodb.* TO &#39;appadmin&#39;@&#39;%&#39;;&#34;.
- I tried the method in How do I create another master user for my Amazon RDS DB instance that is running MySQL?, it is for creating another master user with more permissions than an app db user.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/05/resize-pod-volumes-in-eks/" class="link black dim">
-        Resize Pod volumes in eks
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      I did resize volume of kubernetes in the past, however I encountered an interesting issue when I did the resizing in different way.
- According to doc, I should only change the requested size in pvc. Today I changed the size of pv first, then pvc. Here was the interesting thing: all things of pv and pvc are fine, but the size of the file system in pod was not changed.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/05/get-back-my-missed-keypair-of-eks/" class="link black dim">
-        Get back my missed keypair of EKS
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Today I needed to scale one of my kubernetes clusterss. Those keys are not in my new laptop since I used Mac Air M1. I didn’t see the increase of nodes several minutes after I run the eksctl scale command. I logged into aws console and found there were several &#34;Failed&#34; messages in activity history of the autoscaling group. All the failed messages shown &#34;Launching a new EC2 instance. Status Reason: The aaaa-nodegroup-ng-1-67:8e:b8:8e:33:83:93:68 key pair does not exist.
-    </div>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/05/setup-dapr-on-aws-and-calico/" class="link black dim">
-        Setup dapr on AWS and calico
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Low resource usage Our system had low resource usage, however my several pods got stucked in ContainerCreating state. Kubernetes events show that &#34;add cmd: failed to assign an IP address to container&#34;. &#34;kubectl top nodes&#34; still shows the usage of resources still low.
- jackl@LAPTOP-IIHUF2DR:~$ k --context jack.l@test-dev.ap-southeast-1.eksctl.io top nodes NAME CPU(cores) CPU% MEMORY(bytes) MEMORY% ip-192-168-102-109.ap-southeast-1.compute.internal 143m 7% 3217Mi 45% ip-192-168-110-171.ap-southeast-1.compute.internal 117m 6% 2892Mi 41%     Migrate to calico  Recreate cluster without nodegroups
     </div>
   </div>
 </div>

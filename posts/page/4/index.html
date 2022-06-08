@@ -159,6 +159,23 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2021/08/apply-proxy-protocol-listener-filters-to-specific-ports-in-istio/" class="link black dim">
+        Apply proxy protocol listener filters to specific ports in istio
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Two days ago, our web applications need to get clients&#39; real IP address. Our sites is hosted in kubernetes, isito is used for ingress controll. behind cloud load balancers, it is not easy to make it work.
+ There are two ways to do that in alibaba classic load balancer: http/https listeners, and TCP listeners with proxy protocol
+ HTTPS listeners is crossed out due to certificate issue. HTTPS listeners can use integrated certificates or self uploaded certificates.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2021/04/setup-opencv-in-windows/" class="link black dim">
         Setup opencv in windows
       </a>
@@ -295,24 +312,6 @@ if (!doNotTrack) {
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       During practicing the lifecycle handlers of pod, I found it is quite difficult to get the logs logged from preStop handlers. Initially I thought terminationMessagePath maybe is the answer, but no such luck. The preStop handler will be run before the pod is deleted. After deleted, there is no way to get the logs unless those logs are kept in other place such as central log servers etc. Those settings are way complex for a simple practice and time-consuming.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2020/11/vscode-debug-python-containers-running-kubernetes-via-attachment/" class="link black dim">
-        vscode debug python containers running kubernetes via attachment
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      python-guestbook at https://github.com/GoogleCloudPlatform/cloud-code-samples is used to practice debug python containers in kubernetes.
- Google cloud python code vscode plugin 1.7.0 failed to run python on kubernetes or there is no obvious way to do that as depicted in the below pic.      Steps to make it:
-  run
-skaffold debug     Import ptvsd in the python file to debug, add breakout() before the line to debug
     </div>
   </div>
 </div>
