@@ -1,0 +1,125 @@
+---
+title: "Istio troubleshooting in new scenario that one service to expose into multiple domains and multiple ingress gateways"
+date: 2022-06-08T21:01:10+08:00
+categories:
+- tech
+tags:
+- aws
+- kubernetes
+- istio
+- istioctl
+- cert-manager
+---
+
+
+Since https://jackliusr.github.io/posts/2021/08/apply-proxy-protocol-listener-filters-to-specific-ports-in-istio/[my first time to configure istio with proxy protocol supports in aws], istio and envoyproxy changed a lot. In the past several days, I was exposed to a different scenario that one service to expose into multiple domains. 
+
+Things are getting not straighforward, I struggled to https://jackliusr.github.io/posts/2022/06/istio-virtual-service-with-tls-connection-reset-by-peer/[make it success] yesterday. Today another layer of complexity was added into my cluster: an extra ingressgateway for some services.
+
+For multiple ingress gateways, I followed https://getistio.io/istio-in-practice/multiple-ingress-gateways/#why-multiple-gateways[this article], however my setup is more complex than that. I need to consider certs, n*n relations between hosts, virtual-services and gateways. I read https://istio.io/latest/docs/ops/diagnostic-tools/[Diagnostic Tools] yesterday, and I think I finally get the hang of istio this time.
+
+== my setup
+
+* cert-manager:  clusterissuers and correspoding secrets are created in cert-manager namespace
+* istio-system:  certs are created in this namespaces and another namespace istio-system-xff
+* istio-ingress-gateway in  istio-system and istio-ingress-gateway-xff in istio-system-xff
+* gateway and virtual services: created in prod namespace.
+* selector of gateways: 
++
+[source, yaml]
+----
+
+selector: 
+   service.istio.io/canonical-name: istio-ingressgateway-xff
+---
+selector: 
+   istio: ingressgateway
+----
+
+== Mark bundle as not supporting multiuse
+
+check if the correct certs are used for gateways.
+
+== OpenSSL SSL_connect: Connection reset by peer in connection to
+
+[source,bash]
+----
+# check cert section of outputs, if there are some certs not invalid status
+istioctl proxy-config all istio-ingressgateway-5f57ddf999-5gthf
+
+#check there are corresponding gateways, routing etc
+----
+
+== Is it possible to put multiple ingress gateways in the same namespace istio-system?
+
+I think it is possible, however I need to spend time to make it happen by fine tuning istiooperator configurations.
+
+== proxy protocol configuration
+
+Other steps still are applicable as in https://jackliusr.github.io/posts/2021/08/apply-proxy-protocol-listener-filters-to-specific-ports-in-istio/[Apply proxy protocol listener filters to specific ports in istio]. Envoyfilters configuration are changed as envoyproxy 3 api is used in the new version of istio.
+
+[source,yaml]
+----
+apiVersion: networking.istio.io/v1alpha3
+kind: EnvoyFilter
+metadata:
+  name: proxy-protocol
+  namespace: istio-system-xff
+spec:
+  configPatches:
+  - applyTo: LISTENER
+    match:
+       listener:
+          name: "0.0.0.0_8080"
+    patch:
+      operation: MERGE
+      value:
+        listener_filters:
+        - name: envoy.filters.listener.proxy_protocol
+        - name: envoy.filters.listener.tls_inspector
+  - applyTo: LISTENER
+    match:
+       listener:
+          name: "0.0.0.0_8443"
+    patch:
+      operation: MERGE
+      value:
+        listener_filters:
+        - name: envoy.filters.listener.proxy_protocol
+        - name: envoy.filters.listener.tls_inspector
+  workloadSelector:
+    labels:
+      service.istio.io/canonical-name: istio-ingressgateway-xff
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: EnvoyFilter
+metadata:
+  name: ingressgateway-settings
+  namespace: istio-system-xff
+spec:
+  configPatches:
+  - applyTo: NETWORK_FILTER
+    match:
+      listener:
+        filterChain:
+          filter:
+            name: envoy.filters.network.http_connection_manager
+    patch:
+      operation: MERGE
+      value:
+        name: envoy.filters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          skip_xff_append: false
+          use_remote_address: true
+          xff_num_trusted_hops: 1
+  workloadSelector:
+    labels:
+       service.istio.io/canonical-name: istio-ingressgateway-xff
+----
+
+== Troubleshooting tools I used
+
+* istioctl proxy-status
+* istioctl proxy-config all istio-ingressgateway-5f57ddf999-5gthf
+* istioctl analyze
