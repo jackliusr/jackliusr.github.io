@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>istioctl on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/istioctl/</link>
+    <description>Recent content in istioctl on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 08 Jun 2022 21:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/istioctl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Istio troubleshooting in new scenario that one service to expose into multiple domains and multiple ingress gateways</title>
+      <link>https://jackliusr.github.io/posts/2022/06/istio-troubleshooting-in-new-scenario-that-one-service-to-expose-into-multiple-domains-and-multiple-ingress-gateways/</link>
+      <pubDate>Wed, 08 Jun 2022 21:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/06/istio-troubleshooting-in-new-scenario-that-one-service-to-expose-into-multiple-domains-and-multiple-ingress-gateways/</guid>
+      <description>Since my first time to configure istio with proxy protocol supports in aws, istio and envoyproxy changed a lot. In the past several days, I was exposed to a different scenario that one service to expose into multiple domains.
+ Things are getting not straighforward, I struggled to make it success yesterday. Today another layer of complexity was added into my cluster: an extra ingressgateway for some services.
+ For multiple ingress gateways, I followed this article, however my setup is more complex than that.</description>
+    </item>
+    
+  </channel>
+</rss>
