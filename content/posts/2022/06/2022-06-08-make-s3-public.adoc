@@ -1,0 +1,99 @@
+---
+title: "Make a S3 bucket public"
+date: 2022-06-08T08:01:10+08:00
+categories:
+- tech
+tags:
+- aws
+- s3
+---
+
+== Turn off "Block public access (bucket settings)"
+{{<imgur id="nvTqWwJ">}}
+
+== Access control list (ACL): 
+
+  give Everyone (public access) object lists and bucket ACL read.
+
+{{<imgur id="Yi9puD2">}}
+
+
+== Policy 
+
+Policy to attach to a role, so the role can be used to upload resources and put the ACL on the uploaded objects. 
+
+[source,json]
+----
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::demo"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObject",
+                "s3:DeleteObject"
+            ],
+            "Resource": "arn:aws:s3:::demo/*"
+        },
+        {
+            "Sid": "VisualEditor2",
+            "Effect": "Allow",
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::demo-public"
+        },
+        {
+            "Sid": "VisualEditor3",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "s3:PutObjectAcl"
+            ],
+            "Resource": "arn:aws:s3:::demo-public/*"
+        }
+    ]
+}
+----
+
+== Uploading
+
+=== command line bash scripts
+[source, bash]
+----
+aws s3 sync --acl public-read local-dir/ s3://demo-public/test/
+----
+
+==== C# source code
+[source,c#]
+----
+ using (var client = new AmazonS3Client(RegionEndpoint.USWest2))
+ {
+    try
+    {
+        PutObjectRequest request = new PutObjectRequest()
+        {
+            InputStream = imageStream,
+            BucketName = BucketName,
+            Key = key,
+            CannedACL= S3CannedACL.PublicRead
+        };
+
+        client.PutObject(request);
+        success = true;
+    }
+
+    catch (Exception ex)
+    {
+        // swallow everything for now.
+    }
+ }
+----
