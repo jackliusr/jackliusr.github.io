@@ -6,7 +6,18 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Jun 2022 21:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Jun 2022 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reflection on my choice of cicd in the past</title>
+      <link>https://jackliusr.github.io/posts/2022/06/reflection-on-my-choice-of-cicd-in-the-past/</link>
+      <pubDate>Fri, 10 Jun 2022 20:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/06/reflection-on-my-choice-of-cicd-in-the-past/</guid>
+      <description>TLDR: my CICD choice: argo-cd and argo-workflow
+Since I chose argocd and github action as our CICD pipeline two years ago, I rarely thought about other choices and the reason I made the choices. Recently I leant from several sources that jenkins is still widely used. I reconsidered my choice and layed out the reasons here for my future references.
+I didn&amp;rsquo;t have a good impression with java in my past java projects.</description>
+    </item>
+    
     <item>
       <title>Istio troubleshooting in new scenario that one service to expose into multiple domains and multiple ingress gateways</title>
       <link>https://jackliusr.github.io/posts/2022/06/istio-troubleshooting-in-new-scenario-that-one-service-to-expose-into-multiple-domains-and-multiple-ingress-gateways/</link>

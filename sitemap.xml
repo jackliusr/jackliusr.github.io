@@ -2,12 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jackliusr.github.io/tags/aws/</loc>
-    <lastmod>2022-06-08T23:38:08+08:00</lastmod>
+    <loc>https://jackliusr.github.io/tags/argo-cd/</loc>
+    <lastmod>2022-06-10T22:37:26+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/argo-workflow/</loc>
+    <lastmod>2022-06-10T22:37:26+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/</loc>
+    <lastmod>2022-06-10T22:37:26+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/cicd/</loc>
+    <lastmod>2022-06-10T22:37:26+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/jenkins/</loc>
+    <lastmod>2022-06-10T22:37:26+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/</loc>
+    <lastmod>2022-06-10T22:37:26+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/</loc>
+    <lastmod>2022-06-10T22:37:26+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2022/06/reflection-on-my-choice-of-cicd-in-the-past/</loc>
+    <lastmod>2022-06-10T22:37:26+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/</loc>
+    <lastmod>2022-06-10T22:37:26+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/categories/tech/</loc>
+    <lastmod>2022-06-10T22:37:26+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/aws/</loc>
     <lastmod>2022-06-08T23:38:08+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -33,26 +78,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/kubernetes/</loc>
-    <lastmod>2022-06-08T23:38:08+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2022-06-08T23:38:08+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2022-06-08T23:38:08+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2022-06-08T23:38:08+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/categories/tech/</loc>
     <lastmod>2022-06-08T23:38:08+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -192,11 +217,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/tags/argo-workflow/</loc>
-    <lastmod>2022-05-31T17:12:50+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://jackliusr.github.io/posts/2022/05/projected-volumes-in-argo-workflow/</loc>
     <lastmod>2022-05-31T17:12:50+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -243,11 +263,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/argo-workflows/</loc>
-    <lastmod>2022-05-31T17:12:50+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/cicd/</loc>
     <lastmod>2022-05-31T17:12:50+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

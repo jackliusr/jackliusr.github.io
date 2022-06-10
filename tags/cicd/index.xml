@@ -6,7 +6,18 @@
     <description>Recent content in cicd on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/cicd/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Jun 2022 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/cicd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reflection on my choice of cicd in the past</title>
+      <link>https://jackliusr.github.io/posts/2022/06/reflection-on-my-choice-of-cicd-in-the-past/</link>
+      <pubDate>Fri, 10 Jun 2022 20:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/06/reflection-on-my-choice-of-cicd-in-the-past/</guid>
+      <description>TLDR: my CICD choice: argo-cd and argo-workflow
+Since I chose argocd and github action as our CICD pipeline two years ago, I rarely thought about other choices and the reason I made the choices. Recently I leant from several sources that jenkins is still widely used. I reconsidered my choice and layed out the reasons here for my future references.
+I didn&amp;rsquo;t have a good impression with java in my past java projects.</description>
+    </item>
+    
     <item>
       <title>Reflection on implementation of CICD using argo-workflows</title>
       <link>https://jackliusr.github.io/posts/2022/05/reflection-on-implementation-of-cicd-using-argo-workflows/</link>
