@@ -8,8 +8,17 @@ tags:
 - GitOps
 ---
 
-ChatOps still has its place, even more prominent with AI and rich integration with other systems.
+ChatOps has its place, even more prominent with AI and rich integration with other systems.
 
-I heard ChatOps in the past when I first heard hubot. Later GitOps and Kubernetes grabbed my attention. I didn't see how ChatOps fit in GitOps until I saw this https://wanqu.co/b/7/%E6%B9%BE%E5%8C%BA%E6%97%A5%E6%8A%A5%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C%E7%9A%84/[湾区日报是如何运作的？] today.
+I learnt ChatOps in the past when I first heard hubot. Later GitOps and Kubernetes grabbed my attention. I didn't see how ChatOps fit in GitOps until I saw this https://wanqu.co/b/7/%E6%B9%BE%E5%8C%BA%E6%97%A5%E6%8A%A5%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C%E7%9A%84/[湾区日报是如何运作的？] today after I implemented an integration with telegram bot APIs.
+
+https://www.ibm.com/cloud/blog/benefits-of-chatops[What Are the Benefits of ChatOps?] enumerates the benefits. In my eyes I saw other benefits or more benefits in productivity when considing the full potentials of ChatOps.
+
+IM is ubuquitious, everyone is familiar with that. With well integration with other applications in other ways such as https://core.telegram.org/bots/webapps[webapp], bots, miniapps, plus conversation AI, the whole experience will bring to another level. There will be no switch-back-and-forth to complete a jobs. The work stream feeds are in the conversation. Those can make one easily into the https://www.amazon.com/Flow-Psychology-Experience-Perennial-Classics/dp/0061339202[flow mode]. There will be great potentilas in this area.
 
 
+Considering another case, AI based assisants such as apple siri, google assistant, amazon Alexa, and microsoft Cortana, this will go the highest level, using most natural way of communication-voice. 
+
+The relation between ChatOps and GitOps is not clear-cut. ChatOps  has some overlaps with GitOps about Ops side. There are bidirectional relation between the two. For example ChatOps can initiate a GitOps process and GitOps can initiate a ChatOps process as well.
+
+ChatOps bring more user interaction related tasks into the picture: human workflow task which are neccessary in certain circumstances.
