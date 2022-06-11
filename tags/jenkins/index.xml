@@ -14,7 +14,7 @@
       
       <guid>https://jackliusr.github.io/posts/2022/06/reflection-on-my-choice-of-cicd-in-the-past/</guid>
       <description>TLDR: my CICD choice: argo-cd and argo-workflow
-Since I chose argocd and github action as our CICD pipeline two years ago, I rarely thought about other choices and the reason I made the choices. Recently I leant from several sources that jenkins is still widely used. I reconsidered my choice and layed out the reasons here for my future references.
+Since I chose argocd and github action as our CICD pipeline two years ago, I rarely thought about other choices and the reason I made the choices. Recently I leant from several sources that jenkins is still widely used, it arouse my interest on this subject again. I reconsidered my choice and layed out the reasons here for my future references.
 I didn&amp;rsquo;t have a good impression with java in my past java projects.</description>
     </item>
     
