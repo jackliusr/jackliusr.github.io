@@ -33,7 +33,7 @@ sequenceDiagram
     action runner ->> action: ci workflow github action
     action ->> ecr: push image
     action runner ->> deploy-repo: kustomize edit set images
-  and
+  and cd
     argo-cd ->> deploy-repo: poll pull
     argo-cd ->> kuberetes: deploy
   end
