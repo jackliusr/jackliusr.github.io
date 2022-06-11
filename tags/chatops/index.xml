@@ -13,9 +13,9 @@
       <pubDate>Sat, 11 Jun 2022 17:01:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/posts/2022/06/do-you-still-need-to-care-chatops/</guid>
-      <description>ChatOps still has its place, even more prominent with AI and rich integration with other systems.
- I heard ChatOps in the past when I first heard hubot. Later GitOps and Kubernetes grabbed my attention. I didn’t see how ChatOps fit in GitOps until I saw this 湾区日报是如何运作的？ today.
- </description>
+      <description>ChatOps has its place, even more prominent with AI and rich integration with other systems.
+ I learnt ChatOps in the past when I first heard hubot. Later GitOps and Kubernetes grabbed my attention. I didn’t see how ChatOps fit in GitOps until I saw this 湾区日报是如何运作的？ today after I implemented an integration with telegram bot APIs.
+ What Are the Benefits of ChatOps? enumerates the benefits. In my eyes I saw other benefits or more benefits in productivity when considing the full potentials of ChatOps.</description>
     </item>
     
   </channel>
