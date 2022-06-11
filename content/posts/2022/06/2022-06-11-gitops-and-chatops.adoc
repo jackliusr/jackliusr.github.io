@@ -19,6 +19,63 @@ IM is ubuquitious, everyone is familiar with that. With well integration with ot
 
 Considering another case, AI based assisants such as apple siri, google assistant, amazon Alexa, and microsoft Cortana, this will go the highest level, using most natural way of communication-voice. 
 
-The relation between ChatOps and GitOps is not clear-cut. ChatOps  has some overlaps with GitOps about Ops side. There are bidirectional relation between the two. For example ChatOps can initiate a GitOps process and GitOps can initiate a ChatOps process as well.
+The relation between ChatOps and GitOps is not clear-cut. They complement each others. ChatOps  has some overlaps with GitOps about Ops side. There are bidirectional relation between the two. For example ChatOps can initiate a GitOps process and GitOps can initiate a ChatOps process as well.
 
-ChatOps bring more user interaction related tasks into the picture: human workflow task which are neccessary in certain circumstances.
+ChatOps bring more user interaction related tasks into the picture: human workflow task which are neccessary in certain circumstances. 
+
+There are big opportunities in the combination of Chat, Ops, Automation, AI. 
+
+[cols="1,1,1"]
+|===
+| item
+| IM
+| Voice AI
+| Video
+
+| Amazon
+| ?
+| Alexa
+|
+
+| Apple
+| message
+| Siri
+| facetime
+
+| Facebook
+| messenger/whatsapp
+| ?
+| ?
+
+
+| Google
+| meet/chat/duo
+| assistant
+| meet
+
+| Microsoft
+| Team/skype
+| Cortana
+| Team
+
+|slack
+|slack
+|
+|
+
+| telegram
+| telegram
+| ?
+|
+
+| Tencent
+| wechat/qq
+| ?
+|
+
+| Alibaba
+| dingtals
+| ?
+|
+
+|===
