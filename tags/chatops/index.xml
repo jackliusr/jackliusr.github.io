@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ChatOps on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/chatops/</link>
+    <description>Recent content in ChatOps on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 11 Jun 2022 17:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/chatops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Do you still need to care ChatOps</title>
+      <link>https://jackliusr.github.io/posts/2022/06/do-you-still-need-to-care-chatops/</link>
+      <pubDate>Sat, 11 Jun 2022 17:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/06/do-you-still-need-to-care-chatops/</guid>
+      <description>ChatOps still has its place, even more prominent with AI and rich integration with other systems.
+ I heard ChatOps in the past when I first heard hubot. Later GitOps and Kubernetes grabbed my attention. I didn’t see how ChatOps fit in GitOps until I saw this 湾区日报是如何运作的？ today.
+ </description>
+    </item>
+    
+  </channel>
+</rss>

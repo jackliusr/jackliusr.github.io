@@ -186,6 +186,32 @@ if (!doNotTrack) {
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/2022/06/do-you-still-need-to-care-chatops/" class="color-inherit dim link">
+            Do you still need to care ChatOps
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          ChatOps still has its place, even more prominent with AI and rich integration with other systems.
+ I heard ChatOps in the past when I first heard hubot. Later GitOps and Kubernetes grabbed my attention. I didn’t see how ChatOps fit in GitOps until I saw this 湾区日报是如何运作的？ today.
+ 
+        </div>
+          <a href="/posts/2022/06/do-you-still-need-to-care-chatops/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/2022/06/reflection-on-my-choice-of-cicd-in-the-past/" class="color-inherit dim link">
             Reflection on my choice of cicd in the past
             </a>
@@ -230,37 +256,18 @@ I didn&rsquo;t have a good impression with java in my past java projects.
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2022/06/make-a-s3-bucket-public/" class="color-inherit dim link">
-            Make a S3 bucket public
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Turn off &#34;Block public access (bucket settings)&#34;        Access control list (ACL): give Everyone (public access) object lists and bucket ACL read.          Policy Policy to attach to a role, so the role can be used to upload resources and put the ACL on the uploaded objects.
- { &#34;Version&#34;: &#34;2012-10-17&#34;, &#34;Statement&#34;: [ { &#34;Sid&#34;: &#34;VisualEditor0&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: &#34;s3:ListBucket&#34;, &#34;Resource&#34;: &#34;arn:aws:s3:::demo&#34; }, { &#34;Sid&#34;: &#34;VisualEditor1&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: [ &#34;s3:PutObject&#34;, &#34;s3:GetObject&#34;, &#34;s3:DeleteObject&#34; ], &#34;Resource&#34;: &#34;arn:aws:s3:::demo/*&#34; }, { &#34;Sid&#34;: &#34;VisualEditor2&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: &#34;s3:ListBucket&#34;, &#34;Resource&#34;: &#34;arn:aws:s3:::demo-public&#34; }, { &#34;Sid&#34;: &#34;VisualEditor3&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: [ &#34;s3:PutObject&#34;, &#34;s3:GetObject&#34;, &#34;s3:DeleteObject&#34;, &#34;s3:PutObjectAcl&#34; ], &#34;Resource&#34;: &#34;arn:aws:s3:::demo-public/*&#34; } ] }     Uploading command line bash scripts aws s3 sync --acl public-read local-dir/ s3://demo-public/test/   C# source code using (var client = new AmazonS3Client(RegionEndpoint.
-        </div>
-          <a href="/posts/2022/06/make-a-s3-bucket-public/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/2022/06/make-a-s3-bucket-public/" class="link black dim">
+              Make a S3 bucket public
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2022/06/create-another-user-and-grant-proper-permissions-in-aws-rds-mysql/" class="link black dim">
@@ -277,12 +284,6 @@ I didn&rsquo;t have a good impression with java in my past java projects.
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2022/06/reflection-on-kubernete-usage/" class="link black dim">
               Reflection on kubernete usage
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/2022/05/resize-volumes-when-pvcs-and-pvs-are-okay-and-the-size-of-file-systems-in-pods-doesnt-change/" class="link black dim">
-              Resize volumes when PVCs and PVs are okay and the size of file systems in pods doesn&#39;t change
             </a>
           </h2>
         
