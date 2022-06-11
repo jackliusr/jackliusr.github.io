@@ -49,5 +49,15 @@ I didn&amp;rsquo;t have a good impression with java in my past java projects.</d
  The comment https://github.com/argoproj/argo-workflows/issues/1428#issuecomment-775911838 gives an example to add user name and password into https url. Upon I checked the logs, I found that user and password are shown in the logs of a workflow.</description>
     </item>
     
+    <item>
+      <title>Argo-workflows: Generate dynamic json list</title>
+      <link>https://jackliusr.github.io/posts/2022/05/argo-workflows-generate-dynamic-json-list/</link>
+      <pubDate>Sun, 15 May 2022 12:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/05/argo-workflows-generate-dynamic-json-list/</guid>
+      <description>The journey I worked on a dapr microservice project which need to read a list from a file and do some useful things. Argo-workflow supports loop over a list of items, however one of my steps always got &amp;#34;invalid character &amp;#39;G&amp;#39; looking for beginning of value&amp;#34; before going to next step in the workflow template. The step is as following:
+ - name: get-deps inputs: parameters: - name: changes script: image: ubuntu:latest command: [bash] #args: [&amp;#34;echo result was: {{inputs.</description>
+    </item>
+    
   </channel>
 </rss>
