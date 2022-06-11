@@ -1,0 +1,15 @@
+---
+title: "Do you still need to care ChatOps"
+date: 2022-06-11T17:01:10+08:00
+categories:
+- tech
+tags:
+- ChatOps
+- GitOps
+---
+
+ChatOps still has its place, even more prominent with AI and rich integration with other systems.
+
+I heard ChatOps in the past when I first heard hubot. Later GitOps and Kubernetes grabbed my attention. I didn't see how ChatOps fit in GitOps until I saw this https://wanqu.co/b/7/%E6%B9%BE%E5%8C%BA%E6%97%A5%E6%8A%A5%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C%E7%9A%84/[湾区日报是如何运作的？] today.
+
+
