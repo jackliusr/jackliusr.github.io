@@ -8,6 +8,7 @@ tags:
 - jenkins
 - Argo-workflow
 - argo-cd
+- GitOps
 ---
 
 TLDR:  my CICD choice: argo-cd and argo-workflow
