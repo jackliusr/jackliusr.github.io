@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2022-06-11T22:29:27+08:00</lastmod>
+    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -18,52 +18,52 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/gitops/</loc>
-    <lastmod>2022-06-11T22:29:27+08:00</lastmod>
+    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2022-06-11T22:29:27+08:00</lastmod>
+    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2022-06-11T22:29:27+08:00</lastmod>
+    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2022-06-11T22:29:27+08:00</lastmod>
+    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/tech/</loc>
-    <lastmod>2022-06-11T22:29:27+08:00</lastmod>
+    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/argo-cd/</loc>
-    <lastmod>2022-06-11T09:33:00+08:00</lastmod>
+    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/argo-workflow/</loc>
-    <lastmod>2022-06-11T09:33:00+08:00</lastmod>
+    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/cicd/</loc>
-    <lastmod>2022-06-11T09:33:00+08:00</lastmod>
+    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/jenkins/</loc>
-    <lastmod>2022-06-11T09:33:00+08:00</lastmod>
+    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/2022/06/reflection-on-my-choice-of-cicd-in-the-past/</loc>
-    <lastmod>2022-06-11T09:33:00+08:00</lastmod>
+    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -273,42 +273,42 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/argo-events/</loc>
-    <lastmod>2022-05-31T17:12:50+08:00</lastmod>
+    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/argo-workflows/</loc>
-    <lastmod>2022-05-31T17:12:50+08:00</lastmod>
+    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/jsonpath/</loc>
-    <lastmod>2022-05-31T17:12:50+08:00</lastmod>
+    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/2022/05/reflection-on-implementation-of-cicd-using-argo-workflows/</loc>
-    <lastmod>2022-05-31T17:12:50+08:00</lastmod>
+    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/.netrc/</loc>
-    <lastmod>2022-05-31T17:12:50+08:00</lastmod>
+    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/2022/05/argo-workflow-secrets-for-git/</loc>
-    <lastmod>2022-05-31T17:12:50+08:00</lastmod>
+    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/git/</loc>
-    <lastmod>2022-05-31T17:12:50+08:00</lastmod>
+    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/secret/</loc>
-    <lastmod>2022-05-31T17:12:50+08:00</lastmod>
+    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
