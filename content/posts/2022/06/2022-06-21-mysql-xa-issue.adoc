@@ -8,7 +8,7 @@ tags:
 - xa
 ---
 
-In the past 2-3 weeks, I encountered an issue that I couldn't add a column to a table in one of our production database. I thought restart would resolve the issue. After a restart, however the issue still persist. I checked logs in error/mysql-error-running.log and noticed there are two transactions in prepared state after recovery. In the first gooogle search result page, https://www.percona.com/blog/2017/09/22/how-to-deal-with-xa-transactions-recovery/[How to Deal with XA Transactions Recovery] caught my attention. From there, I learnt xa transactions and figure out how to resolve my issue. 
+In the past 1 week, I encountered an issue that I couldn't add a column to a table in one of our production database. I thought restart would resolve the issue. After a restart, however the issue still persist. I checked logs in error/mysql-error-running.log in rds and noticed there are two transactions in prepared state after recovery. In the first gooogle search result page, https://www.percona.com/blog/2017/09/22/how-to-deal-with-xa-transactions-recovery/[How to Deal with XA Transactions Recovery] caught my attention. From there, I learnt xa transactions and figure out how to resolve my issue. 
 
 
 With hindsight, I should notice that transactions in the result of "SHOW ENGINE INNODB STATUS". and sought solutions.
@@ -30,5 +30,6 @@ xa recover;
 ----
 
 Reference: 
-* https://mariadb.com/kb/en/xa-transactions/ [XA Transactions]
-* https://www.percona.com/blog/2017/09/22/how-to-deal-with-xa-transactions-recovery/[How to Deal with XA Transactions Recovery]
+
+*  https://mariadb.com/kb/en/xa-transactions/[XA Transactions]
+*  https://www.percona.com/blog/2017/09/22/how-to-deal-with-xa-transactions-recovery/[How to Deal with XA Transactions Recovery]
