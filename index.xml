@@ -6,7 +6,16 @@
     <description>Recent content on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Jun 2022 17:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Jun 2022 10:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>recover from mysql XA transaction issues</title>
+      <link>https://jackliusr.github.io/posts/2022/06/recover-from-mysql-xa-transaction-issues/</link>
+      <pubDate>Tue, 21 Jun 2022 10:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/06/recover-from-mysql-xa-transaction-issues/</guid>
+      <description>In the past 2-3 weeks, I encountered an issue that I couldn’t add a column to a table in one of our production database. I thought restart would resolve the issue. After a restart, however the issue still persist. I checked logs in error/mysql-error-running.log and noticed there are two transactions in prepared state after recovery. In the first gooogle search result page, How to Deal with XA Transactions Recovery caught my attention.</description>
+    </item>
+    
     <item>
       <title>Do you still need to care ChatOps</title>
       <link>https://jackliusr.github.io/posts/2022/06/do-you-still-need-to-care-chatops/</link>

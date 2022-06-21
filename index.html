@@ -186,6 +186,30 @@ if (!doNotTrack) {
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/2022/06/recover-from-mysql-xa-transaction-issues/" class="color-inherit dim link">
+            recover from mysql XA transaction issues
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          In the past 2-3 weeks, I encountered an issue that I couldn’t add a column to a table in one of our production database. I thought restart would resolve the issue. After a restart, however the issue still persist. I checked logs in error/mysql-error-running.log and noticed there are two transactions in prepared state after recovery. In the first gooogle search result page, How to Deal with XA Transactions Recovery caught my attention.
+        </div>
+          <a href="/posts/2022/06/recover-from-mysql-xa-transaction-issues/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/2022/06/do-you-still-need-to-care-chatops/" class="color-inherit dim link">
             Do you still need to care ChatOps
             </a>
@@ -230,38 +254,18 @@ I didn&rsquo;t have a good impression with java in my past java projects.
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2022/06/istio-troubleshooting-in-new-scenario-that-one-service-to-expose-into-multiple-domains-and-multiple-ingress-gateways/" class="color-inherit dim link">
-            Istio troubleshooting in new scenario that one service to expose into multiple domains and multiple ingress gateways
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Since my first time to configure istio with proxy protocol supports in aws, istio and envoyproxy changed a lot. In the past several days, I was exposed to a different scenario that one service to expose into multiple domains.
- Things are getting not straighforward, I struggled to make it success yesterday. Today another layer of complexity was added into my cluster: an extra ingressgateway for some services.
- For multiple ingress gateways, I followed this article, however my setup is more complex than that.
-        </div>
-          <a href="/posts/2022/06/istio-troubleshooting-in-new-scenario-that-one-service-to-expose-into-multiple-domains-and-multiple-ingress-gateways/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/2022/06/istio-troubleshooting-in-new-scenario-that-one-service-to-expose-into-multiple-domains-and-multiple-ingress-gateways/" class="link black dim">
+              Istio troubleshooting in new scenario that one service to expose into multiple domains and multiple ingress gateways
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2022/06/make-a-s3-bucket-public/" class="link black dim">
@@ -278,12 +282,6 @@ I didn&rsquo;t have a good impression with java in my past java projects.
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2022/06/istio-virtual-service-with-tls-connection-reset-by-peer/" class="link black dim">
               istio virtual service with tls - Connection reset by peer
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/2022/06/reflection-on-kubernete-usage/" class="link black dim">
-              Reflection on kubernete usage
             </a>
           </h2>
         
