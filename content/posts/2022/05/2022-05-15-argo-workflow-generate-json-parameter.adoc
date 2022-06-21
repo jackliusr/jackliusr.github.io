@@ -8,6 +8,7 @@ tags:
 - recipe
 - jq
 - python
+- GitOps
 ---
 
 == The journey

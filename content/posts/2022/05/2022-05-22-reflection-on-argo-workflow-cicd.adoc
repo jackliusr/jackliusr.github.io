@@ -8,6 +8,7 @@ tags:
 - argo-events
 - argo-workflows
 - jsonpath
+- GitOps
 ---
 
 I had some projects on github, gitlab and gitee. Their CI pipelines are quite different. To save the troubles and times, it is a natural choice to seek other options to unify on one solution. 
