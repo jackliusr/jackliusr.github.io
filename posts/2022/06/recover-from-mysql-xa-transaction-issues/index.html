@@ -6,7 +6,7 @@
     
     <title>recover from mysql XA transaction issues | My learning and diary</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="In the past 2-3 weeks, I encountered an issue that I couldn’t add a column to a table in one of our production database. I thought restart would resolve the issue. After a restart, however the issue still persist. I checked logs in error/mysql-error-running.log and noticed there are two transactions in prepared state after recovery. In the first gooogle search result page, How to Deal with XA Transactions Recovery caught my attention.">
+    <meta name="description" content="In the past 1 week, I encountered an issue that I couldn’t add a column to a table in one of our production database. I thought restart would resolve the issue. After a restart, however the issue still persist. I checked logs in error/mysql-error-running.log in rds and noticed there are two transactions in prepared state after recovery. In the first gooogle search result page, How to Deal with XA Transactions Recovery caught my attention.">
     <meta name="generator" content="Hugo 0.99.1" />
     
     
@@ -27,19 +27,19 @@
     
     
     <meta property="og:title" content="recover from mysql XA transaction issues" />
-<meta property="og:description" content="In the past 2-3 weeks, I encountered an issue that I couldn’t add a column to a table in one of our production database. I thought restart would resolve the issue. After a restart, however the issue still persist. I checked logs in error/mysql-error-running.log and noticed there are two transactions in prepared state after recovery. In the first gooogle search result page, How to Deal with XA Transactions Recovery caught my attention." />
+<meta property="og:description" content="In the past 1 week, I encountered an issue that I couldn’t add a column to a table in one of our production database. I thought restart would resolve the issue. After a restart, however the issue still persist. I checked logs in error/mysql-error-running.log in rds and noticed there are two transactions in prepared state after recovery. In the first gooogle search result page, How to Deal with XA Transactions Recovery caught my attention." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2022/06/recover-from-mysql-xa-transaction-issues/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-06-21T10:01:10+08:00" />
-<meta property="article:modified_time" content="2022-06-21T11:20:03+08:00" />
+<meta property="article:modified_time" content="2022-06-21T12:02:55+08:00" />
 
 <meta itemprop="name" content="recover from mysql XA transaction issues">
-<meta itemprop="description" content="In the past 2-3 weeks, I encountered an issue that I couldn’t add a column to a table in one of our production database. I thought restart would resolve the issue. After a restart, however the issue still persist. I checked logs in error/mysql-error-running.log and noticed there are two transactions in prepared state after recovery. In the first gooogle search result page, How to Deal with XA Transactions Recovery caught my attention."><meta itemprop="datePublished" content="2022-06-21T10:01:10+08:00" />
-<meta itemprop="dateModified" content="2022-06-21T11:20:03+08:00" />
-<meta itemprop="wordCount" content="153">
+<meta itemprop="description" content="In the past 1 week, I encountered an issue that I couldn’t add a column to a table in one of our production database. I thought restart would resolve the issue. After a restart, however the issue still persist. I checked logs in error/mysql-error-running.log in rds and noticed there are two transactions in prepared state after recovery. In the first gooogle search result page, How to Deal with XA Transactions Recovery caught my attention."><meta itemprop="datePublished" content="2022-06-21T10:01:10+08:00" />
+<meta itemprop="dateModified" content="2022-06-21T12:02:55+08:00" />
+<meta itemprop="wordCount" content="152">
 <meta itemprop="keywords" content="mysql,xa," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="recover from mysql XA transaction issues"/>
-<meta name="twitter:description" content="In the past 2-3 weeks, I encountered an issue that I couldn’t add a column to a table in one of our production database. I thought restart would resolve the issue. After a restart, however the issue still persist. I checked logs in error/mysql-error-running.log and noticed there are two transactions in prepared state after recovery. In the first gooogle search result page, How to Deal with XA Transactions Recovery caught my attention."/>
+<meta name="twitter:description" content="In the past 1 week, I encountered an issue that I couldn’t add a column to a table in one of our production database. I thought restart would resolve the issue. After a restart, however the issue still persist. I checked logs in error/mysql-error-running.log in rds and noticed there are two transactions in prepared state after recovery. In the first gooogle search result page, How to Deal with XA Transactions Recovery caught my attention."/>
 
       
 <script type="application/javascript">
@@ -193,11 +193,11 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 1 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 153 words</span>
+        <span class="f6 mv4 dib tracked"> - 152 words</span>
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
-<p>In the past 2-3 weeks, I encountered an issue that I couldn’t add a column to a table in one of our production database. I thought restart would resolve the issue. After a restart, however the issue still persist. I checked logs in error/mysql-error-running.log and noticed there are two transactions in prepared state after recovery. In the first gooogle search result page, <a href="https://www.percona.com/blog/2017/09/22/how-to-deal-with-xa-transactions-recovery/">How to Deal with XA Transactions Recovery</a> caught my attention. From there, I learnt xa transactions and figure out how to resolve my issue.</p>
+<p>In the past 1 week, I encountered an issue that I couldn’t add a column to a table in one of our production database. I thought restart would resolve the issue. After a restart, however the issue still persist. I checked logs in error/mysql-error-running.log in rds and noticed there are two transactions in prepared state after recovery. In the first gooogle search result page, <a href="https://www.percona.com/blog/2017/09/22/how-to-deal-with-xa-transactions-recovery/">How to Deal with XA Transactions Recovery</a> caught my attention. From there, I learnt xa transactions and figure out how to resolve my issue.</p>
 </div>
 <div class="paragraph">
 <p>With hindsight, I should notice that transactions in the result of &#34;SHOW ENGINE INNODB STATUS&#34;. and sought solutions.</p>
@@ -219,9 +219,17 @@ xa recover;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Reference:
-* <a href="https://mariadb.com/kb/en/xa-transactions/" class="bare">https://mariadb.com/kb/en/xa-transactions/</a> [XA Transactions]
-* <a href="https://www.percona.com/blog/2017/09/22/how-to-deal-with-xa-transactions-recovery/">How to Deal with XA Transactions Recovery</a></p>
+<p>Reference:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://mariadb.com/kb/en/xa-transactions/">XA Transactions</a></p>
+</li>
+<li>
+<p><a href="https://www.percona.com/blog/2017/09/22/how-to-deal-with-xa-transactions-recovery/">How to Deal with XA Transactions Recovery</a></p>
+</li>
+</ul>
 </div>
 <ul class="pa0">
   
@@ -323,6 +331,6 @@ xa recover;</code></pre>
 
 
 
-  <p style="font-size: small; color: grey;">Page version: 20a7ab3ee0a17dc808ef7dbba9a16ee03f0c20e2 2022-06-21</p>
+  <p style="font-size: small; color: grey;">Page version: 15f441532cdd6a344db67b5371dba7d059c21d61 2022-06-21</p>
   </body>
 </html>
