@@ -52,7 +52,7 @@ All the failed attemps after successfully configuring http will give 404 errors.
 == Lessons learnt
 
 
-In the real world, we have to comprise some good software principles with ugly realities. My failed attempts all are caused by that I wanted to do the configuration in pure form in gitops principle and immutable infrasture. After rethiniking alternative choices, it is okay to make some changes in place and corresponding configuration changes in sync with code repos.
+In the real world, we have to comprise some good software principles with ugly realities. My failed attempts all are caused by that I wanted to do the configuration in pure form in gitops principle and immutable infrastructure. After rethiniking alternative choices, it is okay to make some changes in place and corresponding configuration changes in sync with code repos.
 
 == Reference: 
 
