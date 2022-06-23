@@ -1,0 +1,59 @@
+---
+title: "Add certificates to existing gateway with non-synch resources"
+date: 2022-06-23T20:01:10+08:00
+categories:
+- tech
+tags:
+- argo-cd
+- certificate
+- istio
+---
+
+
+I started one of my certificates using cert-manager and letsencrypt without root domain in one product system. Later I tried to add root domain to the certificate as our customer requested withou success at first day. I figured out how to do that next morning. Here are my the success one and several failed attempts.
+
+Here some background information of this system: gitops + argocd
+
+== Successful solution
+
+Considering that the app argocd is in manual synchronization mode, I can do that changes in place in kubernetes instead of the git repo.
+
+. change kubernetes in place
+.. Add the root domain to the exising certificate
+.. Add the root domain to the corresponding gateway
+.. Add the root domain name to the corressponding virtual service
+. make above changes to yaml files and push into the git repo.
+
+== Failed attempts
+
+All the failed attemps after successfully configuring http will give 404 errors. In those failed attemps, I didn't find any errors in the following commands. 
+
+* istioctl analyze
+* istioctl proxy-config all ingress-gateway-xxx
+* istioctl proxy-status
+
+=== Add the root domain to the exising certificate
+
+. a new gateway for the root domain with the exising certificate
+. a new virtual service for the root domain
+
+
+=== Add the root domain to an new certificate
+
+. a new gateway for the root domain with the new certificate
+. a new virtual service for the root domain
+
+=== Add the root domain to an new certificate in a new namespace
+
+. a new gateway for the root domain with the new certificate
+. a new virtual service for the root domain
+
+
+== Lessons learnt
+
+
+In the real world, we have to comprise some good software principles with ugly realities. My failed attempts all are caused by that I wanted to do the configuration in pure form in gitops principle and immutable infrasture. After rethiniking alternative choices, it is okay to make some changes in place and with corresponding configuration changes in sync with code repos.
+
+== Reference: 
+
+https://istio.io/latest/docs/ops/common-problems/network-issues/#404-errors-occur-when-multiple-gateways-configured-with-same-tls-certificate[404 errors occur when multiple gateways configured with same TLS certificate]
