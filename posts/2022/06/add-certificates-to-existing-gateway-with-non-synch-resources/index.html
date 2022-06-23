@@ -35,14 +35,14 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2022/06/add-certificates-to-existing-gateway-with-non-synch-resources/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-06-23T20:01:10+08:00" />
-<meta property="article:modified_time" content="2022-06-23T21:45:13+08:00" />
+<meta property="article:modified_time" content="2022-06-23T21:46:13+08:00" />
 
 <meta itemprop="name" content="Add certificates to existing gateway with non-synch resources">
 <meta itemprop="description" content="I started one of my certificates using cert-manager and letsencrypt without root domain in one product system. Later I tried to add root domain to the certificate as our customer requested withou success at first day. I figured out how to do that next morning. Here are my the success one and several failed attempts.
  Here some background information of this system: gitops &#43; argocd
  Successful solution Considering that the app argocd is in manual synchronization mode, I can do that changes in place in kubernetes instead of the git repo."><meta itemprop="datePublished" content="2022-06-23T20:01:10+08:00" />
-<meta itemprop="dateModified" content="2022-06-23T21:45:13+08:00" />
-<meta itemprop="wordCount" content="328">
+<meta itemprop="dateModified" content="2022-06-23T21:46:13+08:00" />
+<meta itemprop="wordCount" content="327">
 <meta itemprop="keywords" content="argo-cd,certificate,istio," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Add certificates to existing gateway with non-synch resources"/>
 <meta name="twitter:description" content="I started one of my certificates using cert-manager and letsencrypt without root domain in one product system. Later I tried to add root domain to the certificate as our customer requested withou success at first day. I figured out how to do that next morning. Here are my the success one and several failed attempts.
@@ -201,7 +201,7 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 2 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 328 words</span>
+        <span class="f6 mv4 dib tracked"> - 327 words</span>
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
@@ -305,7 +305,7 @@ if (!doNotTrack) {
 <h2 id="_lessons_learnt"><a class="anchor" href="#_lessons_learnt"></a><a class="link" href="#_lessons_learnt">Lessons learnt</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In the real world, we have to comprise some good software principles with ugly realities. My failed attempts all are caused by that I wanted to do the configuration in pure form in gitops principle and immutable infrasture. After rethiniking alternative choices, it is okay to make some changes in place and with corresponding configuration changes in sync with code repos.</p>
+<p>In the real world, we have to comprise some good software principles with ugly realities. My failed attempts all are caused by that I wanted to do the configuration in pure form in gitops principle and immutable infrasture. After rethiniking alternative choices, it is okay to make some changes in place and corresponding configuration changes in sync with code repos.</p>
 </div>
 </div>
 </div>
@@ -433,6 +433,6 @@ if (!doNotTrack) {
 
 
 
-  <p style="font-size: small; color: grey;">Page version: 2713bb1773f8947a3c9ef9da83eb6759155dc913 2022-06-23</p>
+  <p style="font-size: small; color: grey;">Page version: 7830d2986202c5296e3fa12392ee92bce0431882 2022-06-23</p>
   </body>
 </html>
