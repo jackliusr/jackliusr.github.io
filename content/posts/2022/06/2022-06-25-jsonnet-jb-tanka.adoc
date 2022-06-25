@@ -1,5 +1,5 @@
 ---
-title: "Install"
+title: "My first usage of jsonnet"
 date: 2022-06-25T10:01:10+08:00
 categories:
 - tech
@@ -10,9 +10,9 @@ tags:
 - jsonnet-libs
 ---
 
-In the past I knew jsonnet, however I didn't commit too much time to learn it until recently I encountered a data driven scenario, https://github.com/jackliusr/jsonnet-demo[generating istio yaml configurations based on an array of data]. The scenario is business driven, and I can foresee that there will be more data coming. What a waste of time to repeat the copy/paste procedures with little tweaks. I hated to do that. I figured out doing that data driven configuraton using jsonnet after spending half night yesterday.
+In the past I knew jsonnet, however I didn't commit too much time to learn it until recently I encountered a data driven scenario, https://github.com/jackliusr/jsonnet-demo[generating istio yaml configurations based on an array of data]. The scenario is business driven, and I can foresee that there will be more data coming. What a waste of time to repeat the copy/paste procedures with little tweaks. I hated to do that again and again. There are other options to generate the yaml configuraton files by templates and data, I settled on jsonnet as it was json compatible etc. I figured out doing that data driven configuraton using jsonnet after spending half night yesterday.
 
-The whole journey was not a smooth one. Here I logged my thoughts and hiccups I encountered.
+The whole journey was not a smooth one. Here I logged my thoughts and hiccups I encountered here.
 
 At first, I wanted to use tanka.  I thought it might be too heavy after I learnt that there are environments and spec.json. I tried to use jsonnet-bundler to install jsonnet-libs following the https://tanka.dev/libraries/install-publish#install-a-library[document] and failed. I only got it right when I noticed the jb usage at https://tanka.dev/tutorial/k-lib#installation[here]. 
 
