@@ -159,6 +159,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2022/05/reflection-on-implementation-of-cicd-using-argo-workflows/" class="link black dim">
+        Reflection on implementation of CICD using argo-workflows
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I had some projects on github, gitlab and gitee. Their CI pipelines are quite different. To save the troubles and times, it is a natural choice to seek other options to unify on one solution.
+ At first, I looked into jenkins x. However it is quite heavy and with opinions. Considering its Maturity Level Matrix, I am not sure I can make it happen in my limited after hours times.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2022/05/argo-workflow-secrets-for-git/" class="link black dim">
         argo-workflow: secrets for git
       </a>
@@ -295,21 +311,6 @@ if (!doNotTrack) {
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       I wrote my blogs using Jekyll at this domain almost two years occasionally from 2018 until 2020. I didn’t think to move to Hugo before it was used in one of my company project. After two or three weeks since the project kicked off, I had a thought why not move to Hugo considering several benefits.
  For the uninitiated, Hugo is one of the most popular open-source static site generators.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/05/a-strange-issue-of-kubernetes-new-pod-kept-in-crashloopbackoff-in-newly-joined-node./" class="link black dim">
-        A strange issue of kubernetes: New pod kept in CrashloopBackOff in newly joined node.
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Today I encountered a strange issue with one kubernete cluster. Newly created pods are not created on a newly joined node. There is no errors in logs of pods and the node, events of kubernete. All seems normal. I created a simple nginx pod with nodeName as the problematic node. The pod can be scheduled and created in the node. However the pod was kept in CrashloopBackOff state. There is definitely something wrong with server.
     </div>
   </div>
 </div>

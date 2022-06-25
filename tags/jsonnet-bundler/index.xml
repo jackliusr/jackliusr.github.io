@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jsonnet-bundler on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/jsonnet-bundler/</link>
+    <description>Recent content in jsonnet-bundler on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 25 Jun 2022 10:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/jsonnet-bundler/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install</title>
+      <link>https://jackliusr.github.io/posts/2022/06/install/</link>
+      <pubDate>Sat, 25 Jun 2022 10:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/06/install/</guid>
+      <description>In the past I knew jsonnet, however I didn’t commit too much time to learn it until recently I encountered a data driven scenario, generating istio yaml configurations based on an array of data. The scenario is business driven, and I can foresee that there will be more data coming. What a waste of time to repeat the copy/paste procedures with little tweaks. I hated to do that. I figured out doing that data driven configuraton using jsonnet after spending half night yesterday.</description>
+    </item>
+    
+  </channel>
+</rss>
