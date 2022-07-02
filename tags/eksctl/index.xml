@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>eksctl on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/eksctl/</link>
+    <description>Recent content in eksctl on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Jul 2022 07:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/eksctl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>eksctl Steps</title>
+      <link>https://jackliusr.github.io/posts/2022/07/eksctl-steps/</link>
+      <pubDate>Fri, 01 Jul 2022 07:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/07/eksctl-steps/</guid>
+      <description>I only noticed the steps after one ergent cancelling of creating. I didn’t find corresponding nodes and wondered what happened. I deleted my cluster and recreated one.
+ I knew I can create nodegroup after creating cluster and not sure if I can do those sub tasks this way as well. Leave it here for later investigation.
+ 2 sequential tasks: { create cluster control plane &amp;#34;uat-local-intl&amp;#34;, 2 sequential sub-tasks: { 4 sequential sub-tasks: { wait for control plane to become ready, associate IAM OIDC provider, 4 parallel sub-tasks: { 2 sequential sub-tasks: { create IAM role for serviceaccount &amp;#34;backend-apps/s3-reader&amp;#34;, create serviceaccount &amp;#34;backend-apps/s3-reader&amp;#34;, }, 2 sequential sub-tasks: { create IAM role for serviceaccount &amp;#34;backend-apps/cache-access&amp;#34;, create serviceaccount &amp;#34;backend-apps/cache-access&amp;#34;, }, 2 sequential sub-tasks: { create IAM role for serviceaccount &amp;#34;kube-system/cluster-autoscaler&amp;#34;, create serviceaccount &amp;#34;kube-system/cluster-autoscaler&amp;#34;, }, 2 sequential sub-tasks: { create IAM role for serviceaccount &amp;#34;kube-system/aws-node&amp;#34;, create serviceaccount &amp;#34;kube-system/aws-node&amp;#34;, }, }, restart daemonset &amp;#34;kube-system/aws-node&amp;#34;, }, create nodegroup &amp;#34;ng-1&amp;#34;, } }   </description>
+    </item>
+    
+  </channel>
+</rss>
