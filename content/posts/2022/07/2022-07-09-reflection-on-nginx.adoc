@@ -1,0 +1,22 @@
+---
+title: "Reflection on nginx usage"
+date: 2022-07-09T17:01:10+08:00
+categories:
+- tech
+tags:
+- nginx
+---
+
+== Prologue
+I never thought I will use nginx extensively in systems I involved after I found that nginx ingress has some limitations comparing to istio in 2021. Nginx is more than reverse proxy or webservers which I thought initially after several months of extensive usage in the past. Here I list serveral advanced use case I countered or discussed with other experts.
+
+
+== use case: CDN
+
+MaxCDN use
+
+== api gateway
+
+== load balancer
+
+== SSI for site farming
