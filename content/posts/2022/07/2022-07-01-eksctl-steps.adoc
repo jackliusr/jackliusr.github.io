@@ -1,0 +1,43 @@
+---
+title: "eksctl Steps"
+date: 2022-07-01T07:01:10+08:00
+categories:
+- tech
+tags:
+- eksctl
+---
+
+I only noticed the steps after one ergent cancelling of creating.  I didn't find corresponding nodes and wondered what happened. I deleted my cluster and recreated one. 
+
+I knew I can create nodegroup after creating cluster and not sure if I can do those sub tasks this way as well.  Leave it here for later investigation.
+
+----
+2 sequential tasks: { create cluster control plane "uat-local-intl",
+    2 sequential sub-tasks: {
+        4 sequential sub-tasks: {
+            wait for control plane to become ready,
+            associate IAM OIDC provider,
+            4 parallel sub-tasks: {
+                2 sequential sub-tasks: {
+                    create IAM role for serviceaccount "backend-apps/s3-reader",
+                    create serviceaccount "backend-apps/s3-reader",
+                },
+                2 sequential sub-tasks: {
+                    create IAM role for serviceaccount "backend-apps/cache-access",
+                    create serviceaccount "backend-apps/cache-access",
+                },
+                2 sequential sub-tasks: {
+                    create IAM role for serviceaccount "kube-system/cluster-autoscaler",
+                    create serviceaccount "kube-system/cluster-autoscaler",
+                },
+                2 sequential sub-tasks: {
+                    create IAM role for serviceaccount "kube-system/aws-node",
+                    create serviceaccount "kube-system/aws-node",
+                },
+            },
+            restart daemonset "kube-system/aws-node",
+        },
+        create nodegroup "ng-1",
+    }
+}
+----
