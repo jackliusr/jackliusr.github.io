@@ -186,6 +186,31 @@ if (!doNotTrack) {
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/2022/07/reflection-on-nginx-usage/" class="color-inherit dim link">
+            Reflection on nginx usage
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Prologue I never thought I will use nginx extensively in systems I involved after I found that nginx ingress has some limitations comparing to istio in 2021. Nginx is more than reverse proxy or webservers which I thought initially after several months of extensive usage in the past. Here I list serveral advanced use case I countered or discussed with other experts.
+   use case: CDN MaxCDN use
+        </div>
+          <a href="/posts/2022/07/reflection-on-nginx-usage/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/2022/07/eksctl-steps/" class="color-inherit dim link">
             eksctl Steps
             </a>
@@ -228,38 +253,18 @@ if (!doNotTrack) {
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2022/06/add-certificates-to-existing-gateway-with-non-synch-resources/" class="color-inherit dim link">
-            Add certificates to existing gateway with non-synch resources
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          I started one of my certificates using cert-manager and letsencrypt without root domain in one product system. Later I tried to add root domain to the certificate as our customer requested withou success at first day. I figured out how to do that next morning. Here are my the success one and several failed attempts.
- Here some background information of this system: gitops + argocd
- Successful solution Considering that the app argocd is in manual synchronization mode, I can do that changes in place in kubernetes instead of the git repo.
-        </div>
-          <a href="/posts/2022/06/add-certificates-to-existing-gateway-with-non-synch-resources/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/2022/06/add-certificates-to-existing-gateway-with-non-synch-resources/" class="link black dim">
+              Add certificates to existing gateway with non-synch resources
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2022/06/recover-from-mysql-xa-transaction-issues/" class="link black dim">
@@ -276,12 +281,6 @@ if (!doNotTrack) {
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2022/06/reflection-on-my-choice-of-cicd-in-the-past/" class="link black dim">
               Reflection on my choice of cicd in the past
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/2022/06/istio-troubleshooting-in-new-scenario-that-one-service-to-expose-into-multiple-domains-and-multiple-ingress-gateways/" class="link black dim">
-              Istio troubleshooting in new scenario that one service to expose into multiple domains and multiple ingress gateways
             </a>
           </h2>
         

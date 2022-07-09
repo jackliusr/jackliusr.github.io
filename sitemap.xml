@@ -3,7 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2022-07-02T09:06:17+07:00</lastmod>
+    <lastmod>2022-07-09T20:29:32+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/</loc>
+    <lastmod>2022-07-09T20:29:32+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/nginx/</loc>
+    <lastmod>2022-07-09T20:29:32+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/</loc>
+    <lastmod>2022-07-09T20:29:32+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2022/07/reflection-on-nginx-usage/</loc>
+    <lastmod>2022-07-09T20:29:32+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/</loc>
+    <lastmod>2022-07-09T20:29:32+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/categories/tech/</loc>
+    <lastmod>2022-07-09T20:29:32+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -13,26 +43,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/2022/07/eksctl-steps/</loc>
-    <lastmod>2022-07-02T09:06:17+07:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2022-07-02T09:06:17+07:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2022-07-02T09:06:17+07:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2022-07-02T09:06:17+07:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/categories/tech/</loc>
     <lastmod>2022-07-02T09:06:17+07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -743,11 +753,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/ingress/</loc>
-    <lastmod>2022-04-13T22:26:04+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/nginx/</loc>
     <lastmod>2022-04-13T22:26:04+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
