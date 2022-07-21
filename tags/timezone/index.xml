@@ -14,7 +14,7 @@
       
       <guid>https://jackliusr.github.io/posts/2022/07/set-timezone-in-asp.net-6.0-in-linux-container/</guid>
       <description>According to many articles one the web, the way to set timezone is as following:
- cp /usr/share/zoneinfo/Asia/Singapore /etc/localtime echo &amp;#39;Asia/Singapore&amp;#39; &amp;gt; /etc/timezone   It is indeed to get the correct time if you run it in dotnet core 5 docker linux containers. However you couldn’t get the correct local time in dotnet 6.0. I found the issue About time incorrect of docker image about aspnet-6 #62545. After I tried serveral combinations mentioned in the issue, finally I got a working solution.</description>
+ cp /usr/share/zoneinfo/Asia/Singapore /etc/localtime echo &amp;#39;Asia/Singapore&amp;#39; &amp;gt; /etc/timezone   You can indeed get the correct time if you run it in dotnet core 5 docker linux containers. However you couldn’t get the correct local time in dotnet 6.0. I found the issue About time incorrect of docker image about aspnet-6 #62545. After I tried serveral combinations mentioned in the issue, finally I got a working solution.</description>
     </item>
     
   </channel>
