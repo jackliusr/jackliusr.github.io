@@ -18,7 +18,7 @@ cp /usr/share/zoneinfo/Asia/Singapore /etc/localtime
 echo 'Asia/Singapore' > /etc/timezone
 ----
 
-It is indeed to get the correct time if you run it in dotnet core 5 docker linux containers. However https://github.com/dotnet/runtime/issues/62545[you couldn't get the correct local time in dotnet 6.0]. I found https://github.com/dotnet/runtime/issues/62545[the issue About time incorrect of docker image about aspnet-6 #62545]. After I tried serveral combinations mentioned in the issue, finally I got a working solution. Here is my solution. 
+You can indeed  get the correct time if you run it in dotnet core 5 docker linux containers. However https://github.com/dotnet/runtime/issues/62545[you couldn't get the correct local time in dotnet 6.0]. I found https://github.com/dotnet/runtime/issues/62545[the issue About time incorrect of docker image about aspnet-6 #62545]. After I tried serveral combinations mentioned in the issue, finally I got a working solution. Here is my solution. 
 
 [source, bash]
 ----
