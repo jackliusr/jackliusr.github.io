@@ -186,6 +186,31 @@ if (!doNotTrack) {
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/2022/07/set-timezone-in-asp.net-6.0-in-linux-container/" class="color-inherit dim link">
+            Set timezone in asp.net 6.0 in linux container
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          According to many articles one the web, the way to set timezone is as following:
+ cp /usr/share/zoneinfo/Asia/Singapore /etc/localtime echo &#39;Asia/Singapore&#39; &gt; /etc/timezone   It is indeed to get the correct time if you run it in dotnet core 5 docker linux containers. However you couldn’t get the correct local time in dotnet 6.0. I found the issue About time incorrect of docker image about aspnet-6 #62545. After I tried serveral combinations mentioned in the issue, finally I got a working solution.
+        </div>
+          <a href="/posts/2022/07/set-timezone-in-asp.net-6.0-in-linux-container/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/2022/07/reflection-on-nginx-usage/" class="color-inherit dim link">
             Reflection on nginx usage
             </a>
@@ -230,36 +255,18 @@ if (!doNotTrack) {
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2022/06/my-first-usage-of-jsonnet/" class="color-inherit dim link">
-            My first usage of jsonnet
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          In the past I knew jsonnet, however I didn’t commit too much time to learn it until recently I encountered a data driven scenario, generating istio yaml configurations based on an array of data. The scenario is business driven, and I can foresee that there will be more data coming. What a waste of time to repeat the copy/paste procedures with little tweaks. I hated to do that again and again.
-        </div>
-          <a href="/posts/2022/06/my-first-usage-of-jsonnet/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/2022/06/my-first-usage-of-jsonnet/" class="link black dim">
+              My first usage of jsonnet
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2022/06/add-certificates-to-existing-gateway-with-non-synch-resources/" class="link black dim">
@@ -276,12 +283,6 @@ if (!doNotTrack) {
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2022/06/do-you-still-need-to-care-chatops/" class="link black dim">
               Do you still need to care ChatOps
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/2022/06/reflection-on-my-choice-of-cicd-in-the-past/" class="link black dim">
-              Reflection on my choice of cicd in the past
             </a>
           </h2>
         

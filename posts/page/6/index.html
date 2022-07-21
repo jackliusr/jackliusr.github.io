@@ -159,6 +159,23 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2020/11/jetbrain-debug-containers-in-kubernetes/" class="link black dim">
+        Jetbrain debug containers in kubernetes
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I can’t debug the dockerdev app following the steps in https://blog.jetbrains.com/go/2020/05/11/using-kubernetes-from-goland/, even after I cloned its source code https://github.com/jackliusr/dockerdev/tree/kubernetes-debug.
+ I read several articles before I tried the aboved one. The successful debug after several trial and errors. I added skaffold.yaml to the project and installed Cloud Code. skaffold.yaml can be found at https://github.com/jackliusr/dockerdev/tree/kubernetes-debug. Other jetbrain configuration can be seen in the below pictures.
+          cloud code is a very good tool.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2020/10/a-new-way-to-anti-scrapping/" class="link black dim">
         a new way to anti scrapping
       </a>
@@ -305,24 +322,6 @@ if (!doNotTrack) {
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Error message of rabbitmq is terrible Today I installed RabbitMQ 3.7.13-1. However I always got the following messages when running rabbitmq-server and a dump. The error message doesn’t give any clue of root cause. It is none of the cases searched from google such as permission issue, configuration issue etc.
  {&#34;init terminating in do_boot&#34;,{undef,[{rabbit_prelaunch,start,[],[]},{init,start_em,1,[]},{init,do_boot,3,[]}]}}   I re-read the installation guide and double-checked steps and configuration. There is no luck.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2019/02/issues-of-clean-setup-spacemacs-and-their-solutions/" class="link black dim">
-        Issues of clean setup spacemacs and their solutions
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      I encountered the same issue &#34;File error: Cannot open load file, No such file or directory, bind-map&#34; twice in my setup of spacemacs. The issue can be solved several ways which I found from github and clojurians-log.clojureverse.org. I consolidate the reasons and list them below.
-   Timeout: the relevant setting in .spacemacs :- dotspacemacs-elpa-timeout 30
-  TLS Certs: emacs --insecure
-  Permanent TLS Certs: the relevant setting in .
     </div>
   </div>
 </div>
