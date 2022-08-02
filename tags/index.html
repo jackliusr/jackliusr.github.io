@@ -954,6 +954,22 @@ I didn&rsquo;t have a good impression with java in my past java projects.
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2022/08/use-cert-manager-to-secure-kubernetes-cert-manager-behind-nginx-ingress/" class="link black dim">
+        Use cert-manager to secure kubernetes cert-manager behind nginx ingress
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Today I had a case to expose serveral kubernetes dashboard with cert-manager. Initiallly I thought it should be quite easy to setup, but the reality was quite different. My intial yaml is as following.
+ apiVersion: networking.k8s.io/v1 kind: Ingress metadata: name: ingress-global-dash namespace: kubernetes-dashboard labels: name: ingress-global-dash use-http01-solver: &#34;true&#34; annotations: cert-manager.io/cluster-issuer: &#34;test-issuer&#34; spec: ingressClassName: nginx rules: - host: &#34;dashboard.example.com&#34; http: paths: - pathType: Prefix path: &#34;/&#34; backend: service: name: kubernetes-dashboard port: number: 80 #later changed to 443 according to port of kubernetes-dashboard svc tls: # &lt; placing a host in the TLS config will determine what ends up in the cert&#39;s subjectAltNames - hosts: - dashboard.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2022/06/istio-troubleshooting-in-new-scenario-that-one-service-to-expose-into-multiple-domains-and-multiple-ingress-gateways/" class="link black dim">
         Istio troubleshooting in new scenario that one service to expose into multiple domains and multiple ingress gateways
       </a>
@@ -973,6 +989,22 @@ I didn&rsquo;t have a good impression with java in my past java projects.
             Tag: certificate
           </a>
         </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/2022/08/use-cert-manager-to-secure-kubernetes-cert-manager-behind-nginx-ingress/" class="link black dim">
+        Use cert-manager to secure kubernetes cert-manager behind nginx ingress
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Today I had a case to expose serveral kubernetes dashboard with cert-manager. Initiallly I thought it should be quite easy to setup, but the reality was quite different. My intial yaml is as following.
+ apiVersion: networking.k8s.io/v1 kind: Ingress metadata: name: ingress-global-dash namespace: kubernetes-dashboard labels: name: ingress-global-dash use-http01-solver: &#34;true&#34; annotations: cert-manager.io/cluster-issuer: &#34;test-issuer&#34; spec: ingressClassName: nginx rules: - host: &#34;dashboard.example.com&#34; http: paths: - pathType: Prefix path: &#34;/&#34; backend: service: name: kubernetes-dashboard port: number: 80 #later changed to 443 according to port of kubernetes-dashboard svc tls: # &lt; placing a host in the TLS config will determine what ends up in the cert&#39;s subjectAltNames - hosts: - dashboard.
+    </div>
+  </div>
+</div>
+
         
           <div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -2133,6 +2165,22 @@ I didn&rsquo;t have a good impression with java in my past java projects.
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2022/08/use-cert-manager-to-secure-kubernetes-cert-manager-behind-nginx-ingress/" class="link black dim">
+        Use cert-manager to secure kubernetes cert-manager behind nginx ingress
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Today I had a case to expose serveral kubernetes dashboard with cert-manager. Initiallly I thought it should be quite easy to setup, but the reality was quite different. My intial yaml is as following.
+ apiVersion: networking.k8s.io/v1 kind: Ingress metadata: name: ingress-global-dash namespace: kubernetes-dashboard labels: name: ingress-global-dash use-http01-solver: &#34;true&#34; annotations: cert-manager.io/cluster-issuer: &#34;test-issuer&#34; spec: ingressClassName: nginx rules: - host: &#34;dashboard.example.com&#34; http: paths: - pathType: Prefix path: &#34;/&#34; backend: service: name: kubernetes-dashboard port: number: 80 #later changed to 443 according to port of kubernetes-dashboard svc tls: # &lt; placing a host in the TLS config will determine what ends up in the cert&#39;s subjectAltNames - hosts: - dashboard.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2021/03/exposing-tcp-and-udp-services-in-nginx-ingress/" class="link black dim">
         Exposing TCP and UDP services in nginx ingress
       </a>
@@ -2659,6 +2707,22 @@ I didn&rsquo;t have a good impression with java in my past java projects.
             Tag: kubernetes
           </a>
         </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/2022/08/use-cert-manager-to-secure-kubernetes-cert-manager-behind-nginx-ingress/" class="link black dim">
+        Use cert-manager to secure kubernetes cert-manager behind nginx ingress
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Today I had a case to expose serveral kubernetes dashboard with cert-manager. Initiallly I thought it should be quite easy to setup, but the reality was quite different. My intial yaml is as following.
+ apiVersion: networking.k8s.io/v1 kind: Ingress metadata: name: ingress-global-dash namespace: kubernetes-dashboard labels: name: ingress-global-dash use-http01-solver: &#34;true&#34; annotations: cert-manager.io/cluster-issuer: &#34;test-issuer&#34; spec: ingressClassName: nginx rules: - host: &#34;dashboard.example.com&#34; http: paths: - pathType: Prefix path: &#34;/&#34; backend: service: name: kubernetes-dashboard port: number: 80 #later changed to 443 according to port of kubernetes-dashboard svc tls: # &lt; placing a host in the TLS config will determine what ends up in the cert&#39;s subjectAltNames - hosts: - dashboard.
+    </div>
+  </div>
+</div>
+
         
           <div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">

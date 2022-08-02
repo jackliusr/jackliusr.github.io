@@ -6,7 +6,17 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Jul 2022 21:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Aug 2022 21:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Use cert-manager to secure kubernetes cert-manager behind nginx ingress</title>
+      <link>https://jackliusr.github.io/posts/2022/08/use-cert-manager-to-secure-kubernetes-cert-manager-behind-nginx-ingress/</link>
+      <pubDate>Tue, 02 Aug 2022 21:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/08/use-cert-manager-to-secure-kubernetes-cert-manager-behind-nginx-ingress/</guid>
+      <description>Today I had a case to expose serveral kubernetes dashboard with cert-manager. Initiallly I thought it should be quite easy to setup, but the reality was quite different. My intial yaml is as following.
+ apiVersion: networking.k8s.io/v1 kind: Ingress metadata: name: ingress-global-dash namespace: kubernetes-dashboard labels: name: ingress-global-dash use-http01-solver: &amp;#34;true&amp;#34; annotations: cert-manager.io/cluster-issuer: &amp;#34;test-issuer&amp;#34; spec: ingressClassName: nginx rules: - host: &amp;#34;dashboard.example.com&amp;#34; http: paths: - pathType: Prefix path: &amp;#34;/&amp;#34; backend: service: name: kubernetes-dashboard port: number: 80 #later changed to 443 according to port of kubernetes-dashboard svc tls: # &amp;lt; placing a host in the TLS config will determine what ends up in the cert&amp;#39;s subjectAltNames - hosts: - dashboard.</description>
+    </item>
+    
     <item>
       <title>Set timezone in asp.net 6.0 in linux container</title>
       <link>https://jackliusr.github.io/posts/2022/07/set-timezone-in-asp.net-6.0-in-linux-container/</link>

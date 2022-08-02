@@ -2,12 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jackliusr.github.io/tags/aspnet/</loc>
-    <lastmod>2022-07-21T21:50:42+08:00</lastmod>
+    <loc>https://jackliusr.github.io/categories/</loc>
+    <lastmod>2022-08-02T22:30:11+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/categories/</loc>
+    <loc>https://jackliusr.github.io/tags/cert-manager/</loc>
+    <lastmod>2022-08-02T22:30:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/certificate/</loc>
+    <lastmod>2022-08-02T22:30:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/ingress/</loc>
+    <lastmod>2022-08-02T22:30:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/kubernetes/</loc>
+    <lastmod>2022-08-02T22:30:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/</loc>
+    <lastmod>2022-08-02T22:30:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/</loc>
+    <lastmod>2022-08-02T22:30:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/</loc>
+    <lastmod>2022-08-02T22:30:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/categories/tech/</loc>
+    <lastmod>2022-08-02T22:30:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2022/08/use-cert-manager-to-secure-kubernetes-cert-manager-behind-nginx-ingress/</loc>
+    <lastmod>2022-08-02T22:30:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/aspnet/</loc>
     <lastmod>2022-07-21T21:50:42+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -22,27 +67,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2022-07-21T21:50:42+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2022-07-21T21:50:42+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://jackliusr.github.io/posts/2022/07/set-timezone-in-asp.net-6.0-in-linux-container/</loc>
-    <lastmod>2022-07-21T21:50:42+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2022-07-21T21:50:42+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/categories/tech/</loc>
     <lastmod>2022-07-21T21:50:42+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -103,11 +128,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/argo-cd/</loc>
-    <lastmod>2022-06-23T22:15:01+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/certificate/</loc>
     <lastmod>2022-06-23T22:15:01+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -177,22 +197,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/tags/cert-manager/</loc>
-    <lastmod>2022-06-08T23:38:08+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://jackliusr.github.io/posts/2022/06/istio-troubleshooting-in-new-scenario-that-one-service-to-expose-into-multiple-domains-and-multiple-ingress-gateways/</loc>
     <lastmod>2022-06-08T23:38:08+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/istioctl/</loc>
-    <lastmod>2022-06-08T23:38:08+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/kubernetes/</loc>
     <lastmod>2022-06-08T23:38:08+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -773,11 +783,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/2021/03/exposing-tcp-and-udp-services-in-nginx-ingress/</loc>
-    <lastmod>2022-04-13T22:26:04+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/ingress/</loc>
     <lastmod>2022-04-13T22:26:04+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
