@@ -1,0 +1,52 @@
+---
+title: "Setup k8s monitoring"
+date: 2022-08-09T09:01:10+08:00
+categories:
+- tech
+tags:
+- kubernetes
+- grafana
+- prometheus
+- dashboard
+- helm
+---
+
+Kuberneters dashboard doesn't give enough information about node and cluster information during rececent loading test. I sought to other options. Prometheus and grafana are the de-facto standards. It's a no-brainer choice. The most important things is how to make them working together. 
+
+== Setup Prometheus and Grafana
+[source, bash]
+----
+kubectl create namespace monitoring
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+helm install prometheus prometheus-community/prometheus -n monitoring
+
+helm repo add grafana https://grafana.github.io/helm-charts
+helm install grafana grafana/grafana -n monitoring
+kubectl get secret --namespace monitoring grafana -o jsonpath="{.data.admin-password}" | base64 -d ; echo
+
+----
+
+== Configure Prometheus as data source
+
+https://docs.dapr.io/operations/monitoring/metrics/grafana/#configure-prometheus-as-data-source[Configure Prometheus as data source]
+
+== Import dashboards
+
+Choose data sources created in previous step.
+
+* Cluster
+** https://grafana.com/grafana/dashboards/1621
+** https://grafana.com/grafana/dashboards/315-kubernetes-cluster-monitoring-via-prometheus/
+* Node
+** https://grafana.com/grafana/dashboards/1860
+* Deployment
+** https://grafana.com/grafana/dashboards/741
+* Pod
+** https://grafana.com/grafana/dashboards/747
+
+== References: 
+
+* https://docs.dapr.io/operations/monitoring/metrics/prometheus/
+* https://docs.dapr.io/operations/monitoring/metrics/grafana/
+* https://blog.lwolf.org/post/going-open-source-in-monitoring-part-iii-10-most-useful-grafana-dashboards-to-monitor-kubernetes-and-services/
