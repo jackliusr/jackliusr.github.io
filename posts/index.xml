@@ -6,7 +6,17 @@
     <description>Recent content in Posts on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Aug 2022 21:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Aug 2022 09:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup k8s monitoring</title>
+      <link>https://jackliusr.github.io/posts/2022/08/setup-k8s-monitoring/</link>
+      <pubDate>Tue, 09 Aug 2022 09:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/08/setup-k8s-monitoring/</guid>
+      <description>Kuberneters dashboard doesn’t give enough information about node and cluster information during rececent loading test. I sought to other options. Prometheus and grafana are the de-facto standards. It’s a no-brainer choice. The most important things is how to make them working together.
+ Setup Prometheus and Grafana kubectl create namespace monitoring helm repo add prometheus-community https://prometheus-community.github.io/helm-charts helm repo update helm install prometheus prometheus-community/prometheus -n monitoring helm repo add grafana https://grafana.github.io/helm-charts helm install grafana grafana/grafana -n monitoring kubectl get secret --namespace monitoring grafana -o jsonpath=&amp;#34;{.</description>
+    </item>
+    
     <item>
       <title>Use cert-manager to secure kubernetes cert-manager behind nginx ingress</title>
       <link>https://jackliusr.github.io/posts/2022/08/use-cert-manager-to-secure-kubernetes-cert-manager-behind-nginx-ingress/</link>
