@@ -6,7 +6,17 @@
     <description>Recent content in security on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Apr 2021 16:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Aug 2022 11:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shift-lefts in kubernetes with datree</title>
+      <link>https://jackliusr.github.io/posts/2022/08/shift-lefts-in-kubernetes-with-datree/</link>
+      <pubDate>Tue, 09 Aug 2022 11:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/08/shift-lefts-in-kubernetes-with-datree/</guid>
+      <description>Shift-left is a things nowadays. Recently I read an articles about that beyond testing and security. Today I gave it a try using datree and found that there are still a lot of places to improve in one of my clusters. It is not just a small number. There maybe are many new concepts, configurations and best practicies behind the numbers.
+ kubectl datree test &amp;gt; test.log rg -n ❌ test.</description>
+    </item>
+    
     <item>
       <title>Setup softHSM2</title>
       <link>https://jackliusr.github.io/posts/2021/04/setup-softhsm2/</link>
