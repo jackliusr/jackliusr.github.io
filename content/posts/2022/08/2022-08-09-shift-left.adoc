@@ -1,0 +1,56 @@
+---
+title: "Shift-lefts in kubernetes with datree"
+date: 2022-08-09T11:01:10+08:00
+categories:
+- tech
+tags:
+- kubernetes
+- datree
+- Shift-left
+- security
+- testing
+---
+
+Shift-left is a things nowadays. Recently I read an articles about that beyond testing and security.  Today I gave it a try using datree and found that there are still a lot of places to improve in one of my clusters. It is not just a small number. There maybe are many new concepts, configurations and best practicies behind the numbers.
+
+[source, bash]
+----
+kubectl datree test > test.log
+rg -n  ❌ test.log > failed.txt
+sed -i '' 's/^[0-9]*:❌/❌/g' failed.txt
+sort failed.txt | uniq > uniq-failed.txt
+----
+
+----
++-----------------------------------+------------------------------------------------------+
+| Enabled rules in policy "Default" | 21                                                   |
+| Configs tested against policy     | 45                                                   |
+| Total rules evaluated             | 945                                                  |
+| Total rules skipped               | 0                                                    |
+| Total rules failed                | 91                                                   |
+| Total rules passed                | 854                                                  |
+| See all rules in policy           | https://app.datree.io/login?t=e492DY7GtYfCWMwocsyG4j |
++-----------------------------------+------------------------------------------------------+
+----
+
+I cleaned the validation results and I got the following list. Luckly after running the test on my production cluster, there is no such messages.
+
+----
+❌  Ensure Deployment has more than one replica configured  [1 occurrence]
+❌  Ensure each container has a configured CPU limit  [1 occurrence]
+❌  Ensure each container has a configured CPU request  [1 occurrence]
+❌  Ensure each container has a configured liveness probe  [1 occurrence]
+❌  Ensure each container has a configured memory limit  [1 occurrence]
+❌  Ensure each container has a configured memory request  [1 occurrence]
+❌  Ensure each container has a configured readiness probe  [1 occurrence]
+❌  Ensure each container image has a pinned (tag) version  [1 occurrence]
+❌  Prevent Service from exposing node port  [1 occurrence]
+❌  Prevent workload from using the default namespace  [1 occurrence]
+❌  k8s schema validation error: For field metadata.creationTimestamp: Invalid type. Expected: string, given: null
+❌  k8s schema validation error: could not find schema for Component
+❌  k8s schema validation error: could not find schema for Configuration
+----
+
+Considing the cost increased dramatically, it worth to invest on shift-left testing and security. 
+
+image::https://cdn.thenewstack.io/media/2022/07/4a96e3df-untitled.png[image]
