@@ -35,14 +35,14 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2022/08/binary-search/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-08-11T21:01:10+08:00" />
-<meta property="article:modified_time" content="2022-08-12T09:21:50+08:00" />
+<meta property="article:modified_time" content="2022-08-12T20:40:51+08:00" />
 
 <meta itemprop="name" content="Binary Search">
 <meta itemprop="description" content="Serveral months ago, I practiced serveral binary leetcode questions, and I was confused about the following several things: I did pay much attentions to it. Latest week an article mentions binary search at https://leetcode.wang/. Little searching, I found more information about this such as lower bound, upper bound, equal-range, open/close range, middle point etc. There are more choices than a normal lecture ppt.
    &lt; vs ⇐
   how to caculate middle point:"><meta itemprop="datePublished" content="2022-08-11T21:01:10+08:00" />
-<meta itemprop="dateModified" content="2022-08-12T09:21:50+08:00" />
-<meta itemprop="wordCount" content="320">
+<meta itemprop="dateModified" content="2022-08-12T20:40:51+08:00" />
+<meta itemprop="wordCount" content="323">
 <meta itemprop="keywords" content="algo,Binary Search," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Binary Search"/>
 <meta name="twitter:description" content="Serveral months ago, I practiced serveral binary leetcode questions, and I was confused about the following several things: I did pay much attentions to it. Latest week an article mentions binary search at https://leetcode.wang/. Little searching, I found more information about this such as lower bound, upper bound, equal-range, open/close range, middle point etc. There are more choices than a normal lecture ppt.
@@ -201,7 +201,7 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 2 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 320 words</span>
+        <span class="f6 mv4 dib tracked"> - 323 words</span>
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
@@ -233,11 +233,14 @@ if (!doNotTrack) {
 <li>
 <p><a href="https://www.zhihu.com/question/36132386/answer/530313852">while loop的循环不变量 - loop invariants（怎样缩小区间才不出错）（会写代码 vs 会用计算机科学的思考方式)</a></p>
 </li>
+<li>
+<p><a href="https://wcipeg.com/wiki/Binary_search#Possible_bugs">Possible bugs</a></p>
+</li>
 </ul>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">binary_search(lo, hi, p):
+<pre>binary_search(lo, hi, p):
   while lo &lt; hi:
     mid = lo + (hi - lo) / 2
     if p(mid) == true:
@@ -247,7 +250,7 @@ if (!doNotTrack) {
     if p(lo) == false:
     complain // p(x) is false for all x in S!
 
-    return lo // lo is the least x for which p(x) is true</code></pre>
+    return lo // lo is the least x for which p(x) is true</pre>
 </div>
 </div>
 <div class="listingblock">
@@ -273,6 +276,9 @@ In a similar vein, if p(mid) is false, we can discard the first half of the sear
 </li>
 <li>
 <p><a href="https://leetcode.com/explore/learn/card/binary-search/" class="bare">https://leetcode.com/explore/learn/card/binary-search/</a></p>
+</li>
+<li>
+<p><a href="https://wcipeg.com/wiki/Binary_search" class="bare">https://wcipeg.com/wiki/Binary_search</a></p>
 </li>
 </ul>
 </div>
@@ -367,6 +373,6 @@ In a similar vein, if p(mid) is false, we can discard the first half of the sear
 
 
 
-  <p style="font-size: small; color: grey;">Page version: 7141c1e29b7d0bf5836421a91048b8c38b6cb57d 2022-08-12</p>
+  <p style="font-size: small; color: grey;">Page version: 8ec7add5f11efd333642f6c3e4d64504270abef2 2022-08-12</p>
   </body>
 </html>
