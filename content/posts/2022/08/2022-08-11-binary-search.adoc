@@ -19,7 +19,7 @@ Serveral months ago, I practiced serveral binary leetcode questions, and I was c
 * [first, last) range:  mid = first + (last -first)/2; make sure when there is only one element in the range, mid = first.
 * (first, last] : mid = last - ( last-first)/2; make sure when there is only one element in the range, mid = last.
 * https://www.zhihu.com/question/36132386/answer/530313852[while loop的循环不变量 - loop invariants（怎样缩小区间才不出错）（会写代码 vs 会用计算机科学的思考方式)]
-
+* https://wcipeg.com/wiki/Binary_search#Possible_bugs[Possible bugs]
 [source, python]
 ----
 binary_search(lo, hi, p):
@@ -49,3 +49,4 @@ In a similar vein, if p(mid) is false, we can discard the first half of the sear
 * https://www.topcoder.com/community/competitive-programming/tutorials/binary-search/
 * https://leetcode.com/discuss/general-discussion/786126/Python-Powerful-Ultimate-Binary-Search-Template.-Solved-many-problems
 * https://leetcode.com/explore/learn/card/binary-search/
+*  https://wcipeg.com/wiki/Binary_search
