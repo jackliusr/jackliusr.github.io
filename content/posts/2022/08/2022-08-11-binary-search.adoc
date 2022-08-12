@@ -35,6 +35,7 @@ binary_search(lo, hi, p):
     return lo // lo is the least x for which p(x) is true
 ----
 
+[verse]
 ----
 The two crucial lines are hi = mid and lo = mid+1. When p(mid) is true, we can discard the second half of the search space, since the predicate is true for all elements in it (by the main theorem). However, we can not discard mid itself, since it may well be the first element for which p is true. This is why moving the upper bound to mid is as aggressive as we can do without introducing bugs.
 
