@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://jackliusr.github.io/privacy/</loc>
+    <lastmod>2022-09-06T19:25:13+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://jackliusr.github.io/tags/algo/</loc>
     <lastmod>2022-08-25T21:29:54+08:00</lastmod>
     <changefreq>monthly</changefreq>
