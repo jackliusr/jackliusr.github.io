@@ -72,6 +72,14 @@ pre = "<i class='fa fa-road'></i>"
 url = "/notes/"
 weight = -90
 
+
+[[menu.main]]
+name = "Portfolio"
+post = "<span class='alert'>Portfolio!</span>"
+pre = "<i class='fa fa-road'></i>"
+url = "/portfolio/"
+weight = -80
+
 [security]
 enableInlineShortcodes = false
 
