@@ -1,0 +1,104 @@
+---
+title: "Use cert-manager to secure kubernetes cert-manager behind nginx ingress"
+date: 2022-08-02T21:01:10+08:00
+categories:
+- tech
+tags:
+- ingress
+- kubernetes
+- cert-manager
+- certificate
+---
+Today I had a case to expose serveral kubernetes dashboard with cert-manager. Initiallly I thought it should be quite easy to setup, but the reality was quite different.  My intial yaml is as following.
+
+[source, yaml]
+----
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-global-dash
+  namespace: kubernetes-dashboard
+  labels:
+     name: ingress-global-dash
+     use-http01-solver: "true"
+  annotations:
+     cert-manager.io/cluster-issuer: "test-issuer"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "dashboard.example.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: kubernetes-dashboard
+            port:
+              number: 80  #later changed to 443 according to port of kubernetes-dashboard svc
+  tls: # < placing a host in the TLS config will determine what ends up in the cert's subjectAltNames
+  - hosts:
+    - dashboard.example.com
+    secretName: kubernetes-dashboard-cert # < cert-manager will store the created certificate in this secret.
+
+----
+
+The configuration didn't work out and I got 400 instead. Later I found the solution to this issue according to https://serverfault.com/a/1032326/241301[400 Error with nginx-ingress to Kubernetes Dashboard].  The critical part is following: 
+
+[source, yaml]
+----
+  annotations:
+     cert-manager.io/cluster-issuer: "test-issuer"
+     nginx.ingress.kubernetes.io/ssl-redirect: "true"
+     nginx.ingress.kubernetes.io/secure-backends: "true"
+     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+     nginx.ingress.kubernetes.io/configuration-snippet: |-
+        proxy_ssl_server_name on;
+        proxy_ssl_name $host; 
+----
+
+
+Here is my full example of ingress yaml. 
+
+[source, yaml]
+----
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-global-dash
+  namespace: kubernetes-dashboard
+  labels:
+     name: ingress-global-dash
+     use-http01-solver: "true"
+  annotations:
+     cert-manager.io/cluster-issuer: "test-issuer"
+     nginx.ingress.kubernetes.io/ssl-redirect: "true"
+     nginx.ingress.kubernetes.io/secure-backends: "true"
+     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+     nginx.ingress.kubernetes.io/configuration-snippet: |-
+        proxy_ssl_server_name on;
+        proxy_ssl_name $host;    
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "dashboard.example.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: kubernetes-dashboard
+            port:
+              number: 443
+  tls: # < placing a host in the TLS config will determine what ends up in the cert's subjectAltNames
+  - hosts:
+    - dashboard.example.com
+    secretName: kubernetes-dashboard-cert # < cert-manager will store the created certificate in this secret.
+
+----
+
+== Reference: 
+
+* https://itnext.io/how-to-expose-your-kubernetes-dashboard-with-cert-manager-422ab1e3bf30[How to expose your Kubernetes Dashboard with cert-manager]
+* https://serverfault.com/a/1032326/241301[400 Error with nginx-ingress to Kubernetes Dashboard]

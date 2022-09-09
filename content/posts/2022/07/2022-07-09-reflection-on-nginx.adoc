@@ -11,12 +11,23 @@ tags:
 I never thought I will use nginx extensively in systems I involved after I found that nginx ingress has some limitations comparing to istio in 2021. Nginx is more than reverse proxy or webservers which I thought initially after several months of extensive usage in the past. Here I list serveral advanced use case I countered or discussed with other experts.
 
 
-== use case: CDN
+== CDN
 
 MaxCDN use
 
+https://docs.nginx.com/nginx/admin-guide/content-cache/content-caching/
+
+https://www.nginx.com/blog/nginx-caching-guide/
+
+
 == api gateway
+
+https://www.nginx.com/blog/deploying-nginx-plus-as-an-api-gateway-part-1/[using location for APIs as API gateway]
 
 == load balancer
 
+https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/[upstream servers]
+
 == SSI for site farming
+
+same content with little different sites using https://www.nginx.com/resources/wiki/start/topics/examples/dynamic_ssi/[dynamic ssi]
