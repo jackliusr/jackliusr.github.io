@@ -1,0 +1,27 @@
+---
+title: "conditional compiling in flutter project"
+date: 2022-09-11T21:01:10+08:00
+categories:
+- tech
+tags:
+- flutter
+- gradle
+- dart
+---
+
+
+In the last week, I intermittently worked on how to compile a flutter project conditionally like the way c/c++ in busy daily work schedules. I knew that flavor is https://dev.to/deskangel/how-flutter-does-conditional-compilation-5a5m[the way] to go, however there are still serveral issues opened to explore to make it better or to understand the rationale behind the scene. 
+
+
+* Dependency Injections using get_it and injectable: https://github.com/Milad-Akarie/injectable/issues/181[Tree Shaking Capability]
+* Pack only neccessary components into the mobile app: 
+** flutter pub remove/add packages: without this, some platform code of components maybe will be included in the final artifact.
+** flavored dependencies in build.gradle
+** dart entry files with mimifization enabled.
+* Design pattern( factory, template methods etc)
+* iOS: scheme, main entry point file
+* android: different activity or just flavored mainactivity?
+* sourceSets or just default flavor folders?
+* dynamic dispatch or type check??
+
+I left those issues here in case of I forget them, I will revisit them later
