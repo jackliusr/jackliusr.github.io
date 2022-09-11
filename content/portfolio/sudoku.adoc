@@ -1,0 +1,13 @@
+---
+title: Sudoku
+date: 2022-09-09T19:10:10+08:00
+categories:
+- tech
+tags:
+- games
+- puzzle
+---
+
+My first puzzle game, implemented in flutters. I intend to integrate github action, fastlane, google adMob, google analytics and firebase.  
+
+https://github.com/jackliusr/sudoku[sudoku]
