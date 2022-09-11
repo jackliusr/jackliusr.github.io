@@ -6,7 +6,18 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Sep 2022 19:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Sep 2022 21:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>conditional compiling in flutter project</title>
+      <link>https://jackliusr.github.io/posts/2022/09/conditional-compiling-in-flutter-project/</link>
+      <pubDate>Sun, 11 Sep 2022 21:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/09/conditional-compiling-in-flutter-project/</guid>
+      <description>In the last week, I intermittently worked on how to compile a flutter project conditionally like the way c/c++ in busy daily work schedules. I knew that flavor is the way to go, however there are still serveral issues opened to explore to make it better or to understand the rationale behind the scene.
+   Dependency Injections using get_it and injectable: Tree Shaking Capability
+  Pack only neccessary components into the mobile app:</description>
+    </item>
+    
     <item>
       <title>Sudoku</title>
       <link>https://jackliusr.github.io/portfolio/sudoku/</link>

@@ -192,6 +192,32 @@ if (!doNotTrack) {
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/2022/09/conditional-compiling-in-flutter-project/" class="color-inherit dim link">
+            conditional compiling in flutter project
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          In the last week, I intermittently worked on how to compile a flutter project conditionally like the way c/c++ in busy daily work schedules. I knew that flavor is the way to go, however there are still serveral issues opened to explore to make it better or to understand the rationale behind the scene.
+   Dependency Injections using get_it and injectable: Tree Shaking Capability
+  Pack only neccessary components into the mobile app:
+        </div>
+          <a href="/posts/2022/09/conditional-compiling-in-flutter-project/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/2022/08/binary-search/" class="color-inherit dim link">
             Binary Search
             </a>
@@ -233,37 +259,18 @@ if (!doNotTrack) {
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2022/08/setup-k8s-monitoring/" class="color-inherit dim link">
-            Setup k8s monitoring
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Kuberneters dashboard doesn’t give enough information about node and cluster information during rececent loading test. I sought to other options. Prometheus and grafana are the de-facto standards. It’s a no-brainer choice. The most important things is how to make them working together.
- Setup Prometheus and Grafana kubectl create namespace monitoring helm repo add prometheus-community https://prometheus-community.github.io/helm-charts helm repo update helm install prometheus prometheus-community/prometheus -n monitoring helm repo add grafana https://grafana.github.io/helm-charts helm install grafana grafana/grafana -n monitoring kubectl get secret --namespace monitoring grafana -o jsonpath=&#34;{.
-        </div>
-          <a href="/posts/2022/08/setup-k8s-monitoring/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/2022/08/setup-k8s-monitoring/" class="link black dim">
+              Setup k8s monitoring
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2022/08/use-cert-manager-to-secure-kubernetes-cert-manager-behind-nginx-ingress/" class="link black dim">
@@ -280,12 +287,6 @@ if (!doNotTrack) {
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2022/07/reflection-on-nginx-usage/" class="link black dim">
               Reflection on nginx usage
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/2022/07/eksctl-steps/" class="link black dim">
-              eksctl Steps
             </a>
           </h2>
         

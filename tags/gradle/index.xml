@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gradle on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/gradle/</link>
+    <description>Recent content in gradle on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Sep 2022 21:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/gradle/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>conditional compiling in flutter project</title>
+      <link>https://jackliusr.github.io/posts/2022/09/conditional-compiling-in-flutter-project/</link>
+      <pubDate>Sun, 11 Sep 2022 21:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/09/conditional-compiling-in-flutter-project/</guid>
+      <description>In the last week, I intermittently worked on how to compile a flutter project conditionally like the way c/c++ in busy daily work schedules. I knew that flavor is the way to go, however there are still serveral issues opened to explore to make it better or to understand the rationale behind the scene.
+   Dependency Injections using get_it and injectable: Tree Shaking Capability
+  Pack only neccessary components into the mobile app:</description>
+    </item>
+    
+  </channel>
+</rss>

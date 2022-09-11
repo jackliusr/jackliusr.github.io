@@ -165,6 +165,23 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2022/05/argo-event-filters-expr-filter-in-action/" class="link black dim">
+        Argo-event filters: expr filter in action
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Today I found my argo-events sensor executed triggers which I was not intended to. In the logs, I found that ref fields of those non-intended triggers all started with &#34;refs/heads/dev&#34;. I checked again with document and found this surprising truth:
+ https://argoproj.github.io/argo-events/sensors/filters/data/#:~:text=If%20data%20type%20is%20string%2C%20you%20can%20pass%20either%20an%20exact%20value%20or%20a%20regex.%20In%20any%20case%20that%20value%20will%20be%20evaluated%20as%20a%20regex.
+ If data type is string, you can pass either an exact value or a regex. In any case that value will be evaluated as a regex.   Considing my following data filter, no wonder it triggers more than I expected.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2022/05/workaround-the-limitation-of-authorization-header-of-webhook-in-argo-events/" class="link black dim">
         Workaround the limitation of authorization header of webhook in argo-events
       </a>
@@ -299,23 +316,6 @@ if (!doNotTrack) {
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Dapr development is quite difficult to setup correctly. You can get the idea from (this issue) as the issue is still open now since it was created.
  I followed the instruction to install dapr vs code extension in dapr. My environment is WSL based. I tried several times to try to debug the dapr applications and failed. I noticed in the following screenshot that there was a warning icon before kubernetes.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/04/run-a-flutter-app-on-windows-subsystem-for-android/" class="link black dim">
-        Run a flutter app on Windows Subsystem for Android
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Keep WSA running WSA seems sometimes will exit after a while idle time. I need to run the following command to keep it running.
- adb connect YOUR_IP_ADDRESS     Run App According to How to use Windows Subsystem for Android as a development tool, there are several ways to run flutter apps in WSA.
- Android studio When I try to run a project of my company in Android studio, I kept get the error &#34;An unexpected packet was received before the handshake&#34;.
     </div>
   </div>
 </div>
