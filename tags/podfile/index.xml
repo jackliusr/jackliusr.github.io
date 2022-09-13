@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>dart on My learning and diary</title>
-    <link>https://jackliusr.github.io/tags/dart/</link>
-    <description>Recent content in dart on My learning and diary</description>
+    <title>podfile on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/podfile/</link>
+    <description>Recent content in podfile on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Sep 2022 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/dart/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Sep 2022 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/podfile/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to resolve podfile dependency issues of google_mobile_ads in flutter</title>
       <link>https://jackliusr.github.io/posts/2022/09/how-to-resolve-podfile-dependency-issues-of-google_mobile_ads-in-flutter/</link>
@@ -16,17 +16,6 @@
       <description>There are 27 issues with podfile dependency issues of google_mobile_ads in its repository googleads-mobile-flutter at github Here you can find those issues. My team encountered this issue in the past weeks. Today I had the issue again. To save my time in future, I kept my approach here this time.
   Use the following search keywords in cs.github.com
 path:pubspec.yaml google_mobile_ads firebase_analytics     locate a good candidate with appropriate version of combinations of the following components.</description>
-    </item>
-    
-    <item>
-      <title>conditional compiling in flutter project</title>
-      <link>https://jackliusr.github.io/posts/2022/09/conditional-compiling-in-flutter-project/</link>
-      <pubDate>Sun, 11 Sep 2022 21:01:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/posts/2022/09/conditional-compiling-in-flutter-project/</guid>
-      <description>In the last week, I intermittently worked on how to compile a flutter project conditionally like the way c/c++ in busy daily work schedules. I knew that flavor is the way to go, however there are still serveral issues opened to explore to make it better or to understand the rationale behind the scene.
-   Dependency Injections using get_it and injectable: Tree Shaking Capability
-  Pack only neccessary components into the mobile app:</description>
     </item>
     
   </channel>

@@ -6,11 +6,11 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Sep 2022 21:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Sep 2022 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>dart</title>
       <link>https://jackliusr.github.io/tags/dart/</link>
-      <pubDate>Sun, 11 Sep 2022 21:01:10 +0800</pubDate>
+      <pubDate>Tue, 13 Sep 2022 20:01:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/dart/</guid>
       <description></description>
@@ -19,9 +19,18 @@
     <item>
       <title>flutter</title>
       <link>https://jackliusr.github.io/tags/flutter/</link>
-      <pubDate>Sun, 11 Sep 2022 21:01:10 +0800</pubDate>
+      <pubDate>Tue, 13 Sep 2022 20:01:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/flutter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>podfile</title>
+      <link>https://jackliusr.github.io/tags/podfile/</link>
+      <pubDate>Tue, 13 Sep 2022 20:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/podfile/</guid>
       <description></description>
     </item>
     
