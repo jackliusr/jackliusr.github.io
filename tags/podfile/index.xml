@@ -15,7 +15,8 @@
       <guid>https://jackliusr.github.io/posts/2022/09/how-to-resolve-podfile-dependency-issues-of-google_mobile_ads-in-flutter/</guid>
       <description>There are 27 issues with podfile dependency issues of google_mobile_ads in its repository googleads-mobile-flutter at github Here you can find those issues. My team encountered this issue in the past weeks. Today I had the issue again. To save my time in future, I kept my approach here this time.
   Use the following search keywords in cs.github.com
-path:pubspec.yaml google_mobile_ads firebase_analytics     locate a good candidate with appropriate version of combinations of the following components.</description>
+path:pubspec.yaml google_mobile_ads firebase_analytics
+     locate a good candidate with appropriate version of combinations of the following components.</description>
     </item>
     
   </channel>

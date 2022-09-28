@@ -35,14 +35,14 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2022/09/unit-test-and-widget-test-in-flutter/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-28T20:01:10+08:00" />
-<meta property="article:modified_time" content="2022-09-28T20:54:53+08:00" />
+<meta property="article:modified_time" content="2022-09-28T22:22:29+08:00" />
 
 <meta itemprop="name" content="Unit test and widget test in flutter">
 <meta itemprop="description" content="It is quite easy to refactor code using IDEs, however it will be a different story considing to refactor to testable code.
  Concerns The refactor functionality in IDE is based on rigor theories and algorithm to make sure the refactors don’t change the behaviours of programs and get it better organized. One of the theories, can be found here
    Target Refactor code to testable codes following best practices."><meta itemprop="datePublished" content="2022-09-28T20:01:10+08:00" />
-<meta itemprop="dateModified" content="2022-09-28T20:54:53+08:00" />
-<meta itemprop="wordCount" content="438">
+<meta itemprop="dateModified" content="2022-09-28T22:22:29+08:00" />
+<meta itemprop="wordCount" content="442">
 <meta itemprop="keywords" content="flutter,dart,unit test,widget test," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Unit test and widget test in flutter"/>
 <meta name="twitter:description" content="It is quite easy to refactor code using IDEs, however it will be a different story considing to refactor to testable code.
@@ -207,7 +207,7 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 3 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 438 words</span>
+        <span class="f6 mv4 dib tracked"> - 442 words</span>
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
@@ -224,10 +224,8 @@ if (!doNotTrack) {
 <div class="sect1">
 <h2 id="_target"><a class="anchor" href="#_target"></a><a class="link" href="#_target">Target</a></h2>
 <div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>Refactor code to testable codes following best practices. Reading materialis about those best practices is as following:</pre>
-</div>
+<div class="paragraph">
+<p>Refactor code to testable codes following best practices. Reading materialis about those best practices is as following:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -252,7 +250,7 @@ if (!doNotTrack) {
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre>import &#39;&#39;./utils/test_app.dart&#39;; //TestApp with callback
+<pre class="highlightjs highlight"><code class="language-dart hljs" data-lang="dart">import &#39;&#39;./utils/test_app.dart&#39;; //TestApp with callback
 // util.dart
 // click(tester, targetKey) async;
 // bindMethodChannel(tester)
@@ -263,7 +261,7 @@ test(&#34;test &#34;, () async {
     bindMethodChannel(tester);
     ...
     debugDefaultTargetPlatformOverride = null;
-});</pre>
+});</code></pre>
 </div>
 </div>
 </div>
@@ -273,7 +271,7 @@ test(&#34;test &#34;, () async {
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre>flutter test</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">flutter test</code></pre>
 </div>
 </div>
 </div>
@@ -289,7 +287,7 @@ test(&#34;test &#34;, () async {
 <p>parameterized tests</p>
 <div class="listingblock">
 <div class="content">
-<pre>group(&#34;formatDay should format dates correctly:&#34;, () {
+<pre class="highlightjs highlight"><code class="language-dart hljs" data-lang="dart">group(&#34;formatDay should format dates correctly:&#34;, () {
   var inputsToExpected = {
     DateTime(2018, 11, 01): &#34;Thu 1&#34;,
     ...
@@ -301,7 +299,7 @@ test(&#34;test &#34;, () async {
       expect(formatDay(input), expected);
     });
   });
-});</pre>
+});</code></pre>
 </div>
 </div>
 </li>
@@ -309,7 +307,7 @@ test(&#34;test &#34;, () async {
 <p>flutter plugins don’t support unit tests and widget tests:  put in integration_test folder</p>
 <div class="listingblock">
 <div class="content">
-<pre>flutter test integration_test/upgrade_controller_test.dart --flavor official</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">flutter test integration_test/upgrade_controller_test.dart --flavor official</code></pre>
 </div>
 </div>
 </li>
@@ -317,8 +315,8 @@ test(&#34;test &#34;, () async {
 <p>GetPlatform is not compatible with unit tests</p>
 <div class="listingblock">
 <div class="content">
-<pre>// use defaultTargetPlatform
-defaultTargetPlatform == TargetPlatform.iOS</pre>
+<pre class="highlightjs highlight"><code class="language-dart hljs" data-lang="dart">// use defaultTargetPlatform
+defaultTargetPlatform == TargetPlatform.iOS</code></pre>
 </div>
 </div>
 </li>
@@ -326,7 +324,7 @@ defaultTargetPlatform == TargetPlatform.iOS</pre>
 <p>some plugins don’t provide  methodchannels for all platforms.</p>
 <div class="listingblock">
 <div class="content">
-<pre>// import corresponding interface and method_channel，mock them
+<pre class="highlightjs highlight"><code class="language-dart hljs" data-lang="dart">// import corresponding interface and method_channel，mock them
 import &#39;package:path_provider_platform_interface/path_provider_platform_interface.dart&#39;;
 import &#39;package:path_provider_platform_interface/src/method_channel_path_provider.dart&#39;;
 
@@ -339,7 +337,7 @@ tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
         expect(methodCall.method, &#39;getApplicationSupportDirectory&#39;);
         return Future.value(&#39;&#39;);
     },
-);</pre>
+);</code></pre>
 </div>
 </div>
 </li>
@@ -347,10 +345,10 @@ tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
 <p>specify target platform: 1</p>
 <div class="listingblock">
 <div class="content">
-<pre>debugDefaultTargetPlatformOverride = TargetPlatform.android;
+<pre class="highlightjs highlight"><code class="language-dart hljs" data-lang="dart">debugDefaultTargetPlatformOverride = TargetPlatform.android;
 
 // at the end of testWidgets, add
-// debugDefaultTargetPlatformOverride = null;</pre>
+// debugDefaultTargetPlatformOverride = null;</code></pre>
 </div>
 </div>
 </li>
@@ -358,7 +356,7 @@ tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
 <p>specify target platform: 2</p>
 <div class="listingblock">
 <div class="content">
-<pre>const platformVariants = TargetPlatformVariant(
+<pre class="highlightjs highlight"><code class="language-dart hljs" data-lang="dart">const platformVariants = TargetPlatformVariant(
     &lt;TargetPlatform&gt;{TargetPlatform.iOS, TargetPlatform.android});
 
 testWidgets(
@@ -367,7 +365,7 @@ testWidgets(
         //
       },
       variant: platformVariants,
-);</pre>
+);</code></pre>
 </div>
 </div>
 </li>
@@ -375,11 +373,10 @@ testWidgets(
 <p>global functions, global variables, or class static members</p>
 <div class="listingblock">
 <div class="content">
-<pre>convert global function and global variables to a utility class or miscellaneous class and make it singleton.
-class static members: singleton
-
-
-inject singleton</pre>
+<pre class="highlightjs highlight"><code class="language-dart hljs" data-lang="dart">// convert global function and global variables to a utility class
+//   or miscellaneous class and make it singleton.
+// class static members: singleton
+// inject singleton</code></pre>
 </div>
 </div>
 </li>
@@ -387,9 +384,9 @@ inject singleton</pre>
 <p>infinite loop:</p>
 <div class="listingblock">
 <div class="content">
-<pre>extract the inner block of the loop to another function,
+<pre class="highlightjs highlight"><code class="language-dart hljs" data-lang="dart">extract the inner block of the loop to another function,
 call the new function in the loop,
-test the new function</pre>
+test the new function</code></pre>
 </div>
 </div>
 </li>
@@ -397,10 +394,10 @@ test the new function</pre>
 <p>Test breaks when using Future.delayed</p>
 <div class="listingblock">
 <div class="content">
-<pre>//use tester.runAsync
+<pre class="highlightjs highlight"><code class="language-dart hljs" data-lang="dart">//use tester.runAsync
 await tester.runAsync(() async {
     await upgC.watchAppVersionImpl();
- });</pre>
+ });</code></pre>
 </div>
 </div>
 </li>
@@ -408,7 +405,7 @@ await tester.runAsync(() async {
 <p>global functions, variables of Getx , BotToast：</p>
 <div class="listingblock">
 <div class="content">
-<pre>//wrap the call in widget event calls
+<pre class="highlightjs highlight"><code class="language-dart hljs" data-lang="dart">//wrap the call in widget event calls
 final Key targetKey = new UniqueKey();
 await tester.pumpWidget(
     GetMaterialApp(
@@ -432,7 +429,7 @@ await tester.pumpWidget(
 );
 await tester.pumpAndSettle();
 await click(tester, targetKey);
-// verify using expect function</pre>
+// verify using expect function</code></pre>
 </div>
 </div>
 </li>
@@ -597,14 +594,14 @@ await click(tester, targetKey);
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-<link rel="stylesheet"
-  href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
+
+<link href="/css/prism.css" rel="stylesheet" />
+<script src="/js/prism.js"></script>
 
 
 
 
-  <p style="font-size: small; color: grey;">Page version: 47c5bcbc6ebfe75ae6b02af9c162c59e7f269778 2022-09-28</p>
+
+  <p style="font-size: small; color: grey;">Page version: 55345ae061dec02ff6897d6fdd9ebd4e99d7f9ca 2022-09-28</p>
   </body>
 </html>
