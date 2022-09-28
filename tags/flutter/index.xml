@@ -6,7 +6,18 @@
     <description>Recent content in flutter on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Sep 2022 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Sep 2022 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unit test and widget test in flutter</title>
+      <link>https://jackliusr.github.io/posts/2022/09/unit-test-and-widget-test-in-flutter/</link>
+      <pubDate>Wed, 28 Sep 2022 20:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/09/unit-test-and-widget-test-in-flutter/</guid>
+      <description>It is quite easy to refactor code using IDEs, however it will be a different story considing to refactor to testable code.
+ Concerns The refactor functionality in IDE is based on rigor theories and algorithm to make sure the refactors don’t change the behaviours of programs and get it better organized. One of the theories, can be found here
+   Target Refactor code to testable codes following best practices.</description>
+    </item>
+    
     <item>
       <title>How to resolve podfile dependency issues of google_mobile_ads in flutter</title>
       <link>https://jackliusr.github.io/posts/2022/09/how-to-resolve-podfile-dependency-issues-of-google_mobile_ads-in-flutter/</link>
