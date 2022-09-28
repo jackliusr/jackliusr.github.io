@@ -1,0 +1,213 @@
+---
+title: "Unit test and widget test in flutter"
+date: 2022-09-28T20:01:10+08:00
+categories:
+- tech
+tags:
+- flutter
+- dart
+- unit test
+- widget test
+---
+
+It is quite easy to refactor code using IDEs, however it will be a different story  considing to refactor to testable code.
+
+== Concerns
+
+The refactor functionality in IDE is based on rigor theories and algorithm to make sure the refactors don't change the behaviours of programs and get it better organized. One of the theories, can be found http://www.laputan.org/pub/papers/opdyke-thesis.pdf[here]
+
+
+== Target
+
+ Refactor code to testable codes following best practices. Reading materialis about those best practices is as following: 
+
+* https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8/ref=sr_1_1?crid=1OZYM5ZH9WQL8&keywords=Design+Patterns%3A+Elements+of+Reusable+Object-Oriented+Software&qid=1664368868&qu=eyJxc2MiOiIxLjMxIiwicXNhIjoiMC42NCIsInFzcCI6IjAuNTQifQ%3D%3D&sprefix=design+patterns+elements+of+reusable+object-oriented+software%2Caps%2C304&sr=8-1[Design Patterns: Elements of Reusable Object-Oriented Software]
+* https://www.amazon.com/AntiPatterns-William-J-Brown/dp/0471197130/ref=sr_1_fkmr0_1?crid=1GK6NKYIV95ES&keywords=AntiPatterns%3A+Refactoring+Software%2C+Architectures%2C+and+Projects+in+Crisis+1st+Edition&qid=1664368919&qu=eyJxc2MiOiIwLjcwIiwicXNhIjoiMC4wMCIsInFzcCI6IjAuMDAifQ%3D%3D&sprefix=antipatterns+refactoring+software%2C+architectures%2C+and+projects+in+crisis+1st+edition%2Caps%2C334&sr=8-1-fkmr0[AntiPatterns :  refactoring software, architectures, and projects in crisis]
+* https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599/ref=sr_1_1?crid=34UIRQ0E9R23H&keywords=Refactoring+Improving+the+Design+of+Existing+Code&qid=1664368937&qu=eyJxc2MiOiIxLjI2IiwicXNhIjoiMC44NCIsInFzcCI6IjAuOTIifQ%3D%3D&sprefix=refactoring+improving+the+design+of+existing+code%2Caps%2C326&sr=8-1[Refactoring Improving the Design of Existing Code]
+* https://www.amazon.com/xUnit-Test-Patterns-Refactoring-Code/dp/0131495054/ref=sr_1_1?crid=3RLW2VNO82HJ6&keywords=XUnit+Test+Patterns&qid=1664368954&qu=eyJxc2MiOiIxLjU3IiwicXNhIjoiMS4zNCIsInFzcCI6IjEuMDAifQ%3D%3D&sprefix=refactoring+improving+the+design+of+existing+code%2Caps%2C324&sr=8-1[XUnit Test Patterns]
+
+== Typical code
+
+[dash]
+----
+import ''./utils/test_app.dart'; //TestApp with callback
+// util.dart
+// click(tester, targetKey) async; 
+// bindMethodChannel(tester)
+import './utils/util.dart';  
+
+
+test("test ", () async {
+    bindMethodChannel(tester);
+    ...
+    debugDefaultTargetPlatformOverride = null; 
+});
+----
+
+== run all tests
+
+[bash]
+----
+flutter test
+----
+
+== Issue
+
+=== unit test and widget test
+
+. parameterized tests
++
+[dart]
+----
+group("formatDay should format dates correctly:", () {
+  var inputsToExpected = {
+    DateTime(2018, 11, 01): "Thu 1",
+    ...
+    DateTime(2018, 11, 07): "Wed 7",
+    DateTime(2018, 11, 30): "Fri 30",
+  };
+  inputsToExpected.forEach((input, expected) {
+    test("$input -> $expected", () {
+      expect(formatDay(input), expected);
+    });
+  });
+});
+----
+
+. flutter plugins don't support unit tests and widget tests:  put in integration_test folder
++
+[bash]
+----
+flutter test integration_test/upgrade_controller_test.dart --flavor official
+----
+. GetPlatform is not compatible with unit tests 
++
+[dart]
+----
+// use defaultTargetPlatform
+defaultTargetPlatform == TargetPlatform.iOS
+----
+
+. some plugins don't provide  methodchannels for all platforms.
++
+[dart]
+----
+// import corresponding interface and method_channel，mock them
+import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';
+import 'package:path_provider_platform_interface/src/method_channel_path_provider.dart';
+
+final provider = MethodChannelPathProvider();
+PathProviderPlatform.instance = provider;
+
+tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
+    provider.methodChannel,
+    (MethodCall methodCall) {
+        expect(methodCall.method, 'getApplicationSupportDirectory');
+        return Future.value('');
+    },
+);
+----
+
+. specify target platform: 1
++
+[dart]
+----
+debugDefaultTargetPlatformOverride = TargetPlatform.android;
+
+// at the end of testWidgets, add 
+// debugDefaultTargetPlatformOverride = null;
+----
+
+
+. specify target platform: 2
++
+[dart]
+----
+const platformVariants = TargetPlatformVariant(
+    <TargetPlatform>{TargetPlatform.iOS, TargetPlatform.android});
+
+testWidgets(
+      "test",
+      (WidgetTester tester) async {
+        //
+      },
+      variant: platformVariants,
+);
+----
+
+. global functions, global variables, or class static members
++
+----
+convert global function and global variables to a utility class or miscellaneous class and make it singleton.
+class static members: singleton
+
+
+inject singleton
+----
+. infinite loop: 
++
+----
+extract the inner block of the loop to another function, 
+call the new function in the loop, 
+test the new function
+----
+. Test breaks when using Future.delayed
++ 
+[dash]
+----
+//use tester.runAsync
+await tester.runAsync(() async {
+    await upgC.watchAppVersionImpl();
+ });
+----
+. global functions, variables of Getx , BotToast：  
++
+[dash]
+----
+//wrap the call in widget event calls
+final Key targetKey = new UniqueKey();
+await tester.pumpWidget(
+    GetMaterialApp(
+        localizationsDelegates: const [
+        GlobalWidgetsLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        S.delegate,
+        ],
+        supportedLocales: S.delegate.supportedLocales,
+        home: Scaffold(
+        key: globalKey,
+        floatingActionButton: FloatingActionButton(
+            key: targetKey,
+            onPressed: () {
+                upgC.doUpdate(true);
+            }),
+        bottomNavigationBar: const BottomAppBar(),
+        ),
+    ),
+);
+await tester.pumpAndSettle();
+await click(tester, targetKey);
+// verify using expect function
+
+----
+
+=== Integration Testing
+
+TODO
+
+=== E2E Testing
+
+TODO
+
+==  References 
+
+* https://docs.flutter.dev/development/packages-and-plugins/plugins-in-tests
+* https://pub.dev/packages/mockito
+* https://pub.dev/packages/get#tests
+* https://testing.googleblog.com/2008/11/guide-to-writing-testable-code.html
+* https://docs.flutter.dev/cookbook/testing/integration/introduction
+* https://docs.flutter.dev/cookbook/testing/unit/introduction
+* https://docs.flutter.dev/cookbook/testing/unit/mocking
+* http://www.laputan.org/pub/papers/opdyke-thesis.pdf
+* https://stackoverflow.com/questions/54021267/test-breaks-when-using-future-delayed
