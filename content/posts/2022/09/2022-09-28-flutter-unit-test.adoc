@@ -19,7 +19,7 @@ The refactor functionality in IDE is based on rigor theories and algorithm to ma
 
 == Target
 
- Refactor code to testable codes following best practices. Reading materialis about those best practices is as following: 
+Refactor code to testable codes following best practices. Reading materialis about those best practices is as following: 
 
 * https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8/ref=sr_1_1?crid=1OZYM5ZH9WQL8&keywords=Design+Patterns%3A+Elements+of+Reusable+Object-Oriented+Software&qid=1664368868&qu=eyJxc2MiOiIxLjMxIiwicXNhIjoiMC42NCIsInFzcCI6IjAuNTQifQ%3D%3D&sprefix=design+patterns+elements+of+reusable+object-oriented+software%2Caps%2C304&sr=8-1[Design Patterns: Elements of Reusable Object-Oriented Software]
 * https://www.amazon.com/AntiPatterns-William-J-Brown/dp/0471197130/ref=sr_1_fkmr0_1?crid=1GK6NKYIV95ES&keywords=AntiPatterns%3A+Refactoring+Software%2C+Architectures%2C+and+Projects+in+Crisis+1st+Edition&qid=1664368919&qu=eyJxc2MiOiIwLjcwIiwicXNhIjoiMC4wMCIsInFzcCI6IjAuMDAifQ%3D%3D&sprefix=antipatterns+refactoring+software%2C+architectures%2C+and+projects+in+crisis+1st+edition%2Caps%2C334&sr=8-1-fkmr0[AntiPatterns :  refactoring software, architectures, and projects in crisis]
@@ -28,7 +28,7 @@ The refactor functionality in IDE is based on rigor theories and algorithm to ma
 
 == Typical code
 
-[dash]
+[source,dart]
 ----
 import ''./utils/test_app.dart'; //TestApp with callback
 // util.dart
@@ -46,7 +46,7 @@ test("test ", () async {
 
 == run all tests
 
-[bash]
+[source,bash]
 ----
 flutter test
 ----
@@ -57,7 +57,7 @@ flutter test
 
 . parameterized tests
 +
-[dart]
+[source,dart]
 ----
 group("formatDay should format dates correctly:", () {
   var inputsToExpected = {
@@ -76,13 +76,13 @@ group("formatDay should format dates correctly:", () {
 
 . flutter plugins don't support unit tests and widget tests:  put in integration_test folder
 +
-[bash]
+[source,bash]
 ----
 flutter test integration_test/upgrade_controller_test.dart --flavor official
 ----
 . GetPlatform is not compatible with unit tests 
 +
-[dart]
+[source,dart]
 ----
 // use defaultTargetPlatform
 defaultTargetPlatform == TargetPlatform.iOS
@@ -90,7 +90,7 @@ defaultTargetPlatform == TargetPlatform.iOS
 
 . some plugins don't provide  methodchannels for all platforms.
 +
-[dart]
+[source,dart]
 ----
 // import corresponding interface and method_channel，mock them
 import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';
@@ -110,7 +110,7 @@ tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
 
 . specify target platform: 1
 +
-[dart]
+[source,dart]
 ----
 debugDefaultTargetPlatformOverride = TargetPlatform.android;
 
@@ -121,7 +121,7 @@ debugDefaultTargetPlatformOverride = TargetPlatform.android;
 
 . specify target platform: 2
 +
-[dart]
+[source,dart]
 ----
 const platformVariants = TargetPlatformVariant(
     <TargetPlatform>{TargetPlatform.iOS, TargetPlatform.android});
@@ -137,15 +137,16 @@ testWidgets(
 
 . global functions, global variables, or class static members
 +
+[source, dart]
 ----
-convert global function and global variables to a utility class or miscellaneous class and make it singleton.
-class static members: singleton
-
-
-inject singleton
+// convert global function and global variables to a utility class 
+//   or miscellaneous class and make it singleton.
+// class static members: singleton
+// inject singleton
 ----
 . infinite loop: 
 +
+[source, dart]
 ----
 extract the inner block of the loop to another function, 
 call the new function in the loop, 
@@ -153,7 +154,7 @@ test the new function
 ----
 . Test breaks when using Future.delayed
 + 
-[dash]
+[source,dart]
 ----
 //use tester.runAsync
 await tester.runAsync(() async {
@@ -162,7 +163,7 @@ await tester.runAsync(() async {
 ----
 . global functions, variables of Getx , BotToast：  
 +
-[dash]
+[source,dart]
 ----
 //wrap the call in widget event calls
 final Key targetKey = new UniqueKey();

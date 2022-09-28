@@ -2,6 +2,8 @@
 
 if [ -f /usr/local/bin/asciidoctor ]; then
     ad="/usr/local/bin/asciidoctor"
+elif [ -f /opt/homebrew/bin/asciidoctor ]; then
+    ad="/opt/homebrew/bin/asciidoctor"
 else
     ad="/usr/bin/asciidoctor"
 fi
