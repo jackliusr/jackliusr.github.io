@@ -1,0 +1,55 @@
+---
+title: "debug flutter iOS application in MacOS"
+date: 2022-09-29T14:01:10+08:00
+categories:
+- tech
+tags:
+- flutter
+- dart
+- iOS
+- vscode
+- android studio
+---
+
+
+
+== iPhone
+
+Enable developer mode: 
+
+Setting --> PPrivacy & Security --> Developer Mode
+
+
+== IDE
+=== Android Studio
+
+It is quite straight forward in Android Studio. 
+
+. Install flutter plugin and restart Android studio
+
+===  VSCode 
+
+
+. select the Run and Debug icon in the Activity Bar
+
+. Select "Dart & Flutter" in "RUN AND DEBUG" dropdown list
+{{< imgur id="i5mLQjK" >}}
+
+
+. Edit flutter iphone setting
+{{< imgur id="ztkwYjC" >}}
+
+. Change launch.json accordingly
+{{< imgur id="ICZr5g0" >}}
+
+
+== iproxy issue
+
+flutter/bin/cache/artifacts/usbmuxd/iproxy
+
+
+
+== Reference
+
+* https://stackoverflow.com/questions/71359062/iproxy-cannot-be-opened-because-the-developer-cannot-be-verified[iproxy security issue]
+* https://www.youtube.com/watch?v=Jn7o4Gy3F7Q[Android Studio: debug flutter ios app]
