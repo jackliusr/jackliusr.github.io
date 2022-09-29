@@ -6,7 +6,21 @@
     <description>Recent content on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Sep 2022 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Sep 2022 14:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>debug flutter iOS application in MacOS</title>
+      <link>https://jackliusr.github.io/posts/2022/09/debug-flutter-ios-application-in-macos/</link>
+      <pubDate>Thu, 29 Sep 2022 14:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/09/debug-flutter-ios-application-in-macos/</guid>
+      <description>iPhone Enable developer mode:
+ Setting -→ PPrivacy &amp;amp; Security -→ Developer Mode
+   IDE Android Studio It is quite straight forward in Android Studio.
+  Install flutter plugin and restart Android studio
+    VSCode  select the Run and Debug icon in the Activity Bar
+  Select &amp;#34;Dart &amp;amp; Flutter&amp;#34; in &amp;#34;RUN AND DEBUG&amp;#34; dropdown list       Edit flutter iphone setting       Change launch.</description>
+    </item>
+    
     <item>
       <title>Unit test and widget test in flutter</title>
       <link>https://jackliusr.github.io/posts/2022/09/unit-test-and-widget-test-in-flutter/</link>
