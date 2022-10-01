@@ -1,0 +1,85 @@
+---
+title: How to build strong technology career?
+date: 2022-09-30T20:40:00+08:00
+categories:
+- tech
+tags:
+- career
+---
+
+
+The full article "How to Build a Strong Career in Tech" from Thiago Ghisi is  at https://www.linkedin.com/pulse/how-build-strong-career-tech-thiago-ghisi/. I want to put the gist here for my reference.
+
+How does a Successful Career in Tech look like?
+
+== Definition of a Successful Career
+
+The candidate resume metadata doesn't often lie
+
+resume metadata: Impact of their ideas on a large number of people directly or indirectly. Success = Impact & Influence! Or, ever-growing levels of Impact and Influence.  influence: has influence as a supervisor or someone with power due to their tenure in the company. 
+
+influence without authority
+
+== The Framework: How to measure your skills and how to compare your contributions against your next level
+
+The 4 Pillars to Grow Your Career
+
+Don't trust. Verify!
+
+
+career progression models：
+
+* Startup-Kit model
+* Snowflake model
+* Spreadsheet-Matrix model
+
+4 Pillars: 
+
+. Platform
+. Product
+. Process
+. People
+
+The most successful professionals that I know focus on getting better and increasing their impact and influence not only on the 1st P - Platform - but in all the 4Ps: Platform, Product, Process & People.
+
+6Ps
+. Product Delivery (Project Management, Continuous Delivery, User Experience & Product Roadmap), 
+. People (Mentorship, Feedback, Leadership Behaviours & Career Growth Strategy), 
+. Platform (Codebase, Engineering Practices, Architecture Patterns & New Technologies), 
+. Process (Culture, Metrics, Rituals & Systems),
+. Partners (Relationship with Internal & External Product, Tech or Vendors), 
+. Paperwork (You know what that is when you work for a big corporation).
+
+
+Generalizing Specialist
+
+
+
+image::https://media-exp1.licdn.com/dms/image/C4E12AQFSKtJbC9pozA/article-inline_image-shrink_1500_2232/0/1601246952831?e=1669852800&v=beta&t=BQvjGZwFx8WNIx75osSQEvgwwtcdP4RpXiDcoqNaXCc[model]
+
+
+one should go broad first (master the 20% that will allow you to deliver 80% of the tasks) and go in-depth only when there is a big need, a big opportunity, or a strong interest in keeping developing your skills further in a particular area. 
+
+ Jack of MANY Trades and Masters of SOME.
+
+focus on the principles that are unlikely to change instead of the new tools
+
+
+Book category:
+
+* Technology-specific books are very valuable but they expire.
+
+* Conceptual books are books that give us the foundation to advance in our careers.
+
+* Behavioral books are books that make us more efficient when working in teams and organizing ourselves.
+
+* Revolutionary books (some call them classics) are the ones that changed the way we work.
+
+
+Favor conceptual and behavioral books for your career progression, starting with the revolutionary ones. Read technology-specific books for your short and medium-term plans.
+
+== The Career Accelerators
+
+every career change should be accompanied by a big change in at least one of the 4 Ps: Platform, Product, Process, or People.
+
+you should be changing at least one of the 4Ps - Platform, Product, Process & People - at least once every 2 years, not only during your 20s but actually during your entire professional career in Tech.
