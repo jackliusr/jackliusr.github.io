@@ -43,6 +43,7 @@ career progression models：
 The most successful professionals that I know focus on getting better and increasing their impact and influence not only on the 1st P - Platform - but in all the 4Ps: Platform, Product, Process & People.
 
 6Ps
+
 . Product Delivery (Project Management, Continuous Delivery, User Experience & Product Roadmap), 
 . People (Mentorship, Feedback, Leadership Behaviours & Career Growth Strategy), 
 . Platform (Codebase, Engineering Practices, Architecture Patterns & New Technologies), 
