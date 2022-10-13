@@ -1,0 +1,47 @@
+---
+title: "debug flutter iOS application in MacOS"
+date: 2022-10-13T14:01:10+08:00
+categories:
+- tech
+tags:
+- SDUI
+- Odoo
+- Active-Application-Dictionary
+- data-driven-UI
+- metadata-driven-ui
+---
+
+Today I re-read https://www.thoughtworks.com/content/dam/thoughtworks/documents/radar/2022/03/tr_technology_radar_vol_26_en.pdf[Technology Radar Volume 26], SDUI got my attention. In the past, I was very interested in ERP systems, and studied several open source ERP systems such as openerp(now odoo), ofbiz and adempiere.  SDUI is quite similar to technologies used in those open sourced ERP systems.
+
+[cols="1,1,1"]
+|===
+|technology 
+|data source
+| ui complex
+
+| SDUI
+| server end logic decides/graphQL
+| 
+
+| odoo
+| data/view/form files 
+| 
+
+| active application dictionary/active data dictionary
+| database/controller
+| 
+
+| data driven ui
+| ?
+
+
+| meta data driven ui
+| attribute metadata in class ect.
+|
+
+|===
+
+== Reference
+* https://wiki.idempiere.org/en/Application_Dictionary_-_Create_a_Custom_Table_and_Window
+* https://www.odoo.com/documentation/16.0/developer/reference/backend/data.html
+* https://en.wikiversity.org/wiki/ADempiere_Application_Dictionary
