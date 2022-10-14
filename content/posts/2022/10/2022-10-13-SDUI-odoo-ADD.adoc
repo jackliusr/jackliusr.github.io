@@ -1,5 +1,5 @@
 ---
-title: "debug flutter iOS application in MacOS"
+title: "SDUI, odoo, metadata driven ui, active data dictionary, data driven ui"
 date: 2022-10-13T14:01:10+08:00
 categories:
 - tech
