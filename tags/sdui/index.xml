@@ -8,11 +8,11 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 13 Oct 2022 14:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/sdui/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>debug flutter iOS application in MacOS</title>
-      <link>https://jackliusr.github.io/posts/2022/10/debug-flutter-ios-application-in-macos/</link>
+      <title>SDUI, odoo, metadata driven ui, active data dictionary, data driven ui</title>
+      <link>https://jackliusr.github.io/posts/2022/10/sdui-odoo-metadata-driven-ui-active-data-dictionary-data-driven-ui/</link>
       <pubDate>Thu, 13 Oct 2022 14:01:10 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/posts/2022/10/debug-flutter-ios-application-in-macos/</guid>
+      <guid>https://jackliusr.github.io/posts/2022/10/sdui-odoo-metadata-driven-ui-active-data-dictionary-data-driven-ui/</guid>
       <description>Today I re-read Technology Radar Volume 26, SDUI got my attention. In the past, I was very interested in ERP systems, and studied several open source ERP systems such as openerp(now odoo), ofbiz and adempiere. SDUI is quite similar to technologies used in those open sourced ERP systems.
      technology
  data source
