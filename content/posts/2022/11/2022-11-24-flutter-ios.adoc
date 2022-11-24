@@ -1,0 +1,34 @@
+---
+title: "Install release version of mobile application into iOS without testflight"
+date: 2022-11-24T13:01:10+08:00
+categories:
+- tech
+tags:
+- iOS
+- testflight
+- flutter
+---
+
+Last three days, I found an issue can only be reproduced in realease mode.The beta testing cycle via testflight takes too long and it definitely is not the option. I debugged my application in iOS before. One thing popped up in my mind whether I can put release mode of my application into iOS using the debug tool of vs code.
+
+I changed my launch.json as below in my project and debug my application. My application in release mode can be installed in iOS now. 
+
+[source, json]
+----
+{
+    "configurations": [
+        {
+            "name": "Flutter (iPhone jack)",
+            "program": "lib/main.dart",
+            "deviceId": "00008030-001C61C23C430000",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--release"
+            ]
+        }
+    ]
+}
+----
+
+After that, the issue can be reproduced. It surprised me really. There are two other options Enterprise and Ad Hoc to do release build distribution. I am not sure which options this is. I will check it later and write something about it. 
