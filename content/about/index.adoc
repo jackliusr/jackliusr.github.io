@@ -4,9 +4,10 @@ date: 2020-09-26T14:50:00+08:00
 draft: false
 ---
 
-In the past years before 2020, I was fascinated with right ways to do softwares and studied following enterprise application technologies. I am still interesting in those technologies. In the covid 19 pandemic period of last half of 2020, I reconsidered life, I shifted my interest into finance and studied accounting, [Investment Philosophies](https://pages.stern.nyu.edu/~adamodar/New_Home_Page/webcastinvphil.htm), [Valuation](https://pages.stern.nyu.edu/~adamodar/New_Home_Page/webcastvalonline.htm). When I was Asia Fusion Technology, I was interested in [startups](#startups) and followed them in 2-3 years. After above short detour, I am still passionate about IT and keep leaning and practicing IT technologies. 
+In the past years before 2020, I was fascinated with right ways to do softwares and studied following enterprise application technologies. I am still interesting in those technologies. In the covid 19 pandemic period of last half of 2020, I reconsidered life, I shifted my interest into finance and studied accounting, https://pages.stern.nyu.edu/~adamodar/New_Home_Page/webcastinvphil.htm[Investment Philosophies], https://pages.stern.nyu.edu/~adamodar/New_Home_Page/webcastvalonline.htm[Valuation]. When I was Asia Fusion Technology, I was interested in [startups](#startups) and followed them in 2-3 years. After above short detour, I am still passionate about IT and keep leaning and practicing the following IT technologies. 
 
-=== Technologies:
+== Technologies
+
 * data modeling: data model resource, EAV, SQL&NoSQL, Analysis Pattern, Party, Product & Product Variant etc
 * domain driven design (DDD)
 * Event Sourcing
@@ -14,7 +15,9 @@ In the past years before 2020, I was fascinated with right ways to do softwares 
 * Command and Query Responsibility Segregation (CQRS)
 * ERP frameworks(odoo, idempiere): metadata driven develop, DSL, dynamic form generator, [appliation dictionary](https://adempiere.gitbook.io/docs/system-administration/the-application-dictionary), extension mechanism  etc.
 * workflow/process, BPM, BPEL
-* language: c/c++, java, golang, javascript, dart, rust
+* language: c/c++, java, golang, C#, javascript, dart, rust, dephi, pascal, LINQ
+* java technologies: spring, j2ee, jdbc, hibernate, jpa, jsf
+* dotNet: ASP.NET Web Forms, asp.net, web api, web pages etc
 * functional programming: clojure, scala, lisp, haskell
 * big data: machine learning, neural networks, DL etc
 * OS: linux, Windows
@@ -22,3 +25,5 @@ In the past years before 2020, I was fascinated with right ways to do softwares 
 * cloud native application technologies: 12factor, beyond 12factors
 * cicd: argocd, argo-workflow, jenkins, github action, gitlab pipeline, [bazel](https://github.com/jackliusr/bazel-learning)
 * DevOps & SRE : ansible, prometheus, influx, grafana, elastic search, kabana, alert, USE/RED metrics, Four Golden Signals
+* Frontend: reactjs, vuejs, angularjs,
+* GUI: MFC, WinForms, WPF, Flutter
