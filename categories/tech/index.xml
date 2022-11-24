@@ -6,7 +6,17 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Oct 2022 14:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Nov 2022 13:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install release version of mobile application into iOS without testflight</title>
+      <link>https://jackliusr.github.io/posts/2022/11/install-release-version-of-mobile-application-into-ios-without-testflight/</link>
+      <pubDate>Thu, 24 Nov 2022 13:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/11/install-release-version-of-mobile-application-into-ios-without-testflight/</guid>
+      <description>Last three days, I found an issue can only be reproduced in realease mode.The beta testing cycle via testflight takes too long and it definitely is not the option. I debugged my application in iOS before. One thing popped up in my mind whether I can put release mode of my application into iOS using the debug tool of vs code.
+ I changed my launch.json as below in my project and debug my application.</description>
+    </item>
+    
     <item>
       <title>SDUI, odoo, metadata driven ui, active data dictionary, data driven ui</title>
       <link>https://jackliusr.github.io/posts/2022/10/sdui-odoo-metadata-driven-ui-active-data-dictionary-data-driven-ui/</link>
