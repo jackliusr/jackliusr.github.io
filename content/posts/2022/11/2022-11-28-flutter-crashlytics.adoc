@@ -1,0 +1,79 @@
+
+---
+title: "Unable to upload Crashlytics dSYM file during build phase of a flutter project due to script error"
+date: 2022-11-28T21:01:10+08:00
+categories:
+- tech
+tags:
+- iOS
+- flutter
+- crashlytics
+- xcode
+---
+
+Recently I added Crashlytics into my project on Oct 25, 2022. I encountered this issue and spent a while to fix it. Today I had to figure out how to do it again, and spent a while. I hated to do that again, so here is this article.
+
+The key message is the first one below.  It is quite misleading and lead me to wrong direction to change DEBUG_INFORMATION_FORMAT. 
+
+....
+Validating build environment for Crashlytics...
+warning: DEBUG_INFORMATION_FORMAT should be set to dwarf-with-dsym for all configurations. This could also be a timing issue, make sure the Firebase run script build phase is the last build phase and
+no other scripts have moved the dSYM from the location Xcode generated it. Unable to process Runner.app.dSYM at path
+/Users/shuruiliu/Library/Developer/Xcode/DerivedData/Runner-bsqqrkfnqfvhnlddsuyygnxdyqmu/Build/Intermediates.noindex/ArchiveIntermediates/Runner/BuildProductsPath/Release-iphoneos/Runner.app.dSYM
+Make sure your project build settings are generating a dSYM file.
+
+
+Processing dSYMs...
+Command PhaseScriptExecution failed with a nonzero exit code
+....
+
+....
+warning: The iOS deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 11.0 to 16.1.99
+....
+
+
+After several trials and errors, here is the correct one: 
+
+....
+Runner: Apple Clang - Code Generation:
+     Generate Debug Symbols:
+        Release: Yes
+....
+
+
+The actual git diff patch is as following. The first patch is to remove "warning: The iOS deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 8.0, but the range of supported deployment target versions is 11.0 to 16.1.99" warnings. The second patch is the one to resolve this issue.
+
+[source,diff]
+----
+diff --git a/ios/Podfile b/ios/Podfile
+index 7dc78a9..55d7191 100644
+--- a/ios/Podfile
++++ b/ios/Podfile
+@@ -1,5 +1,5 @@
+ # Uncomment this line to define a global platform for your project
+-platform :ios, '10.0'
++platform :ios, '11.0'
+ 
+ # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
+ ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+@@ -38,6 +38,7 @@ post_install do |installer|
+   installer.pods_project.targets.each do |target|
+     flutter_additional_ios_build_settings(target)
+     target.build_configurations.each do |config|
++    config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = "11.0"
+     config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
+         '$(inherited)',
+ 
+diff --git a/ios/Runner.xcodeproj/project.pbxproj b/ios/Runner.xcodeproj/project.pbxproj
+index 12fe716..66f2443 100644
+--- a/ios/Runner.xcodeproj/project.pbxproj
++++ b/ios/Runner.xcodeproj/project.pbxproj
+@@ -861,6 +861,7 @@
+                                ENABLE_BITCODE = NO;
+                                "EXCLUDED_ARCHS[sdk=iphoneos*]" = armv7;
+                                FLUTTER_TARGET = lib/main_store.dart;
++                               GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+                                INFOPLIST_FILE = Runner/Info.plist;
+                                LD_RUNPATH_SEARCH_PATHS = (
+                                        "$(inherited)",
+----
