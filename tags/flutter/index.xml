@@ -6,7 +6,17 @@
     <description>Recent content in flutter on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Nov 2022 13:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Nov 2022 21:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unable to upload Crashlytics dSYM file during build phase of a flutter project due to script error</title>
+      <link>https://jackliusr.github.io/posts/2022/11/unable-to-upload-crashlytics-dsym-file-during-build-phase-of-a-flutter-project-due-to-script-error/</link>
+      <pubDate>Mon, 28 Nov 2022 21:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/11/unable-to-upload-crashlytics-dsym-file-during-build-phase-of-a-flutter-project-due-to-script-error/</guid>
+      <description>Recently I added Crashlytics into my project on Oct 25, 2022. I encountered this issue and spent a while to fix it. Today I had to figure out how to do it again, and spent a while. I hated to do that again, so here is this article.
+ The key message is the first one below. It is quite misleading and lead me to wrong direction to change DEBUG_INFORMATION_FORMAT.</description>
+    </item>
+    
     <item>
       <title>Install release version of mobile application into iOS without testflight</title>
       <link>https://jackliusr.github.io/posts/2022/11/install-release-version-of-mobile-application-into-ios-without-testflight/</link>

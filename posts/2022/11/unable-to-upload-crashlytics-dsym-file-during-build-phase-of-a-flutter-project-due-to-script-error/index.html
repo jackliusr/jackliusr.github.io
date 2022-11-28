@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Unable to upload Crashlytics dSYM file during build phase of a flutter project due to script error | My learning and diary</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Recently I added Crashlytics into my project on Oct 25, 2022. I encountered this issue and spent a while to fix it. Today I had to figure out how to do it again, and spent a while. I hated to do that again, so here is this article.
+ The key message is the first one below. It is quite misleading and lead me to wrong direction to change DEBUG_INFORMATION_FORMAT.">
+    <meta name="generator" content="Hugo 0.99.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.abe0b1c07d5e33565b0f9b998a7b1b5228b709f36af363e2766bc8035f2237b7.css" >
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Unable to upload Crashlytics dSYM file during build phase of a flutter project due to script error" />
+<meta property="og:description" content="Recently I added Crashlytics into my project on Oct 25, 2022. I encountered this issue and spent a while to fix it. Today I had to figure out how to do it again, and spent a while. I hated to do that again, so here is this article.
+ The key message is the first one below. It is quite misleading and lead me to wrong direction to change DEBUG_INFORMATION_FORMAT." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jackliusr.github.io/posts/2022/11/unable-to-upload-crashlytics-dsym-file-during-build-phase-of-a-flutter-project-due-to-script-error/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-11-28T21:01:10+08:00" />
+<meta property="article:modified_time" content="2022-11-28T21:43:42+08:00" />
+
+<meta itemprop="name" content="Unable to upload Crashlytics dSYM file during build phase of a flutter project due to script error">
+<meta itemprop="description" content="Recently I added Crashlytics into my project on Oct 25, 2022. I encountered this issue and spent a while to fix it. Today I had to figure out how to do it again, and spent a while. I hated to do that again, so here is this article.
+ The key message is the first one below. It is quite misleading and lead me to wrong direction to change DEBUG_INFORMATION_FORMAT."><meta itemprop="datePublished" content="2022-11-28T21:01:10+08:00" />
+<meta itemprop="dateModified" content="2022-11-28T21:43:42+08:00" />
+<meta itemprop="wordCount" content="340">
+<meta itemprop="keywords" content="iOS,flutter,crashlytics,xcode," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Unable to upload Crashlytics dSYM file during build phase of a flutter project due to script error"/>
+<meta name="twitter:description" content="Recently I added Crashlytics into my project on Oct 25, 2022. I encountered this issue and spent a while to fix it. Today I had to figure out how to do it again, and spent a while. I hated to do that again, so here is this article.
+ The key message is the first one below. It is quite misleading and lead me to wrong direction to change DEBUG_INFORMATION_FORMAT."/>
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-135021270-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+	
+
+
+
+
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My learning and diary
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/notes/" title="Notes page">
+              Notes
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/portfolio/" title="Portfolio page">
+              Portfolio
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/readinglists/" title="Books page">
+              Books
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/categories/" title="Categories page">
+              Categories
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tags/" title="Tags page">
+              Tags
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://jackliusr.github.io/posts/2022/11/unable-to-upload-crashlytics-dsym-file-during-build-phase-of-a-flutter-project-due-to-script-error/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://jackliusr.github.io/posts/2022/11/unable-to-upload-crashlytics-dsym-file-during-build-phase-of-a-flutter-project-due-to-script-error/&amp;text=Unable%20to%20upload%20Crashlytics%20dSYM%20file%20during%20build%20phase%20of%20a%20flutter%20project%20due%20to%20script%20error" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://jackliusr.github.io/posts/2022/11/unable-to-upload-crashlytics-dsym-file-during-build-phase-of-a-flutter-project-due-to-script-error/&amp;title=Unable%20to%20upload%20Crashlytics%20dSYM%20file%20during%20build%20phase%20of%20a%20flutter%20project%20due%20to%20script%20error" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Unable to upload Crashlytics dSYM file during build phase of a flutter project due to script error</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2022-11-28T21:01:10+08:00">November 28, 2022</time>
+
+      
+      
+        <span class="f6 mv4 dib tracked"> - 2 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 340 words</span>
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
+<p>Recently I added Crashlytics into my project on Oct 25, 2022. I encountered this issue and spent a while to fix it. Today I had to figure out how to do it again, and spent a while. I hated to do that again, so here is this article.</p>
+</div>
+<div class="paragraph">
+<p>The key message is the first one below.  It is quite misleading and lead me to wrong direction to change DEBUG_INFORMATION_FORMAT.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Validating build environment for Crashlytics...
+warning: DEBUG_INFORMATION_FORMAT should be set to dwarf-with-dsym for all configurations. This could also be a timing issue, make sure the Firebase run script build phase is the last build phase and
+no other scripts have moved the dSYM from the location Xcode generated it. Unable to process Runner.app.dSYM at path
+/Users/shuruiliu/Library/Developer/Xcode/DerivedData/Runner-bsqqrkfnqfvhnlddsuyygnxdyqmu/Build/Intermediates.noindex/ArchiveIntermediates/Runner/BuildProductsPath/Release-iphoneos/Runner.app.dSYM
+Make sure your project build settings are generating a dSYM file.
+
+
+Processing dSYMs...
+Command PhaseScriptExecution failed with a nonzero exit code</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>warning: The iOS deployment target &#39;IPHONEOS_DEPLOYMENT_TARGET&#39; is set to 8.0, but the range of supported deployment target versions is 11.0 to 16.1.99</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After several trials and errors, here is the correct one:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Runner: Apple Clang - Code Generation:
+     Generate Debug Symbols:
+        Release: Yes</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The actual git diff patch is as following. The first patch is to remove &#34;warning: The iOS deployment target &#39;IPHONEOS_DEPLOYMENT_TARGET&#39; is set to 8.0, but the range of supported deployment target versions is 11.0 to 16.1.99&#34; warnings. The second patch is the one to resolve this issue.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-diff hljs" data-lang="diff">diff --git a/ios/Podfile b/ios/Podfile
+index 7dc78a9..55d7191 100644
+--- a/ios/Podfile
++++ b/ios/Podfile
+@@ -1,5 +1,5 @@
+ # Uncomment this line to define a global platform for your project
+-platform :ios, &#39;10.0&#39;
++platform :ios, &#39;11.0&#39;
+
+ # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
+ ENV[&#39;COCOAPODS_DISABLE_STATS&#39;] = &#39;true&#39;
+@@ -38,6 +38,7 @@ post_install do |installer|
+   installer.pods_project.targets.each do |target|
+     flutter_additional_ios_build_settings(target)
+     target.build_configurations.each do |config|
++    config.build_settings[&#39;IPHONEOS_DEPLOYMENT_TARGET&#39;] = &#34;11.0&#34;
+     config.build_settings[&#39;GCC_PREPROCESSOR_DEFINITIONS&#39;] ||= [
+         &#39;$(inherited)&#39;,
+
+diff --git a/ios/Runner.xcodeproj/project.pbxproj b/ios/Runner.xcodeproj/project.pbxproj
+index 12fe716..66f2443 100644
+--- a/ios/Runner.xcodeproj/project.pbxproj
++++ b/ios/Runner.xcodeproj/project.pbxproj
+@@ -861,6 +861,7 @@
+                                ENABLE_BITCODE = NO;
+                                &#34;EXCLUDED_ARCHS[sdk=iphoneos*]&#34; = armv7;
+                                FLUTTER_TARGET = lib/main_store.dart;
++                               GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+                                INFOPLIST_FILE = Runner/Info.plist;
+                                LD_RUNPATH_SEARCH_PATHS = (
+                                        &#34;$(inherited)&#34;,</code></pre>
+</div>
+</div>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/ios" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">iOS</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/flutter" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">flutter</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/crashlytics" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">crashlytics</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/xcode" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">xcode</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jackliusr-gh" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/2022/11/install-release-version-of-mobile-application-into-ios-without-testflight/">Install release version of mobile application into iOS without testflight</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/2022/09/debug-flutter-ios-application-in-macos/">debug flutter iOS application in MacOS</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/2022/09/unit-test-and-widget-test-in-flutter/">Unit test and widget test in flutter</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/2022/09/how-to-resolve-podfile-dependency-issues-of-google_mobile_ads-in-flutter/">How to resolve podfile dependency issues of google_mobile_ads in flutter</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/2022/09/conditional-compiling-in-flutter-project/">conditional compiling in flutter project</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/2022/04/run-a-flutter-app-on-windows-subsystem-for-android/">Run a flutter app on Windows Subsystem for Android</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jackliusr.github.io" >
+    &copy;  My learning and diary 2022 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+<script>
+ MathJax = {
+     tex: {
+         inlineMath: [['$', '$'], ['\\(', '\\)']]
+     }
+ };
+ </script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<link href="/css/prism.css" rel="stylesheet" />
+<script src="/js/prism.js"></script>
+
+
+
+
+
+  <p style="font-size: small; color: grey;">Page version: 5677a3aab9b8359bf2cc1449a76a75fedcef94ab 2022-11-28</p>
+  </body>
+</html>

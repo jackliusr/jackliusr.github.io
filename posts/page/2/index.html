@@ -165,6 +165,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2022/08/use-cert-manager-to-secure-kubernetes-cert-manager-behind-nginx-ingress/" class="link black dim">
+        Use cert-manager to secure kubernetes cert-manager behind nginx ingress
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Today I had a case to expose serveral kubernetes dashboard with cert-manager. Initiallly I thought it should be quite easy to setup, but the reality was quite different. My intial yaml is as following.
+ apiVersion: networking.k8s.io/v1 kind: Ingress metadata: name: ingress-global-dash namespace: kubernetes-dashboard labels: name: ingress-global-dash use-http01-solver: &#34;true&#34; annotations: cert-manager.io/cluster-issuer: &#34;test-issuer&#34; spec: ingressClassName: nginx rules: - host: &#34;dashboard.example.com&#34; http: paths: - pathType: Prefix path: &#34;/&#34; backend: service: name: kubernetes-dashboard port: number: 80 #later changed to 443 according to port of kubernetes-dashboard svc tls: # &lt; placing a host in the TLS config will determine what ends up in the cert&#39;s subjectAltNames - hosts: - dashboard.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2022/07/set-timezone-in-asp.net-6.0-in-linux-container/" class="link black dim">
         Set timezone in asp.net 6.0 in linux container
       </a>
@@ -304,22 +320,6 @@ I didn&rsquo;t have a good impression with java in my past java projects.
       Since my first time to configure istio with proxy protocol supports in aws, istio and envoyproxy changed a lot. In the past several days, I was exposed to a different scenario that one service to expose into multiple domains.
  Things are getting not straighforward, I struggled to make it success yesterday. Today another layer of complexity was added into my cluster: an extra ingressgateway for some services.
  For multiple ingress gateways, I followed this article, however my setup is more complex than that.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/06/make-a-s3-bucket-public/" class="link black dim">
-        Make a S3 bucket public
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Turn off &#34;Block public access (bucket settings)&#34;        Access control list (ACL): give Everyone (public access) object lists and bucket ACL read.          Policy Policy to attach to a role, so the role can be used to upload resources and put the ACL on the uploaded objects.
- { &#34;Version&#34;: &#34;2012-10-17&#34;, &#34;Statement&#34;: [ { &#34;Sid&#34;: &#34;VisualEditor0&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: &#34;s3:ListBucket&#34;, &#34;Resource&#34;: &#34;arn:aws:s3:::demo&#34; }, { &#34;Sid&#34;: &#34;VisualEditor1&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: [ &#34;s3:PutObject&#34;, &#34;s3:GetObject&#34;, &#34;s3:DeleteObject&#34; ], &#34;Resource&#34;: &#34;arn:aws:s3:::demo/*&#34; }, { &#34;Sid&#34;: &#34;VisualEditor2&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: &#34;s3:ListBucket&#34;, &#34;Resource&#34;: &#34;arn:aws:s3:::demo-public&#34; }, { &#34;Sid&#34;: &#34;VisualEditor3&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: [ &#34;s3:PutObject&#34;, &#34;s3:GetObject&#34;, &#34;s3:DeleteObject&#34;, &#34;s3:PutObjectAcl&#34; ], &#34;Resource&#34;: &#34;arn:aws:s3:::demo-public/*&#34; } ] }     Uploading command line bash scripts aws s3 sync --acl public-read local-dir/ s3://demo-public/test/   C# source code using (var client = new AmazonS3Client(RegionEndpoint.
     </div>
   </div>
 </div>

@@ -165,6 +165,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2022/05/argo-workflows-generate-dynamic-json-list/" class="link black dim">
+        Argo-workflows: Generate dynamic json list
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      The journey I worked on a dapr microservice project which need to read a list from a file and do some useful things. Argo-workflow supports loop over a list of items, however one of my steps always got &#34;invalid character &#39;G&#39; looking for beginning of value&#34; before going to next step in the workflow template. The step is as following:
+ - name: get-deps inputs: parameters: - name: changes script: image: ubuntu:latest command: [bash] #args: [&#34;echo result was: {{inputs.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2022/05/rich-link-preview-and-im-apps/" class="link black dim">
         Rich link preview and IM apps
       </a>
@@ -302,23 +318,6 @@ if (!doNotTrack) {
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Last week I setup our staging kubernetes environment, however the once worked version of runnerset yaml configuration didn’t work. I tried different combination of controller and summerwind/actions-runner-dind image, fully customized template portion with RUNNER_xxx arguments. I still got &#34;Http response code: NotFound from &#39;POST https://api.github.com/actions/runner-registration&#39;&#34; for every combination of those combinations in the logs of runner pods. I thought RunnerDeployment is stateless and less complex than RunnerSet. I gave it a try.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2021/08/apply-proxy-protocol-listener-filters-to-specific-ports-in-istio/" class="link black dim">
-        Apply proxy protocol listener filters to specific ports in istio
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Two days ago, our web applications need to get clients&#39; real IP address. Our sites is hosted in kubernetes, isito is used for ingress controll. behind cloud load balancers, it is not easy to make it work.
- There are two ways to do that in alibaba classic load balancer: http/https listeners, and TCP listeners with proxy protocol
- HTTPS listeners is crossed out due to certificate issue. HTTPS listeners can use integrated certificates or self uploaded certificates.
     </div>
   </div>
 </div>
