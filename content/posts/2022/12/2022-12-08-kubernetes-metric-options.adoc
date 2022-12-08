@@ -26,4 +26,4 @@ It can also replace the metrics server on clusters that already run Prometheus a
 
 How to replace metric-server with prometheus-adapter?
 
-Here I noted down questions and things I found interesting. I will learn those later.
+Here I noted down questions and things I found interesting. I will learn and writing those later.
