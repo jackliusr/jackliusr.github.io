@@ -1,0 +1,29 @@
+---
+title: "Kubernetes metric options"
+date: 2022-12-09T23:01:10+08:00
+categories:
+- tech
+tags:
+- Kubernetes
+- metric
+---
+
+In normal kubernetes metrics, you will find cAdvisor, Metrics Server, Kubernetes API Server, Node Exporter, and Kube-State-Metrics as source of metrics. In last 2 days, I noticed prometheus-adapter. Today KEDA popped up in my mind. I checked its website and found it can be source of metric as well. 
+
+
+cAdvisor, Metrics Server, Kubernetes API Server, Node Exporter, and Kube-State-Metrics can be considered as in-cluster source of metric.  However KEDA is about out-cluster source of metrics.
+
+
+KEDA metric server: 
+  export metrics of scaled objects.
+
+KEDA scaler: feed custom metrics based on external event sources
+
+
+What's about prometheus-adapter?
+
+It can also replace the metrics server on clusters that already run Prometheus and collect the appropriate metrics.
+
+How to replace metric-server with prometheus-adapter?
+
+Here I noted down questions and things I found interesting. I will learn those later.
