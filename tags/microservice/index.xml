@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>microservice on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/microservice/</link>
+    <description>Recent content in microservice on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 09 Dec 2022 22:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/microservice/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Do we need a microservice framework</title>
+      <link>https://jackliusr.github.io/posts/2022/12/do-we-need-a-microservice-framework/</link>
+      <pubDate>Fri, 09 Dec 2022 22:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/12/do-we-need-a-microservice-framework/</guid>
+      <description>Today I was asked which framework was used in my design of microservice systems. I answered those concerns of microservice are handled natively by kubernetes when my systems are deployed into kubernetes clusters. I will not use those frameworks in my design of microservices.
+ The question sparked several questions in my mind. Here are those questions. Why do we still need microservice frameworks when kubernetes is the de-facto platform now?</description>
+    </item>
+    
+  </channel>
+</rss>
