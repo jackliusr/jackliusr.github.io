@@ -1,6 +1,6 @@
 ---
 title: "Kubernetes metric options"
-date: 2022-12-09T23:01:10+08:00
+date: 2022-12-08T23:01:10+08:00
 categories:
 - tech
 tags:

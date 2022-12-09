@@ -1,0 +1,26 @@
+---
+title: "Do we need a microservice framework"
+date: 2022-12-09T23:01:10+08:00
+categories:
+- tech
+tags:
+- Kubernetes
+- microservice
+- framework
+---
+
+Today I was asked which framework was used in my design of microservice systems. I answered those concerns of microservice are handled natively by kubernetes when my systems are deployed into kubernetes clusters. I will not use those frameworks in my design of microservices. 
+
+The question sparked several questions in my mind. Here are those questions. Why do we still need microservice frameworks when kubernetes is the de-facto platform now? There are still a lot of active development in microservice frameworks. Why do those big companies still invest on those frameworks? Is it really just about legacy systems? 
+
+
+Before discussing those questions, we need to list the microservice concerns, requirements and technology mappings.  In the article https://developers.redhat.com/blog/2016/12/09/spring-cloud-for-microservices-compared-to-kubernetes[Spring Cloud for Microservices Compared to Kubernetes], Bilgin Ibryam gave out microservices concerns, technology mapping to kubernetes and springcloud for those conerns.
+
+Here we need to broad our environment consideration beyond kubernetes such as non-kubernetes components, VMs, out-cluster components, kubernetes-native deployments etc. This way we can make sense why we still need those microservice frameworks. I can think of the following cases that why  we still microservice frameworks.
+
+case 1: Kubernetes don't fit for huge projects which are beyond kubernetes node limits even though kubernetes answers all the concerns when service mesh/network policy are added. Those huge projects involve multiple clusters and some other systems outside of those clusters. For those cases, kubernetes alone can't answers all the concerns of microservice concerns. 
+
+case 2: Risk concern of day 2 operations. How to deal with the situations if kubernete clusters go down? Microservice frameworks allow services to deploy to VMs and kubernetes clusters. Microservice frameworks give a way out in case of kubernetes cluster go down. 
+
+case 3: legacy system, or third-party systems are not kubernetes-ready and using other microservice frameworks. sometimes microservice frameworks is the only choice to integrate with existing systems.
+
