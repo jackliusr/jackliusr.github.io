@@ -165,6 +165,21 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2022/02/configure-action-runner-in-eks-calico-environment/" class="link black dim">
+        Configure action runner in eks&#43;calico environment
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Last week I setup our staging kubernetes environment, however the once worked version of runnerset yaml configuration didn’t work. I tried different combination of controller and summerwind/actions-runner-dind image, fully customized template portion with RUNNER_xxx arguments. I still got &#34;Http response code: NotFound from &#39;POST https://api.github.com/actions/runner-registration&#39;&#34; for every combination of those combinations in the logs of runner pods. I thought RunnerDeployment is stateless and less complex than RunnerSet. I gave it a try.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2021/08/apply-proxy-protocol-listener-filters-to-specific-ports-in-istio/" class="link black dim">
         Apply proxy protocol listener filters to specific ports in istio
       </a>
@@ -303,21 +318,6 @@ if (!doNotTrack) {
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       var myChart = echarts.init(document.getElementById('echarts400')); var option = JSON.parse("\n {\n \"textStyle\":{\n \"color\":\"#fff\"\n },\n \"title\":{\n \"text\":\"2018年11月国内浏览器数据统计\",\n \"subtext\":\"浏览器数据分析\",\n \"x\":\"center\",\n \"textStyle\":{\n \"color\":\"#FFffFf\"\n }\n },\n \"tooltip\":{\n \"trigger\":\"item\",\n \"formatter\":\"{a} \u003cbr/\u003e{b} : {c} ({d}%)\"\n },\n \"legend\":{\n \"type\":\"scroll\",\n \"orient\":\"vertical\",\n \"right\":10,\n \"top\":120,\n \"bottom\":20,\n \"data\":[\n \"Chrome\",\n \"IE 9.0\",\n \"IE 11.0\",\n \"QQ\",\n \"IE 8.0\",\n \"2345\",\n \"搜狗高速\",\n \"Firefox\",\n \"Safari\",\n \"其他\"\n ],\n \"textStyle\":{\n \"color\":\"#fff\"\n }\n },\n \"series\":[\n {\n \"name\":\"浏览器用户比例\",\n \"type\":\"pie\",\n \"radius\":\"55%\",\n \"center\":[\n \"50%\",\n \"60%\"\n ],\n \"data\":[\n {\n \"name\":\"Chrome\",\n \"value\":46.88\n },\n {\n \"
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2020/12/log-to-stdin-of-a-pod-in-nested-shells/" class="link black dim">
-        log to stdin of a pod in nested shells
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      During practicing the lifecycle handlers of pod, I found it is quite difficult to get the logs logged from preStop handlers. Initially I thought terminationMessagePath maybe is the answer, but no such luck. The preStop handler will be run before the pod is deleted. After deleted, there is no way to get the logs unless those logs are kept in other place such as central log servers etc. Those settings are way complex for a simple practice and time-consuming.
     </div>
   </div>
 </div>

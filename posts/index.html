@@ -165,6 +165,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2022/12/kubernetes-metric-options/" class="link black dim">
+        Kubernetes metric options
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      In normal kubernetes metrics, you will find cAdvisor, Metrics Server, Kubernetes API Server, Node Exporter, and Kube-State-Metrics as source of metrics. In last 2 days, I noticed prometheus-adapter. Today KEDA popped up in my mind. I checked its website and found it can be source of metric as well.
+ cAdvisor, Metrics Server, Kubernetes API Server, Node Exporter, and Kube-State-Metrics can be considered as in-cluster source of metric. However KEDA is about out-cluster source of metrics.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2022/11/unable-to-upload-crashlytics-dsym-file-during-build-phase-of-a-flutter-project-due-to-script-error/" class="link black dim">
         Unable to upload Crashlytics dSYM file during build phase of a flutter project due to script error
       </a>
@@ -312,22 +328,6 @@ path:pubspec.yaml google_mobile_ads firebase_analytics
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Shift-left is a things nowadays. Recently I read an articles about that beyond testing and security. Today I gave it a try using datree and found that there are still a lot of places to improve in one of my clusters. It is not just a small number. There maybe are many new concepts, configurations and best practicies behind the numbers.
  kubectl datree test &gt; test.log rg -n ❌ test.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/08/setup-k8s-monitoring/" class="link black dim">
-        Setup k8s monitoring
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Kuberneters dashboard doesn’t give enough information about node and cluster information during rececent loading test. I sought to other options. Prometheus and grafana are the de-facto standards. It’s a no-brainer choice. The most important things is how to make them working together.
- Setup Prometheus and Grafana kubectl create namespace monitoring helm repo add prometheus-community https://prometheus-community.github.io/helm-charts helm repo update helm install prometheus prometheus-community/prometheus -n monitoring helm repo add grafana https://grafana.github.io/helm-charts helm install grafana grafana/grafana -n monitoring kubectl get secret --namespace monitoring grafana -o jsonpath=&#34;{.
     </div>
   </div>
 </div>

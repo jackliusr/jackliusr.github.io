@@ -6,7 +6,17 @@
     <description>Recent content in kubernetes on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Aug 2022 11:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Dec 2022 23:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes metric options</title>
+      <link>https://jackliusr.github.io/posts/2022/12/kubernetes-metric-options/</link>
+      <pubDate>Thu, 08 Dec 2022 23:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/12/kubernetes-metric-options/</guid>
+      <description>In normal kubernetes metrics, you will find cAdvisor, Metrics Server, Kubernetes API Server, Node Exporter, and Kube-State-Metrics as source of metrics. In last 2 days, I noticed prometheus-adapter. Today KEDA popped up in my mind. I checked its website and found it can be source of metric as well.
+ cAdvisor, Metrics Server, Kubernetes API Server, Node Exporter, and Kube-State-Metrics can be considered as in-cluster source of metric. However KEDA is about out-cluster source of metrics.</description>
+    </item>
+    
     <item>
       <title>Shift-lefts in kubernetes with datree</title>
       <link>https://jackliusr.github.io/posts/2022/08/shift-lefts-in-kubernetes-with-datree/</link>
