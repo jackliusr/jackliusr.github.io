@@ -1,0 +1,32 @@
+---
+title: "What's the difference between kustomization and component"
+date: 2022-12-12T12:01:10+08:00
+categories:
+- tech
+tags:
+- kustomization
+- component
+- kustomize
+---
+
+The real differences is quoted here. You can find the content https://github.com/kubernetes/enhancements/blob/master/keps/sig-cli/1802-kustomize-components/README.md#why-introduce-a-new-component-kind:~:text=A%20kustomization%20that,in%20parallel[here]
+[quote]
+----
+A kustomization that is marked as a Component has basically the same capabilities as a normal kustomization. The main distinction is that they are evaluated after the resources of the parent kustomization (overlay or component) have been accumulated, and on top of them. This means that:
+
+A component with transformers can transform the resources that an overlay has previously specified in the resources field. Components with patches do not have to include the target resource in their resources field.
+
+Multiple components can extend and transform the same set of resources sequentially. This is in contrast to overlays, which cannot alter the same base resources, because they clone and extend them in parallel.
+----
+
+
+I have doubt what's the difference kustomization and component in kustomize. However I couldn't find answers about that in kustomize official website and even after I searched google many times in the past.
+
+Today I re-read https://github.com/kubernetes-sigs/kustomize/blob/master/examples/components.md[Demo: Components] and noticed that https://github.com/kubernetes-sigs/kustomize/blob/master/examples/components.md#:~:text=Overlays%20that%20combine%20more%20than%20one%20features%20define%20patches%20for%20resources%20whose%20content%20is%20not%20dedicated%20to%20a%20single%20feature.%20That%20is%2C%20there%20is%20no%20semantic%20isolation%20per%20feature%2C%20everything%20gets%20mixed%20into%20a%20single%2C%20multi%2Dfeature%2C%20resource%2Dspecific%20patch["Overlays that combine more than one features define patches for resources whose content is not dedicated to a single feature."]. I am using "kustomize kind: Component vs kustomization" as keywords and found https://github.com/kubernetes-sigs/kustomize/issues/1251[Support composition in kustomize] and 
+https://github.com/kubernetes/enhancements/blob/master/keps/sig-cli/1802-kustomize-components/README.md[Kustomize Components]
+
+
+The https://github.com/kubernetes/enhancements/blob/master/keps/sig-cli/1802-kustomize-components/README.md[Kustomize Components] document also gives rationale for https://github.com/kubernetes/enhancements/blob/master/keps/sig-cli/1802-kustomize-components/README.md#why-introduce-a-new-components-field[components field] and 
+https://github.com/kubernetes/enhancements/blob/master/keps/sig-cli/1802-kustomize-components/README.md#why-introduce-a-new-component-kind[Component kind].
+
+
