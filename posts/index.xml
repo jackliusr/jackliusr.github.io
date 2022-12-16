@@ -6,7 +6,18 @@
     <description>Recent content in Posts on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Dec 2022 12:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Dec 2022 10:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Beyond traceroute</title>
+      <link>https://jackliusr.github.io/posts/2022/12/beyond-traceroute/</link>
+      <pubDate>Fri, 16 Dec 2022 10:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/12/beyond-traceroute/</guid>
+      <description>I wondered why I was asked twice about network troubleshooting between two machines and the destination machine is not reachable directly. It seems there are somethings I didn’t understand fully or I missed something.
+ Today I googled &amp;#34;tracert is not enough&amp;#34; and found Traceroute Limitations Explained. It explains my doubts now.
+ Traceroute Limitations Explained gives some limitations of traceroute and introduce their production to avoid those limitations. Are there any other ways?</description>
+    </item>
+    
     <item>
       <title>What&#39;s the difference between kustomization and component</title>
       <link>https://jackliusr.github.io/posts/2022/12/whats-the-difference-between-kustomization-and-component/</link>

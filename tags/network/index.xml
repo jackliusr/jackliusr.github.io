@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>network on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/network/</link>
+    <description>Recent content in network on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Dec 2022 10:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Beyond traceroute</title>
+      <link>https://jackliusr.github.io/posts/2022/12/beyond-traceroute/</link>
+      <pubDate>Fri, 16 Dec 2022 10:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/12/beyond-traceroute/</guid>
+      <description>I wondered why I was asked twice about network troubleshooting between two machines and the destination machine is not reachable directly. It seems there are somethings I didn’t understand fully or I missed something.
+ Today I googled &amp;#34;tracert is not enough&amp;#34; and found Traceroute Limitations Explained. It explains my doubts now.
+ Traceroute Limitations Explained gives some limitations of traceroute and introduce their production to avoid those limitations. Are there any other ways?</description>
+    </item>
+    
+  </channel>
+</rss>
