@@ -1,0 +1,18 @@
+---
+title: "Beyond traceroute"
+date: 2022-12-16T10:01:10+08:00
+categories:
+- tech
+tags:
+- network
+- traceroute
+---
+
+I wondered why I was asked twice about network troubleshooting between two machines and the destination machine is not reachable directly. It seems there are somethings I didn't understand fully or I missed something. 
+
+
+Today I googled "tracert is not enough" and found https://www.netbraintech.com/blog/limitations-of-traceroute/[Traceroute Limitations Explained]. It explains my doubts now. 
+
+https://www.netbraintech.com/blog/limitations-of-traceroute/[Traceroute Limitations Explained] gives some limitations of traceroute and introduce their production to avoid those limitations. Are there any other ways? 
+
+I have some experiences using wireshark and tcpdump, and learnt some thing about VPC Flow Logs as in aws.  I think they can been used when traceroute is not enough in some settings.
