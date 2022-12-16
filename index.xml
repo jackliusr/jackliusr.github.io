@@ -614,6 +614,17 @@ I didn&amp;rsquo;t have a good impression with java in my past java projects.</d
     </item>
     
     <item>
+      <title>Istio Envoy passthrough goes wrong when port 80 are used for SMTP protocol instead of standard ports</title>
+      <link>https://jackliusr.github.io/posts/2021/09/istio-envoy-passthrough-goes-wrong-when-port-80-are-used-for-smtp-protocol-instead-of-standard-ports/</link>
+      <pubDate>Tue, 07 Sep 2021 09:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2021/09/istio-envoy-passthrough-goes-wrong-when-port-80-are-used-for-smtp-protocol-instead-of-standard-ports/</guid>
+      <description>TLDR: if your external SMTP is using port 80 instead of standard ports in an istio mesh, create a Service Entry for the external SMTP.
+ These two days, a strange timeout issue happened in one of our kubernetes clusters when trying to send emails via SMTP even though the same configuration works perfectly on our development machines.
+ At first, I thought it was due to SecureSocketOptions.startTLS. I changed it to SecureSocketOptions.</description>
+    </item>
+    
+    <item>
       <title>Apply proxy protocol listener filters to specific ports in istio</title>
       <link>https://jackliusr.github.io/posts/2021/08/apply-proxy-protocol-listener-filters-to-specific-ports-in-istio/</link>
       <pubDate>Sat, 28 Aug 2021 09:10:10 +0800</pubDate>
