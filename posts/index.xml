@@ -6,7 +6,16 @@
     <description>Recent content in Posts on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Dec 2022 10:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Dec 2022 13:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>some packages cannot be resolved in eclipse with gradle projects</title>
+      <link>https://jackliusr.github.io/posts/2022/12/some-packages-cannot-be-resolved-in-eclipse-with-gradle-projects/</link>
+      <pubDate>Sun, 18 Dec 2022 13:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/12/some-packages-cannot-be-resolved-in-eclipse-with-gradle-projects/</guid>
+      <description>In the past two days, I always got the errors &amp;#34;packages cannot be resolved&amp;#34; in eclipse with gradle projects. Initial I encountered the issue, I desperately wanted to resolved the issue. I tried several ways to do that by using solutions from web, however I didn’t get my issue resolved. Due to time constraint, I went back to the old mvn way to do the project. Today I have sometime to revisit the issue now.</description>
+    </item>
+    
     <item>
       <title>Beyond traceroute</title>
       <link>https://jackliusr.github.io/posts/2022/12/beyond-traceroute/</link>
