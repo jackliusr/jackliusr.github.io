@@ -1,0 +1,36 @@
+---
+title: "some packages cannot be resolved in eclipse with gradle projects"
+date: 2022-12-18T13:01:10+08:00
+categories:
+- tech
+tags:
+- eclipse
+- gradle
+- spring
+---
+
+
+In the past two days, I always got the errors "packages cannot be resolved" in eclipse with gradle projects. Initial I encountered the issue, I desperately wanted to resolved the issue. I tried several ways to do that by using solutions from web, however I didn't get my issue resolved. Due to time constraint, I went back to the old mvn way to do the project. Today I have sometime to revisit the issue now. 
+
+This time, I am lucky to find https://stackoverflow.com/questions/32366835/the-import-org-springframework-data-cannot-be-resolved-in-gradle[The import org.springframework.data cannot be resolved in gradle]. I read each answwers and did the actions in them. Luckly, My issue was resolved this time. https://stackoverflow.com/questions/32366835/the-import-org-springframework-data-cannot-be-resolved-in-gradle[The import org.springframework.data cannot be resolved in gradle] indeed gives the answers, however it doesn't give a clear structure to Facilitate understanding for us. I wrote down here in a clear structured way for me or us to understand cases and resolve them accordingly 
+
+There are several cases which will get the error messages. Here I will list my finding case by case. Hopefully it can save other sometime and me in future.
+
+
+== Case 1:  dependency is missed
+
+add the missed dependency into  build.gradle
+
+== Case 2: Eclipse was failing to handle changes to the build.gradle file.
+
+Close and reopen the project if you change build.gradle of the project which you are working on. 
+
+
+== Case 3: the .project and .classpath files that the eclipse IDE uses are not updated.
+
+. add "apply plugin: 'eclipse'" to build.gradle file
+. run "gradle eclipse" in command line
+
+
+== References: 
+* https://stackoverflow.com/questions/32366835/the-import-org-springframework-data-cannot-be-resolved-in-gradle
