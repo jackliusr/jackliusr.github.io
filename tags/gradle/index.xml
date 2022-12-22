@@ -6,7 +6,18 @@
     <description>Recent content in gradle on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Dec 2022 13:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/gradle/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Dec 2022 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/gradle/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring devtools in action</title>
+      <link>https://jackliusr.github.io/posts/2022/12/spring-devtools-in-action/</link>
+      <pubDate>Thu, 22 Dec 2022 20:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/12/spring-devtools-in-action/</guid>
+      <description>I thought it was every easy to setup and use it using STS and gradle. The actual story is not so. I changed my settings followed Developing with Spring Boot and some suggestions here in stackoverflow, however liveload and autorestart don’t work.
+ After several rounds of trial, I noticed spring boot dashboard. I start my application from there, liveload and autorestart work now.
+      developmentOnly(&amp;#34;org.</description>
+    </item>
+    
     <item>
       <title>some packages cannot be resolved in eclipse with gradle projects</title>
       <link>https://jackliusr.github.io/posts/2022/12/some-packages-cannot-be-resolved-in-eclipse-with-gradle-projects/</link>

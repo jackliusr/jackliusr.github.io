@@ -2,47 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://jackliusr.github.io/tags/autorestart/</loc>
+    <lastmod>2022-12-22T20:47:52+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2022-12-18T13:39:58+08:00</lastmod>
+    <lastmod>2022-12-22T20:47:52+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/devtools/</loc>
+    <lastmod>2022-12-22T20:47:52+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/eclipse/</loc>
-    <lastmod>2022-12-18T13:39:58+08:00</lastmod>
+    <lastmod>2022-12-22T20:47:52+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/gradle/</loc>
-    <lastmod>2022-12-18T13:39:58+08:00</lastmod>
+    <lastmod>2022-12-22T20:47:52+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/liveload/</loc>
+    <lastmod>2022-12-22T20:47:52+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2022-12-18T13:39:58+08:00</lastmod>
+    <lastmod>2022-12-22T20:47:52+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2022-12-18T13:39:58+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/posts/2022/12/some-packages-cannot-be-resolved-in-eclipse-with-gradle-projects/</loc>
-    <lastmod>2022-12-18T13:39:58+08:00</lastmod>
+    <lastmod>2022-12-22T20:47:52+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/spring/</loc>
-    <lastmod>2022-12-18T13:39:58+08:00</lastmod>
+    <lastmod>2022-12-22T20:47:52+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2022/12/spring-devtools-in-action/</loc>
+    <lastmod>2022-12-22T20:47:52+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2022-12-18T13:39:58+08:00</lastmod>
+    <lastmod>2022-12-22T20:47:52+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/tech/</loc>
+    <lastmod>2022-12-22T20:47:52+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2022/12/some-packages-cannot-be-resolved-in-eclipse-with-gradle-projects/</loc>
     <lastmod>2022-12-18T13:39:58+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

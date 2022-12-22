@@ -6,11 +6,29 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Dec 2022 13:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Dec 2022 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>autorestart</title>
+      <link>https://jackliusr.github.io/tags/autorestart/</link>
+      <pubDate>Thu, 22 Dec 2022 20:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/autorestart/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devtools</title>
+      <link>https://jackliusr.github.io/tags/devtools/</link>
+      <pubDate>Thu, 22 Dec 2022 20:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/devtools/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>eclipse</title>
       <link>https://jackliusr.github.io/tags/eclipse/</link>
-      <pubDate>Sun, 18 Dec 2022 13:01:10 +0800</pubDate>
+      <pubDate>Thu, 22 Dec 2022 20:01:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/eclipse/</guid>
       <description></description>
@@ -19,16 +37,25 @@
     <item>
       <title>gradle</title>
       <link>https://jackliusr.github.io/tags/gradle/</link>
-      <pubDate>Sun, 18 Dec 2022 13:01:10 +0800</pubDate>
+      <pubDate>Thu, 22 Dec 2022 20:01:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/gradle/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>liveload</title>
+      <link>https://jackliusr.github.io/tags/liveload/</link>
+      <pubDate>Thu, 22 Dec 2022 20:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/liveload/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>spring</title>
       <link>https://jackliusr.github.io/tags/spring/</link>
-      <pubDate>Sun, 18 Dec 2022 13:01:10 +0800</pubDate>
+      <pubDate>Thu, 22 Dec 2022 20:01:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/spring/</guid>
       <description></description>
