@@ -1,0 +1,45 @@
+---
+title: "Spring devtools in action"
+date: 2022-12-22T20:01:10+08:00
+categories:
+- tech
+tags:
+- eclipse
+- gradle
+- spring
+- devtools
+- liveload
+- autorestart
+---
+
+I thought it was every easy to setup and use it using STS and gradle. The actual story is not so. I changed my settings followed https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.devtools[Developing with Spring Boot] and some suggestions https://stackoverflow.com/questions/43147157/spring-boot-devtools-not-working-in-eclipse[here in stackoverflow], however liveload and autorestart don't work. 
+
+After several rounds of trial, I noticed spring boot dashboard. I start my application from there, liveload and autorestart work now. 
+
+{{< imgur id="9aCs8bP" >}}
+
+
+[source, groove]
+----
+developmentOnly("org.springframework.boot:spring-boot-devtools")
+----
+
+[source, properties]
+----
+#application.properties
+spring.devtools.restart.poll-interval=2s
+spring.devtools.restart.quiet-period=1s
+spring.devtools.restart.enabled=true
+# Thymeleaf
+spring.thymeleaf.cache = false
+
+#FreeMarker
+spring.freemarker.cache = false
+
+#Groovy
+spring.groovy.template.cache = false
+----
+
+
+== Reference: 
+https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.devtools
