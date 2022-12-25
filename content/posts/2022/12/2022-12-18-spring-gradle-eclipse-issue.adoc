@@ -32,7 +32,7 @@ Close and reopen the project if you change build.gradle of the project which you
 . run "gradle eclipse" in command line
 
  There is another way to do case 3: 
- {{< imgur id="49meulY" >}}
+ {{< imgur id="mtSR9Gi" >}}
 
 == References: 
 * https://stackoverflow.com/questions/32366835/the-import-org-springframework-data-cannot-be-resolved-in-gradle
