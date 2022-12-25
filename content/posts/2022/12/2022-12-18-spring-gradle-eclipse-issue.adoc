@@ -31,6 +31,8 @@ Close and reopen the project if you change build.gradle of the project which you
 . add "apply plugin: 'eclipse'" to build.gradle file
 . run "gradle eclipse" in command line
 
+ There is another way to do case 3: 
+ {{< imgur id="49meulY" >}}
 
 == References: 
 * https://stackoverflow.com/questions/32366835/the-import-org-springframework-data-cannot-be-resolved-in-gradle
