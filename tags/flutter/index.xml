@@ -6,7 +6,17 @@
     <description>Recent content in flutter on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Nov 2022 21:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Dec 2022 12:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Integrate device_preview, bot_toast and getx</title>
+      <link>https://jackliusr.github.io/posts/2022/12/integrate-device_preview-bot_toast-and-getx/</link>
+      <pubDate>Thu, 29 Dec 2022 12:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/12/integrate-device_preview-bot_toast-and-getx/</guid>
+      <description>void main() =&amp;gt; runApp( DevicePreview( enabled: !kReleaseMode, builder: (context) =&amp;gt; MyApp(), // Wrap your app ), ); class MyApp extends StatelessWidget { final botToastBuilder = BotToastInit(); @override Widget build(BuildContext context) { return GetMaterialApp.router( useInheritedMediaQuery: true, locale: DevicePreview.locale(context), builder: builder: (context, child) { child = DevicePreview.appBuilder(context, child); child = botToastBuilder(context, child); return child; }, theme: ThemeData.light(), darkTheme: ThemeData.dark(), home: const HomePage(), ); } }   Reference:   https://pub.dev/packages/bot_toast
+  https://stackoverflow.</description>
+    </item>
+    
     <item>
       <title>Unable to upload Crashlytics dSYM file during build phase of a flutter project due to script error</title>
       <link>https://jackliusr.github.io/posts/2022/11/unable-to-upload-crashlytics-dsym-file-during-build-phase-of-a-flutter-project-due-to-script-error/</link>

@@ -170,6 +170,24 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2022/12/integrate-device_preview-bot_toast-and-getx/" class="link black dim">
+        Integrate device_preview, bot_toast and getx
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      void main() =&gt; runApp( DevicePreview( enabled: !kReleaseMode, builder: (context) =&gt; MyApp(), // Wrap your app ), ); class MyApp extends StatelessWidget { final botToastBuilder = BotToastInit(); @override Widget build(BuildContext context) { return GetMaterialApp.router( useInheritedMediaQuery: true, locale: DevicePreview.locale(context), builder: builder: (context, child) { child = DevicePreview.appBuilder(context, child); child = botToastBuilder(context, child); return child; }, theme: ThemeData.light(), darkTheme: ThemeData.dark(), home: const HomePage(), ); } }   Reference:   https://pub.dev/packages/bot_toast
+  https://stackoverflow.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2022/11/unable-to-upload-crashlytics-dsym-file-during-build-phase-of-a-flutter-project-due-to-script-error/" class="link black dim">
         Unable to upload Crashlytics dSYM file during build phase of a flutter project due to script error
       </a>
