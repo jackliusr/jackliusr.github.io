@@ -1,0 +1,45 @@
+---
+title: "Integrate device_preview, bot_toast and getx"
+date: 2022-12-29T12:01:10+08:00
+categories:
+- tech
+tags:
+- flutter
+- device_preview
+- bot_toast
+- getx
+---
+
+[source,dart]
+----
+void main() => runApp(
+  DevicePreview(
+    enabled: !kReleaseMode,
+    builder: (context) => MyApp(), // Wrap your app
+  ),
+);
+
+class MyApp extends StatelessWidget {
+  final botToastBuilder = BotToastInit();
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp.router(
+      useInheritedMediaQuery: true,
+      locale: DevicePreview.locale(context),
+      builder:       builder: (context, child) {
+        child = DevicePreview.appBuilder(context, child);
+        child = botToastBuilder(context, child);
+        return child;
+      },
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      home: const HomePage(),
+    );
+  }
+}
+----
+
+== Reference: 
+* https://pub.dev/packages/bot_toast
+* https://stackoverflow.com/questions/65437307/flutter-how-to-call-multiple-builder-items-in-material-app
+* https://github.com/aloisdeniel/flutter_device_preview
