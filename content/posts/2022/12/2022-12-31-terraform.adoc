@@ -1,0 +1,26 @@
+---
+title: "Terraform advantages over cloudformation or ARM tempaltes"
+date: 2022-12-31T12:01:10+08:00
+categories:
+- tech
+tags:
+- terraform
+- cdk
+- cloudformation
+- ARM templates
+---
+
+Terraform site gives several use cases and comparison with other IaC langauges. I think there are few things of terraform that stand out when comparing it with other tools such as  cloudformation, ARM tempaltes IaC languages.
+
+== multi-cloud deployment
+
+When you only use one cloud-provider's solution to do IaC and things get in your way, you will have hard time to migrate to other providers as you already invested heavily into one provider. I think netflix is the perfect example. Now amazon prime video competes with netflix and netflix start to migrate parts its services to other providers.
+
+== plan, graph before execution
+
+The great thing of this is that you can see the impact from the output of plans. This will reduce the chances to break systems.
+
+== More than cloud: on-premises, vmware, docker and other providers etc 
+
+If your systems are deployed in hybrid or multi-cloud environment, terraform is definitely the way to go. Who knows if you will go to hybrid or multi-cloud in the future due to different factors such as legal, costs.
+
