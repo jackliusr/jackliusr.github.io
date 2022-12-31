@@ -193,7 +193,7 @@ if (!doNotTrack) {
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      void main() =&gt; runApp( DevicePreview( enabled: !kReleaseMode, builder: (context) =&gt; MyApp(), // Wrap your app ), ); class MyApp extends StatelessWidget { final botToastBuilder = BotToastInit(); @override Widget build(BuildContext context) { return GetMaterialApp.router( useInheritedMediaQuery: true, locale: DevicePreview.locale(context), builder: builder: (context, child) { child = DevicePreview.appBuilder(context, child); child = botToastBuilder(context, child); return child; }, theme: ThemeData.light(), darkTheme: ThemeData.dark(), home: const HomePage(), ); } }   Reference:   https://pub.dev/packages/bot_toast
+      void main() =&gt; runApp( DevicePreview( enabled: !kReleaseMode, builder: (context) =&gt; MyApp(), // Wrap your app ), ); class MyApp extends StatelessWidget { final botToastBuilder = BotToastInit(); @override Widget build(BuildContext context) { return GetMaterialApp.router( useInheritedMediaQuery: true, locale: DevicePreview.locale(context), builder: (context, child) { child = DevicePreview.appBuilder(context, child); child = botToastBuilder(context, child); return child; }, theme: ThemeData.light(), darkTheme: ThemeData.dark(), home: const HomePage(), ); } }   Reference:   https://pub.dev/packages/bot_toast
   https://stackoverflow.
     </div>
   </div>

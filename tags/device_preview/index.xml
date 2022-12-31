@@ -13,7 +13,7 @@
       <pubDate>Thu, 29 Dec 2022 12:01:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/posts/2022/12/integrate-device_preview-bot_toast-and-getx/</guid>
-      <description>void main() =&amp;gt; runApp( DevicePreview( enabled: !kReleaseMode, builder: (context) =&amp;gt; MyApp(), // Wrap your app ), ); class MyApp extends StatelessWidget { final botToastBuilder = BotToastInit(); @override Widget build(BuildContext context) { return GetMaterialApp.router( useInheritedMediaQuery: true, locale: DevicePreview.locale(context), builder: builder: (context, child) { child = DevicePreview.appBuilder(context, child); child = botToastBuilder(context, child); return child; }, theme: ThemeData.light(), darkTheme: ThemeData.dark(), home: const HomePage(), ); } }   Reference:   https://pub.dev/packages/bot_toast
+      <description>void main() =&amp;gt; runApp( DevicePreview( enabled: !kReleaseMode, builder: (context) =&amp;gt; MyApp(), // Wrap your app ), ); class MyApp extends StatelessWidget { final botToastBuilder = BotToastInit(); @override Widget build(BuildContext context) { return GetMaterialApp.router( useInheritedMediaQuery: true, locale: DevicePreview.locale(context), builder: (context, child) { child = DevicePreview.appBuilder(context, child); child = botToastBuilder(context, child); return child; }, theme: ThemeData.light(), darkTheme: ThemeData.dark(), home: const HomePage(), ); } }   Reference:   https://pub.dev/packages/bot_toast
   https://stackoverflow.</description>
     </item>
     
