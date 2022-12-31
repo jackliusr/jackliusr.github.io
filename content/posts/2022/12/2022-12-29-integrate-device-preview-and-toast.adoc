@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp.router(
       useInheritedMediaQuery: true,
       locale: DevicePreview.locale(context),
-      builder:       builder: (context, child) {
+      builder: (context, child) {
         child = DevicePreview.appBuilder(context, child);
         child = botToastBuilder(context, child);
         return child;
