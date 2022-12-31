@@ -6,7 +6,43 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Dec 2022 12:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 31 Dec 2022 12:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ARM templates</title>
+      <link>https://jackliusr.github.io/tags/arm-templates/</link>
+      <pubDate>Sat, 31 Dec 2022 12:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/arm-templates/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cdk</title>
+      <link>https://jackliusr.github.io/tags/cdk/</link>
+      <pubDate>Sat, 31 Dec 2022 12:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/cdk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cloudformation</title>
+      <link>https://jackliusr.github.io/tags/cloudformation/</link>
+      <pubDate>Sat, 31 Dec 2022 12:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/cloudformation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terraform</title>
+      <link>https://jackliusr.github.io/tags/terraform/</link>
+      <pubDate>Sat, 31 Dec 2022 12:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/terraform/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>bot_toast</title>
       <link>https://jackliusr.github.io/tags/bot_toast/</link>
