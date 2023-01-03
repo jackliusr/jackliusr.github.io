@@ -1,0 +1,67 @@
+---
+title: "working solution: locale change using device_preview and GetMaterialApp.router"
+date: 2023-01-03T12:01:10+08:00
+categories:
+- tech
+tags:
+- device_preview
+- getx
+---
+
+I can make it works when using device_preview and getx GetMaterialApp. GetMaterialApp can perfectly works with device_preview on many things such as size, orientation etc. GetMaterialApp.router is not the case. I found that locale changes in device_preview can't propagate to  GetMaterialApp.router. 
+
+I raised a https://github.com/jonataslaw/getx/issues/2656[issue], however getx has a bad reputation on fixing issues. I can't wait so long and I sought other options. Things I tried was to use GetMaterialApp, however always to get several errors. The code of getx is messy, there is no comments in most of code.
+
+There are two ways I found now, I listed them here. Hope it can be helpful to others like me in the same situation.
+
+== guarded delay updateLocale
+
+https://github.com/jackliusr/gopeed/commit/bbc627b6ef64f3e28989d048aba70fb3e1370eea[working example]
+
+code excerpt: 
+[source, dart]
+----
+  Widget build(BuildContext context) {
+    final config = controller.downloaderConfig.value;
+    var dpLocale = DevicePreview.locale(context);
+    if (Get.locale != dpLocale) {
+      Future.delayed(
+        Duration(milliseconds: 10),
+        () {
+          Get.updateLocale(dpLocale!);
+        },
+      );
+    }
+    return GetMaterialApp.router(
+      useInheritedMediaQuery: true,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
+      debugShowCheckedModeBanner: false,
+      theme: GopeedTheme.light,
+      darkTheme: GopeedTheme.dark,
+      themeMode: ThemeMode.values.byName(config.extra.themeMode),
+      translations: messages,
+      //locale: toLocale(config.extra.locale),
+      fallbackLocale: fallbackLocale,
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: messages.keys.keys.map((e) => toLocale(e)).toList(),
+      getPages: Routes.routes,
+    );
+  }
+----
+
+== Add a setting page to change locale
+
+https://github.com/jackliusr/gopeed/blob/main/ui/flutter/lib/pages/setting/setting_view.dart#L216[working example]
+
+code excerpt: 
+
+[source, dart]
+----
+Get.updateLocale(dpLocale!);
+----
+
