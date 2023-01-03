@@ -165,6 +165,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2022/06/create-another-user-and-grant-proper-permissions-in-aws-rds-mysql/" class="link black dim">
+        Create another user and grant proper permissions in aws rds mysql
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      When I tried to create an user for application instead of giving out the master user and its password. I got &#34;Error Code: 1045. Access denied for user &#39;mysqladmin&#39;@&#39;%&#39; (using password: YES)&#34; when I run &#34;GRANT ALL PRIVILEGES ON demodb.* TO &#39;appadmin&#39;@&#39;%&#39;;&#34;.
+ I tried the method in How do I create another master user for my Amazon RDS DB instance that is running MySQL?, it is for creating another master user with more permissions than an app db user.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2022/06/istio-virtual-service-with-tls-connection-reset-by-peer/" class="link black dim">
         istio virtual service with tls - Connection reset by peer
       </a>
@@ -305,26 +321,6 @@ if (!doNotTrack) {
 </div>
 </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/05/projected-volumes-in-argo-workflow/" class="link black dim">
-        projected volumes in argo-workflow
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Yesterday I added gitconfig volume and mounted to /root. However today the logs of the workflow shows netrc is mounted to /root as well. They are conflicted. Kubernetes supports projected volume which supports following types. my netrc and gitconfig are in the list.
-   secret
-  downwardAPI
-  configMap
-  serviceAccountToken
-   I made the small tweak to hello world sample workflow. Here is the my demo workflow with projected volumes.
-    </div>
-  </div>
-</div>
-</div>
-      
     </section>
     <ul class="pagination pagination-default">
       <li class="page-item">
@@ -360,7 +356,7 @@ if (!doNotTrack) {
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jackliusr.github.io" >
-    &copy;  My learning and diary 2022 
+    &copy;  My learning and diary 2023 
   </a>
     <div>
 

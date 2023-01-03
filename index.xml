@@ -6,7 +6,17 @@
     <description>Recent content on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 31 Dec 2022 12:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Jan 2023 12:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>working solution: locale change using device_preview and GetMaterialApp.router</title>
+      <link>https://jackliusr.github.io/posts/2023/01/working-solution-locale-change-using-device_preview-and-getmaterialapp.router/</link>
+      <pubDate>Tue, 03 Jan 2023 12:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/01/working-solution-locale-change-using-device_preview-and-getmaterialapp.router/</guid>
+      <description>I can make it works when using device_preview and getx GetMaterialApp. GetMaterialApp can perfectly works with device_preview on many things such as size, orientation etc. GetMaterialApp.router is not the case. I found that locale changes in device_preview can’t propagate to GetMaterialApp.router.
+ I raised a issue, however getx has a bad reputation on fixing issues. I can’t wait so long and I sought other options. Things I tried was to use GetMaterialApp, however always to get several errors.</description>
+    </item>
+    
     <item>
       <title>Terraform advantages over cloudformation or ARM tempaltes</title>
       <link>https://jackliusr.github.io/posts/2022/12/terraform-advantages-over-cloudformation-or-arm-tempaltes/</link>
