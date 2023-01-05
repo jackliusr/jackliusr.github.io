@@ -1,0 +1,45 @@
+---
+title: "Lessons learnt after two years usage of cert-manager"
+date: 2023-01-05T12:01:10+08:00
+categories:
+- tech
+tags:
+- cert-manager
+- kubernetes
+- ACME
+- HTTP01
+- DNS01
+---
+
+Yesterday I spent one or two hours to resolve a pending order issue. I encountered the issue before when I configured cert-manager with ACME. However after a short while detour to flutter(ios,android) development, I couldn't quickly locate the root causes. This made me think that it is better off to note down the lessons I leant here. 
+
+
+== DNS01 vs HTTP01
+
+HTTP01 is quite easy to setup for one domain name. it is better to use DNS01 for many subdomains and their certificates.
+
+== Troubeshooting
+
+Troubeshooting in the cert-manager site are useful for cases mentioned in the site. There are several cases not mentioned in the site. Here I list cases I encountered which I couln't find in cert-manager site.
+
+=== Pending orders without challenges generated.
+
+. make sure the domain names and issuer/cluster issuer references are correct
+. Does Corresponding issuer/cluster issuer include a resolver which include the domain names? 
++
+[source, bash]
+----
+kubectl logs  -l app.kubernetes.io/component=controller,app.kubernetes.io/instance=cert-manager | grep 'no configured challenge solvers can be used for this challenge'
+----
+. Is webhook correctly configured in issuer/cluster issuer?
+. webhook pod can be accessible from api server ? : api server logs or events
+. Does webhook work? : log check and events
+
+=== Challenges and HTTP01
+
+Do configure DNS first, so ACME/Let's encrypt can resolve to the host to present challenges
+
+== References: 
+. https://cert-manager.io/docs/troubleshooting/
+. https://cert-manager.io/docs/troubleshooting/acme/
+. https://cert-manager.io/docs/troubleshooting/webhook/
