@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>etcd on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/etcd/</link>
+    <description>Recent content in etcd on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Jan 2023 12:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/etcd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Playbook: etcd debugging</title>
+      <link>https://jackliusr.github.io/posts/2023/01/playbook-etcd-debugging/</link>
+      <pubDate>Mon, 09 Jan 2023 12:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/01/playbook-etcd-debugging/</guid>
+      <description>etcd debugging flowchart, copy the flowchat from &amp;ldquo;Stories from the Playbook&amp;rdquo; for easy reference and put here to make it searchable in my site.
+flowchart TD oversized{MVCC DB oversized}--|Yes|logIntoContainer(log into container) logIntoContainer -- checkSize(check size of db) checkSize -- compatOrDefrag(compat or defrag) compatOrDefrag -- resizeDisk(resize machine disk) resizeDisk -- triggerRepair(Trigger repair) triggerRepair -- END oversized --|No|crashLoop{crash looping} crashLoop --|Yes| moreTime2Init(allow etc more time to init) moreTime2Init -- upgradeVersion(upgrade version) upgradeVersion -- resizeDisk crashLoop --|No| leaderElectionIssue{Leader Election Issue?</description>
+    </item>
+    
+  </channel>
+</rss>
