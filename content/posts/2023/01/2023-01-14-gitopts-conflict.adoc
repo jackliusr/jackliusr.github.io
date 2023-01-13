@@ -9,7 +9,7 @@ tags:
 - conflict
 ---
 
-Summary: 
+Summary: Reduce the chance of resource conflict in gitops by reducing the time window of using shared resource files
  
 My initial journal with gitops was setup my gitops cicd pipeline following the flux tutorial way. I immediately found out the limitation of flux at that time and sought alternative solutions. After comparing  different solutions, https://jackliusr.github.io/posts/2022/06/reflection-on-my-choice-of-cicd-in-the-past/[I settled down argo-cd].
 
@@ -24,7 +24,8 @@ Today my colleage https://www.linkedin.com/in/larrylaisg/[Larry Lai] fixed the i
 . commit and push changes to config repositry
 . push images to image repositry 
 
-The adjusted version is as following: 
+The adjusted version is as following:
+
 . checkout code repositry
 . change to code directory and build image: take several minutes
 . checkout config repositry
