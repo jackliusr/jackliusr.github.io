@@ -1,0 +1,44 @@
+---
+title: "Reduce the chance of resource conflict in gitops"
+date: 2023-01-13T22:01:10+08:00
+categories:
+- tech
+tags:
+- gitops
+- concurrency-control
+- conflict
+---
+
+Summary: 
+ 
+My initial journal with gitops was setup my gitops cicd pipeline following the flux tutorial way. I immediately found out the limitation of flux at that time and sought alternative solutions. After comparing  different solutions, https://jackliusr.github.io/posts/2022/06/reflection-on-my-choice-of-cicd-in-the-past/[I settled down argo-cd].
+
+After a short while usage of argo-cd, I moved  configration yamls and kustomization.yaml files into another repository following https://argo-cd.readthedocs.io/en/stable/user-guide/best_practices/[the best practice of gitops--seperate repository for configuration]. Things got annoying as we got many failed pushes due to merging conflict. My quick solution was to reduce the number of https://github.com/actions/actions-runner-controller/tree/master[action runner] to one to resolve the issue. The solution is not perfect, it will slow  down the building process. 
+
+Today my colleage https://www.linkedin.com/in/larrylaisg/[Larry Lai] fixed the issue. After a talk with him, I figured out the thing I ignored in the past: reduce the chance of conflict by reducing the length of usage window. It resonated with my past experience when I worked on the https://www.stengg.com/en/newsroom/news-releases/st-engineering-s-smart-city-business-gains-momentum-with-new-international-project-wins/[SCADA] product. The problematic github action tasks is something like the following: 
+
+. checkout code repositry
+. checkout config repositry
+. change to code directory and build image: take several minutes
+. change to config directory and change image tags: kustomize edit set image
+. commit and push changes to config repositry
+. push images to image repositry 
+
+The adjusted version is as following: 
+. checkout code repositry
+. change to code directory and build image: take several minutes
+. checkout config repositry
+. change to config directory and change image tags: kustomize edit set image
+. commit and push changes to config repositry
+. push images to image repositry
+
+
+Thinking deeper, I found it also resonates with my past experiences in database domain: fine granular resource locks such as table, row etc. other dimension beside time.
+
+
+I didn't think I would write this down as I thought it was only a simple issue. After furthur thinking, I saw the connections among other things such as granular resource locks in database, concurrent control in languages or operating sytems. That time, I thought it worth to write it down.
+
+
+== Refernece
+* https://github.com/actions/actions-runner-controller/tree/master
+* https://argo-cd.readthedocs.io/en/stable/user-guide/best_practices/
