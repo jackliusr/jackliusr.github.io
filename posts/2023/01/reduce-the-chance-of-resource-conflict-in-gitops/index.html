@@ -6,9 +6,9 @@
     
     <title>Reduce the chance of resource conflict in gitops | My learning and diary</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Summary:
+    <meta name="description" content="Summary: Reduce the chance of resource conflict in gitops by reducing the time window of using shared resource files
  My initial journal with gitops was setup my gitops cicd pipeline following the flux tutorial way. I immediately found out the limitation of flux at that time and sought alternative solutions. After comparing different solutions, I settled down argo-cd.
- After a short while usage of argo-cd, I moved configration yamls and kustomization.yaml files into another repository following the best practice of gitops—​seperate repository for configuration. Things got annoying as we got many failed pushes due to merging conflict.">
+ After a short while usage of argo-cd, I moved configration yamls and kustomization.">
     <meta name="generator" content="Hugo 0.99.1" />
     
     
@@ -29,25 +29,25 @@
     
     
     <meta property="og:title" content="Reduce the chance of resource conflict in gitops" />
-<meta property="og:description" content="Summary:
+<meta property="og:description" content="Summary: Reduce the chance of resource conflict in gitops by reducing the time window of using shared resource files
  My initial journal with gitops was setup my gitops cicd pipeline following the flux tutorial way. I immediately found out the limitation of flux at that time and sought alternative solutions. After comparing different solutions, I settled down argo-cd.
- After a short while usage of argo-cd, I moved configration yamls and kustomization.yaml files into another repository following the best practice of gitops—​seperate repository for configuration. Things got annoying as we got many failed pushes due to merging conflict." />
+ After a short while usage of argo-cd, I moved configration yamls and kustomization." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2023/01/reduce-the-chance-of-resource-conflict-in-gitops/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-01-13T22:01:10+08:00" />
-<meta property="article:modified_time" content="2023-01-13T23:10:39+08:00" />
+<meta property="article:modified_time" content="2023-01-14T00:21:41+08:00" />
 
 <meta itemprop="name" content="Reduce the chance of resource conflict in gitops">
-<meta itemprop="description" content="Summary:
+<meta itemprop="description" content="Summary: Reduce the chance of resource conflict in gitops by reducing the time window of using shared resource files
  My initial journal with gitops was setup my gitops cicd pipeline following the flux tutorial way. I immediately found out the limitation of flux at that time and sought alternative solutions. After comparing different solutions, I settled down argo-cd.
- After a short while usage of argo-cd, I moved configration yamls and kustomization.yaml files into another repository following the best practice of gitops—​seperate repository for configuration. Things got annoying as we got many failed pushes due to merging conflict."><meta itemprop="datePublished" content="2023-01-13T22:01:10+08:00" />
-<meta itemprop="dateModified" content="2023-01-13T23:10:39+08:00" />
-<meta itemprop="wordCount" content="339">
+ After a short while usage of argo-cd, I moved configration yamls and kustomization."><meta itemprop="datePublished" content="2023-01-13T22:01:10+08:00" />
+<meta itemprop="dateModified" content="2023-01-14T00:21:41+08:00" />
+<meta itemprop="wordCount" content="351">
 <meta itemprop="keywords" content="gitops,concurrency-control,conflict," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reduce the chance of resource conflict in gitops"/>
-<meta name="twitter:description" content="Summary:
+<meta name="twitter:description" content="Summary: Reduce the chance of resource conflict in gitops by reducing the time window of using shared resource files
  My initial journal with gitops was setup my gitops cicd pipeline following the flux tutorial way. I immediately found out the limitation of flux at that time and sought alternative solutions. After comparing different solutions, I settled down argo-cd.
- After a short while usage of argo-cd, I moved configration yamls and kustomization.yaml files into another repository following the best practice of gitops—​seperate repository for configuration. Things got annoying as we got many failed pushes due to merging conflict."/>
+ After a short while usage of argo-cd, I moved configration yamls and kustomization."/>
 
       
 <script type="application/javascript">
@@ -207,11 +207,11 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 2 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 339 words</span>
+        <span class="f6 mv4 dib tracked"> - 351 words</span>
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
-<p>Summary:</p>
+<p>Summary: Reduce the chance of resource conflict in gitops by reducing the time window of using shared resource files</p>
 </div>
 <div class="paragraph">
 <p>My initial journal with gitops was setup my gitops cicd pipeline following the flux tutorial way. I immediately found out the limitation of flux at that time and sought alternative solutions. After comparing  different solutions, <a href="https://jackliusr.github.io/posts/2022/06/reflection-on-my-choice-of-cicd-in-the-past/">I settled down argo-cd</a>.</p>
@@ -245,13 +245,29 @@ if (!doNotTrack) {
 </ol>
 </div>
 <div class="paragraph">
-<p>The adjusted version is as following:
-. checkout code repositry
-. change to code directory and build image: take several minutes
-. checkout config repositry
-. change to config directory and change image tags: kustomize edit set image
-. commit and push changes to config repositry
-. push images to image repositry</p>
+<p>The adjusted version is as following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>checkout code repositry</p>
+</li>
+<li>
+<p>change to code directory and build image: take several minutes</p>
+</li>
+<li>
+<p>checkout config repositry</p>
+</li>
+<li>
+<p>change to config directory and change image tags: kustomize edit set image</p>
+</li>
+<li>
+<p>commit and push changes to config repositry</p>
+</li>
+<li>
+<p>push images to image repositry</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p>Thinking deeper, I found it also resonates with my past experiences in database domain: fine granular resource locks such as table, row etc. other dimension beside time.</p>
@@ -367,6 +383,6 @@ if (!doNotTrack) {
 
 
 
-  <p style="font-size: small; color: grey;">Page version: d2acb9d39fb30b196d01c0b83e082d3f491ca7a6 2023-01-13</p>
+  <p style="font-size: small; color: grey;">Page version: c5d44d35d8280772bd1c66c26a9d7f810d233a3b 2023-01-14</p>
   </body>
 </html>

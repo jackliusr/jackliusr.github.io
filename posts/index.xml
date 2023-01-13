@@ -13,9 +13,9 @@
       <pubDate>Fri, 13 Jan 2023 22:01:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/posts/2023/01/reduce-the-chance-of-resource-conflict-in-gitops/</guid>
-      <description>Summary:
+      <description>Summary: Reduce the chance of resource conflict in gitops by reducing the time window of using shared resource files
  My initial journal with gitops was setup my gitops cicd pipeline following the flux tutorial way. I immediately found out the limitation of flux at that time and sought alternative solutions. After comparing different solutions, I settled down argo-cd.
- After a short while usage of argo-cd, I moved configration yamls and kustomization.yaml files into another repository following the best practice of gitops—​seperate repository for configuration. Things got annoying as we got many failed pushes due to merging conflict.</description>
+ After a short while usage of argo-cd, I moved configration yamls and kustomization.</description>
     </item>
     
     <item>
