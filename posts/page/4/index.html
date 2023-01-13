@@ -165,6 +165,23 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2022/06/reflection-on-my-choice-of-cicd-in-the-past/" class="link black dim">
+        Reflection on my choice of cicd in the past
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      TLDR: my CICD choice: argo-cd and argo-workflow
+Since I chose argocd and github action as our CICD pipeline two years ago, I rarely thought about other choices and the reason I made the choices. Recently I leant from several sources that jenkins is still widely used, it arouse my interest on this subject again. I reconsidered my choice and layed out the reasons here for my future references.
+I didn&rsquo;t have a good impression with java in my past java projects.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2022/06/istio-troubleshooting-in-new-scenario-that-one-service-to-expose-into-multiple-domains-and-multiple-ingress-gateways/" class="link black dim">
         Istio troubleshooting in new scenario that one service to expose into multiple domains and multiple ingress gateways
       </a>
@@ -301,21 +318,6 @@ if (!doNotTrack) {
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       I did resize volume of kubernetes in the past, however I encountered an interesting issue when I did the resizing in different way.
  According to doc, I should only change the requested size in pvc. Today I changed the size of pv first, then pvc. Here was the interesting thing: all things of pv and pvc are fine, but the size of the file system in pod was not changed.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/05/get-back-my-missed-keypair-of-eks/" class="link black dim">
-        Get back my missed keypair of EKS
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Today I needed to scale one of my kubernetes clusterss. Those keys are not in my new laptop since I used Mac Air M1. I didn’t see the increase of nodes several minutes after I run the eksctl scale command. I logged into aws console and found there were several &#34;Failed&#34; messages in activity history of the autoscaling group. All the failed messages shown &#34;Launching a new EC2 instance. Status Reason: The aaaa-nodegroup-ng-1-67:8e:b8:8e:33:83:93:68 key pair does not exist.
     </div>
   </div>
 </div>

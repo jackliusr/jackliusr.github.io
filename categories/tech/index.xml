@@ -6,7 +6,18 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Jan 2023 12:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Jan 2023 22:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reduce the chance of resource conflict in gitops</title>
+      <link>https://jackliusr.github.io/posts/2023/01/reduce-the-chance-of-resource-conflict-in-gitops/</link>
+      <pubDate>Fri, 13 Jan 2023 22:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/01/reduce-the-chance-of-resource-conflict-in-gitops/</guid>
+      <description>Summary:
+ My initial journal with gitops was setup my gitops cicd pipeline following the flux tutorial way. I immediately found out the limitation of flux at that time and sought alternative solutions. After comparing different solutions, I settled down argo-cd.
+ After a short while usage of argo-cd, I moved configration yamls and kustomization.yaml files into another repository following the best practice of gitops—​seperate repository for configuration. Things got annoying as we got many failed pushes due to merging conflict.</description>
+    </item>
+    
     <item>
       <title>Playbook: etcd debugging</title>
       <link>https://jackliusr.github.io/posts/2023/01/playbook-etcd-debugging/</link>

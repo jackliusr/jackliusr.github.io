@@ -192,6 +192,32 @@ if (!doNotTrack) {
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/2023/01/reduce-the-chance-of-resource-conflict-in-gitops/" class="color-inherit dim link">
+            Reduce the chance of resource conflict in gitops
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Summary:
+ My initial journal with gitops was setup my gitops cicd pipeline following the flux tutorial way. I immediately found out the limitation of flux at that time and sought alternative solutions. After comparing different solutions, I settled down argo-cd.
+ After a short while usage of argo-cd, I moved configration yamls and kustomization.yaml files into another repository following the best practice of gitops—​seperate repository for configuration. Things got annoying as we got many failed pushes due to merging conflict.
+        </div>
+          <a href="/posts/2023/01/reduce-the-chance-of-resource-conflict-in-gitops/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/2023/01/playbook-etcd-debugging/" class="color-inherit dim link">
             Playbook: etcd debugging
             </a>
@@ -234,37 +260,18 @@ flowchart TD oversized{MVCC DB oversized}--|Yes|logIntoContainer(log into contai
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2023/01/working-solution-locale-change-using-device_preview-and-getmaterialapp.router/" class="color-inherit dim link">
-            working solution: locale change using device_preview and GetMaterialApp.router
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          I can make it works when using device_preview and getx GetMaterialApp. GetMaterialApp can perfectly works with device_preview on many things such as size, orientation etc. GetMaterialApp.router is not the case. I found that locale changes in device_preview can’t propagate to GetMaterialApp.router.
- I raised a issue, however getx has a bad reputation on fixing issues. I can’t wait so long and I sought other options. Things I tried was to use GetMaterialApp, however always to get several errors.
-        </div>
-          <a href="/posts/2023/01/working-solution-locale-change-using-device_preview-and-getmaterialapp.router/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/2023/01/working-solution-locale-change-using-device_preview-and-getmaterialapp.router/" class="link black dim">
+              working solution: locale change using device_preview and GetMaterialApp.router
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2022/12/terraform-advantages-over-cloudformation-or-arm-tempaltes/" class="link black dim">
@@ -281,12 +288,6 @@ flowchart TD oversized{MVCC DB oversized}--|Yes|logIntoContainer(log into contai
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2022/12/spring-devtools-in-action/" class="link black dim">
               Spring devtools in action
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/2022/12/some-packages-cannot-be-resolved-in-eclipse-with-gradle-projects/" class="link black dim">
-              some packages cannot be resolved in eclipse with gradle projects
             </a>
           </h2>
         
