@@ -1,0 +1,24 @@
+---
+title: "Leadership book reading 1 "
+date: 2023-01-16T22:01:10+08:00
+categories:
+- leadership
+tags:
+- leadership
+---
+
+
+Long ago, I wanted to learn something about technology leaderships, however I didn't know how to do it.  One or two months ago I found Will Larson's book https://www.amazon.com/Elegant-Puzzle-Systems-Engineering-Management/dp/1732265186["An Elegant Puzzle: Systems of Engineering Management"] which recommended by others and today I found another books https://waydev.co/wp-content/uploads/2022/05/Best-Books-for-Leaders-in-Tech_-the-Waydev-Selection_compressed.pdf[Best Books for Leaders in Tech: theWaydev Selection]. It's time to put the ideas into action since I already completed a big milestone of learning English. As one of my new year resolutions, I will read all the books in the https://waydev.co/wp-content/uploads/2022/05/Best-Books-for-Leaders-in-Tech_-the-Waydev-Selection_compressed.pdf[Best Books for Leaders in Tech: theWaydev Selection] and practice them.
+
+Milestone:  {{< imgur id="3yzGKDb" >}}
+
+.  Data-Driven Engineering Leadership in 2022
+. Accelerate: The Science of Lean Software and DevOps
+. The Manager's Path: A Guide for Tech Leaders Navigating Growth and Change
+. The Principles of Product Development Flow: Second Generation Lean Product Development
+. An Elegant Puzzle: Systems of Engineering Management
+. Staff Engineer: Leadership Beyond the Management Track
+. Managing Humans: Biting and Humorous Tales of a Software Engineering Manager
+. Software Engineering at Google: Lessons Learned from Programming Over Time
+. The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win
+. Team Topologies: Organizing Business and Technology Teams for Fast Flow
