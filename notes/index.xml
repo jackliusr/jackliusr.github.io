@@ -18,6 +18,18 @@
     </item>
     
     <item>
+      <title>FaceID using customized built postgresql</title>
+      <link>https://jackliusr.github.io/notes/face-identication-postgresql/</link>
+      <pubDate>Fri, 30 Sep 2022 20:40:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/notes/face-identication-postgresql/</guid>
+      <description>One of my past projects is based neural network in 2020. The solution is quite simple:
+   put the feature vectors into postgresql database
+  create distanced based index
+   I adopted the model and algrithm from face_recognition, and my team trained on sample faces from our internal system to improve the accuracy to reduce the human involvement and save costs. During development, we found that there is a limit of postgres: CUBE_MAX_DIM, my team customize the build of postgreql to work around the limit.</description>
+    </item>
+    
+    <item>
       <title>How to build strong technology career?</title>
       <link>https://jackliusr.github.io/notes/how-to-build-strong-tech-career/</link>
       <pubDate>Fri, 30 Sep 2022 20:40:00 +0800</pubDate>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>deep learning on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/deep-learning/</link>
+    <description>Recent content in deep learning on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 30 Sep 2022 20:40:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FaceID using customized built postgresql</title>
+      <link>https://jackliusr.github.io/notes/face-identication-postgresql/</link>
+      <pubDate>Fri, 30 Sep 2022 20:40:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/notes/face-identication-postgresql/</guid>
+      <description>One of my past projects is based neural network in 2020. The solution is quite simple:
+   put the feature vectors into postgresql database
+  create distanced based index
+   I adopted the model and algrithm from face_recognition, and my team trained on sample faces from our internal system to improve the accuracy to reduce the human involvement and save costs. During development, we found that there is a limit of postgres: CUBE_MAX_DIM, my team customize the build of postgreql to work around the limit.</description>
+    </item>
+    
+  </channel>
+</rss>
