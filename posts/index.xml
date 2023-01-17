@@ -6,7 +6,16 @@
     <description>Recent content in Posts on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Jan 2023 22:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Jan 2023 22:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cloud migrations, cloud differences</title>
+      <link>https://jackliusr.github.io/posts/2023/01/cloud-migrations-cloud-differences/</link>
+      <pubDate>Tue, 17 Jan 2023 22:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/01/cloud-migrations-cloud-differences/</guid>
+      <description>AWS has almost established themselves as the de facto public cloud provider for a lot of businesses, other providers always try to provide similiar services and similar APIs to attract existing AWS customers to migrate to their platform. Each following provider provides similar comparison table comparing to AWS. Those comparison can give one a quick start to adopt their services without major issues. Even those following providers provide migration tools for migrating from aws to their platform.</description>
+    </item>
+    
     <item>
       <title>Leadership book reading 1 </title>
       <link>https://jackliusr.github.io/posts/2023/01/leadership-book-reading-1/</link>
