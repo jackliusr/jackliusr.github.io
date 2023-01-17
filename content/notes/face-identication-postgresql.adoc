@@ -1,0 +1,21 @@
+---
+title: FaceID using customized built postgresql
+date: 2022-09-30T20:40:00+08:00
+categories:
+- tech
+tags:
+- postgresql
+- deep learning
+- neural network
+- project
+---
+
+One of my past projects is based neural network in 2020. The solution is quite simple: 
+
+* put the feature vectors into postgresql database
+* create distanced based index
+
+I adopted the model and algrithm from https://github.com/ageitgey/face_recognition[face_recognition],  and my team trained on sample faces from our internal system to improve the accuracy to reduce the human involvement and save costs. During development, we found that there is a limit of postgres: CUBE_MAX_DIM, my team customize the build of postgreql to work around the limit. The idea is copied from a postgresql sharing in a meeting. The file is a pdf file, today I can't find the file. I will update this article sometime later if I find the pdf.
+
+Today I wanted to write my past projects one by one and found the  https://www.rathishkumar.in/2021/03/face-recognition-euclidean-distance-sql.html[article]. 
+
