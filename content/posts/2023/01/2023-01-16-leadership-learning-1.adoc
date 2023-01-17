@@ -22,3 +22,4 @@ Milestone:  {{< imgur id="3yzGKDb" >}}
 . Software Engineering at Google: Lessons Learned from Programming Over Time
 . The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win
 . Team Topologies: Organizing Business and Technology Teams for Fast Flow
+. 97 Things Every Engineering Manager Should Know

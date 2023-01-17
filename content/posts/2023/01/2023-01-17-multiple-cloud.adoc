@@ -1,0 +1,15 @@
+---
+title: "cloud migrations, cloud differences"
+date: 2023-01-17T22:01:10+08:00
+categories:
+- tech
+tags:
+- cloud
+---
+
+https://www.crn.com/news/cloud/2nd-watch-ceo-5-positive-aws-trends-heading-into-2023[AWS has almost established themselves as the de facto public cloud provider for a lot of businesses], other providers always try to provide similiar services and similar APIs to attract existing AWS customers to migrate to their platform. Each following provider provides similar comparison table comparing to AWS. Those comparison can give one a quick start to adopt their services without major issues. Even those following providers provide migration tools for migrating from aws to their platform. 
+
+In my solutions, I didn't use too many vender specific services, and I just run several open source versions in my kubernetes clusters. This way I have migrated our system from aws to aliyun, from aliyun to aws, from aws to azure. I didn't encountered major issues and all the migrations were quite smoothly, I only needed to fix several small issues in one or two days.
+
+
+I wrote my skills of AWS, azure, and aliyun in my résumé and wanted to justify that.  This is my explanation to that.

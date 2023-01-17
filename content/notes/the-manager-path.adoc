@@ -1,0 +1,13 @@
+---
+title: "The Manager's Path: A Guide for Tech Leaders Navigating Growth and Change"
+date: 2023-01-17T11:40:00+08:00
+categories:
+- management
+tags:
+- leadership
+---
+= The Manager's Path: A Guide for Tech Leaders Navigating Growth and Change
+:toc:
+
+== Chapter 1
+1:1 meeting, every few weeks with direct/line manager
