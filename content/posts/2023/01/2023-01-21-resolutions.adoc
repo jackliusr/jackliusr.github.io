@@ -1,0 +1,39 @@
+---
+title: "2023 resolution"
+date: 2023-01-21T22:01:10+08:00
+categories:
+- life
+tags:
+- resolution
+---
+
+Today it is Chinese New Year's Eve of 2023. I like to make my new resolutions in Chinese New Year. Reflecting on the past year will help me to make better resolution. Even I made decision to learn and practice several things, however I didn't write down last year. It was not helpful for me to make reflection based past experiences.
+
+My resolution of 2022 were as following: 
+
+. improve  my English communication  to fluent level.
+. master kubernetes related technologies.
+. master cloud-native architecture
+. master AWS solution
+
+I completed item 2 (kubernetes) and item 3.  I didn't complete Item 1 and item due to other reasons.
+
+== Improve  my English communication  to fluent level
+
+It was harder then expected. How to think in English? How to use appropriate words or expressions to express ideas regarding to word collocations?  I thought it will take very long to archieve this goal. I will put it as one of my long term goals. 
+
+At the end of 2022, I still struggled to how to improve my English until I watched to TED videos about English communications. It is okay to move on and put it as one of long term goals.
+
+{{< youtube 9dum2Z4B3js >}}
+
+== master AWS solution
+
+Due to work arrangement and priorities, I put other 3 items before this item. I didn't have enought time to complete my AWS SAP. I will complete it this year.
+
+
+My resolution of 2023 is as following: 
+. AWS SAP
+. Azure Solution Architect
+. CKA and CKS
+. PMP
+. https://jackliusr.github.io/posts/2023/01/leadership-book-reading-1/[Reading and practice leadership]
