@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>career on My learning and diary</title>
-    <link>https://jackliusr.github.io/categories/career/</link>
-    <description>Recent content in career on My learning and diary</description>
+    <title>planning on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/planning/</link>
+    <description>Recent content in planning on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Jan 2023 22:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/career/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Jan 2023 22:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/planning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2023 SWOT Analysis</title>
       <link>https://jackliusr.github.io/posts/2023/01/2023-swot-analysis/</link>
@@ -15,15 +15,6 @@
       <guid>https://jackliusr.github.io/posts/2023/01/2023-swot-analysis/</guid>
       <description>Once I read an article about how to apply SWOT Analysis for personal career and strategies to in career development. The article most likely is Personal SWOT Analysis as I read a lot of articles from mindtools.com.
  When I read the article, I also found several strategies how to convert my weakness to strengths. I finally converted one of my weakness — English to one of my strengths in the past 5 years by keeping learning and practicing English.</description>
-    </item>
-    
-    <item>
-      <title>What can you bring to the company?</title>
-      <link>https://jackliusr.github.io/notes/what-can-you-bring-to-the-company/</link>
-      <pubDate>Wed, 23 Feb 2022 22:30:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/notes/what-can-you-bring-to-the-company/</guid>
-      <description></description>
     </item>
     
   </channel>
