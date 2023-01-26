@@ -14,3 +14,34 @@ When I read the article, I also found several strategies how to convert my weakn
 
 Today I should do the analysis for my future improvement.
 
+[cols="1,1"]
+|===
+|Strengths 
+|Weaknesses
+
+a| 
+
+* Technical skills(c++, c#, java, reactjs, angular, flutter, mobile, devops, sre, platform engineering, aws, azure, kubernetes, gitops, 12factors, immutable infrastructure, business intelligence, business process, ERP frameworks, spring boot, oracle, postgresql, mssql etc)
+* bilingual(English, Chinese)
+* business domains ( finanical, ERP, accounting, core-banking, indistrial control, warehouse management, logistics)
+* exposure to team managements, project manages
+* solution architecting
+
+a|
+
+* PMP (Scrum, PMP)
+* Team management
+* EA
+
+|Opportunities 
+|Threats
+
+a|
+* keep learning new things using Gartner Hype Cycle for Software Engineering as guidelines 
+* convert existing weekness to strengths (speed, effective, visible deliveries)
+
+a|
+* age
+* late conversion
+
+|===
