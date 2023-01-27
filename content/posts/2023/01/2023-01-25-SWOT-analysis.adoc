@@ -14,7 +14,7 @@ When I read the article, I also found several strategies how to convert my weakn
 
 Today I should do the analysis for my future improvement.
 
-[cols="1,1"]
+[cols="1,1",frame=all, grid=all]
 |===
 |Strengths 
 |Weaknesses
