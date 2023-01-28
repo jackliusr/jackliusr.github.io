@@ -1,0 +1,16 @@
+---
+title: "How many years of experience do I have on aws services now?"
+date: 2023-01-28T10:01:10+08:00
+categories:
+- tech
+tags:
+- aws
+---
+
+Usually I tell others that I have about 5 years experience of aws services. Today I want to know more about how many years experience I have. I logged in my aws account and tried to find my account creation date. There is no such information in account page. I was so eager to find the information and searched for alternative way to get that information. https://stackoverflow.com/a/58426683/1101691[The easiest way] is good one, however I already deleted the email. https://stackoverflow.com/a/56888973/1101691[The closed one] is a good option for me now. 
+
+Here is my earliest billing month Feb 2013. Now I almost have 10 years experences of using aws services.
+{{< imgur id="DqrKG4C" >}}
+
+
+In the early days, there was no such thing as terraform etc. I usally manually practiced several core aws services and deleted those resources after practices. 
