@@ -7,14 +7,151 @@ tags:
 - leadership
 ---
 = The Manager's Path: A Guide for Tech Leaders Navigating Growth and Change
-:toc:
+
 
 == Chapter 1: Management 101
 
 . what to expect from a manager
 .. 1:1 meeting, every few weeks with direct/line manager
-.. feedback and workspace guidance
++
+----
+two purposes:
+1. create human connections
+2. status update: regular
+----
+.. feedback and workspace guidance: frequest, fast, many wasy
++
+----
+quick feedbackup loop is more efficient
+public praise, private critism
+feedback type: code, presentation
+     code, content, layout, style ...
+
+role
+strech projects:
+----
 .. Training and career growth
++
+----
+you are responsible for the most part, for figuring out what types of training you want.
+
+CTO: strong communication skills, project management skills, and product sense in addition to good technical sense.
+
+create and build strong peer networks.
+----
 .  how to be managed
++
+----
+not exactly same as managing up. 
+
+Developing a sense of ownership and authority for your own experiencees at work, not relying on your manager to set entire tone for your relationship
+----
 .. spending time thinking what do you want
-. Assess your own experiences
+.. you are responsible for yourself
+.. give your manager a break
++
+----
+bring solutions, not problems
+----
+.. choose your manager wisely
+. Assess your own experiences: questionnaire
+
+
+== Chapter 2: Mentoring
+
+. The importance of mentoring to junior team members. 
+. Being a mentor
++
+----
+an opportunity to learn in a fairly safe way about the job of management and the feeling responsible for another person. 
+
+----
+.. mentor an intern
+.. listen carefully
++
+-----
+basic skill: really, full-hearted listening
+
+lesson: people are not good at saying precisely what they mean in a way that others can exactly understand
+
+say anything complex a few times, in different ways
+whiteboard, draw diagrams
+-----
+.. clear communicate
++
+-----
+mgmt skill: communicate what needs to happen
+-----
+.. calibrate your response
++
+----
+mgmt skill: adjusting to the intern's responses
+cheching progress once a week.
+----
+. mentering a new hire
++
+----
+onboarding process and document
+help this person adjust to life in the company effectly, 
+build you and his/her network of contacts in the company.
+introduce the new hire around: formal and informal, buddy several days
+
+opportunity to see the world of your company through fresh eyes
+
+networking
+
+----
+. Technical or Career mentoring
+.. when you are a mentor
++
+----
+tell your mentee what you expect from him
+----
+.. when you are a mentee
+
+. good manager, bad manager: The alpa geek
++
+----
+practice the art teaching
+----
+. tips for the manager of a mentor
+. key takeaways for the mentor
+.. Be curious and open-minded
+.. listen and speak their language
+.. make connections
+. assessing your own experience
+
+== Chapter 3: Tech lead
+continue to write code, but with the added resposiblities of representing the group to management, vetting our plans for feature delivery, and dealing with a lot of the details of the project management process. 
+
+talking with tech leads: spent at least 30% of their time writing code with the team. 
+
+. all great tech leads know this weird trick
+.. the willingness to step away from the code and figure out how to balance you technical commitments with the work the whole team needs.
+.  Being a tech lead 101
+.. The main roles of a tech lead
+... system architect and business analyst
+... project planner
+... software developer and team leader
+. tech lead: a stepping stone for promotion to senior levels, without immediate and tangible rewards. 
+. managing projects
+. managing a project
+.. break down the work
+.. push through the details and the unknowns
+.. run the project and adjus the plan as you go
+.. use the insights gained in the planning process to manage requirements change
+.. revisit the details as you get close to completion
+. Decision point: stay on the technical track or become a manager
+.. imaged life of a senior individual contributor
+.. real life of a senior IC
+.. imaged life of a manager
+.. real life of a manager
+. good manager, bad manager: the process czar
+. how to be a great tech lead
+.. understand the architecture
+.. be a team player
+.. lead technical decisions
+.. communicate
+. assess your own experience
+
+== Chapter 4: Managing People
