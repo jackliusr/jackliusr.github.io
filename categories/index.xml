@@ -6,7 +6,16 @@
     <description>Recent content in Categories on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Jan 2023 22:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Jan 2023 10:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tech</title>
+      <link>https://jackliusr.github.io/categories/tech/</link>
+      <pubDate>Sat, 28 Jan 2023 10:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/categories/tech/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>career</title>
       <link>https://jackliusr.github.io/categories/career/</link>
@@ -22,15 +31,6 @@
       <pubDate>Sat, 21 Jan 2023 22:01:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/categories/life/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tech</title>
-      <link>https://jackliusr.github.io/categories/tech/</link>
-      <pubDate>Tue, 17 Jan 2023 22:01:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/categories/tech/</guid>
       <description></description>
     </item>
     
