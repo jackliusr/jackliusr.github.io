@@ -6,7 +6,20 @@
     <description>Recent content on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Jan 2023 10:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Jan 2023 12:40:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>books I read</title>
+      <link>https://jackliusr.github.io/books/</link>
+      <pubDate>Sun, 29 Jan 2023 12:40:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/books/</guid>
+      <description>Technology  Beginning Bazel: Building and Testing for Java, Go, and More
+     Management  The Manager’s Path: A Guide for Tech Leaders Navigating Growth and Change
+  How Google Works
+     Investment  The Little Book of Valuation: How to Value a Company, Pick a Stock and Profit 1st Edition
+  Investment Valuation: Tools and Techniques for Determining the Value of Any Asset</description>
+    </item>
+    
     <item>
       <title>How many years of experience do I have on aws services now?</title>
       <link>https://jackliusr.github.io/posts/2023/01/how-many-years-of-experience-do-i-have-on-aws-services-now/</link>
