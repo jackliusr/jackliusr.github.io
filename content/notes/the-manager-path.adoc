@@ -12,13 +12,10 @@ tags:
 == Chapter 1: Management 101
 
 . what to expect from a manager
-.. 1:1 meeting, every few weeks with direct/line manager
-+
-----
-two purposes:
-1. create human connections
-2. status update: regular
-----
+.. 1:1 meeting, every few weeks with direct/line manager; two purposes
+... create human connections
+... status update: regular
+
 .. feedback and workspace guidance: frequest, fast, many wasy
 
 ... quick feedbackup loop is more efficient
@@ -38,19 +35,12 @@ two purposes:
 ... create and build strong peer networks.
 
 .  how to be managed
-+
-----
-not exactly same as managing up. 
+.. not exactly same as managing up. 
 
-Developing a sense of ownership and authority for your own experiencees at work, not relying on your manager to set entire tone for your relationship
-----
+.. Developing a sense of ownership and authority for your own experiencees at work, not relying on your manager to set entire tone for your relationship
 .. spending time thinking what do you want
 .. you are responsible for yourself
-.. give your manager a break
-+
-----
-bring solutions, not problems
-----
+.. give your manager a break: bring solutions, not problems
 .. choose your manager wisely
 . Assess your own experiences: questionnaire
 
