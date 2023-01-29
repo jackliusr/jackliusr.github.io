@@ -20,25 +20,23 @@ two purposes:
 2. status update: regular
 ----
 .. feedback and workspace guidance: frequest, fast, many wasy
-+
-----
-quick feedbackup loop is more efficient
-public praise, private critism
-feedback type: code, presentation
-     code, content, layout, style ...
 
-role
-strech projects:
-----
+... quick feedbackup loop is more efficient
+... public praise, private critism
+... feedback type: code, presentation
+....     code, content, layout, style ...
+
+... role
+... strech projects:
+
 .. Training and career growth
-+
-----
-you are responsible for the most part, for figuring out what types of training you want.
 
-CTO: strong communication skills, project management skills, and product sense in addition to good technical sense.
+... you are responsible for the most part, for figuring out what types of training you want.
 
-create and build strong peer networks.
-----
+... CTO: strong communication skills, project management skills, and product sense in addition to good technical sense.
+
+... create and build strong peer networks.
+
 .  how to be managed
 +
 ----
@@ -60,60 +58,34 @@ bring solutions, not problems
 == Chapter 2: Mentoring
 
 . The importance of mentoring to junior team members. 
-. Being a mentor
-+
-----
-an opportunity to learn in a fairly safe way about the job of management and the feeling responsible for another person. 
-
-----
+. Being a mentor: an opportunity to learn in a fairly safe way about the job of management and the feeling responsible for another person. 
 .. mentor an intern
 .. listen carefully
-+
------
-basic skill: really, full-hearted listening
+... basic skill: really, full-hearted listening
+... lesson: people are not good at saying precisely what they mean in a way that others can exactly understand
+... say anything complex a few times, in different ways
+.. whiteboard, draw diagrams
 
-lesson: people are not good at saying precisely what they mean in a way that others can exactly understand
-
-say anything complex a few times, in different ways
-whiteboard, draw diagrams
------
 .. clear communicate
-+
------
-mgmt skill: communicate what needs to happen
------
+... mgmt skill: communicate what needs to happen
 .. calibrate your response
-+
-----
-mgmt skill: adjusting to the intern's responses
-cheching progress once a week.
-----
+... mgmt skill: adjusting to the intern's responses
+... checking progress once a week.
 . mentering a new hire
-+
-----
-onboarding process and document
-help this person adjust to life in the company effectly, 
-build you and his/her network of contacts in the company.
-introduce the new hire around: formal and informal, buddy several days
+.. onboarding process and document
+.. help this person adjust to life in the company effectly, 
+.. build you and his/her network of contacts in the company.
+.. introduce the new hire around: formal and informal, buddy several days
+.. opportunity to see the world of your company through fresh eyes
+.. networking
 
-opportunity to see the world of your company through fresh eyes
-
-networking
-
-----
 . Technical or Career mentoring
 .. when you are a mentor
-+
-----
-tell your mentee what you expect from him
-----
+... tell your mentee what you expect from him
 .. when you are a mentee
 
 . good manager, bad manager: The alpa geek
-+
-----
-practice the art teaching
-----
+.. practice the art teaching
 . tips for the manager of a mentor
 . key takeaways for the mentor
 .. Be curious and open-minded
@@ -122,6 +94,7 @@ practice the art teaching
 . assessing your own experience
 
 == Chapter 3: Tech lead
+
 continue to write code, but with the added resposiblities of representing the group to management, vetting our plans for feature delivery, and dealing with a lot of the details of the project management process. 
 
 talking with tech leads: spent at least 30% of their time writing code with the team. 
@@ -155,3 +128,114 @@ talking with tech leads: spent at least 30% of their time writing code with the 
 . assess your own experience
 
 == Chapter 4: Managing People
+. starting a new reporting relationship off right
+.. build trust and rapport
+... QUESTIONS FOR OUR FIRST 1:1
+.. create a 30/60/90-day plan
+.. encourage participation by updating the new hire documentation
+.. communicate your style and expectations
+.. get feedback from your new hire
+. communicating with your team
+.. have regular 1-1s
+.. scheduling 1-1s: weekly; focus and short; respect maker's schedule
+.. adjusting 1-1s: 
+. different 1-1 styles
+.. the to-do list meeting
+.. the catch-up
+.. the feadback meeting
+.. progress report
+.. getting to know you
+.. mix it up
+.. keep notes in a shared document: for each person you manage, maintain
+a running shared document of notes, takeaways, and todos from your 1-1s
+. good manager, bad manager, micromanager, delegator
+.. how to effectly delegate
+. practical advices for delegating effectively
+.. use the team's goals to understand which details you should dig into
+.. gather information from the systems before going to the people
+.. adjust your focus depending on the stage of the projects
+.. establish standards for code and systems
+.. treat the open sharing of information, good or bad, in a neutral to positive way
+. creating a culture of continuous feedback
+.. know your people
+.. observe your people
+.. provide lightweight, regular feedback
+.. bonus: provide coaching, coach-based continuous feedback
+. performance reviews: 360 model, 
+.. writing and delivering a performance review
+... give yourself enough time, start early
+... try to account for the whole year, not just the past couple of months
+... use concrete examples and excerpts from peer reviews
+... spend plenty of time on accomplishments and strengths
+... when it comes to areas for improvement, keep it focus
+... avoid big surprises
+... schedule enough time to discuss the review
+.. potential: work hard to get the extra mile, offering insightful suggestions on problems, and helping the team in areas that previous neglected.
+. cultivate career
+. challenging situations: fire underperformers    
+.. performance improvement plan: just a generous way of giving someone time to look for another job before being fired.
+.. no supprise: 
+. coaching out
+. assess your own experience
+
+== Chapter 5: Managing a team
+new set of skils
+
+. stay technical
+. debugging dysfunctioanl teams: the basic
+.. not shipping
+.. people drama
+.. unhappiness due to overwork
+...  20% time in every planning session to system substainability work
+... pressing, time-critical release: 
+....   cheerleader
+....  learn from it and avoid it next time
+.. collaboratio problem
+. the shield
+. how to drive good decisions
+.. create a data driven team culture
+.. flex your own product muscles
+.. look into the future
+.. review the outcome of your decisions and projects.
+.. run restrospective for the process and day-to-day: 2-week  development sprint
+. good manager, bad manager: conflict avoider, conflict tamer
+.. The Dos and Don'ts of managing conflict
+... Don't rely exclusively on consensus or voting
+... Do set up clear processes to *depersonalize decisions*
+... Don't turn a blind eye to simmering issues
+... Do address isssues without courting drama
+... Don't take it out on other teams
+... Do remember to be kind. It's natural and perfectly human to want to be liked by other people.
+... Don't be afraid
+... Do get curious
+. Challenging situations: Team cohension destroyers
+.. the brilliant jerk
+.. the noncommunicator
+.. the employee who lack respect
+. advanced project management
+.. project management rules of thumb
+... none of this is a replacement of agile project management
+... you have 10 productive engineering weeks per engineer per quarter.
+... budget 20% of time for generic sustaining engineering work across the board.
+... as you approach deadlines, it is your job to say no.
+... using the doubling rule for quick esitmates, but push for planning time to estimate longer tasks.
+... be selective about what you bring to the team to estimate
+.. joining a small team: how to do 
+. assess your own experience
+
+
+== Chapter 6: managing multiple teams
+
+== Chapter 7: managing managers
+
+. hiring manager, philosophy?
+
+
+== Chapter 8: The big leagues
+
+== chapter 9: bootstraping culture
+. culture fit, how to determine
+
+== chapter 10: conclusion
+
+
