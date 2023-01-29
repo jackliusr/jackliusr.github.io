@@ -1,0 +1,19 @@
+---
+title: books I read
+date: 2023-01-29T12:40:00+08:00
+categories:
+- book
+tags:
+- book
+---
+
+== Technology
+. https://www.amazon.com/Beginning-Bazel-Building-Testing-Java/dp/1484251938[Beginning Bazel: Building and Testing for Java, Go, and More]
+
+== Management
+. https://www.amazon.com/Managers-Path-Leaders-Navigating-Growth/dp/1491973897[The Manager's Path: A Guide for Tech Leaders Navigating Growth and Change]
+. https://www.amazon.com/How-Google-Works-Eric-Schmidt/dp/1455582328[How Google Works]
+
+== Investment
+. https://www.amazon.com/Little-Book-Valuation-Company-Profit/dp/1118004779[The Little Book of Valuation: How to Value a Company, Pick a Stock and Profit 1st Edition]
+. https://www.amazon.com/Investment-Valuation-Techniques-Determining-Second/dp/0471414883[Investment Valuation: Tools and Techniques for Determining the Value of Any Asset]
