@@ -1,0 +1,19 @@
+---
+title: "github, action-runner, argo-cd: my cicd pipelines"
+date: 2023-02-01T17:01:10+08:00
+categories:
+- tech
+tags:
+- cicd
+- pipeline
+- argo-cd
+- github
+- action-runner
+---
+
+Usually I explain one of my CICD pipeline to others with words such like github action + argo-cd.  I am not sure if they understand it. A picture is worth a thousand words. Here is my CICD pipeline picture.
+
+
+{{< imgur id="oRGj733" >}}
+
+I used excalidraw to draw the diagram.  Excalidraw link is https://excalidraw.com/#json=D7EzmscoRDH8LYLZmtr2l,FVEHlWoxFXtoqqHpReMaEw. Feel free to use it.
