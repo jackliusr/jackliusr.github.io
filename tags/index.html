@@ -4072,6 +4072,28 @@ I didn&rsquo;t have a good impression with java in my past java projects.
         
           <div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Notes</span>
+    <h1 class="f3 near-black">
+      <a href="/notes/k8s-metrics/" class="link black dim">
+        kubernetes metrics options
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Components
+ Description
+ Metrics
+ Scaler
+   Metrics Server
+ Metrics Server collects resource metrics from Kubelets and exposes them in Kubernetes apiserver through Metrics API for use by Horizontal Pod Autoscaler and Vertical Pod Autoscaler. Metrics API can also be accessed by kubectl top, making it easier to debug autoscaling pipelines.
+ Metrics Server is not meant for non-autoscaling purposes
+ CPU/Memory
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
       <a href="/posts/2023/01/playbook-etcd-debugging/" class="link black dim">
@@ -4820,6 +4842,35 @@ skaffold debug     Import ptvsd in the python file to debug, add breakout() befo
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       In normal kubernetes metrics, you will find cAdvisor, Metrics Server, Kubernetes API Server, Node Exporter, and Kube-State-Metrics as source of metrics. In last 2 days, I noticed prometheus-adapter. Today KEDA popped up in my mind. I checked its website and found it can be source of metric as well.
  cAdvisor, Metrics Server, Kubernetes API Server, Node Exporter, and Kube-State-Metrics can be considered as in-cluster source of metric. However KEDA is about out-cluster source of metrics.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/metrics" class="link blue hover-black">
+            Tag: metrics
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Notes</span>
+    <h1 class="f3 near-black">
+      <a href="/notes/k8s-metrics/" class="link black dim">
+        kubernetes metrics options
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Components
+ Description
+ Metrics
+ Scaler
+   Metrics Server
+ Metrics Server collects resource metrics from Kubelets and exposes them in Kubernetes apiserver through Metrics API for use by Horizontal Pod Autoscaler and Vertical Pod Autoscaler. Metrics API can also be accessed by kubectl top, making it easier to debug autoscaling pipelines.
+ Metrics Server is not meant for non-autoscaling purposes
+ CPU/Memory
     </div>
   </div>
 </div>

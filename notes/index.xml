@@ -18,6 +18,22 @@
     </item>
     
     <item>
+      <title>kubernetes metrics options</title>
+      <link>https://jackliusr.github.io/notes/k8s-metrics/</link>
+      <pubDate>Thu, 09 Feb 2023 09:40:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/notes/k8s-metrics/</guid>
+      <description>Components
+ Description
+ Metrics
+ Scaler
+   Metrics Server
+ Metrics Server collects resource metrics from Kubelets and exposes them in Kubernetes apiserver through Metrics API for use by Horizontal Pod Autoscaler and Vertical Pod Autoscaler. Metrics API can also be accessed by kubectl top, making it easier to debug autoscaling pipelines.
+ Metrics Server is not meant for non-autoscaling purposes
+ CPU/Memory</description>
+    </item>
+    
+    <item>
       <title>The Manager&#39;s Path: A Guide for Tech Leaders Navigating Growth and Change</title>
       <link>https://jackliusr.github.io/notes/the-manager-path/</link>
       <pubDate>Tue, 17 Jan 2023 11:40:00 +0800</pubDate>
