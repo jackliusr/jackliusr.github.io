@@ -1,0 +1,59 @@
+---
+title: Kubelet architecture
+date: 2023-02-09T09:40:00+08:00
+categories:
+- tech
+tags:
+- kubernetes
+- kubelet
+- cni
+- csi
+---
+
+In the past I learnt a lot of kubernetes, however there is no much information about kubelet or not deep enough. I couldn't answer the questions about kubelet correctly in an interview. Here I put all the information I collected from the internet here for my references.
+
+== kubelet component architecture
+
+image::https://cdn.jsdelivr.net/gh/b0xt/sobyte-images/2022/03/10/1261265caeda4f3089793bd4ab076666.png[kubelet components]
+
+== how does kubelet work
+
+image::https://pbs.twimg.com/media/DncWSekUYAAlOMY?format=jpg&name=large[how does kubelet work]
+== Container Lifecycle Management Through the CRI
+
+image::https://yqintl.alicdn.com/fdd81afb635d577545595e2b438d36100c55862a.png[Container Lifecycle Management Through the CRI]
+
+== kubelet, CRI and CNI sequence diagram
+
+image::https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d53b3a73a0a14eb6b41a4269a25d2b13~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image?[]
+
+== kubelet, CRI and CNI interaction diagram
+
+image::https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/26aaf248a6744f93a5a1b945c2eebf43~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image?[]
+
+== The process of creating a pod
+
+=== Handler
+
+image::https://cdn.jsdelivr.net/gh/b0xt/sobyte-images/2022/03/10/27ddc28edf5e42f6a9975413d4d12095.png[Handler]
+
+=== The work of podWorkers
+
+image::https://cdn.jsdelivr.net/gh/b0xt/sobyte-images/2022/03/10/e8e46bf6fbe649afb29c9b861f0a2367.png[UpdatePod]
+
+=== syncPod
+
+==== kubelet
+
+image::https://cdn.jsdelivr.net/gh/b0xt/sobyte-images/2022/03/10/88680dd1b0f14dff93f298e8e65420fc.png[syncPod]
+
+==== Runtime
+image::https://cdn.jsdelivr.net/gh/b0xt/sobyte-images/2022/03/10/7af91dedf2d9476b8781e0b1971521b0.png[syncPod part of the runtime layer]
+
+==== Creating a sandbox for a pod 
+
+image::https://cdn.jsdelivr.net/gh/b0xt/sobyte-images/2022/03/10/524df06351874217bc9d036f8d175ae7.png[creating a sandbox for a pod]
+
+== References: 
+
+* https://www.sobyte.net/post/2022-03/kubelet-pod-creation-workflow/
