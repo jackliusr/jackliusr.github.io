@@ -6,7 +6,17 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Feb 2023 17:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Feb 2023 09:40:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubelet architecture</title>
+      <link>https://jackliusr.github.io/notes/kubelet/</link>
+      <pubDate>Thu, 09 Feb 2023 09:40:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/notes/kubelet/</guid>
+      <description>In the past I learnt a lot of kubernetes, however there is no much information about kubelet or not deep enough. I couldn’t answer the questions about kubelet correctly in an interview. Here I put all the information I collected from the internet here for my references.
+ kubelet component architecture     how does kubelet work     Container Lifecycle Management Through the CRI     kubelet, CRI and CNI sequence diagram     kubelet, CRI and CNI interaction diagram     The process of creating a pod Handler    The work of podWorkers    syncPod kubelet    Runtime    Creating a sandbox for a pod       References:   https://www.</description>
+    </item>
+    
     <item>
       <title>github, action-runner, argo-cd: my cicd pipelines</title>
       <link>https://jackliusr.github.io/posts/2023/02/github-action-runner-argo-cd-my-cicd-pipelines/</link>
