@@ -1,0 +1,56 @@
+---
+title: kubernetes metrics options
+date: 2023-02-09T09:40:00+08:00
+categories:
+- tech
+tags:
+- kubernetes
+- metrics
+---
+
+[cols="1,3,1,1"]
+|====
+| Components
+| Description
+| Metrics
+| Scaler
+
+| Metrics Server
+a|Metrics Server collects resource metrics from Kubelets and exposes them in Kubernetes apiserver through Metrics API for use by Horizontal Pod Autoscaler and Vertical Pod Autoscaler. Metrics API can also be accessed by kubectl top, making it easier to debug autoscaling pipelines.
+
+Metrics Server is not meant for non-autoscaling purposes
+| CPU/Memory
+|
+
+| cAdvisor
+a| an open-source agent integrated into the kubelet binary that monitors resource usage and analyzes the performance of containers. It collects statistics about the CPU, memory, file, and network usage for all containers running on a given node (it does not operate at the pod level).
+| CPU, memory, file, and network usage for all containers
+|
+
+|kube-state-metrics
+a| kube-state-metrics (KSM) is a simple service that listens to the Kubernetes API server and generates metrics about the state of the objects. (See examples in the Metrics section below.) It is not focused on the health of the individual Kubernetes components, but rather on the health of the various objects inside, such as deployments, nodes and pods.
+| 
+|
+
+| Kubernetes API Server
+|
+|
+|
+
+|Node Exporter, 
+|
+|
+|
+
+
+|KEDA metric server
+|
+|
+|
+
+|prometheus-adapter
+|
+|
+|
+
+|====
