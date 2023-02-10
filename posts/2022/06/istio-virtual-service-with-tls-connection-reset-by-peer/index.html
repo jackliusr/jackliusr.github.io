@@ -33,13 +33,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2022/06/istio-virtual-service-with-tls-connection-reset-by-peer/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-06-07T11:01:10+08:00" />
-<meta property="article:modified_time" content="2022-06-07T20:26:21+08:00" />
+<meta property="article:modified_time" content="2023-02-10T11:24:43+08:00" />
 
 <meta itemprop="name" content="istio virtual service with tls - Connection reset by peer">
 <meta itemprop="description" content="I got following similar errors when setup my istio clusters.
  Mark bundle as not supporting multiuse 301 istio 301 or 404 error:02FFF036:system library:func(4095):Connection reset by peer * Trying 20.190.14.28:443... * TCP_NODELAY set * Connected to kiali.example.com (20.190.14.28) port 443 (#0) * ALPN, offering http/1.1 * successfully set certificate verify locations: * CAfile: /home/ng/anaconda3/ssl/cacert.pem CApath: none * TLSv1.3 (OUT), TLS handshake, Client hello (1): * OpenSSL SSL_connect: Connection reset by peer in connection to kiali."><meta itemprop="datePublished" content="2022-06-07T11:01:10+08:00" />
-<meta itemprop="dateModified" content="2022-06-07T20:26:21+08:00" />
-<meta itemprop="wordCount" content="318">
+<meta itemprop="dateModified" content="2023-02-10T11:24:43+08:00" />
+<meta itemprop="wordCount" content="317">
 <meta itemprop="keywords" content="Kubernetes,istio," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="istio virtual service with tls - Connection reset by peer"/>
 <meta name="twitter:description" content="I got following similar errors when setup my istio clusters.
@@ -203,7 +203,7 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 2 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 318 words</span>
+        <span class="f6 mv4 dib tracked"> - 317 words</span>
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
@@ -318,8 +318,7 @@ spec:
     - destination:
         port:
           number: 80
-        host: api
-----</code></pre>
+        host: api</code></pre>
 </div>
 </div>
 <ul class="pa0">
@@ -466,6 +465,6 @@ spec:
 
 
 
-  <p style="font-size: small; color: grey;">Page version: 23b3c6119d985b19cab5b7477d204915a5e97751 2022-06-07</p>
+  <p style="font-size: small; color: grey;">Page version: d64b1624ee2782dce8e77392c2d021b1da7e9cf6 2023-02-10</p>
   </body>
 </html>
