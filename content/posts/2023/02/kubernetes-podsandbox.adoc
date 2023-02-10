@@ -1,0 +1,49 @@
+---
+title: "What's pod sandbox"
+date: 2023-02-10T09:01:10+08:00
+categories:
+- tech
+tags:
+- kubernetes
+- pod
+---
+
+The explanation of pod sandbox at https://news.ycombinator.com/item?id=13179996#:~:text=rkt%20co...-,The%20pod%20sandbox%20is%20the%20abstraction%20that%20replaces%20the%20%22pause,in%20every%20Kubernetes%20pod%20today[the abstraction that replaces the "pause" container that is used to keep namespaces open in every Kubernetes pod today]. I doubted about that. What's the point to introduce a new concept? Yerterday I went down the rabbit hole to understand it. This morning I finally got the hang of it.
+
+https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/#:~:text=Before%20starting%20a%20pod%2C%20kubelet%20calls%20RuntimeService.RunPodSandbox%20to%20create%20the%20environment[Kubernetes blog said it is an environment]. It maybe a VM, a group of containers.
+
+----
+A Pod is composed of a group of application containers in an isolated environment with resource constraints. In CRI, this environment is called PodSandbox. We intentionally leave some room for the container runtimes to interpret the PodSandbox differently based on how they operate internally. For hypervisor-based runtimes, PodSandbox might represent a virtual machine. For others, such as Docker, it might be Linux namespaces. The PodSandbox must respect the pod resources specifications. In the v1alpha1 API, this is achieved by launching all the processes within the pod-level cgroup that kubelet creates and passes to the runtime.
+----
+
+* https://pkg.go.dev/k8s.io/cri-api@v0.26.1/pkg/apis/runtime/v1#PodSandboxConfig
++
+[source,go]
+----
+type PodSandboxConfig struct{
+    Metadata *PodSandboxMetadata `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+    Hostname string `protobuf:"bytes,2,opt,name=hostname,proto3" json:"hostname,omitempty"`
+    LogDirectory string `protobuf:"bytes,3,opt,name=log_directory,json=logDirectory,proto3" json:"log_directory,omitempty"`
+    DnsConfig *DNSConfig `protobuf:"bytes,4,opt,name=dns_config,json=dnsConfig,proto3" json:"dns_config,omitempty"`
+    PortMappings []*PortMapping `protobuf:"bytes,5,rep,name=port_mappings,json=portMappings,proto3" json:"port_mappings,omitempty"`
+    Labels map[string]string ``
+    Annotations map[string]string ``
+    Linux *LinuxPodSandboxConfig `protobuf:"bytes,8,opt,name=linux,proto3" json:"linux,omitempty"`
+    Windows              *WindowsPodSandboxConfig `protobuf:"bytes,9,opt,name=windows,proto3" json:"windows,omitempty"`
+
+}
+----
+* https://pkg.go.dev/k8s.io/cri-api@v0.26.1/pkg/apis/runtime/v1#LinuxPodSandboxConfig
++
+[source,go]
+----
+type LinuxPodSandboxConfig struct {
+
+	CgroupParent string `protobuf:"bytes,1,opt,name=cgroup_parent,json=cgroupParent,proto3" json:"cgroup_parent,omitempty"`
+
+	SecurityContext *LinuxSandboxSecurityContext `protobuf:"bytes,2,opt,name=security_context,json=securityContext,proto3" json:"security_context,omitempty"`
+
+	Sysctls map[string]string ``
+}
+----
+* cri.RunPodSandbox: creates and starts a pod-level sandbox. Runtimes should ensure the sandbox is in ready state. "pause" container will be the first container in the pod, a pod contains multiple containers.
