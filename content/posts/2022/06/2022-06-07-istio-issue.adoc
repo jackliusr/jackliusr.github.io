@@ -41,6 +41,7 @@ Server Version: version.Info{Major:"1", Minor:"22+", GitVersion:"v1.22.9-eks-a64
 The finally solution is deleteing existing working gateways(GW0) and deleting the not-working gateways(GW1s), later create GW1s one by one to make sure every gw working, then apply GW0s.
 
 [source,yaml]
+----
 apiVersion: networking.istio.io/v1beta1
 kind: Gateway
 metadata:
