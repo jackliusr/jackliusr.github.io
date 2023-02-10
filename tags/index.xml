@@ -6,7 +6,25 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Feb 2023 09:40:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Feb 2023 09:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>kubernetes</title>
+      <link>https://jackliusr.github.io/tags/kubernetes/</link>
+      <pubDate>Fri, 10 Feb 2023 09:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pod</title>
+      <link>https://jackliusr.github.io/tags/pod/</link>
+      <pubDate>Fri, 10 Feb 2023 09:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/pod/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>cni</title>
       <link>https://jackliusr.github.io/tags/cni/</link>
@@ -31,15 +49,6 @@
       <pubDate>Thu, 09 Feb 2023 09:40:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/kubelet/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kubernetes</title>
-      <link>https://jackliusr.github.io/tags/kubernetes/</link>
-      <pubDate>Thu, 09 Feb 2023 09:40:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/kubernetes/</guid>
       <description></description>
     </item>
     
@@ -922,15 +931,6 @@
       <pubDate>Tue, 31 May 2022 20:01:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/mount/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pod</title>
-      <link>https://jackliusr.github.io/tags/pod/</link>
-      <pubDate>Tue, 31 May 2022 20:01:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/pod/</guid>
       <description></description>
     </item>
     

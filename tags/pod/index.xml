@@ -6,7 +6,17 @@
     <description>Recent content in pod on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 31 May 2022 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/pod/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Feb 2023 09:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/pod/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What&#39;s pod sandbox</title>
+      <link>https://jackliusr.github.io/posts/2023/02/whats-pod-sandbox/</link>
+      <pubDate>Fri, 10 Feb 2023 09:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/02/whats-pod-sandbox/</guid>
+      <description>The explanation of pod sandbox at the abstraction that replaces the &amp;#34;pause&amp;#34; container that is used to keep namespaces open in every Kubernetes pod today. I doubted about that. What’s the point to introduce a new concept? Yerterday I went down the rabbit hole to understand it. This morning I finally got the hang of it.
+ Kubernetes blog said it is an environment. It maybe a VM, a group of containers.</description>
+    </item>
+    
     <item>
       <title>Resize volumes when PVCs and PVs are okay and the size of file systems in pods doesn&#39;t change</title>
       <link>https://jackliusr.github.io/posts/2022/05/resize-volumes-when-pvcs-and-pvs-are-okay-and-the-size-of-file-systems-in-pods-doesnt-change/</link>
