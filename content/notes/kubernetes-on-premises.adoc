@@ -1,0 +1,11 @@
+---
+title: kubernetes On-premise
+date: 2023-02-10T21:40:00+08:00
+categories:
+- tech
+tags:
+- kubernetes
+- on-premise
+---
+
+It is a big topic to setup kubernetes correctly. I will keep updating this when I find something new or missed in this. 

@@ -1,0 +1,155 @@
+---
+title: "The First 90 Days: Proven Strategies for Getting Up to Speed Faster and Smarter, Updated and Expanded"
+date: 2023-02-15T20:40:00+08:00
+categories:
+- management
+tags:
+- leadership
+---
+
+== Preface
+
+accelerate onboarding of new hires and transition.   follow-on publications.  other ideas
+
+* the STARS framework, 
+* transition traps, 
+* the importance of securing early wins
+* the fuzzy front-end
+* distinction between the organizational change challenge and the personal adaptive challenge in assessing the transition risk confronting new leaders.
+
+other publications: 
+
+* Shaping the Game, 2006
+* The First 90 Days in Government
+* The Pillars of Executive Onboarding, 2008
+* Your Next Move, 2009
+* Picking the Right Transition Strategy, 2009
+* How Managers Become Leaders, 2012
+
+
+== Introduction: The first 90 days
+:sectnums:
+
+“Building Your Career Transition Competence”
+
+“Reaching the Break-Even Point”
+
+image::https://uploads-ssl.webflow.com/612436feb620dde41bfc6e0f/62f1d36f5cac0ac45795c5ed_Figure%201%20-%20The%20break-even%20point..jpg[break event point]
+
+=== avoid transition traps
+
+* Sticking with what you know: the new role requires you to stop doing some things and to embrace new competencies.
+* Falling prey to the “action imperative.”
+* Setting unrealistic expectations.
+* Attempting to do too much
+* Coming in with “the” answer
+* Engaging in the wrong type of learning
+* Neglecting horizontal relationships
+
+Creating Momentum:  vicious cycle, virtuous cycle
+
+Mapping Out Your First 90 Days
+
+
+Assessing Transition Risk
+
+[cols="2,1,1"]
+|===
+| Type of transaction
+| Check each that applies
+| Assess relative difficulty for your (1-10)
+
+| {counter:rn}. Moving to a new industry or profession
+|
+|
+
+| {counter:rn}. Joining a new company
+|
+|
+
+|  {counter:rn}. Moving to a new unit or group in the same company
+|
+|
+
+| {counter:rn}. Being promoted to a higher level
+|
+|
+
+| {counter:rn}. Leading former peers (assuming you have been promoted)
+|
+|
+
+|  {counter:rn}. Moving from one function to anohter ( e.g. sales to marketing)
+|
+|
+
+| {counter:rn}. Taking on a cross-functional leadership role for the first time
+|
+|
+
+| {counter:rn}. Moving geographically
+|
+|
+
+| {counter:rn}. Entering a new national or ethnic culture
+|
+|
+
+| {counter:rn}.  Having to do two jobs at the same time (finishing old role while starting new one)
+|
+|
+
+| {counter:rn}.  Taking on a newly created role ( as opposted to an existing role)
+|
+|
+
+| {counter:rn}. Enter an orgnization in which major chagne already is going on
+|
+|
+
+
+
+2+| Sum the numbers in the right most column to calculate your transaction risk index
+|
+
+|===
+
+
+Key transition milestones:
+
+image::https://media.licdn.com/dms/image/C4E12AQE2RUO-7EJxXA/article-cover_image-shrink_423_752/0/1520187042517?e=1681948800&v=beta&t=3CBYXnx53vH_l-StPiEXYMYJ1y_8ao4Y-GuH9-QFxiI[Key transition milestones]
+
+
+== Prepare yourself
+two most frequently experienced types of transitions: promotions and onboarding into new companies.
+
+
+principles:
+
+you build a team of competent people whom you trust, you establish goals and metrics to monitor their progress, you translate higher-level goals into specific responsibilities for your direct reports, and you reinforce them through process
+
+delegation: 
+
+Influence Differently: “ Decision making becomes more political—less about authority, and more about influence.”
+
+
+Communicate More Formally: “maintain regular, direct contact with select customers, for instance, or meet regularly with groups of frontline employees, all without undermining the integrity of the chain of command.”
+
+
+== Accelerate your learning
+
+== Match your strategy to the situation
+
+== Secure early wins
+
+== Negotiate success 
+
+== Achieve alignment
+
+== Build your team
+
+== Create coalitions
+
+== Keep your balance 
+
+== Accelerate everyone

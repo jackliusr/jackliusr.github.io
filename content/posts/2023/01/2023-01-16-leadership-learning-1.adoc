@@ -12,7 +12,7 @@ Long ago, I wanted to learn something about technology leaderships, however I di
 
 Milestone:  {{< imgur id="3yzGKDb" >}}
 
-.  Data-Driven Engineering Leadership in 2022
+. Data-Driven Engineering Leadership in 2022
 . Accelerate: The Science of Lean Software and DevOps
 . The Manager's Path: A Guide for Tech Leaders Navigating Growth and Change
 . The Principles of Product Development Flow: Second Generation Lean Product Development
@@ -23,3 +23,4 @@ Milestone:  {{< imgur id="3yzGKDb" >}}
 . The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win
 . Team Topologies: Organizing Business and Technology Teams for Fast Flow
 . 97 Things Every Engineering Manager Should Know
+. The First 90 Days, Updated and Expanded: Proven Strategies for Getting Up to Speed Faster and Smarter
