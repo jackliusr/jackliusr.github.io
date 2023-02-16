@@ -53,7 +53,7 @@ Mapping Out Your First 90 Days
 
 Assessing Transition Risk
 
-[cols="2,1,1"]
+[cols="2,1,1", frame=all, grid=all]
 |===
 | Type of transaction
 | Check each that applies
@@ -124,6 +124,14 @@ image::https://media.licdn.com/dms/image/C4E12AQE2RUO-7EJxXA/article-cover_image
 two most frequently experienced types of transitions: promotions and onboarding into new companies.
 
 
+=== Getting Promoted
+
+Balance Breadth and Depth
+
+
+
+Rethink What You Delegate
+
 principles:
 
 you build a team of competent people whom you trust, you establish goals and metrics to monitor their progress, you translate higher-level goals into specific responsibilities for your direct reports, and you reinforce them through process
@@ -136,7 +144,51 @@ Influence Differently: “ Decision making becomes more political—less about a
 Communicate More Formally: “maintain regular, direct contact with select customers, for instance, or meet regularly with groups of frontline employees, all without undermining the integrity of the chain of command.”
 
 
+Exhibit the Right Presence
+
+core promotion challenges
+
+
+=== Onboarding into a New Company
+
+four pillars:
+
+* business orientation
+* stakeholder connection
+* expectation alignment
+* cultural adaption
+
+=== prepare yourself
+
+* established a clear breakpoint: get into the transition state of mind
+* assess your vulnerabilities
+* assessment of problem preference
+* Preference for problems and functions
+* watch out for your strengths
+* relearn how to learn
+* rework your network
+* watch out for people who want to hold you back.
+* get some help
+
 == Accelerate your learning
+
+Overcoming Learning Roadblocks
+
+Managing Learning as an Investment Process
+
+Defining Your Learning Agenda
+
+Identifying the Best Sources of Insight
+
+Adopting Structured Learning Methods
+
+++++
+<table width="100%" border="1"> <caption> <span> <span> Table 2-1: </span> Structured Methods for Learning </span> </caption> <thead> <tr valign="top"> <th scope="col" width="26%" align="left"> <p> Method </p> </th> <th scope="col" width="36%" align="left"> <p> Uses </p> </th> <th scope="col" width="38%" align="left"> <p> Useful For </p> </th> </tr> </thead> <tbody> <tr valign="top"> <td width="26%" align="left"> <p> Organizational climate and employee satisfaction surveys </p> </td> <td width="36%" align="left"> <p> Learning about culture and morale . Many organizations do such surveys regularly, and a database may already be available. If not, consider setting up a regular survey of employee perceptions. </p> </td> <td width="38%" align="left"> <p> Useful for managers at all levels, if analysis is available specifically for your unit or group. </p> <p> Usefulness depends on how granular the collection and analysis is. This also assumes the survey instrument is a good one and the data have been collected carefully and analyzed rigorously. </p> </td> </tr> <tr valign="top"> <td width="26%" align="left"> <p> Structured sets of interviews with slices of the organization or unit </p> </td> <td width="36%" align="left"> <p> Identifying shared and divergent perceptions of opportunities and problems. You can interview people at the same level in different departments (a horizontal slice) or bore down through multiple levels (a vertical slice). Whichever dimension you choose, ask everybody the same questions and look for similarities and differences in people s responses. </p> </td> <td width="38%" align="left"> <p> Most useful for managers leading groups of people from different functional backgrounds. </p> <p> Can be useful at lower levels if the unit is experiencing significant problems. </p> </td> </tr> <tr valign="top"> <td width="26%" align="left"> <p> Focus groups </p> </td> <td width="36%" align="left"> <p> Probing issues that preoccupy key groups of employees , such as morale issues among frontline production or service workers. Gathering groups of people who work together also lets you see how they interact and who displays leadership. Fostering discussion promotes deeper insight. </p> </td> <td width="38%" align="left"> <p> Most useful for managers of large groups of people who perform a similar function, such as sales managers or plant managers. </p> <p> Can be useful for more senior managers as a way of getting some quick insights into the perceptions of key employee constituencies. </p> </td> </tr> <tr valign="top"> <td width="26%" align="left"> <p> Analysis of critical past decisions </p> </td> <td width="36%" align="left"> <p> Illuminating decision-making patterns and sources of power and influence. Select an important recent decision and look into how it was made. Who exerted influence at each stage? Talk with people involved, probe their perceptions, and note what is and is not said. </p> </td> <td width="38%" align="left"> <p> Most useful for higher-level managers of business units or project groups. </p> </td> </tr> <tr valign="top"> <td width="26%" align="left"> <p> Process analysis </p> </td> <td width="36%" align="left"> <p> Examining interactions among departments or functions and assessing the efficiency of a process. Select an important process, such as delivery of products to customers or distributors , and assign a crossfunctional group to chart the process and identify bottlenecks and problems. </p> </td> <td width="38%" align="left"> <p> Most useful for managers of units or groups in which the work of multiple functional specialties must be integrated. </p> <p> Can be useful for lower-level managers as a way of understanding how their groups fit into larger processes. </p> </td> </tr> <tr valign="top"> <td width="26%" align="left"> <p> Plant and market tours </p> </td> <td width="36%" align="left"> <p> Plant tours are opportunities to meet production personnel informally and to listen to their concerns. Meetings with sales and production staff will help you assess technical capabilities. Market tours can introduce you to customers, whose comments can reveal problems and opportunities. </p> </td> <td width="38%" align="left"> <p> Most useful for managers of business units. </p> </td> </tr> <tr valign="top"> <td width="26%" align="left"> <p> Pilot projects </p> </td> <td width="36%" align="left"> <p> Gaining deep insight into technical capabilities, culture, and politics. Though these insights are not the primary purpose of pilot projects, you can learn a lot from how the organization or group responds to your pilot initiatives. </p> </td> <td width="38%" align="left"> <p> Useful for managers at all levels. The size of the pilot projects and their impact will of course increase as one rises through the organization. </p> </td> </tr> </tbody> </table>
+++++
+
+
+Creating a Learning Plan
+
 
 == Match your strategy to the situation
 
@@ -150,6 +202,6 @@ Communicate More Formally: “maintain regular, direct contact with select custo
 
 == Create coalitions
 
-== Keep your balance 
+== Manage Yourself 
 
 == Accelerate everyone
