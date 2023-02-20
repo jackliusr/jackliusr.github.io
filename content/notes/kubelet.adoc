@@ -21,7 +21,9 @@ image::https://cdn.jsdelivr.net/gh/b0xt/sobyte-images/2022/03/10/1261265caeda4f3
 image::https://pbs.twimg.com/media/DncWSekUYAAlOMY?format=jpg&name=large[how does kubelet work]
 == Container Lifecycle Management Through the CRI
 
-image::https://yqintl.alicdn.com/fdd81afb635d577545595e2b438d36100c55862a.png[Container Lifecycle Management Through the CRI]
+{{< imgur id="zg68rHE" >}}
+
+
 
 == kubelet, CRI and CNI sequence diagram
 
