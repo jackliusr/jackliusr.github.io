@@ -7,7 +7,7 @@
     <title>Kubelet architecture | My learning and diary</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="In the past I learnt a lot of kubernetes, however there is no much information about kubelet or not deep enough. I couldn’t answer the questions about kubelet correctly in an interview. Here I put all the information I collected from the internet here for my references.
- kubelet component architecture     how does kubelet work     Container Lifecycle Management Through the CRI     kubelet, CRI and CNI sequence diagram     kubelet, CRI and CNI interaction diagram     The process of creating a pod Handler    The work of podWorkers    syncPod kubelet    Runtime    Creating a sandbox for a pod       References:   https://www.">
+ kubelet component architecture     how does kubelet work     Container Lifecycle Management Through the CRI        kubelet, CRI and CNI sequence diagram     kubelet, CRI and CNI interaction diagram     The process of creating a pod Handler    The work of podWorkers    syncPod kubelet    Runtime    Creating a sandbox for a pod       References:   https://www.">
     <meta name="generator" content="Hugo 0.99.1" />
     
     
@@ -29,21 +29,21 @@
     
     <meta property="og:title" content="Kubelet architecture" />
 <meta property="og:description" content="In the past I learnt a lot of kubernetes, however there is no much information about kubelet or not deep enough. I couldn’t answer the questions about kubelet correctly in an interview. Here I put all the information I collected from the internet here for my references.
- kubelet component architecture     how does kubelet work     Container Lifecycle Management Through the CRI     kubelet, CRI and CNI sequence diagram     kubelet, CRI and CNI interaction diagram     The process of creating a pod Handler    The work of podWorkers    syncPod kubelet    Runtime    Creating a sandbox for a pod       References:   https://www." />
+ kubelet component architecture     how does kubelet work     Container Lifecycle Management Through the CRI        kubelet, CRI and CNI sequence diagram     kubelet, CRI and CNI interaction diagram     The process of creating a pod Handler    The work of podWorkers    syncPod kubelet    Runtime    Creating a sandbox for a pod       References:   https://www." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/notes/kubelet/" /><meta property="article:section" content="notes" />
 <meta property="article:published_time" content="2023-02-09T09:40:00+08:00" />
-<meta property="article:modified_time" content="2023-02-09T21:55:28+08:00" />
+<meta property="article:modified_time" content="2023-02-20T18:32:40+08:00" />
 
 <meta itemprop="name" content="Kubelet architecture">
 <meta itemprop="description" content="In the past I learnt a lot of kubernetes, however there is no much information about kubelet or not deep enough. I couldn’t answer the questions about kubelet correctly in an interview. Here I put all the information I collected from the internet here for my references.
- kubelet component architecture     how does kubelet work     Container Lifecycle Management Through the CRI     kubelet, CRI and CNI sequence diagram     kubelet, CRI and CNI interaction diagram     The process of creating a pod Handler    The work of podWorkers    syncPod kubelet    Runtime    Creating a sandbox for a pod       References:   https://www."><meta itemprop="datePublished" content="2023-02-09T09:40:00+08:00" />
-<meta itemprop="dateModified" content="2023-02-09T21:55:28+08:00" />
+ kubelet component architecture     how does kubelet work     Container Lifecycle Management Through the CRI        kubelet, CRI and CNI sequence diagram     kubelet, CRI and CNI interaction diagram     The process of creating a pod Handler    The work of podWorkers    syncPod kubelet    Runtime    Creating a sandbox for a pod       References:   https://www."><meta itemprop="datePublished" content="2023-02-09T09:40:00+08:00" />
+<meta itemprop="dateModified" content="2023-02-20T18:32:40+08:00" />
 <meta itemprop="wordCount" content="94">
 <meta itemprop="keywords" content="kubernetes,kubelet,cni,csi," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kubelet architecture"/>
 <meta name="twitter:description" content="In the past I learnt a lot of kubernetes, however there is no much information about kubelet or not deep enough. I couldn’t answer the questions about kubelet correctly in an interview. Here I put all the information I collected from the internet here for my references.
- kubelet component architecture     how does kubelet work     Container Lifecycle Management Through the CRI     kubelet, CRI and CNI sequence diagram     kubelet, CRI and CNI interaction diagram     The process of creating a pod Handler    The work of podWorkers    syncPod kubelet    Runtime    Creating a sandbox for a pod       References:   https://www."/>
+ kubelet component architecture     how does kubelet work     Container Lifecycle Management Through the CRI        kubelet, CRI and CNI sequence diagram     kubelet, CRI and CNI interaction diagram     The process of creating a pod Handler    The work of podWorkers    syncPod kubelet    Runtime    Creating a sandbox for a pod       References:   https://www."/>
 
       
 <script type="application/javascript">
@@ -232,10 +232,14 @@ if (!doNotTrack) {
 <div class="sect1">
 <h2 id="_container_lifecycle_management_through_the_cri"><a class="anchor" href="#_container_lifecycle_management_through_the_cri"></a><a class="link" href="#_container_lifecycle_management_through_the_cri">Container Lifecycle Management Through the CRI</a></h2>
 <div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="https://yqintl.alicdn.com/fdd81afb635d577545595e2b438d36100c55862a.png" alt="Container Lifecycle Management Through the CRI"/>
+<div class="paragraph">
+<div class="embed imgur-image">
+<blockquote class="imgur-embed-pub" lang="en" data-id="zg68rHE" data-context="false">
+<a href="//imgur.com/zg68rHE"></a>
+</blockquote>
+<script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 </div>
+
 </div>
 </div>
 </div>
@@ -483,6 +487,6 @@ if (!doNotTrack) {
 
 
 
-  <p style="font-size: small; color: grey;">Page version: 2a3577d5893cb2b15dc414746910767f3e6f003e 2023-02-09</p>
+  <p style="font-size: small; color: grey;">Page version: 8f80deb7b7cbacc1538181a3ff6a078ed6802b46 2023-02-20</p>
   </body>
 </html>
