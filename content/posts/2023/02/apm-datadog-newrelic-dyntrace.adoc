@@ -1,0 +1,35 @@
+---
+title: "Learning experiences among datadog, dynatrace, newrelic"
+date: 2023-02-22T09:01:10+08:00
+categories:
+- tech
+tags:
+- APM
+- Feature flags
+- SRE
+---
+
+Last week and this week, I completed my basic learning of APMs as a tool of SRE. I learnt fundamentals of datadog and newrelic, walked through their tutorials in last week and this week. I don't find a easy way to learn dynatrace from its site.
+The whole learning experiences between datadog and newrelic are on par with each other. What's the deal breaker when making choices among them? 
+
+== Leader
+
+image::https://dt-cdn.net/images/gartner-magic-quadrant-for-application-performance-monitoring-observability-1920-b673d8b4f6.jpeg
+
+== Feature flags intergration
+
+During a discussion about progressive delivery using https://flagger.app/[flagger], I was curious if it is possible to integrate feature flags and APM. In the past two days, I learnt that dynatrace supports it and dynatrace is actively involved in openfeature. However I found that newrelic give example on https://newrelic.com/blog/nerdlog/correlate-feature-flags-with-application-metrics[how to integrate feature flags solutions]. 
+
+== market share
+
+
+== market cap
+
+== cost
+https://docs.google.com/spreadsheets/d/13-GTHZOfhuC78efXGVr89KLKzHKoa_HetjX9Hm4ZaU4/edit#gid=1046106012
+
+
+== functionality
+
+https://www.upguard.com/blog/datadog-vs-newrelic#toc-3
+
