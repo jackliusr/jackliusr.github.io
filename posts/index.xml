@@ -14,7 +14,7 @@
       
       <guid>https://jackliusr.github.io/posts/2023/02/learning-experiences-among-datadog-dynatrace-newrelic/</guid>
       <description>Last week and this week, I completed my basic learning of APMs as a tool of SRE. I learnt fundamentals of datadog and newrelic, walked through their tutorials in last week and this week. I don’t find a easy way to learn dynatrace from its site. The whole learning experiences between datadog and newrelic are on par with each other. What’s the deal breaker when making choices among them?
- Leader image::https://dt-cdn.</description>
+ Leader     Feature flags intergration During a discussion about progressive delivery using flagger, I was curious if it is possible to integrate feature flags and APM.</description>
     </item>
     
     <item>
