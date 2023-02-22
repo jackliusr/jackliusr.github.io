@@ -14,7 +14,7 @@ The whole learning experiences between datadog and newrelic are on par with each
 
 == Leader
 
-image::https://dt-cdn.net/images/gartner-magic-quadrant-for-application-performance-monitoring-observability-1920-b673d8b4f6.jpeg
+image::https://dt-cdn.net/images/gartner-magic-quadrant-for-application-performance-monitoring-observability-1920-b673d8b4f6.jpeg[gartner magic quadrant]
 
 == Feature flags intergration
 
