@@ -166,6 +166,9 @@ kubectl -n test describe canary/podinfo
 
 ----
 
+
+{{< imgur id="uptdqbq" >}}
+
 ==  References
 
 * https://docs.flagger.app/tutorials/istio-progressive-delivery
