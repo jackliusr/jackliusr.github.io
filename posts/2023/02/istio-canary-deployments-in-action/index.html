@@ -9,7 +9,7 @@
     <meta name="description" content="Steps environment:
    kindest/node:v1.25.3
   Istio 1.17.0
-   # need to install metrics-server, HPA depends on metrics-server kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml # command: # - /metrics-server # - --kubelet-insecure-tls istioctl manifest install --set profile=default kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.17/samples/addons/prometheus.yaml kubectl apply -k github.com/fluxcd/flagger//kustomize/istio cat &lt;&lt;EOF | kubectl apply -f - apiVersion: networking.istio.io/v1alpha3 kind: Gateway metadata: name: public-gateway namespace: istio-system spec: selector: istio: ingressgateway servers: - port: number: 80 name: http protocol: HTTP hosts: - &#34;*&#34; EOF kubectl create ns test kubectl label namespace test istio-injection=enabled # Warning: autoscaling/v2beta2 HorizontalPodAutoscaler is deprecated in v1.">
+   helm # need to install metrics-server, HPA depends on metrics-server kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml # command: # - /metrics-server # - --kubelet-insecure-tls istioctl manifest install --set profile=default kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.17/samples/addons/prometheus.yaml helm repo add flagger https://flagger.app kubectl apply -f https://raw.githubusercontent.com/fluxcd/flagger/main/artifacts/flagger/crd.yaml helm upgrade -i flagger flagger/flagger \ --namespace=istio-system \ --set crd.create=false \ --set meshProvider=istio \ --set metricsServer=http://prometheus:9090 cat &lt;&lt;EOF | kubectl apply -f - apiVersion: networking.">
     <meta name="generator" content="Hugo 0.99.1" />
     
     
@@ -33,25 +33,25 @@
 <meta property="og:description" content="Steps environment:
    kindest/node:v1.25.3
   Istio 1.17.0
-   # need to install metrics-server, HPA depends on metrics-server kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml # command: # - /metrics-server # - --kubelet-insecure-tls istioctl manifest install --set profile=default kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.17/samples/addons/prometheus.yaml kubectl apply -k github.com/fluxcd/flagger//kustomize/istio cat &lt;&lt;EOF | kubectl apply -f - apiVersion: networking.istio.io/v1alpha3 kind: Gateway metadata: name: public-gateway namespace: istio-system spec: selector: istio: ingressgateway servers: - port: number: 80 name: http protocol: HTTP hosts: - &#34;*&#34; EOF kubectl create ns test kubectl label namespace test istio-injection=enabled # Warning: autoscaling/v2beta2 HorizontalPodAutoscaler is deprecated in v1." />
+   helm # need to install metrics-server, HPA depends on metrics-server kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml # command: # - /metrics-server # - --kubelet-insecure-tls istioctl manifest install --set profile=default kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.17/samples/addons/prometheus.yaml helm repo add flagger https://flagger.app kubectl apply -f https://raw.githubusercontent.com/fluxcd/flagger/main/artifacts/flagger/crd.yaml helm upgrade -i flagger flagger/flagger \ --namespace=istio-system \ --set crd.create=false \ --set meshProvider=istio \ --set metricsServer=http://prometheus:9090 cat &lt;&lt;EOF | kubectl apply -f - apiVersion: networking." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2023/02/istio-canary-deployments-in-action/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-22T09:01:10+08:00" />
-<meta property="article:modified_time" content="2023-02-22T18:08:33+08:00" />
+<meta property="article:modified_time" content="2023-02-22T20:06:15+08:00" />
 
 <meta itemprop="name" content="Istio Canary Deployments in action">
 <meta itemprop="description" content="Steps environment:
    kindest/node:v1.25.3
   Istio 1.17.0
-   # need to install metrics-server, HPA depends on metrics-server kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml # command: # - /metrics-server # - --kubelet-insecure-tls istioctl manifest install --set profile=default kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.17/samples/addons/prometheus.yaml kubectl apply -k github.com/fluxcd/flagger//kustomize/istio cat &lt;&lt;EOF | kubectl apply -f - apiVersion: networking.istio.io/v1alpha3 kind: Gateway metadata: name: public-gateway namespace: istio-system spec: selector: istio: ingressgateway servers: - port: number: 80 name: http protocol: HTTP hosts: - &#34;*&#34; EOF kubectl create ns test kubectl label namespace test istio-injection=enabled # Warning: autoscaling/v2beta2 HorizontalPodAutoscaler is deprecated in v1."><meta itemprop="datePublished" content="2023-02-22T09:01:10+08:00" />
-<meta itemprop="dateModified" content="2023-02-22T18:08:33+08:00" />
-<meta itemprop="wordCount" content="403">
+   helm # need to install metrics-server, HPA depends on metrics-server kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml # command: # - /metrics-server # - --kubelet-insecure-tls istioctl manifest install --set profile=default kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.17/samples/addons/prometheus.yaml helm repo add flagger https://flagger.app kubectl apply -f https://raw.githubusercontent.com/fluxcd/flagger/main/artifacts/flagger/crd.yaml helm upgrade -i flagger flagger/flagger \ --namespace=istio-system \ --set crd.create=false \ --set meshProvider=istio \ --set metricsServer=http://prometheus:9090 cat &lt;&lt;EOF | kubectl apply -f - apiVersion: networking."><meta itemprop="datePublished" content="2023-02-22T09:01:10+08:00" />
+<meta itemprop="dateModified" content="2023-02-22T20:06:15+08:00" />
+<meta itemprop="wordCount" content="383">
 <meta itemprop="keywords" content="flagger,istio,CD,progressive-delivery," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Istio Canary Deployments in action"/>
 <meta name="twitter:description" content="Steps environment:
    kindest/node:v1.25.3
   Istio 1.17.0
-   # need to install metrics-server, HPA depends on metrics-server kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml # command: # - /metrics-server # - --kubelet-insecure-tls istioctl manifest install --set profile=default kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.17/samples/addons/prometheus.yaml kubectl apply -k github.com/fluxcd/flagger//kustomize/istio cat &lt;&lt;EOF | kubectl apply -f - apiVersion: networking.istio.io/v1alpha3 kind: Gateway metadata: name: public-gateway namespace: istio-system spec: selector: istio: ingressgateway servers: - port: number: 80 name: http protocol: HTTP hosts: - &#34;*&#34; EOF kubectl create ns test kubectl label namespace test istio-injection=enabled # Warning: autoscaling/v2beta2 HorizontalPodAutoscaler is deprecated in v1."/>
+   helm # need to install metrics-server, HPA depends on metrics-server kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml # command: # - /metrics-server # - --kubelet-insecure-tls istioctl manifest install --set profile=default kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.17/samples/addons/prometheus.yaml helm repo add flagger https://flagger.app kubectl apply -f https://raw.githubusercontent.com/fluxcd/flagger/main/artifacts/flagger/crd.yaml helm upgrade -i flagger flagger/flagger \ --namespace=istio-system \ --set crd.create=false \ --set meshProvider=istio \ --set metricsServer=http://prometheus:9090 cat &lt;&lt;EOF | kubectl apply -f - apiVersion: networking."/>
 
       
 <script type="application/javascript">
@@ -211,7 +211,7 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 2 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 403 words</span>
+        <span class="f6 mv4 dib tracked"> - 383 words</span>
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="sect1">
@@ -230,6 +230,8 @@ if (!doNotTrack) {
 </li>
 </ul>
 </div>
+<div class="sect2">
+<h3 id="_helm"><a class="anchor" href="#_helm"></a><a class="link" href="#_helm">helm</a></h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># need to install metrics-server, HPA depends on metrics-server
@@ -240,7 +242,20 @@ kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/late
 
 istioctl manifest install --set profile=default
 kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.17/samples/addons/prometheus.yaml
-kubectl apply -k github.com/fluxcd/flagger//kustomize/istio
+
+
+
+helm repo add flagger https://flagger.app
+
+kubectl apply -f https://raw.githubusercontent.com/fluxcd/flagger/main/artifacts/flagger/crd.yaml
+
+helm upgrade -i flagger flagger/flagger \
+--namespace=istio-system \
+--set crd.create=false \
+--set meshProvider=istio \
+--set metricsServer=http://prometheus:9090
+
+
 
 cat &lt;&lt;EOF | kubectl apply -f -
 apiVersion: networking.istio.io/v1alpha3
@@ -271,31 +286,6 @@ kubectl apply -k https://github.com/jackliusr/flagger//kustomize/podinfo?ref=mai
 kubectl apply -k https://github.com/fluxcd/flagger//kustomize/tester?ref=main
 
 
-cat &lt;&lt;EOF | k  apply -f -
-apiVersion: flagger.app/v1beta1
-kind: MetricTemplate
-metadata:
-  name: latency
-  namespace: istio-system
-spec:
-  provider:
-    type: prometheus
-    address: http://prometheus.istio-system:9090
-  query: |
-    histogram_quantile(
-        0.99,
-        sum(
-            rate(
-                istio_request_duration_seconds_bucket{
-                    reporter=&#34;destination&#34;,
-                    destination_workload_namespace=&#34;{{ namespace }}&#34;,
-                    destination_workload=~&#34;{{ target }}&#34;
-                }[{{ interval }}]
-            )
-        ) by (le)
-    )
-EOF
-
 cat &lt;&lt;EOF &gt; podinfo-canary.yaml
 apiVersion: flagger.app/v1beta1
 kind: Canary
@@ -313,7 +303,7 @@ spec:
   progressDeadlineSeconds: 60
   # HPA reference (optional)
   autoscalerRef:
-    apiVersion: autoscaling/v2beta2
+    apiVersion: autoscaling/v2
     kind: HorizontalPodAutoscaler
     name: podinfo
   service:
@@ -355,13 +345,12 @@ spec:
       thresholdRange:
         min: 99
       interval: 1m
-    - name: latency
-      templateRef:
-        name: latency
-        namespace: istio-system
+    - name: request-duration
+      # maximum req duration P99
+      # milliseconds
       thresholdRange:
-        max: 0.500
-      interval: 1m
+        max: 500
+      interval: 30s
     # testing (optional)
     webhooks:
       - name: acceptance-test
@@ -376,6 +365,7 @@ spec:
         timeout: 5s
         metadata:
           cmd: &#34;hey -z 1m -q 10 -c 2 http://podinfo-canary.test:9898/&#34;
+
 EOF
 
 kubectl apply -f ./podinfo-canary.yaml
@@ -389,6 +379,7 @@ kubectl -n test describe canary/podinfo</code></pre>
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
 <h2 id="_references"><a class="anchor" href="#_references"></a><a class="link" href="#_references">References</a></h2>
 <div class="sectionbody">
@@ -396,6 +387,9 @@ kubectl -n test describe canary/podinfo</code></pre>
 <ul>
 <li>
 <p><a href="https://docs.flagger.app/tutorials/istio-progressive-delivery" class="bare">https://docs.flagger.app/tutorials/istio-progressive-delivery</a></p>
+</li>
+<li>
+<p><a href="https://fluxcd.io/flagger/install/flagger-install-on-kubernetes/" class="bare">https://fluxcd.io/flagger/install/flagger-install-on-kubernetes/</a></p>
 </li>
 </ul>
 </div>
@@ -525,6 +519,6 @@ kubectl -n test describe canary/podinfo</code></pre>
 
 
 
-  <p style="font-size: small; color: grey;">Page version: c60b71563f75b4f775d73eff1a17183765d86233 2023-02-22</p>
+  <p style="font-size: small; color: grey;">Page version: f50ab595e872c62a58740d6ca24158dd5bb700a0 2023-02-22</p>
   </body>
 </html>
