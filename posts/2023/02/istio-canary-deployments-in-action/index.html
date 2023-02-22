@@ -37,14 +37,14 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2023/02/istio-canary-deployments-in-action/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-22T09:01:10+08:00" />
-<meta property="article:modified_time" content="2023-02-22T20:42:23+08:00" />
+<meta property="article:modified_time" content="2023-02-22T20:44:17+08:00" />
 
 <meta itemprop="name" content="Istio Canary Deployments in action">
 <meta itemprop="description" content="Steps environment:
    kindest/node:v1.25.3
   Istio 1.17.0
    helm # need to install metrics-server, HPA depends on metrics-server kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml # command: # - /metrics-server # - --kubelet-insecure-tls istioctl manifest install --set profile=default kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.17/samples/addons/prometheus.yaml helm repo add flagger https://flagger.app kubectl apply -f https://raw.githubusercontent.com/fluxcd/flagger/main/artifacts/flagger/crd.yaml helm upgrade -i flagger flagger/flagger \ --namespace=istio-system \ --set crd.create=false \ --set meshProvider=istio \ --set metricsServer=http://prometheus:9090 cat &lt;&lt;EOF | kubectl apply -f - apiVersion: networking."><meta itemprop="datePublished" content="2023-02-22T09:01:10+08:00" />
-<meta itemprop="dateModified" content="2023-02-22T20:42:23+08:00" />
+<meta itemprop="dateModified" content="2023-02-22T20:44:17+08:00" />
 <meta itemprop="wordCount" content="383">
 <meta itemprop="keywords" content="flagger,istio,CD,progressive-delivery," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Istio Canary Deployments in action"/>
@@ -379,8 +379,8 @@ kubectl -n test describe canary/podinfo</code></pre>
 </div>
 <div class="paragraph">
 <div class="embed imgur-image">
-<blockquote class="imgur-embed-pub" lang="en" data-id="uptdqbq" data-context="false">
-<a href="//imgur.com/uptdqbq"></a>
+<blockquote class="imgur-embed-pub" lang="en" data-id="ZdbSrwI" data-context="false">
+<a href="//imgur.com/ZdbSrwI"></a>
 </blockquote>
 <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 </div>
@@ -528,6 +528,6 @@ kubectl -n test describe canary/podinfo</code></pre>
 
 
 
-  <p style="font-size: small; color: grey;">Page version: 73ff7d5d8ffecd99db74f836386f83430bb61bbe 2023-02-22</p>
+  <p style="font-size: small; color: grey;">Page version: 25c33fea4e17ffe6dccb87a1b37c06c2afc263bb 2023-02-22</p>
   </body>
 </html>
