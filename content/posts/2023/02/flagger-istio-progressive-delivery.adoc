@@ -1,5 +1,5 @@
 ---
-title: "Istio Canary Deployments in action"
+title: "Istio Canary Deployments using flagger"
 date: 2023-02-22T09:01:10+08:00
 categories:
 - tech
@@ -10,8 +10,10 @@ tags:
 - progressive-delivery
 ---
 
-== Steps
+Progressive delivery: Istio Canary Deployments using https://docs.flagger.app/[flagger].
 
+
+== Steps
 
 environment: 
 
