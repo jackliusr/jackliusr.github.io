@@ -192,6 +192,33 @@ if (!doNotTrack) {
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/2023/02/istio-canary-deployments-in-action/" class="color-inherit dim link">
+            Istio Canary Deployments in action
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Steps environment:
+   kindest/node:v1.25.3
+  Istio 1.17.0
+   # need to install metrics-server, HPA depends on metrics-server kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml # command: # - /metrics-server # - --kubelet-insecure-tls istioctl manifest install --set profile=default kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.17/samples/addons/prometheus.yaml kubectl apply -k github.com/fluxcd/flagger//kustomize/istio cat &lt;&lt;EOF | kubectl apply -f - apiVersion: networking.istio.io/v1alpha3 kind: Gateway metadata: name: public-gateway namespace: istio-system spec: selector: istio: ingressgateway servers: - port: number: 80 name: http protocol: HTTP hosts: - &#34;*&#34; EOF kubectl create ns test kubectl label namespace test istio-injection=enabled # Warning: autoscaling/v2beta2 HorizontalPodAutoscaler is deprecated in v1.
+        </div>
+          <a href="/posts/2023/02/istio-canary-deployments-in-action/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/2023/02/learning-experiences-among-datadog-dynatrace-newrelic/" class="color-inherit dim link">
             Learning experiences among datadog, dynatrace, newrelic
             </a>
@@ -234,38 +261,18 @@ if (!doNotTrack) {
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2023/02/github-action-runner-argo-cd-my-cicd-pipelines/" class="color-inherit dim link">
-            github, action-runner, argo-cd: my cicd pipelines
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Usually I explain one of my CICD pipeline to others with words such like github action + argo-cd. I am not sure if they understand it. A picture is worth a thousand words. Here is my CICD pipeline picture.
-      I used excalidraw to draw the diagram. Excalidraw link is https://excalidraw.com/#json=D7EzmscoRDH8LYLZmtr2l,FVEHlWoxFXtoqqHpReMaEw. Feel free to use it.
- 
-        </div>
-          <a href="/posts/2023/02/github-action-runner-argo-cd-my-cicd-pipelines/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/2023/02/github-action-runner-argo-cd-my-cicd-pipelines/" class="link black dim">
+              github, action-runner, argo-cd: my cicd pipelines
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2023/01/how-many-years-of-experience-do-i-have-on-aws-services-now/" class="link black dim">
@@ -282,12 +289,6 @@ if (!doNotTrack) {
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2023/01/2023-resolution/" class="link black dim">
               2023 resolution
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/2023/01/cloud-migrations-cloud-differences/" class="link black dim">
-              cloud migrations, cloud differences
             </a>
           </h2>
         

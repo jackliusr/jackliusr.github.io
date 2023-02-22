@@ -8,6 +8,18 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 22 Feb 2023 09:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Istio Canary Deployments in action</title>
+      <link>https://jackliusr.github.io/posts/2023/02/istio-canary-deployments-in-action/</link>
+      <pubDate>Wed, 22 Feb 2023 09:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/02/istio-canary-deployments-in-action/</guid>
+      <description>Steps environment:
+   kindest/node:v1.25.3
+  Istio 1.17.0
+   # need to install metrics-server, HPA depends on metrics-server kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml # command: # - /metrics-server # - --kubelet-insecure-tls istioctl manifest install --set profile=default kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.17/samples/addons/prometheus.yaml kubectl apply -k github.com/fluxcd/flagger//kustomize/istio cat &amp;lt;&amp;lt;EOF | kubectl apply -f - apiVersion: networking.istio.io/v1alpha3 kind: Gateway metadata: name: public-gateway namespace: istio-system spec: selector: istio: ingressgateway servers: - port: number: 80 name: http protocol: HTTP hosts: - &amp;#34;*&amp;#34; EOF kubectl create ns test kubectl label namespace test istio-injection=enabled # Warning: autoscaling/v2beta2 HorizontalPodAutoscaler is deprecated in v1.</description>
+    </item>
+    
+    <item>
       <title>Learning experiences among datadog, dynatrace, newrelic</title>
       <link>https://jackliusr.github.io/posts/2023/02/learning-experiences-among-datadog-dynatrace-newrelic/</link>
       <pubDate>Wed, 22 Feb 2023 09:01:10 +0800</pubDate>

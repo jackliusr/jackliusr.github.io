@@ -170,6 +170,26 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2023/02/istio-canary-deployments-in-action/" class="link black dim">
+        Istio Canary Deployments in action
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Steps environment:
+   kindest/node:v1.25.3
+  Istio 1.17.0
+   # need to install metrics-server, HPA depends on metrics-server kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml # command: # - /metrics-server # - --kubelet-insecure-tls istioctl manifest install --set profile=default kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.17/samples/addons/prometheus.yaml kubectl apply -k github.com/fluxcd/flagger//kustomize/istio cat &lt;&lt;EOF | kubectl apply -f - apiVersion: networking.istio.io/v1alpha3 kind: Gateway metadata: name: public-gateway namespace: istio-system spec: selector: istio: ingressgateway servers: - port: number: 80 name: http protocol: HTTP hosts: - &#34;*&#34; EOF kubectl create ns test kubectl label namespace test istio-injection=enabled # Warning: autoscaling/v2beta2 HorizontalPodAutoscaler is deprecated in v1.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2022/06/add-certificates-to-existing-gateway-with-non-synch-resources/" class="link black dim">
         Add certificates to existing gateway with non-synch resources
       </a>

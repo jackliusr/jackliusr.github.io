@@ -17,11 +17,47 @@
     </item>
     
     <item>
+      <title>cd</title>
+      <link>https://jackliusr.github.io/tags/cd/</link>
+      <pubDate>Wed, 22 Feb 2023 09:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/cd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Feature flags</title>
       <link>https://jackliusr.github.io/tags/feature-flags/</link>
       <pubDate>Wed, 22 Feb 2023 09:01:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/feature-flags/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>flagger</title>
+      <link>https://jackliusr.github.io/tags/flagger/</link>
+      <pubDate>Wed, 22 Feb 2023 09:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/flagger/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>istio</title>
+      <link>https://jackliusr.github.io/tags/istio/</link>
+      <pubDate>Wed, 22 Feb 2023 09:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/istio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>progressive-delivery</title>
+      <link>https://jackliusr.github.io/tags/progressive-delivery/</link>
+      <pubDate>Wed, 22 Feb 2023 09:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/progressive-delivery/</guid>
       <description></description>
     </item>
     
@@ -872,15 +908,6 @@
     </item>
     
     <item>
-      <title>istio</title>
-      <link>https://jackliusr.github.io/tags/istio/</link>
-      <pubDate>Thu, 23 Jun 2022 20:01:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/istio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>mysql</title>
       <link>https://jackliusr.github.io/tags/mysql/</link>
       <pubDate>Tue, 21 Jun 2022 10:01:10 +0800</pubDate>
@@ -1381,15 +1408,6 @@
       <pubDate>Tue, 12 Apr 2022 19:10:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/bazel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cd</title>
-      <link>https://jackliusr.github.io/tags/cd/</link>
-      <pubDate>Tue, 12 Apr 2022 19:10:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/cd/</guid>
       <description></description>
     </item>
     
