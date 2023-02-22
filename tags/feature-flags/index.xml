@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Feature flags on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/feature-flags/</link>
+    <description>Recent content in Feature flags on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Feb 2023 09:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/feature-flags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learning experiences among datadog, dynatrace, newrelic</title>
+      <link>https://jackliusr.github.io/posts/2023/02/learning-experiences-among-datadog-dynatrace-newrelic/</link>
+      <pubDate>Wed, 22 Feb 2023 09:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/02/learning-experiences-among-datadog-dynatrace-newrelic/</guid>
+      <description>Last week and this week, I completed my basic learning of APMs as a tool of SRE. I learnt fundamentals of datadog and newrelic, walked through their tutorials in last week and this week. I don’t find a easy way to learn dynatrace from its site. The whole learning experiences between datadog and newrelic are on par with each other. What’s the deal breaker when making choices among them?
+ Leader image::https://dt-cdn.</description>
+    </item>
+    
+  </channel>
+</rss>
