@@ -167,7 +167,8 @@ kubectl -n test describe canary/podinfo
 ----
 
 
-{{< imgur id="uptdqbq" >}}
+
+{{< imgur id="ZdbSrwI" >}}
 
 ==  References
 
