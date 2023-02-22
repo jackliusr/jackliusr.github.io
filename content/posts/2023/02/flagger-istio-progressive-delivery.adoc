@@ -18,6 +18,7 @@ environment:
 * kindest/node:v1.25.3
 * Istio 1.17.0
 
+=== helm 
 
 [source,bash]
 ----
@@ -29,7 +30,20 @@ kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/late
 
 istioctl manifest install --set profile=default
 kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.17/samples/addons/prometheus.yaml
-kubectl apply -k github.com/fluxcd/flagger//kustomize/istio
+
+
+
+helm repo add flagger https://flagger.app
+
+kubectl apply -f https://raw.githubusercontent.com/fluxcd/flagger/main/artifacts/flagger/crd.yaml
+
+helm upgrade -i flagger flagger/flagger \
+--namespace=istio-system \
+--set crd.create=false \
+--set meshProvider=istio \
+--set metricsServer=http://prometheus:9090
+
+
 
 cat <<EOF | kubectl apply -f -
 apiVersion: networking.istio.io/v1alpha3
@@ -60,31 +74,6 @@ kubectl apply -k https://github.com/jackliusr/flagger//kustomize/podinfo?ref=mai
 kubectl apply -k https://github.com/fluxcd/flagger//kustomize/tester?ref=main
 
 
-cat <<EOF | k  apply -f -
-apiVersion: flagger.app/v1beta1
-kind: MetricTemplate
-metadata:
-  name: latency
-  namespace: istio-system
-spec:
-  provider:
-    type: prometheus
-    address: http://prometheus.istio-system:9090
-  query: |
-    histogram_quantile(
-        0.99,
-        sum(
-            rate(
-                istio_request_duration_seconds_bucket{
-                    reporter="destination",
-                    destination_workload_namespace="{{ namespace }}",
-                    destination_workload=~"{{ target }}"
-                }[{{ interval }}]
-            )
-        ) by (le)
-    )
-EOF
-
 cat <<EOF > podinfo-canary.yaml
 apiVersion: flagger.app/v1beta1
 kind: Canary
@@ -102,7 +91,7 @@ spec:
   progressDeadlineSeconds: 60
   # HPA reference (optional)
   autoscalerRef:
-    apiVersion: autoscaling/v2beta2
+    apiVersion: autoscaling/v2
     kind: HorizontalPodAutoscaler
     name: podinfo
   service:
@@ -144,13 +133,12 @@ spec:
       thresholdRange:
         min: 99
       interval: 1m
-    - name: latency
-      templateRef:
-        name: latency
-        namespace: istio-system
+    - name: request-duration
+      # maximum req duration P99
+      # milliseconds
       thresholdRange:
-        max: 0.500
-      interval: 1m
+        max: 500
+      interval: 30s
     # testing (optional)
     webhooks:
       - name: acceptance-test
@@ -165,6 +153,7 @@ spec:
         timeout: 5s
         metadata:
           cmd: "hey -z 1m -q 10 -c 2 http://podinfo-canary.test:9898/"
+
 EOF
 
 kubectl apply -f ./podinfo-canary.yaml
@@ -180,3 +169,4 @@ kubectl -n test describe canary/podinfo
 ==  References
 
 * https://docs.flagger.app/tutorials/istio-progressive-delivery
+* https://fluxcd.io/flagger/install/flagger-install-on-kubernetes/
