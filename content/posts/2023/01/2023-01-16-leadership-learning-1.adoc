@@ -5,6 +5,8 @@ categories:
 - leadership
 tags:
 - leadership
+- book
+- management
 ---
 
 
