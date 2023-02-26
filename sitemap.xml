@@ -8,7 +8,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2023-02-22T20:50:33+08:00</lastmod>
+    <lastmod>2023-02-26T23:37:52+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -43,12 +43,12 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2023-02-22T20:50:33+08:00</lastmod>
+    <lastmod>2023-02-26T23:37:52+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2023-02-22T20:50:33+08:00</lastmod>
+    <lastmod>2023-02-26T23:37:52+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -63,7 +63,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2023-02-22T20:50:33+08:00</lastmod>
+    <lastmod>2023-02-26T23:37:52+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -73,7 +73,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/leadership/</loc>
-    <lastmod>2023-02-16T22:01:34+08:00</lastmod>
+    <lastmod>2023-02-26T23:37:52+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -178,7 +178,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/book/</loc>
-    <lastmod>2023-01-29T23:49:40+08:00</lastmod>
+    <lastmod>2023-02-26T23:37:52+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -248,12 +248,17 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/leadership/</loc>
-    <lastmod>2023-02-15T23:36:40+08:00</lastmod>
+    <lastmod>2023-02-26T23:37:52+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/2023/01/leadership-book-reading-1/</loc>
-    <lastmod>2023-02-15T23:36:40+08:00</lastmod>
+    <lastmod>2023-02-26T23:37:52+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/management/</loc>
+    <lastmod>2023-02-26T23:37:52+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
