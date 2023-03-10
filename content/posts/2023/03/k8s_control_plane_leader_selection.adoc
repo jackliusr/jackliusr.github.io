@@ -13,7 +13,7 @@ tags:
 
 https://blog.heptio.com/leader-election-in-kubernetes-control-plane-heptioprotip-1ed9fb0f3e6d[Leader election in Kubernetes control plane - #HeptioProTip] give a way how to find out leaders of Kubernetes control plane components kube-scheduler and kube-controller-manager. However it was based on a old version of kubernetes, and the mechanism is changed in later versions. Today I was asked how to find the leaders. Here is the new way to find. 
 
-TODO: how to map holderIdentity to pods?
+
 
 [source, console]
 ----
@@ -41,5 +41,9 @@ $ kubectl -n kube-system get events | grep lease
 $ stern kube-controller-manager-kind-control-plane | grep lease
 
 ----
+
+Holder Identity mapping: 
+
+{{< imgur id="420iWyD" >}}
 
 My sample cluster to test this is here:  https://github.com/jackliusr/k8s/blob/main/configs/4nodes-ha-cluster.yaml
