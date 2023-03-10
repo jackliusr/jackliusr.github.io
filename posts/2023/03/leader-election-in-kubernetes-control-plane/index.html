@@ -7,7 +7,6 @@
     <title>Leader election in Kubernetes control plane | My learning and diary</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Leader election in Kubernetes control plane - #HeptioProTip give a way how to find out leaders of Kubernetes control plane components kube-scheduler and kube-controller-manager. However it was based on a old version of kubernetes, and the mechanism is changed in later versions. Today I was asked how to find the leaders. Here is the new way to find.
- TODO: how to map holderIdentity to pods?
  $ kubectl -n kube-system get lease NAME HOLDER AGE kube-apiserver-c4vwjftbvpc5os2vvzle4qg27a kube-apiserver-c4vwjftbvpc5os2vvzle4qg27a_b187371d-e48c-4216-8228-707a0ecf6100 2m57s kube-apiserver-dz2dqprdpsgnm756t5rnov7yka kube-apiserver-dz2dqprdpsgnm756t5rnov7yka_0b531f66-0c31-453c-9277-a6c1aa81da94 86s kube-apiserver-fyloo45sdenffw2ugwaz3likua kube-apiserver-fyloo45sdenffw2ugwaz3likua_3e322f9a-9724-4e3a-9fc6-a512e9424164 2m11s kube-controller-manager kind-control-plane_bec39b96-87c4-4bce-8775-2eeb4eb4c1e8 2m53s kube-scheduler kind-control-plane_db6f36d8-ceaa-40eb-b821-75f8ae829f22 2m53s $ kubectl -n kube-system get pods -l component=kube-controller-manager,tier=control-plane \ -o custom-columns=NAME:.">
     <meta name="generator" content="Hugo 0.99.1" />
     
@@ -30,23 +29,20 @@
     
     <meta property="og:title" content="Leader election in Kubernetes control plane" />
 <meta property="og:description" content="Leader election in Kubernetes control plane - #HeptioProTip give a way how to find out leaders of Kubernetes control plane components kube-scheduler and kube-controller-manager. However it was based on a old version of kubernetes, and the mechanism is changed in later versions. Today I was asked how to find the leaders. Here is the new way to find.
- TODO: how to map holderIdentity to pods?
  $ kubectl -n kube-system get lease NAME HOLDER AGE kube-apiserver-c4vwjftbvpc5os2vvzle4qg27a kube-apiserver-c4vwjftbvpc5os2vvzle4qg27a_b187371d-e48c-4216-8228-707a0ecf6100 2m57s kube-apiserver-dz2dqprdpsgnm756t5rnov7yka kube-apiserver-dz2dqprdpsgnm756t5rnov7yka_0b531f66-0c31-453c-9277-a6c1aa81da94 86s kube-apiserver-fyloo45sdenffw2ugwaz3likua kube-apiserver-fyloo45sdenffw2ugwaz3likua_3e322f9a-9724-4e3a-9fc6-a512e9424164 2m11s kube-controller-manager kind-control-plane_bec39b96-87c4-4bce-8775-2eeb4eb4c1e8 2m53s kube-scheduler kind-control-plane_db6f36d8-ceaa-40eb-b821-75f8ae829f22 2m53s $ kubectl -n kube-system get pods -l component=kube-controller-manager,tier=control-plane \ -o custom-columns=NAME:." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2023/03/leader-election-in-kubernetes-control-plane/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-03-10T09:01:10+08:00" />
-<meta property="article:modified_time" content="2023-03-10T18:17:25+08:00" />
+<meta property="article:modified_time" content="2023-03-10T18:28:45+08:00" />
 
 <meta itemprop="name" content="Leader election in Kubernetes control plane">
 <meta itemprop="description" content="Leader election in Kubernetes control plane - #HeptioProTip give a way how to find out leaders of Kubernetes control plane components kube-scheduler and kube-controller-manager. However it was based on a old version of kubernetes, and the mechanism is changed in later versions. Today I was asked how to find the leaders. Here is the new way to find.
- TODO: how to map holderIdentity to pods?
  $ kubectl -n kube-system get lease NAME HOLDER AGE kube-apiserver-c4vwjftbvpc5os2vvzle4qg27a kube-apiserver-c4vwjftbvpc5os2vvzle4qg27a_b187371d-e48c-4216-8228-707a0ecf6100 2m57s kube-apiserver-dz2dqprdpsgnm756t5rnov7yka kube-apiserver-dz2dqprdpsgnm756t5rnov7yka_0b531f66-0c31-453c-9277-a6c1aa81da94 86s kube-apiserver-fyloo45sdenffw2ugwaz3likua kube-apiserver-fyloo45sdenffw2ugwaz3likua_3e322f9a-9724-4e3a-9fc6-a512e9424164 2m11s kube-controller-manager kind-control-plane_bec39b96-87c4-4bce-8775-2eeb4eb4c1e8 2m53s kube-scheduler kind-control-plane_db6f36d8-ceaa-40eb-b821-75f8ae829f22 2m53s $ kubectl -n kube-system get pods -l component=kube-controller-manager,tier=control-plane \ -o custom-columns=NAME:."><meta itemprop="datePublished" content="2023-03-10T09:01:10+08:00" />
-<meta itemprop="dateModified" content="2023-03-10T18:17:25+08:00" />
-<meta itemprop="wordCount" content="160">
+<meta itemprop="dateModified" content="2023-03-10T18:28:45+08:00" />
+<meta itemprop="wordCount" content="156">
 <meta itemprop="keywords" content="kubernetes,Leader,lease," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Leader election in Kubernetes control plane"/>
 <meta name="twitter:description" content="Leader election in Kubernetes control plane - #HeptioProTip give a way how to find out leaders of Kubernetes control plane components kube-scheduler and kube-controller-manager. However it was based on a old version of kubernetes, and the mechanism is changed in later versions. Today I was asked how to find the leaders. Here is the new way to find.
- TODO: how to map holderIdentity to pods?
  $ kubectl -n kube-system get lease NAME HOLDER AGE kube-apiserver-c4vwjftbvpc5os2vvzle4qg27a kube-apiserver-c4vwjftbvpc5os2vvzle4qg27a_b187371d-e48c-4216-8228-707a0ecf6100 2m57s kube-apiserver-dz2dqprdpsgnm756t5rnov7yka kube-apiserver-dz2dqprdpsgnm756t5rnov7yka_0b531f66-0c31-453c-9277-a6c1aa81da94 86s kube-apiserver-fyloo45sdenffw2ugwaz3likua kube-apiserver-fyloo45sdenffw2ugwaz3likua_3e322f9a-9724-4e3a-9fc6-a512e9424164 2m11s kube-controller-manager kind-control-plane_bec39b96-87c4-4bce-8775-2eeb4eb4c1e8 2m53s kube-scheduler kind-control-plane_db6f36d8-ceaa-40eb-b821-75f8ae829f22 2m53s $ kubectl -n kube-system get pods -l component=kube-controller-manager,tier=control-plane \ -o custom-columns=NAME:."/>
 
       
@@ -207,14 +203,11 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 1 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 160 words</span>
+        <span class="f6 mv4 dib tracked"> - 156 words</span>
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
 <p><a href="https://blog.heptio.com/leader-election-in-kubernetes-control-plane-heptioprotip-1ed9fb0f3e6d">Leader election in Kubernetes control plane - #HeptioProTip</a> give a way how to find out leaders of Kubernetes control plane components kube-scheduler and kube-controller-manager. However it was based on a old version of kubernetes, and the mechanism is changed in later versions. Today I was asked how to find the leaders. Here is the new way to find.</p>
-</div>
-<div class="paragraph">
-<p>TODO: how to map holderIdentity to pods?</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -241,6 +234,18 @@ $ kubectl -n kube-system get events | grep lease
 
 $ stern kube-controller-manager-kind-control-plane | grep lease</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Holder Identity mapping:</p>
+</div>
+<div class="paragraph">
+<div class="embed imgur-image">
+<blockquote class="imgur-embed-pub" lang="en" data-id="420iWyD" data-context="false">
+<a href="//imgur.com/420iWyD"></a>
+</blockquote>
+<script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+</div>
+
 </div>
 <div class="paragraph">
 <p>My sample cluster to test this is here:  <a href="https://github.com/jackliusr/k8s/blob/main/configs/4nodes-ha-cluster.yaml" class="bare">https://github.com/jackliusr/k8s/blob/main/configs/4nodes-ha-cluster.yaml</a></p>
@@ -305,11 +310,11 @@ $ stern kube-controller-manager-kind-control-plane | grep lease</code></pre>
         </li>
 	    
 	     <li  class="mb2">
-          <a href="/notes/k8s-metrics/">kubernetes metrics options</a>
+          <a href="/notes/kubelet/">Kubelet architecture</a>
         </li>
 	    
 	     <li  class="mb2">
-          <a href="/notes/kubelet/">Kubelet architecture</a>
+          <a href="/notes/k8s-metrics/">kubernetes metrics options</a>
         </li>
 	    
 	     <li  class="mb2">
@@ -405,6 +410,6 @@ $ stern kube-controller-manager-kind-control-plane | grep lease</code></pre>
 
 
 
-  <p style="font-size: small; color: grey;">Page version: 5f0a562b14bf4081fb5007d1f60af3d80d0e912f 2023-03-10</p>
+  <p style="font-size: small; color: grey;">Page version: 4a9e28c365eed9115f63c637bb77c1e30df25b1a 2023-03-10</p>
   </body>
 </html>
