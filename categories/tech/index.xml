@@ -6,7 +6,18 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Feb 2023 09:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Mar 2023 09:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leader election in Kubernetes control plane</title>
+      <link>https://jackliusr.github.io/posts/2023/03/leader-election-in-kubernetes-control-plane/</link>
+      <pubDate>Fri, 10 Mar 2023 09:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/03/leader-election-in-kubernetes-control-plane/</guid>
+      <description>Leader election in Kubernetes control plane - #HeptioProTip give a way how to find out leaders of Kubernetes control plane components kube-scheduler and kube-controller-manager. However it was based on a old version of kubernetes, and the mechanism is changed in later versions. Today I was asked how to find the leaders. Here is the new way to find.
+ TODO: how to map holderIdentity to pods?
+ $ kubectl -n kube-system get lease NAME HOLDER AGE kube-apiserver-c4vwjftbvpc5os2vvzle4qg27a kube-apiserver-c4vwjftbvpc5os2vvzle4qg27a_b187371d-e48c-4216-8228-707a0ecf6100 2m57s kube-apiserver-dz2dqprdpsgnm756t5rnov7yka kube-apiserver-dz2dqprdpsgnm756t5rnov7yka_0b531f66-0c31-453c-9277-a6c1aa81da94 86s kube-apiserver-fyloo45sdenffw2ugwaz3likua kube-apiserver-fyloo45sdenffw2ugwaz3likua_3e322f9a-9724-4e3a-9fc6-a512e9424164 2m11s kube-controller-manager kind-control-plane_bec39b96-87c4-4bce-8775-2eeb4eb4c1e8 2m53s kube-scheduler kind-control-plane_db6f36d8-ceaa-40eb-b821-75f8ae829f22 2m53s $ kubectl -n kube-system get pods -l component=kube-controller-manager,tier=control-plane \ -o custom-columns=NAME:.</description>
+    </item>
+    
     <item>
       <title>Istio Canary Deployments using flagger</title>
       <link>https://jackliusr.github.io/posts/2023/02/istio-canary-deployments-using-flagger/</link>
@@ -245,6 +256,16 @@ flowchart TD oversized{MVCC DB oversized}--|Yes|logIntoContainer(log into contai
       <guid>https://jackliusr.github.io/posts/2022/11/install-release-version-of-mobile-application-into-ios-without-testflight/</guid>
       <description>Last three days, I found an issue can only be reproduced in realease mode.The beta testing cycle via testflight takes too long and it definitely is not the option. I debugged my application in iOS before. One thing popped up in my mind whether I can put release mode of my application into iOS using the debug tool of vs code.
  I changed my launch.json as below in my project and debug my application.</description>
+    </item>
+    
+    <item>
+      <title>Learning Microsoft azure or google cloud</title>
+      <link>https://jackliusr.github.io/posts/2022/10/learning-microsoft-azure-or-google-cloud/</link>
+      <pubDate>Sun, 23 Oct 2022 00:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/10/learning-microsoft-azure-or-google-cloud/</guid>
+      <description>Today when I leant SRE course from cloudskillsboost, the first course is google cloud foundation. SRE is great. cloudskillsboost should be best place to learn SRE as it is originated there.
+ </description>
     </item>
     
     <item>

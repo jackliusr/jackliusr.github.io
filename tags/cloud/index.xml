@@ -16,5 +16,15 @@
       <description>AWS has almost established themselves as the de facto public cloud provider for a lot of businesses, other providers always try to provide similiar services and similar APIs to attract existing AWS customers to migrate to their platform. Each following provider provides similar comparison table comparing to AWS. Those comparison can give one a quick start to adopt their services without major issues. Even those following providers provide migration tools for migrating from aws to their platform.</description>
     </item>
     
+    <item>
+      <title>Learning Microsoft azure or google cloud</title>
+      <link>https://jackliusr.github.io/posts/2022/10/learning-microsoft-azure-or-google-cloud/</link>
+      <pubDate>Sun, 23 Oct 2022 00:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/10/learning-microsoft-azure-or-google-cloud/</guid>
+      <description>Today when I leant SRE course from cloudskillsboost, the first course is google cloud foundation. SRE is great. cloudskillsboost should be best place to learn SRE as it is originated there.
+ </description>
+    </item>
+    
   </channel>
 </rss>

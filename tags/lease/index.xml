@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lease on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/lease/</link>
+    <description>Recent content in lease on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Mar 2023 09:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/lease/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leader election in Kubernetes control plane</title>
+      <link>https://jackliusr.github.io/posts/2023/03/leader-election-in-kubernetes-control-plane/</link>
+      <pubDate>Fri, 10 Mar 2023 09:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/03/leader-election-in-kubernetes-control-plane/</guid>
+      <description>Leader election in Kubernetes control plane - #HeptioProTip give a way how to find out leaders of Kubernetes control plane components kube-scheduler and kube-controller-manager. However it was based on a old version of kubernetes, and the mechanism is changed in later versions. Today I was asked how to find the leaders. Here is the new way to find.
+ TODO: how to map holderIdentity to pods?
+ $ kubectl -n kube-system get lease NAME HOLDER AGE kube-apiserver-c4vwjftbvpc5os2vvzle4qg27a kube-apiserver-c4vwjftbvpc5os2vvzle4qg27a_b187371d-e48c-4216-8228-707a0ecf6100 2m57s kube-apiserver-dz2dqprdpsgnm756t5rnov7yka kube-apiserver-dz2dqprdpsgnm756t5rnov7yka_0b531f66-0c31-453c-9277-a6c1aa81da94 86s kube-apiserver-fyloo45sdenffw2ugwaz3likua kube-apiserver-fyloo45sdenffw2ugwaz3likua_3e322f9a-9724-4e3a-9fc6-a512e9424164 2m11s kube-controller-manager kind-control-plane_bec39b96-87c4-4bce-8775-2eeb4eb4c1e8 2m53s kube-scheduler kind-control-plane_db6f36d8-ceaa-40eb-b821-75f8ae829f22 2m53s $ kubectl -n kube-system get pods -l component=kube-controller-manager,tier=control-plane \ -o custom-columns=NAME:.</description>
+    </item>
+    
+  </channel>
+</rss>

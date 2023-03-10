@@ -17,5 +17,15 @@
  Leader     Feature flags intergration During a discussion about progressive delivery using flagger, I was curious if it is possible to integrate feature flags and APM.</description>
     </item>
     
+    <item>
+      <title>Learning Microsoft azure or google cloud</title>
+      <link>https://jackliusr.github.io/posts/2022/10/learning-microsoft-azure-or-google-cloud/</link>
+      <pubDate>Sun, 23 Oct 2022 00:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/10/learning-microsoft-azure-or-google-cloud/</guid>
+      <description>Today when I leant SRE course from cloudskillsboost, the first course is google cloud foundation. SRE is great. cloudskillsboost should be best place to learn SRE as it is originated there.
+ </description>
+    </item>
+    
   </channel>
 </rss>

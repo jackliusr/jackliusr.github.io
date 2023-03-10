@@ -192,6 +192,32 @@ if (!doNotTrack) {
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/2023/03/leader-election-in-kubernetes-control-plane/" class="color-inherit dim link">
+            Leader election in Kubernetes control plane
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Leader election in Kubernetes control plane - #HeptioProTip give a way how to find out leaders of Kubernetes control plane components kube-scheduler and kube-controller-manager. However it was based on a old version of kubernetes, and the mechanism is changed in later versions. Today I was asked how to find the leaders. Here is the new way to find.
+ TODO: how to map holderIdentity to pods?
+ $ kubectl -n kube-system get lease NAME HOLDER AGE kube-apiserver-c4vwjftbvpc5os2vvzle4qg27a kube-apiserver-c4vwjftbvpc5os2vvzle4qg27a_b187371d-e48c-4216-8228-707a0ecf6100 2m57s kube-apiserver-dz2dqprdpsgnm756t5rnov7yka kube-apiserver-dz2dqprdpsgnm756t5rnov7yka_0b531f66-0c31-453c-9277-a6c1aa81da94 86s kube-apiserver-fyloo45sdenffw2ugwaz3likua kube-apiserver-fyloo45sdenffw2ugwaz3likua_3e322f9a-9724-4e3a-9fc6-a512e9424164 2m11s kube-controller-manager kind-control-plane_bec39b96-87c4-4bce-8775-2eeb4eb4c1e8 2m53s kube-scheduler kind-control-plane_db6f36d8-ceaa-40eb-b821-75f8ae829f22 2m53s $ kubectl -n kube-system get pods -l component=kube-controller-manager,tier=control-plane \ -o custom-columns=NAME:.
+        </div>
+          <a href="/posts/2023/03/leader-election-in-kubernetes-control-plane/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/2023/02/istio-canary-deployments-using-flagger/" class="color-inherit dim link">
             Istio Canary Deployments using flagger
             </a>
@@ -237,37 +263,18 @@ if (!doNotTrack) {
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2023/02/whats-pod-sandbox/" class="color-inherit dim link">
-            What&#39;s pod sandbox
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          The explanation of pod sandbox at the abstraction that replaces the &#34;pause&#34; container that is used to keep namespaces open in every Kubernetes pod today. I doubted about that. What’s the point to introduce a new concept? Yerterday I went down the rabbit hole to understand it. This morning I finally got the hang of it.
- Kubernetes blog said it is an environment. It maybe a VM, a group of containers.
-        </div>
-          <a href="/posts/2023/02/whats-pod-sandbox/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/2023/02/whats-pod-sandbox/" class="link black dim">
+              What&#39;s pod sandbox
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2023/02/github-action-runner-argo-cd-my-cicd-pipelines/" class="link black dim">
@@ -284,12 +291,6 @@ if (!doNotTrack) {
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2023/01/2023-swot-analysis/" class="link black dim">
               2023 SWOT Analysis
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/2023/01/2023-resolution/" class="link black dim">
-              2023 resolution
             </a>
           </h2>
         

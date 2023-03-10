@@ -6,7 +6,34 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Feb 2023 09:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Mar 2023 09:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>kubernetes</title>
+      <link>https://jackliusr.github.io/tags/kubernetes/</link>
+      <pubDate>Fri, 10 Mar 2023 09:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Leader</title>
+      <link>https://jackliusr.github.io/tags/leader/</link>
+      <pubDate>Fri, 10 Mar 2023 09:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/leader/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lease</title>
+      <link>https://jackliusr.github.io/tags/lease/</link>
+      <pubDate>Fri, 10 Mar 2023 09:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/lease/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>APM</title>
       <link>https://jackliusr.github.io/tags/apm/</link>
@@ -76,15 +103,6 @@
       <pubDate>Wed, 15 Feb 2023 20:40:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/leadership/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kubernetes</title>
-      <link>https://jackliusr.github.io/tags/kubernetes/</link>
-      <pubDate>Fri, 10 Feb 2023 21:40:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/kubernetes/</guid>
       <description></description>
     </item>
     
@@ -553,6 +571,24 @@
       <pubDate>Thu, 24 Nov 2022 13:01:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/testflight/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>azure</title>
+      <link>https://jackliusr.github.io/tags/azure/</link>
+      <pubDate>Sun, 23 Oct 2022 00:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/azure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gcloud</title>
+      <link>https://jackliusr.github.io/tags/gcloud/</link>
+      <pubDate>Sun, 23 Oct 2022 00:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/gcloud/</guid>
       <description></description>
     </item>
     
