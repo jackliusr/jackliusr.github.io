@@ -1,0 +1,16 @@
+---
+title: "Learning Microsoft azure or google cloud"
+date: 2022-10-23T00:01:10+08:00
+categories:
+- tech
+tags:
+- cloud
+- azure
+- gcloud
+- SRE
+---
+
+
+Today when I leant SRE course from https://www.cloudskillsboost.google/[cloudskillsboost], the first course is google cloud foundation. SRE is great. cloudskillsboost should be best place to learn SRE as it is originated there. 
+
+

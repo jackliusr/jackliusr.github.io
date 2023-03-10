@@ -1,0 +1,45 @@
+---
+title: "Leader election in Kubernetes control plane"
+date: 2023-03-10T09:01:10+08:00
+categories:
+- tech
+tags:
+- kubernetes
+- Leader
+- lease
+---
+
+
+
+https://blog.heptio.com/leader-election-in-kubernetes-control-plane-heptioprotip-1ed9fb0f3e6d[Leader election in Kubernetes control plane - #HeptioProTip] give a way how to find out leaders of Kubernetes control plane components kube-scheduler and kube-controller-manager. However it was based on a old version of kubernetes, and the mechanism is changed in later versions. Today I was asked how to find the leaders. Here is the new way to find. 
+
+TODO: how to map holderIdentity to pods?
+
+[source, console]
+----
+$ kubectl -n kube-system get lease 
+NAME                                        HOLDER                                                                           AGE
+kube-apiserver-c4vwjftbvpc5os2vvzle4qg27a   kube-apiserver-c4vwjftbvpc5os2vvzle4qg27a_b187371d-e48c-4216-8228-707a0ecf6100   2m57s
+kube-apiserver-dz2dqprdpsgnm756t5rnov7yka   kube-apiserver-dz2dqprdpsgnm756t5rnov7yka_0b531f66-0c31-453c-9277-a6c1aa81da94   86s
+kube-apiserver-fyloo45sdenffw2ugwaz3likua   kube-apiserver-fyloo45sdenffw2ugwaz3likua_3e322f9a-9724-4e3a-9fc6-a512e9424164   2m11s
+kube-controller-manager                     kind-control-plane_bec39b96-87c4-4bce-8775-2eeb4eb4c1e8                          2m53s
+kube-scheduler                              kind-control-plane_db6f36d8-ceaa-40eb-b821-75f8ae829f22                          2m53s
+
+$ kubectl -n kube-system get pods -l component=kube-controller-manager,tier=control-plane \
+   -o custom-columns=NAME:.metadata.name,UID:.metadata.uid
+NAME                                          UID
+kube-controller-manager-kind-control-plane    8d908a69-a237-4b25-84c1-8afb440759d2
+kube-controller-manager-kind-control-plane2   045161cb-9f66-4cce-be0f-e7b424724abe
+kube-controller-manager-kind-control-plane3   21a02868-4d5a-4cc4-9f4c-0b558db90843
+
+$ kubectl -n kube-system get events | grep lease
+4m19s       Normal    LeaderElection      lease/kube-controller-manager                     kind-control-plane_97f076c6-3bff-40ee-9bec-e7aafacf4efe became leader
+3m21s       Normal    LeaderElection      lease/kube-controller-manager                     kind-control-plane_bec39b96-87c4-4bce-8775-2eeb4eb4c1e8 became leader
+4m19s       Normal    LeaderElection      lease/kube-scheduler                              kind-control-plane_e82771b3-c0b0-46eb-9bdf-cf18ef96f336 became leader
+3m23s       Normal    LeaderElection      lease/kube-scheduler                              kind-control-plane_db6f36d8-ceaa-40eb-b821-75f8ae829f22 became leader
+
+$ stern kube-controller-manager-kind-control-plane | grep lease
+
+----
+
+My sample cluster to test this is here:  https://github.com/jackliusr/k8s/blob/main/configs/4nodes-ha-cluster.yaml
