@@ -1,0 +1,56 @@
+---
+title: "Subdomain or path for dev/stage/uat environments"
+date: 2023-04-13T20:01:10+08:00
+categories:
+- tech
+tags:
+- dns
+- environment
+---
+
+In my previous two companies, everytime I used the subdomain way without thinking much about this. 
+Recently I wondered the rational behind this decisions. I had the clear answers two days ago. 
+Today I have the time to put it into this writing. 
+
+
+[cols="1,1,3,1,3", frame=all, grid=all]
+|===
+| Factors
+| subdomain(dev.example.com)
+| subdomain reasons
+| path (example.com/dev/)
+| path reasons
+
+| server side performance
+| 9
+a| 
+- dns records point to differnent IP. 
+- easier to setup scalable solutions than anycast etc.
+| 5
+| no way to point to different IP. CDN rules like cloudflare page rules?
+
+| client side performance
+| 10
+a| 
+- one tab only have limited connections to a specific domain. 
+- multiple domains are good for parallel fetching
+| 5
+| one tab only have limited connections to a specific domain. 
+
+| routing simplicity
+| 8
+a| 
+- managable routing conf per subdomain. 
+- difficult to reuse routing rules among domains
+| 8
+| reverse proxy conf 
+
+| dev/delivery productivity(speed/velociyt)
+| 10
+a| 
+- delegate management of subdomain to devs, frequent changes. 
+- Usually a subdomain is for a component or sites which have its subdomains such as cdn, api, backoffice etc for diffent purposes
+| 5
+| Ops usaully will be the bottleneck.
+
+|=== 
