@@ -29,6 +29,14 @@ a|
 | 5
 | no way to point to different IP. CDN rules like cloudflare page rules?
 
+| private dns resolving
+| 10
+| cloud
+| 1
+a|
+- reverse proxy
+- traffic cost
+
 | client side performance
 | 10
 a| 
