@@ -47,7 +47,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2023/04/subdomain-or-path-for-dev/stage/uat-environments/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-04-13T20:01:10+08:00" />
-<meta property="article:modified_time" content="2023-04-13T21:37:18+08:00" />
+<meta property="article:modified_time" content="2023-04-17T11:01:19+08:00" />
 
 <meta itemprop="name" content="Subdomain or path for dev/stage/uat environments">
 <meta itemprop="description" content="In my previous two companies, everytime I used the subdomain way without thinking much about this. Recently I wondered the rational behind this decisions. I had the clear answers two days ago. Today I have the time to put it into this writing.
@@ -59,8 +59,8 @@
    server side performance
  9
    dns records point to differnent IP."><meta itemprop="datePublished" content="2023-04-13T20:01:10+08:00" />
-<meta itemprop="dateModified" content="2023-04-13T21:37:18+08:00" />
-<meta itemprop="wordCount" content="174">
+<meta itemprop="dateModified" content="2023-04-17T11:01:19+08:00" />
+<meta itemprop="wordCount" content="184">
 <meta itemprop="keywords" content="dns,environment," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Subdomain or path for dev/stage/uat environments"/>
 <meta name="twitter:description" content="In my previous two companies, everytime I used the subdomain way without thinking much about this. Recently I wondered the rational behind this decisions. I had the clear answers two days ago. Today I have the time to put it into this writing.
@@ -231,7 +231,7 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 1 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 174 words</span>
+        <span class="f6 mv4 dib tracked"> - 184 words</span>
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
@@ -270,6 +270,22 @@ Today I have the time to put it into this writing.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no way to point to different IP. CDN rules like cloudflare page rules?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">private dns resolving</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cloud</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>reverse proxy</p>
+</li>
+<li>
+<p>traffic cost</p>
+</li>
+</ul>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">client side performance</p></td>
@@ -410,6 +426,6 @@ Today I have the time to put it into this writing.</p>
 
 
 
-  <p style="font-size: small; color: grey;">Page version: eb7e02d78ac2b77210b221bfe02c0fd51d8954b9 2023-04-13</p>
+  <p style="font-size: small; color: grey;">Page version: 165b6e9f453c3223e611a0c8abeadc845df452c4 2023-04-17</p>
   </body>
 </html>
