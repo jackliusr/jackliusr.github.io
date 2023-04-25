@@ -1,0 +1,25 @@
+---
+title: "filter data conditionally using power-query"
+date: 2023-04-25T20:01:10+08:00
+categories:
+- tech
+tags:
+- power-query
+---
+
+2 days ago, I didn't figure out how to filter out data using power-query. I used a workaround solution to achive the same goal. Yesteray I occasionally found that I can filter out data directly without using my workaround solutions. 
+
+- Table.SelectRows
++
+```M
+Table.SelectRows(
+    Table.FromRecords({
+        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
+        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
+        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
+        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
+    }),
+    each ( [CustomerID] > 2 and [Phone] 
+)
+```
+- Add a conditional column and filter on the column
