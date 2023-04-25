@@ -6,7 +6,18 @@
     <description>Recent content on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Apr 2023 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 Apr 2023 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>filter data conditionally using power-query</title>
+      <link>https://jackliusr.github.io/posts/2023/04/filter-data-conditionally-using-power-query/</link>
+      <pubDate>Tue, 25 Apr 2023 20:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/04/filter-data-conditionally-using-power-query/</guid>
+      <description>2 days ago, I didn’t figure out how to filter out data using power-query. I used a workaround solution to achive the same goal. Yesteray I occasionally found that I can filter out data directly without using my workaround solutions.
+   Table.SelectRows
+Table.SelectRows( Table.FromRecords({ [CustomerID = 1, Name = &amp;#34;Bob&amp;#34;, Phone = &amp;#34;123-4567&amp;#34;], [CustomerID = 2, Name = &amp;#34;Jim&amp;#34;, Phone = &amp;#34;987-6543&amp;#34;], [CustomerID = 3, Name = &amp;#34;Paul&amp;#34;, Phone = &amp;#34;543-7890&amp;#34;], [CustomerID = 4, Name = &amp;#34;Ringo&amp;#34;, Phone = &amp;#34;232-1550&amp;#34;] }), each ( [CustomerID] &amp;gt; 2 and Text.</description>
+    </item>
+    
     <item>
       <title>Subdomain or path for dev/stage/uat environments</title>
       <link>https://jackliusr.github.io/posts/2023/04/subdomain-or-path-for-dev/stage/uat-environments/</link>
