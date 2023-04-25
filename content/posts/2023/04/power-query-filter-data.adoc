@@ -19,7 +19,7 @@ Table.SelectRows(
         [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
         [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
     }),
-    each ( [CustomerID] > 2 and [Phone] 
+    each ( [CustomerID] > 2 and Text.Contains([Phone],"0") )
 )
 ```
 - Add a conditional column and filter on the column
