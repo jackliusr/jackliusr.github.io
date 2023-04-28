@@ -1,0 +1,25 @@
+---
+title: "linux utils equivalent in powershell"
+date: 2023-04-28T20:01:10+08:00
+categories:
+- tech
+tags:
+- linux
+- powershell
+---
+
+I never thought I will learn to use powershell seriously. Now I joined NTUC, there are many restrictions. Today I started to use linux utils equivalent in powershell.
+
+- dig: Resolve-DnsName
+- telnet: Test-NetConnection
+- host: Get-Host 
+- touch: New-Item
+- cat: Get-Content
+- tail: Get-Content
+- grep: Where-Object or Select-String
+- man: Get-Help
+
+== References
+
+- https://mathieubuisson.github.io/powershell-linux-bash/#pwd-
+- 
