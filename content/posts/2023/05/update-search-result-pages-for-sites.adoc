@@ -1,0 +1,26 @@
+---
+title: "Keep the search result pages in search engines up to date"
+date: 2023-05-05T20:01:10+08:00
+categories:
+- tech
+tags:
+- SEO
+---
+
+Last week I was assigned a task to keep search result pages of a site of my company up to date. After researching, trial and errors, I found out the following ways to keep the search result pages in search engines up to date.
+
+* Remove outdated content from search result of google and Bing.
+** temporary: block URLs from webmaster tools
+** permanent: 
+... get sitemaps.xml of old site and clean up thoroughly.
+... add noindex to outdated pages and robots.txt.
+* Add new contents to search result of google and Bing.
+** temporary: submit individual important URLs to google and Bing.
+** permanent: get sitemap.xml of new site and submit sitemap.xml to google and Bing.
+* check indexing status in search console/webmaster tools to make sure pages indexed.
+* check too many redirections: crawl sites and try to find too many redirections.
+* Improvement:   speed up indexing, may incur costs for indexing when crawling beyond crawl budget from google and Bing.
+** to add indexnow for Bing,
+** add indexing Api for google search.
+* google/Bing search alerts for outdated content: checking interval 90 days.
+

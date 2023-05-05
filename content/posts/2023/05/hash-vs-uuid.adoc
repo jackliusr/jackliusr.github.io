@@ -1,0 +1,42 @@
+---
+title: "Hash vs UUID to replace NRIC/L4C"
+date: 2023-05-05T20:01:10+08:00
+categories:
+- tech
+tags:
+- hash
+---
+
+[cols="1,1,1"]
+|===
+| Item
+| Hash/encryption
+| UUID
+
+|  Order preservation
+|  possible (linear hash)
+|  possible ( customized UUID algorithm)
+
+| length
+| shorter or longer
+| fixed
+
+| ubiquitous
+| anyone or machines can be used to hash
+| depends
+
+| performance (computing)
+| ?
+| ?
+
+| performance (search)
+| fast
+| slow
+
+|=== 
+
+References: 
+
+* https://link.springer.com/chapter/10.1007/978-3-642-01001-9_13
+* https://xlinux.nist.gov/dads/HTML/linearhash.html
+* https://www.percona.com/blog/uuids-are-popular-but-bad-for-performance-lets-discuss/
