@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SEO on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/seo/</link>
+    <description>Recent content in SEO on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 05 May 2023 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/seo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Keep the search result pages in search engines up to date</title>
+      <link>https://jackliusr.github.io/posts/2023/05/keep-the-search-result-pages-in-search-engines-up-to-date/</link>
+      <pubDate>Fri, 05 May 2023 20:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/05/keep-the-search-result-pages-in-search-engines-up-to-date/</guid>
+      <description>Last week I was assigned a task to keep search result pages of a site of my company up to date. After researching, trial and errors, I found out the following ways to keep the search result pages in search engines up to date.
+   Remove outdated content from search result of google and Bing.
+  temporary: block URLs from webmaster tools
+  permanent:
+ get sitemaps.</description>
+    </item>
+    
+  </channel>
+</rss>

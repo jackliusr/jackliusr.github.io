@@ -6,7 +6,47 @@
     <description>Recent content in Posts on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Apr 2023 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 May 2023 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hash vs UUID to replace NRIC/L4C</title>
+      <link>https://jackliusr.github.io/posts/2023/05/hash-vs-uuid-to-replace-nric/l4c/</link>
+      <pubDate>Fri, 05 May 2023 20:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/05/hash-vs-uuid-to-replace-nric/l4c/</guid>
+      <description>Item
+ Hash/encryption
+ UUID
+   Order preservation
+ possible (linear hash)
+ possible ( customized UUID algorithm)
+   length
+ shorter or longer
+ fixed
+   ubiquitous
+ anyone or machines can be used to hash
+ depends
+   performance (computing)
+ ?
+ ?
+   performance (search)
+ fast
+ slow
+    References:</description>
+    </item>
+    
+    <item>
+      <title>Keep the search result pages in search engines up to date</title>
+      <link>https://jackliusr.github.io/posts/2023/05/keep-the-search-result-pages-in-search-engines-up-to-date/</link>
+      <pubDate>Fri, 05 May 2023 20:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/05/keep-the-search-result-pages-in-search-engines-up-to-date/</guid>
+      <description>Last week I was assigned a task to keep search result pages of a site of my company up to date. After researching, trial and errors, I found out the following ways to keep the search result pages in search engines up to date.
+   Remove outdated content from search result of google and Bing.
+  temporary: block URLs from webmaster tools
+  permanent:
+ get sitemaps.</description>
+    </item>
+    
     <item>
       <title>linux utils equivalent in powershell</title>
       <link>https://jackliusr.github.io/posts/2023/04/linux-utils-equivalent-in-powershell/</link>
