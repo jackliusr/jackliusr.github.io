@@ -1,0 +1,60 @@
+---
+title: "Setup docker in wsl2"
+date: 2023-05-23T20:01:10+08:00
+categories:
+- tech
+tags:
+- docker
+- wsl2
+---
+
+== Installation
+
+I installed Ubuntu 22.04 on my laptop following the scripts here.
+
+[source,bash]
+----
+sudo apt-get update
+sudo apt-get install ca-certificates curl gnupg
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+service docker start
+----
+
+
+
+== Troubleshootig
+
+It is little different from my previous installation. This time, I run "service docker start" after installed docker, the docker process is not running and there is an error line in /var/log/docker.log
+
+```
+failed to start daemon: Error initializing network controller: error obtaining controller instance: unable to add return rule in DOCKER-ISOLATION-STAGE-1 chain:  (iptables failed: iptables --wait -A DOCKER-ISOLATION-STAGE-1 -j RETURN: iptables v1.8.7 (nf_tables):  RULE_APPEND failed (No such file or directory): rule in chain DOCKER-ISOLATION-STAGE-1 (exit status 4))
+```
+
+further searching internet and found the solution as following. 
+
+[source,bash]
+----
+# Using Ubuntu 22.04 or Debian 10 / 11? You need to do 1 extra step for iptables
+# compatibility, you'll want to choose option (1) from the prompt to use iptables-legacy.
+sudo update-alternatives --config iptables
+----
+
+[source,bash]
+----
+# export WSL IP address
+export IP=$(ip -j addr  | jq -r '.[5].addr_info[] | select( .family =="inet") |.local')
+----
+
+
+== References:
+
+https://docs.docker.com/engine/install/ubuntu/
+https://nickjanetakis.com/blog/install-docker-in-wsl-2-without-docker-desktop
