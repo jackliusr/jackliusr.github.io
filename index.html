@@ -192,6 +192,31 @@ if (!doNotTrack) {
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/2023/05/setup-docker-in-wsl2/" class="color-inherit dim link">
+            Setup docker in wsl2
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Installation I installed Ubuntu 22.04 on my laptop following the scripts here.
+ sudo apt-get update sudo apt-get install ca-certificates curl gnupg sudo install -m 0755 -d /etc/apt/keyrings curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg sudo chmod a+r /etc/apt/keyrings/docker.gpg echo \ &#34;deb [arch=&#34;$(dpkg --print-architecture)&#34; signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \ &#34;$(. /etc/os-release &amp;&amp; echo &#34;$VERSION_CODENAME&#34;)&#34; stable&#34; | \ sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin service docker start     Troubleshootig It is little different from my previous installation.
+        </div>
+          <a href="/posts/2023/05/setup-docker-in-wsl2/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/2023/05/hash-vs-uuid-to-replace-nric/l4c/" class="color-inherit dim link">
             Hash vs UUID to replace NRIC/L4C
             </a>
@@ -254,45 +279,18 @@ if (!doNotTrack) {
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2023/04/linux-utils-equivalent-in-powershell/" class="color-inherit dim link">
-            linux utils equivalent in powershell
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          I never thought I will learn to use powershell seriously. Now I joined NTUC, there are many restrictions. Today I started to use linux utils equivalent in powershell.
-   dig: Resolve-DnsName
-  telnet: Test-NetConnection
-  host: Get-Host
-  touch: New-Item
-  cat: Get-Content
-  tail: Get-Content
-  grep: Where-Object or Select-String
-  man: Get-Help
-   References   https://mathieubuisson.github.io/powershell-linux-bash/#pwd- -
-        </div>
-          <a href="/posts/2023/04/linux-utils-equivalent-in-powershell/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/2023/04/linux-utils-equivalent-in-powershell/" class="link black dim">
+              linux utils equivalent in powershell
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2023/04/filter-data-conditionally-using-power-query/" class="link black dim">
@@ -309,12 +307,6 @@ if (!doNotTrack) {
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2023/03/leader-election-in-kubernetes-control-plane/" class="link black dim">
               Leader election in Kubernetes control plane
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/2023/02/istio-canary-deployments-using-flagger/" class="link black dim">
-              Istio Canary Deployments using flagger
             </a>
           </h2>
         

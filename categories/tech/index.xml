@@ -6,7 +6,17 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 May 2023 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 May 2023 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup docker in wsl2</title>
+      <link>https://jackliusr.github.io/posts/2023/05/setup-docker-in-wsl2/</link>
+      <pubDate>Tue, 23 May 2023 20:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/05/setup-docker-in-wsl2/</guid>
+      <description>Installation I installed Ubuntu 22.04 on my laptop following the scripts here.
+ sudo apt-get update sudo apt-get install ca-certificates curl gnupg sudo install -m 0755 -d /etc/apt/keyrings curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg sudo chmod a+r /etc/apt/keyrings/docker.gpg echo \ &amp;#34;deb [arch=&amp;#34;$(dpkg --print-architecture)&amp;#34; signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \ &amp;#34;$(. /etc/os-release &amp;amp;&amp;amp; echo &amp;#34;$VERSION_CODENAME&amp;#34;)&amp;#34; stable&amp;#34; | \ sudo tee /etc/apt/sources.list.d/docker.list &amp;gt; /dev/null sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin service docker start     Troubleshootig It is little different from my previous installation.</description>
+    </item>
+    
     <item>
       <title>Hash vs UUID to replace NRIC/L4C</title>
       <link>https://jackliusr.github.io/posts/2023/05/hash-vs-uuid-to-replace-nric/l4c/</link>
