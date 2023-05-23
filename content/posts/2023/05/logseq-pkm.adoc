@@ -1,0 +1,31 @@
+---
+title: "My choice of personal knowledge management (PKM): logseq"
+date: 2023-05-23T20:01:10+08:00
+categories:
+- tech
+tags:
+- PMK
+- logseq
+---
+
+
+==  I chose logseq as my PKM
+
+I was overloaded with information in the past several weeks. I sought many ways to overcome it. One choice I made is using logseq as PKM. 
+
+
+== why?
+
+There are several open source or freeware verion of PKM. Why did I choose logseq?
+
+* logseq is clojure based. I am a big fan of lisp-liked languages. I studied and did some coding  using racket, common-lisp, elisp and clojure after I read Paul Graham's http://www.paulgraham.com/avg.html[essays] about http://www.paulgraham.com/diff.html[lisp]. After those experiences even though I didn't code in professional setting, I really appreciate 
+https://wiki.c2.com/?GreenspunsTenthRuleOfProgramming[LISP] for its power. 
+* Datalog for query: similiar language is used in Datomic database.
+* edn for configuration: a subset of the syntax used by Clojure
+* built-in flashcard: it help to effectively memorize facts.
+
+I definitely need to use a PKM to cater for my overloaded situation. Why not kill two birds with one stone
+
+== Experiences in the past several weeks
+
+I have been using Logseq since April 11, 2023, and it has served its purpose effectively. It enables me to maintain my information in an organized manner, and I have no regrets about choosing it.
