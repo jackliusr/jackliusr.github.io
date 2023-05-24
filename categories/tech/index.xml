@@ -8,6 +8,17 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 23 May 2023 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>My choice of personal knowledge management (PKM): logseq</title>
+      <link>https://jackliusr.github.io/posts/2023/05/my-choice-of-personal-knowledge-management-pkm-logseq/</link>
+      <pubDate>Tue, 23 May 2023 20:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/05/my-choice-of-personal-knowledge-management-pkm-logseq/</guid>
+      <description>I chose logseq as my PKM I was overloaded with information in the past several weeks. I sought many ways to overcome it. One choice I made is using logseq as PKM.
+   why? There are several open source or freeware verion of PKM. Why did I choose logseq?
+   logseq is clojure based. I am a big fan of lisp-liked languages. I studied and did some coding using racket, common-lisp, elisp and clojure after I read Paul Graham’s essays about lisp.</description>
+    </item>
+    
+    <item>
       <title>Setup docker in wsl2</title>
       <link>https://jackliusr.github.io/posts/2023/05/setup-docker-in-wsl2/</link>
       <pubDate>Tue, 23 May 2023 20:01:10 +0800</pubDate>

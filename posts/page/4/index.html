@@ -165,6 +165,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2022/11/install-release-version-of-mobile-application-into-ios-without-testflight/" class="link black dim">
+        Install release version of mobile application into iOS without testflight
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Last three days, I found an issue can only be reproduced in realease mode.The beta testing cycle via testflight takes too long and it definitely is not the option. I debugged my application in iOS before. One thing popped up in my mind whether I can put release mode of my application into iOS using the debug tool of vs code.
+ I changed my launch.json as below in my project and debug my application.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2022/10/learning-microsoft-azure-or-google-cloud/" class="link black dim">
         Learning Microsoft azure or google cloud
       </a>
@@ -312,22 +328,6 @@ path:pubspec.yaml google_mobile_ads firebase_analytics
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Kuberneters dashboard doesn’t give enough information about node and cluster information during rececent loading test. I sought to other options. Prometheus and grafana are the de-facto standards. It’s a no-brainer choice. The most important things is how to make them working together.
  Setup Prometheus and Grafana kubectl create namespace monitoring helm repo add prometheus-community https://prometheus-community.github.io/helm-charts helm repo update helm install prometheus prometheus-community/prometheus -n monitoring helm repo add grafana https://grafana.github.io/helm-charts helm install grafana grafana/grafana -n monitoring kubectl get secret --namespace monitoring grafana -o jsonpath=&#34;{.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/08/use-cert-manager-to-secure-kubernetes-cert-manager-behind-nginx-ingress/" class="link black dim">
-        Use cert-manager to secure kubernetes cert-manager behind nginx ingress
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Today I had a case to expose serveral kubernetes dashboard with cert-manager. Initiallly I thought it should be quite easy to setup, but the reality was quite different. My intial yaml is as following.
- apiVersion: networking.k8s.io/v1 kind: Ingress metadata: name: ingress-global-dash namespace: kubernetes-dashboard labels: name: ingress-global-dash use-http01-solver: &#34;true&#34; annotations: cert-manager.io/cluster-issuer: &#34;test-issuer&#34; spec: ingressClassName: nginx rules: - host: &#34;dashboard.example.com&#34; http: paths: - pathType: Prefix path: &#34;/&#34; backend: service: name: kubernetes-dashboard port: number: 80 #later changed to 443 according to port of kubernetes-dashboard svc tls: # &lt; placing a host in the TLS config will determine what ends up in the cert&#39;s subjectAltNames - hosts: - dashboard.
     </div>
   </div>
 </div>
