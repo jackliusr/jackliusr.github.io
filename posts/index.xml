@@ -1283,5 +1283,17 @@ skaffold debug     Import ptvsd in the python file to debug, add breakout() befo
  0 start1 q scans from start to end.....endrest of theallocated memory.....n    </description>
     </item>
     
+    <item>
+      <title>Charge Back business process</title>
+      <link>https://jackliusr.github.io/posts/1/01/charge-back-business-process/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/1/01/charge-back-business-process/</guid>
+      <description>A typical steps involved in the issuer response process for a card authorization, a simplified description is as following.
+  Receive Authorization Request: The card issuer system receives the authorization request from the merchant or payment processor.
+  Card Validation: The issuer system validates the card details provided in the request, including the card number, expiration date, and CVV/CVC.
+  Account Verification: The issuer system verifies the cardholder’s account details, such as account status, available funds, and credit limit (if applicable).</description>
+    </item>
+    
   </channel>
 </rss>
