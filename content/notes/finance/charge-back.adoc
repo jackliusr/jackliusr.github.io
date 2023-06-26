@@ -6,6 +6,7 @@ categories:
 tags:
 - finance
 - workflow
+- BPMN
 ---
 = Charge Back business process
 
