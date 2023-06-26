@@ -1,0 +1,24 @@
+---
+title: "Powerpoint vs UML"
+date: 2023-06-08T20:01:10+08:00
+categories:
+- tech
+tags:
+- UML
+- Powerpoint
+---
+
+I think I am a big fan of textual UML after I learnt it from thoughtworks techradar. I doubted it after my recent experience.
+
+In the past 2 months I spent long periods of time to think of how to make my Powerpoint slides 
+pass https://www.linkedin.com/in/cheekiam/?originalSubdomain=sg[my boss Lim Chee Kiam]'s standard. I thought deeply about that. One moment, I asked myself why 
+Grady Booch, Ivar Jacobson, and James Rumbaugh didn't come out a diagram which cater to dynamic(behaviour)
+and static (structure) diagrams, then I realized it will be a mess if those two things are put toghere. That's why most of modeling framework/languages separate them. The natural next question will be how to do it better? 
+
+In the system design phase of interview processes of big companies for software engineers and NALSD for SRE, they emphasize how to consisely put 
+structure and behaviour into a diagram. The only way to do that in my opinion will be like my boss's standard, put all important points into a diagram drew using powerpoint or excalidraw etc to emphasize those key points.
+
+The experience is valuable even my boss help me to draw some diagrams. I compared my way and my boss's way. I reflected on what I did and what I missed comparing to my boss's work.  It deepened my understanding of software architecture, how to present ideas in the way the target audiences easily understand.
+
+ 
+Boss, Lim Chee Kiam, thanks! 
