@@ -6,7 +6,17 @@
     <description>Recent content on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 May 2023 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Jun 2023 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Powerpoint vs UML</title>
+      <link>https://jackliusr.github.io/posts/2023/06/powerpoint-vs-uml/</link>
+      <pubDate>Thu, 08 Jun 2023 20:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/06/powerpoint-vs-uml/</guid>
+      <description>I think I am a big fan of textual UML after I learnt it from thoughtworks techradar. I doubted it after my recent experience.
+ In the past 2 months I spent long periods of time to think of how to make my Powerpoint slides pass my boss Lim Chee Kiam&amp;#39;s standard. I thought deeply about that. One moment, I asked myself why Grady Booch, Ivar Jacobson, and James Rumbaugh didn’t come out a diagram which cater to dynamic(behaviour) and static (structure) diagrams, then I realized it will be a mess if those two things are put toghere.</description>
+    </item>
+    
     <item>
       <title>My choice of personal knowledge management (PKM): logseq</title>
       <link>https://jackliusr.github.io/posts/2023/05/my-choice-of-personal-knowledge-management-pkm-logseq/</link>

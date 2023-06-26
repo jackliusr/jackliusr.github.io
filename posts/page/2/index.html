@@ -165,6 +165,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2023/02/learning-experiences-among-datadog-dynatrace-newrelic/" class="link black dim">
+        Learning experiences among datadog, dynatrace, newrelic
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Last week and this week, I completed my basic learning of APMs as a tool of SRE. I learnt fundamentals of datadog and newrelic, walked through their tutorials in last week and this week. I don’t find a easy way to learn dynatrace from its site. The whole learning experiences between datadog and newrelic are on par with each other. What’s the deal breaker when making choices among them?
+ Leader     Feature flags intergration During a discussion about progressive delivery using flagger, I was curious if it is possible to integrate feature flags and APM.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2023/02/whats-pod-sandbox/" class="link black dim">
         What&#39;s pod sandbox
       </a>
@@ -300,22 +316,6 @@ if (!doNotTrack) {
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       etcd debugging flowchart, copy the flowchat from &ldquo;Stories from the Playbook&rdquo; for easy reference and put here to make it searchable in my site.
 flowchart TD oversized{MVCC DB oversized}--|Yes|logIntoContainer(log into container) logIntoContainer -- checkSize(check size of db) checkSize -- compatOrDefrag(compat or defrag) compatOrDefrag -- resizeDisk(resize machine disk) resizeDisk -- triggerRepair(Trigger repair) triggerRepair -- END oversized --|No|crashLoop{crash looping} crashLoop --|Yes| moreTime2Init(allow etc more time to init) moreTime2Init -- upgradeVersion(upgrade version) upgradeVersion -- resizeDisk crashLoop --|No| leaderElectionIssue{Leader Election Issue?
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2023/01/lessons-learnt-after-two-years-usage-of-cert-manager/" class="link black dim">
-        Lessons learnt after two years usage of cert-manager
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Yesterday I spent one or two hours to resolve a pending order issue. I encountered the issue before when I configured cert-manager with ACME. However after a short while detour to flutter(ios,android) development, I couldn’t quickly locate the root causes. This made me think that it is better off to note down the lessons I leant here.
- DNS01 vs HTTP01 HTTP01 is quite easy to setup for one domain name.
     </div>
   </div>
 </div>
