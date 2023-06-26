@@ -1,0 +1,31 @@
+---
+title: Charge Back business process
+date: 2023-06-26T29:40:00+08:00
+categories:
+- tech
+tags:
+- finance
+- workflow
+---
+= Charge Back business process
+
+[plantuml, format="svg",opts="inline"]
+----
+@startuml
+title charge back
+|merchant/payment processor|
+start
+:Send Authorization Request;
+|card issuer system|
+:Receive Authorization Request;
+:Card Validation;
+:Account Verification;
+:Fraud Detection;
+:Decision Making;
+:Generate Authorization Response;
+:Send Authorization Response;
+|#AntiqueWhite|merchant/payment processor|
+:Merchant Handling;
+stop
+@enduml
+----
