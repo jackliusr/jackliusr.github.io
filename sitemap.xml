@@ -3,12 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2023-06-26T23:00:22+08:00</lastmod>
+    <lastmod>2023-06-26T23:10:15+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2023-06-26T23:00:22+08:00</lastmod>
+    <lastmod>2023-06-26T23:10:15+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -28,12 +28,12 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2023-06-26T23:00:22+08:00</lastmod>
+    <lastmod>2023-06-26T23:10:15+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/tech/</loc>
-    <lastmod>2023-06-26T23:00:22+08:00</lastmod>
+    <lastmod>2023-06-26T23:10:15+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -208,7 +208,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/notes/</loc>
-    <lastmod>2023-02-20T18:32:40+08:00</lastmod>
+    <lastmod>2023-06-26T23:10:15+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -1832,7 +1832,27 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://jackliusr.github.io/tags/bpmn/</loc>
+    <lastmod>2023-06-26T23:10:15+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/notes/finance/charge-back/</loc>
+    <lastmod>2023-06-26T23:10:15+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/finance/</loc>
+    <lastmod>2023-06-26T23:10:15+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://jackliusr.github.io/series/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/workflow/</loc>
+    <lastmod>2023-06-26T23:10:15+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

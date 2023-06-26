@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BPMN on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/bpmn/</link>
+    <description>Recent content in BPMN on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://jackliusr.github.io/tags/bpmn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Charge Back business process</title>
+      <link>https://jackliusr.github.io/notes/finance/charge-back/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackliusr.github.io/notes/finance/charge-back/</guid>
+      <description>charge backSend Authorization RequestMerchant HandlingReceive Authorization RequestCard ValidationAccount VerificationFraud DetectionDecision MakingGenerate Authorization ResponseSend Authorization Responsemerchant/payment processorcard issuer system   </description>
+    </item>
+    
+  </channel>
+</rss>
