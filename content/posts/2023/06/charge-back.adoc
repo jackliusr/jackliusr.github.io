@@ -1,0 +1,52 @@
+---
+title: Charge Back business process
+date: 2023-06-26T29:40:00+08:00
+categories:
+- tech
+tags:
+- finance
+- workflow
+- BPMN
+---
+= Charge Back business process
+
+A typical steps involved in the issuer response process for a card authorization, a simplified description is as following.
+
+. Receive Authorization Request: The card issuer system receives the authorization request from the merchant or payment processor.
+
+. Card Validation: The issuer system validates the card details provided in the request, including the card number, expiration date, and CVV/CVC.
+
+.  Account Verification: The issuer system verifies the cardholder's account details, such as account status, available funds, and credit limit (if applicable).
+
+. Fraud Detection: The issuer system may perform various fraud detection checks, such as analyzing transaction patterns, comparing with known fraud indicators, and applying risk scoring models.
+
+. Decision Making: Based on the validation, verification, and fraud detection results, the issuer system makes a decision on whether to approve or decline the transaction.
+
+. Generate Authorization Response: The issuer system generates an authorization response message containing the decision, along with other relevant information such as the authorization code and any additional instructions.
+
+. Send Authorization Response: The issuer system sends the authorization response message back to the merchant or payment processor, typically using secure communication protocols.
+
+. Merchant Handling: Upon receiving the authorization response, the merchant or payment processor processes the response and takes appropriate action based on the decision (e.g., completing the sale or informing the customer about the decline).
+
+A BPMN representation of above business proess is as following: 
+
+[plantuml, format="svg",opts="inline"]
+----
+@startuml
+title charge back
+|merchant/payment processor|
+start
+:Send Authorization Request;
+|card issuer system|
+:Receive Authorization Request;
+:Card Validation;
+:Account Verification;
+:Fraud Detection;
+:Decision Making;
+:Generate Authorization Response;
+:Send Authorization Response;
+|#AntiqueWhite|merchant/payment processor|
+:Merchant Handling;
+stop
+@enduml
+----
