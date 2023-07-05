@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>Istio Canary Deployments using flagger | My learning and diary</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Progressive delivery: Istio Canary Deployments using flagger.
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>Istio Canary Deployments using flagger | My learning and diary</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="description"
+    content="Progressive delivery: Istio Canary Deployments using flagger.
  Steps environment:
    kindest/node:v1.25.3
   Istio 1.17.0
    helm # need to install metrics-server, HPA depends on metrics-server kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml # command: # - /metrics-server # - --kubelet-insecure-tls istioctl manifest install --set profile=default kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.17/samples/addons/prometheus.yaml helm repo add flagger https://flagger.app kubectl apply -f https://raw.githubusercontent.com/fluxcd/flagger/main/artifacts/flagger/crd.yaml helm upgrade -i flagger flagger/flagger \ --namespace=istio-system \ --set crd.">
-    <meta name="generator" content="Hugo 0.99.1" />
-    
-    
-      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
-    
+  <meta name="generator" content="Hugo 0.99.1" />
+  
+  
+  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+  
 
-    
+  
 <link rel="stylesheet" href="/ananke/css/main.min.abe0b1c07d5e33565b0f9b998a7b1b5228b709f36af363e2766bc8035f2237b7.css" >
 
 
 
 
-    
-      
+  
+  
 
-    
+  
 
-    
-    
-    <meta property="og:title" content="Istio Canary Deployments using flagger" />
+  
+
+  <meta property="og:title" content="Istio Canary Deployments using flagger" />
 <meta property="og:description" content="Progressive delivery: Istio Canary Deployments using flagger.
  Steps environment:
    kindest/node:v1.25.3
@@ -57,30 +59,30 @@
   Istio 1.17.0
    helm # need to install metrics-server, HPA depends on metrics-server kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml # command: # - /metrics-server # - --kubelet-insecure-tls istioctl manifest install --set profile=default kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.17/samples/addons/prometheus.yaml helm repo add flagger https://flagger.app kubectl apply -f https://raw.githubusercontent.com/fluxcd/flagger/main/artifacts/flagger/crd.yaml helm upgrade -i flagger flagger/flagger \ --namespace=istio-system \ --set crd."/>
 
-      
-<script type="application/javascript">
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K49F8T19FK"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-K49F8T19FK', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-K49F8T19FK', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
-    
-	
-
+  
+  
 
 
 
 
-  </head>
 
-  <body class="ma0 avenir bg-near-white production">
+</head>
 
-    
+<body class="ma0 avenir bg-near-white production">
+
+  
    
   
 
@@ -168,8 +170,8 @@ if (!doNotTrack) {
 
 
 
-    <main class="pb7" role="main">
-      
+  <main class="pb7" role="main">
+    
   
   <article class="flex-l flex-wrap justify-between mw8 center ph3">
     <header class="mt4 w-100">
@@ -493,8 +495,8 @@ kubectl -n test describe canary/podinfo</code></pre>
 
   </article>
 
-    </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  </main>
+  <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jackliusr.github.io" >
     &copy;  My learning and diary 2023 
@@ -534,7 +536,8 @@ kubectl -n test describe canary/podinfo</code></pre>
 
 
 
-
+  
   <p style="font-size: small; color: grey;">Page version: 732d9a0315051610cf5ef539a41c8fa4334019b4 2023-02-22</p>
-  </body>
+</body>
+
 </html>

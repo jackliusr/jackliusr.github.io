@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>Make a S3 bucket public | My learning and diary</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Turn off &#34;Block public access (bucket settings)&#34;        Access control list (ACL): give Everyone (public access) object lists and bucket ACL read.          Policy Policy to attach to a role, so the role can be used to upload resources and put the ACL on the uploaded objects.
- { &#34;Version&#34;: &#34;2012-10-17&#34;, &#34;Statement&#34;: [ { &#34;Sid&#34;: &#34;VisualEditor0&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: &#34;s3:ListBucket&#34;, &#34;Resource&#34;: &#34;arn:aws:s3:::demo&#34; }, { &#34;Sid&#34;: &#34;VisualEditor1&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: [ &#34;s3:PutObject&#34;, &#34;s3:GetObject&#34;, &#34;s3:DeleteObject&#34; ], &#34;Resource&#34;: &#34;arn:aws:s3:::demo/*&#34; }, { &#34;Sid&#34;: &#34;VisualEditor2&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: &#34;s3:ListBucket&#34;, &#34;Resource&#34;: &#34;arn:aws:s3:::demo-public&#34; }, { &#34;Sid&#34;: &#34;VisualEditor3&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: [ &#34;s3:PutObject&#34;, &#34;s3:GetObject&#34;, &#34;s3:DeleteObject&#34;, &#34;s3:PutObjectAcl&#34; ], &#34;Resource&#34;: &#34;arn:aws:s3:::demo-public/*&#34; } ] }     Uploading command line bash scripts aws s3 sync --acl public-read local-dir/ s3://demo-public/test/   C# source code using (var client = new AmazonS3Client(RegionEndpoint.">
-    <meta name="generator" content="Hugo 0.99.1" />
-    
-    
-      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
-    
 
-    
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>Make a S3 bucket public | My learning and diary</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="description"
+    content="Turn off &#34;Block public access (bucket settings)&#34;        Access control list (ACL): give Everyone (public access) object lists and bucket ACL read.          Policy Policy to attach to a role, so the role can be used to upload resources and put the ACL on the uploaded objects.
+ { &#34;Version&#34;: &#34;2012-10-17&#34;, &#34;Statement&#34;: [ { &#34;Sid&#34;: &#34;VisualEditor0&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: &#34;s3:ListBucket&#34;, &#34;Resource&#34;: &#34;arn:aws:s3:::demo&#34; }, { &#34;Sid&#34;: &#34;VisualEditor1&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: [ &#34;s3:PutObject&#34;, &#34;s3:GetObject&#34;, &#34;s3:DeleteObject&#34; ], &#34;Resource&#34;: &#34;arn:aws:s3:::demo/*&#34; }, { &#34;Sid&#34;: &#34;VisualEditor2&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: &#34;s3:ListBucket&#34;, &#34;Resource&#34;: &#34;arn:aws:s3:::demo-public&#34; }, { &#34;Sid&#34;: &#34;VisualEditor3&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: [ &#34;s3:PutObject&#34;, &#34;s3:GetObject&#34;, &#34;s3:DeleteObject&#34;, &#34;s3:PutObjectAcl&#34; ], &#34;Resource&#34;: &#34;arn:aws:s3:::demo-public/*&#34; } ] }     Uploading command line bash scripts aws s3 sync --acl public-read local-dir/ s3://demo-public/test/   C# source code using (var client = new AmazonS3Client(RegionEndpoint.">
+  <meta name="generator" content="Hugo 0.99.1" />
+  
+  
+  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+  
+
+  
 <link rel="stylesheet" href="/ananke/css/main.min.abe0b1c07d5e33565b0f9b998a7b1b5228b709f36af363e2766bc8035f2237b7.css" >
 
 
 
 
-    
-      
+  
+  
 
-    
+  
 
-    
-    
-    <meta property="og:title" content="Make a S3 bucket public" />
+  
+
+  <meta property="og:title" content="Make a S3 bucket public" />
 <meta property="og:description" content="Turn off &#34;Block public access (bucket settings)&#34;        Access control list (ACL): give Everyone (public access) object lists and bucket ACL read.          Policy Policy to attach to a role, so the role can be used to upload resources and put the ACL on the uploaded objects.
  { &#34;Version&#34;: &#34;2012-10-17&#34;, &#34;Statement&#34;: [ { &#34;Sid&#34;: &#34;VisualEditor0&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: &#34;s3:ListBucket&#34;, &#34;Resource&#34;: &#34;arn:aws:s3:::demo&#34; }, { &#34;Sid&#34;: &#34;VisualEditor1&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: [ &#34;s3:PutObject&#34;, &#34;s3:GetObject&#34;, &#34;s3:DeleteObject&#34; ], &#34;Resource&#34;: &#34;arn:aws:s3:::demo/*&#34; }, { &#34;Sid&#34;: &#34;VisualEditor2&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: &#34;s3:ListBucket&#34;, &#34;Resource&#34;: &#34;arn:aws:s3:::demo-public&#34; }, { &#34;Sid&#34;: &#34;VisualEditor3&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: [ &#34;s3:PutObject&#34;, &#34;s3:GetObject&#34;, &#34;s3:DeleteObject&#34;, &#34;s3:PutObjectAcl&#34; ], &#34;Resource&#34;: &#34;arn:aws:s3:::demo-public/*&#34; } ] }     Uploading command line bash scripts aws s3 sync --acl public-read local-dir/ s3://demo-public/test/   C# source code using (var client = new AmazonS3Client(RegionEndpoint." />
 <meta property="og:type" content="article" />
@@ -45,30 +47,30 @@
 <meta name="twitter:description" content="Turn off &#34;Block public access (bucket settings)&#34;        Access control list (ACL): give Everyone (public access) object lists and bucket ACL read.          Policy Policy to attach to a role, so the role can be used to upload resources and put the ACL on the uploaded objects.
  { &#34;Version&#34;: &#34;2012-10-17&#34;, &#34;Statement&#34;: [ { &#34;Sid&#34;: &#34;VisualEditor0&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: &#34;s3:ListBucket&#34;, &#34;Resource&#34;: &#34;arn:aws:s3:::demo&#34; }, { &#34;Sid&#34;: &#34;VisualEditor1&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: [ &#34;s3:PutObject&#34;, &#34;s3:GetObject&#34;, &#34;s3:DeleteObject&#34; ], &#34;Resource&#34;: &#34;arn:aws:s3:::demo/*&#34; }, { &#34;Sid&#34;: &#34;VisualEditor2&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: &#34;s3:ListBucket&#34;, &#34;Resource&#34;: &#34;arn:aws:s3:::demo-public&#34; }, { &#34;Sid&#34;: &#34;VisualEditor3&#34;, &#34;Effect&#34;: &#34;Allow&#34;, &#34;Action&#34;: [ &#34;s3:PutObject&#34;, &#34;s3:GetObject&#34;, &#34;s3:DeleteObject&#34;, &#34;s3:PutObjectAcl&#34; ], &#34;Resource&#34;: &#34;arn:aws:s3:::demo-public/*&#34; } ] }     Uploading command line bash scripts aws s3 sync --acl public-read local-dir/ s3://demo-public/test/   C# source code using (var client = new AmazonS3Client(RegionEndpoint."/>
 
-      
-<script type="application/javascript">
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K49F8T19FK"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-K49F8T19FK', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-K49F8T19FK', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
-    
-	
-
+  
+  
 
 
 
 
-  </head>
 
-  <body class="ma0 avenir bg-near-white production">
+</head>
 
-    
+<body class="ma0 avenir bg-near-white production">
+
+  
    
   
 
@@ -156,8 +158,8 @@ if (!doNotTrack) {
 
 
 
-    <main class="pb7" role="main">
-      
+  <main class="pb7" role="main">
+    
   
   <article class="flex-l flex-wrap justify-between mw8 center ph3">
     <header class="mt4 w-100">
@@ -400,8 +402,8 @@ if (!doNotTrack) {
 
   </article>
 
-    </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  </main>
+  <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jackliusr.github.io" >
     &copy;  My learning and diary 2023 
@@ -441,7 +443,8 @@ if (!doNotTrack) {
 
 
 
-
+  
   <p style="font-size: small; color: grey;">Page version: aa190cdfe627470ec82731346ae45ad3bb5bde95 2022-06-08</p>
-  </body>
+</body>
+
 </html>

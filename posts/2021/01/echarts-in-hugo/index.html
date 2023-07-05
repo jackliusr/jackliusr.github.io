@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>echarts in hugo | My learning and diary</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="var myChart = echarts.init(document.getElementById(&#39;echarts400&#39;)); var option = JSON.parse(&#34;\n {\n \&#34;textStyle\&#34;:{\n \&#34;color\&#34;:\&#34;#fff\&#34;\n },\n \&#34;title\&#34;:{\n \&#34;text\&#34;:\&#34;2018年11月国内浏览器数据统计\&#34;,\n \&#34;subtext\&#34;:\&#34;浏览器数据分析\&#34;,\n \&#34;x\&#34;:\&#34;center\&#34;,\n \&#34;textStyle\&#34;:{\n \&#34;color\&#34;:\&#34;#FFffFf\&#34;\n }\n },\n \&#34;tooltip\&#34;:{\n \&#34;trigger\&#34;:\&#34;item\&#34;,\n \&#34;formatter\&#34;:\&#34;{a} \u003cbr/\u003e{b} : {c} ({d}%)\&#34;\n },\n \&#34;legend\&#34;:{\n \&#34;type\&#34;:\&#34;scroll\&#34;,\n \&#34;orient\&#34;:\&#34;vertical\&#34;,\n \&#34;right\&#34;:10,\n \&#34;top\&#34;:120,\n \&#34;bottom\&#34;:20,\n \&#34;data\&#34;:[\n \&#34;Chrome\&#34;,\n \&#34;IE 9.0\&#34;,\n \&#34;IE 11.0\&#34;,\n \&#34;QQ\&#34;,\n \&#34;IE 8.0\&#34;,\n \&#34;2345\&#34;,\n \&#34;搜狗高速\&#34;,\n \&#34;Firefox\&#34;,\n \&#34;Safari\&#34;,\n \&#34;其他\&#34;\n ],\n \&#34;textStyle\&#34;:{\n \&#34;color\&#34;:\&#34;#fff\&#34;\n }\n },\n \&#34;series\&#34;:[\n {\n \&#34;name\&#34;:\&#34;浏览器用户比例\&#34;,\n \&#34;type\&#34;:\&#34;pie\&#34;,\n \&#34;radius\&#34;:\&#34;55%\&#34;,\n \&#34;center\&#34;:[\n \&#34;50%\&#34;,\n \&#34;60%\&#34;\n ],\n \&#34;data\&#34;:[\n {\n \&#34;name\&#34;:\&#34;Chrome\&#34;,\n \&#34;value\&#34;:46.88\n },\n {\n \&#34;">
-    <meta name="generator" content="Hugo 0.99.1" />
-    
-    
-      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
-    
 
-    
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>echarts in hugo | My learning and diary</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="description"
+    content="var myChart = echarts.init(document.getElementById(&#39;echarts400&#39;)); var option = JSON.parse(&#34;\n {\n \&#34;textStyle\&#34;:{\n \&#34;color\&#34;:\&#34;#fff\&#34;\n },\n \&#34;title\&#34;:{\n \&#34;text\&#34;:\&#34;2018年11月国内浏览器数据统计\&#34;,\n \&#34;subtext\&#34;:\&#34;浏览器数据分析\&#34;,\n \&#34;x\&#34;:\&#34;center\&#34;,\n \&#34;textStyle\&#34;:{\n \&#34;color\&#34;:\&#34;#FFffFf\&#34;\n }\n },\n \&#34;tooltip\&#34;:{\n \&#34;trigger\&#34;:\&#34;item\&#34;,\n \&#34;formatter\&#34;:\&#34;{a} \u003cbr/\u003e{b} : {c} ({d}%)\&#34;\n },\n \&#34;legend\&#34;:{\n \&#34;type\&#34;:\&#34;scroll\&#34;,\n \&#34;orient\&#34;:\&#34;vertical\&#34;,\n \&#34;right\&#34;:10,\n \&#34;top\&#34;:120,\n \&#34;bottom\&#34;:20,\n \&#34;data\&#34;:[\n \&#34;Chrome\&#34;,\n \&#34;IE 9.0\&#34;,\n \&#34;IE 11.0\&#34;,\n \&#34;QQ\&#34;,\n \&#34;IE 8.0\&#34;,\n \&#34;2345\&#34;,\n \&#34;搜狗高速\&#34;,\n \&#34;Firefox\&#34;,\n \&#34;Safari\&#34;,\n \&#34;其他\&#34;\n ],\n \&#34;textStyle\&#34;:{\n \&#34;color\&#34;:\&#34;#fff\&#34;\n }\n },\n \&#34;series\&#34;:[\n {\n \&#34;name\&#34;:\&#34;浏览器用户比例\&#34;,\n \&#34;type\&#34;:\&#34;pie\&#34;,\n \&#34;radius\&#34;:\&#34;55%\&#34;,\n \&#34;center\&#34;:[\n \&#34;50%\&#34;,\n \&#34;60%\&#34;\n ],\n \&#34;data\&#34;:[\n {\n \&#34;name\&#34;:\&#34;Chrome\&#34;,\n \&#34;value\&#34;:46.88\n },\n {\n \&#34;">
+  <meta name="generator" content="Hugo 0.99.1" />
+  
+  
+  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+  
+
+  
 <link rel="stylesheet" href="/ananke/css/main.min.abe0b1c07d5e33565b0f9b998a7b1b5228b709f36af363e2766bc8035f2237b7.css" >
 
 
 
 
-    
-      
+  
+  
 
-    
+  
 
-    
-    
-    <meta property="og:title" content="echarts in hugo" />
+  
+
+  <meta property="og:title" content="echarts in hugo" />
 <meta property="og:description" content="var myChart = echarts.init(document.getElementById(&#39;echarts400&#39;)); var option = JSON.parse(&#34;\n {\n \&#34;textStyle\&#34;:{\n \&#34;color\&#34;:\&#34;#fff\&#34;\n },\n \&#34;title\&#34;:{\n \&#34;text\&#34;:\&#34;2018年11月国内浏览器数据统计\&#34;,\n \&#34;subtext\&#34;:\&#34;浏览器数据分析\&#34;,\n \&#34;x\&#34;:\&#34;center\&#34;,\n \&#34;textStyle\&#34;:{\n \&#34;color\&#34;:\&#34;#FFffFf\&#34;\n }\n },\n \&#34;tooltip\&#34;:{\n \&#34;trigger\&#34;:\&#34;item\&#34;,\n \&#34;formatter\&#34;:\&#34;{a} \u003cbr/\u003e{b} : {c} ({d}%)\&#34;\n },\n \&#34;legend\&#34;:{\n \&#34;type\&#34;:\&#34;scroll\&#34;,\n \&#34;orient\&#34;:\&#34;vertical\&#34;,\n \&#34;right\&#34;:10,\n \&#34;top\&#34;:120,\n \&#34;bottom\&#34;:20,\n \&#34;data\&#34;:[\n \&#34;Chrome\&#34;,\n \&#34;IE 9.0\&#34;,\n \&#34;IE 11.0\&#34;,\n \&#34;QQ\&#34;,\n \&#34;IE 8.0\&#34;,\n \&#34;2345\&#34;,\n \&#34;搜狗高速\&#34;,\n \&#34;Firefox\&#34;,\n \&#34;Safari\&#34;,\n \&#34;其他\&#34;\n ],\n \&#34;textStyle\&#34;:{\n \&#34;color\&#34;:\&#34;#fff\&#34;\n }\n },\n \&#34;series\&#34;:[\n {\n \&#34;name\&#34;:\&#34;浏览器用户比例\&#34;,\n \&#34;type\&#34;:\&#34;pie\&#34;,\n \&#34;radius\&#34;:\&#34;55%\&#34;,\n \&#34;center\&#34;:[\n \&#34;50%\&#34;,\n \&#34;60%\&#34;\n ],\n \&#34;data\&#34;:[\n {\n \&#34;name\&#34;:\&#34;Chrome\&#34;,\n \&#34;value\&#34;:46.88\n },\n {\n \&#34;" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2021/01/echarts-in-hugo/" /><meta property="article:section" content="posts" />
@@ -41,30 +43,30 @@
 <meta name="twitter:title" content="echarts in hugo"/>
 <meta name="twitter:description" content="var myChart = echarts.init(document.getElementById(&#39;echarts400&#39;)); var option = JSON.parse(&#34;\n {\n \&#34;textStyle\&#34;:{\n \&#34;color\&#34;:\&#34;#fff\&#34;\n },\n \&#34;title\&#34;:{\n \&#34;text\&#34;:\&#34;2018年11月国内浏览器数据统计\&#34;,\n \&#34;subtext\&#34;:\&#34;浏览器数据分析\&#34;,\n \&#34;x\&#34;:\&#34;center\&#34;,\n \&#34;textStyle\&#34;:{\n \&#34;color\&#34;:\&#34;#FFffFf\&#34;\n }\n },\n \&#34;tooltip\&#34;:{\n \&#34;trigger\&#34;:\&#34;item\&#34;,\n \&#34;formatter\&#34;:\&#34;{a} \u003cbr/\u003e{b} : {c} ({d}%)\&#34;\n },\n \&#34;legend\&#34;:{\n \&#34;type\&#34;:\&#34;scroll\&#34;,\n \&#34;orient\&#34;:\&#34;vertical\&#34;,\n \&#34;right\&#34;:10,\n \&#34;top\&#34;:120,\n \&#34;bottom\&#34;:20,\n \&#34;data\&#34;:[\n \&#34;Chrome\&#34;,\n \&#34;IE 9.0\&#34;,\n \&#34;IE 11.0\&#34;,\n \&#34;QQ\&#34;,\n \&#34;IE 8.0\&#34;,\n \&#34;2345\&#34;,\n \&#34;搜狗高速\&#34;,\n \&#34;Firefox\&#34;,\n \&#34;Safari\&#34;,\n \&#34;其他\&#34;\n ],\n \&#34;textStyle\&#34;:{\n \&#34;color\&#34;:\&#34;#fff\&#34;\n }\n },\n \&#34;series\&#34;:[\n {\n \&#34;name\&#34;:\&#34;浏览器用户比例\&#34;,\n \&#34;type\&#34;:\&#34;pie\&#34;,\n \&#34;radius\&#34;:\&#34;55%\&#34;,\n \&#34;center\&#34;:[\n \&#34;50%\&#34;,\n \&#34;60%\&#34;\n ],\n \&#34;data\&#34;:[\n {\n \&#34;name\&#34;:\&#34;Chrome\&#34;,\n \&#34;value\&#34;:46.88\n },\n {\n \&#34;"/>
 
-      
-<script type="application/javascript">
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K49F8T19FK"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-K49F8T19FK', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-K49F8T19FK', { 'anonymize_ip': false });
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
-    
-	
-
+  
+  
 
 
 
 
-  </head>
 
-  <body class="ma0 avenir bg-near-white production">
+</head>
 
-    
+<body class="ma0 avenir bg-near-white production">
+
+  
    
   
 
@@ -152,8 +154,8 @@ if (!doNotTrack) {
 
 
 
-    <main class="pb7" role="main">
-      
+  <main class="pb7" role="main">
+    
   
   <article class="flex-l flex-wrap justify-between mw8 center ph3">
     <header class="mt4 w-100">
@@ -263,8 +265,8 @@ if (!doNotTrack) {
 
   </article>
 
-    </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  </main>
+  <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jackliusr.github.io" >
     &copy;  My learning and diary 2023 
@@ -304,7 +306,8 @@ if (!doNotTrack) {
 
 
 
-
+  
   <p style="font-size: small; color: grey;">Page version: 813d3b12e60094f9153cfd884c97f8a6db4c49b2 2022-04-13</p>
-  </body>
+</body>
+
 </html>
