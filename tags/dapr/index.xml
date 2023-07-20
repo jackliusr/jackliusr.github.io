@@ -6,7 +6,18 @@
     <description>Recent content in dapr on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/dapr/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 Jul 2023 20:40:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/dapr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Dapr-Introduction, Experiences, and Live Demo</title>
+      <link>https://jackliusr.github.io/posts/2023/07/exploring-dapr-introduction-experiences-and-live-demo/</link>
+      <pubDate>Thu, 20 Jul 2023 20:40:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/07/exploring-dapr-introduction-experiences-and-live-demo/</guid>
+      <description>I was very excited to be invited to give a talk about dapr. Below is my talk. My demo in the session is not successful as things in kubernetes and dapr field are changing very fast. My lab environment didn’t work as expected. Finially I make it work today, I share it here below.
+ Here is my talk at 18th July from time 2235 in below video.
+    Prerequisites kubectl, kind, docker, dapr, git, vscode in WSL</description>
+    </item>
+    
     <item>
       <title>Setup dapr on AWS and calico</title>
       <link>https://jackliusr.github.io/posts/2022/05/setup-dapr-on-aws-and-calico/</link>

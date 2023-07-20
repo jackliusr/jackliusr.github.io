@@ -6,7 +6,30 @@
     <description>Recent content on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Jun 2023 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 Jul 2023 20:40:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Dapr-Introduction, Experiences, and Live Demo</title>
+      <link>https://jackliusr.github.io/posts/2023/07/exploring-dapr-introduction-experiences-and-live-demo/</link>
+      <pubDate>Thu, 20 Jul 2023 20:40:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/07/exploring-dapr-introduction-experiences-and-live-demo/</guid>
+      <description>I was very excited to be invited to give a talk about dapr. Below is my talk. My demo in the session is not successful as things in kubernetes and dapr field are changing very fast. My lab environment didn’t work as expected. Finially I make it work today, I share it here below.
+ Here is my talk at 18th July from time 2235 in below video.
+    Prerequisites kubectl, kind, docker, dapr, git, vscode in WSL</description>
+    </item>
+    
+    <item>
+      <title>Charge Back business process</title>
+      <link>https://jackliusr.github.io/posts/2023/06/charge-back-business-process/</link>
+      <pubDate>Mon, 26 Jun 2023 19:40:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/06/charge-back-business-process/</guid>
+      <description>A typical steps involved in the issuer response process for a card authorization, a simplified description is as following.
+  Receive Authorization Request: The card issuer system receives the authorization request from the merchant or payment processor.
+  Card Validation: The issuer system validates the card details provided in the request, including the card number, expiration date, and CVV/CVC.
+  Account Verification: The issuer system verifies the cardholder’s account details, such as account status, available funds, and credit limit (if applicable).</description>
+    </item>
+    
     <item>
       <title>Powerpoint vs UML</title>
       <link>https://jackliusr.github.io/posts/2023/06/powerpoint-vs-uml/</link>
@@ -1483,18 +1506,6 @@ skaffold debug     Import ptvsd in the python file to debug, add breakout() befo
       
       <guid>https://jackliusr.github.io/notes/finance/charge-back/</guid>
       <description>charge backSend Authorization RequestMerchant HandlingReceive Authorization RequestCard ValidationAccount VerificationFraud DetectionDecision MakingGenerate Authorization ResponseSend Authorization Responsemerchant/payment processorcard issuer system   </description>
-    </item>
-    
-    <item>
-      <title>Charge Back business process</title>
-      <link>https://jackliusr.github.io/posts/1/01/charge-back-business-process/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jackliusr.github.io/posts/1/01/charge-back-business-process/</guid>
-      <description>A typical steps involved in the issuer response process for a card authorization, a simplified description is as following.
-  Receive Authorization Request: The card issuer system receives the authorization request from the merchant or payment processor.
-  Card Validation: The issuer system validates the card details provided in the request, including the card number, expiration date, and CVV/CVC.
-  Account Verification: The issuer system verifies the cardholder’s account details, such as account status, available funds, and credit limit (if applicable).</description>
     </item>
     
   </channel>
