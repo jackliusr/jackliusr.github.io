@@ -1,0 +1,70 @@
+---
+title: Exploring Dapr-Introduction, Experiences, and Live Demo
+date: 2023-07-20T20:40:00+08:00
+categories:
+- tech
+tags:
+- kubernetes
+- dapr
+---
+
+I was very excited to be invited to give a talk about dapr. Below is my talk. My demo in the session is not successful as things in kubernetes and dapr field are changing very fast. My lab environment didn't work as expected. Finially I make it work today, I share it here below.
+
+{{< youtube AFyu6RRogtE?t=2235 >}}
+
+
+## Prerequisites
+
+kubectl, kind, docker, dapr, git, vscode in WSL
+
+vscode plugins: kubernetes, bridge to kubernetes
+
+## Setup dapr in local kind+MetalLB  cluster
+
+[source,bash]
+----
+git clone https://github.com/jackliusr/k8s
+cd k8s
+ ./up.sh k8sugdapr
+#above script will create a namespace todo-app as well
+----
+
+## Set up debug env sample dapr application
+https://learn.microsoft.com/en-us/visualstudio/bridge/bridge-to-kubernetes-sample#deploy-the-application
+
+[source,bash]
+----
+clone https://github.com/Azure/Bridge-To-Kubernetes
+cd Bridge-To-Kubernetes/samples/todo-app
+kubectl apply -n todo-app -f deployment.yaml
+----
+
+## Debug
+
+[source, bash]
+----
+$ kubectl get svc -n todo-app
+NAME           TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)        AGE
+database-api   ClusterIP      10.96.246.231   <none>         80/TCP         9s
+frontend       LoadBalancer   10.96.188.60    172.18.255.1   80:30054/TCP   9s
+kubernetes     ClusterIP      10.96.0.1       <none>         443/TCP        2m39s
+stats-api      ClusterIP      10.96.90.36     <none>         80/TCP         9s
+stats-cache    ClusterIP      10.96.14.158    <none>         6379/TCP       9s
+stats-queue    ClusterIP      10.96.157.83    <none>         5672/TCP       9s
+todos-db       ClusterIP      10.96.51.32     <none>         27017/TCP      9s
+----
+
+Open a browser from wsl, connect to 172.18.255.1 (frontend service external ip)
+
+[source, bash]
+----
+cd stats-api/
+code .
+----
+
+
+Follow the instructions for other steps at  https://learn.microsoft.com/en-us/visualstudio/bridge/bridge-to-kubernetes-sample#debug-the-stats-api-service,
+
+## Troubeshooting
+
+Check logs of plugins of vscodes 
