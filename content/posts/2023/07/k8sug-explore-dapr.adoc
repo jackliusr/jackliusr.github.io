@@ -10,7 +10,9 @@ tags:
 
 I was very excited to be invited to give a talk about dapr. Below is my talk. My demo in the session is not successful as things in kubernetes and dapr field are changing very fast. My lab environment didn't work as expected. Finially I make it work today, I share it here below.
 
-{{< youtube AFyu6RRogtE?t=2235 >}}
+Here is my talk at 18th July from time 2235 in below video. 
+
+{{< youtube AFyu6RRogtE >}}
 
 
 ## Prerequisites
@@ -67,4 +69,4 @@ Follow the instructions for other steps at  https://learn.microsoft.com/en-us/vi
 
 ## Troubeshooting
 
-Check logs of plugins of vscodes 
+Check logs of plugins of 
