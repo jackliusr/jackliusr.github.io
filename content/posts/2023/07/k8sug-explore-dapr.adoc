@@ -69,4 +69,4 @@ Follow the instructions for other steps at  https://learn.microsoft.com/en-us/vi
 
 ## Troubeshooting
 
-Check logs of plugins of 
+Check logs of plugins of vscode
