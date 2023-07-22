@@ -1,5 +1,6 @@
 ---
-title: Kubernetes beyond 5k nodes: etcd-sharding
+title: Kubernetes beyond 5k nodes 
+( etcd-sharing) 
 date: 2023-07-23T00:10:00+08:00
 categories:
 - tech
