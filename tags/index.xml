@@ -6,22 +6,31 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Jul 2023 20:40:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Jul 2023 00:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>dapr</title>
-      <link>https://jackliusr.github.io/tags/dapr/</link>
-      <pubDate>Thu, 20 Jul 2023 20:40:00 +0800</pubDate>
+      <title>etcd</title>
+      <link>https://jackliusr.github.io/tags/etcd/</link>
+      <pubDate>Sun, 23 Jul 2023 00:10:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/tags/dapr/</guid>
+      <guid>https://jackliusr.github.io/tags/etcd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kubernetes</title>
       <link>https://jackliusr.github.io/tags/kubernetes/</link>
-      <pubDate>Thu, 20 Jul 2023 20:40:00 +0800</pubDate>
+      <pubDate>Sun, 23 Jul 2023 00:10:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dapr</title>
+      <link>https://jackliusr.github.io/tags/dapr/</link>
+      <pubDate>Thu, 20 Jul 2023 20:40:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/dapr/</guid>
       <description></description>
     </item>
     
@@ -436,15 +445,6 @@
       <pubDate>Fri, 13 Jan 2023 22:01:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/gitops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>etcd</title>
-      <link>https://jackliusr.github.io/tags/etcd/</link>
-      <pubDate>Mon, 09 Jan 2023 12:01:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/etcd/</guid>
       <description></description>
     </item>
     
