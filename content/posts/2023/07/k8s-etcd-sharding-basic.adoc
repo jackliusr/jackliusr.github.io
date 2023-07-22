@@ -1,0 +1,82 @@
+---
+title: Kubernetes beyond 5k nodes: etcd-sharding
+date: 2023-07-23T00:10:00+08:00
+categories:
+- tech
+tags:
+- kubernetes
+- etcd
+---
+
+## Background
+
+I was once asked how to run big scaled kubernetes clusters regarding etcd size limitation. For example how to handle 8G limitations. I was not satisfied with my answers such as increasing memory, compaction & defragmentation as I knew there were several big scale clusters in several companies. However I didn't have any clues how to make that happened.
+
+Since then, I kept tabs on etcd by reading https://docs.google.com/document/d/16XEGyPBisZvmmoIHSZzv__LoyOeluC5a4x353CX0SIM/edit?usp=sharing[etcd community meeting (Public)].  Last week, I noticed that etcd sharding is mentioned in https://docs.google.com/document/d/1NUZDiJeiIH5vo_FMaTWf0JtrQKCx0kpEaIIuPoj9P6A/edit?usp=sharing[The Implicit Kubernetes-ETCD Contract]. I digged deep about this topic and spent a day to figure out how to implement a basic version for that. 
+
+## Basic Idea
+
+The idea is settting up extra etcd clusters for some type of resources, and adding a --etcd-servers-overrides configuration into the apiserver manifest file.
+
+However it involves more than that, data replication,  consistence, implication and cleaning up might needed to be considered for migrating an existing cluster to this kind of setup. I will write a complex one later after I figure out how to do that. 
+
+
+## Environment
+
+The testing environment is consisted of a kubernetes cluster with 1 control plane node and 1 worker node. The cluster is setup using KIND.  There will be two etcd in the cluster. 
+
+. etcd-kind-control-plane
+. etcd-kind-worker (with correct keys, certs prepared by the script)
+
+[source, bash]
+----
+git clone https://github.com/jackliusr/k8s
+cd k8s
+./up.sh etcdsharding
+----
+
+
+[source, bash]
+----
+k get nodes -o custom-columns=NAME:metadata.name,IP:status.addresses[0].address
+NAME                 IP
+kind-control-plane   172.18.0.3
+kind-worker          172.18.0.2
+----
+
+## Sharding
+
+[source, bash]
+----
+
+docker exec -it  kind-control-plane sed -i '/127.0.0.1:2379/a \ \ \ \ - --etcd-servers-overrides=\/events#https:\/\/172.18.0.2:2379' /etc/kubernetes/manifests/kube-apiserver.yaml
+
+
+# kube-apiservice will take while
+kubectl exec -it \
+  -n kube-system etcd-kind-worker \
+  -- sh -c 'ETCDCTL_CACERT=/etc/kubernetes/pki/etcd/ca.crt \
+    ETCDCTL_CERT=/etc/kubernetes/pki/etcd/peer.crt \
+    ETCDCTL_KEY=/etc/kubernetes/pki/etcd/peer.key \
+    ETCDCTL_API=3  \
+    etcdctl \
+      get \
+      --keys-only \
+      --prefix=true \
+      "/registry/events/" ' | wc -l
+#note down the numbers
+kubectl run redis --image=redis
+
+kubectl exec -it \
+  -n kube-system etcd-kind-worker \
+  -- sh -c 'ETCDCTL_CACERT=/etc/kubernetes/pki/etcd/ca.crt \
+    ETCDCTL_CERT=/etc/kubernetes/pki/etcd/peer.crt \
+    ETCDCTL_KEY=/etc/kubernetes/pki/etcd/peer.key \
+    ETCDCTL_API=3  \
+    etcdctl \
+      get \
+      --keys-only \
+      --prefix=true \
+      "/registry/events/" ' | wc -l
+# note down the numbers again, and compare it against the first number.      
+----
