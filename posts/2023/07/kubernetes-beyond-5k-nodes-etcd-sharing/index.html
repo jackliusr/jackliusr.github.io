@@ -8,7 +8,7 @@
   <title>Kubernetes beyond 5k nodes etcd-sharing | My learning and diary</title>
   <meta name="viewport" content="width=device-width,minimum-scale=1">
   <meta name="description"
-    content="Background I was once asked how to run big scaled kubernetes clusters regarding etcd size limitation. For example how to handle 8G limitations. I was not satisfied with my answers such as increasing memory, compaction &amp; defragmentation as I knew there were several big scale clusters in several companies. However I didn’t have any clues how to make that happened.
+    content="Background I was once asked how to run big scaled kubernetes clusters regarding etcd size limitation. For example how to handle 8G limitations. I was not satisfied with my answers such as increasing memory, compaction &amp; defragmentation as I knew there were several big scale clusters in several companies and 8GB might be a hard limit. However I didn’t have any clues how they make that happened.
  Since then, I kept tabs on etcd by reading etcd community meeting (Public).">
   <meta name="generator" content="Hugo 0.99.1" />
   
@@ -30,21 +30,21 @@
   
 
   <meta property="og:title" content="Kubernetes beyond 5k nodes etcd-sharing" />
-<meta property="og:description" content="Background I was once asked how to run big scaled kubernetes clusters regarding etcd size limitation. For example how to handle 8G limitations. I was not satisfied with my answers such as increasing memory, compaction &amp; defragmentation as I knew there were several big scale clusters in several companies. However I didn’t have any clues how to make that happened.
+<meta property="og:description" content="Background I was once asked how to run big scaled kubernetes clusters regarding etcd size limitation. For example how to handle 8G limitations. I was not satisfied with my answers such as increasing memory, compaction &amp; defragmentation as I knew there were several big scale clusters in several companies and 8GB might be a hard limit. However I didn’t have any clues how they make that happened.
  Since then, I kept tabs on etcd by reading etcd community meeting (Public)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2023/07/kubernetes-beyond-5k-nodes-etcd-sharing/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-07-23T00:10:00+08:00" />
-<meta property="article:modified_time" content="2023-07-23T01:43:25+08:00" />
+<meta property="article:modified_time" content="2023-07-23T11:40:56+08:00" />
 
 <meta itemprop="name" content="Kubernetes beyond 5k nodes etcd-sharing">
-<meta itemprop="description" content="Background I was once asked how to run big scaled kubernetes clusters regarding etcd size limitation. For example how to handle 8G limitations. I was not satisfied with my answers such as increasing memory, compaction &amp; defragmentation as I knew there were several big scale clusters in several companies. However I didn’t have any clues how to make that happened.
+<meta itemprop="description" content="Background I was once asked how to run big scaled kubernetes clusters regarding etcd size limitation. For example how to handle 8G limitations. I was not satisfied with my answers such as increasing memory, compaction &amp; defragmentation as I knew there were several big scale clusters in several companies and 8GB might be a hard limit. However I didn’t have any clues how they make that happened.
  Since then, I kept tabs on etcd by reading etcd community meeting (Public)."><meta itemprop="datePublished" content="2023-07-23T00:10:00+08:00" />
-<meta itemprop="dateModified" content="2023-07-23T01:43:25+08:00" />
-<meta itemprop="wordCount" content="342">
+<meta itemprop="dateModified" content="2023-07-23T11:40:56+08:00" />
+<meta itemprop="wordCount" content="349">
 <meta itemprop="keywords" content="kubernetes,etcd," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kubernetes beyond 5k nodes etcd-sharing"/>
-<meta name="twitter:description" content="Background I was once asked how to run big scaled kubernetes clusters regarding etcd size limitation. For example how to handle 8G limitations. I was not satisfied with my answers such as increasing memory, compaction &amp; defragmentation as I knew there were several big scale clusters in several companies. However I didn’t have any clues how to make that happened.
+<meta name="twitter:description" content="Background I was once asked how to run big scaled kubernetes clusters regarding etcd size limitation. For example how to handle 8G limitations. I was not satisfied with my answers such as increasing memory, compaction &amp; defragmentation as I knew there were several big scale clusters in several companies and 8GB might be a hard limit. However I didn’t have any clues how they make that happened.
  Since then, I kept tabs on etcd by reading etcd community meeting (Public)."/>
 
   
@@ -205,14 +205,14 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 2 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 342 words</span>
+        <span class="f6 mv4 dib tracked"> - 349 words</span>
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="sect1">
 <h2 id="_background"><a class="anchor" href="#_background"></a><a class="link" href="#_background">Background</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>I was once asked how to run big scaled kubernetes clusters regarding etcd size limitation. For example how to handle 8G limitations. I was not satisfied with my answers such as increasing memory, compaction &amp; defragmentation as I knew there were several big scale clusters in several companies. However I didn’t have any clues how to make that happened.</p>
+<p>I was once asked how to run big scaled kubernetes clusters regarding etcd size limitation. For example how to handle 8G limitations. I was not satisfied with my answers such as increasing memory, compaction &amp; defragmentation as I knew there were several big scale clusters in several companies and 8GB might be a hard limit. However I didn’t have any clues how they make that happened.</p>
 </div>
 <div class="paragraph">
 <p>Since then, I kept tabs on etcd by reading <a href="https://docs.google.com/document/d/16XEGyPBisZvmmoIHSZzv__LoyOeluC5a4x353CX0SIM/edit?usp=sharing">etcd community meeting (Public)</a>.  Last week, I noticed that etcd sharding is mentioned in <a href="https://docs.google.com/document/d/1NUZDiJeiIH5vo_FMaTWf0JtrQKCx0kpEaIIuPoj9P6A/edit?usp=sharing">The Implicit Kubernetes-ETCD Contract</a>. I digged deep about this topic and spent a day to figure out how to implement a basic version for that.</p>
@@ -370,11 +370,11 @@ kubectl exec -it \
         </li>
 	    
 	     <li  class="mb2">
-          <a href="/notes/k8s-metrics/">kubernetes metrics options</a>
+          <a href="/notes/kubelet/">Kubelet architecture</a>
         </li>
 	    
 	     <li  class="mb2">
-          <a href="/notes/kubelet/">Kubelet architecture</a>
+          <a href="/notes/k8s-metrics/">kubernetes metrics options</a>
         </li>
 	    
 	     <li  class="mb2">
@@ -458,7 +458,7 @@ kubectl exec -it \
 
 
   
-  <p style="font-size: small; color: grey;">Page version: 0a5bb4f3a5e32a314aec5dbfc1a05b5f1a8b6bf1 2023-07-23</p>
+  <p style="font-size: small; color: grey;">Page version: 6c4a099ef8feeea5c8dcfe0bdcaa0010f7ef0afd 2023-07-23</p>
 </body>
 
 </html>
