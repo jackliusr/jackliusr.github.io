@@ -11,7 +11,7 @@ tags:
 
 ## Background
 
-I was once asked how to run big scaled kubernetes clusters regarding etcd size limitation. For example how to handle 8G limitations. I was not satisfied with my answers such as increasing memory, compaction & defragmentation as I knew there were several big scale clusters in several companies. However I didn't have any clues how to make that happened.
+I was once asked how to run big scaled kubernetes clusters regarding etcd size limitation. For example how to handle 8G limitations. I was not satisfied with my answers such as increasing memory, compaction & defragmentation as I knew there were several big scale clusters in several companies and 8GB might be a hard limit. However I didn't have any clues how they make that happened.
 
 Since then, I kept tabs on etcd by reading https://docs.google.com/document/d/16XEGyPBisZvmmoIHSZzv__LoyOeluC5a4x353CX0SIM/edit?usp=sharing[etcd community meeting (Public)].  Last week, I noticed that etcd sharding is mentioned in https://docs.google.com/document/d/1NUZDiJeiIH5vo_FMaTWf0JtrQKCx0kpEaIIuPoj9P6A/edit?usp=sharing[The Implicit Kubernetes-ETCD Contract]. I digged deep about this topic and spent a day to figure out how to implement a basic version for that. 
 
