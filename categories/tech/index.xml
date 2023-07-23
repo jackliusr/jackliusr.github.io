@@ -8,11 +8,11 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 23 Jul 2023 00:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Kubernetes beyond 5k nodes etcd-sharing</title>
-      <link>https://jackliusr.github.io/posts/2023/07/kubernetes-beyond-5k-nodes-etcd-sharing/</link>
+      <title>Kubernetes beyond 5k nodes etcd-sharding</title>
+      <link>https://jackliusr.github.io/posts/2023/07/kubernetes-beyond-5k-nodes-etcd-sharding/</link>
       <pubDate>Sun, 23 Jul 2023 00:10:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/posts/2023/07/kubernetes-beyond-5k-nodes-etcd-sharing/</guid>
+      <guid>https://jackliusr.github.io/posts/2023/07/kubernetes-beyond-5k-nodes-etcd-sharding/</guid>
       <description>Background I was once asked how to run big scaled kubernetes clusters regarding etcd size limitation. For example how to handle 8G limitations. I was not satisfied with my answers such as increasing memory, compaction &amp;amp; defragmentation as I knew there were several big scale clusters in several companies and 8GB might be a hard limit. However I didn’t have any clues how they make that happened.
  Since then, I kept tabs on etcd by reading etcd community meeting (Public).</description>
     </item>
