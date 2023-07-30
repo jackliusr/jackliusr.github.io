@@ -1,0 +1,30 @@
+---
+title: Scaffold Identity into an MVC project without existing authorization
+date: 2023-07-30T20:40:00+08:00
+categories:
+- tech
+tags:
+- asp.net
+- dotnet core
+- identity
+---
+
+Today I tried to integrate identity into mvc projects. The main doc about this is at https://learn.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-7.0&tabs=netcore-cli#scaffold-identity-into-an-mvc-project-without-existing-authorization
+
+[source,bash]
+----
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore
+dotnet add package Microsoft.AspNetCore.Identity.UI
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+
+# add second dbcontext for identity and authorinization, use database sqlite
+dotnet aspnet-codegenerator identity -dc MyApplication.Data.ApplicationDbContext \
+  --files "Account.Register;Account.Login"  --databaseProvider sqlite
+  
+dotnet ef migrations add CreateIdentitySchema \
+   --context MyApplication.Data.ApplicationDbContext
+dotnet ef database update \
+   --context MyApplication.Data.ApplicationDbContext
+----
