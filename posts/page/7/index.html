@@ -167,6 +167,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2022/05/curl-elk-in-pods-to-delete-indices/" class="link black dim">
+        Curl elk in pods to delete indices
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Today my staging kibana didn’t show logs. I made the decision to work out a solution to solve issue in hard way this time. I don’t want me in the same situation without solutoins.
+ When things go wrong, you can’t login kibana to do management or maintainance works. The left option is managing the data from the command line. In the past I figured out to use curl cli in pod to get some information of elk.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2022/05/same-device-mounted-on-differences-mount-points/" class="link black dim">
         same device mounted on differences mount points
       </a>
@@ -305,22 +321,6 @@ if (!doNotTrack) {
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       I had some projects on github, gitlab and gitee. Their CI pipelines are quite different. To save the troubles and times, it is a natural choice to seek other options to unify on one solution.
  At first, I looked into jenkins x. However it is quite heavy and with opinions. Considering its Maturity Level Matrix, I am not sure I can make it happen in my limited after hours times.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/05/argo-workflow-secrets-for-git/" class="link black dim">
-        argo-workflow: secrets for git
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      I needed to clone one of my private repositories in one workflow of argo-workflows. I did’t figure a way to mount git artifact into a shared volume at that time. I sought to other options and find https://github.com/argoproj/argo-workflows/issues/1428 and https://www.jeffgeerling.com/blog/2019/mounting-kubernetes-secret-single-file-inside-pod.
- The comment https://github.com/argoproj/argo-workflows/issues/1428#issuecomment-775911838 gives an example to add user name and password into https url. Upon I checked the logs, I found that user and password are shown in the logs of a workflow.
     </div>
   </div>
 </div>

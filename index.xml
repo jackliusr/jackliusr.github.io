@@ -6,7 +6,17 @@
     <description>Recent content on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Jul 2023 00:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Jul 2023 20:40:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Scaffold Identity into an MVC project without existing authorization</title>
+      <link>https://jackliusr.github.io/posts/2023/07/scaffold-identity-into-an-mvc-project-without-existing-authorization/</link>
+      <pubDate>Sun, 30 Jul 2023 20:40:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/07/scaffold-identity-into-an-mvc-project-without-existing-authorization/</guid>
+      <description>Today I tried to integrate identity into mvc projects. The main doc about this is at https://learn.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-7.0&amp;amp;tabs=netcore-cli#scaffold-identity-into-an-mvc-project-without-existing-authorization
+ dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design dotnet add package Microsoft.EntityFrameworkCore.Design dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore dotnet add package Microsoft.AspNetCore.Identity.UI dotnet add package Microsoft.EntityFrameworkCore.Tools # add second dbcontext for identity and authorinization, use database sqlite dotnet aspnet-codegenerator identity -dc MyApplication.Data.ApplicationDbContext \ --files &amp;#34;Account.Register;Account.Login&amp;#34; --databaseProvider sqlite dotnet ef migrations add CreateIdentitySchema \ --context MyApplication.Data.ApplicationDbContext dotnet ef database update \ --context MyApplication.</description>
+    </item>
+    
     <item>
       <title>Kubernetes beyond 5k nodes etcd-sharding</title>
       <link>https://jackliusr.github.io/posts/2023/07/kubernetes-beyond-5k-nodes-etcd-sharding/</link>

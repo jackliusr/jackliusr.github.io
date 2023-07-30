@@ -167,6 +167,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2023/07/scaffold-identity-into-an-mvc-project-without-existing-authorization/" class="link black dim">
+        Scaffold Identity into an MVC project without existing authorization
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Today I tried to integrate identity into mvc projects. The main doc about this is at https://learn.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-7.0&amp;tabs=netcore-cli#scaffold-identity-into-an-mvc-project-without-existing-authorization
+ dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design dotnet add package Microsoft.EntityFrameworkCore.Design dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore dotnet add package Microsoft.AspNetCore.Identity.UI dotnet add package Microsoft.EntityFrameworkCore.Tools # add second dbcontext for identity and authorinization, use database sqlite dotnet aspnet-codegenerator identity -dc MyApplication.Data.ApplicationDbContext \ --files &#34;Account.Register;Account.Login&#34; --databaseProvider sqlite dotnet ef migrations add CreateIdentitySchema \ --context MyApplication.Data.ApplicationDbContext dotnet ef database update \ --context MyApplication.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2023/07/kubernetes-beyond-5k-nodes-etcd-sharding/" class="link black dim">
         Kubernetes beyond 5k nodes etcd-sharding
       </a>
@@ -334,23 +350,6 @@ if (!doNotTrack) {
   grep: Where-Object or Select-String
   man: Get-Help
    References   https://mathieubuisson.github.io/powershell-linux-bash/#pwd- -
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2023/04/filter-data-conditionally-using-power-query/" class="link black dim">
-        filter data conditionally using power-query
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      2 days ago, I didn’t figure out how to filter out data using power-query. I used a workaround solution to achive the same goal. Yesteray I occasionally found that I can filter out data directly without using my workaround solutions.
-   Table.SelectRows
-Table.SelectRows( Table.FromRecords({ [CustomerID = 1, Name = &#34;Bob&#34;, Phone = &#34;123-4567&#34;], [CustomerID = 2, Name = &#34;Jim&#34;, Phone = &#34;987-6543&#34;], [CustomerID = 3, Name = &#34;Paul&#34;, Phone = &#34;543-7890&#34;], [CustomerID = 4, Name = &#34;Ringo&#34;, Phone = &#34;232-1550&#34;] }), each ( [CustomerID] &gt; 2 and Text.
     </div>
   </div>
 </div>
