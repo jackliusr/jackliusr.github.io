@@ -22,15 +22,18 @@ The idea is settting up extra etcd clusters for some type of resources, and addi
 However it involves more than that, data replication,  consistence, implication and cleaning up might needed to be considered for migrating an existing cluster to this kind of setup. I will write a complex one later after I figure out how to do that. 
 
 
-## Environment
+## Sharded Environment
 
 The testing environment is consisted of a kubernetes cluster with 1 control plane node and 1 worker node. The cluster is setup using KIND.  There will be two etcd in the cluster. 
 
 . etcd-kind-control-plane
 . etcd-kind-worker (with correct keys, certs prepared by the script)
 
+The implementation is in *configs/etcdsharding-hook.sh* and *configs/etcd/cfssl/gen-key-cert.sh*. 
+
 [source, bash]
 ----
+# bootup a sharded etcd for events resources
 git clone https://github.com/jackliusr/k8s
 cd k8s
 ./up.sh etcdsharding
@@ -45,7 +48,17 @@ kind-control-plane   172.18.0.3
 kind-worker          172.18.0.2
 ----
 
-## Sharding
+
+## Implementation details
+
+. prepare certs for a new etcd instance (create and copy to correct locations on worker node kind-worker )
+. copy etcd.yaml manifest from kind-control-plane to kind-worker and replace IP address, a static pod will be started on kind-worker
+. add "--etcd-servers-overrides" into kube-apiserver.yaml in kind-control-plane
+
+
+## Verifying
+
+
 
 [source, bash]
 ----
