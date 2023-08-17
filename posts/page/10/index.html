@@ -167,6 +167,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2021/03/install-calico-cni-in-alicloud-ack-and-advanced-dns-troubleshooting-in-kubernetes/" class="link black dim">
+        Install calico cni in alicloud ack and advanced dns troubleshooting in kubernetes
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      2 weeks I started to learn alicloud to prepare the migration from aws to alicloud. I started the migration this week. Our applications are deployed on kubernetes, I focused on ACK first. The setup journey was bumpy, and most of the issues can be resolved by googling and trial loops. The most difficult one is that dns resolution issue.
+ I tried the steps in &#34;Debugging DNS Resolution&#34; [1]. All steps were good except the nslookup step.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2021/03/exposing-tcp-and-udp-services-in-nginx-ingress/" class="link black dim">
         Exposing TCP and UDP services in nginx ingress
       </a>
@@ -304,21 +320,6 @@ skaffold debug     Import ptvsd in the python file to debug, add breakout() befo
       I loved to read novels. Recently I found that several sites show some garbed characters in square boxes. I went to the original site qidian and those chacters are shown correctly in the orignal site. After little investigation, I found the following information;
           In above pics, 了’s HTML entity code is , it is not as 天.
  How does chrome show the characters correctly?
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2020/10/setup-kubeflow-pipeline-on-local-kind-cluster/" class="link black dim">
-        Setup kubeflow pipeline on local KIND cluster
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      # https://www.kubeflow.org/docs/pipelines/installation/localcluster-deployment/#deploying-kubeflow-pipelines # env/platform-agnostic-pns hasn&#39;t been publically released, so we install from master temporarily export PIPELINE_VERSION=1.0.1 kubectl apply -k &#34;github.com/kubeflow/pipelines/manifests/kustomize/cluster-scoped-resources?ref=$PIPELINE_VERSION&#34; kubectl wait --for condition=established --timeout=60s crd/applications.app.k8s.io kubectl apply -k &#34;github.com/kubeflow/pipelines/manifests/kustomize/env/platform-agnostic-pns?ref=$PIPELINE_VERSION&#34; # expose gui kubectl port-forward -n kubeflow --address 0.0.0.0 svc/ml-pipeline-ui 8080:80   
     </div>
   </div>
 </div>

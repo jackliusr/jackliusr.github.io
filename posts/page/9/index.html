@@ -167,6 +167,21 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2022/05/a-strange-issue-of-kubernetes-new-pod-kept-in-crashloopbackoff-in-newly-joined-node./" class="link black dim">
+        A strange issue of kubernetes: New pod kept in CrashloopBackOff in newly joined node.
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Today I encountered a strange issue with one kubernete cluster. Newly created pods are not created on a newly joined node. There is no errors in logs of pods and the node, events of kubernete. All seems normal. I created a simple nginx pod with nodeName as the problematic node. The pod can be scheduled and created in the node. However the pod was kept in CrashloopBackOff state. There is definitely something wrong with server.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2022/04/setup-vscode-development-for-dapr-in-wsl/" class="link black dim">
         Setup vscode development for dapr in WSL
       </a>
@@ -310,22 +325,6 @@ if (!doNotTrack) {
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Secrets Management is the strong suit of Hashicorp vault. Open source edition is little limited comparing to cloud and enterprise edition, and cloud and enterprise editions sometimes are not allowed due to some reasons. bank-vaults seems a promising solution based on open source edition of Hashicorp Vault.
  Advanced usage of vault will involve HSM and SoftHSM is good start point without spending several hundards bucks. Besides, HSM is widely used in Financial sector, blockchain and cryptocurrency.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2021/03/install-calico-cni-in-alicloud-ack-and-advanced-dns-troubleshooting-in-kubernetes/" class="link black dim">
-        Install calico cni in alicloud ack and advanced dns troubleshooting in kubernetes
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      2 weeks I started to learn alicloud to prepare the migration from aws to alicloud. I started the migration this week. Our applications are deployed on kubernetes, I focused on ACK first. The setup journey was bumpy, and most of the issues can be resolved by googling and trial loops. The most difficult one is that dns resolution issue.
- I tried the steps in &#34;Debugging DNS Resolution&#34; [1]. All steps were good except the nslookup step.
     </div>
   </div>
 </div>

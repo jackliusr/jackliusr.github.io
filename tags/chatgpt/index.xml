@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>chatgpt on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/chatgpt/</link>
+    <description>Recent content in chatgpt on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 17 Aug 2023 00:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/chatgpt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Generate a customized rule of spectral using chatgpt</title>
+      <link>https://jackliusr.github.io/posts/2023/08/generate-a-customized-rule-of-spectral-using-chatgpt/</link>
+      <pubDate>Thu, 17 Aug 2023 00:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/08/generate-a-customized-rule-of-spectral-using-chatgpt/</guid>
+      <description>Background I didn’t find a rule implementation of spectral at stoplightio and github to lint the rule that resources should be nouns in REST API. stoplight mentions that Use Nouns for Resource Names, however there is no another article about that. I was bothered by that for a while to the point I want to give it a try to implement my rule for that.
+ There are several existing implementations about this rule.</description>
+    </item>
+    
+  </channel>
+</rss>
