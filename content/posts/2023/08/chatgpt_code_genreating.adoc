@@ -1,0 +1,118 @@
+---
+title: Generate a customized rule of spectral using chatgpt
+date: 2023-08-17T00:10:00+08:00
+categories:
+- tech
+tags:
+- chatgpt
+- spectral
+- javascript
+- openapi
+- nlp
+---
+
+## Background
+
+I didn't find a rule implementation of spectral at stoplightio and github to lint the rule that resources should be nouns in REST API. stoplight mentions that https://blog.stoplight.io/consistent-api-urls-with-openapi-and-style-guides#:~:text=Use%20Nouns%20for,in%20this%20series[Use Nouns for Resource Names], however there is no another article about that. I was bothered by that for a while to the point I want to give it a try to implement my rule for that.
+
+
+There are several existing implementations about this rule. One is using 's' ending as heuristic. Another one is using dictionary. It is quite easy to spot the weakness of the two methods. What if the last path parameter is verbs? What if it is a compound noun whic is not in dictionaries as compound nouns are quite open?
+
+Yesterday one idea pop up in my mind since recently I used a lot of chatgtp to get information. Why not generate on using chatgpt?  Here is my try. 
+
+
+## My prompt and code generated from chatgpt
+
+My prompt is as following. The code generated is working. 
+[quote]
+----
+write a javascription function to determine if a word  is noun using nlp,  and write a custom rule function for spectral to check if the last path parameter is a noun by calling above function
+----
+
+[source, yaml]
+----
+rules:
+  last-path-parameter-noun:
+    description: Check if the last path parameter is a noun.
+    given: "$.paths.*.*.parameters"
+    then:
+      field: "name"
+      function: custom-functions/lastPathParameterNoun.js
+----
+
+[source, javascript]
+----
+const nlp = require('compromise');
+
+function isNoun(word) {
+  const doc = nlp(word);
+  const nouns = doc.nouns().out('array');
+  return nouns.includes(word);
+}
+
+function lastPathParameterNoun(targetVal) {
+  if (Array.isArray(targetVal) && targetVal.length > 0) {
+    const lastPathParameter = targetVal[targetVal.length - 1].name;
+    if (!isNoun(lastPathParameter)) {
+      return [
+        {
+          message: 'Last path parameter should be a noun.',
+        },
+      ];
+    }
+  }
+
+  return;
+}
+
+module.exports = lastPathParameterNoun;
+----
+
+
+## Final Code
+
+[source, javascript]
+----
+function isNoun(word) {
+  const doc = nlp(word);
+  const nouns = doc.nouns().out('array');
+  return nouns.includes(word);
+}
+function isObject(value) {
+  return value !== null && typeof value === 'object';
+}
+
+export const  isLastPathParameterNoun = targetVal =>  {
+
+ if (!isObject(targetVal) || !isObject(targetVal.paths)) {
+    return;
+  }
+    const results = [];
+    for (const path of Object.keys(targetVal.paths)){
+        let pathParameters = path.split("/")
+        if (Array.isArray(pathParameters) && pathParameters.length > 0) {
+        let lastPathParameter = pathParameters[pathParameters.length - 1];
+        if (!isNoun(lastPathParameter)) {
+          results.push({
+            message: 'Resource should be noun.',
+            path: ['paths', path]
+           });
+        }
+      }
+    }
+    return results;
+}
+
+export default isLastPathParameterNoun
+----
+
+## Comparision
+
+Comparing the generated code and final code, you can tell the great similarities between them. I referred existing rules and functions from owasp top 10 api styles, copied isObject and added path splitting. The main thing is same as the generated one. It is quite impressive.
+
+
+## Thoughts
+
+I learnt prompt engineering courses from deeplearning.ai and other informations from https://learnprompting.org/ and langchain sites in last two months, used chatgpt to generate aspnet core mvc code one week ago. I never thought I can use chatgpt to resolve new challenges. This one is a new experience, eye-opening for me. 
+
+Considering the great potentials and impacts, I should explore it in more ways. I will keep posting my findings about chatgpt in more blogs
