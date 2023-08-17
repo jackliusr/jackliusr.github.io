@@ -25,13 +25,11 @@ Yesterday one idea pop up in my mind since recently I used a lot of chatgtp to g
 
 My prompt is as following. The code generated is working. 
 
-[quote]
-----
 write a javascription function to determine if a word  
 is noun using nlp,  and write a custom rule function 
 for spectral to check if the last path parameter is a 
 noun by calling above function
-----
+
 
 [source, yaml]
 ----
