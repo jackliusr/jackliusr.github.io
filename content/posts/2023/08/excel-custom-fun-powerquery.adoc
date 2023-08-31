@@ -1,0 +1,114 @@
+---
+title: Get information from internet in excel, custom function vs powerquery
+date: 2023-08-31T00:10:00+08:00
+categories:
+- tech
+tags:
+- excel
+- powerquery
+- javascript
+- typescript
+---
+
+
+Last week I worked on filling info package information to a workbooks. I used VBA macro before and thought of it again to save some of my time.
+
+Things is changing very fast,  the new javascript based custom fuction is the mainstream. The initial one I followed the https://learn.microsoft.com/en-us/office/dev/add-ins/quickstarts/excel-custom-functions-quickstart?tabs=excel-windows[tutorial], however I didn't find any way to add it into "My Addin" as described in microsoft doc site. I don't have administrator rights on my laptop. Maybe it is caused by that.  It left me with another possible option: power query
+
+
+There are three things I needed to figure out, how to refer to table/range of current workbook, how to get data from internet and parse data from internet. 
+
+
+. Refer to table/range of current workbook
++
+[source, powerquery]
+----
+Source = Excel.CurrentWorkbook(){[Name="Table3"]}[Content],
+----
+. Get data from internet
++
+[source, powerquery]
+----
+ doc = Web.Contents([link])
+----
+. Parse data from internet
++
+[source, powerquery]
+----
+ jsonDoc = Json.Document(Web.Contents([jsonLink]))
+----
+
+After several trials and errors, I finally got it right. Below is the full working one.
+
+[source, powerquery]
+----
+let
+    //refer to table/range of current workbook
+    Source = Excel.CurrentWorkbook(){[Name="Table3"]}[Content],
+    #"Changed Type" = Table.TransformColumnTypes(Source,{ {"Category", type text},
+        {"Details", type text}, 
+        {"Version", type any}, 
+        {"Version Release Date", type datetime}, 
+        {"Latest version", type text}}),
+    #"Added lower_details" = Table.AddColumn(#"Changed Type", "lower_details", each Text.Lower([Details])),
+    #"Added publishedLink" = Table.AddColumn(#"Added lower_details", "publishedLink", 
+            each if [Category] = "C#" then 
+                Text.Combine({"https://api.nuget.org/v3/registration5-semver1/", [lower_details],"/",[Version],".json"})
+                else ""
+        ),
+    #"Added published" = Table.AddColumn(#"Added publishedLink", "published", 
+      each if [Category] = "C#" then  
+            Text.Range(Record.FieldValues(Record.SelectFields(Json.Document(Web.Contents([publishedLink])), 
+            "published")){0}, 0,10)
+            else ""
+            ),
+    #"Added pkgMetaLink" = Table.AddColumn(#"Added published", "pkgMetaLink", 
+        each if [Category] = "C#" then 
+                 Text.Combine({"https://api.nuget.org/v3/registration5-semver1/", [lower_details],"/index.json"})
+            else ""
+            ),
+    #"Added pkgLatestVersion" = Table.AddColumn(#"Added pkgMetaLink", "pkgLatestVersion", 
+        each if [Category] = "C#" then  
+            Record.FieldValues(Record.SelectFields(List.Last(Record.FieldValues(Record.SelectFields(Json.Document(Web.Contents([pkgMetaLink])), 
+            "items")){0}),"upper")){0}
+            else ""),
+    #"Added jsMetaLink" = Table.AddColumn(#"Added pkgLatestVersion", "jsMetaLink", 
+                each if [Category] = "Javascript" then 
+            Text.Combine({"https://registry.npmjs.org/", [lower_details]})
+            else ""),
+    #"Added jsLatestVersion" = Table.AddColumn(#"Added jsMetaLink", "jsLatestVersion", 
+    each if [Category] = "Javascript" then
+                try 
+                    Record.FieldValues(
+                            Record.SelectFields(
+                            Record.FieldValues(
+                                    Record.SelectFields(
+                                        Json.Document(Web.Contents([jsMetaLink])), 
+                                        {"dist-tags"}
+                                    )
+                                ){0},
+                                {"latest"}
+                                )
+                                ){0} 
+                otherwise ""
+            else ""),
+    #"Added jsPublished" = Table.AddColumn(#"Added jsLatestVersion", "jsPublished", 
+    each if [Category] = "Javascript" then
+                try 
+                    Text.Range(Record.FieldValues(
+                        Record.SelectFields(
+                        Record.FieldValues(
+                                Record.SelectFields(
+                                    Json.Document(Web.Contents([jsMetaLink])), 
+                                    {"time"}
+                                )
+                            ){0},
+                            {[Version]}
+                            )
+                            ){0}, 0,10)
+                otherwise ""
+            else "")
+in
+    #"Added jsPublished"
+----
+
