@@ -167,6 +167,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2023/10/change-appsettings.json-without-restart-in-app-service-plan/" class="link black dim">
+        Change appsettings.json without restart in app service plan
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Nowadays, zero downtime is normal, you can’t believe that in azure app service changes in &#34;app settings&#34;, App Service triggers an app restart. The alternative ways to do avoid that is to use sentinel key with App Configuration. however App Configuration will cost a little. Do we really need to use App Configuration to achieve that ?
+ The naive and obvious way is that changing appsettings.json files via entering the app services using kudo console.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2023/08/get-information-from-internet-in-excel-custom-function-vs-powerquery/" class="link black dim">
         Get information from internet in excel, custom function vs powerquery
       </a>
@@ -306,39 +322,6 @@ if (!doNotTrack) {
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Installation I installed Ubuntu 22.04 on my laptop following the scripts here.
  sudo apt-get update sudo apt-get install ca-certificates curl gnupg sudo install -m 0755 -d /etc/apt/keyrings curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg sudo chmod a+r /etc/apt/keyrings/docker.gpg echo \ &#34;deb [arch=&#34;$(dpkg --print-architecture)&#34; signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \ &#34;$(. /etc/os-release &amp;&amp; echo &#34;$VERSION_CODENAME&#34;)&#34; stable&#34; | \ sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin service docker start     Troubleshootig It is little different from my previous installation.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2023/05/hash-vs-uuid-to-replace-nric/l4c/" class="link black dim">
-        Hash vs UUID to replace NRIC/L4C
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Item
- Hash/encryption
- UUID
-   Order preservation
- possible (linear hash)
- possible ( customized UUID algorithm)
-   length
- shorter or longer
- fixed
-   ubiquitous
- anyone or machines can be used to hash
- depends
-   performance (computing)
- ?
- ?
-   performance (search)
- fast
- slow
-    References:
     </div>
   </div>
 </div>

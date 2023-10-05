@@ -167,6 +167,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2022/12/integrate-device_preview-bot_toast-and-getx/" class="link black dim">
+        Integrate device_preview, bot_toast and getx
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      void main() =&gt; runApp( DevicePreview( enabled: !kReleaseMode, builder: (context) =&gt; MyApp(), // Wrap your app ), ); class MyApp extends StatelessWidget { final botToastBuilder = BotToastInit(); @override Widget build(BuildContext context) { return GetMaterialApp.router( useInheritedMediaQuery: true, locale: DevicePreview.locale(context), builder: (context, child) { child = DevicePreview.appBuilder(context, child); child = botToastBuilder(context, child); return child; }, theme: ThemeData.light(), darkTheme: ThemeData.dark(), home: const HomePage(), ); } }   Reference:   https://pub.dev/packages/bot_toast
+  https://stackoverflow.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2022/12/spring-devtools-in-action/" class="link black dim">
         Spring devtools in action
       </a>
@@ -303,27 +319,6 @@ if (!doNotTrack) {
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Today when I leant SRE course from cloudskillsboost, the first course is google cloud foundation. SRE is great. cloudskillsboost should be best place to learn SRE as it is originated there.
  
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/10/sdui-odoo-metadata-driven-ui-active-data-dictionary-data-driven-ui/" class="link black dim">
-        SDUI, odoo, metadata driven ui, active data dictionary, data driven ui
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Today I re-read Technology Radar Volume 26, SDUI got my attention. In the past, I was very interested in ERP systems, and studied several open source ERP systems such as openerp(now odoo), ofbiz and adempiere. SDUI is quite similar to technologies used in those open sourced ERP systems.
-     technology
- data source
- ui complex
-   SDUI
- server end logic decides/graphQL
-    odoo
     </div>
   </div>
 </div>
