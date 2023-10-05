@@ -1,5 +1,5 @@
 ---
-title: Change appsettings.json without restart in app service plan
+title: Change appsettings.json without restart in app service
 date: 2023-10-05T20:10:00+08:00
 categories:
 - tech
