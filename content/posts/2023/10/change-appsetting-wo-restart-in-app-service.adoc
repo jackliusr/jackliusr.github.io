@@ -1,0 +1,20 @@
+---
+title: Change appsettings.json without restart in app service plan
+date: 2023-10-05T20:10:00+08:00
+categories:
+- tech
+tags:
+- app-service
+- azure
+- appsettings
+- restart
+---
+
+
+Nowadays, zero downtime is normal, you can't believe that in azure app service  https://learn.microsoft.com/en-us/azure/app-service/configure-common?tabs=portal#:~:text=When%20you%20add%2C%20remove%2C%20or%20edit%20app%20settings%2C%20App%20Service%20triggers%20an%20app%20restart[changes in "app settings", App Service triggers an app restart]. https://learn.microsoft.com/en-us/azure/azure-app-configuration/enable-dynamic-configuration-aspnet-core?tabs=core6x[The alternative ways] to do avoid that is to use sentinel key with App Configuration. however App Configuration will cost a little. Do we really need to use App Configuration to achieve that ?
+
+
+The naive and obvious way is that changing appsettings.json files via entering the app services using kudo console. There are several open issues with this way, how to sync the changes to other instances in  plans with dedicated computes, how to get the changes when switching to other instances in plans with shared computes.
+
+
+Another way is https://learn.microsoft.com/en-us/azure/app-service/configure-connect-to-azure-storage?pivots=code-windows&tabs=basic%2Ccli#configure-your-app-with-azure-storage[put appsettings.json into a shared folder and mounted the folder into app]. https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-6.0#:~:text=a%20default%20value.-,Using%20the%20default%20configuration%2C%20the%20appsettings.json%20and%20appsettings.%7BEnvironment%7D.json%20files%20are%20enabled%20with%20reloadOnChange%3A%20true.%20Changes%20made%20to%20the%20appsettings.json%20and%20appsettings.%7BEnvironment%7D.json%20file%20after%20the%20app%20starts%20are%20read%20by%20the%20JSON%20configuration%20provider.,-Bind%20hierarchical%20configuration[App will reload the configration without restart]. It should be workable. I will put a POC code later for this.
