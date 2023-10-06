@@ -167,6 +167,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2023/10/skip-first-line-before-running-xargs/" class="link black dim">
+        Skip first line before running xargs
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Do you know how to skip first line before data pipe into xargs?
+ Today I need to export custom resources and want to avoid error messages because the column names line in the output of kubectl. I knew there is a command line option (--no-headers) of kubectl and managed to get the option, but I don’t want to spend time to search the option in future. Is there any way to skip first line before data pipe into xargs?
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2023/10/change-appsettings.json-without-restart-in-app-service/" class="link black dim">
         Change appsettings.json without restart in app service
       </a>
@@ -306,22 +322,6 @@ if (!doNotTrack) {
       I chose logseq as my PKM I was overloaded with information in the past several weeks. I sought many ways to overcome it. One choice I made is using logseq as PKM.
    why? There are several open source or freeware verion of PKM. Why did I choose logseq?
    logseq is clojure based. I am a big fan of lisp-liked languages. I studied and did some coding using racket, common-lisp, elisp and clojure after I read Paul Graham’s essays about lisp.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2023/05/setup-docker-in-wsl2/" class="link black dim">
-        Setup docker in wsl2
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Installation I installed Ubuntu 22.04 on my laptop following the scripts here.
- sudo apt-get update sudo apt-get install ca-certificates curl gnupg sudo install -m 0755 -d /etc/apt/keyrings curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg sudo chmod a+r /etc/apt/keyrings/docker.gpg echo \ &#34;deb [arch=&#34;$(dpkg --print-architecture)&#34; signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \ &#34;$(. /etc/os-release &amp;&amp; echo &#34;$VERSION_CODENAME&#34;)&#34; stable&#34; | \ sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin service docker start     Troubleshootig It is little different from my previous installation.
     </div>
   </div>
 </div>

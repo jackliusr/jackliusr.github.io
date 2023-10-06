@@ -167,6 +167,24 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2020/11/vscode-debug-python-containers-running-kubernetes-via-attachment/" class="link black dim">
+        vscode debug python containers running kubernetes via attachment
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      python-guestbook at https://github.com/GoogleCloudPlatform/cloud-code-samples is used to practice debug python containers in kubernetes.
+ Google cloud python code vscode plugin 1.7.0 failed to run python on kubernetes or there is no obvious way to do that as depicted in the below pic.      Steps to make it:
+  run
+skaffold debug     Import ptvsd in the python file to debug, add breakout() before the line to debug
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2020/11/jetbrain-debug-containers-in-kubernetes/" class="link black dim">
         Jetbrain debug containers in kubernetes
       </a>
@@ -314,22 +332,6 @@ if (!doNotTrack) {
       The workaround solution mentioned at Issue doesn’t work when inout refcursor parameter is used.
  Here is my workaround solution for that.
  CREATE OR REPLACE PROCEDURE sp_test(INOUT results refcursor) LANGUAGE plpgsql SECURITY DEFINER AS $procedure$ begin results := &#39;cur&#39; ; OPEN results for select generate_series dt from generate_series(date&#39;2019-01-01&#39; , date&#39;2019-01-31&#39;, interval &#39;1 day&#39;); end;$procedure$ ;   conn.setAutoCommit(false); Statement st = conn.createStatement(); ResultSet rs0 = st.executeQuery(&#34;call sp_test(&#39;&#39;)&#34;); ResultSet rs = st.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2019/03/error-message-of-rabbitmq-is-terrible/" class="link black dim">
-        Error message of rabbitmq is terrible
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Error message of rabbitmq is terrible Today I installed RabbitMQ 3.7.13-1. However I always got the following messages when running rabbitmq-server and a dump. The error message doesn’t give any clue of root cause. It is none of the cases searched from google such as permission issue, configuration issue etc.
- {&#34;init terminating in do_boot&#34;,{undef,[{rabbit_prelaunch,start,[],[]},{init,start_em,1,[]},{init,do_boot,3,[]}]}}   I re-read the installation guide and double-checked steps and configuration. There is no luck.
     </div>
   </div>
 </div>

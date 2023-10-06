@@ -6,7 +6,25 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Oct 2023 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Oct 2023 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux</title>
+      <link>https://jackliusr.github.io/tags/linux/</link>
+      <pubDate>Fri, 06 Oct 2023 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shell</title>
+      <link>https://jackliusr.github.io/tags/shell/</link>
+      <pubDate>Fri, 06 Oct 2023 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>app-service</title>
       <link>https://jackliusr.github.io/tags/app-service/</link>
@@ -265,15 +283,6 @@
       <pubDate>Fri, 05 May 2023 20:01:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/seo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://jackliusr.github.io/tags/linux/</link>
-      <pubDate>Fri, 28 Apr 2023 20:01:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
@@ -1948,15 +1957,6 @@
       <pubDate>Sun, 17 Jan 2021 14:26:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/echarts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>shell</title>
-      <link>https://jackliusr.github.io/tags/shell/</link>
-      <pubDate>Wed, 09 Dec 2020 10:35:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/shell/</guid>
       <description></description>
     </item>
     

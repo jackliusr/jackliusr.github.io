@@ -167,6 +167,26 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2022/05/projected-volumes-in-argo-workflow/" class="link black dim">
+        projected volumes in argo-workflow
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Yesterday I added gitconfig volume and mounted to /root. However today the logs of the workflow shows netrc is mounted to /root as well. They are conflicted. Kubernetes supports projected volume which supports following types. my netrc and gitconfig are in the list.
+   secret
+  downwardAPI
+  configMap
+  serviceAccountToken
+   I made the small tweak to hello world sample workflow. Here is the my demo workflow with projected volumes.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2022/05/first-trial-mermaid-diagrams-in-hugo/" class="link black dim">
         First trial mermaid Diagrams in hugo
       </a>
@@ -302,22 +322,6 @@ if (!doNotTrack) {
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       The journey I worked on a dapr microservice project which need to read a list from a file and do some useful things. Argo-workflow supports loop over a list of items, however one of my steps always got &#34;invalid character &#39;G&#39; looking for beginning of value&#34; before going to next step in the workflow template. The step is as following:
  - name: get-deps inputs: parameters: - name: changes script: image: ubuntu:latest command: [bash] #args: [&#34;echo result was: {{inputs.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/05/rich-link-preview-and-im-apps/" class="link black dim">
-        Rich link preview and IM apps
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Two days ago, I have a fun journey to find more about rich link preview features in social media, web apps and IM apps.
- The journey began with that the shared link of one of my company sites in skype was shown without pictures, just a plain link. Searching the feature of skype &#34;link preview&#34;, I found https://socialsharepreview.com/. I knew what missed in the homepage as in the following list.
     </div>
   </div>
 </div>

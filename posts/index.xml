@@ -6,7 +6,17 @@
     <description>Recent content in Posts on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Oct 2023 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Oct 2023 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Skip first line before running xargs</title>
+      <link>https://jackliusr.github.io/posts/2023/10/skip-first-line-before-running-xargs/</link>
+      <pubDate>Fri, 06 Oct 2023 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/10/skip-first-line-before-running-xargs/</guid>
+      <description>Do you know how to skip first line before data pipe into xargs?
+ Today I need to export custom resources and want to avoid error messages because the column names line in the output of kubectl. I knew there is a command line option (--no-headers) of kubectl and managed to get the option, but I don’t want to spend time to search the option in future. Is there any way to skip first line before data pipe into xargs?</description>
+    </item>
+    
     <item>
       <title>Change appsettings.json without restart in app service</title>
       <link>https://jackliusr.github.io/posts/2023/10/change-appsettings.json-without-restart-in-app-service/</link>
