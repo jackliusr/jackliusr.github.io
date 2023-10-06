@@ -1,0 +1,32 @@
+---
+title: Skip first line before running xargs
+date: 2023-10-06T20:10:00+08:00
+categories:
+- tech
+tags:
+- linux
+- shell
+---
+
+Do you know how to skip first line before data pipe into xargs?
+
+Today I need to export custom resources and want to avoid error messages because the column names line in the output of kubectl. I knew there is a command line option (--no-headers) of kubectl and managed to get the option, but I don't want to spend time to search the option in future. Is there any way to skip first line before data pipe into xargs?
+
+[source, bash]
+----
+kubectl  get crd --output=custom-columns=NAME:.metadata.name  --no-headers |\
+   xargs -L1 -I{} sh -c "echo {};kubectl get {} -A -o json" > cust-resources.json
+----
+
+I checked with my friend Liu Chongliang and read the manual for xargs, but I couldn't find a way to do that. However, I couldn't stop thinking about it.
+
+A thought popped into my head as I sat down and opened my laptop after dinner. Why not use another command to skip the first line before piping it into xargs? There are many commands that can do the job. It's undeniable that sed is the best one for that.
+
+The final one is here. 
+
+[source, bash]
+----
+kubectl  get crd --output=custom-columns=NAME:.metadata.name   |\
+  sed 1d |\
+  xargs -L1 -I{} sh -c "echo {};kubectl get {} -A -o json" > cust-resources.json
+----
