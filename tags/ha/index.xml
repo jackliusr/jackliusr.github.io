@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HA on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/ha/</link>
+    <description>Recent content in HA on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Oct 2023 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/ha/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Beyond High Availability: The Importance of FMEA in Ensuring Uninterrupted Operations</title>
+      <link>https://jackliusr.github.io/posts/2023/10/beyond-high-availability-the-importance-of-fmea-in-ensuring-uninterrupted-operations/</link>
+      <pubDate>Mon, 23 Oct 2023 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/10/beyond-high-availability-the-importance-of-fmea-in-ensuring-uninterrupted-operations/</guid>
+      <description>Beyond High Availability: The Importance of FMEA in Ensuring Uninterrupted Operations
+ Introduction
+ In an increasingly interconnected and data-driven world, high availability is a critical component for any system or infrastructure. High availability ensures that a system can continue to operate and deliver its services, even in the face of hardware failures, software glitches, or other unforeseen disruptions. However, high availability alone is not enough to guarantee uninterrupted operations. To achieve true resilience, it’s essential to complement high availability with a proactive approach to risk assessment and mitigation.</description>
+    </item>
+    
+  </channel>
+</rss>
