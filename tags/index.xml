@@ -6,7 +6,25 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Oct 2023 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Nov 2023 14:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>kubernetes</title>
+      <link>https://jackliusr.github.io/tags/kubernetes/</link>
+      <pubDate>Sun, 05 Nov 2023 14:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>volumes</title>
+      <link>https://jackliusr.github.io/tags/volumes/</link>
+      <pubDate>Sun, 05 Nov 2023 14:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/volumes/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>FMEA</title>
       <link>https://jackliusr.github.io/tags/fmea/</link>
@@ -184,15 +202,6 @@
       <pubDate>Sun, 23 Jul 2023 00:10:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/etcd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kubernetes</title>
-      <link>https://jackliusr.github.io/tags/kubernetes/</link>
-      <pubDate>Sun, 23 Jul 2023 00:10:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/kubernetes/</guid>
       <description></description>
     </item>
     

@@ -167,6 +167,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2022/08/setup-k8s-monitoring/" class="link black dim">
+        Setup k8s monitoring
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Kuberneters dashboard doesn’t give enough information about node and cluster information during rececent loading test. I sought to other options. Prometheus and grafana are the de-facto standards. It’s a no-brainer choice. The most important things is how to make them working together.
+ Setup Prometheus and Grafana kubectl create namespace monitoring helm repo add prometheus-community https://prometheus-community.github.io/helm-charts helm repo update helm install prometheus prometheus-community/prometheus -n monitoring helm repo add grafana https://grafana.github.io/helm-charts helm install grafana grafana/grafana -n monitoring kubectl get secret --namespace monitoring grafana -o jsonpath=&#34;{.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2022/08/use-cert-manager-to-secure-kubernetes-cert-manager-behind-nginx-ingress/" class="link black dim">
         Use cert-manager to secure kubernetes cert-manager behind nginx ingress
       </a>
@@ -305,23 +321,6 @@ if (!doNotTrack) {
       TLDR: my CICD choice: argo-cd and argo-workflow
 Since I chose argocd and github action as our CICD pipeline two years ago, I rarely thought about other choices and the reason I made the choices. Recently I leant from several sources that jenkins is still widely used, it arouse my interest on this subject again. I reconsidered my choice and layed out the reasons here for my future references.
 I didn&rsquo;t have a good impression with java in my past java projects.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/06/istio-troubleshooting-in-new-scenario-that-one-service-to-expose-into-multiple-domains-and-multiple-ingress-gateways/" class="link black dim">
-        Istio troubleshooting in new scenario that one service to expose into multiple domains and multiple ingress gateways
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Since my first time to configure istio with proxy protocol supports in aws, istio and envoyproxy changed a lot. In the past several days, I was exposed to a different scenario that one service to expose into multiple domains.
- Things are getting not straighforward, I struggled to make it success yesterday. Today another layer of complexity was added into my cluster: an extra ingressgateway for some services.
- For multiple ingress gateways, I followed this article, however my setup is more complex than that.
     </div>
   </div>
 </div>
