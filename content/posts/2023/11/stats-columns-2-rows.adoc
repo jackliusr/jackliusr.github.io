@@ -1,0 +1,63 @@
+---
+title: "Convert statistics information columns to rows in sql"
+date: 2023-11-08T08:10:00+08:00
+categories:
+- tech
+tags:
+- DB
+- unpivot
+---
+
+
+I encountered an issue how to get detailed information based on statistics information such as minimum and maximum values in a dataset. The traditional way might be use case expression,coalese functions etc to archive the goals, However I felt it is quite clumsy. 
+
+How do it in a neat way? In SQL standard, there is a way using unpivot to transform columns to rows. It is a good fit for this situation to get a neat SQL statement to resolve the issue.
+
+Here is a sample schema. The goal is to retrieve all profiles whose salary is equal to minimum or maximum salaries.
+
+[source,sql]
+----
+create table profile(
+   id int,
+   age int,
+   salary int
+);
+
+insert into profile (id, age, salary) 
+values ( 1, 30, 2000),
+(2,40,5000),
+(3,35,6000),
+(4,50,7000),
+(6,36, 4500);
+----
+
+The solution is as below: 
+
+[source, sql]
+----
+select p.*
+from ( select val,stats
+from ( select min(salary) min_sal, 
+max(salary) max_sal from profile) p
+UNPIVOT  
+   (val FOR stats IN   
+      (min_sal, max_sal)  
+)AS unpvt ) stats join profile p on
+ stats.val = p.salary
+----
+
+The output of the solution is as following
+[cols="1,1,1"]
+|===
+|id
+|age
+|profile
+
+|1
+|30
+|2000
+
+|4
+|50
+|7000
+|===
