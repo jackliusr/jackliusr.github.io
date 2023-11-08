@@ -167,6 +167,25 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2023/02/istio-canary-deployments-using-flagger/" class="link black dim">
+        Istio Canary Deployments using flagger
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Progressive delivery: Istio Canary Deployments using flagger.
+ Steps environment:
+   kindest/node:v1.25.3
+  Istio 1.17.0
+   helm # need to install metrics-server, HPA depends on metrics-server kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml # command: # - /metrics-server # - --kubelet-insecure-tls istioctl manifest install --set profile=default kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.17/samples/addons/prometheus.yaml helm repo add flagger https://flagger.app kubectl apply -f https://raw.githubusercontent.com/fluxcd/flagger/main/artifacts/flagger/crd.yaml helm upgrade -i flagger flagger/flagger \ --namespace=istio-system \ --set crd.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2023/02/learning-experiences-among-datadog-dynatrace-newrelic/" class="link black dim">
         Learning experiences among datadog, dynatrace, newrelic
       </a>
@@ -302,22 +321,6 @@ if (!doNotTrack) {
       Summary: Reduce the chance of resource conflict in gitops by reducing the time window of using shared resource files
  My initial journal with gitops was setup my gitops cicd pipeline following the flux tutorial way. I immediately found out the limitation of flux at that time and sought alternative solutions. After comparing different solutions, I settled down argo-cd.
  After a short while usage of argo-cd, I moved configration yamls and kustomization.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2023/01/playbook-etcd-debugging/" class="link black dim">
-        Playbook: etcd debugging
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      etcd debugging flowchart, copy the flowchat from &ldquo;Stories from the Playbook&rdquo; for easy reference and put here to make it searchable in my site.
-flowchart TD oversized{MVCC DB oversized}--|Yes|logIntoContainer(log into container) logIntoContainer -- checkSize(check size of db) checkSize -- compatOrDefrag(compat or defrag) compatOrDefrag -- resizeDisk(resize machine disk) resizeDisk -- triggerRepair(Trigger repair) triggerRepair -- END oversized --|No|crashLoop{crash looping} crashLoop --|Yes| moreTime2Init(allow etc more time to init) moreTime2Init -- upgradeVersion(upgrade version) upgradeVersion -- resizeDisk crashLoop --|No| leaderElectionIssue{Leader Election Issue?
     </div>
   </div>
 </div>

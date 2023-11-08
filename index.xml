@@ -6,7 +6,17 @@
     <description>Recent content on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Nov 2023 14:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Nov 2023 08:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Convert statistics information columns to rows in sql</title>
+      <link>https://jackliusr.github.io/posts/2023/11/convert-statistics-information-columns-to-rows-in-sql/</link>
+      <pubDate>Wed, 08 Nov 2023 08:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/11/convert-statistics-information-columns-to-rows-in-sql/</guid>
+      <description>I encountered an issue how to get detailed information based on statistics information such as minimum and maximum values in a dataset. The traditional way might be use case expression,coalese functions etc to archive the goals, However I felt it is quite clumsy.
+ How do it in a neat way? In SQL standard, there is a way using unpivot to transform columns to rows. It is a good fit for this situation to get a neat SQL statement to resolve the issue.</description>
+    </item>
+    
     <item>
       <title>Resolve the error that The Pod xxx is invalid: spec.containers[0].volumeMounts[1].name: Not found</title>
       <link>https://jackliusr.github.io/posts/2023/11/resolve-the-error-that-the-pod-xxx-is-invalid-spec.containers0.volumemounts1.name-not-found/</link>
