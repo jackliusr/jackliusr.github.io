@@ -2,42 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2023-11-20T13:36:05+08:00</lastmod>
+    <loc>https://jackliusr.github.io/tags/args/</loc>
+    <lastmod>2023-11-20T23:53:11+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/posts/2023/11/faster-way-to-restart-static-pods-after-configuraiton-changes/</loc>
-    <lastmod>2023-11-20T13:36:05+08:00</lastmod>
+    <loc>https://jackliusr.github.io/categories/</loc>
+    <lastmod>2023-11-20T23:53:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/command/</loc>
+    <lastmod>2023-11-20T23:53:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/heredoc/</loc>
+    <lastmod>2023-11-20T23:53:11+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/kubelet/</loc>
-    <lastmod>2023-11-20T13:36:05+08:00</lastmod>
+    <lastmod>2023-11-20T23:53:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2023/11/kubernetes-while-redirection-into-a-file/</loc>
+    <lastmod>2023-11-20T23:53:11+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2023-11-20T13:36:05+08:00</lastmod>
+    <lastmod>2023-11-20T23:53:11+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/pods/</loc>
-    <lastmod>2023-11-20T13:36:05+08:00</lastmod>
+    <lastmod>2023-11-20T23:53:11+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2023-11-20T13:36:05+08:00</lastmod>
+    <lastmod>2023-11-20T23:53:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/redirection/</loc>
+    <lastmod>2023-11-20T23:53:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/shell/</loc>
+    <lastmod>2023-11-20T23:53:11+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2023-11-20T13:36:05+08:00</lastmod>
+    <lastmod>2023-11-20T23:53:11+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/tech/</loc>
+    <lastmod>2023-11-20T23:53:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2023/11/faster-way-to-restart-static-pods-after-configuraiton-changes/</loc>
     <lastmod>2023-11-20T13:36:05+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -88,11 +118,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/linux/</loc>
-    <lastmod>2023-10-06T21:51:09+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/shell/</loc>
     <lastmod>2023-10-06T21:51:09+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
