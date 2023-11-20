@@ -1,0 +1,61 @@
+---
+title: "Kubernetes while redirection into a file "
+date: 2023-11-20T20:10:00+08:00
+categories:
+- tech
+tags:
+- kubelet
+- pods
+- command
+- args
+- redirection
+- shell
+- heredoc
+---
+
+My first attemp to resolve "Kubernetes Time Check Pod" in https://engineer.kodekloud.com is not successful. The exercise doesn't allow to open an editor to edit a yaml file. I had to resort to cat. I attempted several times to resolve it on my local cluster, still no luck even I tried different combination such as command, args,string in string, avoiding expansion. https://stackoverflow.com/questions/52711337/kubernetes-redirecting-echo-into-a-file-not-creating-file[This one] from stackoverfow gave me a clue how to resolve my issue. 
+
+The lessons I learnt from this one:
+
+. https://stackoverflow.com/questions/27920806/how-to-avoid-heredoc-expanding-variables[Avoid brace expansion in heredoc]
+
+. https://stackoverflow.com/questions/52711337/kubernetes-redirecting-echo-into-a-file-not-creating-file[args to redirect to a file]
+
+
+My final solution is below: 
+
+[source, bash]
+----
+cat <<'EOF' | kubectl apply -f -
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: time-check
+  name: time-check
+  namespace: datacenter
+spec:
+  volumes:
+  - name: log-volume
+    emptyDir: {}
+  containers:
+  - image: busybox:latest
+    name: time-check
+    env:
+    - name: TIME_FREQ
+      valueFrom:
+        configMapKeyRef:
+          name: time-config
+          key: TIME_FREQ    
+    command: ["/bin/sh"]
+    args: ["-c", "while true; do date; sleep $(TIME_FREQ); done > /opt/data/time/time-check.log"]
+    resources: {}
+    volumeMounts:
+    - name: log-volume
+      mountPath: /opt/data/time
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+EOF
+----
