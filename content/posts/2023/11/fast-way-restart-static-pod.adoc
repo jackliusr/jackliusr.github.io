@@ -1,0 +1,34 @@
+---
+title: "Faster way to restart static pods after configuraiton changes"
+date: 2023-11-20T12:10:00+08:00
+categories:
+- tech
+tags:
+- kubelet
+- pods
+---
+
+In the past several days, I practiced several exercises for my coming CKS exam.  I noticed that it takes a while to get static pods restart after configuraiton changes. I was curious if there is any faster way to make that happen. I think the following ways definitely will be faster than waiting 3 minutes after I used them for a while. The observable time is shorter than 3 minutes
+
+
+== Delete pods
+
+[source,bash]
+----
+
+# add workernode
+ crictl ps --label  io.kubernetes.pod.name=kube-apiserver-kind-control-plane
+ #assume pod id: facc8f153d9d2
+ crictl stopp facc8f153d9d2
+ crictl rmp facc8f153d9d2
+
+#controlplane
+kubectl -n kube-system delete pod kube-apiserver-kind-control-plane --force --grace-period=0
+----
+
+== restart kubelet
+
+[source, bash]
+----
+systemctl restart kubelet
+----
