@@ -167,6 +167,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2023/03/leader-election-in-kubernetes-control-plane/" class="link black dim">
+        Leader election in Kubernetes control plane
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Leader election in Kubernetes control plane - #HeptioProTip give a way how to find out leaders of Kubernetes control plane components kube-scheduler and kube-controller-manager. However it was based on a old version of kubernetes, and the mechanism is changed in later versions. Today I was asked how to find the leaders. Here is the new way to find.
+ $ kubectl -n kube-system get lease NAME HOLDER AGE kube-apiserver-c4vwjftbvpc5os2vvzle4qg27a kube-apiserver-c4vwjftbvpc5os2vvzle4qg27a_b187371d-e48c-4216-8228-707a0ecf6100 2m57s kube-apiserver-dz2dqprdpsgnm756t5rnov7yka kube-apiserver-dz2dqprdpsgnm756t5rnov7yka_0b531f66-0c31-453c-9277-a6c1aa81da94 86s kube-apiserver-fyloo45sdenffw2ugwaz3likua kube-apiserver-fyloo45sdenffw2ugwaz3likua_3e322f9a-9724-4e3a-9fc6-a512e9424164 2m11s kube-controller-manager kind-control-plane_bec39b96-87c4-4bce-8775-2eeb4eb4c1e8 2m53s kube-scheduler kind-control-plane_db6f36d8-ceaa-40eb-b821-75f8ae829f22 2m53s $ kubectl -n kube-system get pods -l component=kube-controller-manager,tier=control-plane \ -o custom-columns=NAME:.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2023/02/istio-canary-deployments-using-flagger/" class="link black dim">
         Istio Canary Deployments using flagger
       </a>
@@ -304,23 +320,6 @@ if (!doNotTrack) {
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Long ago, I wanted to learn something about technology leaderships, however I didn’t know how to do it. One or two months ago I found Will Larson’s book &#34;An Elegant Puzzle: Systems of Engineering Management&#34; which recommended by others and today I found another books Best Books for Leaders in Tech: theWaydev Selection. It’s time to put the ideas into action since I already completed a big milestone of learning English.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2023/01/reduce-the-chance-of-resource-conflict-in-gitops/" class="link black dim">
-        Reduce the chance of resource conflict in gitops
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Summary: Reduce the chance of resource conflict in gitops by reducing the time window of using shared resource files
- My initial journal with gitops was setup my gitops cicd pipeline following the flux tutorial way. I immediately found out the limitation of flux at that time and sought alternative solutions. After comparing different solutions, I settled down argo-cd.
- After a short while usage of argo-cd, I moved configration yamls and kustomization.
     </div>
   </div>
 </div>

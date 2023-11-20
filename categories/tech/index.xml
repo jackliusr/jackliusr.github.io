@@ -6,7 +6,16 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Nov 2023 08:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Nov 2023 12:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Faster way to restart static pods after configuraiton changes</title>
+      <link>https://jackliusr.github.io/posts/2023/11/faster-way-to-restart-static-pods-after-configuraiton-changes/</link>
+      <pubDate>Mon, 20 Nov 2023 12:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/11/faster-way-to-restart-static-pods-after-configuraiton-changes/</guid>
+      <description>In the past several days, I practiced several exercises for my coming CKS exam. I noticed that it takes a while to get static pods restart after configuraiton changes. I was curious if there is any faster way to make that happen. I think the following ways definitely will be faster than waiting 3 minutes after I used them for a while. The observable time is shorter than 3 minutes</description>
+    </item>
+    
     <item>
       <title>Convert statistics information columns to rows in sql</title>
       <link>https://jackliusr.github.io/posts/2023/11/convert-statistics-information-columns-to-rows-in-sql/</link>
