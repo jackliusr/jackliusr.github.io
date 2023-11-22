@@ -1,0 +1,17 @@
+---
+title: "API idempotency"
+date: 2023-11-20T19:10:00+08:00
+categories:
+- tech
+tags:
+- api-gateway
+- idempotency
+- service-mesh
+- pattern
+---
+
+I leant API idempotency many years ago when I worked in Asia Fusion Technologies. At that time, I was involved in integration with payment systems and games from different vendor. That gave me a chance to read a lot of API documents and evalute them. During that time, one interesting characteristic of API got my attention. It is API idempotency. That time, there is no much information of idempotency how to implement etc. I could only find some information about how good it is. 
+
+Today, I got the idea that idempotency might be the fix for an issue I encountered in these several days. The issue is that resoureces are created multiple times due to timeout/retries. How to handle that ? https://docs.adyen.com/development-resources/api-idempotency/[adyen API idempotency] gives a lot of detailed information. There is one idea pop into your mind. What about abstracting it out to seperate components?
+
+There are 2 ways, library or infrastructure (api gateway, service mesh etc). The good thing is that idempotency was recognized by many parties and many libraries https://github.com/ikyriak/IdempotentAPI[IdempotentAPI],https://github.com/Trendyol/Jdempotent[Jdempotent] and  emerges in the different languages. However I don't find one in infrastructure level. Consiering many distributed patterns already are implemented in api-gateways and service meshes, I am looking forward to see idempotency will be implemented in them as well. 
