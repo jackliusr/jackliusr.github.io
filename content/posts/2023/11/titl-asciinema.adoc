@@ -1,0 +1,16 @@
+---
+title: "My tilt asciinema cast"
+date: 2023-11-22T09:10:00+08:00
+categories:
+- tech
+tags:
+- tilt
+- asciinema
+- kubernetes
+---
+
+Today I read agones site and noticed it play asciinema cast in its home page. I wondered if I can put my asciinema cast into my blog. Here is my one.
+
+{{< asciinema key="497308" >}}
+
+The cast is about how to use https://tilt.dev/[titl] for local micro-service development based on kubernetes.
