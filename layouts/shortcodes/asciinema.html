@@ -1,7 +1,7 @@
 <div id='{{ with .Get "key" }}{{ . }}{{ end }}'></div>
 <script src="{{ .Site.BaseURL }}/js/asciinema-player.min.js"></script>
 <script>
-    AsciinemaPlayer.create('/casts/{{ with .Get "key" }}{{ . }}{{ end }}.cast', document.getElementById('{{ with .Get "key" }}{{ . }}{{ end }}'), {
+    AsciinemaPlayer.create('/a/{{ with .Get "key" }}{{ . }}{{ end }}.cast', document.getElementById('{{ with .Get "key" }}{{ . }}{{ end }}'), {
         {{ if .Get "cols" }}cols: "{{ .Get "cols" }}", {{ end }}
         {{ if .Get "rows" }}rows: "{{ .Get "rows" }}", {{ end }}
         {{ if .Get "autoPlay" }}autoPlay: "{{ .Get "autoPlay" }}", {{ end }}
