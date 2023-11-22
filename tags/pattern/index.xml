@@ -6,11 +6,11 @@
     <description>Recent content in pattern on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Nov 2023 19:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/pattern/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Nov 2023 19:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/pattern/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>API idempotency</title>
       <link>https://jackliusr.github.io/posts/2023/11/api-idempotency/</link>
-      <pubDate>Mon, 20 Nov 2023 19:10:00 +0800</pubDate>
+      <pubDate>Wed, 22 Nov 2023 19:10:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/posts/2023/11/api-idempotency/</guid>
       <description>I leant API idempotency many years ago when I worked in Asia Fusion Technologies. At that time, I was involved in integration with payment systems and games from different vendor. That gave me a chance to read a lot of API documents and evalute them. During that time, one interesting characteristic of API got my attention. It is API idempotency. That time, there is no much information of idempotency how to implement etc.</description>
