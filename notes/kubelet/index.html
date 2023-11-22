@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
   <meta name="description"
     content="In the past I learnt a lot of kubernetes, however there is no much information about kubelet or not deep enough. I couldn’t answer the questions about kubelet correctly in an interview. Here I put all the information I collected from the internet here for my references.
- kubelet component architecture     how does kubelet work     Container Lifecycle Management Through the CRI        kubelet, CRI and CNI sequence diagram     kubelet, CRI and CNI interaction diagram     The process of creating a pod Handler    The work of podWorkers    syncPod kubelet    Runtime    Creating a sandbox for a pod       References:   https://www.">
+ kubelet component architecture     how does kubelet work     Container Lifecycle Management Through the CRI        kubelet, CRI and CNI sequence diagram        kubelet, CRI and CNI interaction diagram        The process of creating a pod Handler    The work of podWorkers    syncPod kubelet    Runtime    Creating a sandbox for a pod       References:   https://www.">
   <meta name="generator" content="Hugo 0.99.1" />
   
   
@@ -31,21 +31,21 @@
 
   <meta property="og:title" content="Kubelet architecture" />
 <meta property="og:description" content="In the past I learnt a lot of kubernetes, however there is no much information about kubelet or not deep enough. I couldn’t answer the questions about kubelet correctly in an interview. Here I put all the information I collected from the internet here for my references.
- kubelet component architecture     how does kubelet work     Container Lifecycle Management Through the CRI        kubelet, CRI and CNI sequence diagram     kubelet, CRI and CNI interaction diagram     The process of creating a pod Handler    The work of podWorkers    syncPod kubelet    Runtime    Creating a sandbox for a pod       References:   https://www." />
+ kubelet component architecture     how does kubelet work     Container Lifecycle Management Through the CRI        kubelet, CRI and CNI sequence diagram        kubelet, CRI and CNI interaction diagram        The process of creating a pod Handler    The work of podWorkers    syncPod kubelet    Runtime    Creating a sandbox for a pod       References:   https://www." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/notes/kubelet/" /><meta property="article:section" content="notes" />
 <meta property="article:published_time" content="2023-02-09T09:40:00+08:00" />
-<meta property="article:modified_time" content="2023-11-22T15:15:46+08:00" />
+<meta property="article:modified_time" content="2023-11-22T15:38:59+08:00" />
 
 <meta itemprop="name" content="Kubelet architecture">
 <meta itemprop="description" content="In the past I learnt a lot of kubernetes, however there is no much information about kubelet or not deep enough. I couldn’t answer the questions about kubelet correctly in an interview. Here I put all the information I collected from the internet here for my references.
- kubelet component architecture     how does kubelet work     Container Lifecycle Management Through the CRI        kubelet, CRI and CNI sequence diagram     kubelet, CRI and CNI interaction diagram     The process of creating a pod Handler    The work of podWorkers    syncPod kubelet    Runtime    Creating a sandbox for a pod       References:   https://www."><meta itemprop="datePublished" content="2023-02-09T09:40:00+08:00" />
-<meta itemprop="dateModified" content="2023-11-22T15:15:46+08:00" />
+ kubelet component architecture     how does kubelet work     Container Lifecycle Management Through the CRI        kubelet, CRI and CNI sequence diagram        kubelet, CRI and CNI interaction diagram        The process of creating a pod Handler    The work of podWorkers    syncPod kubelet    Runtime    Creating a sandbox for a pod       References:   https://www."><meta itemprop="datePublished" content="2023-02-09T09:40:00+08:00" />
+<meta itemprop="dateModified" content="2023-11-22T15:38:59+08:00" />
 <meta itemprop="wordCount" content="94">
 <meta itemprop="keywords" content="kubernetes,kubelet,cni,csi," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kubelet architecture"/>
 <meta name="twitter:description" content="In the past I learnt a lot of kubernetes, however there is no much information about kubelet or not deep enough. I couldn’t answer the questions about kubelet correctly in an interview. Here I put all the information I collected from the internet here for my references.
- kubelet component architecture     how does kubelet work     Container Lifecycle Management Through the CRI        kubelet, CRI and CNI sequence diagram     kubelet, CRI and CNI interaction diagram     The process of creating a pod Handler    The work of podWorkers    syncPod kubelet    Runtime    Creating a sandbox for a pod       References:   https://www."/>
+ kubelet component architecture     how does kubelet work     Container Lifecycle Management Through the CRI        kubelet, CRI and CNI sequence diagram        kubelet, CRI and CNI interaction diagram        The process of creating a pod Handler    The work of podWorkers    syncPod kubelet    Runtime    Creating a sandbox for a pod       References:   https://www."/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K49F8T19FK"></script>
@@ -249,20 +249,28 @@ if (!doNotTrack) {
 <div class="sect1">
 <h2 id="_kubelet_cri_and_cni_sequence_diagram"><a class="anchor" href="#_kubelet_cri_and_cni_sequence_diagram"></a><a class="link" href="#_kubelet_cri_and_cni_sequence_diagram">kubelet, CRI and CNI sequence diagram</a></h2>
 <div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d53b3a73a0a14eb6b41a4269a25d2b13~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image" alt="kubelet" width="CRI and CNI sequence diagram"/>
+<div class="paragraph">
+<div class="embed imgur-image">
+<blockquote class="imgur-embed-pub" lang="en" data-id="48DQAkL" data-context="false">
+<a href="//imgur.com/48DQAkL"></a>
+</blockquote>
+<script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 </div>
+
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_kubelet_cri_and_cni_interaction_diagram"><a class="anchor" href="#_kubelet_cri_and_cni_interaction_diagram"></a><a class="link" href="#_kubelet_cri_and_cni_interaction_diagram">kubelet, CRI and CNI interaction diagram</a></h2>
 <div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/26aaf248a6744f93a5a1b945c2eebf43~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image" alt="kubelet" width="CRI and CNI interaction diagram"/>
+<div class="paragraph">
+<div class="embed imgur-image">
+<blockquote class="imgur-embed-pub" lang="en" data-id="fSdCq0U" data-context="false">
+<a href="//imgur.com/fSdCq0U"></a>
+</blockquote>
+<script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 </div>
+
 </div>
 </div>
 </div>
@@ -490,7 +498,7 @@ if (!doNotTrack) {
 
 
   
-  <p style="font-size: small; color: grey;">Page version: c06cd416856e2287f27fadf277eae5a0ca0448e0 2023-11-22</p>
+  <p style="font-size: small; color: grey;">Page version: e767d7891a1e3bbf5b000d03ad141091b5fe41fc 2023-11-22</p>
 </body>
 
 </html>
