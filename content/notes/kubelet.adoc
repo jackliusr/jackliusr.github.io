@@ -27,11 +27,12 @@ image::https://pbs.twimg.com/media/DncWSekUYAAlOMY?format=jpg&name=large[how doe
 
 == kubelet, CRI and CNI sequence diagram
 
-image::https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d53b3a73a0a14eb6b41a4269a25d2b13~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image[kubelet, CRI and CNI sequence diagram]
+{{< imgur id="48DQAkL" >}}
+
 
 == kubelet, CRI and CNI interaction diagram
 
-image::https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/26aaf248a6744f93a5a1b945c2eebf43~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image[kubelet, CRI and CNI interaction diagram]
+{{< imgur id="fSdCq0U" >}}
 
 == The process of creating a pod
 
