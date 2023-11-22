@@ -6,7 +6,18 @@
     <description>Recent content in tilt on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Apr 2022 19:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/tilt/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Nov 2023 09:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/tilt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My tilt asciinema cast</title>
+      <link>https://jackliusr.github.io/posts/2023/11/my-tilt-asciinema-cast/</link>
+      <pubDate>Wed, 22 Nov 2023 09:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/11/my-tilt-asciinema-cast/</guid>
+      <description>Today I read agones site and noticed it play asciinema cast in its home page. I wondered if I can put my asciinema cast into my blog. Here is my one.
+    AsciinemaPlayer.create(&#39;/casts/497308.cast&#39;, document.getElementById(&#39;497308&#39;), { });   The cast is about how to use titl for local micro-service development based on kubernetes.
+ </description>
+    </item>
+    
     <item>
       <title>Reflection on the usage of bazel</title>
       <link>https://jackliusr.github.io/posts/2022/04/reflection-on-the-usage-of-bazel/</link>
