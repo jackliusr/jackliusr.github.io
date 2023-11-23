@@ -1,0 +1,35 @@
+---
+title: "error handling in api idempotency: timeout and retry "
+date: 2023-11-23T19:10:00+08:00
+categories:
+- tech
+tags:
+- error-handling
+- idempotency
+---
+
+In stripe doc, Stripe explain how it works as following quoted contet. Other places only mentions that the processes will be only once.
+[quote,stripe]
+----
+Stripe's idempotency works by saving the resulting status code and body of the first request made for any given idempotency key, regardless of whether it succeeded or failed. Subsequent requests with the same key return the same result, including 500 errors.
+----
+
+
+Then there is an interesting question how to handle timeout and retry cases? There are two cases about timeout. 
+
+1. Server timeout without actual processing.
+
+1. Timeout appears at client ends, actual process has been done at server side. 
+
+
+How to handle the retry requests and return corresponding codes?
+
+The rigid way as Stripe site describes doesn't make sense when there is a real need to retry. What's the trade off that decision doing so?
+
+Left these questions here, I will revisit them next time.
+
+Reference: 
+
+. https://stripe.com/docs/api/idempotent_requests
+. https://miniprogram.alipay.com/docs/miniprogram/mpdev/api_idempotency
+. https://docs.adyen.com/development-resources/api-idempotency/
