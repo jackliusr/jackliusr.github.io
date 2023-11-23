@@ -6,7 +6,17 @@
     <description>Recent content on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Nov 2023 19:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Nov 2023 19:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>error handling in api idempotency: timeout and retry </title>
+      <link>https://jackliusr.github.io/posts/2023/11/error-handling-in-api-idempotency-timeout-and-retry/</link>
+      <pubDate>Thu, 23 Nov 2023 19:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/11/error-handling-in-api-idempotency-timeout-and-retry/</guid>
+      <description>In stripe doc, Stripe explain how it works as following quoted contet. Other places only mentions that the processes will be only once.
+ Stripe&amp;#39;s idempotency works by saving the resulting status code and body of the first request made for any given idempotency key, regardless of whether it succeeded or failed. Subsequent requests with the same key return the same result, including 500 errors.   Then there is an interesting question how to handle timeout and retry cases?</description>
+    </item>
+    
     <item>
       <title>API idempotency</title>
       <link>https://jackliusr.github.io/posts/2023/11/api-idempotency/</link>

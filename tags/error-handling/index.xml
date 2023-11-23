@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>idempotency on My learning and diary</title>
-    <link>https://jackliusr.github.io/tags/idempotency/</link>
-    <description>Recent content in idempotency on My learning and diary</description>
+    <title>error-handling on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/error-handling/</link>
+    <description>Recent content in error-handling on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Nov 2023 19:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/idempotency/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Nov 2023 19:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/error-handling/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>error handling in api idempotency: timeout and retry </title>
       <link>https://jackliusr.github.io/posts/2023/11/error-handling-in-api-idempotency-timeout-and-retry/</link>
@@ -15,15 +15,6 @@
       <guid>https://jackliusr.github.io/posts/2023/11/error-handling-in-api-idempotency-timeout-and-retry/</guid>
       <description>In stripe doc, Stripe explain how it works as following quoted contet. Other places only mentions that the processes will be only once.
  Stripe&amp;#39;s idempotency works by saving the resulting status code and body of the first request made for any given idempotency key, regardless of whether it succeeded or failed. Subsequent requests with the same key return the same result, including 500 errors.   Then there is an interesting question how to handle timeout and retry cases?</description>
-    </item>
-    
-    <item>
-      <title>API idempotency</title>
-      <link>https://jackliusr.github.io/posts/2023/11/api-idempotency/</link>
-      <pubDate>Wed, 22 Nov 2023 19:10:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/posts/2023/11/api-idempotency/</guid>
-      <description>I leant API idempotency many years ago when I worked in Asia Fusion Technologies. At that time, I was involved in integration with payment systems and games from different vendor. That gave me a chance to read a lot of API documents and evalute them. During that time, one interesting characteristic of API got my attention. It is API idempotency. That time, there is no much information of idempotency how to implement etc.</description>
     </item>
     
   </channel>

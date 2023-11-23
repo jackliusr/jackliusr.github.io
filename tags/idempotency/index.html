@@ -173,6 +173,24 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2023/11/error-handling-in-api-idempotency-timeout-and-retry/" class="link black dim">
+        error handling in api idempotency: timeout and retry 
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      In stripe doc, Stripe explain how it works as following quoted contet. Other places only mentions that the processes will be only once.
+ Stripe&#39;s idempotency works by saving the resulting status code and body of the first request made for any given idempotency key, regardless of whether it succeeded or failed. Subsequent requests with the same key return the same result, including 500 errors.   Then there is an interesting question how to handle timeout and retry cases?
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2023/11/api-idempotency/" class="link black dim">
         API idempotency
       </a>
