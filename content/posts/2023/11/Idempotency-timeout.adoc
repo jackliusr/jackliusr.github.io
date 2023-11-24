@@ -11,7 +11,9 @@ tags:
 In stripe doc, Stripe explain how it works as following quoted contet. Other places only mentions that the processes will be only once.
 [quote,stripe]
 ----
-Stripe's idempotency works by saving the resulting status code and body of the first request made for any given idempotency key, regardless of whether it succeeded or failed. Subsequent requests with the same key return the same result, including 500 errors.
+Stripe's idempotency works by saving the resulting status code and body of the first
+request made for any given idempotency key, regardless of whether it succeeded or failed.
+ Subsequent requests with the same key return the same result, including 500 errors.
 ----
 
 
