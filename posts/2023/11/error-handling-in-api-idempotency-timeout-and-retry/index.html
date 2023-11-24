@@ -35,12 +35,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2023/11/error-handling-in-api-idempotency-timeout-and-retry/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-11-23T19:10:00+08:00" />
-<meta property="article:modified_time" content="2023-11-24T00:04:22+08:00" />
+<meta property="article:modified_time" content="2023-11-25T00:14:43+08:00" />
 
 <meta itemprop="name" content="error handling in api idempotency: timeout and retry ">
 <meta itemprop="description" content="In stripe doc, Stripe explain how it works as following quoted contet. Other places only mentions that the processes will be only once.
  Stripe&#39;s idempotency works by saving the resulting status code and body of the first request made for any given idempotency key, regardless of whether it succeeded or failed. Subsequent requests with the same key return the same result, including 500 errors.   Then there is an interesting question how to handle timeout and retry cases?"><meta itemprop="datePublished" content="2023-11-23T19:10:00+08:00" />
-<meta itemprop="dateModified" content="2023-11-24T00:04:22+08:00" />
+<meta itemprop="dateModified" content="2023-11-25T00:14:43+08:00" />
 <meta itemprop="wordCount" content="151">
 <meta itemprop="keywords" content="error-handling,idempotency," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="error handling in api idempotency: timeout and retry "/>
@@ -214,7 +214,9 @@ if (!doNotTrack) {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>Stripe&#39;s idempotency works by saving the resulting status code and body of the first request made for any given idempotency key, regardless of whether it succeeded or failed. Subsequent requests with the same key return the same result, including 500 errors.</pre>
+<pre>Stripe&#39;s idempotency works by saving the resulting status code and body of the first
+request made for any given idempotency key, regardless of whether it succeeded or failed.
+ Subsequent requests with the same key return the same result, including 500 errors.</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -355,7 +357,7 @@ if (!doNotTrack) {
 
 
   
-  <p style="font-size: small; color: grey;">Page version: 71045a43aa36a6e675d88e6b1f83394cfbc35e11 2023-11-24</p>
+  <p style="font-size: small; color: grey;">Page version: 62c5dd3b1d48610ef05e9bb48b85edf6c6cb12df 2023-11-25</p>
 </body>
 
 </html>
