@@ -6,7 +6,20 @@
     <description>Recent content in Posts on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Nov 2023 19:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Nov 2023 19:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ways to improve performance within budget constraints</title>
+      <link>https://jackliusr.github.io/posts/2023/11/ways-to-improve-performance-within-budget-constraints/</link>
+      <pubDate>Wed, 29 Nov 2023 19:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2023/11/ways-to-improve-performance-within-budget-constraints/</guid>
+      <description>Say in a situtation where budget is fixed, what will you do to improve system performance?
+ I came out several solutions to this at first, later I came out with more thoughts. I list them here for later reference.
+  partition tables
+  materialized view
+  asynchrous processing: put non real-time operations as a job queue, spread jobs to non business hours, non peak loading time etc.</description>
+    </item>
+    
     <item>
       <title>error handling in api idempotency: timeout and retry </title>
       <link>https://jackliusr.github.io/posts/2023/11/error-handling-in-api-idempotency-timeout-and-retry/</link>

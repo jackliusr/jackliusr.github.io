@@ -168,6 +168,25 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2023/11/ways-to-improve-performance-within-budget-constraints/" class="link black dim">
+        Ways to improve performance within budget constraints
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Say in a situtation where budget is fixed, what will you do to improve system performance?
+ I came out several solutions to this at first, later I came out with more thoughts. I list them here for later reference.
+  partition tables
+  materialized view
+  asynchrous processing: put non real-time operations as a job queue, spread jobs to non business hours, non peak loading time etc.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2023/11/error-handling-in-api-idempotency-timeout-and-retry/" class="link black dim">
         error handling in api idempotency: timeout and retry 
       </a>
@@ -302,22 +321,6 @@ if (!doNotTrack) {
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Do you know how to skip first line before data pipe into xargs?
  Today I need to export custom resources and want to avoid error messages because the column names line in the output of kubectl. I knew there is a command line option (--no-headers) of kubectl and managed to get the option, but I don’t want to spend time to search the option in future. Is there any way to skip first line before data pipe into xargs?
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2023/10/change-appsettings.json-without-restart-in-app-service/" class="link black dim">
-        Change appsettings.json without restart in app service
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Nowadays, zero downtime is normal, you can’t believe that in azure app service changes in &#34;app settings&#34;, App Service triggers an app restart. The alternative ways to do avoid that is to use sentinel key with App Configuration. however App Configuration will cost a little. Do we really need to use App Configuration to achieve that ?
- The naive and obvious way is that changing appsettings.json files via entering the app services using kudo console.
     </div>
   </div>
 </div>
