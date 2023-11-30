@@ -10,6 +10,7 @@
   <meta name="description"
     content="Say in a situtation where budget is fixed, what will you do to improve system performance?
  I came out several solutions to this at first, later I came out with more thoughts. I list them here for later reference.
+  create selective indexes
   partition tables
   materialized view
   asynchrous processing: put non real-time operations as a job queue, spread jobs to non business hours, non peak loading time etc.">
@@ -35,26 +36,29 @@
   <meta property="og:title" content="Ways to improve performance within budget constraints" />
 <meta property="og:description" content="Say in a situtation where budget is fixed, what will you do to improve system performance?
  I came out several solutions to this at first, later I came out with more thoughts. I list them here for later reference.
+  create selective indexes
   partition tables
   materialized view
   asynchrous processing: put non real-time operations as a job queue, spread jobs to non business hours, non peak loading time etc." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2023/11/ways-to-improve-performance-within-budget-constraints/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-11-29T19:10:00+08:00" />
-<meta property="article:modified_time" content="2023-11-29T21:30:36+08:00" />
+<meta property="article:modified_time" content="2023-11-30T20:30:48+08:00" />
 
 <meta itemprop="name" content="Ways to improve performance within budget constraints">
 <meta itemprop="description" content="Say in a situtation where budget is fixed, what will you do to improve system performance?
  I came out several solutions to this at first, later I came out with more thoughts. I list them here for later reference.
+  create selective indexes
   partition tables
   materialized view
   asynchrous processing: put non real-time operations as a job queue, spread jobs to non business hours, non peak loading time etc."><meta itemprop="datePublished" content="2023-11-29T19:10:00+08:00" />
-<meta itemprop="dateModified" content="2023-11-29T21:30:36+08:00" />
-<meta itemprop="wordCount" content="109">
+<meta itemprop="dateModified" content="2023-11-30T20:30:48+08:00" />
+<meta itemprop="wordCount" content="116">
 <meta itemprop="keywords" content="performance,budget," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ways to improve performance within budget constraints"/>
 <meta name="twitter:description" content="Say in a situtation where budget is fixed, what will you do to improve system performance?
  I came out several solutions to this at first, later I came out with more thoughts. I list them here for later reference.
+  create selective indexes
   partition tables
   materialized view
   asynchrous processing: put non real-time operations as a job queue, spread jobs to non business hours, non peak loading time etc."/>
@@ -218,7 +222,7 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 1 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 109 words</span>
+        <span class="f6 mv4 dib tracked"> - 116 words</span>
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
@@ -229,6 +233,9 @@ if (!doNotTrack) {
 </div>
 <div class="olist arabic">
 <ol class="arabic">
+<li>
+<p>create selective indexes</p>
+</li>
 <li>
 <p>partition tables</p>
 </li>
@@ -252,6 +259,9 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>managed services changed based on usages</p>
+</li>
+<li>
+<p>optimize hotpathes in code</p>
 </li>
 </ol>
 </div>
@@ -344,7 +354,7 @@ if (!doNotTrack) {
 
 
   
-  <p style="font-size: small; color: grey;">Page version: feabc9bf5c2a1798ece269f8a703c85355be281b 2023-11-29</p>
+  <p style="font-size: small; color: grey;">Page version: 9a66c2babd8a9e8889039151af1baa0a0650e646 2023-11-30</p>
 </body>
 
 </html>
