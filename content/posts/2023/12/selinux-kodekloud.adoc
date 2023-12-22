@@ -1,0 +1,27 @@
+---
+title: "Install selinux and disable it"
+date: 2023-12-22T19:10:00+08:00
+categories:
+- tech
+tags:
+- linux
+- selinux
+- centos
+---
+
+After thrice attempts, I finally successfully completed the task Selinux Installation at https://engineer.kodekloud.com/practice.   Since it is not straightforward, I posted here.
+
+[source, shell-session]
+----
+
+> sudo yum install -y selinux*
+
+> # SELINUX=disabled
+> # change SELINUX in /etc/selinux/config 
+
+> cat /etc/selinux/config | grep SELINUX
+# SELINUX= can take one of these three values:
+SELINUX=disabled
+# SELINUXTYPE= can take one of three values:
+SELINUXTYPE=targeted
+----
