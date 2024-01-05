@@ -1,0 +1,36 @@
+---
+title: "Export resources and reconstruct resources in azure"
+date: 2024-01-05T12:01:10+08:00
+categories:
+- tech
+tags:
+- terraform
+- azure
+---
+
+My credit of Visual Studio Professional Subscription azure is $50. In the past two days, I activated my subscription. I didn't go IaC way to setup my POC environment as I did't have enough time to do that.  After I setup more services, the 10 credit is used. It can be quickly used up if resources are kept running. I know there is a way to import existing resources as I used terraform in the past. I wondered if there is a quick way to import resources without coding terraform. I googled it and found microsoft provides a even better option aztfexport to do that. 
+
+Basically I followed the https://learn.microsoft.com/en-us/azure/developer/terraform/[article] to setup my terraform. However I encountered several issues. 
+
+== The subscription of 'xxxx' doesn't exist in cloud 'AzureCloud'.
+
+I was confused for a while as I can see my subscriptions in azure portal. I couldn't find my subscriptions when running "az account list". The issue was resolved when I run "az login" again. I think it might be caused by jwt token.  msal_token_cache.json doesn't include the my new Visual Studio Professional Subscription in its scope.
+
+== Error: flattening 'secret': expected a Customer Certificate Parameter 
+
+https://github.com/Azure/aztfexport/issues/483#issuecomment-1831069305[The issue] explains the reason. However the skips didn't work, aztfexport couldn't export existing resources when the error exists. I deleted frontdoor resources from my subscription and The issue was resolved.
+
+== Error: Cannot import non-existent remote object
+
+I encountered this error when I run "terraform plan" after destroyed resources. This issue was resolved by removed "import.tf"
+
+== Error:  network.SecurityGroupsClient#CreateOrUpdate: Failure sending request: StatusCode=404 -- Original Error: Code="ResourceGroupNotFound" Message="Resource group 'xxx' could not be found."
+
+As terraform scripts can be rerun without impacts on resources. I rerun my scripts and resovled this issue. It seems terraform run the scripts too fast before xxx resource group was ready. 
+
+
+== References: 
+
+. https://learn.microsoft.com/en-us/azure/developer/terraform/azure-export-for-terraform/export-first-resources?tabs=azure-cli
+
+. https://github.com/Azure/aztfexport/issues/483
