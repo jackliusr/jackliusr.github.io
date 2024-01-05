@@ -6,7 +6,16 @@
     <description>Recent content in terraform on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 31 Dec 2022 12:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Jan 2024 12:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Export resources and reconstruct resources in azure</title>
+      <link>https://jackliusr.github.io/posts/2024/01/export-resources-and-reconstruct-resources-in-azure/</link>
+      <pubDate>Fri, 05 Jan 2024 12:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/01/export-resources-and-reconstruct-resources-in-azure/</guid>
+      <description>My credit of Visual Studio Professional Subscription azure is $50. In the past two days, I activated my subscription. I didn’t go IaC way to setup my POC environment as I did’t have enough time to do that. After I setup more services, the 10 credit is used. It can be quickly used up if resources are kept running. I know there is a way to import existing resources as I used terraform in the past.</description>
+    </item>
+    
     <item>
       <title>Terraform advantages over cloudformation or ARM tempaltes</title>
       <link>https://jackliusr.github.io/posts/2022/12/terraform-advantages-over-cloudformation-or-arm-tempaltes/</link>
