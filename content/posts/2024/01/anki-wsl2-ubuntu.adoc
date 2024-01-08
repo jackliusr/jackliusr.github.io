@@ -1,0 +1,20 @@
+---
+title: "Run anki in wsl2+ubuntu 22.04 "
+date: 2024-01-05T12:01:10+08:00
+categories:
+- tech
+tags:
+- anki
+- wsl2
+- ubuntu
+---
+
+I daily use anki to review things. However I have issues to run it in wsl2+ubuntu 22.04 environment. The only solution for me is below. 
+
+The workable version is 2.1.66  Qt5 with the following environment variable
+
+[source,bash]
+----
+export QTWEBENGINE_CHROMIUM_FLAGS="--disable-seccomp-filter-sandbox"
+----
+
