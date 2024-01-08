@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 05 Jan 2024 12:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>anki</title>
+      <link>https://jackliusr.github.io/tags/anki/</link>
+      <pubDate>Fri, 05 Jan 2024 12:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/anki/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>azure</title>
       <link>https://jackliusr.github.io/tags/azure/</link>
       <pubDate>Fri, 05 Jan 2024 12:01:10 +0800</pubDate>
@@ -22,6 +31,24 @@
       <pubDate>Fri, 05 Jan 2024 12:01:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/terraform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>https://jackliusr.github.io/tags/ubuntu/</link>
+      <pubDate>Fri, 05 Jan 2024 12:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wsl2</title>
+      <link>https://jackliusr.github.io/tags/wsl2/</link>
+      <pubDate>Fri, 05 Jan 2024 12:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/wsl2/</guid>
       <description></description>
     </item>
     
@@ -463,15 +490,6 @@
       <pubDate>Tue, 23 May 2023 20:01:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/pmk/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>wsl2</title>
-      <link>https://jackliusr.github.io/tags/wsl2/</link>
-      <pubDate>Tue, 23 May 2023 20:01:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/wsl2/</guid>
       <description></description>
     </item>
     

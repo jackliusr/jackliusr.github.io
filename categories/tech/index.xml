@@ -17,6 +17,17 @@
     </item>
     
     <item>
+      <title>Run anki in wsl2&#43;ubuntu 22.04 </title>
+      <link>https://jackliusr.github.io/posts/2024/01/run-anki-in-wsl2-ubuntu-22.04/</link>
+      <pubDate>Fri, 05 Jan 2024 12:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/01/run-anki-in-wsl2-ubuntu-22.04/</guid>
+      <description>I daily use anki to review things. However I have issues to run it in wsl2+ubuntu 22.04 environment. The only solution for me is below.
+ The workable version is 2.1.66 Qt5 with the following environment variable
+ export QTWEBENGINE_CHROMIUM_FLAGS=&amp;#34;--disable-seccomp-filter-sandbox&amp;#34;   </description>
+    </item>
+    
+    <item>
       <title>Install selinux and disable it</title>
       <link>https://jackliusr.github.io/posts/2023/12/install-selinux-and-disable-it/</link>
       <pubDate>Fri, 22 Dec 2023 19:10:00 +0800</pubDate>
