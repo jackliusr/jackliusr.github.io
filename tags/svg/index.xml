@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>svg on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/svg/</link>
+    <description>Recent content in svg on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 15 Jan 2024 12:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/svg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Export svg from plantuml plugins of vscode and preview svg</title>
+      <link>https://jackliusr.github.io/posts/2024/01/export-svg-from-plantuml-plugins-of-vscode-and-preview-svg/</link>
+      <pubDate>Mon, 15 Jan 2024 12:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/01/export-svg-from-plantuml-plugins-of-vscode-and-preview-svg/</guid>
+      <description>Clicking the copy button of plantuml plugins of vscode, one can get png from plantuml files. however png files look blurry when even slightly resized. Is there any better way to avoid that ?
+ SVG is a good option. Plantuml provides the option to export as svg. It might be troublesome to get a svg file by several steps using it. It is also slow. Is there any other better options?</description>
+    </item>
+    
+  </channel>
+</rss>
