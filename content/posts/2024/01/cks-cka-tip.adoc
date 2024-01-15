@@ -1,0 +1,43 @@
+---
+title: "CKS/CKA tips"
+date: 2024-01-15T12:01:10+08:00
+categories:
+- tech
+tags:
+- kubernetes
+- exam
+- cks
+- cka
+---
+
+== the fastest way to get nodes
+Many times, I run "kubectl get nodes" to get nodes I need to connect to make changes. In the question description section of tasks, master nodes and worker nodes are given. I think the fastest way to get nodes and I wasted some time on getting that info from commands.
+
+== quickly get vulnerabilitiy info of images using trivy
+
+[source,bash]
+----
+cat <<EOF | xargs -I{} sh -c 'trivy -q  image {} | grep -B2 -E "Total:"'
+nginx:1.19.1-alpine-perl
+nginx:1.20.2-alpine
+httpd:2.4.39-alpine
+EOF
+
+cat <<EOF | xargs -I{} sh -c 'trivy -q  image --severity=HIGH,CRITICAL {} | grep -B2 -E "Total:"'
+nginx:1.19.1-alpine-perl
+nginx:1.20.2-alpine
+httpd:2.4.39-alpine
+EOF
+
+cat <<EOF | xargs -I{} sh -c 'trivy -q  image --severity=HIGH,CRITICAL {} | grep -B2 -E "Total:"'
+nginx:1.19.1-alpine-perl
+nginx:1.20.2-alpine
+httpd:2.4.39-alpine
+EOF
+
+cat <<EOF | xargs -I{} sh -c "echo '{}(CVE-2021-28831|CVE-2016-9841)';trivy -q image {}| grep -E '(CVE-2021-28831)|(CVE-2016-9841)'"
+nginx:1.19.1-alpine-perl
+nginx:1.20.2-alpine
+httpd:2.4.39-alpine
+EOF
+----
