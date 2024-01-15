@@ -10,10 +10,22 @@ tags:
 - cka
 ---
 
-== the fastest way to get nodes
+== The fastest way to get nodes
 Many times, I run "kubectl get nodes" to get nodes I need to connect to make changes. In the question description section of tasks, master nodes and worker nodes are given. I think the fastest way to get nodes and I wasted some time on getting that info from commands.
 
-== quickly get vulnerabilitiy info of images using trivy
+== Get events
+
+Now kubectl has events command. The events command has intuitive options and less keystokes.
+[source,bash]
+----
+# intuitive options
+#--for pod/web-pod-13je7 --watch   --types=Warning,Normal
+kubectl events
+#vs
+kubectl get events
+----
+
+== Quickly get vulnerabilitiy info of images using trivy
 
 [source,bash]
 ----
