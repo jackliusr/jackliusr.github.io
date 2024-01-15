@@ -1,0 +1,21 @@
+---
+title: "Export svg from plantuml plugins of vscode and preview svg"
+date: 2024-01-15T12:01:10+08:00
+categories:
+- tech
+tags:
+- plantuml
+- svg
+- vscode
+---
+
+Clicking the copy button of plantuml plugins of vscode, one can get png from plantuml files. however png files look blurry when even slightly resized. Is there any better way to avoid that ?
+
+SVG is a good option. https://www.plantuml.com/plantuml/uml[Plantuml] provides the option to export as svg. It might be troublesome to get a svg file by several steps using it. It is also slow. Is there any other better options?
+
+https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml#export-demos[PlantUML] shows its features. "Export diagram" is the one. The demo is about running commands from command palette. Here are two images showing how to do that using mouse.
+
+{{< imgur id="fjelWMN" >}}
+
+
+{{< imgur id="fz691Fa" >}}
