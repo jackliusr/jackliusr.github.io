@@ -8,8 +8,8 @@
   <title>CKS/CKA tips | My learning and diary</title>
   <meta name="viewport" content="width=device-width,minimum-scale=1">
   <meta name="description"
-    content="the fastest way to get nodes Many times, I run &#34;kubectl get nodes&#34; to get nodes I need to connect to make changes. In the question description section of tasks, master nodes and worker nodes are given. I think the fastest way to get nodes and I wasted some time on getting that info from commands.
-   quickly get vulnerabilitiy info of images using trivy cat &lt;&lt;EOF | xargs -I{} sh -c &#39;trivy -q image {} | grep -B2 -E &#34;Total:&#34;&#39; nginx:1.">
+    content="The fastest way to get nodes Many times, I run &#34;kubectl get nodes&#34; to get nodes I need to connect to make changes. In the question description section of tasks, master nodes and worker nodes are given. I think the fastest way to get nodes and I wasted some time on getting that info from commands.
+   Get events Now kubectl has events command. The events command has intuitive options and less keystokes.">
   <meta name="generator" content="Hugo 0.99.1" />
   
   
@@ -30,22 +30,22 @@
   
 
   <meta property="og:title" content="CKS/CKA tips" />
-<meta property="og:description" content="the fastest way to get nodes Many times, I run &#34;kubectl get nodes&#34; to get nodes I need to connect to make changes. In the question description section of tasks, master nodes and worker nodes are given. I think the fastest way to get nodes and I wasted some time on getting that info from commands.
-   quickly get vulnerabilitiy info of images using trivy cat &lt;&lt;EOF | xargs -I{} sh -c &#39;trivy -q image {} | grep -B2 -E &#34;Total:&#34;&#39; nginx:1." />
+<meta property="og:description" content="The fastest way to get nodes Many times, I run &#34;kubectl get nodes&#34; to get nodes I need to connect to make changes. In the question description section of tasks, master nodes and worker nodes are given. I think the fastest way to get nodes and I wasted some time on getting that info from commands.
+   Get events Now kubectl has events command. The events command has intuitive options and less keystokes." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2024/01/cks/cka-tips/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-01-15T12:01:10+08:00" />
-<meta property="article:modified_time" content="2024-01-15T22:54:20+08:00" />
+<meta property="article:modified_time" content="2024-01-15T23:17:25+08:00" />
 
 <meta itemprop="name" content="CKS/CKA tips">
-<meta itemprop="description" content="the fastest way to get nodes Many times, I run &#34;kubectl get nodes&#34; to get nodes I need to connect to make changes. In the question description section of tasks, master nodes and worker nodes are given. I think the fastest way to get nodes and I wasted some time on getting that info from commands.
-   quickly get vulnerabilitiy info of images using trivy cat &lt;&lt;EOF | xargs -I{} sh -c &#39;trivy -q image {} | grep -B2 -E &#34;Total:&#34;&#39; nginx:1."><meta itemprop="datePublished" content="2024-01-15T12:01:10+08:00" />
-<meta itemprop="dateModified" content="2024-01-15T22:54:20+08:00" />
-<meta itemprop="wordCount" content="145">
+<meta itemprop="description" content="The fastest way to get nodes Many times, I run &#34;kubectl get nodes&#34; to get nodes I need to connect to make changes. In the question description section of tasks, master nodes and worker nodes are given. I think the fastest way to get nodes and I wasted some time on getting that info from commands.
+   Get events Now kubectl has events command. The events command has intuitive options and less keystokes."><meta itemprop="datePublished" content="2024-01-15T12:01:10+08:00" />
+<meta itemprop="dateModified" content="2024-01-15T23:17:25+08:00" />
+<meta itemprop="wordCount" content="174">
 <meta itemprop="keywords" content="kubernetes,exam,cks,cka," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CKS/CKA tips"/>
-<meta name="twitter:description" content="the fastest way to get nodes Many times, I run &#34;kubectl get nodes&#34; to get nodes I need to connect to make changes. In the question description section of tasks, master nodes and worker nodes are given. I think the fastest way to get nodes and I wasted some time on getting that info from commands.
-   quickly get vulnerabilitiy info of images using trivy cat &lt;&lt;EOF | xargs -I{} sh -c &#39;trivy -q image {} | grep -B2 -E &#34;Total:&#34;&#39; nginx:1."/>
+<meta name="twitter:description" content="The fastest way to get nodes Many times, I run &#34;kubectl get nodes&#34; to get nodes I need to connect to make changes. In the question description section of tasks, master nodes and worker nodes are given. I think the fastest way to get nodes and I wasted some time on getting that info from commands.
+   Get events Now kubectl has events command. The events command has intuitive options and less keystokes."/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K49F8T19FK"></script>
@@ -206,11 +206,11 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 1 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 145 words</span>
+        <span class="f6 mv4 dib tracked"> - 174 words</span>
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="sect1">
-<h2 id="_the_fastest_way_to_get_nodes"><a class="anchor" href="#_the_fastest_way_to_get_nodes"></a><a class="link" href="#_the_fastest_way_to_get_nodes">the fastest way to get nodes</a></h2>
+<h2 id="_the_fastest_way_to_get_nodes"><a class="anchor" href="#_the_fastest_way_to_get_nodes"></a><a class="link" href="#_the_fastest_way_to_get_nodes">The fastest way to get nodes</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Many times, I run &#34;kubectl get nodes&#34; to get nodes I need to connect to make changes. In the question description section of tasks, master nodes and worker nodes are given. I think the fastest way to get nodes and I wasted some time on getting that info from commands.</p>
@@ -218,7 +218,24 @@ if (!doNotTrack) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_quickly_get_vulnerabilitiy_info_of_images_using_trivy"><a class="anchor" href="#_quickly_get_vulnerabilitiy_info_of_images_using_trivy"></a><a class="link" href="#_quickly_get_vulnerabilitiy_info_of_images_using_trivy">quickly get vulnerabilitiy info of images using trivy</a></h2>
+<h2 id="_get_events"><a class="anchor" href="#_get_events"></a><a class="link" href="#_get_events">Get events</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now kubectl has events command. The events command has intuitive options and less keystokes.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># intuitive options
+#--for pod/web-pod-13je7 --watch   --types=Warning,Normal
+kubectl events
+#vs
+kubectl get events</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_quickly_get_vulnerabilitiy_info_of_images_using_trivy"><a class="anchor" href="#_quickly_get_vulnerabilitiy_info_of_images_using_trivy"></a><a class="link" href="#_quickly_get_vulnerabilitiy_info_of_images_using_trivy">Quickly get vulnerabilitiy info of images using trivy</a></h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
@@ -333,11 +350,11 @@ EOF</code></pre>
         </li>
 	    
 	     <li  class="mb2">
-          <a href="/notes/k8s-metrics/">kubernetes metrics options</a>
+          <a href="/notes/kubelet/">Kubelet architecture</a>
         </li>
 	    
 	     <li  class="mb2">
-          <a href="/notes/kubelet/">Kubelet architecture</a>
+          <a href="/notes/k8s-metrics/">kubernetes metrics options</a>
         </li>
 	    
 	     <li  class="mb2">
@@ -413,7 +430,7 @@ EOF</code></pre>
 
 
   
-  <p style="font-size: small; color: grey;">Page version: 3eaa1e28839425f4bafeda8ac7cef11be8a08123 2024-01-15</p>
+  <p style="font-size: small; color: grey;">Page version: 9a6d653bfb626d0b045bde48dee457eea49f5052 2024-01-15</p>
 </body>
 
 </html>
