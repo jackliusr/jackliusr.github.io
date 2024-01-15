@@ -8,6 +8,16 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 15 Jan 2024 12:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>CKS/CKA tips</title>
+      <link>https://jackliusr.github.io/posts/2024/01/cks/cka-tips/</link>
+      <pubDate>Mon, 15 Jan 2024 12:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/01/cks/cka-tips/</guid>
+      <description>the fastest way to get nodes Many times, I run &amp;#34;kubectl get nodes&amp;#34; to get nodes I need to connect to make changes. In the question description section of tasks, master nodes and worker nodes are given. I think the fastest way to get nodes and I wasted some time on getting that info from commands.
+   quickly get vulnerabilitiy info of images using trivy cat &amp;lt;&amp;lt;EOF | xargs -I{} sh -c &amp;#39;trivy -q image {} | grep -B2 -E &amp;#34;Total:&amp;#34;&amp;#39; nginx:1.</description>
+    </item>
+    
+    <item>
       <title>Export svg from plantuml plugins of vscode and preview svg</title>
       <link>https://jackliusr.github.io/posts/2024/01/export-svg-from-plantuml-plugins-of-vscode-and-preview-svg/</link>
       <pubDate>Mon, 15 Jan 2024 12:01:10 +0800</pubDate>
