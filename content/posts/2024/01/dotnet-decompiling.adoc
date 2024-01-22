@@ -1,0 +1,17 @@
+---
+title: "decompling dotnet assemblies"
+date: 2024-01-22T12:01:10+08:00
+categories:
+- tech
+tags:
+- dotnet
+- ilspy
+- dotpeek
+---
+
+I used dotpeek for a while to decompile dotnet assembly. Only 
+yesterday I finally found a way to export project from dotnet assembly. The picture below is the menu to do that in dotpeek. However the version I used doesn't perfectly decompile lambda expression. The decompiled code of lambda expressions are very hard to understand. 
+
+{{< imgur id="LNcABBy" >}}
+
+Ilspy is one of  decompiler that can decompile lambda in a understandble way. 
