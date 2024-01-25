@@ -1,0 +1,19 @@
+---
+title: "Restore a project collections of azure devops to another instance"
+date: 2024-01-25T12:01:10+08:00
+categories:
+- tech
+tags:
+- azuredevops
+- restoraction
+---
+
+
+I spent almost a whole afternoon today to restore a project collections . It doesn't go well. Azure devops server might supports SQL Server express version. and I choose the wrong way to do that. After several trial, I figure out the way to restore a project collections of azure devops to another instance. The steps is as following. 
+
+. install sql server (not sure if sql server express is compatible)
+. restore the backup (bak, trn, log) of the database of a project collections
+. install azure devops server with basic and new database
+. attach a project collection as depicted in below image
+
+{{< imgur id="ddovJbD" >}}
