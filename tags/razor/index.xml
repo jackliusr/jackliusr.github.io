@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>razor on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/razor/</link>
+    <description>Recent content in razor on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 25 Jan 2024 12:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/razor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Issues and corresponding solutions of dotnet razor</title>
+      <link>https://jackliusr.github.io/posts/2024/01/issues-and-corresponding-solutions-of-dotnet-razor/</link>
+      <pubDate>Thu, 25 Jan 2024 12:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/01/issues-and-corresponding-solutions-of-dotnet-razor/</guid>
+      <description>Seperate view dll issues Put views (cshtml) into the main web project
+   &amp;#39;RazorTargetAssemblyInfo.cs&amp;#39; could not be found GenerateAssemblyVersionAttribute is set to true : af file MyProject.RazorTargetAssemblyInfo.cs is generated
+ &amp;lt;Project Sdk=&amp;#34;Microsoft.NET.Sdk.Razor&amp;#34;&amp;gt; &amp;lt;PropertyGroup&amp;gt; &amp;lt;TargetFramework&amp;gt;netcoreapp3.1&amp;lt;/TargetFramework&amp;gt; &amp;lt;GenerateAssemblyVersionAttribute&amp;gt;true&amp;lt;/GenerateAssemblyVersionAttribute&amp;gt; &amp;lt;/PropertyGroup&amp;gt;   https://github.com/dotnet/aspnetcore/issues/37795#issue-1034241118
+   The namespace &amp;#39;Razor&amp;#39; already contains a definition for &amp;#39;Template&amp;#39; https://stackoverflow.com/a/58140724/1101691
+   Duplicate &amp;#39;Microsoft.AspNetCore.Razor.Hosting.RazorLanguageVersionAttribute&amp;#39; attribute   How to decompile/extract(cshtml--(razor view)) from dll https://stackoverflow.com/a/69951824/1101691
+   </description>
+    </item>
+    
+  </channel>
+</rss>

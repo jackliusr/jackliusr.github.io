@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>restoraction on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/restoraction/</link>
+    <description>Recent content in restoraction on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 25 Jan 2024 12:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/restoraction/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Restore a project collections of azure devops to another instance</title>
+      <link>https://jackliusr.github.io/posts/2024/01/restore-a-project-collections-of-azure-devops-to-another-instance/</link>
+      <pubDate>Thu, 25 Jan 2024 12:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/01/restore-a-project-collections-of-azure-devops-to-another-instance/</guid>
+      <description>I spent almost a whole afternoon today to restore a project collections . It doesn’t go well. Azure devops server might supports SQL Server express version. and I choose the wrong way to do that. After several trial, I figure out the way to restore a project collections of azure devops to another instance. The steps is as following.
+  install sql server (not sure if sql server express is compatible)</description>
+    </item>
+    
+  </channel>
+</rss>

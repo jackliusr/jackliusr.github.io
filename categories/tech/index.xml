@@ -6,7 +6,31 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Jan 2024 12:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Jan 2024 12:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Issues and corresponding solutions of dotnet razor</title>
+      <link>https://jackliusr.github.io/posts/2024/01/issues-and-corresponding-solutions-of-dotnet-razor/</link>
+      <pubDate>Thu, 25 Jan 2024 12:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/01/issues-and-corresponding-solutions-of-dotnet-razor/</guid>
+      <description>Seperate view dll issues Put views (cshtml) into the main web project
+   &amp;#39;RazorTargetAssemblyInfo.cs&amp;#39; could not be found GenerateAssemblyVersionAttribute is set to true : af file MyProject.RazorTargetAssemblyInfo.cs is generated
+ &amp;lt;Project Sdk=&amp;#34;Microsoft.NET.Sdk.Razor&amp;#34;&amp;gt; &amp;lt;PropertyGroup&amp;gt; &amp;lt;TargetFramework&amp;gt;netcoreapp3.1&amp;lt;/TargetFramework&amp;gt; &amp;lt;GenerateAssemblyVersionAttribute&amp;gt;true&amp;lt;/GenerateAssemblyVersionAttribute&amp;gt; &amp;lt;/PropertyGroup&amp;gt;   https://github.com/dotnet/aspnetcore/issues/37795#issue-1034241118
+   The namespace &amp;#39;Razor&amp;#39; already contains a definition for &amp;#39;Template&amp;#39; https://stackoverflow.com/a/58140724/1101691
+   Duplicate &amp;#39;Microsoft.AspNetCore.Razor.Hosting.RazorLanguageVersionAttribute&amp;#39; attribute   How to decompile/extract(cshtml--(razor view)) from dll https://stackoverflow.com/a/69951824/1101691
+   </description>
+    </item>
+    
+    <item>
+      <title>Restore a project collections of azure devops to another instance</title>
+      <link>https://jackliusr.github.io/posts/2024/01/restore-a-project-collections-of-azure-devops-to-another-instance/</link>
+      <pubDate>Thu, 25 Jan 2024 12:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/01/restore-a-project-collections-of-azure-devops-to-another-instance/</guid>
+      <description>I spent almost a whole afternoon today to restore a project collections . It doesn’t go well. Azure devops server might supports SQL Server express version. and I choose the wrong way to do that. After several trial, I figure out the way to restore a project collections of azure devops to another instance. The steps is as following.
+  install sql server (not sure if sql server express is compatible)</description>
+    </item>
+    
     <item>
       <title>decompling dotnet assemblies</title>
       <link>https://jackliusr.github.io/posts/2024/01/decompling-dotnet-assemblies/</link>
