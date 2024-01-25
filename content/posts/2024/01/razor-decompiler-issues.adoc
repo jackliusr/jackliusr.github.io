@@ -1,0 +1,47 @@
+---
+title: "Issues and corresponding solutions of dotnet razor"
+date: 2024-01-25T12:01:10+08:00
+categories:
+- tech
+tags:
+- dotnet
+- razor
+---
+
+== Seperate view dll issues
+
+Put views (cshtml) into the main web project
+
+== 'RazorTargetAssemblyInfo.cs' could not be found
+
+GenerateAssemblyVersionAttribute is set to true : af file MyProject.RazorTargetAssemblyInfo.cs is generated
+
+
+[source,xml]
+----
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<GenerateAssemblyVersionAttribute>true</GenerateAssemblyVersionAttribute>
+	</PropertyGroup>
+
+----
+
+https://github.com/dotnet/aspnetcore/issues/37795#issue-1034241118
+
+
+
+== The namespace 'Razor' already contains a definition for 'Template'
+
+
+https://stackoverflow.com/a/58140724/1101691
+
+== Duplicate 'Microsoft.AspNetCore.Razor.Hosting.RazorLanguageVersionAttribute' attribute
+
+
+== How to decompile/extract(cshtml--(razor view)) from dll
+
+
+
+https://stackoverflow.com/a/69951824/1101691
