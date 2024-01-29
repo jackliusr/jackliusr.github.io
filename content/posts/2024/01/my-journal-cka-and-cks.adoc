@@ -1,0 +1,29 @@
+---
+title: "My journey to CKA and CKS"
+date: 2024-01-28T12:01:10+08:00
+categories:
+- tech
+tags:
+- kubernetes
+- cka
+- cks
+---
+
+Today I got certified as Certified Kubernetes Security Specialist (CKS). It marks a milestone in my mastery of kubernetes after a long journey. It is a good time to reflect on lessons what I learnt.
+
+My experiences with kubernetes from 2018. I have a habit of comparing other optiosn before making my decisions. Before 2018, I used https://github.com/jackliusr/vagrantfiles[vagrant] and other configuration management tools (puppet, chef, ansible) to setup my lab environments. I started to use docker at the beginning of 2018. Then somedays, I found kubernetes. I thought kubernetes will be the new computing platform based on the features it provides. I keep tabs on its developments since then. I read its changelogs of every major releases to learn new things about it. 
+
+I didn't straightly get certificated for kubernetes. I thought knowledge of cloud will be a good foundation for that. I started it by getting certificate for AWS SAA. 
+
+After I got AWS SAA, I heavily invested my time on learning kubernetes. My https://github.com/jackliusr/k8s[learning] is not limited on the exames only. I learnt things above DevOps, SRE, ServiceMesh, Architecture, microservices etc based on kubernetes until I couldn'd find any new things to learn about kubernetes last year.  That time, I thougt it was a good time to take the exames.
+
+Things didn't go well as planned due to various reasons: new job with busy schedules, overloaded tasks, never ended meetings etc. Luckily near the end of my exam ticket, I passed my CKA and CKS exam. 
+
+To think back, the lessons I learnt are a mixture of bads and goods.
+
+. Good
+.. Learn kubernetes in depth
+.. Leant the broad ecosystems around kubernetes
+. Bad
+.. Did't focus on passing certificate first
+.. Might lose potential opportunities.
