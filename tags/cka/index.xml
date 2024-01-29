@@ -6,7 +6,17 @@
     <description>Recent content in cka on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Jan 2024 12:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/cka/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Jan 2024 12:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/cka/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My journey to CKA and CKS</title>
+      <link>https://jackliusr.github.io/posts/2024/01/my-journey-to-cka-and-cks/</link>
+      <pubDate>Sun, 28 Jan 2024 12:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/01/my-journey-to-cka-and-cks/</guid>
+      <description>Today I got certified as Certified Kubernetes Security Specialist (CKS). It marks a milestone in my mastery of kubernetes after a long journey. It is a good time to reflect on lessons what I learnt.
+ My experiences with kubernetes from 2018. I have a habit of comparing other optiosn before making my decisions. Before 2018, I used vagrant and other configuration management tools (puppet, chef, ansible) to setup my lab environments.</description>
+    </item>
+    
     <item>
       <title>CKS/CKA tips</title>
       <link>https://jackliusr.github.io/posts/2024/01/cks/cka-tips/</link>

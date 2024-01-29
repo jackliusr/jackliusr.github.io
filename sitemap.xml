@@ -2,12 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jackliusr.github.io/tags/azuredevops/</loc>
-    <lastmod>2024-01-25T22:39:15+08:00</lastmod>
+    <loc>https://jackliusr.github.io/categories/</loc>
+    <lastmod>2024-01-30T00:03:20+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/categories/</loc>
+    <loc>https://jackliusr.github.io/tags/cka/</loc>
+    <lastmod>2024-01-30T00:03:20+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/cks/</loc>
+    <lastmod>2024-01-30T00:03:20+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/kubernetes/</loc>
+    <lastmod>2024-01-30T00:03:20+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2024/01/my-journey-to-cka-and-cks/</loc>
+    <lastmod>2024-01-30T00:03:20+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/</loc>
+    <lastmod>2024-01-30T00:03:20+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/</loc>
+    <lastmod>2024-01-30T00:03:20+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/</loc>
+    <lastmod>2024-01-30T00:03:20+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/categories/tech/</loc>
+    <lastmod>2024-01-30T00:03:20+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/azuredevops/</loc>
     <lastmod>2024-01-25T22:39:15+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -22,16 +62,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2024-01-25T22:39:15+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2024-01-25T22:39:15+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://jackliusr.github.io/tags/razor/</loc>
     <lastmod>2024-01-25T11:55:02+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -43,16 +73,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/2024/01/restore-a-project-collections-of-azure-devops-to-another-instance/</loc>
-    <lastmod>2024-01-25T22:39:15+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2024-01-25T22:39:15+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/categories/tech/</loc>
     <lastmod>2024-01-25T22:39:15+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -72,16 +92,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/tags/cka/</loc>
-    <lastmod>2024-01-15T23:17:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/cks/</loc>
-    <lastmod>2024-01-15T23:17:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://jackliusr.github.io/posts/2024/01/cks/cka-tips/</loc>
     <lastmod>2024-01-15T23:17:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -94,11 +104,6 @@
   </url><url>
     <loc>https://jackliusr.github.io/posts/2024/01/export-svg-from-plantuml-plugins-of-vscode-and-preview-svg/</loc>
     <lastmod>2024-01-15T20:47:08+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/kubernetes/</loc>
-    <lastmod>2024-01-15T23:17:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
