@@ -6,7 +6,43 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Jan 2024 12:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Feb 2024 20:51:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>configmap</title>
+      <link>https://jackliusr.github.io/tags/configmap/</link>
+      <pubDate>Mon, 05 Feb 2024 20:51:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/configmap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ini</title>
+      <link>https://jackliusr.github.io/tags/ini/</link>
+      <pubDate>Mon, 05 Feb 2024 20:51:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/ini/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://jackliusr.github.io/tags/kubernetes/</link>
+      <pubDate>Mon, 05 Feb 2024 20:51:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>volume</title>
+      <link>https://jackliusr.github.io/tags/volume/</link>
+      <pubDate>Mon, 05 Feb 2024 20:51:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/volume/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>cka</title>
       <link>https://jackliusr.github.io/tags/cka/</link>
@@ -22,15 +58,6 @@
       <pubDate>Sun, 28 Jan 2024 12:01:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/cks/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kubernetes</title>
-      <link>https://jackliusr.github.io/tags/kubernetes/</link>
-      <pubDate>Sun, 28 Jan 2024 12:01:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/kubernetes/</guid>
       <description></description>
     </item>
     
@@ -1651,15 +1678,6 @@
       <pubDate>Mon, 30 May 2022 22:10:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/eks/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>volume</title>
-      <link>https://jackliusr.github.io/tags/volume/</link>
-      <pubDate>Mon, 30 May 2022 22:10:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/volume/</guid>
       <description></description>
     </item>
     

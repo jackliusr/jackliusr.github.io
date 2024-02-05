@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>volume on My learning and diary</title>
-    <link>https://jackliusr.github.io/tags/volume/</link>
-    <description>Recent content in volume on My learning and diary</description>
+    <title>ini on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/ini/</link>
+    <description>Recent content in ini on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Feb 2024 20:51:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/volume/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Feb 2024 20:51:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/ini/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>mount configmap as volume with ini files</title>
       <link>https://jackliusr.github.io/posts/2024/02/mount-configmap-as-volume-with-ini-files/</link>
@@ -15,16 +15,6 @@
       <guid>https://jackliusr.github.io/posts/2024/02/mount-configmap-as-volume-with-ini-files/</guid>
       <description>Today I spent about 1 hours in the task Deploy Lamp Stack on Kubernetes Cluster - Task. This task deepen my understanding of ini file handling and volume mounting with subpath. I think there are 2 tricky parts make the task interesting.
  First, the similarity between --from-literal=variables_order=EGPCS and variables_order = &amp;#34;EGPCS&amp;#34; in php.ini make one try to create a configmap at first. However it is not the case. the actual volumemount will mount each key as a file</description>
-    </item>
-    
-    <item>
-      <title>Resize Pod volumes in eks</title>
-      <link>https://jackliusr.github.io/posts/2022/05/resize-pod-volumes-in-eks/</link>
-      <pubDate>Mon, 30 May 2022 22:10:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/posts/2022/05/resize-pod-volumes-in-eks/</guid>
-      <description>I did resize volume of kubernetes in the past, however I encountered an interesting issue when I did the resizing in different way.
- According to doc, I should only change the requested size in pvc. Today I changed the size of pv first, then pvc. Here was the interesting thing: all things of pv and pvc are fine, but the size of the file system in pod was not changed.</description>
     </item>
     
   </channel>
