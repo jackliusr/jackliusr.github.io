@@ -1,0 +1,37 @@
+---
+title: Extract multiple field and values from a json file fetched once in powerquery
+date: 2024-02-14T23:10:00+08:00
+categories:
+- tech
+tags:
+- excel
+- powerquery
+- javascript
+---
+
+I learnt to extract npm package inform from https://registry.npmjs.org/ on https://jackliusr.github.io/posts/2023/08/get-information-from-internet-in-excel-custom-function-vs-powerquery/[2023-08-31]. Today I have more packages. The original query need to be optimized for better performance.  
+
+In the https://jackliusr.github.io/posts/2023/08/get-information-from-internet-in-excel-custom-function-vs-powerquery/[old post], one can quickly spot that the package information is fetched twice. It is the place to optimize today. I will put selected fields into a column, and extract values from the column later. This way, It can spend less time. 
+
+
+[source, powerquery]
+----
+let
+    Source = Excel.CurrentWorkbook(){[Name="TableServer"]}[Content],
+    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Package", type text}, {"Version", type text}}),
+    #"Added Custom" = Table.AddColumn(#"Changed Type", "jsMetaLink", each Text.Combine({"https://registry.npmjs.org/", [Package]})),
+    #"Added Custom1" = Table.AddColumn(#"Added Custom", "tags_times", each try 
+			Record.FieldValues(	Record.SelectFields(
+					Json.Document(Web.Contents([jsMetaLink])), 
+					{"dist-tags","time"}
+				)
+				)
+			
+			otherwise ""),
+    #"Added Custom2" = Table.AddColumn(#"Added Custom1", "LatestVersion", each Record.FieldValues(Record.SelectFields(List.First([tags_times]), {"latest"})){0}),
+    #"Added Custom3" = Table.AddColumn(#"Added Custom2", "datePublished", each Text.Range(Record.FieldValues(Record.SelectFields(List.Last([tags_times]), {[Version]})){0}, 0,10)),
+    #"Removed Columns" = Table.RemoveColumns(#"Added Custom3",{"tags_times"}),
+    #"Added Custom4" = Table.AddColumn(#"Removed Columns", "Component", each "app")
+in
+    #"Added Custom4"
+----
