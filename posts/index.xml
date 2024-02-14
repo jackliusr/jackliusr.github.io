@@ -6,7 +6,17 @@
     <description>Recent content in Posts on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Feb 2024 20:51:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Feb 2024 23:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Extract multiple field and values from a json file fetched once in powerquery</title>
+      <link>https://jackliusr.github.io/posts/2024/02/extract-multiple-field-and-values-from-a-json-file-fetched-once-in-powerquery/</link>
+      <pubDate>Wed, 14 Feb 2024 23:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/02/extract-multiple-field-and-values-from-a-json-file-fetched-once-in-powerquery/</guid>
+      <description>I learnt to extract npm package inform from https://registry.npmjs.org/ on 2023-08-31. Today I have more packages. The original query need to be optimized for better performance.
+ In the old post, one can quickly spot that the package information is fetched twice. It is the place to optimize today. I will put selected fields into a column, and extract values from the column later. This way, It can spend less time.</description>
+    </item>
+    
     <item>
       <title>mount configmap as volume with ini files</title>
       <link>https://jackliusr.github.io/posts/2024/02/mount-configmap-as-volume-with-ini-files/</link>
@@ -1482,7 +1492,7 @@ skaffold debug     Import ptvsd in the python file to debug, add breakout() befo
       
       <guid>https://jackliusr.github.io/posts/2019/01/twilio-call-status-statechart/</guid>
       <description>I was not familiar with SIP states during the integration of VoIP products such as twilio, plivo and sinch. I am still confused about the state changes after reading documents. Here try to visualize the state change and help me to remember it. The state chart is based on my understanding. It is not necessarily correct. It is just for my reference.
- QueuedInitiatedRingingAnsweredInProgressCompletedBusyNoAnswerCanceledFailed   </description>
+ Class01Class02Class03Class04Class05Class06Class07Class08Class09Class10   </description>
     </item>
     
     <item>
