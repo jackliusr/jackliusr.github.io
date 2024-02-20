@@ -1,0 +1,56 @@
+---
+title: Custom verbs or operations in REST API
+date: 2024-02-20T20:10:00+08:00
+categories:
+- tech
+tags:
+- REST
+- API
+---
+
+Standard REST API has limited verbs if using http verbs. However in reality and many business contexts, they are not enough. In the past, many options are proposed. Today I found another option in FHIR. It might be helful to put them here for comparison.
+
+## Control data in request
+
+In stackoverflow https://stackoverflow.com/a/2687947[What to do when you need more verbs in REST], cheeso gave the answer below. It is like the way json-rpc, not well-specified version. it is not in the style consistent with other verbs.
+[source,json]
+----
+{ actions: [ {action:"modify", data: {...} }, { action:"approve"} ] } 
+----
+
+
+## Verbs or opertions at the end of resource endpoints: 
+
+[source, http]
+----
+POST http://api.example.com/resourceA/1/customerVerb
+----
+
+Examples:
+
+. https://learn.microsoft.com/en-us/azure/azure-resource-manager/custom-providers/custom-providers-action-endpoint-how-to#building-an-action-endpoint[microsoft] 
+. https://app.swaggerhub.com/apis/BIAN-3/ACHOperations/10.0.0[BIAN] 
+
+
+
+## Verb or opertions at the end of resource endpoints: prefix verbs with $
+
+[source,http]
+----
+POST http://fhir.someserver.org/fhir/Patient/1/$everything
+----
+
+Examples:
+. https://build.fhir.org/operations.html#executing[fhir]
+
+## Verb or opertions at the end of resource path
+
+[source, http]
+----
+POST https://service.name/v1/some/resource/name:customVerb
+----
+
+
+https://cloud.google.com/apis/design/custom_methods[google] gives the reason to use : instead of / to separate the custom verb from the resource name is to support arbitrary paths. It has a good point.
+
+
