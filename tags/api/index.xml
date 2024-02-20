@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>API on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/api/</link>
+    <description>Recent content in API on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 20 Feb 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Custom verbs or operations in REST API</title>
+      <link>https://jackliusr.github.io/posts/2024/02/custom-verbs-or-operations-in-rest-api/</link>
+      <pubDate>Tue, 20 Feb 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/02/custom-verbs-or-operations-in-rest-api/</guid>
+      <description>Standard REST API has limited verbs if using http verbs. However in reality and many business contexts, they are not enough. In the past, many options are proposed. Today I found another option in FHIR. It might be helful to put them here for comparison.
+ Control data in request In stackoverflow What to do when you need more verbs in REST, cheeso gave the answer below. It is like the way json-rpc, not well-specified version.</description>
+    </item>
+    
+  </channel>
+</rss>
