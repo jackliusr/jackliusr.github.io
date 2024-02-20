@@ -43,8 +43,7 @@ POST http://fhir.someserver.org/fhir/Patient/1/$everything
 Examples:
 . https://build.fhir.org/operations.html#executing[fhir]
 
-## Verb or opertions at the end of resource path
-
+## Verb or opertions at the end of resource path, seperated with resource id by colon
 [source, http]
 ----
 POST https://service.name/v1/some/resource/name:customVerb
