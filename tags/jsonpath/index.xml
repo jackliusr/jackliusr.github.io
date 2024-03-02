@@ -6,7 +6,19 @@
     <description>Recent content in jsonpath on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/jsonpath/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Mar 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/jsonpath/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Extract multiple fields at different levels of nesting json using chatgpt and jmespath</title>
+      <link>https://jackliusr.github.io/posts/2024/03/extract-multiple-fields-at-different-levels-of-nesting-json-using-chatgpt-and-jmespath/</link>
+      <pubDate>Sat, 02 Mar 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/03/extract-multiple-fields-at-different-levels-of-nesting-json-using-chatgpt-and-jmespath/</guid>
+      <description>How do you extract multiple fields at different levels of nesting json resources? jsonpath, jq, jmespath or chatgpt?
+ In FHIR, bundle resource in json format usually have multiple level of details nested in json. It’s quite different from other use cases.
+ My first thought is using jsonpath as it is quite similar to FHIRPath. There are several limitations of jsonpath which make it infeasible.
+  It doesn’t support to the use case, even though JsonPath supports deep scan and Bracket-notated child or children.</description>
+    </item>
+    
     <item>
       <title>Reflection on implementation of CICD using argo-workflows</title>
       <link>https://jackliusr.github.io/posts/2022/05/reflection-on-implementation-of-cicd-using-argo-workflows/</link>
