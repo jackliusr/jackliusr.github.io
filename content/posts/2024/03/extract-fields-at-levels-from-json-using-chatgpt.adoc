@@ -1,0 +1,258 @@
+---
+title: Extract multiple fields at different levels of nesting json using chatgpt and jmespath
+date: 2024-03-02T20:10:00+08:00
+categories:
+- tech
+tags:
+- json
+- chatgpt
+- jmespath
+- jsonpath
+- FHIR
+- FHIRPath
+---
+
+How do you extract multiple fields at different levels of nesting json resources? jsonpath, jq, jmespath or chatgpt?
+
+In FHIR, bundle resource in json format usually have multiple level of details nested in json. It's quite different from other use cases. 
+
+My first thought is using jsonpath as it is quite similar to FHIRPath. There are several limitations of jsonpath which make it infeasible.
+
+. It doesn't support to the use case, even though JsonPath https://github.com/json-path/JsonPath?tab=readme-ov-file#operators[supports] deep scan and Bracket-notated child or children. It supports to access multiple fields at one level only.
+. No specification. Some path expressions work on one implemention, not others.
+. Not an optimal solution. I can loop throught expressions to extract multiple values in several rounds. In real projects, it will complicate implemetations and other things.
+
+My second thought is jq. It is the most powerful one to my knowledge, However it might be hard to integrate with systems as jq is a command line tool.
+
+The third one is https://jmespath.org/[jmespath]. I worked out an jmespath expression to extract care plan id, first name and last name of patients from a json. In FHIR, bundle json might have different content. A generalized solution will be good. GenAI is a good fit for that, especially chatgpt.
+
+The final one is chatgpt. Below are the three prompts I used. The third prompt will get an acceptable answer from chatgpt.
+
+
+Prompts: 
+
+. Extract care plan id and the name of patient's name from the below json using jmespath
+. Extract care plan id and the name of patient's name from the below json using jmespath,  put them in an object
+. Extract care plan id, the first name and given name of patient from the below json using jmespath,  put them in an object
+
+The acceptable answer of the third prompt is as following: 
+
+[source, json]
+----
+//answer
+{
+  "planId": "53333",
+  "patient_name": [
+    {
+      "family": "Smith",
+      "given": [
+        "James"
+      ]
+    }
+  ]
+}
+----
+
+You can check the answers and json resource at https://play.jmespath.org/?u=5afcd1f4-097d-4a24-a065-9611b1efe400[The jmespath example from chatgpt]
+
+
+Bundle json
+
+[source, json]
+----
+//bundle json
+{
+    "resourceType": "Bundle",
+    "id": "98d056c8-f5d7-4d1d-ae7d-d1bb30317747",
+    "meta": {
+        "lastUpdated": "2024-03-02T13:31:11.945+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+        {
+            "relation": "self",
+            "url": "https://hapi.fhir.org/baseR4/CarePlan?_format=json&_id=53333&_include=CarePlan%3Acare-team&_include=CarePlan%3Apatient&_pretty=true"
+        }
+    ],
+    "entry": [
+        {
+            "fullUrl": "https://hapi.fhir.org/baseR4/CarePlan/53333",
+            "resource": {
+                "resourceType": "CarePlan",
+                "id": "53333",
+                "meta": {
+                    "versionId": "1",
+                    "lastUpdated": "2019-11-01T21:37:05.589+00:00",
+                    "source": "#Pzd7PO3A3sZn4z63"
+                },
+                "status": "active",
+                "intent": "proposal",
+                "subject": {
+                    "reference": "Patient/53254",
+                    "type": "Patient"
+                },
+                "activity": [
+                    {
+                        "outcomeCodeableConcept": [
+                            {
+                                "coding": [
+                                    {
+                                        "code": "6025007",
+                                        "display": "Laparoscopic appendectomy"
+                                    },
+                                    {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "6025007",
+                                        "display": "Laparoscopic appendectomy"
+                                    }
+                                ]
+                            }
+                        ],
+                        "outcomeReference": [
+                            {
+                                "reference": "Observation/53330",
+                                "type": "Observation"
+                            },
+                            {
+                                "reference": "Procedure/53331",
+                                "type": "Procedure"
+                            },
+                            {
+                                "reference": "Medication/9352fd3a-d63e-4957-a57d-daf4878d2385",
+                                "type": "Medication"
+                            }
+                        ],
+                        "detail": {
+                            "code": {
+                                "coding": [
+                                    {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "6025007",
+                                        "display": "Laparoscopic appendectomy"
+                                    }
+                                ]
+                            },
+                            "status": "completed"
+                        }
+                    },
+                    {
+                        "detail": {
+                            "code": {
+                                "coding": [
+                                    {
+                                        "system": " http://www.nlm.nih.gov/research/umls/rxnorm",
+                                        "code": "258395",
+                                        "display": "Lisinopril"
+                                    }
+                                ]
+                            },
+                            "status": "in-progress"
+                        }
+                    },
+                    {
+                        "detail": {
+                            "status": "unknown"
+                        }
+                    }
+                ]
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "https://hapi.fhir.org/baseR4/Patient/53254",
+            "resource": {
+                "resourceType": "Patient",
+                "id": "53254",
+                "meta": {
+                    "versionId": "4",
+                    "lastUpdated": "2023-09-29T00:45:23.054+00:00",
+                    "source": "#yv8lN6mkhf7deTiS"
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"hapiHeaderText\">James <b>SMITH </b></div><table class=\"hapiPropertyTable\"><tbody><tr><td>Identifier</td><td>110107073916280</td></tr><tr><td>Address</td><td><span>1234 Six Forks </span><br/><span>Cary </span><span>NC </span><span>US </span></td></tr><tr><td>Date of birth</td><td><span>01 September 1965</span></td></tr></tbody></table></div>"
+                },
+                "identifier": [
+                    {
+                        "use": "usual",
+                        "system": "1.3.6.1.4.1.22812.3.99930.3",
+                        "value": "110107073916280"
+                    },
+                    {
+                        "use": "official",
+                        "system": "https://www.edifecs.com/fhir/patient/identifier",
+                        "value": "74306e5e90359c6574c90a69b2e9325c1106c44a22d9733a67eaa53412bb3251"
+                    }
+                ],
+                "active": true,
+                "name": [
+                    {
+                        "family": "Smith",
+                        "given": [
+                            "James"
+                        ]
+                    }
+                ],
+                "telecom": [
+                    {
+                        "system": "phone",
+                        "value": "tel:+1-(919)854-3333",
+                        "use": "home"
+                    },
+                    {
+                        "value": "tel:+1-(919)854-4444",
+                        "use": "home"
+                    }
+                ],
+                "gender": "male",
+                "birthDate": "1965-09-01",
+                "deceasedBoolean": false,
+                "address": [
+                    {
+                        "line": [
+                            "1234 Six Forks"
+                        ],
+                        "city": "Cary",
+                        "state": "NC",
+                        "postalCode": "27513",
+                        "country": "US"
+                    }
+                ],
+                "contact": [
+                    {
+                        "relationship": [
+                            {
+                                "coding": [
+                                    {
+                                        "display": "Wife"
+                                    }
+                                ]
+                            }
+                        ],
+                        "telecom": [
+                            {
+                                "value": "7894561235"
+                            }
+                        ]
+                    }
+                ],
+                "communication": [
+                    {
+                        "preferred": true
+                    }
+                ],
+                "managingOrganization": {
+                    "reference": "Organization/53256",
+                    "type": "Organization"
+                }
+            },
+            "search": {
+                "mode": "include"
+            }
+        }
+    ]
+}
+----
