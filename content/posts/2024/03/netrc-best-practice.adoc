@@ -1,0 +1,15 @@
+---
+title: Should I use .netrc for git authentication
+date: 2024-03-09T20:10:00+08:00
+categories:
+- tech
+tags:
+- git
+- .netrc
+---
+
+I used .netrc in several projects and I wrote https://jackliusr.github.io/posts/2022/05/argo-workflow-secrets-for-git/[something] about that. I thought it is a convenient way for git until recently.
+
+Recently I have a new laptop and want to setup my git credentials. This time, I noticed https://confluence.atlassian.com/bitbucketserver/permanently-authenticating-with-git-repositories-776639846.html#:~:text=Be%20aware%20that%20other%20applications%20that%20use%20cURL%20to%20make%20requests%20to%20servers%20defined%20in%20your%20.netrc%20file%20will%20also%20now%20be%20authenticated%20using%20these%20credentials[.netrc might not be secure] as other applications that use cURL to make requests to servers defined in your .netrc file will also now be authenticated using these credentials.
+
+Before I forget it, I think I should write it down to enforce my memory to this issue. It is rarely found in other place.
