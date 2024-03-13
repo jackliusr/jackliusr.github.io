@@ -6,7 +6,34 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 Mar 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Mar 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mssql</title>
+      <link>https://jackliusr.github.io/tags/mssql/</link>
+      <pubDate>Wed, 13 Mar 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/mssql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>https://jackliusr.github.io/tags/ubuntu/</link>
+      <pubDate>Wed, 13 Mar 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WSL</title>
+      <link>https://jackliusr.github.io/tags/wsl/</link>
+      <pubDate>Wed, 13 Mar 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/wsl/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>.netrc</title>
       <link>https://jackliusr.github.io/tags/.netrc/</link>
@@ -292,15 +319,6 @@
       <pubDate>Fri, 05 Jan 2024 12:01:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/terraform/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ubuntu</title>
-      <link>https://jackliusr.github.io/tags/ubuntu/</link>
-      <pubDate>Fri, 05 Jan 2024 12:01:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/ubuntu/</guid>
       <description></description>
     </item>
     
@@ -2029,15 +2047,6 @@
       <pubDate>Mon, 09 May 2022 20:10:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/jekyll/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>WSL</title>
-      <link>https://jackliusr.github.io/tags/wsl/</link>
-      <pubDate>Tue, 26 Apr 2022 19:10:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/wsl/</guid>
       <description></description>
     </item>
     

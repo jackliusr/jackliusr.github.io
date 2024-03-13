@@ -6,7 +6,17 @@
     <description>Recent content in ubuntu on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Jan 2024 12:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Mar 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install sqlserver in wsl2 and ubuntu 22.04</title>
+      <link>https://jackliusr.github.io/posts/2024/03/install-sqlserver-in-wsl2-and-ubuntu-22.04/</link>
+      <pubDate>Wed, 13 Mar 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/03/install-sqlserver-in-wsl2-and-ubuntu-22.04/</guid>
+      <description>I searched web, first several links in SERP are not the offical one from microsoft. I tried them and failed to install mssql due to errors Error: &amp;#39;deb [arch=amd64 https://download.docker.com/linux/ubuntu \ xenial \ stable&amp;#39; invalid] or Can’t install MS SQL Server on Ubuntu 21.10. At last I follow the instruction from microsoft. I successfully installed mssql server in my wsl+ubuntu22.04 environment.
+ curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/microsoft-prod.</description>
+    </item>
+    
     <item>
       <title>Run anki in wsl2&#43;ubuntu 22.04 </title>
       <link>https://jackliusr.github.io/posts/2024/01/run-anki-in-wsl2-ubuntu-22.04/</link>
