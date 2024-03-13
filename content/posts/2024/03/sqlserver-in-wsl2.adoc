@@ -1,0 +1,40 @@
+---
+title: Install sqlserver in wsl2 and ubuntu 22.04
+date: 2024-03-13T20:10:00+08:00
+categories:
+- tech
+tags:
+- wsl
+- ubuntu
+- mssql
+---
+
+I searched web, first several links in SERP are not the offical one from microsoft. I tried them and failed to install mssql due to errors https://askubuntu.com/questions/989881/error-deb-arch-amd64-https-download-docker-com-linux-ubuntu-xenial-sta[Error: 'deb [arch=amd64] https://download.docker.com/linux/ubuntu \ xenial \ stable' invalid] or https://serverfault.com/questions/1083491/cant-install-ms-sql-server-on-ubuntu-21-10[Can't install MS SQL Server on Ubuntu 21.10]. At last I follow the instruction from https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver16&source=recommendations&tabs=ubuntu2204[microsoft]. I successfully installed mssql server in my wsl+ubuntu22.04 environment. 
+
+[source,bash]
+----
+curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/microsoft-prod.gpg
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc
+curl -fsSL https://packages.microsoft.com/config/ubuntu/22.04/mssql-server-2022.list | sudo tee /etc/apt/sources.list.d/mssql-server-2022.list
+sudo apt-get update
+sudo apt-get install -y mssql-server
+sudo /opt/mssql/bin/mssql-conf setup
+systemctl status mssql-server --no-pager
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc
+curl https://packages.microsoft.com/config/ubuntu/22.04/prod.list | sudo tee /etc/apt/sources.list.d/mssql-release.list
+sudo apt-get update
+sudo apt-get install mssql-tools18 unixodbc-dev
+
+#as Sqlcmd: Error: Microsoft ODBC Driver 18 for SQL Server:SSL Provider: error:0A000086:SSL routines::certificate verify failed:self-signed certificate, add -C options
+sqlcmd -C -S localhost -U sa -P '<YourPassword>'
+----
+
+Another thing need to notice is that Microsoft ODBC Driver 18 for SQL Server:SSL Provider: error:0A000086:SSL routines::certificate verify failed:self-signed certificate. I used the following connection string options to resolve the issie. 
+
+```json
+ "TraceLogging": "Server=localhost;Database=testdb;Integrated Security=False;Encrypt=false;TrustServerCertificate=Yes;User ID=sa;Password=aaaa;"
+```
+
+== Reference: 
+
+https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver16&source=recommendations&tabs=ubuntu2204
