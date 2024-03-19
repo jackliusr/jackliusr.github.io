@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chrome on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/chrome/</link>
+    <description>Recent content in Chrome on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Mar 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to permanently exclude localhost from HSTS list in Google Chrome</title>
+      <link>https://jackliusr.github.io/posts/2024/03/how-to-permanently-exclude-localhost-from-hsts-list-in-google-chrome/</link>
+      <pubDate>Tue, 19 Mar 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/03/how-to-permanently-exclude-localhost-from-hsts-list-in-google-chrome/</guid>
+      <description>Stackoverflow give several ways to resolve localhost HSTS issue (redirect from http to https). My laptop is managed by my employer and registry can’t be edited. &amp;#34;How can I see which sites have set the HSTS flag in my edge browser?&amp;#34; in chatgpt give me an answers. One step of the answer get my attention. I can change HSTS in my application for development environment.
+ It is too late now.</description>
+    </item>
+    
+  </channel>
+</rss>

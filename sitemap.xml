@@ -3,7 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2024-03-13T21:16:37+08:00</lastmod>
+    <lastmod>2024-03-20T00:04:58+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/chrome/</loc>
+    <lastmod>2024-03-20T00:04:58+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/edge/</loc>
+    <lastmod>2024-03-20T00:04:58+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/environment/</loc>
+    <lastmod>2024-03-20T00:04:58+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2024/03/how-to-permanently-exclude-localhost-from-hsts-list-in-google-chrome/</loc>
+    <lastmod>2024-03-20T00:04:58+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/hsts/</loc>
+    <lastmod>2024-03-20T00:04:58+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/</loc>
+    <lastmod>2024-03-20T00:04:58+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/</loc>
+    <lastmod>2024-03-20T00:04:58+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/</loc>
+    <lastmod>2024-03-20T00:04:58+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/categories/tech/</loc>
+    <lastmod>2024-03-20T00:04:58+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -13,26 +58,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/mssql/</loc>
-    <lastmod>2024-03-13T21:16:37+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2024-03-13T21:16:37+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2024-03-13T21:16:37+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2024-03-13T21:16:37+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/categories/tech/</loc>
     <lastmod>2024-03-13T21:16:37+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -643,11 +668,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/dns/</loc>
-    <lastmod>2023-04-17T11:01:19+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/environment/</loc>
     <lastmod>2023-04-17T11:01:19+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
