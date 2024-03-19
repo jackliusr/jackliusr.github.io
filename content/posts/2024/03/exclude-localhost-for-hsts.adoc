@@ -1,0 +1,16 @@
+---
+title: How to permanently exclude localhost from HSTS list in Google Chrome
+date: 2024-03-19T20:10:00+08:00
+categories:
+- tech
+tags:
+- HSTS
+- edge
+- Chrome
+- environment
+---
+
+
+https://stackoverflow.com/questions/38968510/how-to-permanently-exclude-localhost-from-hsts-list-in-google-chrome[Stackoverflow] give several ways to resolve localhost HSTS issue (redirect from http to https). My laptop is managed by my employer and registry can't be edited.  "How can I see which sites have set the HSTS flag in my edge browser?" in chatgpt give me an answers. One step of the answer get my attention. I can change HSTS in my application for development environment. 
+
+It is too late now. I will try it tomorrow and update this post later.
