@@ -1,6 +1,6 @@
 ---
 title: Setup kind cluster using cilium cni in wsl2
-date: 2024-03-29T20:10:00+08:00
+date: 2024-03-28T20:10:00+08:00
 categories:
 - tech
 tags:
