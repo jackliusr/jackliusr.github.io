@@ -1,0 +1,164 @@
+---
+title: Setup kind cluster using cilium cni in wsl2
+date: 2024-03-29T20:10:00+08:00
+categories:
+- tech
+tags:
+- wsl
+- kind
+- cilium
+- kubernetes
+---
+
+== Prologue 
+
+One or two years ago, I tried several times to install kind cluster to using cilium cni. However I didn't make it. Today I really want to setup one after reading an https://medium.com/@charled.breteche/kind-cluster-with-cilium-and-no-kube-proxy-c6f4d84b5a9d[Kind cluster with Cilium and no kube-proxy] and considering that major kubernetes distributions are using cilium cni now. After about 3 hours, I finally got it running successfully. Things don't go smoothly. Here are my steps to setup it up.
+
+
+== Make kernel of wsl ebpf ready
+
+[source, ini]
+----
+# %USERPROFILE%\.wslconfig
+[wsl2]
+kernel=C:\\kernel6
+----
+
+[source, bash]
+----
+sudo apt-get install flex bison
+sudo apt-get install make build-essential libncurses-dev bison flex libssl-dev libelf-dev
+sudo apt-get -y install pahole
+
+git clone https://github.com/microsoft/WSL2-Linux-Kernel.git --depth=1 -b linux-msft-wsl-6.1.y
+cd WSL2-Linux-Kernel
+# change https://docs.cilium.io/en/stable/operations/system_requirements/#linux-kernel
+make -j$(nproc) KCONFIG_CONFIG=Microsoft/config-wsl
+sudo make modules_install headers_install
+cp arch/x86/boot/bzImage /mnt/c/kernel6
+----
+
+[source, powershell]
+----
+wsl --shutdown
+----
+== Load the modules
+
+Start wsl2
+
+[source, bash]
+----
+# Check which modules are loaded (the list should be empty)
+sudo lsmod
+
+# Create a file to load the modules when the distro boots
+## The first line of the modules.alias file is ignored as it's the header "Alias"
+awk '(NR>1) { print $2 }' /usr/lib/modules/$(uname -r)/modules.alias | sudo tee /etc/modules-load.d/cilium.conf
+
+# By default, the systemd-modules-load service fails due to the conditions not met
+sudo systemctl status systemd-modules-load
+
+# Edit the service and comment the conditions line from the "!container"
+sudo vi /lib/systemd/system/systemd-modules-load.service
+...
+#ConditionVirtualization=!container
+#ConditionDirectoryNotEmpty=|/lib/modules-load.d
+#ConditionDirectoryNotEmpty=|/usr/lib/modules-load.d
+#ConditionDirectoryNotEmpty=|/usr/local/lib/modules-load.d
+#ConditionDirectoryNotEmpty=|/etc/modules-load.d
+#ConditionDirectoryNotEmpty=|/run/modules-load.d
+#ConditionKernelCommandLine=|modules-load
+#ConditionKernelCommandLine=|rd.modules-load
+...
+
+# Reload the systemD daemon
+sudo systemctl daemon-reload
+
+# Restart the systemd-modules-load service
+sudo systemctl restart systemd-modules-load
+
+# [Optional] Check the systemd-modules-load service
+sudo systemctl status systemd-modules-load
+
+# Check the modules loaded
+sudo lsmod
+----
+
+== Install cluster
+
+[source,bash]
+----
+kind delete cluster && kind create cluster --config - <<EOF
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+networking:
+  disableDefaultCNI: true
+  kubeProxyMode: none
+nodes:
+- role: control-plane
+  kubeadmConfigPatches:
+  - |
+    kind: InitConfiguration
+    nodeRegistration:
+      kubeletExtraArgs:
+        node-labels: "ingress-ready=true"
+  extraPortMappings:
+  - containerPort: 80
+    hostPort: 80
+    listenAddress: 127.0.0.1
+    protocol: TCP
+  - containerPort: 443
+    hostPort: 443
+    listenAddress: 127.0.0.1
+    protocol: TCP
+- role: worker
+- role: worker
+- role: worker
+EOF
+
+
+helm upgrade --install --namespace kube-system --repo https://helm.cilium.io cilium cilium --values - <<EOF
+kubeProxyReplacement: strict
+k8sServiceHost: kind-control-plane
+k8sServicePort: 6443
+hostServices:
+  enabled: false
+externalIPs:
+  enabled: true
+nodePort:
+  enabled: true
+hostPort:
+  enabled: true
+image:
+  pullPolicy: IfNotPresent
+ipam:
+  mode: kubernetes
+hubble:
+  enabled: true
+  relay:
+    enabled: true
+  ui:
+    enabled: true
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: nginx
+      hosts:
+        - hubble-ui.127.0.0.1.nip.io
+EOF
+
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.10.0/deploy/static/provider/kind/deploy.yaml
+----
+
+== Browse
+
+http://hubble-ui.127.0.0.1.nip.io/
+
+
+== References:
+
+- [System Requirements — Cilium 1.15.3 documentation](https://docs.cilium.io/en/stable/operations/system_requirements/#linux-kernel)
+- [WSL2+Cilium: The rise of eBPF :: ~/wsl.dev — Get your Linux On](https://wsl.dev/wslcilium/)
+- [How to use the Microsoft Linux kernel v6 on WSL2 | Microsoft Learn](https://learn.microsoft.com/en-us/community/content/wsl-user-msft-kernel-v6)
+- https://github.com/cilium/cilium/issues/29302#issuecomment-1879099471
