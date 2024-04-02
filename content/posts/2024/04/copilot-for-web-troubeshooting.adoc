@@ -1,0 +1,16 @@
+---
+title: Using copilot for javascript debugging
+date: 2024-04-02T20:10:00+08:00
+categories:
+- tech
+tags:
+- copilot
+- javascript
+- debug
+---
+
+Yesterday, I clicked a button in one web page, no response from that. I thought it must be something wrong. I opened browser console and noticed there is an icon. It turned out be a copilot icon after reading the logs in console.
+
+{{< imgur id="WEpnCdL" >}}
+
+Nowadays, copilot almost is everywhere, office suite, vscode, visual studio, windows and edge browser. Never thought it is embedded in browse web console. It is quite useful to find information of errors in the web console. Maybe I should switch to edge completely. 
