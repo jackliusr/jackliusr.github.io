@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>copilot on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/copilot/</link>
+    <description>Recent content in copilot on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Apr 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/copilot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using copilot for javascript debugging</title>
+      <link>https://jackliusr.github.io/posts/2024/04/using-copilot-for-javascript-debugging/</link>
+      <pubDate>Tue, 02 Apr 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/04/using-copilot-for-javascript-debugging/</guid>
+      <description>Yesterday, I clicked a button in one web page, no response from that. I thought it must be something wrong. I opened browser console and noticed there is an icon. It turned out be a copilot icon after reading the logs in console.
+      Nowadays, copilot almost is everywhere, office suite, vscode, visual studio, windows and edge browser. Never thought it is embedded in browse web console.</description>
+    </item>
+    
+  </channel>
+</rss>

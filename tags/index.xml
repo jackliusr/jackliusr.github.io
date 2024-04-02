@@ -6,7 +6,34 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Mar 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Apr 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>copilot</title>
+      <link>https://jackliusr.github.io/tags/copilot/</link>
+      <pubDate>Tue, 02 Apr 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/copilot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>debug</title>
+      <link>https://jackliusr.github.io/tags/debug/</link>
+      <pubDate>Tue, 02 Apr 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/debug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://jackliusr.github.io/tags/javascript/</link>
+      <pubDate>Tue, 02 Apr 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>cilium</title>
       <link>https://jackliusr.github.io/tags/cilium/</link>
@@ -193,15 +220,6 @@
       <pubDate>Wed, 14 Feb 2024 23:10:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/excel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>javascript</title>
-      <link>https://jackliusr.github.io/tags/javascript/</link>
-      <pubDate>Wed, 14 Feb 2024 23:10:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/javascript/</guid>
       <description></description>
     </item>
     
@@ -2371,15 +2389,6 @@
       <pubDate>Sun, 17 Jan 2021 14:26:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/echarts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>debug</title>
-      <link>https://jackliusr.github.io/tags/debug/</link>
-      <pubDate>Fri, 20 Nov 2020 19:35:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/debug/</guid>
       <description></description>
     </item>
     
