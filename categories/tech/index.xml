@@ -8,11 +8,11 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 04 Apr 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>2 jsonchema tricks</title>
-      <link>https://jackliusr.github.io/posts/2024/04/2-jsonchema-tricks/</link>
+      <title>2 jsonschema tricks</title>
+      <link>https://jackliusr.github.io/posts/2024/04/2-jsonschema-tricks/</link>
       <pubDate>Thu, 04 Apr 2024 20:10:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/posts/2024/04/2-jsonchema-tricks/</guid>
+      <guid>https://jackliusr.github.io/posts/2024/04/2-jsonschema-tricks/</guid>
       <description>Background I worked on APIs and OpenAPI Spec (OAS) in past projects, even I used stoplight and NLP for open-source API style guide enforce and linting. I thought I was quite good at jsonschema. I dont’k think so after recent usage of jsonschema for a very aspnet flexible configuration file.
  Configurations in dotnet are quite straight forwards if all the configurations following the Options pattern. ConfigurationProcessor is not that case.</description>
     </item>
