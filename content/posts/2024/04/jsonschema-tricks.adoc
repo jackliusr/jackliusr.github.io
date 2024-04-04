@@ -1,10 +1,10 @@
 ---
-title: 2 jsonchema tricks
+title: 2 jsonschema tricks
 date: 2024-04-04T20:10:00+08:00
 categories:
 - tech
 tags:
-- jsonchema
+- jsonschema
 - openapi
 ---
 
