@@ -168,6 +168,23 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2022/07/eksctl-steps/" class="link black dim">
+        eksctl Steps
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I only noticed the steps after one ergent cancelling of creating. I didn’t find corresponding nodes and wondered what happened. I deleted my cluster and recreated one.
+ I knew I can create nodegroup after creating cluster and not sure if I can do those sub tasks this way as well. Leave it here for later investigation.
+ 2 sequential tasks: { create cluster control plane &#34;uat-local-intl&#34;, 2 sequential sub-tasks: { 4 sequential sub-tasks: { wait for control plane to become ready, associate IAM OIDC provider, 4 parallel sub-tasks: { 2 sequential sub-tasks: { create IAM role for serviceaccount &#34;backend-apps/s3-reader&#34;, create serviceaccount &#34;backend-apps/s3-reader&#34;, }, 2 sequential sub-tasks: { create IAM role for serviceaccount &#34;backend-apps/cache-access&#34;, create serviceaccount &#34;backend-apps/cache-access&#34;, }, 2 sequential sub-tasks: { create IAM role for serviceaccount &#34;kube-system/cluster-autoscaler&#34;, create serviceaccount &#34;kube-system/cluster-autoscaler&#34;, }, 2 sequential sub-tasks: { create IAM role for serviceaccount &#34;kube-system/aws-node&#34;, create serviceaccount &#34;kube-system/aws-node&#34;, }, }, restart daemonset &#34;kube-system/aws-node&#34;, }, create nodegroup &#34;ng-1&#34;, } }   
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2022/06/my-first-usage-of-jsonnet/" class="link black dim">
         My first usage of jsonnet
       </a>
@@ -310,22 +327,6 @@ I didn&rsquo;t have a good impression with java in my past java projects.
 </div>
 </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/06/reflection-on-kubernete-usage/" class="link black dim">
-        Reflection on kubernete usage
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Today I explained the current infrastructure fleet configurations to our devops team, I have the thought to make a reflection on the things or lessons I learnt in the past and think about what should I do in the next.
- The technologies and tools I used in my projects is as following. There are still a lot of things to learn considering the list in my list and the huge ecosystem of kubernetes.
-    </div>
-  </div>
-</div>
-</div>
-      
     </section>
     <ul class="pagination pagination-default">
       <li class="page-item">
@@ -353,7 +354,7 @@ I didn&rsquo;t have a good impression with java in my past java projects.
         <a href="/posts/page/10/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="/posts/page/15/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/posts/page/16/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul></article>
 
