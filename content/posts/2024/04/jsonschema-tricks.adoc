@@ -1,0 +1,74 @@
+---
+title: 2 jsonchema tricks
+date: 2024-04-04T20:10:00+08:00
+categories:
+- tech
+tags:
+- jsonchema
+- openapi
+---
+
+== Background
+
+I worked on APIs and OpenAPI Spec (OAS) in past projects, even I used https://stoplight.io/open-source/spectral[stoplight] and https://github.com/spencermountain/compromise[NLP] for open-source API style guide enforce and linting. I thought I was quite good at jsonschema. I dont'k think so after recent usage of jsonschema for a very aspnet flexible configuration file. 
+
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-8.0[Configurations in dotnet] are quite straight forwards if all the configurations following the Options pattern. https://github.com/almostchristian/ConfigurationProcessor.DependencyInjection[ConfigurationProcessor] is not that case. It uses a lot of advanced dynamic programming technologies in dotnet and can do a lot of very configurations without considering binding. It supports https://github.com/almostchristian/ConfigurationProcessor.DependencyInjection#basics[several ways] to do the configration. 
+
+To make the life of configuration easier, I tried to write a json schema files for vscode intellisense and validating json configuration files. During this work, I learnt following several tricks.
+
+Below tricks all are in yaml format as yaml format is more convenient to write and read than json format. It is quite easy to convert to json if needed.
+
+[source, bash]
+----
+# convert yaml to json
+yq a.yaml -o json > a.json
+----
+
+== Tricks
+
+=== ISet of string or enums
+
+Dictionary, objects and array can be easily supported by using jsonschema.  Array can be used for ISet of string or enums. However it don't gurantee the uniqueness to meet the uniqueness property of set. This might cause runtime errors. I tried to make it right in the schema files. 
+
+[source, yaml]
+----
+prop1:
+    type: array
+    uniqueItems: true
+    items:
+      type: string
+      enum:
+      - A
+      - B
+----
+
+=== Property names from a list of string or patterns, all in the same type
+
+I tried patternProperties one week ago. It works for validating, not works well for code intellisense. Today I finally figured out how to make it happen. 
+
+[source, yaml]
+----
+prop1:
+    type: object
+    propertyNames:
+      anyOf:
+      - enum:
+         - active
+         - on-hold
+         - ended
+         - stopped
+         - completed
+         - cancelled
+         - entered-in-error
+         - draft
+         - unknown
+      - pattern: "^other[0-9]{2}$"
+    additionalProperties:
+      type: object
+      properties:
+        reasonType:
+          type: string
+        remark:
+          type: string
+----
+
