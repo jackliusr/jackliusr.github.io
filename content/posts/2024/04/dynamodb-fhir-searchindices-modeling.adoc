@@ -1,0 +1,22 @@
+---
+title: Data modeling of FHIR searchindices in AWS dynamoDB
+date: 2024-04-05T20:10:00+08:00
+categories:
+- tech
+tags:
+- FHIR
+- DynamoDB
+- data-modeling
+- aws
+---
+
+
+Microsoft FHIR Server serialize https://github.com/microsoft/fhir-server/blob/main/docs/SearchArchitecture.md#persistence[searchindices] this way in cosmosdb. How to model it in AWS DynamoDB? 
+
+I downloaded DynamoDB local to learn how to model for this case. I tried to model it as the way in cosmosdb. Later I found it is hard to filter data based on the some values in the list. Later I modelled it as map of map in  DynamoDB.
+
+{{< imgur id="EJhcooC" >}}
+
+After I completed this model, I was wondering why microsoft do that way. I read one of example data json files in my local cosmosdb and I noticed that some search parameters in a resources might repeat or have multiple values.
+
+I will work on that model and post it in another post.
