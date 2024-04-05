@@ -9,8 +9,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
   <meta name="description"
     content="Microsoft FHIR Server serialize searchindices this way in cosmosdb. How to model it in AWS DynamoDB?
- I downloaded DynamoDB local to learn how to model for this case. I tried to model it as the way in cosmosdb. Later I found it is hard to filter data based on the some values in the list. Later I modelled it as map of map in DynamoDB.
-      After I completed this model, I was wondering why microsoft do that way.">
+ { &#34;id&#34;: &#34;9240cda7-bbb7-4ad4-aa9f-971750a3dc71&#34;, &#34;searchIndices&#34;: [ { &#34;p&#34;: &#34;_id&#34;, &#34;c&#34;: &#34;9240cda7-bbb7-4ad4-aa9f-971750a3dc71&#34; }, { &#34;p&#34;: &#34;_lastUpdated&#34;, &#34;st&#34;: &#34;2018-08-22T23:37:56.1289012&#43;00:00&#34;, &#34;et&#34;: &#34;2018-08-22T23:37:56.1289012&#43;00:00&#34; }, { &#34;p&#34;: &#34;patient&#34;, &#34;r&#34;: &#34;Patient/example&#34; }, { &#34;p&#34;: &#34;performer&#34;, &#34;r&#34;: &#34;Practitioner/example&#34; }, { &#34;p&#34;: &#34;related&#34;, &#34;r_0&#34;: &#34;Observation/example-genetics-1&#34;, &#34;s_1&#34;: &#34;http://hl7.org/fhir/observation-relationshiptypes&#34;, &#34;c_1&#34;: &#34;derived-from&#34; }, { &#34;p&#34;: &#34;related-target&#34;, &#34;r&#34;: &#34;Observation/example-genetics-1&#34; }, { &#34;p&#34;: &#34;related-type&#34;, &#34;s&#34;: &#34;http://hl7.org/fhir/observation-relationshiptypes&#34;, &#34;c&#34;: &#34;derived-from&#34; }, { &#34;p&#34;: &#34;status&#34;, &#34;s&#34;: &#34;http://hl7.">
   <meta name="generator" content="Hugo 0.99.1" />
   
   
@@ -32,24 +31,21 @@
 
   <meta property="og:title" content="Data modeling of FHIR searchindices in AWS dynamoDB" />
 <meta property="og:description" content="Microsoft FHIR Server serialize searchindices this way in cosmosdb. How to model it in AWS DynamoDB?
- I downloaded DynamoDB local to learn how to model for this case. I tried to model it as the way in cosmosdb. Later I found it is hard to filter data based on the some values in the list. Later I modelled it as map of map in DynamoDB.
-      After I completed this model, I was wondering why microsoft do that way." />
+ { &#34;id&#34;: &#34;9240cda7-bbb7-4ad4-aa9f-971750a3dc71&#34;, &#34;searchIndices&#34;: [ { &#34;p&#34;: &#34;_id&#34;, &#34;c&#34;: &#34;9240cda7-bbb7-4ad4-aa9f-971750a3dc71&#34; }, { &#34;p&#34;: &#34;_lastUpdated&#34;, &#34;st&#34;: &#34;2018-08-22T23:37:56.1289012&#43;00:00&#34;, &#34;et&#34;: &#34;2018-08-22T23:37:56.1289012&#43;00:00&#34; }, { &#34;p&#34;: &#34;patient&#34;, &#34;r&#34;: &#34;Patient/example&#34; }, { &#34;p&#34;: &#34;performer&#34;, &#34;r&#34;: &#34;Practitioner/example&#34; }, { &#34;p&#34;: &#34;related&#34;, &#34;r_0&#34;: &#34;Observation/example-genetics-1&#34;, &#34;s_1&#34;: &#34;http://hl7.org/fhir/observation-relationshiptypes&#34;, &#34;c_1&#34;: &#34;derived-from&#34; }, { &#34;p&#34;: &#34;related-target&#34;, &#34;r&#34;: &#34;Observation/example-genetics-1&#34; }, { &#34;p&#34;: &#34;related-type&#34;, &#34;s&#34;: &#34;http://hl7.org/fhir/observation-relationshiptypes&#34;, &#34;c&#34;: &#34;derived-from&#34; }, { &#34;p&#34;: &#34;status&#34;, &#34;s&#34;: &#34;http://hl7." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2024/04/data-modeling-of-fhir-searchindices-in-aws-dynamodb/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-04-05T20:10:00+08:00" />
-<meta property="article:modified_time" content="2024-04-06T00:20:40+08:00" />
+<meta property="article:modified_time" content="2024-04-06T00:35:42+08:00" />
 
 <meta itemprop="name" content="Data modeling of FHIR searchindices in AWS dynamoDB">
 <meta itemprop="description" content="Microsoft FHIR Server serialize searchindices this way in cosmosdb. How to model it in AWS DynamoDB?
- I downloaded DynamoDB local to learn how to model for this case. I tried to model it as the way in cosmosdb. Later I found it is hard to filter data based on the some values in the list. Later I modelled it as map of map in DynamoDB.
-      After I completed this model, I was wondering why microsoft do that way."><meta itemprop="datePublished" content="2024-04-05T20:10:00+08:00" />
-<meta itemprop="dateModified" content="2024-04-06T00:20:40+08:00" />
-<meta itemprop="wordCount" content="118">
+ { &#34;id&#34;: &#34;9240cda7-bbb7-4ad4-aa9f-971750a3dc71&#34;, &#34;searchIndices&#34;: [ { &#34;p&#34;: &#34;_id&#34;, &#34;c&#34;: &#34;9240cda7-bbb7-4ad4-aa9f-971750a3dc71&#34; }, { &#34;p&#34;: &#34;_lastUpdated&#34;, &#34;st&#34;: &#34;2018-08-22T23:37:56.1289012&#43;00:00&#34;, &#34;et&#34;: &#34;2018-08-22T23:37:56.1289012&#43;00:00&#34; }, { &#34;p&#34;: &#34;patient&#34;, &#34;r&#34;: &#34;Patient/example&#34; }, { &#34;p&#34;: &#34;performer&#34;, &#34;r&#34;: &#34;Practitioner/example&#34; }, { &#34;p&#34;: &#34;related&#34;, &#34;r_0&#34;: &#34;Observation/example-genetics-1&#34;, &#34;s_1&#34;: &#34;http://hl7.org/fhir/observation-relationshiptypes&#34;, &#34;c_1&#34;: &#34;derived-from&#34; }, { &#34;p&#34;: &#34;related-target&#34;, &#34;r&#34;: &#34;Observation/example-genetics-1&#34; }, { &#34;p&#34;: &#34;related-type&#34;, &#34;s&#34;: &#34;http://hl7.org/fhir/observation-relationshiptypes&#34;, &#34;c&#34;: &#34;derived-from&#34; }, { &#34;p&#34;: &#34;status&#34;, &#34;s&#34;: &#34;http://hl7."><meta itemprop="datePublished" content="2024-04-05T20:10:00+08:00" />
+<meta itemprop="dateModified" content="2024-04-06T00:35:42+08:00" />
+<meta itemprop="wordCount" content="295">
 <meta itemprop="keywords" content="FHIR,DynamoDB,data-modeling,aws," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Data modeling of FHIR searchindices in AWS dynamoDB"/>
 <meta name="twitter:description" content="Microsoft FHIR Server serialize searchindices this way in cosmosdb. How to model it in AWS DynamoDB?
- I downloaded DynamoDB local to learn how to model for this case. I tried to model it as the way in cosmosdb. Later I found it is hard to filter data based on the some values in the list. Later I modelled it as map of map in DynamoDB.
-      After I completed this model, I was wondering why microsoft do that way."/>
+ { &#34;id&#34;: &#34;9240cda7-bbb7-4ad4-aa9f-971750a3dc71&#34;, &#34;searchIndices&#34;: [ { &#34;p&#34;: &#34;_id&#34;, &#34;c&#34;: &#34;9240cda7-bbb7-4ad4-aa9f-971750a3dc71&#34; }, { &#34;p&#34;: &#34;_lastUpdated&#34;, &#34;st&#34;: &#34;2018-08-22T23:37:56.1289012&#43;00:00&#34;, &#34;et&#34;: &#34;2018-08-22T23:37:56.1289012&#43;00:00&#34; }, { &#34;p&#34;: &#34;patient&#34;, &#34;r&#34;: &#34;Patient/example&#34; }, { &#34;p&#34;: &#34;performer&#34;, &#34;r&#34;: &#34;Practitioner/example&#34; }, { &#34;p&#34;: &#34;related&#34;, &#34;r_0&#34;: &#34;Observation/example-genetics-1&#34;, &#34;s_1&#34;: &#34;http://hl7.org/fhir/observation-relationshiptypes&#34;, &#34;c_1&#34;: &#34;derived-from&#34; }, { &#34;p&#34;: &#34;related-target&#34;, &#34;r&#34;: &#34;Observation/example-genetics-1&#34; }, { &#34;p&#34;: &#34;related-type&#34;, &#34;s&#34;: &#34;http://hl7.org/fhir/observation-relationshiptypes&#34;, &#34;c&#34;: &#34;derived-from&#34; }, { &#34;p&#34;: &#34;status&#34;, &#34;s&#34;: &#34;http://hl7."/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K49F8T19FK"></script>
@@ -209,12 +205,89 @@ if (!doNotTrack) {
 
       
       
-        <span class="f6 mv4 dib tracked"> - 1 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 118 words</span>
+        <span class="f6 mv4 dib tracked"> - 2 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 295 words</span>
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
 <p>Microsoft FHIR Server serialize <a href="https://github.com/microsoft/fhir-server/blob/main/docs/SearchArchitecture.md#persistence">searchindices</a> this way in cosmosdb. How to model it in AWS DynamoDB?</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+    &#34;id&#34;: &#34;9240cda7-bbb7-4ad4-aa9f-971750a3dc71&#34;,
+    &#34;searchIndices&#34;: [
+        {
+            &#34;p&#34;: &#34;_id&#34;,
+            &#34;c&#34;: &#34;9240cda7-bbb7-4ad4-aa9f-971750a3dc71&#34;
+        },
+        {
+            &#34;p&#34;: &#34;_lastUpdated&#34;,
+            &#34;st&#34;: &#34;2018-08-22T23:37:56.1289012+00:00&#34;,
+            &#34;et&#34;: &#34;2018-08-22T23:37:56.1289012+00:00&#34;
+        },
+        {
+            &#34;p&#34;: &#34;patient&#34;,
+            &#34;r&#34;: &#34;Patient/example&#34;
+        },
+        {
+            &#34;p&#34;: &#34;performer&#34;,
+            &#34;r&#34;: &#34;Practitioner/example&#34;
+        },
+        {
+            &#34;p&#34;: &#34;related&#34;,
+            &#34;r_0&#34;: &#34;Observation/example-genetics-1&#34;,
+            &#34;s_1&#34;: &#34;http://hl7.org/fhir/observation-relationshiptypes&#34;,
+            &#34;c_1&#34;: &#34;derived-from&#34;
+        },
+        {
+            &#34;p&#34;: &#34;related-target&#34;,
+            &#34;r&#34;: &#34;Observation/example-genetics-1&#34;
+        },
+        {
+            &#34;p&#34;: &#34;related-type&#34;,
+            &#34;s&#34;: &#34;http://hl7.org/fhir/observation-relationshiptypes&#34;,
+            &#34;c&#34;: &#34;derived-from&#34;
+        },
+        {
+            &#34;p&#34;: &#34;status&#34;,
+            &#34;s&#34;: &#34;http://hl7.org/fhir/observation-status&#34;,
+            &#34;c&#34;: &#34;final&#34;
+        },
+        {
+            &#34;p&#34;: &#34;subject&#34;,
+            &#34;r&#34;: &#34;Patient/example&#34;
+        }
+    ],
+    &#34;partitionKey&#34;: &#34;Observation_9240cda7-bbb7-4ad4-aa9f-971750a3dc71&#34;,
+    &#34;lastModified&#34;: &#34;2018-08-22T23:37:56.1289012+00:00&#34;,
+    &#34;rawResource&#34;: {
+        &#34;data&#34;: &#34;{\&#34;resourceType\&#34;:\&#34;Observation\&#34;,\&#34;id\&#34;:\&#34;9240cda7-bbb7-4ad4-aa9f-971750a3dc71\&#34;,\&#34;text\&#34;:{\&#34;status\&#34;:\&#34;generated\&#34;,\&#34;div\&#34;:\&#34;&lt;div xmlns=\\\&#34;http://www.w3.org/1999/xhtml\\\&#34;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: example-genetics-3&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Further analysis &lt;span&gt;(Details )&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a&gt;Molecular Lab Patient ID: HOSP-23456&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;issued&lt;/b&gt;: 03/04/2013 3:30:10 PM&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;a&gt;Sequence Analysis Laboratory&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;comment&lt;/b&gt;: The EGFR p.L858R mutation has been associated with response to anti-EGFR therapy&lt;/p&gt;&lt;h3&gt;Relateds&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Target&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;derived-from&lt;/td&gt;&lt;td&gt;&lt;a&gt;ObservationForGenetics profile example 1&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;\&#34;},\&#34;status\&#34;:\&#34;final\&#34;,\&#34;code\&#34;:{\&#34;text\&#34;:\&#34;Further analysis\&#34;},\&#34;subject\&#34;:{\&#34;reference\&#34;:\&#34;Patient/example\&#34;,\&#34;display\&#34;:\&#34;Molecular Lab Patient ID: HOSP-23456\&#34;},\&#34;issued\&#34;:\&#34;2013-04-03T15:30:10+01:00\&#34;,\&#34;performer\&#34;:[{\&#34;reference\&#34;:\&#34;Practitioner/example\&#34;,\&#34;display\&#34;:\&#34;Sequence Analysis Laboratory\&#34;}],\&#34;comment\&#34;:\&#34;The EGFR p.L858R mutation has been associated with response to anti-EGFR therapy\&#34;,\&#34;related\&#34;:[{\&#34;type\&#34;:\&#34;derived-from\&#34;,\&#34;target\&#34;:{\&#34;reference\&#34;:\&#34;Observation/example-genetics-1\&#34;,\&#34;display\&#34;:\&#34;ObservationForGenetics profile example 1\&#34;}}]}&#34;,
+        &#34;format&#34;: &#34;Json&#34;
+    },
+    &#34;request&#34;: {
+        &#34;url&#34;: &#34;https://localhost:44348/Observation&#34;,
+        &#34;method&#34;: &#34;POST&#34;
+    },
+    &#34;isDeleted&#34;: false,
+    &#34;resourceId&#34;: &#34;9240cda7-bbb7-4ad4-aa9f-971750a3dc71&#34;,
+    &#34;resourceTypeName&#34;: &#34;Observation&#34;,
+    &#34;isHistory&#34;: false,
+    &#34;isSystem&#34;: false,
+    &#34;lastModifiedClaims&#34;: [
+        {
+            &#34;Key&#34;: &#34;client_id&#34;,
+            &#34;Value&#34;: &#34;known-client-id&#34;
+        }
+    ],
+    &#34;version&#34;: &#34;1&#34;,
+    &#34;_rid&#34;: &#34;Nv4vAM5RawDsAAAAAAAAAA==&#34;,
+    &#34;_self&#34;: &#34;dbs/Nv4vAA==/colls/Nv4vAM5RawA=/docs/Nv4vAM5RawDsAAAAAAAAAA==/&#34;,
+    &#34;_etag&#34;: &#34;\&#34;00004401-0000-0000-0000-5b7df3d40000\&#34;&#34;,
+    &#34;_attachments&#34;: &#34;attachments/&#34;,
+    &#34;_ts&#34;: 1534981076
+}</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>I downloaded DynamoDB local to learn how to model for this case. I tried to model it as the way in cosmosdb. Later I found it is hard to filter data based on the some values in the list. Later I modelled it as map of map in  DynamoDB.</p>
@@ -370,7 +443,7 @@ if (!doNotTrack) {
 
 
   
-  <p style="font-size: small; color: grey;">Page version: f11bbefd1f5eb3bca3e5103a14d6bf939dd291d4 2024-04-06</p>
+  <p style="font-size: small; color: grey;">Page version: 929c967400580adc1a2fc1bfb8718687ec3ae2a0 2024-04-06</p>
 </body>
 
 </html>
