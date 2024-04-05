@@ -6,7 +6,18 @@
     <description>Recent content in Posts on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Apr 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Apr 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data modeling of FHIR searchindices in AWS dynamoDB</title>
+      <link>https://jackliusr.github.io/posts/2024/04/data-modeling-of-fhir-searchindices-in-aws-dynamodb/</link>
+      <pubDate>Fri, 05 Apr 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/04/data-modeling-of-fhir-searchindices-in-aws-dynamodb/</guid>
+      <description>Microsoft FHIR Server serialize searchindices this way in cosmosdb. How to model it in AWS DynamoDB?
+ I downloaded DynamoDB local to learn how to model for this case. I tried to model it as the way in cosmosdb. Later I found it is hard to filter data based on the some values in the list. Later I modelled it as map of map in DynamoDB.
+      After I completed this model, I was wondering why microsoft do that way.</description>
+    </item>
+    
     <item>
       <title>2 jsonschema tricks</title>
       <link>https://jackliusr.github.io/posts/2024/04/2-jsonschema-tricks/</link>
