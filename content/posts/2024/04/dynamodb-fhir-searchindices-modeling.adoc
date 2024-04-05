@@ -13,6 +13,83 @@ tags:
 
 Microsoft FHIR Server serialize https://github.com/microsoft/fhir-server/blob/main/docs/SearchArchitecture.md#persistence[searchindices] this way in cosmosdb. How to model it in AWS DynamoDB? 
 
+[source, json]
+----
+{
+    "id": "9240cda7-bbb7-4ad4-aa9f-971750a3dc71",
+    "searchIndices": [
+        {
+            "p": "_id",
+            "c": "9240cda7-bbb7-4ad4-aa9f-971750a3dc71"
+        },
+        {
+            "p": "_lastUpdated",
+            "st": "2018-08-22T23:37:56.1289012+00:00",
+            "et": "2018-08-22T23:37:56.1289012+00:00"
+        },
+        {
+            "p": "patient",
+            "r": "Patient/example"
+        },
+        {
+            "p": "performer",
+            "r": "Practitioner/example"
+        },
+        {
+            "p": "related",
+            "r_0": "Observation/example-genetics-1",
+            "s_1": "http://hl7.org/fhir/observation-relationshiptypes",
+            "c_1": "derived-from"
+        },
+        {
+            "p": "related-target",
+            "r": "Observation/example-genetics-1"
+        },
+        {
+            "p": "related-type",
+            "s": "http://hl7.org/fhir/observation-relationshiptypes",
+            "c": "derived-from"
+        },
+        {
+            "p": "status",
+            "s": "http://hl7.org/fhir/observation-status",
+            "c": "final"
+        },
+        {
+            "p": "subject",
+            "r": "Patient/example"
+        }
+    ],
+    "partitionKey": "Observation_9240cda7-bbb7-4ad4-aa9f-971750a3dc71",
+    "lastModified": "2018-08-22T23:37:56.1289012+00:00",
+    "rawResource": {
+        "data": "{\"resourceType\":\"Observation\",\"id\":\"9240cda7-bbb7-4ad4-aa9f-971750a3dc71\",\"text\":{\"status\":\"generated\",\"div\":\"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example-genetics-3</p><p><b>status</b>: final</p><p><b>code</b>: Further analysis <span>(Details )</span></p><p><b>subject</b>: <a>Molecular Lab Patient ID: HOSP-23456</a></p><p><b>issued</b>: 03/04/2013 3:30:10 PM</p><p><b>performer</b>: <a>Sequence Analysis Laboratory</a></p><p><b>comment</b>: The EGFR p.L858R mutation has been associated with response to anti-EGFR therapy</p><h3>Relateds</h3><table><tr><td>-</td><td><b>Type</b></td><td><b>Target</b></td></tr><tr><td>*</td><td>derived-from</td><td><a>ObservationForGenetics profile example 1</a></td></tr></table></div>\"},\"status\":\"final\",\"code\":{\"text\":\"Further analysis\"},\"subject\":{\"reference\":\"Patient/example\",\"display\":\"Molecular Lab Patient ID: HOSP-23456\"},\"issued\":\"2013-04-03T15:30:10+01:00\",\"performer\":[{\"reference\":\"Practitioner/example\",\"display\":\"Sequence Analysis Laboratory\"}],\"comment\":\"The EGFR p.L858R mutation has been associated with response to anti-EGFR therapy\",\"related\":[{\"type\":\"derived-from\",\"target\":{\"reference\":\"Observation/example-genetics-1\",\"display\":\"ObservationForGenetics profile example 1\"}}]}",
+        "format": "Json"
+    },
+    "request": {
+        "url": "https://localhost:44348/Observation",
+        "method": "POST"
+    },
+    "isDeleted": false,
+    "resourceId": "9240cda7-bbb7-4ad4-aa9f-971750a3dc71",
+    "resourceTypeName": "Observation",
+    "isHistory": false,
+    "isSystem": false,
+    "lastModifiedClaims": [
+        {
+            "Key": "client_id",
+            "Value": "known-client-id"
+        }
+    ],
+    "version": "1",
+    "_rid": "Nv4vAM5RawDsAAAAAAAAAA==",
+    "_self": "dbs/Nv4vAA==/colls/Nv4vAM5RawA=/docs/Nv4vAM5RawDsAAAAAAAAAA==/",
+    "_etag": "\"00004401-0000-0000-0000-5b7df3d40000\"",
+    "_attachments": "attachments/",
+    "_ts": 1534981076
+}
+----
+
 I downloaded DynamoDB local to learn how to model for this case. I tried to model it as the way in cosmosdb. Later I found it is hard to filter data based on the some values in the list. Later I modelled it as map of map in  DynamoDB.
 
 {{< imgur id="EJhcooC" >}}
