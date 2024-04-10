@@ -1,0 +1,16 @@
+---
+title: demo, run tikzjax from hugo
+date: 2024-04-10T18:10:00+08:00
+categories:
+- tech
+tags:
+- tikz
+---
+I tried to use tikz in my logseq. However it fails to render correctly. Today I have time to try it in my hugo sites. Here is a demo from https://tikzjax.com/
+
+
+{{< tikz >}}
+  \begin{tikzpicture}
+    \draw (0,0) circle (1in);
+  \end{tikzpicture}
+{{< /tikz >}}
