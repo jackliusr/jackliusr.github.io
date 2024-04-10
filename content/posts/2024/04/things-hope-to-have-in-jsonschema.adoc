@@ -1,0 +1,36 @@
+---
+title: Tools hope to have for JsonSchema
+date: 2024-04-010T160:10:00+08:00
+categories:
+- tech
+tags:
+- jsonschema
+- tool
+---
+
+When I was preparing a slides to recommend broad usage of JsonSchema, somethings I thought are good to have for general public usage. Those things troubled me for a while during I authored https://jackliusr.github.io/posts/2024/04/2-jsonschema-tricks/[a JsonSchema].
+
+== Versioning
+
+Currently there is no standard way how to define a version for a schema. I might use a version property for that. https://semver.org/[SemVer] is good fit for the version content schema. Use **if** and **else** for different version. however that one is not scale. Hope there is a good example to show how to model versioning in JsonScheam. 
+
+== Compatibility Checking
+
+Best efforts are needed to keep breaking changes miminal for systems evolution. I don't find tools for this as well in JsonSchema ecosystmes. https://buf.build/docs/tutorials/getting-started-with-buf-cli/)[Buf] from Protobuf ecosystem can detect breaking changes in Protobuf, later use "Protobuf to JSON-Schema compiler" to transpile to Json. This one is little hacky, a native one is preferred.
+
+== Validation
+
+It is quite easy to find validator to validate a json against a schema. A link page in jsonschema website will very helpful for schema authors. I wrote a schema and thought it in a good shape. However until I used it for intellisense, some autocompletions don't work. 
+
+== Troubleshooting
+
+Step by step debugging, logging  or generate a final version of json after recursively resolving all $refs and replace them with contents will be very helpful. 
+
+== Documentation
+
+Not all users are technically savvy or have a better tool to view json files. A html documentat generators will help a lot. It will be easy for more users to understand and use schemas. I tried several tools, all broke in one way or another way. Below are the tools I tried.
+
+. generate-schema-doc
+. https://github.com/tomcollins/json-schema-static-docs
+. adobe/jsonschema2md
+
