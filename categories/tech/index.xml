@@ -1615,5 +1615,15 @@ skaffold debug     Import ptvsd in the python file to debug, add breakout() befo
       <description>charge backSend Authorization RequestMerchant HandlingReceive Authorization RequestCard ValidationAccount VerificationFraud DetectionDecision MakingGenerate Authorization ResponseSend Authorization Responsemerchant/payment processorcard issuer system   </description>
     </item>
     
+    <item>
+      <title>Tools hope to have for JsonSchema</title>
+      <link>https://jackliusr.github.io/posts/1/01/tools-hope-to-have-for-jsonschema/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/1/01/tools-hope-to-have-for-jsonschema/</guid>
+      <description>When I was preparing a slides to recommend broad usage of JsonSchema, somethings I thought are good to have for general public usage. Those things troubled me for a while during I authored a JsonSchema.
+ Versioning Currently there is no standard way how to define a version for a schema. I might use a version property for that. SemVer is good fit for the version content schema. Use if and else for different version.</description>
+    </item>
+    
   </channel>
 </rss>

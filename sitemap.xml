@@ -8,7 +8,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2024-04-06T00:35:42+08:00</lastmod>
+    <lastmod>2024-04-10T17:18:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -33,22 +33,22 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2024-04-06T00:35:42+08:00</lastmod>
+    <lastmod>2024-04-10T17:18:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2024-04-06T00:35:42+08:00</lastmod>
+    <lastmod>2024-04-10T17:18:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2024-04-06T00:35:42+08:00</lastmod>
+    <lastmod>2024-04-10T17:18:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/tech/</loc>
-    <lastmod>2024-04-06T00:35:42+08:00</lastmod>
+    <lastmod>2024-04-10T17:18:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -58,7 +58,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/jsonschema/</loc>
-    <lastmod>2024-04-04T23:44:18+08:00</lastmod>
+    <lastmod>2024-04-10T17:18:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -2348,6 +2348,16 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/series/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/tool/</loc>
+    <lastmod>2024-04-10T17:18:41+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/1/01/tools-hope-to-have-for-jsonschema/</loc>
+    <lastmod>2024-04-10T17:18:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
