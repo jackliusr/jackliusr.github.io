@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tikz on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/tikz/</link>
+    <description>Recent content in tikz on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 Apr 2024 18:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/tikz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>demo, run tikzjax from hugo</title>
+      <link>https://jackliusr.github.io/posts/2024/04/demo-run-tikzjax-from-hugo/</link>
+      <pubDate>Wed, 10 Apr 2024 18:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/04/demo-run-tikzjax-from-hugo/</guid>
+      <description>I tried to use tikz in my logseq. However it fails to render correctly. Today I have time to try it in my hugo sites. Here is a demo from https://tikzjax.com/
+  \begin{tikzpicture} \draw (0,0) circle (1in); \end{tikzpicture} )   </description>
+    </item>
+    
+  </channel>
+</rss>

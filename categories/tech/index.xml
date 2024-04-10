@@ -6,7 +6,17 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Apr 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Apr 2024 18:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>demo, run tikzjax from hugo</title>
+      <link>https://jackliusr.github.io/posts/2024/04/demo-run-tikzjax-from-hugo/</link>
+      <pubDate>Wed, 10 Apr 2024 18:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/04/demo-run-tikzjax-from-hugo/</guid>
+      <description>I tried to use tikz in my logseq. However it fails to render correctly. Today I have time to try it in my hugo sites. Here is a demo from https://tikzjax.com/
+  \begin{tikzpicture} \draw (0,0) circle (1in); \end{tikzpicture} )   </description>
+    </item>
+    
     <item>
       <title>Data modeling of FHIR searchindices in AWS dynamoDB</title>
       <link>https://jackliusr.github.io/posts/2024/04/data-modeling-of-fhir-searchindices-in-aws-dynamodb/</link>
