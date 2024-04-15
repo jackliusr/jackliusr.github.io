@@ -6,7 +6,70 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Apr 2024 18:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Apr 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>athena</title>
+      <link>https://jackliusr.github.io/tags/athena/</link>
+      <pubDate>Mon, 15 Apr 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/athena/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aws</title>
+      <link>https://jackliusr.github.io/tags/aws/</link>
+      <pubDate>Mon, 15 Apr 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://jackliusr.github.io/tags/docker/</link>
+      <pubDate>Mon, 15 Apr 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dynamodb</title>
+      <link>https://jackliusr.github.io/tags/dynamodb/</link>
+      <pubDate>Mon, 15 Apr 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/dynamodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>glue</title>
+      <link>https://jackliusr.github.io/tags/glue/</link>
+      <pubDate>Mon, 15 Apr 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/glue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iceberg</title>
+      <link>https://jackliusr.github.io/tags/iceberg/</link>
+      <pubDate>Mon, 15 Apr 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/iceberg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pyspark</title>
+      <link>https://jackliusr.github.io/tags/pyspark/</link>
+      <pubDate>Mon, 15 Apr 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/pyspark/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>tikz</title>
       <link>https://jackliusr.github.io/tags/tikz/</link>
@@ -17,29 +80,11 @@
     </item>
     
     <item>
-      <title>aws</title>
-      <link>https://jackliusr.github.io/tags/aws/</link>
-      <pubDate>Fri, 05 Apr 2024 20:10:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/aws/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>data-modeling</title>
       <link>https://jackliusr.github.io/tags/data-modeling/</link>
       <pubDate>Fri, 05 Apr 2024 20:10:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/data-modeling/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DynamoDB</title>
-      <link>https://jackliusr.github.io/tags/dynamodb/</link>
-      <pubDate>Fri, 05 Apr 2024 20:10:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/dynamodb/</guid>
       <description></description>
     </item>
     
@@ -814,15 +859,6 @@
       <pubDate>Thu, 08 Jun 2023 20:01:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/uml/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://jackliusr.github.io/tags/docker/</link>
-      <pubDate>Tue, 23 May 2023 20:01:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/docker/</guid>
       <description></description>
     </item>
     

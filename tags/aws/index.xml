@@ -6,7 +6,17 @@
     <description>Recent content in aws on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Apr 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Apr 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Run athena and pyspark locally</title>
+      <link>https://jackliusr.github.io/posts/2024/04/run-athena-and-pyspark-locally/</link>
+      <pubDate>Mon, 15 Apr 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/04/run-athena-and-pyspark-locally/</guid>
+      <description>Best practice or &amp;#34;aws configure&amp;#34; will put ~/.aws/config and ~/.aws/credentials in the 600 mode. however if you follow Developing using a Docker image, you will get several errors e.g. cant&amp;#39; find region, reach endpoints, or no access to resources.
+ I run docker command as a normal user, docker daemon run as root user. The below scripts will run a docker image which default user is glue_user (10000). the mounted volume ~/.</description>
+    </item>
+    
     <item>
       <title>Data modeling of FHIR searchindices in AWS dynamoDB</title>
       <link>https://jackliusr.github.io/posts/2024/04/data-modeling-of-fhir-searchindices-in-aws-dynamodb/</link>

@@ -2,32 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2024-04-10T19:39:45+08:00</lastmod>
+    <loc>https://jackliusr.github.io/tags/athena/</loc>
+    <lastmod>2024-04-15T21:14:05+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/posts/2024/04/demo-run-tikzjax-from-hugo/</loc>
-    <lastmod>2024-04-10T19:39:45+08:00</lastmod>
+    <loc>https://jackliusr.github.io/tags/aws/</loc>
+    <lastmod>2024-04-15T21:14:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/categories/</loc>
+    <lastmod>2024-04-15T21:14:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/docker/</loc>
+    <lastmod>2024-04-15T21:14:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/dynamodb/</loc>
+    <lastmod>2024-04-15T21:14:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/glue/</loc>
+    <lastmod>2024-04-15T21:14:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/iceberg/</loc>
+    <lastmod>2024-04-15T21:14:05+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2024-04-10T19:39:45+08:00</lastmod>
+    <lastmod>2024-04-15T21:14:05+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2024-04-10T19:39:45+08:00</lastmod>
+    <lastmod>2024-04-15T21:14:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/pyspark/</loc>
+    <lastmod>2024-04-15T21:14:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2024/04/run-athena-and-pyspark-locally/</loc>
+    <lastmod>2024-04-15T21:14:05+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2024-04-10T19:39:45+08:00</lastmod>
+    <lastmod>2024-04-15T21:14:05+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/tech/</loc>
+    <lastmod>2024-04-15T21:14:05+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2024/04/demo-run-tikzjax-from-hugo/</loc>
     <lastmod>2024-04-10T19:39:45+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -37,22 +77,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/tags/aws/</loc>
-    <lastmod>2024-04-06T00:35:42+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://jackliusr.github.io/posts/2024/04/data-modeling-of-fhir-searchindices-in-aws-dynamodb/</loc>
     <lastmod>2024-04-06T00:35:42+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/data-modeling/</loc>
-    <lastmod>2024-04-06T00:35:42+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/dynamodb/</loc>
     <lastmod>2024-04-06T00:35:42+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -669,11 +699,6 @@
   </url><url>
     <loc>https://jackliusr.github.io/tags/uml/</loc>
     <lastmod>2023-06-26T23:00:22+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/docker/</loc>
-    <lastmod>2023-05-23T20:36:51+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
