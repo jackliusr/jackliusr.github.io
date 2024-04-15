@@ -1,0 +1,43 @@
+---
+title: Run athena and pyspark locally
+date: 2024-04-15T20:10:00+08:00
+categories:
+- tech
+tags:
+- aws
+- athena
+- docker
+- glue
+- pyspark
+- dynamodb
+- iceberg
+---
+
+Best practice or "aws configure" will put ~/.aws/config and ~/.aws/credentials in the 600 mode. however if you follow https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-libraries.html#develop-local-docker-image[Developing using a Docker image], you will get several errors e.g. cant' find region, reach endpoints, or no access to resources. 
+
+I run docker command as a normal user, docker daemon run as root user. The below scripts will run a docker image which default user is glue_user (10000). the mounted volume ~/.aws will be the user 1000. This wil make the files at /home/glue_user/.aws inaccessible to glue_user
+
+[source, bash]
+----
+$ docker run -it -v ~/.aws:/home/glue_user/.aws \
+-v $WORKSPACE_LOCATION:/home/glue_user/workspace/ 
+-e AWS_PROFILE=$PROFILE_NAME -e DISABLE_SSL=true --rm -p 4040:4040 -p 18080:18080 \
+--name glue_spark_submit amazon/aws-glue-libs:glue_libs_4.0.0_image_01 \
+spark-submit /home/glue_user/workspace/src/$SCRIPT_FILE_NAME
+----
+
+After I searched solutions from github, stackoverflow and asked chatgpt, no one works for me. I run into the container and finally found out the permission issue. 
+
+[source, bash]
+----
+$ docker run -it -v ~/.aws:/home/glue_user/.aws \
+-v $WORKSPACE_LOCATION:/home/glue_user/workspace/ \
+-e AWS_PROFILE=$PROFILE_NAME -e DISABLE_SSL=true --rm -p 4040:4040 -p 18080:18080 \
+--entrypoint bash \
+--name glue_spark_submit amazon/aws-glue-libs:glue_libs_4.0.0_image_01 
+
+ls -laht ~/.aws
+id
+----
+
+As the root cause is found out, it is quite easy to fix the issue. One is a customized image with credentials under the folder ~/.aws. Another one is changing mode of files under ~/.aws to 644. The two approaches are not best practices, however for option two, my WSL is only used by me. It is okay for me to do that way. 
