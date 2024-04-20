@@ -14,7 +14,7 @@
       
       <guid>https://jackliusr.github.io/posts/2024/04/mindmap-in-hugo/</guid>
       <description>I used mindmap in my logseq, however it show left to right side, the start node is always at the left side. I prefer to have the main concept shown in the center. Jsmind is the perfect fit after I saw its demos. Here is I create a shortcode in my hugo and try to create a demo mindmap using jsmind.
-   var mind = { &#34;{\&#34;meta\&#34;:{\&#34;name\&#34;:\&#34;example\&#34;,\&#34;author\&#34;:\&#34;hizzgdev@163.com\&#34;,\&#34;version\&#34;:\&#34;0.2\&#34;},\&#34;format\&#34;:\&#34;node_array\&#34;,\&#34;data\&#34;:[{\&#34;id\&#34;:\&#34;root\&#34;,\&#34;isroot\&#34;:true,\&#34;topic\&#34;:\&#34;jsMind\&#34;},{\&#34;id\&#34;:\&#34;easy\&#34;,\&#34;parentid\&#34;:\&#34;root\&#34;,\&#34;topic\&#34;:\&#34;Easy\&#34;,\&#34;direction\&#34;:\&#34;left\&#34;},{\&#34;id\&#34;:\&#34;easy1\&#34;,\&#34;parentid\&#34;:\&#34;easy\&#34;,\&#34;topic\&#34;:\&#34;Easy to show\&#34;</description>
+   var mind = { &#34;\&#34;meta\&#34;:{\&#34;name\&#34;:\&#34;example\&#34;,\&#34;author\&#34;:\&#34;hizzgdev@163.com\&#34;,\&#34;version\&#34;:\&#34;0.2\&#34;},\&#34;format\&#34;:\&#34;node_array\&#34;,\&#34;data\&#34;:[{\&#34;id\&#34;:\&#34;root\&#34;,\&#34;isroot\&#34;:true,\&#34;topic\&#34;:\&#34;jsMind\&#34;},{\&#34;id\&#34;:\&#34;easy\&#34;,\&#34;parentid\&#34;:\&#34;root\&#34;,\&#34;topic\&#34;:\&#34;Easy\&#34;,\&#34;direction\&#34;:\&#34;left\&#34;},{\&#34;id\&#34;:\&#34;easy1\&#34;,\&#34;parentid\&#34;:\&#34;easy\&#34;,\&#34;topic\&#34;:\&#34;Easy to show\&#34;</description>
     </item>
     
     <item>
@@ -1613,7 +1613,7 @@ skaffold debug     Import ptvsd in the python file to debug, add breakout() befo
       
       <guid>https://jackliusr.github.io/posts/2019/01/twilio-call-status-statechart/</guid>
       <description>I was not familiar with SIP states during the integration of VoIP products such as twilio, plivo and sinch. I am still confused about the state changes after reading documents. Here try to visualize the state change and help me to remember it. The state chart is based on my understanding. It is not necessarily correct. It is just for my reference.
- QueuedInitiatedRingingAnsweredInProgressCompletedBusyNoAnswerCanceledFailed   </description>
+ Class01Class02Class03Class04Class05Class06Class07Class08Class09Class10   </description>
     </item>
     
     <item>

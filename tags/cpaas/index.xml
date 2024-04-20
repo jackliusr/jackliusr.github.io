@@ -14,7 +14,7 @@
       
       <guid>https://jackliusr.github.io/posts/2019/01/twilio-call-status-statechart/</guid>
       <description>I was not familiar with SIP states during the integration of VoIP products such as twilio, plivo and sinch. I am still confused about the state changes after reading documents. Here try to visualize the state change and help me to remember it. The state chart is based on my understanding. It is not necessarily correct. It is just for my reference.
- QueuedInitiatedRingingAnsweredInProgressCompletedBusyNoAnswerCanceledFailed   </description>
+ Class01Class02Class03Class04Class05Class06Class07Class08Class09Class10   </description>
     </item>
     
   </channel>
