@@ -4,7 +4,7 @@
 
 <div id="{{$id}}"></div>
 <script type="text/javascript">
-    var mind = {  {{ .Inner }}  };
+    var mind = {  {{ .Inner | safeHTML  }}  };
     var options = {
         container:'{{$id}}',
         editable:true,
