@@ -1,0 +1,16 @@
+<link type="text/css" rel="stylesheet" href="https://unpkg.com/jsmind@0.8.3/style/jsmind.css" />
+<script type="text/javascript" src="https://unpkg.com/jsmind@0.8.3/es6/jsmind.js"></script>
+{{ $id := substr (md5 .Inner) 0 16 }}
+
+<div id="{{$id}}"></div>
+<script type="text/javascript">
+    var mind = {  {{ .Inner }}  };
+    var options = {
+        container:'{{$id}}',
+        editable:true,
+        theme:'orange'
+    };
+    var jm = new jsMind(options);
+    // show it
+    jm.show(mind);
+</script>
