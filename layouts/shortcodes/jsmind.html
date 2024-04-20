@@ -3,8 +3,12 @@
 {{ $id := substr (md5 .Inner) 0 16 }}
 
 <div id="{{$id}}"></div>
+<div id="{{$id}}-data" style="display: none;">
+    {{ .Inner | jsonify  }}
+</div>
 <script type="text/javascript">
-    var mind = {  {{ .Inner | jsonify  }}  };
+    document.addEventListener('DOMContentLoaded', function() {
+    const mind = JSON.parse(document.getElementById('{{$id}}-data').textContent);
     var options = {
         container:'{{$id}}',
         editable:true,
@@ -13,4 +17,5 @@
     var jm = new jsMind(options);
     // show it
     jm.show(mind);
+});
 </script>
