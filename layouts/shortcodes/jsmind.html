@@ -4,7 +4,7 @@
 
 <div id="{{$id}}"></div>
 <script type="text/javascript">
-    var mind = {  {{ .Inner | safeHTML  }}  };
+    var mind = {  {{ .Inner | jsonify  }}  };
     var options = {
         container:'{{$id}}',
         editable:true,
