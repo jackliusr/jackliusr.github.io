@@ -1646,6 +1646,15 @@ skaffold debug     Import ptvsd in the python file to debug, add breakout() befo
     </item>
     
     <item>
+      <title>SaaS, token bucket, fairness and business practices</title>
+      <link>https://jackliusr.github.io/posts/1/01/saas-token-bucket-fairness-and-business-practices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/1/01/saas-token-bucket-fairness-and-business-practices/</guid>
+      <description>I always thought SaaS are based shardig, load balance and multiple-tenant. In the past several days, I re-read Dynamo and DynamoDB papers to figure out some key info to share with my colleages to find a common ground about DynamoDB. One thing is mentioned many times in DynamoDB is token-bucket. Suddenly a thought popped out my mind when I walked back after lunch with my colleague that token-bucket algorithm should be a component of SaaS and multiple-tenant.</description>
+    </item>
+    
+    <item>
       <title>Tools hope to have for JsonSchema</title>
       <link>https://jackliusr.github.io/posts/1/01/tools-hope-to-have-for-jsonschema/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
