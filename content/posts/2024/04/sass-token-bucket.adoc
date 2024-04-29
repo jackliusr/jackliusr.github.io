@@ -1,0 +1,17 @@
+---
+title: SaaS, token bucket, fairness and business practices
+date: 2024-04-29T160:10:00+08:00
+categories:
+- tech
+tags:
+- SaaS
+- token-bucket
+- DynamoDB
+- aws
+- Dynamo
+---
+
+I always thought SaaS are based shardig, load balance and multiple-tenant. In the past several days, I re-read https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf[Dynamo] and https://www.usenix.org/system/files/atc22-elhemali.pdf[DynamoDB] papers to figure out some key info to share with my colleages to find a common ground about DynamoDB. One thing is mentioned many times in https://www.usenix.org/system/files/atc22-elhemali.pdf[DynamoDB] is token-bucket. Suddenly a thought popped out my mind when I walked back after lunch with my colleague that token-bucket algorithm should be a component of SaaS and multiple-tenant. Is the fairness of token-bucket against business practice? 
+
+Considering most SaaS charging mode is per-user based, those performance should be fair to users. Big customers have bargain powers to ask for something. Considering the news that AWS give discounts to its big customers and other similar news, I think the more practical way might be giving discounts to big customers.
+
