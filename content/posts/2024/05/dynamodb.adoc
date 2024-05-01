@@ -24,6 +24,6 @@ I am passionate about technological details and how things work under the hood. 
 {{< imgur id="Jzul17t" >}}
 
 
-I always put all of the three pictures into a slides and put refereneres at the last slides. 
+I also put all of the three pictures into a slides and put refereneres at the last slides. 
 
 https://docs.google.com/presentation/d/1ccbSC5CLhiLXyZG9NXiH0DjFbG0CqN-01xyOvWASEKE/edit?usp=sharing[my slides]
