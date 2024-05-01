@@ -1,0 +1,29 @@
+---
+title: DynamoDB predictable performance
+date: 2024-05-01T20:10:00+08:00
+categories:
+- tech
+tags:
+- aws
+- DynamoDB
+---
+
+I am passionate about technological details and how things work under the hood. Recently I didn't get confirmative answers from AWS. I spent a half day to re-read the famous https://www.amazon.science/publications/dynamo-amazons-highly-available-key-value-store[paper]. and the new one https://www.amazon.science/publications/amazon-dynamodb-a-scalable-predictably-performant-and-fully-managed-nosql-database-service[Amazon DynamoDB: A Scalable, Predictably Performant, and Fully Managed NoSQL Database Service]. I think the following several concepts can be helpful to under its predictable performance.
+
+
+== Consistent Hashing  and zero hop DHT
+
+{{< imgur id="EmKioeR" >}}
+
+== storage node and 10G partition
+
+{{< imgur id="Hy6e5YQ" >}}
+
+== Typical flow of putItem
+
+{{< imgur id="Jzul17t" >}}
+
+
+I always put all of the three pictures into a slides and put refereneres at the last slides. 
+
+https://docs.google.com/presentation/d/1ccbSC5CLhiLXyZG9NXiH0DjFbG0CqN-01xyOvWASEKE/edit?usp=sharing[my slides]
