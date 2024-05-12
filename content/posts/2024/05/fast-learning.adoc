@@ -1,0 +1,23 @@
+---
+title: Accelerated learning in a new era with AGI
+date: 2024-05-12T20:10:00+08:00
+categories:
+- tech
+tags:
+- Accelerated-learning
+- learning
+- chatgpt
+- 2nd-brain
+- daily-logging
+- flashcard
+- spaced-repetition
+---
+
+It is about three months now. I make reflections on things I have done well and bad. I will refine my learning workflow. 
+
+In the past, I used  2nd-brain, daily-logging, flashcard and spaced-repetition systems to help to accelerate my learning under the circumstance that I can't get fully complete information from different stake holders. I was left with only way to find it out by myself. I read all material I thought will be useful and noted them down in my logseq vault. The overall results I thought is quite okay considering I was activelly involved in about 6 projects. Is there any better way than that in the era of AGI?
+
+
+Today I read some articles about mckinsey ways to keep up with information. I should adopt some strategies from that and using chatgpt. Given all the stakeholders are willingly helpful, my old strategy still is helpful. One should do one's own due dilience check, deepen and digest the information I got.
+
+The bad part, I don't follow the way of mckinsey. I think mckinsey way will help me to quickly get exposed to all the information I need to complete my daily job. 
