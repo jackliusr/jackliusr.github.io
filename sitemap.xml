@@ -2,12 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jackliusr.github.io/tags/aws/</loc>
-    <lastmod>2024-05-01T21:52:36+08:00</lastmod>
+    <loc>https://jackliusr.github.io/tags/2nd-brain/</loc>
+    <lastmod>2024-05-12T22:36:58+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2024/05/accelerated-learning-in-a-new-era-with-agi/</loc>
+    <lastmod>2024-05-12T22:36:58+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/accelerated-learning/</loc>
+    <lastmod>2024-05-12T22:36:58+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/</loc>
+    <lastmod>2024-05-12T22:36:58+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/chatgpt/</loc>
+    <lastmod>2024-05-12T22:36:58+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/daily-logging/</loc>
+    <lastmod>2024-05-12T22:36:58+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/flashcard/</loc>
+    <lastmod>2024-05-12T22:36:58+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/learning/</loc>
+    <lastmod>2024-05-12T22:36:58+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/</loc>
+    <lastmod>2024-05-12T22:36:58+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/</loc>
+    <lastmod>2024-05-12T22:36:58+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/spaced-repetition/</loc>
+    <lastmod>2024-05-12T22:36:58+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/</loc>
+    <lastmod>2024-05-12T22:36:58+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/categories/tech/</loc>
+    <lastmod>2024-05-12T22:36:58+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/aws/</loc>
     <lastmod>2024-05-01T21:52:36+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -18,26 +78,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/2024/05/dynamodb-predictable-performance/</loc>
-    <lastmod>2024-05-01T21:52:36+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2024-05-01T21:52:36+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2024-05-01T21:52:36+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2024-05-01T21:52:36+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/categories/tech/</loc>
     <lastmod>2024-05-01T21:52:36+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -224,11 +264,6 @@
   </url><url>
     <loc>https://jackliusr.github.io/posts/2024/03/should-i-use-.netrc-for-git-authentication/</loc>
     <lastmod>2024-03-09T20:57:20+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/chatgpt/</loc>
-    <lastmod>2024-03-02T22:42:27+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
