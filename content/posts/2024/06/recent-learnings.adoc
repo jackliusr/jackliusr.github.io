@@ -1,0 +1,55 @@
+---
+title: Recent learnings in dotnet and FHIR
+date: 2024-06-12T20:10:00+08:00
+categories:
+- tech
+tags:
+- dotnet
+- healthtech
+- fhir
+---
+
+In the past several months, I called it quite intensive. I need to master the knowledge of FHIR, advanced dotnet technologies (attributes, generator, reflection, code emit,  expression tree, advanced linq, customized aspnet pipeline, nuget package), code optimization technologies and several aws technologies (https://jackliusr.github.io/posts/2024/05/dynamodb-predictable-performance/[DynamoDB], S3, glue, spark) in depth to meet the schedule of a project. You really can't account on solution architects or support engineers from cloud providers. I don't get one perfect answers from them so far when I used their services. I had learnt following things. 
+
+== Advanced dotnet technologies
+
+- Custom attributes: How to create custom attributes and generic custom attributes, How to use reflection to do biz logic processing, even for code generation using generator of roslyn.
+
+- Reflection: Using Type and System.Reflection to do dynamic component configurations based on interfaces. To archive flexibilty in frameworks.
+
+- Customized aspnet pipeline: Custom IResult type with own `ExecuteAsync` and implements plugin mechanism
+
+- Expression tree: I used expression tree in the past to achive little flexibilty into code. Now get it into more complex cases i.e. involving generic. It is so hard to understand that I now use `ReadableExpressions` for that.
+
+- Advanced LINQ: new APIs and dynamic LINQ
+
+- Code Emit: I am still learning. It go deep to IL level. Quite a lot of things to learn. I put it on last thing I should learn. 
+
+- nuget package:
+
+- Roslyn Generator: https://github.com/dotnet/roslyn/blob/main/docs/features/incremental-generators.md[IIncrementalGenerator]
+ and https://learn.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/source-generators-overview#get-started-with-source-generators[ISourceGenerator]
+
+- Custom diagnostics (analyzers), code fixes, code refactoring, and diagnostic suppressors: not compelling enough for me to use it now. It definely in my list. 
+
+- Project template: Create a project templates with options. 
+
+- nuget package: how to pack libraries, how to setup local feed for testing etc.
+
+- several performance tips in dotnet: 
+
+* Compile-time logging source generation 
+* .NET regular expression source generators
+* ArgumentNullException.ThrowIfNull
+
+== FHIR System
+
+HL7 FHIR is a standard, there are several open source implemeations. I studied https://github.com/hapifhir/hapi-fhir[hapi], https://github.com/microsoft/fhir-server[fhir-server] and https://github.com/aws-solutions/fhir-works-on-aws[fhir-works-on-aws] for better understanding FHIR.  Beside the open source implementation, the content of FHIR standard is huge, I only mastered the level 1, 2 (most), 3 (Patient, Organization, Device). Will learn other part after I complete my main tasks.
+
+== AWS
+
+* https://jackliusr.github.io/posts/2024/05/dynamodb-predictable-performance/[DynamoDB], I think I am quite an expert on it now. I read all the doc of it, I noted down all the quota and limits in my personal knowledge management system logseq. I read two papers of its architecture and design of it.
+
+* Glue: Basically I used all of its features (crawler, job, spark, iceberg). Considering it will be the backbone of lakehouse, I will spend sometime on it later if I am free.
+
+* S3: Finally I got the terms (bucket, key prefix and object name) right and understood the performance implication of keys. 
