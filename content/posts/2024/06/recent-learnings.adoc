@@ -46,6 +46,12 @@ In the past several months, I called it quite intensive. I need to master the kn
 
 HL7 FHIR is a standard, there are several open source implemeations. I studied https://github.com/hapifhir/hapi-fhir[hapi], https://github.com/microsoft/fhir-server[fhir-server] and https://github.com/aws-solutions/fhir-works-on-aws[fhir-works-on-aws] for better understanding FHIR.  Beside the open source implementation, the content of FHIR standard is huge, I only mastered the level 1, 2 (most), 3 (Patient, Organization, Device). Will learn other part after I complete my main tasks.
 
+* FHIR
+* Firely SDK
+* microsoft/fhir-serve
+* hapi
+* fhir-works-on-aws
+
 == AWS
 
 * https://jackliusr.github.io/posts/2024/05/dynamodb-predictable-performance/[DynamoDB], I think I am quite an expert on it now. I read all the doc of it, I noted down all the quota and limits in my personal knowledge management system logseq. I read two papers of its architecture and design of it.
