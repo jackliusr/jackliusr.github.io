@@ -59,3 +59,8 @@ HL7 FHIR is a standard, there are several open source implemeations. I studied h
 * Glue: Basically I used all of its features (crawler, job, spark, iceberg). Considering it will be the backbone of lakehouse, I will spend sometime on it later if I am free.
 
 * S3: Finally I got the terms (bucket, key prefix and object name) right and understood the performance implication of keys. 
+
+
+== Conclusion
+
+The intensive learning is rewarding, so far I learnt above things. The most important thing I learnt should be regular self reflection and self improvement based on those reflections. I practices daily log following the way https://www.buildingasecondbrain.com/book[Building a second brain]. I will practice https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299[atomic habbits] to make those reflection and self-improvement stick. 
