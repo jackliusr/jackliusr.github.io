@@ -8,6 +8,18 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 12 Jun 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>MACH (micro service based, API first, cloud native, headless)</title>
+      <link>https://jackliusr.github.io/posts/2024/06/mach-micro-service-based-api-first-cloud-native-headless/</link>
+      <pubDate>Wed, 12 Jun 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/06/mach-micro-service-based-api-first-cloud-native-headless/</guid>
+      <description>Just an architecture style MACH got me attention. It is short for micro service based, API first, cloud native, headless. There are two of projects I involved one are in this architecture style. One is sitecore based, another one is developed. Kubernetes, nodejs, npm, strapi tsoa are used. Their mapping is as following.
+   micro services based: multiple services based on expressjs
+  api first: tsao
+  cloud native: more advanced than cloud native, kubernate native is used.</description>
+    </item>
+    
+    <item>
       <title>Recent learnings in dotnet and FHIR</title>
       <link>https://jackliusr.github.io/posts/2024/06/recent-learnings-in-dotnet-and-fhir/</link>
       <pubDate>Wed, 12 Jun 2024 20:10:00 +0800</pubDate>

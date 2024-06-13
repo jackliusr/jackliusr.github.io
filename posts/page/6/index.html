@@ -168,6 +168,23 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2023/04/filter-data-conditionally-using-power-query/" class="link black dim">
+        filter data conditionally using power-query
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      2 days ago, I didn’t figure out how to filter out data using power-query. I used a workaround solution to achive the same goal. Yesteray I occasionally found that I can filter out data directly without using my workaround solutions.
+   Table.SelectRows
+Table.SelectRows( Table.FromRecords({ [CustomerID = 1, Name = &#34;Bob&#34;, Phone = &#34;123-4567&#34;], [CustomerID = 2, Name = &#34;Jim&#34;, Phone = &#34;987-6543&#34;], [CustomerID = 3, Name = &#34;Paul&#34;, Phone = &#34;543-7890&#34;], [CustomerID = 4, Name = &#34;Ringo&#34;, Phone = &#34;232-1550&#34;] }), each ( [CustomerID] &gt; 2 and Text.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2023/04/subdomain-or-path-for-dev/stage/uat-environments/" class="link black dim">
         Subdomain or path for dev/stage/uat environments
       </a>
@@ -319,21 +336,6 @@ if (!doNotTrack) {
 </div>
 </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2023/01/cloud-migrations-cloud-differences/" class="link black dim">
-        cloud migrations, cloud differences
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      AWS has almost established themselves as the de facto public cloud provider for a lot of businesses, other providers always try to provide similiar services and similar APIs to attract existing AWS customers to migrate to their platform. Each following provider provides similar comparison table comparing to AWS. Those comparison can give one a quick start to adopt their services without major issues. Even those following providers provide migration tools for migrating from aws to their platform.
-    </div>
-  </div>
-</div>
-</div>
-      
     </section>
     <ul class="pagination pagination-default">
       <li class="page-item">
@@ -361,7 +363,7 @@ if (!doNotTrack) {
         <a href="/posts/page/7/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="/posts/page/16/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/posts/page/17/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul></article>
 
