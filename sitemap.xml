@@ -8,12 +8,12 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2024-06-13T20:29:02+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/dotnet/</loc>
-    <lastmod>2024-06-13T00:02:09+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -38,12 +38,12 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2024-06-13T20:29:02+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2024-06-13T20:29:02+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -53,12 +53,12 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2024-06-13T20:29:02+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/tech/</loc>
-    <lastmod>2024-06-13T20:29:02+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -223,7 +223,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/kubernetes/</loc>
-    <lastmod>2024-03-29T01:11:53+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -278,12 +278,12 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/.netrc/</loc>
-    <lastmod>2024-03-09T20:57:20+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/git/</loc>
-    <lastmod>2024-03-09T20:57:20+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -493,7 +493,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/linux/</loc>
-    <lastmod>2023-12-22T20:53:57+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -703,22 +703,17 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/asp.net/</loc>
-    <lastmod>2023-07-30T22:42:17+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/dotnet-core/</loc>
-    <lastmod>2023-07-30T22:42:17+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/identity/</loc>
-    <lastmod>2023-07-30T22:42:17+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/2023/07/scaffold-identity-into-an-mvc-project-without-existing-authorization/</loc>
-    <lastmod>2023-07-30T22:42:17+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -978,12 +973,12 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/argo-cd/</loc>
-    <lastmod>2023-02-01T17:41:26+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/cicd/</loc>
-    <lastmod>2023-02-01T17:41:26+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -1093,7 +1088,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/gitops/</loc>
-    <lastmod>2023-01-14T00:21:41+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -1542,18 +1537,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/tags/aspnet/</loc>
-    <lastmod>2022-07-21T21:50:42+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://jackliusr.github.io/posts/2022/07/set-timezone-in-asp.net-6.0-in-linux-container/</loc>
-    <lastmod>2022-07-21T21:50:42+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/timezone/</loc>
-    <lastmod>2022-07-21T21:50:42+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -1637,18 +1627,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/tags/argo-workflow/</loc>
-    <lastmod>2022-06-11T23:22:19+08:00</lastmod>
+    <loc>https://jackliusr.github.io/tags/argo-workflows/</loc>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/jenkins/</loc>
-    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/2022/06/reflection-on-my-choice-of-cicd-in-the-past/</loc>
-    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -1688,12 +1678,12 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/ecosystem/</loc>
-    <lastmod>2022-06-03T09:19:00+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/2022/06/reflection-on-kubernete-usage/</loc>
-    <lastmod>2022-06-03T09:19:00+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -1777,6 +1767,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://jackliusr.github.io/tags/argo-workflow/</loc>
+    <lastmod>2022-05-31T17:12:50+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://jackliusr.github.io/posts/2022/05/projected-volumes-in-argo-workflow/</loc>
     <lastmod>2022-05-31T17:12:50+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -1817,23 +1812,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/tags/argo-workflows/</loc>
-    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://jackliusr.github.io/posts/2022/05/reflection-on-implementation-of-cicd-using-argo-workflows/</loc>
     <lastmod>2022-06-11T22:38:32+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/2022/05/argo-workflow-secrets-for-git/</loc>
-    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/secret/</loc>
-    <lastmod>2022-06-11T22:38:32+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -1908,22 +1898,22 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/2022/05/argo-workflows-generate-dynamic-json-list/</loc>
-    <lastmod>2022-06-11T23:22:19+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/jq/</loc>
-    <lastmod>2022-06-11T23:22:19+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/python/</loc>
-    <lastmod>2022-06-11T23:22:19+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/recipe/</loc>
-    <lastmod>2022-06-11T23:22:19+08:00</lastmod>
+    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>

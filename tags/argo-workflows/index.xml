@@ -6,7 +6,18 @@
     <description>Recent content in argo-workflows on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 May 2022 20:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/argo-workflows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Jun 2022 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/argo-workflows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reflection on my choice of cicd in the past</title>
+      <link>https://jackliusr.github.io/posts/2022/06/reflection-on-my-choice-of-cicd-in-the-past/</link>
+      <pubDate>Fri, 10 Jun 2022 20:01:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/06/reflection-on-my-choice-of-cicd-in-the-past/</guid>
+      <description>TLDR: my CICD choice: argo-cd and argo-workflow
+Since I chose argocd and github action as our CICD pipeline two years ago, I rarely thought about other choices and the reason I made the choices. Recently I leant from several sources that jenkins is still widely used, it arouse my interest on this subject again. I reconsidered my choice and layed out the reasons here for my future references.
+I didn&amp;rsquo;t have a good impression with java in my past java projects.</description>
+    </item>
+    
     <item>
       <title>Reflection on implementation of CICD using argo-workflows</title>
       <link>https://jackliusr.github.io/posts/2022/05/reflection-on-implementation-of-cicd-using-argo-workflows/</link>
@@ -15,6 +26,26 @@
       <guid>https://jackliusr.github.io/posts/2022/05/reflection-on-implementation-of-cicd-using-argo-workflows/</guid>
       <description>I had some projects on github, gitlab and gitee. Their CI pipelines are quite different. To save the troubles and times, it is a natural choice to seek other options to unify on one solution.
  At first, I looked into jenkins x. However it is quite heavy and with opinions. Considering its Maturity Level Matrix, I am not sure I can make it happen in my limited after hours times.</description>
+    </item>
+    
+    <item>
+      <title>argo-workflow: secrets for git</title>
+      <link>https://jackliusr.github.io/posts/2022/05/argo-workflow-secrets-for-git/</link>
+      <pubDate>Sat, 21 May 2022 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/05/argo-workflow-secrets-for-git/</guid>
+      <description>I needed to clone one of my private repositories in one workflow of argo-workflows. I did’t figure a way to mount git artifact into a shared volume at that time. I sought to other options and find https://github.com/argoproj/argo-workflows/issues/1428 and https://www.jeffgeerling.com/blog/2019/mounting-kubernetes-secret-single-file-inside-pod.
+ The comment https://github.com/argoproj/argo-workflows/issues/1428#issuecomment-775911838 gives an example to add user name and password into https url. Upon I checked the logs, I found that user and password are shown in the logs of a workflow.</description>
+    </item>
+    
+    <item>
+      <title>Argo-workflows: Generate dynamic json list</title>
+      <link>https://jackliusr.github.io/posts/2022/05/argo-workflows-generate-dynamic-json-list/</link>
+      <pubDate>Sun, 15 May 2022 12:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/05/argo-workflows-generate-dynamic-json-list/</guid>
+      <description>The journey I worked on a dapr microservice project which need to read a list from a file and do some useful things. Argo-workflow supports loop over a list of items, however one of my steps always got &amp;#34;invalid character &amp;#39;G&amp;#39; looking for beginning of value&amp;#34; before going to next step in the workflow template. The step is as following:
+ - name: get-deps inputs: parameters: - name: changes script: image: ubuntu:latest command: [bash] #args: [&amp;#34;echo result was: {{inputs.</description>
     </item>
     
   </channel>
