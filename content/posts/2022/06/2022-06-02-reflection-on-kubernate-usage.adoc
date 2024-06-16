@@ -25,7 +25,7 @@ The technologies and tools I used in my projects is as following. There are stil
 * sealed-secrets
 * action-runner
 * helm
-* argo-workflow
+* argo-workflows
 * argo-events
 * jsonpatch
 * jsonpath

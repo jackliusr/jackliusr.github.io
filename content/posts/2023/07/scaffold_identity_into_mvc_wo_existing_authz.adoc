@@ -5,7 +5,7 @@ categories:
 - tech
 tags:
 - asp.net
-- dotnet core
+- dotnet
 - identity
 ---
 

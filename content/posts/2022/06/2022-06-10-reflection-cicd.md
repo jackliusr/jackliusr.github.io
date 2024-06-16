@@ -6,7 +6,7 @@ categories:
 tags:
 - cicd
 - jenkins
-- Argo-workflow
+- argo-workflows
 - argo-cd
 - GitOps
 ---
