@@ -8,7 +8,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
+    <lastmod>2024-06-16T12:41:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -38,12 +38,12 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
+    <lastmod>2024-06-16T12:41:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
+    <lastmod>2024-06-16T12:41:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -53,12 +53,12 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
+    <lastmod>2024-06-16T12:41:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/tech/</loc>
-    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
+    <lastmod>2024-06-16T12:41:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -968,32 +968,32 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/action-runner/</loc>
-    <lastmod>2023-02-01T17:41:26+08:00</lastmod>
+    <lastmod>2024-06-16T12:41:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/argo-cd/</loc>
-    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
+    <lastmod>2024-06-16T12:41:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/cicd/</loc>
-    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
+    <lastmod>2024-06-16T12:41:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/github/</loc>
-    <lastmod>2023-02-01T17:41:26+08:00</lastmod>
+    <lastmod>2024-06-16T12:41:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/2023/02/github-action-runner-argo-cd-my-cicd-pipelines/</loc>
-    <lastmod>2023-02-01T17:41:26+08:00</lastmod>
+    <lastmod>2024-06-16T12:41:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/pipeline/</loc>
-    <lastmod>2023-02-01T17:41:26+08:00</lastmod>
+    <lastmod>2024-06-16T12:41:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -1628,7 +1628,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/argo-workflows/</loc>
-    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
+    <lastmod>2024-06-16T12:41:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -1767,18 +1767,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/tags/argo-workflow/</loc>
-    <lastmod>2022-05-31T17:12:50+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://jackliusr.github.io/posts/2022/05/projected-volumes-in-argo-workflow/</loc>
-    <lastmod>2022-05-31T17:12:50+08:00</lastmod>
+    <lastmod>2024-06-16T12:41:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/projected-volume/</loc>
-    <lastmod>2022-05-31T17:12:50+08:00</lastmod>
+    <lastmod>2024-06-16T12:41:41+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>

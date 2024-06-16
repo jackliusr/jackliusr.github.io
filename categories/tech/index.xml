@@ -662,7 +662,7 @@ Table.SelectRows( Table.FromRecords({ [CustomerID = 1, Name = &amp;#34;Bob&amp;#
       
       <guid>https://jackliusr.github.io/posts/2023/02/github-action-runner-argo-cd-my-cicd-pipelines/</guid>
       <description>Usually I explain one of my CICD pipeline to others with words such like github action + argo-cd. I am not sure if they understand it. A picture is worth a thousand words. Here is my CICD pipeline picture.
-      I used excalidraw to draw the diagram. Excalidraw link is https://excalidraw.com/#json=D7EzmscoRDH8LYLZmtr2l,FVEHlWoxFXtoqqHpReMaEw. Feel free to use it.
+      I used excalidraw to draw the diagram. Excalidraw link is https://excalidraw.com/#json=zJHTTZ_QgcarkYCCankS8,gotb3rzXtE8ux810NoK18A. Feel free to use it.
  </description>
     </item>
     

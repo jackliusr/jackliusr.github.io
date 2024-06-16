@@ -19,6 +19,20 @@ I didn&amp;rsquo;t have a good impression with java in my past java projects.</d
     </item>
     
     <item>
+      <title>projected volumes in argo-workflow</title>
+      <link>https://jackliusr.github.io/posts/2022/05/projected-volumes-in-argo-workflow/</link>
+      <pubDate>Thu, 26 May 2022 20:10:10 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2022/05/projected-volumes-in-argo-workflow/</guid>
+      <description>Yesterday I added gitconfig volume and mounted to /root. However today the logs of the workflow shows netrc is mounted to /root as well. They are conflicted. Kubernetes supports projected volume which supports following types. my netrc and gitconfig are in the list.
+   secret
+  downwardAPI
+  configMap
+  serviceAccountToken
+   I made the small tweak to hello world sample workflow. Here is the my demo workflow with projected volumes.</description>
+    </item>
+    
+    <item>
       <title>Reflection on implementation of CICD using argo-workflows</title>
       <link>https://jackliusr.github.io/posts/2022/05/reflection-on-implementation-of-cicd-using-argo-workflows/</link>
       <pubDate>Sun, 22 May 2022 20:10:10 +0800</pubDate>
