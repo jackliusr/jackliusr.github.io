@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nuget on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/nuget/</link>
+    <description>Recent content in nuget on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 16 Jun 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/nuget/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>setup nuget local packages feed</title>
+      <link>https://jackliusr.github.io/posts/2024/06/setup-nuget-local-packages-feed/</link>
+      <pubDate>Sun, 16 Jun 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/06/setup-nuget-local-packages-feed/</guid>
+      <description>Nuget local feed Prerequisites nuget.exe is installed in C:\packages and in the command search path.
+  Setup local feed Assume C:\packages\.nuget-local\packages will be the locations to install local packages. and several local dev packages need to install.
+ Packages below: - &amp;#34;C:\packages\test.4.1.0-beta-24159.1.nupkg&amp;#34; - &amp;#34;C:\packages\testa.4.1.0-beta-24159.1.nupkg&amp;#34; - &amp;#34;C:\packages\testb.S3.4.1.0-beta-24159.1.nupkg&amp;#34;
+ Run below commands to install above packages into source C:\packages\.nuget-local\packages
+ REM run command line with C:\packages as working directory nuget.exe add tes.</description>
+    </item>
+    
+  </channel>
+</rss>

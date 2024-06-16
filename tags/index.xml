@@ -6,22 +6,31 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Jun 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Jun 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>dotnet</title>
+      <link>https://jackliusr.github.io/tags/dotnet/</link>
+      <pubDate>Sun, 16 Jun 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/dotnet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nuget</title>
+      <link>https://jackliusr.github.io/tags/nuget/</link>
+      <pubDate>Sun, 16 Jun 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/nuget/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>architecture</title>
       <link>https://jackliusr.github.io/tags/architecture/</link>
       <pubDate>Wed, 12 Jun 2024 20:10:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/architecture/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>dotnet</title>
-      <link>https://jackliusr.github.io/tags/dotnet/</link>
-      <pubDate>Wed, 12 Jun 2024 20:10:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/dotnet/</guid>
       <description></description>
     </item>
     
