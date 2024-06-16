@@ -1,0 +1,41 @@
+---
+title: setup nuget local packages feed
+date: 2024-06-16T20:10:00+08:00
+categories:
+- tech
+tags:
+- dotnet
+- nuget
+---
+
+## Nuget local feed
+
+### Prerequisites
+ 
+nuget.exe is installed in C:\packages and in the command search path.
+
+### Setup local feed
+Assume `C:\packages\.nuget-local\packages` will be the locations to install local packages. and several local dev packages need to install. 
+
+Packages below:
+- "C:\packages\test.4.1.0-beta-24159.1.nupkg"
+- "C:\packages\testa.4.1.0-beta-24159.1.nupkg"
+- "C:\packages\testb.S3.4.1.0-beta-24159.1.nupkg"
+
+Run below commands to install above packages into source C:\packages\.nuget-local\packages
+```bat
+REM run command line with C:\packages as working directory
+nuget.exe add tes.4.1.0-beta-24159.1.nupkg -source C:\packages\.nuget-local\packages
+nuget.exe add testa.4.1.0-beta-24159.1.nupkg -source C:\packages\.nuget-local\packages
+nuget.exe add testb.4.1.0-beta-24159.1.nupkg -source C:\packages\.nuget-local\packages
+```
+
+### Use local feed
+
+```bath
+dotnet nuget add source C:\packages\.nuget-local\packages -n local
+```
+
+### References
+
+- https://learn.microsoft.com/en-us/nuget/hosting-packages/local-feeds
