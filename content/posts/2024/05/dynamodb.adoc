@@ -15,7 +15,7 @@ I am passionate about technological details and how things work under the hood. 
 
 {{< imgur id="EmKioeR" >}}
 
-== storage node and 10G partition
+== Storage node and 10G partition
 
 {{< imgur id="Hy6e5YQ" >}}
 
