@@ -1,0 +1,47 @@
+---
+title: .Net sdk version vs runtime version
+date: 2024-06-18T20:10:00+08:00
+categories:
+- tech
+tags:
+- dotnet
+- sdk
+- runtime
+- version
+---
+
+What will you do when you encountered a runtime version is disallowed for specific version say 8.0.6 in building environment? Install the specific runtime version, right? Please hold, I show you my story. 
+
+I initially thought I couldn't run the below commands to install it, it is not. After several attempts, My colleague spotted the difference between runtime version and sdk version. They are different. A runtime version is supported by several sdk versions. For example, The untime 8.0.6 is supported by SDK 8.0.302, SDK 8.0.301, SDK 8.0.206  and SDK 8.0.106. For building environment, a SDK version is needed to install, not runtime. 
+
+[source, bash]
+----
+# this one doesn't work
+./dotnet-install.sh --channel 8.0.6
+
+#  one doesn't works either
+./dotnet-install.sh --channel 8.0 --version 8.0.6
+
+# this one work
+./dotnet-install.sh --channel 8.0 --version 8.0.301
+----
+
+How do you use that version for building after the version issue of sdk and runtime are resovled? There is no way to specify a minor version in https://learn.microsoft.com/en-us/dotnet/standard/frameworks[Target frameworks in SDK-style projects]. I attempted to get the detailed `building log`, `nuget.targets` and found `BundledNETCoreAppPackageVersion` and `RuntimePackInWorkloadVersion`. `BundledNETCoreAppPackageVersion` and `RuntimePackInWorkloadVersion` don't work as well after they are put in .csproject as properties. I read https://learn.microsoft.com/en-us/dotnet/core/tools/global-json[global.json] and found it is the right solution to the issue. The below one was put in current directory of the project, and the issue is resolved.
+
+[source, json]
+----
+//global.json
+{
+  "sdk": {
+    "version": "8.0.301",
+    "rollForward": "disable"
+  }
+}
+----
+
+At first, I only realized there is difference between runtime version and sdk version, later I checked and found that a runtime version is supported by several sdk versions. A corresponding latest version of SDK sould be used if it is allowed.
+
+The true solution to the issue are two factors. 
+
+- Install a corresponding latest version of SDK which supports the specific version of runtime
+- Specify sdk version and rollForward in global.json
