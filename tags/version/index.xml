@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>version on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/version/</link>
+    <description>Recent content in version on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Jun 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/version/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>.Net sdk version vs runtime version</title>
+      <link>https://jackliusr.github.io/posts/2024/06/.net-sdk-version-vs-runtime-version/</link>
+      <pubDate>Tue, 18 Jun 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/06/.net-sdk-version-vs-runtime-version/</guid>
+      <description>What will you do when you encountered a runtime version is disallowed for specific version say 8.0.6 in building environment? Install the specific runtime version, right? Please hold, I show you my story.
+ I initially thought I couldn’t run the below commands to install it, it is not. After several attempts, My colleague spotted the difference between runtime version and sdk version. They are different. A runtime version is supported by several sdk versions.</description>
+    </item>
+    
+  </channel>
+</rss>

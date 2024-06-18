@@ -168,6 +168,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2023/11/error-handling-in-api-idempotency-timeout-and-retry/" class="link black dim">
+        error handling in api idempotency: timeout and retry 
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      In stripe doc, Stripe explain how it works as following quoted contet. Other places only mentions that the processes will be only once.
+ Stripe&#39;s idempotency works by saving the resulting status code and body of the first request made for any given idempotency key, regardless of whether it succeeded or failed. Subsequent requests with the same key return the same result, including 500 errors.   Then there is an interesting question how to handle timeout and retry cases?
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2023/11/api-idempotency/" class="link black dim">
         API idempotency
       </a>
@@ -302,22 +318,6 @@ if (!doNotTrack) {
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Nowadays, zero downtime is normal, you can’t believe that in azure app service changes in &#34;app settings&#34;, App Service triggers an app restart. The alternative ways to do avoid that is to use sentinel key with App Configuration. however App Configuration will cost a little. Do we really need to use App Configuration to achieve that ?
  The naive and obvious way is that changing appsettings.json files via entering the app services using kudo console.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2023/08/get-information-from-internet-in-excel-custom-function-vs-powerquery/" class="link black dim">
-        Get information from internet in excel, custom function vs powerquery
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Last week I worked on filling info package information to a workbooks. I used VBA macro before and thought of it again to save some of my time.
- Things is changing very fast, the new javascript based custom fuction is the mainstream. The initial one I followed the tutorial, however I didn’t find any way to add it into &#34;My Addin&#34; as described in microsoft doc site. I don’t have administrator rights on my laptop.
     </div>
   </div>
 </div>
