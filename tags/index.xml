@@ -6,7 +6,43 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Jun 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Jun 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>argocd</title>
+      <link>https://jackliusr.github.io/tags/argocd/</link>
+      <pubDate>Fri, 21 Jun 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/argocd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cicd</title>
+      <link>https://jackliusr.github.io/tags/cicd/</link>
+      <pubDate>Fri, 21 Jun 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/cicd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github-action</title>
+      <link>https://jackliusr.github.io/tags/github-action/</link>
+      <pubDate>Fri, 21 Jun 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/github-action/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pipeline</title>
+      <link>https://jackliusr.github.io/tags/pipeline/</link>
+      <pubDate>Fri, 21 Jun 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/pipeline/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>dotnet</title>
       <link>https://jackliusr.github.io/tags/dotnet/</link>
@@ -1196,29 +1232,11 @@
     </item>
     
     <item>
-      <title>cicd</title>
-      <link>https://jackliusr.github.io/tags/cicd/</link>
-      <pubDate>Wed, 01 Feb 2023 17:01:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/cicd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>github</title>
       <link>https://jackliusr.github.io/tags/github/</link>
       <pubDate>Wed, 01 Feb 2023 17:01:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pipeline</title>
-      <link>https://jackliusr.github.io/tags/pipeline/</link>
-      <pubDate>Wed, 01 Feb 2023 17:01:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/pipeline/</guid>
       <description></description>
     </item>
     
@@ -2353,15 +2371,6 @@
       <pubDate>Wed, 23 Feb 2022 22:30:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/interview/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>github-action</title>
-      <link>https://jackliusr.github.io/tags/github-action/</link>
-      <pubDate>Sat, 19 Feb 2022 13:10:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/github-action/</guid>
       <description></description>
     </item>
     

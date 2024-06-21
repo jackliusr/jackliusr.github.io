@@ -6,7 +6,18 @@
     <description>Recent content in pipeline on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Feb 2023 17:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/pipeline/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Jun 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/pipeline/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CICD</title>
+      <link>https://jackliusr.github.io/posts/2024/06/cicd/</link>
+      <pubDate>Fri, 21 Jun 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/06/cicd/</guid>
+      <description>I shared one of CICD I designed and implemented in linkedin. It is good to keep here as well. I researched several options and put my thought at Reflection on implementation of CICD using argo-workflows
+   Nowadays, argo-workflows is quite mature. I will use argo-workflows for CI part in my future projects. It is definitely worth to invest one’s time on argo-workflow as it is widely used.
+ </description>
+    </item>
+    
     <item>
       <title>github, action-runner, argo-cd: my cicd pipelines</title>
       <link>https://jackliusr.github.io/posts/2023/02/github-action-runner-argo-cd-my-cicd-pipelines/</link>

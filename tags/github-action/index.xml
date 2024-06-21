@@ -6,7 +6,18 @@
     <description>Recent content in github-action on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Feb 2022 13:10:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/github-action/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Jun 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/github-action/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CICD</title>
+      <link>https://jackliusr.github.io/posts/2024/06/cicd/</link>
+      <pubDate>Fri, 21 Jun 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/06/cicd/</guid>
+      <description>I shared one of CICD I designed and implemented in linkedin. It is good to keep here as well. I researched several options and put my thought at Reflection on implementation of CICD using argo-workflows
+   Nowadays, argo-workflows is quite mature. I will use argo-workflows for CI part in my future projects. It is definitely worth to invest one’s time on argo-workflow as it is widely used.
+ </description>
+    </item>
+    
     <item>
       <title>Configure action runner in eks&#43;calico environment</title>
       <link>https://jackliusr.github.io/posts/2022/02/configure-action-runner-in-eks-calico-environment/</link>

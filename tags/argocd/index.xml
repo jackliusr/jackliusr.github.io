@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>argocd on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/argocd/</link>
+    <description>Recent content in argocd on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 21 Jun 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/argocd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CICD</title>
+      <link>https://jackliusr.github.io/posts/2024/06/cicd/</link>
+      <pubDate>Fri, 21 Jun 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/06/cicd/</guid>
+      <description>I shared one of CICD I designed and implemented in linkedin. It is good to keep here as well. I researched several options and put my thought at Reflection on implementation of CICD using argo-workflows
+   Nowadays, argo-workflows is quite mature. I will use argo-workflows for CI part in my future projects. It is definitely worth to invest one’s time on argo-workflow as it is widely used.
+ </description>
+    </item>
+    
+  </channel>
+</rss>
