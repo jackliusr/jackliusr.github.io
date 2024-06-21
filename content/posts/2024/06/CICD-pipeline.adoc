@@ -1,0 +1,18 @@
+---
+title: CICD
+date: 2024-06-21T20:10:00+08:00
+categories:
+- tech
+tags:
+- cicd
+- pipeline
+- argocd
+- github action
+---
+
+
+I shared one of CICD I designed and implemented in linkedin. It is good to keep here as well. I researched several options and put my thought at https://jackliusr.github.io/posts/2022/06/reflection-on-my-choice-of-cicd-in-the-past/[Reflection on implementation of CICD using argo-workflows]
+
+image::https://media.licdn.com/dms/image/D5622AQE4NUa2MIYSRA/feedshare-shrink_2048_1536/0/1718515694696?e=1721865600&v=beta&t=l1YIRvhQkSe3pRQiqCo-iWPNJEzZN2WNKQi1Tue2G48[CICID]
+
+Nowadays, argo-workflows is quite mature. I will use argo-workflows for CI part in my future projects. It is definitely worth to invest one's time on argo-workflow as it is widely used.
