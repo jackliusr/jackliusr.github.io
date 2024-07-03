@@ -6,7 +6,17 @@
     <description>Recent content in dotnet on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Jun 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/dotnet/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Jun 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/dotnet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>msbuild custom task and runtime reflection</title>
+      <link>https://jackliusr.github.io/posts/2024/06/msbuild-custom-task-and-runtime-reflection/</link>
+      <pubDate>Sun, 30 Jun 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/06/msbuild-custom-task-and-runtime-reflection/</guid>
+      <description>Most information about custom task of msbuild are quite basic, it will get complicated when it is involved reflection. I tried several ways according searching results and answers from chatgpt: reflection, assemblyLoadContext and mono cecil. The most promising one is mono.cecil.
+ I tried directly loading assemblies and via AssemblyLoadContext. They all failed to load some microsoft assemblies. It looks awkward even I can change my build scripts to copy those assemblies.</description>
+    </item>
+    
     <item>
       <title>.Net sdk version vs runtime version</title>
       <link>https://jackliusr.github.io/posts/2024/06/.net-sdk-version-vs-runtime-version/</link>

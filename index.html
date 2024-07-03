@@ -195,6 +195,31 @@ if (!doNotTrack) {
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/2024/06/msbuild-custom-task-and-runtime-reflection/" class="color-inherit dim link">
+            msbuild custom task and runtime reflection
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Most information about custom task of msbuild are quite basic, it will get complicated when it is involved reflection. I tried several ways according searching results and answers from chatgpt: reflection, assemblyLoadContext and mono cecil. The most promising one is mono.cecil.
+ I tried directly loading assemblies and via AssemblyLoadContext. They all failed to load some microsoft assemblies. It looks awkward even I can change my build scripts to copy those assemblies.
+        </div>
+          <a href="/posts/2024/06/msbuild-custom-task-and-runtime-reflection/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/2024/06/cicd/" class="color-inherit dim link">
             CICD
             </a>
@@ -238,40 +263,18 @@ if (!doNotTrack) {
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2024/06/setup-nuget-local-packages-feed/" class="color-inherit dim link">
-            setup nuget local packages feed
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Nuget local feed Prerequisites nuget.exe is installed in C:\packages and in the command search path.
-  Setup local feed Assume C:\packages\.nuget-local\packages will be the locations to install local packages. and several local dev packages need to install.
- Packages below: - &#34;C:\packages\test.4.1.0-beta-24159.1.nupkg&#34; - &#34;C:\packages\testa.4.1.0-beta-24159.1.nupkg&#34; - &#34;C:\packages\testb.S3.4.1.0-beta-24159.1.nupkg&#34;
- Run below commands to install above packages into source C:\packages\.nuget-local\packages
- REM run command line with C:\packages as working directory nuget.exe add tes.
-        </div>
-          <a href="/posts/2024/06/setup-nuget-local-packages-feed/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/2024/06/setup-nuget-local-packages-feed/" class="link black dim">
+              setup nuget local packages feed
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2024/06/mach-micro-service-based-api-first-cloud-native-headless/" class="link black dim">
@@ -288,12 +291,6 @@ if (!doNotTrack) {
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2024/05/accelerated-learning-in-a-new-era-with-agi/" class="link black dim">
               Accelerated learning in a new era with AGI
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/2024/05/dynamodb-predictable-performance/" class="link black dim">
-              DynamoDB predictable performance
             </a>
           </h2>
         
