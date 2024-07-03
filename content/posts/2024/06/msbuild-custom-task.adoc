@@ -1,0 +1,44 @@
+---
+title: msbuild custom task and runtime reflection
+date: 2024-06-30T20:10:00+08:00
+categories:
+- tech
+tags:
+- dotnet
+- msbuild
+- mono.cecil
+---
+
+Most information about custom task of msbuild are quite basic, it will get complicated when it is involved reflection. 
+I tried several ways according searching results and answers from chatgpt: reflection, assemblyLoadContext and  mono cecil. The most promising one is **mono.cecil**.
+
+I tried directly loading assemblies and via AssemblyLoadContext. They all failed to load some microsoft assemblies. It looks awkward even I can change my build scripts to copy those assemblies. 
+Thought of several discussion threads and several open source libraries mentioned in the thread, They all adopt other ways to do that. I only found mono.cecil has a business friendly license term (MIT). 
+
+During testing my custom task, the following two commands are helpful to get the logs.
+
+[source, batch]
+----
+dotnet build -v:n
+dotnet build -v:d
+----
+
+Message task is helpful to show properties in logs.
+
+[source, xml]
+----
+  
+  <Target Name="Test" Outputs="$(RootFolder)\$(OutputFolder)\metadata\*.json" AfterTargets="Build">
+    <Message Importance="High" Text="+++ Justin Dearing +++" />
+    <!--Calling our custom task-->
+    <ExportConformanceResource
+			InputAssembly="$(TargetPath)"
+			OutputPath="$(RootFolder)\$(OutputFolder)" />
+  </Target>
+----
+
+Another way to develop and debug fastly:
+
+. Add System.Diagnostics.Debugger.Launch() in code.
+. Build debug version, pack, add to local feed, and use that package
+. Copy any changes (ddl, props, targets) to %userprofile%/packages/[your package]/[versionid]
