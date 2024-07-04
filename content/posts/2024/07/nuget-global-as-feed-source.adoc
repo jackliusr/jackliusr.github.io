@@ -1,0 +1,31 @@
+---
+title: streamline pack and install package to global-packages 
+date: 2024-06-30T20:10:00+08:00
+categories:
+- tech
+tags:
+- nuget
+- global-packages
+- feed source
+---
+
+Due to the nature that it is difficult to debug  msbuild custom task, I thought if I can use it in a way to streamline my debug workflow. one pack command will complete the following steps.  
+- pack
+- add the package into local feed source
+- add the package to global-packages folder
+
+My current workflow is below. It is a manual process. It is realy a pain this way:
+- pack
+- nuget add [package-name] -source C:\nexus\.nuget\packages
+- add the nuget package references to projects using nuget package managers
+
+I tried to use NUGET_PACKAGES to point the feed source as global packages folder, combining global packages folder and local feed source folder. However this way, nuget package manager fail to decompress nuget packages. 
+
+I gave up the thought and tried to wrap it up in this, however I just found out I might use "dotnet tool install -g <package-name>" to achive the goal. 
+
+[source, bash]
+----
+dotnet tool install -g <package-name>
+----
+
+I haven't try it yet. I will write it about the result of I do "dotnet tool install -g <package-name>" way. 
