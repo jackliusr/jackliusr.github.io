@@ -1,6 +1,6 @@
 ---
 title: streamline pack and install package to global-packages 
-date: 2024-06-30T20:10:00+08:00
+date: 2024-07-04T20:10:00+08:00
 categories:
 - tech
 tags:
