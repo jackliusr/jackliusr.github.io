@@ -6,20 +6,11 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 30 Jun 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>dotnet</title>
-      <link>https://jackliusr.github.io/tags/dotnet/</link>
-      <pubDate>Sun, 30 Jun 2024 20:10:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/dotnet/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Thu, 04 Jul 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>feed source</title>
       <link>https://jackliusr.github.io/tags/feed-source/</link>
-      <pubDate>Sun, 30 Jun 2024 20:10:00 +0800</pubDate>
+      <pubDate>Thu, 04 Jul 2024 20:10:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/feed-source/</guid>
       <description></description>
@@ -28,9 +19,27 @@
     <item>
       <title>global-packages</title>
       <link>https://jackliusr.github.io/tags/global-packages/</link>
-      <pubDate>Sun, 30 Jun 2024 20:10:00 +0800</pubDate>
+      <pubDate>Thu, 04 Jul 2024 20:10:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/global-packages/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nuget</title>
+      <link>https://jackliusr.github.io/tags/nuget/</link>
+      <pubDate>Thu, 04 Jul 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/nuget/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dotnet</title>
+      <link>https://jackliusr.github.io/tags/dotnet/</link>
+      <pubDate>Sun, 30 Jun 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/dotnet/</guid>
       <description></description>
     </item>
     
@@ -49,15 +58,6 @@
       <pubDate>Sun, 30 Jun 2024 20:10:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/msbuild/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>nuget</title>
-      <link>https://jackliusr.github.io/tags/nuget/</link>
-      <pubDate>Sun, 30 Jun 2024 20:10:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/nuget/</guid>
       <description></description>
     </item>
     

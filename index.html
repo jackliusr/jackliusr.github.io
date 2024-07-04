@@ -195,15 +195,15 @@ if (!doNotTrack) {
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2024/06/msbuild-custom-task-and-runtime-reflection/" class="color-inherit dim link">
-            msbuild custom task and runtime reflection
+          <a href="/posts/2024/07/streamline-pack-and-install-package-to-global-packages/" class="color-inherit dim link">
+            streamline pack and install package to global-packages
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Most information about custom task of msbuild are quite basic, it will get complicated when it is involved reflection. I tried several ways according searching results and answers from chatgpt: reflection, assemblyLoadContext and mono cecil. The most promising one is mono.cecil.
- I tried directly loading assemblies and via AssemblyLoadContext. They all failed to load some microsoft assemblies. It looks awkward even I can change my build scripts to copy those assemblies.
+          Due to the nature that it is difficult to debug msbuild custom task, I thought if I can use it in a way to streamline my debug workflow. one pack command will complete the following steps. - pack - add the package into local feed source - add the package to global-packages folder
+ My current workflow is below. It is a manual process. It is realy a pain this way: - pack - nuget add [package-name] -source C:\nexus\.
         </div>
-          <a href="/posts/2024/06/msbuild-custom-task-and-runtime-reflection/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+          <a href="/posts/2024/07/streamline-pack-and-install-package-to-global-packages/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
       </div>
     </div>
@@ -220,15 +220,15 @@ if (!doNotTrack) {
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2024/06/streamline-pack-and-install-package-to-global-packages/" class="color-inherit dim link">
-            streamline pack and install package to global-packages
+          <a href="/posts/2024/06/msbuild-custom-task-and-runtime-reflection/" class="color-inherit dim link">
+            msbuild custom task and runtime reflection
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Due to the nature that it is difficult to debug msbuild custom task, I thought if I can use it in a way to streamline my debug workflow. one pack command will complete the following steps. - pack - add the package into local feed source - add the package to global-packages folder
- My current workflow is below. It is a manual process. It is realy a pain this way: - pack - nuget add [package-name] -source C:\nexus\.
+          Most information about custom task of msbuild are quite basic, it will get complicated when it is involved reflection. I tried several ways according searching results and answers from chatgpt: reflection, assemblyLoadContext and mono cecil. The most promising one is mono.cecil.
+ I tried directly loading assemblies and via AssemblyLoadContext. They all failed to load some microsoft assemblies. It looks awkward even I can change my build scripts to copy those assemblies.
         </div>
-          <a href="/posts/2024/06/streamline-pack-and-install-package-to-global-packages/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+          <a href="/posts/2024/06/msbuild-custom-task-and-runtime-reflection/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
       </div>
     </div>
