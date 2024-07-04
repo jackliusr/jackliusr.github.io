@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>feed source on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/feed-source/</link>
+    <description>Recent content in feed source on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 30 Jun 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/feed-source/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>streamline pack and install package to global-packages</title>
+      <link>https://jackliusr.github.io/posts/2024/06/streamline-pack-and-install-package-to-global-packages/</link>
+      <pubDate>Sun, 30 Jun 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/06/streamline-pack-and-install-package-to-global-packages/</guid>
+      <description>Due to the nature that it is difficult to debug msbuild custom task, I thought if I can use it in a way to streamline my debug workflow. one pack command will complete the following steps. - pack - add the package into local feed source - add the package to global-packages folder
+ My current workflow is below. It is a manual process. It is realy a pain this way: - pack - nuget add [package-name] -source C:\nexus\.</description>
+    </item>
+    
+  </channel>
+</rss>

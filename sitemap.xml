@@ -3,12 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2024-07-03T18:27:29+08:00</lastmod>
+    <lastmod>2024-07-04T23:02:01+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/dotnet/</loc>
     <lastmod>2024-07-03T18:27:29+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/feed-source/</loc>
+    <lastmod>2024-07-04T23:02:01+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/global-packages/</loc>
+    <lastmod>2024-07-04T23:02:01+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -28,22 +38,32 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2024-07-03T18:27:29+08:00</lastmod>
+    <lastmod>2024-07-04T23:02:01+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/nuget/</loc>
+    <lastmod>2024-07-04T23:02:01+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2024-07-03T18:27:29+08:00</lastmod>
+    <lastmod>2024-07-04T23:02:01+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2024/06/streamline-pack-and-install-package-to-global-packages/</loc>
+    <lastmod>2024-07-04T23:02:01+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2024-07-03T18:27:29+08:00</lastmod>
+    <lastmod>2024-07-04T23:02:01+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/tech/</loc>
-    <lastmod>2024-07-03T18:27:29+08:00</lastmod>
+    <lastmod>2024-07-04T23:02:01+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -89,11 +109,6 @@
   </url><url>
     <loc>https://jackliusr.github.io/tags/version/</loc>
     <lastmod>2024-06-18T21:25:34+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/nuget/</loc>
-    <lastmod>2024-06-17T00:12:37+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
