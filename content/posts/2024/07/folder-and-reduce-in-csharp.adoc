@@ -1,0 +1,60 @@
+---
+title: Fold and Reduce in LINQ
+date: 2024-07-04T20:10:00+08:00
+categories:
+- tech
+tags:
+- fold
+- reduce
+- functional-programming
+- dotnet
+- csharp
+---
+
+In functional programming languages, there are several difference betwee them. I was quite interested in functional programming, even I spent some time to learn haskel and scala. I knew what I can use `Select` for `map`, not sure about `folder` and `reduce`
+
+++++
+<table><thead><tr><th>Feature</th><th><code>Fold</code></th><th><code>Reduce</code></th></tr></thead><tbody><tr><td><strong>Initial Value</strong></td><td>Requires an initial value.</td><td>Does not require an initial value.</td></tr><tr><td><strong>Function Signature</strong></td><td><code>(A, B) =&gt; A</code></td><td><code>(A, A) =&gt; A</code></td></tr><tr><td><strong>Applicability</strong></td><td>Can be used on empty collections.</td><td>Requires a non-empty collection.</td></tr><tr><td><strong>Variants</strong></td><td><code>foldLeft</code> and <code>foldRight</code></td><td><code>reduceLeft</code> and <code>reduceRight</code></td></tr><tr><td><strong>Starting Point</strong></td><td><code>foldLeft</code> starts from the left.</td><td><code>reduceLeft</code> starts from the left.</td></tr><tr><td></td><td><code>foldRight</code> starts from the right.</td><td><code>reduceRight</code> starts from the right.</td></tr><tr><td><strong>Common Use Cases</strong></td><td>Aggregations with a need for an initial value (e.g., summation, product, etc.).</td><td>Aggregations where the collection is guaranteed to be non-empty and no initial value is needed.</td></tr><tr><td><strong>Example Syntax</strong></td><td><code>foldLeft(initialValue)(operation)</code></td><td><code>reduceLeft(operation)</code></td></tr><tr><td></td><td><code>foldRight(initialValue)(operation)</code></td><td><code>reduceRight(operation)</code></td></tr><tr><td><strong>Example</strong></td><td><code>List(1, 2, 3).foldLeft(0)(_ + _)</code></td><td><code>List(1, 2, 3).reduceLeft(_ + _)</code></td></tr><tr><td><strong>Flexibility</strong></td><td>More flexible; can transform types (e.g., from list of integers to a string).</td><td>Less flexible; typically reduces to the same type as the elements.</td></tr><tr><td><strong>Handling Empty Collections</strong></td><td>Always safe; initial value provides a default result.</td><td>Unsafe for empty collections; will throw an exception.</td></tr></tbody></table>
+++++
+
+In LINQ, they are combined into one overloaded method Aggregate. Below is one exmaple I wrote to showcase how to use it. 
+
+[source, csharp]
+----
+using Mono.Cecil;
+using Mono.CompilerServices.SymbolWriter;
+using System;
+using System.IO;
+using System.Reflection;
+using System.Linq;
+using System.Text;
+
+class Program
+{
+    static void Main()
+    {
+       string[] typeCode =  ["string","bool", "datetime","int"];
+        var typeCode2 = (string[])typeCode.Clone(); ;
+        typeCode2[0] = $@"{{ ""code"": ""{typeCode2[0]}"" }}";
+
+
+        var result = typeCode.AsEnumerable().Aggregate(new StringBuilder(), 
+           (a, b) => a.Append(@$"{{ ""code"": ""{b}"" }},"));
+
+        var result2 = typeCode.AsEnumerable().Aggregate(
+            (a, b) => @$"{a},{{ ""code"": ""{b}"" }}");
+
+        var result3 = typeCode2.AsEnumerable().Aggregate(
+                    (a, b) => @$"{a},{{ ""code"": ""{b}"" }}");
+        Console.WriteLine(result.ToString());
+        Console.WriteLine(result2.ToString());
+        Console.WriteLine(result3.ToString());
+
+        /*
+         * { "code": "string" },{ "code": "bool" },{ "code": "datetime" },{ "code": "int" },
+         * string,{ "code": "bool" },{ "code": "datetime" },{ "code": "int" }
+         * { "code": "string" },{ "code": "bool" },{ "code": "datetime" },{ "code": "int" }
+         */
+    }
+}
+----
