@@ -6,7 +6,17 @@
     <description>Recent content in dotnet on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 30 Jun 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/dotnet/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Jul 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/dotnet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fold and Reduce in LINQ</title>
+      <link>https://jackliusr.github.io/posts/2024/07/fold-and-reduce-in-linq/</link>
+      <pubDate>Thu, 04 Jul 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/07/fold-and-reduce-in-linq/</guid>
+      <description>In functional programming languages, there are several difference betwee them. I was quite interested in functional programming, even I spent some time to learn haskel and scala. I knew what I can use Select for map, not sure about folder and reduce
+ FeatureFoldReduceInitial ValueRequires an initial value.Does not require an initial value.Function Signature(A, B) =&amp;gt; A(A, A) =&amp;gt; AApplicabilityCan be used on empty collections.Requires a non-empty collection.VariantsfoldLeft and foldRightreduceLeft and reduceRightStarting PointfoldLeft starts from the left.</description>
+    </item>
+    
     <item>
       <title>msbuild custom task and runtime reflection</title>
       <link>https://jackliusr.github.io/posts/2024/06/msbuild-custom-task-and-runtime-reflection/</link>

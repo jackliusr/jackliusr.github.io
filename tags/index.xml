@@ -8,11 +8,47 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 04 Jul 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>csharp</title>
+      <link>https://jackliusr.github.io/tags/csharp/</link>
+      <pubDate>Thu, 04 Jul 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/csharp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dotnet</title>
+      <link>https://jackliusr.github.io/tags/dotnet/</link>
+      <pubDate>Thu, 04 Jul 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/dotnet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>feed source</title>
       <link>https://jackliusr.github.io/tags/feed-source/</link>
       <pubDate>Thu, 04 Jul 2024 20:10:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/feed-source/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fold</title>
+      <link>https://jackliusr.github.io/tags/fold/</link>
+      <pubDate>Thu, 04 Jul 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/fold/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>functional-programming</title>
+      <link>https://jackliusr.github.io/tags/functional-programming/</link>
+      <pubDate>Thu, 04 Jul 2024 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/functional-programming/</guid>
       <description></description>
     </item>
     
@@ -35,11 +71,11 @@
     </item>
     
     <item>
-      <title>dotnet</title>
-      <link>https://jackliusr.github.io/tags/dotnet/</link>
-      <pubDate>Sun, 30 Jun 2024 20:10:00 +0800</pubDate>
+      <title>reduce</title>
+      <link>https://jackliusr.github.io/tags/reduce/</link>
+      <pubDate>Thu, 04 Jul 2024 20:10:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/tags/dotnet/</guid>
+      <guid>https://jackliusr.github.io/tags/reduce/</guid>
       <description></description>
     </item>
     

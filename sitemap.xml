@@ -3,12 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2024-07-04T23:25:25+08:00</lastmod>
+    <lastmod>2024-07-08T22:25:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/csharp/</loc>
+    <lastmod>2024-07-08T22:25:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/dotnet/</loc>
+    <lastmod>2024-07-08T22:25:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/feed-source/</loc>
     <lastmod>2024-07-04T23:25:25+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/fold/</loc>
+    <lastmod>2024-07-08T22:25:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2024/07/fold-and-reduce-in-linq/</loc>
+    <lastmod>2024-07-08T22:25:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/functional-programming/</loc>
+    <lastmod>2024-07-08T22:25:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -18,7 +43,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2024-07-04T23:25:25+08:00</lastmod>
+    <lastmod>2024-07-08T22:25:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -28,7 +53,12 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2024-07-04T23:25:25+08:00</lastmod>
+    <lastmod>2024-07-08T22:25:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/reduce/</loc>
+    <lastmod>2024-07-08T22:25:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -38,17 +68,12 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2024-07-04T23:25:25+08:00</lastmod>
+    <lastmod>2024-07-08T22:25:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/tech/</loc>
-    <lastmod>2024-07-04T23:25:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/dotnet/</loc>
-    <lastmod>2024-07-03T18:27:29+08:00</lastmod>
+    <lastmod>2024-07-08T22:25:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
