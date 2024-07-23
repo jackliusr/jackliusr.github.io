@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>visual studio on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/visual-studio/</link>
+    <description>Recent content in visual studio on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Jul 2024 10:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/visual-studio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup visual studio 2022 in restricted environment</title>
+      <link>https://jackliusr.github.io/posts/2024/07/setup-visual-studio-2022-in-restricted-environment/</link>
+      <pubDate>Tue, 23 Jul 2024 10:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/07/setup-visual-studio-2022-in-restricted-environment/</guid>
+      <description>uninstall vs and vsinstaller
+  restart machine
+  download below two vs cpp redist and install first before install visual studio https://aka.ms/vs/17/release/vc_redist.x86.exe https://aka.ms/vs/17/release/vc_redist.x64.exe
+  download the latest version of VisualStudioSetup.exe from https://c2rsetup.officeapps.live.com/c2r/downloadVS.aspx?sku=professional&amp;amp;channel=Release&amp;amp;version=VS2022&amp;amp;source=VSLandingPage&amp;amp;cid=2030:a4e034a4e73f4c1cb41366109a953e4d
+  choose download all and install when installing visual studio after choosing components to install
+  Clear Visual Studio Component Cache
+ Close Visual Studio (ensure devenv.exe is not present in the Task Manager)</description>
+    </item>
+    
+  </channel>
+</rss>

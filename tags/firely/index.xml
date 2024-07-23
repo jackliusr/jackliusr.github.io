@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Firely on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/firely/</link>
+    <description>Recent content in Firely on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Jul 2024 10:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/firely/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How firely sdk handle extra fields (not extension) in Poco and ISourceNode</title>
+      <link>https://jackliusr.github.io/posts/2024/07/how-firely-sdk-handle-extra-fields-not-extension-in-poco-and-isourcenode/</link>
+      <pubDate>Tue, 23 Jul 2024 10:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/07/how-firely-sdk-handle-extra-fields-not-extension-in-poco-and-isourcenode/</guid>
+      <description>Most time, I think json is forward and backward compatible as long as some convention is kept such as adding fields only etc. I always thought so since I studied CQRS and event sourcing. Is it true for FHIR, especially firely sdk? I answered so in a discussion, however I doubted it as I didn’t do it in FHIR. Here I have a short code to demostrate the two case. In the end, the result is yes and no.</description>
+    </item>
+    
+  </channel>
+</rss>

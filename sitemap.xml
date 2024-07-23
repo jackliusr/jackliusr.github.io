@@ -3,7 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2024-07-08T22:25:00+08:00</lastmod>
+    <lastmod>2024-07-23T22:37:04+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/fhir/</loc>
+    <lastmod>2024-07-23T22:37:04+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/firely/</loc>
+    <lastmod>2024-07-23T22:37:04+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2024/07/how-firely-sdk-handle-extra-fields-not-extension-in-poco-and-isourcenode/</loc>
+    <lastmod>2024-07-23T22:37:04+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/</loc>
+    <lastmod>2024-07-23T22:37:04+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/</loc>
+    <lastmod>2024-07-23T22:37:04+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2024/07/setup-visual-studio-2022-in-restricted-environment/</loc>
+    <lastmod>2024-07-23T10:33:24+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/</loc>
+    <lastmod>2024-07-23T22:37:04+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/categories/tech/</loc>
+    <lastmod>2024-07-23T22:37:04+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/visual-studio/</loc>
+    <lastmod>2024-07-23T10:33:24+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -42,18 +87,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2024-07-08T22:25:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://jackliusr.github.io/tags/nuget/</loc>
     <lastmod>2024-07-04T23:25:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2024-07-08T22:25:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -64,16 +99,6 @@
   </url><url>
     <loc>https://jackliusr.github.io/posts/2024/07/streamline-pack-and-install-package-to-global-packages/</loc>
     <lastmod>2024-07-04T23:25:25+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2024-07-08T22:25:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/categories/tech/</loc>
-    <lastmod>2024-07-08T22:25:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -144,11 +169,6 @@
   </url><url>
     <loc>https://jackliusr.github.io/tags/architecture/</loc>
     <lastmod>2024-06-13T20:29:02+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/fhir/</loc>
-    <lastmod>2024-06-13T00:02:09+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>

@@ -168,6 +168,39 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2023/01/reduce-the-chance-of-resource-conflict-in-gitops/" class="link black dim">
+        Reduce the chance of resource conflict in gitops
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Summary: Reduce the chance of resource conflict in gitops by reducing the time window of using shared resource files
+ My initial journal with gitops was setup my gitops cicd pipeline following the flux tutorial way. I immediately found out the limitation of flux at that time and sought alternative solutions. After comparing different solutions, I settled down argo-cd.
+ After a short while usage of argo-cd, I moved configration yamls and kustomization.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/2023/01/playbook-etcd-debugging/" class="link black dim">
+        Playbook: etcd debugging
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      etcd debugging flowchart, copy the flowchat from &ldquo;Stories from the Playbook&rdquo; for easy reference and put here to make it searchable in my site.
+flowchart TD oversized{MVCC DB oversized}--|Yes|logIntoContainer(log into container) logIntoContainer -- checkSize(check size of db) checkSize -- compatOrDefrag(compat or defrag) compatOrDefrag -- resizeDisk(resize machine disk) resizeDisk -- triggerRepair(Trigger repair) triggerRepair -- END oversized --|No|crashLoop{crash looping} crashLoop --|Yes| moreTime2Init(allow etc more time to init) moreTime2Init -- upgradeVersion(upgrade version) upgradeVersion -- resizeDisk crashLoop --|No| leaderElectionIssue{Leader Election Issue?
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2023/01/lessons-learnt-after-two-years-usage-of-cert-manager/" class="link black dim">
         Lessons learnt after two years usage of cert-manager
       </a>
@@ -288,38 +321,6 @@ if (!doNotTrack) {
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       The real differences is quoted here. You can find the content here
  A kustomization that is marked as a Component has basically the same capabilities as a normal kustomization. The main distinction is that they are evaluated after the resources of the parent kustomization (overlay or component) have been accumulated, and on top of them. This means that: A component with transformers can transform the resources that an overlay has previously specified in the resources field.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/12/do-we-need-a-microservice-framework/" class="link black dim">
-        Do we need a microservice framework
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Today I was asked which framework was used in my design of microservice systems. I answered those concerns of microservice are handled natively by kubernetes when my systems are deployed into kubernetes clusters. I will not use those frameworks in my design of microservices.
- The question sparked several questions in my mind. Here are those questions. Why do we still need microservice frameworks when kubernetes is the de-facto platform now?
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/12/kubernetes-metric-options/" class="link black dim">
-        Kubernetes metric options
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      In normal kubernetes metrics, you will find cAdvisor, Metrics Server, Kubernetes API Server, Node Exporter, and Kube-State-Metrics as source of metrics. In last 2 days, I noticed prometheus-adapter. Today KEDA popped up in my mind. I checked its website and found it can be source of metric as well.
- cAdvisor, Metrics Server, Kubernetes API Server, Node Exporter, and Kube-State-Metrics can be considered as in-cluster source of metric. However KEDA is about out-cluster source of metrics.
     </div>
   </div>
 </div>
