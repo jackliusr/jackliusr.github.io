@@ -1,0 +1,13 @@
+---
+title: How firely sdk handle extra fields (not extension) in Poco and ISourceNode
+date: 2024-07-23T10:10:00+08:00
+categories:
+- tech
+tags:
+- Fhir
+- Firely
+---
+
+Most time, I think json is forward and backward compatible as long as some convention is kept such as adding fields only etc. I always thought so since I studied CQRS and event sourcing. Is it true for FHIR, especially firely sdk? I answered so in a discussion, however I doubted it as I didn't do it in FHIR. Here I have a short code to demostrate the two case. In the end, the result is yes and no. For poco case, firely sdk will raise an exception; on the contrast, ISourceNode can parse the data successfully. It will fail when calling ToPoco from ISourceNode as well. Now there is one open question how do we persist data ? via POCO or ISourceCode? Do we allow those extra fields?
+
+{{< gist jackliusr ae8aa63d678dc764ea701dc2a8a1c3bb >}}
