@@ -1,0 +1,19 @@
+---
+title: Inconsistent templates in visual studio and dotnet cli when dotnet_cli_home set to custom location
+date: 2024-08-01T16:10:00+08:00
+categories:
+- tech
+tags:
+- visual studio
+- dotnet
+- template
+---
+
+Due to security policy, I had to set dotnet_cli_home to non-default location to run some building steps. Things went quite well until not. All my command line usages and batch scripts work, until I tried to create a project using the custom project template via Visual Studio and noticed that old deleted template was shown in "Create a new project" dialog.
+
+I tried several options and none of them works for my case. They are belows: 
+
+. Remove packages in %userprofile%\.templateengine and corresponding data from packages.json
+. Delete all files in %appdata%\..\Local\Microsoft\VisualStudio\17.0_c01b6b15\ComponentModelCache
+
+I recalled the recent changes I made to my environment, dotnet_cli_home is the most promised one. I removed dotnet_cli_home from my environment variables. Bingo!
