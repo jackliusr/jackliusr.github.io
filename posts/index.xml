@@ -6,7 +6,17 @@
     <description>Recent content in Posts on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Jul 2024 10:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Aug 2024 16:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Inconsistent templates in visual studio and dotnet cli when dotnet_cli_home set to custom location</title>
+      <link>https://jackliusr.github.io/posts/2024/08/inconsistent-templates-in-visual-studio-and-dotnet-cli-when-dotnet_cli_home-set-to-custom-location/</link>
+      <pubDate>Thu, 01 Aug 2024 16:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/08/inconsistent-templates-in-visual-studio-and-dotnet-cli-when-dotnet_cli_home-set-to-custom-location/</guid>
+      <description>Due to security policy, I had to set dotnet_cli_home to non-default location to run some building steps. Things went quite well until not. All my command line usages and batch scripts work, until I tried to create a project using the custom project template via Visual Studio and noticed that old deleted template was shown in &amp;#34;Create a new project&amp;#34; dialog.
+ I tried several options and none of them works for my case.</description>
+    </item>
+    
     <item>
       <title>How firely sdk handle extra fields (not extension) in Poco and ISourceNode</title>
       <link>https://jackliusr.github.io/posts/2024/07/how-firely-sdk-handle-extra-fields-not-extension-in-poco-and-isourcenode/</link>

@@ -6,7 +6,34 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Jul 2024 10:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Aug 2024 16:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>dotnet</title>
+      <link>https://jackliusr.github.io/tags/dotnet/</link>
+      <pubDate>Thu, 01 Aug 2024 16:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/dotnet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>template</title>
+      <link>https://jackliusr.github.io/tags/template/</link>
+      <pubDate>Thu, 01 Aug 2024 16:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/template/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>visual studio</title>
+      <link>https://jackliusr.github.io/tags/visual-studio/</link>
+      <pubDate>Thu, 01 Aug 2024 16:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/visual-studio/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>FHIR</title>
       <link>https://jackliusr.github.io/tags/fhir/</link>
@@ -26,29 +53,11 @@
     </item>
     
     <item>
-      <title>visual studio</title>
-      <link>https://jackliusr.github.io/tags/visual-studio/</link>
-      <pubDate>Tue, 23 Jul 2024 10:10:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/visual-studio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>csharp</title>
       <link>https://jackliusr.github.io/tags/csharp/</link>
       <pubDate>Thu, 04 Jul 2024 20:10:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/csharp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>dotnet</title>
-      <link>https://jackliusr.github.io/tags/dotnet/</link>
-      <pubDate>Thu, 04 Jul 2024 20:10:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/dotnet/</guid>
       <description></description>
     </item>
     
