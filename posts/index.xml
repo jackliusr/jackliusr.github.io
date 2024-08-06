@@ -6,7 +6,16 @@
     <description>Recent content in Posts on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Aug 2024 16:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Aug 2024 16:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clojure for real competitive edge and performance</title>
+      <link>https://jackliusr.github.io/posts/2024/08/clojure-for-real-competitive-edge-and-performance/</link>
+      <pubDate>Tue, 06 Aug 2024 16:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/08/clojure-for-real-competitive-edge-and-performance/</guid>
+      <description>In Beating the average, Paul Graham mentioned lisp is the secret weapon behind his startups, he also elaborated on that point. I believed deeply that after I wrote some small programmings in common lisp before I learnt reddit pilot from lisp to python. Since then I always doubt if the power of lisp is still relevant considering that java, dotnet, python and ruby ecosystems are more mature than that time.</description>
+    </item>
+    
     <item>
       <title>Inconsistent templates in visual studio and dotnet cli when dotnet_cli_home set to custom location</title>
       <link>https://jackliusr.github.io/posts/2024/08/inconsistent-templates-in-visual-studio-and-dotnet-cli-when-dotnet_cli_home-set-to-custom-location/</link>
