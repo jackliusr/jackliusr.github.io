@@ -11,7 +11,7 @@ In https://paulgraham.com/avg.html[Beating the average], Paul Graham mentioned l
 
 A recent finding changed my mind. In Healthcare domain, FHIR is a relative new standard. Most vendors are trying hard to delivery new features, one of them stands out in its feature list depicted in below picture, aidbox. The architecture diagram from its website mentions its main programming language is clojure. That resonate the ideas behind "Beating the average".
 
-{{< imgur id="7f7t1P6" >}}
+{{< imgur id="1YPdEM6" >}}
 
 How does Aidbox optimize its system performance? That really grabs my attention! In past reading and clojure coding practices, I always got the impression that clojure is slow. It will definite be an issue for a commerical product. I really wondered how aidbox resolved the issue. A good thing is that I can get a docker image to try aidbox.  clj-fast , one of the libraries used by aidbox are quite performant, its readme mentions https://www.youtube.com/watch?v=3SSHjKT3ZmA[Naked Performance (with Clojure) – Tommi Reiman] ( https://www.slideshare.net/slideshow/naked-performance-with-clojure/176763705[slides] ). It gives about several ideas how to improve performances of clojure. It worth to watch the video and read the slides.
 
