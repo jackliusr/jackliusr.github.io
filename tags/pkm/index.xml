@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>PMK on My learning and diary</title>
-    <link>https://jackliusr.github.io/tags/pmk/</link>
-    <description>Recent content in PMK on My learning and diary</description>
+    <title>PKM on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/pkm/</link>
+    <description>Recent content in PKM on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 May 2023 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/pmk/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 May 2023 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/pkm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My choice of personal knowledge management (PKM): logseq</title>
       <link>https://jackliusr.github.io/posts/2023/05/my-choice-of-personal-knowledge-management-pkm-logseq/</link>
