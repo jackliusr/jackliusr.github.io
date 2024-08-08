@@ -4,7 +4,7 @@ date: 2023-05-23T20:01:10+08:00
 categories:
 - tech
 tags:
-- PMK
+- PKM
 - logseq
 ---
 
