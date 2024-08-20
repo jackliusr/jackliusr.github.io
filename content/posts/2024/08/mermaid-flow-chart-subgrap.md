@@ -12,8 +12,7 @@ One thing constantly bothered me since I used mermaid for flowchart, how to corr
 
 Another things, mermaid diagram is natively supported in asciidoctor now. This one is my first example to use it. 
 
-[mermaid]
-----
+```mermaid
 %%{init: {"flowchart": {"htmlLabels": false}} }%%
 flowchart TD
    subgraph developer
@@ -35,6 +34,5 @@ flowchart TD
    task -- build time  auto-gen  --> sd(StructureDefinition)
    task -- build time auto-gen  --> capStmt(jsonpatch Fragment and \n patched some files)
    classDef changes fill:orange
-
-----
+```
 
