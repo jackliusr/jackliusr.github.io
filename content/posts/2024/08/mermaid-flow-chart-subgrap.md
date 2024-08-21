@@ -18,7 +18,7 @@ flowchart TD
    subgraph developer
      cls(Entity Classes annotated with AttrA)
    end
-   subgraph fhirnexus
+   subgraph component
       cg(Source Generator):::changes
       task( msbuild custom task):::changes
    end
