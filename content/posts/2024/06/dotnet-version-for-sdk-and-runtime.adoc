@@ -44,4 +44,4 @@ At first, I only realized there is difference between runtime version and sdk ve
 The true solution to the issue are two factors. 
 
 - Install a corresponding latest version of SDK which supports the specific version of runtime
-- Specify sdk version and rollForward in global.json
+- Specify sdk version and disable rollForward in global.json
