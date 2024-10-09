@@ -35,13 +35,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2024/10/things-learnt-from-recent-preparation-of-1t-data-for-testing/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-10-09T09:10:00+08:00" />
-<meta property="article:modified_time" content="2024-10-09T10:08:16+08:00" />
+<meta property="article:modified_time" content="2024-10-09T12:10:11+08:00" />
 
 <meta itemprop="name" content="Things learnt from recent preparation of 1T data for testing">
 <meta itemprop="description" content="Several things learnt from recent preparation of data for testing.
  Question the way when it takes too long to process data sed: remove last n lines In the past I always thought sed is the fastest way to manipulate data. Is it true for all the cases? I generated 1T testing data in ndjson format, however the last lines of those files are corrupted json data. I had to remove the last line."><meta itemprop="datePublished" content="2024-10-09T09:10:00+08:00" />
-<meta itemprop="dateModified" content="2024-10-09T10:08:16+08:00" />
-<meta itemprop="wordCount" content="372">
+<meta itemprop="dateModified" content="2024-10-09T12:10:11+08:00" />
+<meta itemprop="wordCount" content="403">
 <meta itemprop="keywords" content="data,linux,PostgreSQL,jq,sed,truncate,tail,linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Things learnt from recent preparation of 1T data for testing"/>
 <meta name="twitter:description" content="Several things learnt from recent preparation of data for testing.
@@ -206,7 +206,7 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 2 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 372 words</span>
+        <span class="f6 mv4 dib tracked"> - 403 words</span>
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
@@ -258,7 +258,20 @@ Thinking of the way of tail, there must be a more efficient way to remove last l
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">jq -c &#39;.&#39; &lt; test.ndjson &gt; /dev/null
+jq &#39;empty&#39; &lt; test.ndjson
 # TODO: show error lines and continue processing remainding lines</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_validate_json_and_get_lines_with_errors"><a class="anchor" href="#_validate_json_and_get_lines_with_errors"></a><a class="link" href="#_validate_json_and_get_lines_with_errors">Validate json and get lines with errors</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">&gt; jq -R -n &#39;inputs | try (fromjson|empty) catch input_line_number&#39; &lt; test.ndjson
+2
+4
+10
+&gt; sed -i &#39;2d;4d;10d&#39; test.ndjson</code></pre>
 </div>
 </div>
 </div>
@@ -404,7 +417,7 @@ Thinking of the way of tail, there must be a more efficient way to remove last l
 
 
   
-  <p style="font-size: small; color: grey;">Page version: 323c9de5057d46d1f7dd57e4cc4f1daf8dfc4a8f 2024-10-09</p>
+  <p style="font-size: small; color: grey;">Page version: 2df625dbd25037fe4e2409cbda44e7ba916e8cee 2024-10-09</p>
 </body>
 
 </html>
