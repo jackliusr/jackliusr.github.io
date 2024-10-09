@@ -54,6 +54,17 @@ PostgreSQL is slow to process json data for jsonb as it do more jobs than simple
 [source, bash]
 ----
 jq -c '.' < test.ndjson > /dev/null
+jq 'empty' < test.ndjson
 # TODO: show error lines and continue processing remainding lines
 ----
 
+### Validate json and get lines with errors
+
+[source, terminal]
+----
+> jq -R -n 'inputs | try (fromjson|empty) catch input_line_number' < test.ndjson
+2
+4
+10
+> sed -i '2d;4d;10d' test.ndjson
+----
