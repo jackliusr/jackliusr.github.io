@@ -1,0 +1,58 @@
+---
+title: Things learnt from recent preparation of 1T data for testing 
+date: 2024-10-09T09:10:00+08:00
+categories:
+- tech
+tags:
+- data
+- linux
+- PostgreSQL
+- jq
+- sed
+- truncate
+- tail
+- linux
+---
+
+
+Several things learnt from recent preparation of data for testing. 
+
+## Question the way when it takes too long to process data
+
+### sed: remove last n lines
+
+In the past I always thought sed is the fastest way to manipulate data. Is it true for all the cases?
+I generated 1T testing data in ndjson format, however the last lines of those files are corrupted json
+data. I had to remove the last line. The `tail` command can quickly show the line there. `sed` will take longer time to delete the last line. 
+Thinking of the way of tail, there must be a more efficient way to remove last line or last n lines. https://superuser.com/a/127821/315949[Efficiently remove the last two lines of an extremely large text file] at superuser.com gives a python program and `truncate` command, `truncate` is my choice considing less dependencies. It takes less 1 seconds to remove last line from a 100GB-sized file instead of mins. In the end, `sed` is not the fastest way to delete last line or last n lines of files. Here is the way I used to remove last line. 
+
+[source, bash]
+----
+truncate --size=-$(tail -n1 myfile | wc -m) myfile
+----
+
+### sed: remove some lines in the middle of a file
+
+In theory, it is possible to navigate a specific line and manipulate the block correctly in linewise way without rewriting the file. Don't know how to do it now.
+
+
+### find and execute
+
+During processing data, I noticed cpu usages and io usages are low. Considering running in a multiple core system with SSD storage, there are rooms to improve. Parallel the execution part will be a natural choice. 
+
+[source, bash]
+----
+find . -type f -name '*.zip' -print0 |\
+   parallel -0 unzip -d {/.} {}
+----
+
+### Simple Json validataion (not schema or structure level)
+
+PostgreSQL is slow to process json data for jsonb as it do more jobs than simple validation. A better option would be doing the validation before loading data into PostgreSQL. 
+
+[source, bash]
+----
+jq -c '.' < test.ndjson > /dev/null
+# TODO: show error lines and continue processing remainding lines
+----
+
