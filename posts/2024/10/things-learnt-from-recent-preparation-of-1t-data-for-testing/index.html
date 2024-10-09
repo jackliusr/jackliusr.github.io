@@ -35,13 +35,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2024/10/things-learnt-from-recent-preparation-of-1t-data-for-testing/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-10-09T09:10:00+08:00" />
-<meta property="article:modified_time" content="2024-10-09T09:56:49+08:00" />
+<meta property="article:modified_time" content="2024-10-09T10:08:16+08:00" />
 
 <meta itemprop="name" content="Things learnt from recent preparation of 1T data for testing">
 <meta itemprop="description" content="Several things learnt from recent preparation of data for testing.
  Question the way when it takes too long to process data sed: remove last n lines In the past I always thought sed is the fastest way to manipulate data. Is it true for all the cases? I generated 1T testing data in ndjson format, however the last lines of those files are corrupted json data. I had to remove the last line."><meta itemprop="datePublished" content="2024-10-09T09:10:00+08:00" />
-<meta itemprop="dateModified" content="2024-10-09T09:56:49+08:00" />
-<meta itemprop="wordCount" content="341">
+<meta itemprop="dateModified" content="2024-10-09T10:08:16+08:00" />
+<meta itemprop="wordCount" content="372">
 <meta itemprop="keywords" content="data,linux,PostgreSQL,jq,sed,truncate,tail,linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Things learnt from recent preparation of 1T data for testing"/>
 <meta name="twitter:description" content="Several things learnt from recent preparation of data for testing.
@@ -206,7 +206,7 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 2 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 341 words</span>
+        <span class="f6 mv4 dib tracked"> - 372 words</span>
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
@@ -233,6 +233,9 @@ Thinking of the way of tail, there must be a more efficient way to remove last l
 <h3 id="_sed_remove_some_lines_in_the_middle_of_a_file"><a class="anchor" href="#_sed_remove_some_lines_in_the_middle_of_a_file"></a><a class="link" href="#_sed_remove_some_lines_in_the_middle_of_a_file">sed: remove some lines in the middle of a file</a></h3>
 <div class="paragraph">
 <p>In theory, it is possible to navigate a specific line and manipulate the block correctly in linewise way without rewriting the file. Don’t know how to do it now.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.reddit.com/r/learnpython/comments/97dy4j/comment/e47o8ad/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button">You can actually edit a file without re-writing the whole file</a> at reddit show a way, replacing the lines with whitespace if there is no side effects on the downstream processing.</p>
 </div>
 </div>
 <div class="sect2">
@@ -401,7 +404,7 @@ Thinking of the way of tail, there must be a more efficient way to remove last l
 
 
   
-  <p style="font-size: small; color: grey;">Page version: 6994e92300a5404bd9a91039cc86e9677baf66d0 2024-10-09</p>
+  <p style="font-size: small; color: grey;">Page version: 323c9de5057d46d1f7dd57e4cc4f1daf8dfc4a8f 2024-10-09</p>
 </body>
 
 </html>
