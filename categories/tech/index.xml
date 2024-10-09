@@ -6,7 +6,17 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Aug 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Oct 2024 09:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Things learnt from recent preparation of 1T data for testing</title>
+      <link>https://jackliusr.github.io/posts/2024/10/things-learnt-from-recent-preparation-of-1t-data-for-testing/</link>
+      <pubDate>Wed, 09 Oct 2024 09:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/10/things-learnt-from-recent-preparation-of-1t-data-for-testing/</guid>
+      <description>Several things learnt from recent preparation of data for testing.
+ Question the way when it takes too long to process data sed: remove last n lines In the past I always thought sed is the fastest way to manipulate data. Is it true for all the cases? I generated 1T testing data in ndjson format, however the last lines of those files are corrupted json data. I had to remove the last line.</description>
+    </item>
+    
     <item>
       <title>Mermaid flow with subgraph control</title>
       <link>https://jackliusr.github.io/posts/2024/08/mermaid-flow-with-subgraph-control/</link>

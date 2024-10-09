@@ -6,7 +6,70 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Aug 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Oct 2024 09:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>data</title>
+      <link>https://jackliusr.github.io/tags/data/</link>
+      <pubDate>Wed, 09 Oct 2024 09:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jq</title>
+      <link>https://jackliusr.github.io/tags/jq/</link>
+      <pubDate>Wed, 09 Oct 2024 09:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/jq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://jackliusr.github.io/tags/linux/</link>
+      <pubDate>Wed, 09 Oct 2024 09:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>postgresql</title>
+      <link>https://jackliusr.github.io/tags/postgresql/</link>
+      <pubDate>Wed, 09 Oct 2024 09:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sed</title>
+      <link>https://jackliusr.github.io/tags/sed/</link>
+      <pubDate>Wed, 09 Oct 2024 09:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/sed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tail</title>
+      <link>https://jackliusr.github.io/tags/tail/</link>
+      <pubDate>Wed, 09 Oct 2024 09:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/tail/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>truncate</title>
+      <link>https://jackliusr.github.io/tags/truncate/</link>
+      <pubDate>Wed, 09 Oct 2024 09:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/truncate/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>diagram</title>
       <link>https://jackliusr.github.io/tags/diagram/</link>
@@ -796,15 +859,6 @@
       <pubDate>Fri, 22 Dec 2023 19:10:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/centos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://jackliusr.github.io/tags/linux/</link>
-      <pubDate>Fri, 22 Dec 2023 19:10:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
@@ -1790,15 +1844,6 @@
     </item>
     
     <item>
-      <title>postgresql</title>
-      <link>https://jackliusr.github.io/tags/postgresql/</link>
-      <pubDate>Fri, 30 Sep 2022 20:40:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/postgresql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>project</title>
       <link>https://jackliusr.github.io/tags/project/</link>
       <pubDate>Fri, 30 Sep 2022 20:40:00 +0800</pubDate>
@@ -2335,15 +2380,6 @@
       <pubDate>Mon, 16 May 2022 20:10:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/calico/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>jq</title>
-      <link>https://jackliusr.github.io/tags/jq/</link>
-      <pubDate>Sun, 15 May 2022 12:10:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/jq/</guid>
       <description></description>
     </item>
     
