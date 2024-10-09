@@ -35,6 +35,7 @@ truncate --size=-$(tail -n1 myfile | wc -m) myfile
 
 In theory, it is possible to navigate a specific line and manipulate the block correctly in linewise way without rewriting the file. Don't know how to do it now.
 
+https://www.reddit.com/r/learnpython/comments/97dy4j/comment/e47o8ad/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button[You can actually edit a file without re-writing the whole file] at reddit show a way, replacing the lines with whitespace if there is no side effects on the downstream processing.
 
 ### find and execute
 
