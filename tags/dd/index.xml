@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dd on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/dd/</link>
+    <description>Recent content in dd on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 19 Oct 2024 09:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/dd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Change content of a file in block or byte level</title>
+      <link>https://jackliusr.github.io/posts/2024/10/change-content-of-a-file-in-block-or-byte-level/</link>
+      <pubDate>Sat, 19 Oct 2024 09:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/10/change-content-of-a-file-in-block-or-byte-level/</guid>
+      <description>Since wrote Things learnt from recent preparation of 1T data for testing, I had figured out how to do that on the following weekends. Today I couldn’t get the steps to do so immediately. It is better to note down for my next time usage. The detailed steps is as following
+  Find the location in the file
+  Get the block contains contents to modify
+  Extract the block to a file and modify it</description>
+    </item>
+    
+  </channel>
+</rss>

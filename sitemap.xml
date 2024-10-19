@@ -3,7 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2024-10-09T12:10:11+08:00</lastmod>
+    <lastmod>2024-10-19T23:41:45+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2024/10/change-content-of-a-file-in-block-or-byte-level/</loc>
+    <lastmod>2024-10-19T23:41:45+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/dd/</loc>
+    <lastmod>2024-10-19T23:41:45+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/linux/</loc>
+    <lastmod>2024-10-19T23:41:45+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/</loc>
+    <lastmod>2024-10-19T23:41:45+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/</loc>
+    <lastmod>2024-10-19T23:41:45+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/</loc>
+    <lastmod>2024-10-19T23:41:45+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/categories/tech/</loc>
+    <lastmod>2024-10-19T23:41:45+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -17,22 +52,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/tags/linux/</loc>
-    <lastmod>2024-10-09T12:10:11+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2024-10-09T12:10:11+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://jackliusr.github.io/tags/postgresql/</loc>
-    <lastmod>2024-10-09T12:10:11+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/posts/</loc>
     <lastmod>2024-10-09T12:10:11+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -42,17 +62,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2024-10-09T12:10:11+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://jackliusr.github.io/tags/tail/</loc>
-    <lastmod>2024-10-09T12:10:11+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/categories/tech/</loc>
     <lastmod>2024-10-09T12:10:11+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
