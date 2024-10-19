@@ -1,0 +1,42 @@
+---
+title: Change content of a file in block or byte level
+date: 2024-10-19T09:10:00+08:00
+categories:
+- tech
+tags:
+- dd
+- linux
+---
+
+Since wrote https://jackliusr.github.io/posts/2024/10/things-learnt-from-recent-preparation-of-1t-data-for-testing/[Things learnt from recent preparation of 1T data for testing], I had figured out how to do that on the following weekends. Today I couldn't get the steps to do so immediately. It is better to note down for my next time usage. The detailed steps is as following
+
+. Find the location in the file
+. Get the block contains contents to modify
+. Extract the block to a file and modify it 
+. Replace the target block
+
+
+scripts: 
+
+[source, bash]
+----
+# test file test.ndjson in /dev/sdc
+# line contains aaa need to replace with same length of spaces
+> grep -oba aaa test.ndjson
+16697:aaa
+> lsblk -o NAME,PHY-SEC,LOG-SEC,SIZE
+NAME PHY-SEC LOG-SEC   SIZE
+sda      512     512 388.4M
+sdb     4096     512     4G
+sdc     4096     512     1T
+
+# backup the file to verify and diff
+> cp test.ndjson test2.ndjson
+# 16697/4096=4.07
+dd if=/home/jack/tmp/test.ndjson bs=4096 skip=4 count=1 > 5block.json
+# replace line ["aaa": 1, with spaces
+# use sed or vim edit 5block.json
+
+# replace the block 5
+dd if=5block.json of=test.ndjson  bs=4096 count=1 seek=4
+----
