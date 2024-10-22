@@ -1,0 +1,42 @@
+---
+title: expert beginner vs Generalizing Specialists vs icicle-shaped vs t-shaped
+date: 2024-10-09T09:10:00+08:00
+categories:
+- carear
+tags:
+- t-shaped
+- expert beginner
+- Generalizing Specialists
+- icicle-shaped
+---
+
+Today I read an article https://kevin.the.li/posts/learning-to-learn/[Learning to learn] and it mentions the concept https://daedtech.com/how-developers-stop-learning-rise-of-the-expert-beginner/["expert beginner"] I learnt in past. I am wondering the differences among other concepts (namely generalizing Specialists, icicle-shaped vs t-shaped) in those domain, where I fall into the category, do I do the correct career choices etc.
+
+The differences among them can be quickly generated from chatgpt, I quoted the answers here for quick references. 
+
+[cols="1,1,1,1,1", options="header"]
+|===
+| Aspect                 | Expert Beginner          | T-Shaped Professional      | Generalizing Specialist   | Icicle-Shaped Specialist
+
+| Skill Depth            | Shallow to moderate      | Deep in one area           | Deep in multiple areas    | Very deep in a few narrow fields
+| Skill Breadth          | Narrow                   | Broad across disciplines   | Moderate to broad         | Narrow
+| Adaptability           | Low                      | High                       | Very high                 | Low to moderate
+| Collaboration          | Limited                  | High                       | Very high                 | Moderate
+| Learning Attitude      | Resistant                | Open to learning           | Continuously learning     | Focused on specific expertise
+| Best Fit Roles         | Operational or repetitive tasks | Agile teams, product teams | Cross-disciplinary leadership | Niche technical roles
+| Risk                   | Stagnation               | Losing depth over time     | Burnout or skill overload | Over-specialization
+|=== 
+
+Thinking those concepts as a spectrum, I think I fall into between Generalizing Specialist and Icicle-Shaped. In some domains, I have moderate level knowledge by choice, and I can dive deep fastly as needed by projects or products using the skills and strategies (e.g. mindmap, 20/80 principles, spaced repetition, overexposure, diagrams[uml, bpmn], positive transfer of knowledge) I mastered during my continuous learning journey. 
+
+When and how I got there? I was aware of ageism and how to do countermeasure to make age be assets instead of liabilites when I was about 35 years old. Since then, I kept to learn new things in IT technologies, startups, finance, accounting, general business info and other business domains. Since the broad domains and information, I sought unconventional ways such as spaced repetition, second brain, personal knowledge management to keep things in memory in a substained way. 
+
+I doubted my action in past. Only recent years, I found some articles elaborated on those career choices under other concepts below. The experiences shared by others resonate deeply with my own.
+
+. https://www.noidea.dog/glue[be glue]
+. https://www.linkedin.com/pulse/how-build-strong-career-tech-thiago-ghisi/[How to Build a Strong Career in Tech]
+. career moat etc
+
+I think those things should be in some contexts as well such as high profile big IT tech companies or others,  timing before LLM/GPT etc. Should I change my strategies accordingly? I am still exploring it now. 
+
+Another trend shows in https://www.reddit.com/r/ExperiencedDevs/comments/18h1b0t/the_tech_industry_currently_favors_specialized/[The tech industry currently favors specialized engineers over generalists], I don't have number and not sure if it is true now, I might follow up it for a while to get sense of it.
