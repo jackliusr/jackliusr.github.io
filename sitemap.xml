@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2024-10-19T23:41:45+08:00</lastmod>
+    <lastmod>2024-10-22T23:13:30+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -23,17 +23,17 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2024-10-19T23:41:45+08:00</lastmod>
+    <lastmod>2024-10-22T23:13:30+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2024-10-19T23:41:45+08:00</lastmod>
+    <lastmod>2024-10-22T23:13:30+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2024-10-19T23:41:45+08:00</lastmod>
+    <lastmod>2024-10-22T23:13:30+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -42,8 +42,33 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://jackliusr.github.io/categories/carear/</loc>
+    <lastmod>2024-10-22T23:13:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://jackliusr.github.io/tags/data/</loc>
     <lastmod>2024-10-09T12:10:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/expert-beginner/</loc>
+    <lastmod>2024-10-22T23:13:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2024/10/expert-beginner-vs-generalizing-specialists-vs-icicle-shaped-vs-t-shaped/</loc>
+    <lastmod>2024-10-22T23:13:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/generalizing-specialists/</loc>
+    <lastmod>2024-10-22T23:13:30+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/icicle-shaped/</loc>
+    <lastmod>2024-10-22T23:13:30+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -59,6 +84,11 @@
   </url><url>
     <loc>https://jackliusr.github.io/tags/sed/</loc>
     <lastmod>2024-10-09T12:10:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/t-shaped/</loc>
+    <lastmod>2024-10-22T23:13:30+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>

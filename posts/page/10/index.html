@@ -168,6 +168,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2022/10/learning-microsoft-azure-or-google-cloud/" class="link black dim">
+        Learning Microsoft azure or google cloud
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Today when I leant SRE course from cloudskillsboost, the first course is google cloud foundation. SRE is great. cloudskillsboost should be best place to learn SRE as it is originated there.
+ 
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2022/10/sdui-odoo-metadata-driven-ui-active-data-dictionary-data-driven-ui/" class="link black dim">
         SDUI, odoo, metadata driven ui, active data dictionary, data driven ui
       </a>
@@ -315,22 +331,6 @@ path:pubspec.yaml google_mobile_ads firebase_analytics
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Today I had a case to expose serveral kubernetes dashboard with cert-manager. Initiallly I thought it should be quite easy to setup, but the reality was quite different. My intial yaml is as following.
  apiVersion: networking.k8s.io/v1 kind: Ingress metadata: name: ingress-global-dash namespace: kubernetes-dashboard labels: name: ingress-global-dash use-http01-solver: &#34;true&#34; annotations: cert-manager.io/cluster-issuer: &#34;test-issuer&#34; spec: ingressClassName: nginx rules: - host: &#34;dashboard.example.com&#34; http: paths: - pathType: Prefix path: &#34;/&#34; backend: service: name: kubernetes-dashboard port: number: 80 #later changed to 443 according to port of kubernetes-dashboard svc tls: # &lt; placing a host in the TLS config will determine what ends up in the cert&#39;s subjectAltNames - hosts: - dashboard.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/07/set-timezone-in-asp.net-6.0-in-linux-container/" class="link black dim">
-        Set timezone in asp.net 6.0 in linux container
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      According to many articles one the web, the way to set timezone is as following:
- cp /usr/share/zoneinfo/Asia/Singapore /etc/localtime echo &#39;Asia/Singapore&#39; &gt; /etc/timezone   You can indeed get the correct time if you run it in dotnet core 5 docker linux containers. However you couldn’t get the correct local time in dotnet 6.0. I found the issue About time incorrect of docker image about aspnet-6 #62545. After I tried serveral combinations mentioned in the issue, finally I got a working solution.
     </div>
   </div>
 </div>
