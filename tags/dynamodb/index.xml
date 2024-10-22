@@ -18,6 +18,15 @@
     </item>
     
     <item>
+      <title>SaaS, token bucket, fairness and business practices</title>
+      <link>https://jackliusr.github.io/posts/2024/04/saas-token-bucket-fairness-and-business-practices/</link>
+      <pubDate>Mon, 29 Apr 2024 16:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/04/saas-token-bucket-fairness-and-business-practices/</guid>
+      <description>I always thought SaaS are based shardig, load balance and multiple-tenant. In the past several days, I re-read Dynamo and DynamoDB papers to figure out some key info to share with my colleages to find a common ground about DynamoDB. One thing is mentioned many times in DynamoDB is token-bucket. Suddenly a thought popped out my mind when I walked back after lunch with my colleague that token-bucket algorithm should be a component of SaaS and multiple-tenant.</description>
+    </item>
+    
+    <item>
       <title>Run athena and pyspark locally</title>
       <link>https://jackliusr.github.io/posts/2024/04/run-athena-and-pyspark-locally/</link>
       <pubDate>Mon, 15 Apr 2024 20:10:00 +0800</pubDate>
@@ -35,15 +44,6 @@
       <guid>https://jackliusr.github.io/posts/2024/04/data-modeling-of-fhir-searchindices-in-aws-dynamodb/</guid>
       <description>Microsoft FHIR Server serialize searchindices this way in cosmosdb. How to model it in AWS DynamoDB?
  { &amp;#34;id&amp;#34;: &amp;#34;9240cda7-bbb7-4ad4-aa9f-971750a3dc71&amp;#34;, &amp;#34;searchIndices&amp;#34;: [ { &amp;#34;p&amp;#34;: &amp;#34;_id&amp;#34;, &amp;#34;c&amp;#34;: &amp;#34;9240cda7-bbb7-4ad4-aa9f-971750a3dc71&amp;#34; }, { &amp;#34;p&amp;#34;: &amp;#34;_lastUpdated&amp;#34;, &amp;#34;st&amp;#34;: &amp;#34;2018-08-22T23:37:56.1289012+00:00&amp;#34;, &amp;#34;et&amp;#34;: &amp;#34;2018-08-22T23:37:56.1289012+00:00&amp;#34; }, { &amp;#34;p&amp;#34;: &amp;#34;patient&amp;#34;, &amp;#34;r&amp;#34;: &amp;#34;Patient/example&amp;#34; }, { &amp;#34;p&amp;#34;: &amp;#34;performer&amp;#34;, &amp;#34;r&amp;#34;: &amp;#34;Practitioner/example&amp;#34; }, { &amp;#34;p&amp;#34;: &amp;#34;related&amp;#34;, &amp;#34;r_0&amp;#34;: &amp;#34;Observation/example-genetics-1&amp;#34;, &amp;#34;s_1&amp;#34;: &amp;#34;http://hl7.org/fhir/observation-relationshiptypes&amp;#34;, &amp;#34;c_1&amp;#34;: &amp;#34;derived-from&amp;#34; }, { &amp;#34;p&amp;#34;: &amp;#34;related-target&amp;#34;, &amp;#34;r&amp;#34;: &amp;#34;Observation/example-genetics-1&amp;#34; }, { &amp;#34;p&amp;#34;: &amp;#34;related-type&amp;#34;, &amp;#34;s&amp;#34;: &amp;#34;http://hl7.org/fhir/observation-relationshiptypes&amp;#34;, &amp;#34;c&amp;#34;: &amp;#34;derived-from&amp;#34; }, { &amp;#34;p&amp;#34;: &amp;#34;status&amp;#34;, &amp;#34;s&amp;#34;: &amp;#34;http://hl7.</description>
-    </item>
-    
-    <item>
-      <title>SaaS, token bucket, fairness and business practices</title>
-      <link>https://jackliusr.github.io/posts/1/01/saas-token-bucket-fairness-and-business-practices/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jackliusr.github.io/posts/1/01/saas-token-bucket-fairness-and-business-practices/</guid>
-      <description>I always thought SaaS are based shardig, load balance and multiple-tenant. In the past several days, I re-read Dynamo and DynamoDB papers to figure out some key info to share with my colleages to find a common ground about DynamoDB. One thing is mentioned many times in DynamoDB is token-bucket. Suddenly a thought popped out my mind when I walked back after lunch with my colleague that token-bucket algorithm should be a component of SaaS and multiple-tenant.</description>
     </item>
     
   </channel>

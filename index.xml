@@ -199,6 +199,15 @@ Another things, mermaid diagram is natively supported in asciidoctor now. This o
     </item>
     
     <item>
+      <title>SaaS, token bucket, fairness and business practices</title>
+      <link>https://jackliusr.github.io/posts/2024/04/saas-token-bucket-fairness-and-business-practices/</link>
+      <pubDate>Mon, 29 Apr 2024 16:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/04/saas-token-bucket-fairness-and-business-practices/</guid>
+      <description>I always thought SaaS are based shardig, load balance and multiple-tenant. In the past several days, I re-read Dynamo and DynamoDB papers to figure out some key info to share with my colleages to find a common ground about DynamoDB. One thing is mentioned many times in DynamoDB is token-bucket. Suddenly a thought popped out my mind when I walked back after lunch with my colleague that token-bucket algorithm should be a component of SaaS and multiple-tenant.</description>
+    </item>
+    
+    <item>
       <title>mindmap in hugo</title>
       <link>https://jackliusr.github.io/posts/2024/04/mindmap-in-hugo/</link>
       <pubDate>Sat, 20 Apr 2024 10:10:00 +0800</pubDate>
@@ -226,6 +235,16 @@ Another things, mermaid diagram is natively supported in asciidoctor now. This o
       <guid>https://jackliusr.github.io/posts/2024/04/demo-run-tikzjax-from-hugo/</guid>
       <description>I tried to use tikz in my logseq. However it fails to render correctly. Today I have time to try it in my hugo sites. Here is a demo from https://tikzjax.com/
   \begin{tikzpicture} \draw (0,0) circle (1in); \end{tikzpicture} )   </description>
+    </item>
+    
+    <item>
+      <title>Tools hope to have for JsonSchema</title>
+      <link>https://jackliusr.github.io/posts/2024/04/tools-hope-to-have-for-jsonschema/</link>
+      <pubDate>Wed, 10 Apr 2024 16:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/04/tools-hope-to-have-for-jsonschema/</guid>
+      <description>When I was preparing a slides to recommend broad usage of JsonSchema, somethings I thought are good to have for general public usage. Those things troubled me for a while during I authored a JsonSchema.
+ Versioning Currently there is no standard way how to define a version for a schema. I might use a version property for that. SemVer is good fit for the version content schema. Use if and else for different version.</description>
     </item>
     
     <item>
@@ -610,6 +629,15 @@ Another things, mermaid diagram is natively supported in asciidoctor now. This o
     </item>
     
     <item>
+      <title>Charge Back business process</title>
+      <link>https://jackliusr.github.io/notes/finance/charge-back/</link>
+      <pubDate>Mon, 26 Jun 2023 09:40:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/notes/finance/charge-back/</guid>
+      <description>charge backSend Authorization RequestMerchant HandlingReceive Authorization RequestCard ValidationAccount VerificationFraud DetectionDecision MakingGenerate Authorization ResponseSend Authorization Responsemerchant/payment processorcard issuer system   </description>
+    </item>
+    
+    <item>
       <title>Powerpoint vs UML</title>
       <link>https://jackliusr.github.io/posts/2023/06/powerpoint-vs-uml/</link>
       <pubDate>Thu, 08 Jun 2023 20:01:10 +0800</pubDate>
@@ -831,6 +859,15 @@ Table.SelectRows( Table.FromRecords({ [CustomerID = 1, Name = &amp;#34;Bob&amp;#
       <description>Usually I explain one of my CICD pipeline to others with words such like github action + argo-cd. I am not sure if they understand it. A picture is worth a thousand words. Here is my CICD pipeline picture.
       I used excalidraw to draw the diagram. Excalidraw link is https://excalidraw.com/#json=zJHTTZ_QgcarkYCCankS8,gotb3rzXtE8ux810NoK18A. Feel free to use it.
  </description>
+    </item>
+    
+    <item>
+      <title>An Elegant Puzzle: Systems of Engineering Management</title>
+      <link>https://jackliusr.github.io/notes/an-elegant-puzzle/</link>
+      <pubDate>Mon, 30 Jan 2023 00:01:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/notes/an-elegant-puzzle/</guid>
+      <description>Organizations   Tools   Approaches   Culture   Careers   </description>
     </item>
     
     <item>
@@ -2067,43 +2104,6 @@ skaffold debug     Import ptvsd in the python file to debug, add breakout() befo
       <guid>https://jackliusr.github.io/posts/2018/12/diagrams-samples/</guid>
       <description>Ditaa
  0 start1 q scans from start to end.....endrest of theallocated memory.....n    </description>
-    </item>
-    
-    <item>
-      <title>An Elegant Puzzle: Systems of Engineering Management</title>
-      <link>https://jackliusr.github.io/notes/an-elegant-puzzle/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jackliusr.github.io/notes/an-elegant-puzzle/</guid>
-      <description>Organizations   Tools   Approaches   Culture   Careers   </description>
-    </item>
-    
-    <item>
-      <title>Charge Back business process</title>
-      <link>https://jackliusr.github.io/notes/finance/charge-back/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jackliusr.github.io/notes/finance/charge-back/</guid>
-      <description>charge backSend Authorization RequestMerchant HandlingReceive Authorization RequestCard ValidationAccount VerificationFraud DetectionDecision MakingGenerate Authorization ResponseSend Authorization Responsemerchant/payment processorcard issuer system   </description>
-    </item>
-    
-    <item>
-      <title>SaaS, token bucket, fairness and business practices</title>
-      <link>https://jackliusr.github.io/posts/1/01/saas-token-bucket-fairness-and-business-practices/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jackliusr.github.io/posts/1/01/saas-token-bucket-fairness-and-business-practices/</guid>
-      <description>I always thought SaaS are based shardig, load balance and multiple-tenant. In the past several days, I re-read Dynamo and DynamoDB papers to figure out some key info to share with my colleages to find a common ground about DynamoDB. One thing is mentioned many times in DynamoDB is token-bucket. Suddenly a thought popped out my mind when I walked back after lunch with my colleague that token-bucket algorithm should be a component of SaaS and multiple-tenant.</description>
-    </item>
-    
-    <item>
-      <title>Tools hope to have for JsonSchema</title>
-      <link>https://jackliusr.github.io/posts/1/01/tools-hope-to-have-for-jsonschema/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jackliusr.github.io/posts/1/01/tools-hope-to-have-for-jsonschema/</guid>
-      <description>When I was preparing a slides to recommend broad usage of JsonSchema, somethings I thought are good to have for general public usage. Those things troubled me for a while during I authored a JsonSchema.
- Versioning Currently there is no standard way how to define a version for a schema. I might use a version property for that. SemVer is good fit for the version content schema. Use if and else for different version.</description>
     </item>
     
   </channel>

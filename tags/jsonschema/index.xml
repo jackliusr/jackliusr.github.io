@@ -6,7 +6,17 @@
     <description>Recent content in jsonschema on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Apr 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/jsonschema/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Apr 2024 16:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/jsonschema/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tools hope to have for JsonSchema</title>
+      <link>https://jackliusr.github.io/posts/2024/04/tools-hope-to-have-for-jsonschema/</link>
+      <pubDate>Wed, 10 Apr 2024 16:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/04/tools-hope-to-have-for-jsonschema/</guid>
+      <description>When I was preparing a slides to recommend broad usage of JsonSchema, somethings I thought are good to have for general public usage. Those things troubled me for a while during I authored a JsonSchema.
+ Versioning Currently there is no standard way how to define a version for a schema. I might use a version property for that. SemVer is good fit for the version content schema. Use if and else for different version.</description>
+    </item>
+    
     <item>
       <title>2 jsonschema tricks</title>
       <link>https://jackliusr.github.io/posts/2024/04/2-jsonschema-tricks/</link>
@@ -15,16 +25,6 @@
       <guid>https://jackliusr.github.io/posts/2024/04/2-jsonschema-tricks/</guid>
       <description>Background I worked on APIs and OpenAPI Spec (OAS) in past projects, even I used stoplight and NLP for open-source API style guide enforce and linting. I thought I was quite good at jsonschema. I dont’k think so after recent usage of jsonschema for a very aspnet flexible configuration file.
  Configurations in dotnet are quite straight forwards if all the configurations following the Options pattern. ConfigurationProcessor is not that case.</description>
-    </item>
-    
-    <item>
-      <title>Tools hope to have for JsonSchema</title>
-      <link>https://jackliusr.github.io/posts/1/01/tools-hope-to-have-for-jsonschema/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jackliusr.github.io/posts/1/01/tools-hope-to-have-for-jsonschema/</guid>
-      <description>When I was preparing a slides to recommend broad usage of JsonSchema, somethings I thought are good to have for general public usage. Those things troubled me for a while during I authored a JsonSchema.
- Versioning Currently there is no standard way how to define a version for a schema. I might use a version property for that. SemVer is good fit for the version content schema. Use if and else for different version.</description>
     </item>
     
   </channel>

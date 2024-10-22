@@ -8,7 +8,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2024-10-22T23:38:56+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -33,12 +33,12 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2024-10-22T23:38:56+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2024-10-22T23:38:56+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -48,7 +48,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2024-10-22T23:38:56+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -68,7 +68,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/tech/</loc>
-    <lastmod>2024-10-19T23:41:45+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -348,17 +348,37 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/aws/</loc>
-    <lastmod>2024-06-18T10:20:12+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/dynamodb/</loc>
-    <lastmod>2024-06-18T10:20:12+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/2024/05/dynamodb-predictable-performance/</loc>
     <lastmod>2024-06-18T10:20:12+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/dynamo/</loc>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/saas/</loc>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2024/04/saas-token-bucket-fairness-and-business-practices/</loc>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/token-bucket/</loc>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -417,6 +437,21 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://jackliusr.github.io/tags/jsonschema/</loc>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/tool/</loc>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2024/04/tools-hope-to-have-for-jsonschema/</loc>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://jackliusr.github.io/posts/2024/04/data-modeling-of-fhir-searchindices-in-aws-dynamodb/</loc>
     <lastmod>2024-04-06T00:35:42+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -429,11 +464,6 @@
   </url><url>
     <loc>https://jackliusr.github.io/posts/2024/04/2-jsonschema-tricks/</loc>
     <lastmod>2024-04-04T23:44:18+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/jsonschema/</loc>
-    <lastmod>2024-04-29T22:12:06+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -758,17 +788,17 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/2023/11/error-handling-in-api-idempotency-timeout-and-retry/</loc>
-    <lastmod>2023-11-25T00:14:43+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/error-handling/</loc>
-    <lastmod>2023-11-25T00:14:43+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/idempotency/</loc>
-    <lastmod>2023-11-25T00:14:43+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -978,7 +1008,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/bpmn/</loc>
-    <lastmod>2023-07-20T23:10:43+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -988,12 +1018,22 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/finance/</loc>
-    <lastmod>2023-07-20T23:10:43+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/workflow/</loc>
-    <lastmod>2023-07-20T23:10:43+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/notes/finance/charge-back/</loc>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/notes/</loc>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -1143,17 +1183,12 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/leadership/</loc>
-    <lastmod>2023-02-26T23:37:52+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/management/</loc>
-    <lastmod>2023-02-16T22:01:34+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/notes/</loc>
-    <lastmod>2023-11-22T15:38:59+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -1224,6 +1259,11 @@
   </url><url>
     <loc>https://jackliusr.github.io/posts/2023/02/github-action-runner-argo-cd-my-cicd-pipelines/</loc>
     <lastmod>2024-06-16T12:41:41+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/notes/an-elegant-puzzle/</loc>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -1318,7 +1358,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/gitops/</loc>
-    <lastmod>2024-06-16T12:27:25+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -1553,32 +1593,32 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/active-application-dictionary/</loc>
-    <lastmod>2022-10-14T08:22:17+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/data-driven-ui/</loc>
-    <lastmod>2022-10-14T08:22:17+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/metadata-driven-ui/</loc>
-    <lastmod>2022-10-14T08:22:17+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/odoo/</loc>
-    <lastmod>2022-10-14T08:22:17+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/sdui/</loc>
-    <lastmod>2022-10-14T08:22:17+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/2022/10/sdui-odoo-metadata-driven-ui-active-data-dictionary-data-driven-ui/</loc>
-    <lastmod>2022-10-14T08:22:17+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -1838,17 +1878,17 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/chatops/</loc>
-    <lastmod>2022-06-11T23:23:12+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/2022/06/do-you-still-need-to-care-chatops/</loc>
-    <lastmod>2022-06-11T23:23:12+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/invest/</loc>
-    <lastmod>2022-06-11T23:23:12+08:00</lastmod>
+    <lastmod>2024-10-23T00:21:07+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -2632,47 +2672,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/notes/an-elegant-puzzle/</loc>
-    <lastmod>2023-01-30T00:12:06+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/notes/finance/charge-back/</loc>
-    <lastmod>2023-06-26T23:10:15+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/dynamo/</loc>
-    <lastmod>2024-04-29T22:12:06+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/saas/</loc>
-    <lastmod>2024-04-29T22:12:06+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/posts/1/01/saas-token-bucket-fairness-and-business-practices/</loc>
-    <lastmod>2024-04-29T22:12:06+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://jackliusr.github.io/series/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/token-bucket/</loc>
-    <lastmod>2024-04-29T22:12:06+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/tool/</loc>
-    <lastmod>2024-04-29T22:12:06+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/posts/1/01/tools-hope-to-have-for-jsonschema/</loc>
-    <lastmod>2024-04-29T22:12:06+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

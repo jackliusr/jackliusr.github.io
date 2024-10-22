@@ -5,13 +5,14 @@
     <link>https://jackliusr.github.io/tags/tool/</link>
     <description>Recent content in tool on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://jackliusr.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 Apr 2024 16:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tools hope to have for JsonSchema</title>
-      <link>https://jackliusr.github.io/posts/1/01/tools-hope-to-have-for-jsonschema/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://jackliusr.github.io/posts/2024/04/tools-hope-to-have-for-jsonschema/</link>
+      <pubDate>Wed, 10 Apr 2024 16:10:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/posts/1/01/tools-hope-to-have-for-jsonschema/</guid>
+      <guid>https://jackliusr.github.io/posts/2024/04/tools-hope-to-have-for-jsonschema/</guid>
       <description>When I was preparing a slides to recommend broad usage of JsonSchema, somethings I thought are good to have for general public usage. Those things troubled me for a while during I authored a JsonSchema.
  Versioning Currently there is no standard way how to define a version for a schema. I might use a version property for that. SemVer is good fit for the version content schema. Use if and else for different version.</description>
     </item>
