@@ -26,7 +26,7 @@ ChatOps bring more user interaction related tasks into the picture: human workfl
 
 There are big opportunities in the combination of Chat, Ops, Automation, AI. 
 
-[cols="1,1,1"]
+[cols="1,1,1,1"]
 |===
 | item
 | IM
@@ -36,7 +36,7 @@ There are big opportunities in the combination of Chat, Ops, Automation, AI.
 | Amazon
 | ?
 | Alexa
-|
+| ?
 
 | Apple
 | message
@@ -61,22 +61,21 @@ There are big opportunities in the combination of Chat, Ops, Automation, AI.
 
 |slack
 |slack
-|
-|
+| ?
+| ?
 
 | telegram
 | telegram
 | ?
-|
+| ?
 
 | Tencent
 | wechat/qq
 | ?
-|
+| ?
 
 | Alibaba
 | dingtals
 | ?
-|
-
+| ?
 |===

@@ -33,12 +33,12 @@ Today I re-read https://www.thoughtworks.com/content/dam/thoughtworks/documents/
 
 | data driven ui
 | ?
+| ?
 
 
 | meta data driven ui
 | attribute metadata in class ect.
 |
-
 |===
 
 == Reference

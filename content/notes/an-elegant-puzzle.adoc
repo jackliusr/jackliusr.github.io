@@ -1,6 +1,6 @@
 ---
 title: "An Elegant Puzzle: Systems of Engineering Management"
-date: 2023-01-30T00:1:00+08:00
+date: 2023-01-30T00:01:00+08:00
 categories:
 - management
 tags:
