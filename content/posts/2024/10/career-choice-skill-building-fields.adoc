@@ -1,6 +1,6 @@
 ---
 title: expert beginner vs Generalizing Specialists vs icicle-shaped vs t-shaped
-date: 2024-10-09T09:10:00+08:00
+date: 2024-10-22T09:10:00+08:00
 categories:
 - carear
 tags:
