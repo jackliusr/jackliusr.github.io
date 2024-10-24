@@ -5,11 +5,14 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title>Aspire, Podman in windows | My learning and diary</title>
+  <title>Speed up postgresql container without initing everytime | My learning and diary</title>
   <meta name="viewport" content="width=device-width,minimum-scale=1">
   <meta name="description"
-    content="REM download https://github.com/containers/podman/releases/download/v5.2.5/podman-remote-release-windows_amd64.zip REM unzip it to C:\DIM\podman-remote-release-windows_amd64 SET PODMAN_HOME=C:\DIM\podman-remote-release-windows_amd64\podman-5.2.5 set PATH=%PATH%;%PODMAN_HOME%\usr\bin podman machine init podman machine start set DOTNET_ASPIRE_CONTAINER_RUNTIME=podman   Get podman desktop from https://podman.io/
- ">
+    content="A newly created postgresql container will do a following steps. They are quite time consuming in integration testing and add some unpredictable factor. If a integration testing will clean up tables and data, volumes can be used to speed up postgresql container.
+   pg_ctl -D /var/lib/postgresql/data -l logfile start
+  initdb
+  stop postgresql and start again
+   There might be one issue, do I need to maintain the same credential?">
   <meta name="generator" content="Hugo 0.99.1" />
   
   
@@ -29,23 +32,32 @@
 
   
 
-  <meta property="og:title" content="Aspire, Podman in windows" />
-<meta property="og:description" content="REM download https://github.com/containers/podman/releases/download/v5.2.5/podman-remote-release-windows_amd64.zip REM unzip it to C:\DIM\podman-remote-release-windows_amd64 SET PODMAN_HOME=C:\DIM\podman-remote-release-windows_amd64\podman-5.2.5 set PATH=%PATH%;%PODMAN_HOME%\usr\bin podman machine init podman machine start set DOTNET_ASPIRE_CONTAINER_RUNTIME=podman   Get podman desktop from https://podman.io/
- " />
+  <meta property="og:title" content="Speed up postgresql container without initing everytime" />
+<meta property="og:description" content="A newly created postgresql container will do a following steps. They are quite time consuming in integration testing and add some unpredictable factor. If a integration testing will clean up tables and data, volumes can be used to speed up postgresql container.
+   pg_ctl -D /var/lib/postgresql/data -l logfile start
+  initdb
+  stop postgresql and start again
+   There might be one issue, do I need to maintain the same credential?" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jackliusr.github.io/posts/2024/10/aspire-podman-in-windows/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://jackliusr.github.io/posts/2024/10/speed-up-postgresql-container-without-initing-everytime/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-10-24T09:10:00+08:00" />
-<meta property="article:modified_time" content="2024-10-24T22:50:19+08:00" />
+<meta property="article:modified_time" content="2024-10-24T23:39:36+08:00" />
 
-<meta itemprop="name" content="Aspire, Podman in windows">
-<meta itemprop="description" content="REM download https://github.com/containers/podman/releases/download/v5.2.5/podman-remote-release-windows_amd64.zip REM unzip it to C:\DIM\podman-remote-release-windows_amd64 SET PODMAN_HOME=C:\DIM\podman-remote-release-windows_amd64\podman-5.2.5 set PATH=%PATH%;%PODMAN_HOME%\usr\bin podman machine init podman machine start set DOTNET_ASPIRE_CONTAINER_RUNTIME=podman   Get podman desktop from https://podman.io/
- "><meta itemprop="datePublished" content="2024-10-24T09:10:00+08:00" />
-<meta itemprop="dateModified" content="2024-10-24T22:50:19+08:00" />
-<meta itemprop="wordCount" content="25">
-<meta itemprop="keywords" content="podman,linux,aspire,wsl," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Aspire, Podman in windows"/>
-<meta name="twitter:description" content="REM download https://github.com/containers/podman/releases/download/v5.2.5/podman-remote-release-windows_amd64.zip REM unzip it to C:\DIM\podman-remote-release-windows_amd64 SET PODMAN_HOME=C:\DIM\podman-remote-release-windows_amd64\podman-5.2.5 set PATH=%PATH%;%PODMAN_HOME%\usr\bin podman machine init podman machine start set DOTNET_ASPIRE_CONTAINER_RUNTIME=podman   Get podman desktop from https://podman.io/
- "/>
+<meta itemprop="name" content="Speed up postgresql container without initing everytime">
+<meta itemprop="description" content="A newly created postgresql container will do a following steps. They are quite time consuming in integration testing and add some unpredictable factor. If a integration testing will clean up tables and data, volumes can be used to speed up postgresql container.
+   pg_ctl -D /var/lib/postgresql/data -l logfile start
+  initdb
+  stop postgresql and start again
+   There might be one issue, do I need to maintain the same credential?"><meta itemprop="datePublished" content="2024-10-24T09:10:00+08:00" />
+<meta itemprop="dateModified" content="2024-10-24T23:39:36+08:00" />
+<meta itemprop="wordCount" content="96">
+<meta itemprop="keywords" content="postgresql,container,podman," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Speed up postgresql container without initing everytime"/>
+<meta name="twitter:description" content="A newly created postgresql container will do a following steps. They are quite time consuming in integration testing and add some unpredictable factor. If a integration testing will clean up tables and data, volumes can be used to speed up postgresql container.
+   pg_ctl -D /var/lib/postgresql/data -l logfile start
+  initdb
+  stop postgresql and start again
+   There might be one issue, do I need to maintain the same credential?"/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K49F8T19FK"></script>
@@ -176,20 +188,20 @@ if (!doNotTrack) {
   <div id="sharing" class="mt3">
 
     
-    <a href="https://www.facebook.com/sharer.php?u=https://jackliusr.github.io/posts/2024/10/aspire-podman-in-windows/" class="facebook no-underline" aria-label="share on Facebook">
+    <a href="https://www.facebook.com/sharer.php?u=https://jackliusr.github.io/posts/2024/10/speed-up-postgresql-container-without-initing-everytime/" class="facebook no-underline" aria-label="share on Facebook">
       <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
 
     </a>
 
     
     
-    <a href="https://twitter.com/share?url=https://jackliusr.github.io/posts/2024/10/aspire-podman-in-windows/&amp;text=Aspire,%20Podman%20in%20windows" class="twitter no-underline" aria-label="share on Twitter">
+    <a href="https://twitter.com/share?url=https://jackliusr.github.io/posts/2024/10/speed-up-postgresql-container-without-initing-everytime/&amp;text=Speed%20up%20postgresql%20container%20without%20initing%20everytime" class="twitter no-underline" aria-label="share on Twitter">
       <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
 
     </a>
 
     
-    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://jackliusr.github.io/posts/2024/10/aspire-podman-in-windows/&amp;title=Aspire,%20Podman%20in%20windows" class="linkedin no-underline" aria-label="share on LinkedIn">
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://jackliusr.github.io/posts/2024/10/speed-up-postgresql-container-without-initing-everytime/&amp;title=Speed%20up%20postgresql%20container%20without%20initing%20everytime" class="linkedin no-underline" aria-label="share on LinkedIn">
       <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
 </svg>
@@ -198,7 +210,7 @@ if (!doNotTrack) {
   </div>
 
 
-      <h1 class="f1 athelas mt3 mb1">Aspire, Podman in windows</h1>
+      <h1 class="f1 athelas mt3 mb1">Speed up postgresql container without initing everytime</h1>
       
       
       <time class="f6 mv4 dib tracked" datetime="2024-10-24T09:10:00+08:00">October 24, 2024</time>
@@ -206,39 +218,40 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 1 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 25 words</span>
+        <span class="f6 mv4 dib tracked"> - 96 words</span>
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-batch hljs" data-lang="batch">REM download https://github.com/containers/podman/releases/download/v5.2.5/podman-remote-release-windows_amd64.zip
-REM unzip it to C:\DIM\podman-remote-release-windows_amd64
-SET PODMAN_HOME=C:\DIM\podman-remote-release-windows_amd64\podman-5.2.5
-set PATH=%PATH%;%PODMAN_HOME%\usr\bin
-podman machine init
-podman machine start
-set DOTNET_ASPIRE_CONTAINER_RUNTIME=podman</code></pre>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
+<p>A newly created postgresql container will do a following steps. They are quite time consuming in integration testing and add some unpredictable factor. If a integration testing will clean up tables and data, volumes can be used to speed up postgresql container.</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>pg_ctl -D /var/lib/postgresql/data -l logfile start</p>
+</li>
+<li>
+<p>initdb</p>
+</li>
+<li>
+<p>stop postgresql and start again</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Get podman desktop from <a href="https://podman.io/" class="bare">https://podman.io/</a></p>
+<p>There might be one issue, do I need to maintain the same credential? need to further explore on this. So far my manully created container bind-mounted to the same volumes can be accessed and no tables in it after running integration test.</p>
 </div>
 <ul class="pa0">
   
    <li class="list">
+     <a href="/tags/postgresql" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">postgresql</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/container" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">container</a>
+   </li>
+  
+   <li class="list">
      <a href="/tags/podman" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">podman</a>
-   </li>
-  
-   <li class="list">
-     <a href="/tags/linux" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">linux</a>
-   </li>
-  
-   <li class="list">
-     <a href="/tags/aspire" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">aspire</a>
-   </li>
-  
-   <li class="list">
-     <a href="/tags/wsl" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">wsl</a>
    </li>
   
 </ul>
@@ -279,39 +292,15 @@ set DOTNET_ASPIRE_CONTAINER_RUNTIME=podman</code></pre>
     <ul class="pa0 list">
 	   
 	     <li  class="mb2">
-          <a href="/posts/2024/10/things-learnt-from-recent-preparation-of-1t-data-for-testing/">Things learnt from recent preparation of 1T data for testing</a>
+          <a href="/posts/2024/10/aspire-podman-in-windows/">Aspire, Podman in windows</a>
         </li>
 	    
 	     <li  class="mb2">
-          <a href="/posts/2024/10/speed-up-postgresql-container-without-initing-everytime/">Speed up postgresql container without initing everytime</a>
+          <a href="/notes/face-identication-postgresql/">FaceID using customized built postgresql</a>
         </li>
 	    
 	     <li  class="mb2">
-          <a href="/posts/2024/10/change-content-of-a-file-in-block-or-byte-level/">Change content of a file in block or byte level</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/posts/2024/03/setup-kind-cluster-using-cilium-cni-in-wsl2/">Setup kind cluster using cilium cni in wsl2</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/posts/2024/03/install-sqlserver-in-wsl2-and-ubuntu-22.04/">Install sqlserver in wsl2 and ubuntu 22.04</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/posts/2023/12/install-selinux-and-disable-it/">Install selinux and disable it</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/posts/2023/10/skip-first-line-before-running-xargs/">Skip first line before running xargs</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/posts/2023/04/linux-utils-equivalent-in-powershell/">linux utils equivalent in powershell</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/posts/2022/07/set-timezone-in-asp.net-6.0-in-linux-container/">Set timezone in asp.net 6.0 in linux container</a>
+          <a href="/posts/2022/05/same-device-mounted-on-differences-mount-points/">same device mounted on differences mount points</a>
         </li>
 	    
     </ul>
@@ -363,7 +352,7 @@ set DOTNET_ASPIRE_CONTAINER_RUNTIME=podman</code></pre>
 
 
   
-  <p style="font-size: small; color: grey;">Page version: f54fee9f146c7d3ac3899486dfe41e6c530bb35b 2024-10-24</p>
+  <p style="font-size: small; color: grey;">Page version: 080b9a0177ed580e40877ebfb0218cb4016603d9 2024-10-24</p>
 </body>
 
 </html>

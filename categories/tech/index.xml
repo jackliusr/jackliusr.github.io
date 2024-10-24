@@ -18,6 +18,19 @@
     </item>
     
     <item>
+      <title>Speed up postgresql container without initing everytime</title>
+      <link>https://jackliusr.github.io/posts/2024/10/speed-up-postgresql-container-without-initing-everytime/</link>
+      <pubDate>Thu, 24 Oct 2024 09:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/10/speed-up-postgresql-container-without-initing-everytime/</guid>
+      <description>A newly created postgresql container will do a following steps. They are quite time consuming in integration testing and add some unpredictable factor. If a integration testing will clean up tables and data, volumes can be used to speed up postgresql container.
+   pg_ctl -D /var/lib/postgresql/data -l logfile start
+  initdb
+  stop postgresql and start again
+   There might be one issue, do I need to maintain the same credential?</description>
+    </item>
+    
+    <item>
       <title>Change content of a file in block or byte level</title>
       <link>https://jackliusr.github.io/posts/2024/10/change-content-of-a-file-in-block-or-byte-level/</link>
       <pubDate>Sat, 19 Oct 2024 09:10:00 +0800</pubDate>

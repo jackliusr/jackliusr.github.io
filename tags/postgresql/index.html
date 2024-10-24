@@ -173,6 +173,27 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2024/10/speed-up-postgresql-container-without-initing-everytime/" class="link black dim">
+        Speed up postgresql container without initing everytime
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      A newly created postgresql container will do a following steps. They are quite time consuming in integration testing and add some unpredictable factor. If a integration testing will clean up tables and data, volumes can be used to speed up postgresql container.
+   pg_ctl -D /var/lib/postgresql/data -l logfile start
+  initdb
+  stop postgresql and start again
+   There might be one issue, do I need to maintain the same credential?
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2024/10/things-learnt-from-recent-preparation-of-1t-data-for-testing/" class="link black dim">
         Things learnt from recent preparation of 1T data for testing
       </a>

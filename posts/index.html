@@ -184,6 +184,25 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2024/10/speed-up-postgresql-container-without-initing-everytime/" class="link black dim">
+        Speed up postgresql container without initing everytime
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      A newly created postgresql container will do a following steps. They are quite time consuming in integration testing and add some unpredictable factor. If a integration testing will clean up tables and data, volumes can be used to speed up postgresql container.
+   pg_ctl -D /var/lib/postgresql/data -l logfile start
+  initdb
+  stop postgresql and start again
+   There might be one issue, do I need to maintain the same credential?
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2024/10/expert-beginner-vs-generalizing-specialists-vs-icicle-shaped-vs-t-shaped/" class="link black dim">
         expert beginner vs Generalizing Specialists vs icicle-shaped vs t-shaped
       </a>
@@ -309,22 +328,6 @@ Another things, mermaid diagram is natively supported in asciidoctor now. This o
   choose download all and install when installing visual studio after choosing components to install
   Clear Visual Studio Component Cache
  Close Visual Studio (ensure devenv.exe is not present in the Task Manager)
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2024/07/fold-and-reduce-in-linq/" class="link black dim">
-        Fold and Reduce in LINQ
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      In functional programming languages, there are several difference betwee them. I was quite interested in functional programming, even I spent some time to learn haskel and scala. I knew what I can use Select for map, not sure about folder and reduce
- FeatureFoldReduceInitial ValueRequires an initial value.Does not require an initial value.Function Signature(A, B) =&gt; A(A, A) =&gt; AApplicabilityCan be used on empty collections.Requires a non-empty collection.VariantsfoldLeft and foldRightreduceLeft and reduceRightStarting PointfoldLeft starts from the left.
     </div>
   </div>
 </div>
