@@ -168,6 +168,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2024/10/aspire-podman-in-windows/" class="link black dim">
+        Aspire, Podman in windows
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      REM download https://github.com/containers/podman/releases/download/v5.2.5/podman-remote-release-windows_amd64.zip REM unzip it to C:\DIM\podman-remote-release-windows_amd64 SET PODMAN_HOME=C:\DIM\podman-remote-release-windows_amd64\podman-5.2.5 set PATH=%PATH%;%PODMAN_HOME%\usr\bin podman machine init podman machine start set DOTNET_ASPIRE_CONTAINER_RUNTIME=podman   Get podman desktop from https://podman.io/
+ 
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2024/10/expert-beginner-vs-generalizing-specialists-vs-icicle-shaped-vs-t-shaped/" class="link black dim">
         expert beginner vs Generalizing Specialists vs icicle-shaped vs t-shaped
       </a>
@@ -309,22 +325,6 @@ Another things, mermaid diagram is natively supported in asciidoctor now. This o
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       In functional programming languages, there are several difference betwee them. I was quite interested in functional programming, even I spent some time to learn haskel and scala. I knew what I can use Select for map, not sure about folder and reduce
  FeatureFoldReduceInitial ValueRequires an initial value.Does not require an initial value.Function Signature(A, B) =&gt; A(A, A) =&gt; AApplicabilityCan be used on empty collections.Requires a non-empty collection.VariantsfoldLeft and foldRightreduceLeft and reduceRightStarting PointfoldLeft starts from the left.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2024/07/streamline-pack-and-install-package-to-global-packages/" class="link black dim">
-        streamline pack and install package to global-packages
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Due to the nature that it is difficult to debug msbuild custom task, I thought if I can use it in a way to streamline my debug workflow. one pack command will complete the following steps. - pack - add the package into local feed source - add the package to global-packages folder
- My current workflow is below. It is a manual process. It is realy a pain this way: - pack - nuget add [package-name] -source C:\nexus\.
     </div>
   </div>
 </div>

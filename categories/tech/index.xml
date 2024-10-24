@@ -6,7 +6,17 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Oct 2024 09:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Oct 2024 09:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Aspire, Podman in windows</title>
+      <link>https://jackliusr.github.io/posts/2024/10/aspire-podman-in-windows/</link>
+      <pubDate>Thu, 24 Oct 2024 09:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2024/10/aspire-podman-in-windows/</guid>
+      <description>REM download https://github.com/containers/podman/releases/download/v5.2.5/podman-remote-release-windows_amd64.zip REM unzip it to C:\DIM\podman-remote-release-windows_amd64 SET PODMAN_HOME=C:\DIM\podman-remote-release-windows_amd64\podman-5.2.5 set PATH=%PATH%;%PODMAN_HOME%\usr\bin podman machine init podman machine start set DOTNET_ASPIRE_CONTAINER_RUNTIME=podman   Get podman desktop from https://podman.io/
+ </description>
+    </item>
+    
     <item>
       <title>Change content of a file in block or byte level</title>
       <link>https://jackliusr.github.io/posts/2024/10/change-content-of-a-file-in-block-or-byte-level/</link>

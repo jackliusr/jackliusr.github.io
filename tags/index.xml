@@ -6,7 +6,43 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Oct 2024 09:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Oct 2024 09:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>aspire</title>
+      <link>https://jackliusr.github.io/tags/aspire/</link>
+      <pubDate>Thu, 24 Oct 2024 09:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/aspire/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://jackliusr.github.io/tags/linux/</link>
+      <pubDate>Thu, 24 Oct 2024 09:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>podman</title>
+      <link>https://jackliusr.github.io/tags/podman/</link>
+      <pubDate>Thu, 24 Oct 2024 09:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/podman/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WSL</title>
+      <link>https://jackliusr.github.io/tags/wsl/</link>
+      <pubDate>Thu, 24 Oct 2024 09:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/wsl/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>expert beginner</title>
       <link>https://jackliusr.github.io/tags/expert-beginner/</link>
@@ -49,15 +85,6 @@
       <pubDate>Sat, 19 Oct 2024 09:10:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/dd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://jackliusr.github.io/tags/linux/</link>
-      <pubDate>Sat, 19 Oct 2024 09:10:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
@@ -616,15 +643,6 @@
       <pubDate>Thu, 28 Mar 2024 20:10:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>WSL</title>
-      <link>https://jackliusr.github.io/tags/wsl/</link>
-      <pubDate>Thu, 28 Mar 2024 20:10:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/wsl/</guid>
       <description></description>
     </item>
     
