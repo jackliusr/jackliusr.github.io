@@ -1,0 +1,24 @@
+---
+title: Aspire, Podman in windows
+date: 2024-10-24T09:10:00+08:00
+categories:
+- tech
+tags:
+- podman
+- linux
+- aspire
+- wsl
+---
+
+[source, batch]
+----
+REM download https://github.com/containers/podman/releases/download/v5.2.5/podman-remote-release-windows_amd64.zip
+REM unzip it to C:\DIM\podman-remote-release-windows_amd64
+SET PODMAN_HOME=C:\DIM\podman-remote-release-windows_amd64\podman-5.2.5
+set PATH=%PATH%;%PODMAN_HOME%\usr\bin
+podman machine init
+podman machine start
+set DOTNET_ASPIRE_CONTAINER_RUNTIME=podman
+----
+
+Get podman desktop from https://podman.io/
