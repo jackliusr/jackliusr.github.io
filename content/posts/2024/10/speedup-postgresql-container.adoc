@@ -1,0 +1,19 @@
+---
+title: Speed up postgresql container without initing everytime
+date: 2024-10-24T09:10:00+08:00
+categories:
+- tech
+tags:
+- postgresql
+- container
+- podman
+---
+
+A newly created postgresql container will do a following steps. They are quite time consuming in integration testing and add some unpredictable factor. If a integration testing will clean up tables and data, volumes can be used to speed up postgresql container.
+
+*  pg_ctl -D /var/lib/postgresql/data -l logfile start
+*  initdb
+*  stop postgresql and start again
+
+
+There might be one issue, do I need to maintain the same credential? need to further explore on this. So far my manully created container bind-mounted to the same volumes can be accessed and no tables in it after running integration test. 
