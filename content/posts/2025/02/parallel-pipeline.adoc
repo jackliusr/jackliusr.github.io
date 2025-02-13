@@ -1,0 +1,149 @@
+---
+title: Speeding Up DevSecOps: Rethinking the Shift-Left Approach
+date: 2025-02-13T22:10:00+08:00
+categories:
+- tech
+tags:
+- pipeline
+- parallel
+- DevSecOps
+- cicd
+- github action
+---
+
+
+== Introduction
+
+In the world of modern software development, Shift-Left Security and DevSecOps have become de facto practices. The idea is simple: security should not be an afterthought but rather an integral part of the development lifecycle, starting as early as possible. While these practices strengthen security and compliance, they often introduce additional steps that can slow down the development pipeline. This raises an important question: Is there a way to speed things up without sacrificing security?
+
+Today, I explore GitHub-native options, alternative pipeline structures, and some implications of optimizing DevSecOps workflows. Let’s challenge the traditional linear approach and explore ways to make security both efficient and fast.
+
+== Are Linear Pipelines Holding You Back?
+
+Most CI/CD pipelines today are designed as linear workflows. The process typically follows this structure:
+
+. Code Commit →
+. Build →
+. Security Scans (SAST, SCA, etc.) →
+. Unit Tests →
+. Integration Tests →
+. Deployment
+
+While this ensures a structured approach, it serializes security and compliance checks, making them bottlenecks in the pipeline. A more efficient approach is to decompose the pipeline into parallel and conditional executions, reducing unnecessary waiting times.
+
+== Faster Security Scanning: Running in Sandboxed Environments
+
+One of the biggest slowdowns in DevSecOps pipelines comes from security scanning. Static Application Security Testing (SAST), Software Composition Analysis (SCA), and even Dynamic Application Security Testing (DAST) take time, often requiring full builds before execution. Here’s how to optimize them:
+
+=== Scanning in a Sandbox Environment
+
+Instead of integrating security checks into the main build process, execute them in temporary sandbox environments:
+
+GitHub Actions + Ephemeral Containers: Run SAST/SCA scans in disposable containers using act, docker, or kubernetes.
+
+DAST in Isolated Environments: Use tools like OWASP ZAP in cloud-based ephemeral environments.
+
+On-Demand Scans: Trigger scans only for PRs into main branches rather than for every commit.
+
+=== Parallel Security Scanning
+
+Rather than blocking the pipeline, security scans can be offloaded to parallel processes.
+
+==== GitHub Example: Running SAST, SCA, and Tests in Parallel
+
+[source,yaml]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+    - name: Build Application
+      run: make build
+
+  security_scan:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run SAST Scan
+      run: ./run-sast.sh &
+    - name: Run SCA Scan
+      run: ./run-sca.sh &
+    - name: Wait for Scans
+      run: wait
+
+✅ Benefit: Running security scans concurrently reduces overall wait time.
+
+== Rethinking Pipeline Structure: Beyond Linear Execution
+
+Rather than following the traditional step-by-step execution, consider branching and conditional executions to optimize performance.
+
+=== Conditional Execution (Skipping Unnecessary Steps)
+Security and compliance checks shouldn’t always run for every commit. Use branch-based execution:
+
+[source,yaml]
+
+jobs:
+  security_scan:
+    if: github.ref == 'refs/heads/main'  # Only run for main branch
+    steps:
+    - name: Run Security Scan
+      run: ./security-scan.sh
+
+✅ Benefit: Developers working on feature branches don’t wait for security scans unless merging into main.
+
+=== Fan-Out and Fan-In Pipelines
+Instead of blocking downstream jobs, break the pipeline into parallel jobs and merge results later.
+
+==== Example: Parallel Testing + Security, Then Deploy
+
+[source,yaml]
+
+jobs:
+  parallel_tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        job: [unit_tests, integration_tests, security_scan]
+    steps:
+    - name: Run ${{ matrix.job }}
+      run: ./run-${{ matrix.job }}.sh
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [parallel_tests]
+    steps:
+    - name: Deploy Application
+      run: ./deploy.sh
+
+✅ Benefit: Developers don’t wait for one test to complete before another starts, optimizing runtime.
+
+== Implications of Speeding Up DevSecOps
+
+=== Balancing Speed vs. Security
+
+Moving too fast can increase risk if security scans are skipped or misconfigured.
+
+Define minimum security gates that must pass before a merge (e.g., vulnerability thresholds).
+
+=== Infrastructure Cost Considerations
+
+Running parallel jobs increases compute costs (e.g., GitHub Actions limits, self-hosted runners).
+
+Optimize by scaling runners dynamically and caching dependencies.
+
+=== Automating Governance & Compliance
+
+Use GitHub Actions with security policies (e.g., GitHub Advanced Security, Dependabot).
+
+Automate audit logs to track security scans.
+
+== Conclusion: The Ideal DevSecOps Pipeline
+
+The ideal DevSecOps pipeline is one that prioritizes both speed and security. By:
+✅ Running security scans in sandbox environments
+✅ Leveraging parallel processing
+✅ Introducing conditional execution
+✅ Using fan-in and fan-out models
+
+We can eliminate bottlenecks and create a truly efficient security-first development workflow.
