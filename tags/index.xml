@@ -6,7 +6,52 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Dec 2024 09:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Feb 2025 22:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cicd</title>
+      <link>https://jackliusr.github.io/tags/cicd/</link>
+      <pubDate>Thu, 13 Feb 2025 22:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/cicd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DevSecOps</title>
+      <link>https://jackliusr.github.io/tags/devsecops/</link>
+      <pubDate>Thu, 13 Feb 2025 22:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/devsecops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github-action</title>
+      <link>https://jackliusr.github.io/tags/github-action/</link>
+      <pubDate>Thu, 13 Feb 2025 22:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/github-action/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>parallel</title>
+      <link>https://jackliusr.github.io/tags/parallel/</link>
+      <pubDate>Thu, 13 Feb 2025 22:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/parallel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pipeline</title>
+      <link>https://jackliusr.github.io/tags/pipeline/</link>
+      <pubDate>Thu, 13 Feb 2025 22:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/pipeline/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>IaC</title>
       <link>https://jackliusr.github.io/tags/iac/</link>
@@ -337,33 +382,6 @@
       <pubDate>Fri, 21 Jun 2024 20:10:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/argocd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cicd</title>
-      <link>https://jackliusr.github.io/tags/cicd/</link>
-      <pubDate>Fri, 21 Jun 2024 20:10:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/cicd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>github-action</title>
-      <link>https://jackliusr.github.io/tags/github-action/</link>
-      <pubDate>Fri, 21 Jun 2024 20:10:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/github-action/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pipeline</title>
-      <link>https://jackliusr.github.io/tags/pipeline/</link>
-      <pubDate>Fri, 21 Jun 2024 20:10:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/pipeline/</guid>
       <description></description>
     </item>
     

@@ -2,12 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jackliusr.github.io/posts/2024/12/building-immutable-infrastructure-without-containers/</loc>
-    <lastmod>2024-12-08T20:30:47+08:00</lastmod>
+    <loc>https://jackliusr.github.io/categories/</loc>
+    <lastmod>2025-02-14T10:00:40+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/categories/</loc>
+    <loc>https://jackliusr.github.io/tags/cicd/</loc>
+    <lastmod>2025-02-14T10:00:40+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/devsecops/</loc>
+    <lastmod>2025-02-14T10:00:40+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/github-action/</loc>
+    <lastmod>2025-02-14T10:00:40+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/</loc>
+    <lastmod>2025-02-14T10:00:40+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/parallel/</loc>
+    <lastmod>2025-02-14T10:00:40+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/pipeline/</loc>
+    <lastmod>2025-02-14T10:00:40+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/</loc>
+    <lastmod>2025-02-14T10:00:40+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2025/02/speeding-up-devsecops-rethinking-the-shift-left-approach/</loc>
+    <lastmod>2025-02-14T10:00:40+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/</loc>
+    <lastmod>2025-02-14T10:00:40+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/categories/tech/</loc>
+    <lastmod>2025-02-14T10:00:40+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2024/12/building-immutable-infrastructure-without-containers/</loc>
     <lastmod>2024-12-08T20:30:47+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -22,27 +72,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2024-12-08T20:30:47+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://jackliusr.github.io/tags/packer/</loc>
-    <lastmod>2024-12-08T20:30:47+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2024-12-08T20:30:47+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2024-12-08T20:30:47+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/categories/tech/</loc>
     <lastmod>2024-12-08T20:30:47+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -287,22 +317,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/tags/cicd/</loc>
-    <lastmod>2024-06-21T23:25:46+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://jackliusr.github.io/posts/2024/06/cicd/</loc>
-    <lastmod>2024-06-21T23:25:46+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/github-action/</loc>
-    <lastmod>2024-06-21T23:25:46+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/pipeline/</loc>
     <lastmod>2024-06-21T23:25:46+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

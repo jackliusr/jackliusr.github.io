@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevSecOps on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/devsecops/</link>
+    <description>Recent content in DevSecOps on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 13 Feb 2025 22:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/devsecops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Speeding Up DevSecOps: Rethinking the Shift-Left Approach</title>
+      <link>https://jackliusr.github.io/posts/2025/02/speeding-up-devsecops-rethinking-the-shift-left-approach/</link>
+      <pubDate>Thu, 13 Feb 2025 22:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2025/02/speeding-up-devsecops-rethinking-the-shift-left-approach/</guid>
+      <description>Introduction In the world of modern software development, Shift-Left Security and DevSecOps have become de facto practices. The idea is simple: security should not be an afterthought but rather an integral part of the development lifecycle, starting as early as possible. While these practices strengthen security and compliance, they often introduce additional steps that can slow down the development pipeline. This raises an important question: Is there a way to speed things up without sacrificing security?</description>
+    </item>
+    
+  </channel>
+</rss>
