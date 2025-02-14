@@ -1,5 +1,5 @@
 ---
-title: Speeding Up DevSecOps: Rethinking the Shift-Left Approach
+title: "Speeding Up DevSecOps: Rethinking the Shift-Left Approach"
 date: 2025-02-13T22:10:00+08:00
 categories:
 - tech
