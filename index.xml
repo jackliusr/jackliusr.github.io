@@ -6,7 +6,17 @@
     <description>Recent content on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Feb 2025 22:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Apr 2025 22:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Find all extension methods of a type in c# using ast-grep</title>
+      <link>https://jackliusr.github.io/posts/2025/04/find-all-extension-methods-of-a-type-in-c#-using-ast-grep/</link>
+      <pubDate>Sun, 06 Apr 2025 22:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2025/04/find-all-extension-methods-of-a-type-in-c#-using-ast-grep/</guid>
+      <description>Usually one will use simple find or more advanced regular expression based search to locate codes. How about use other options usig ast to get more accurate results and have the potential to use for codemod? In the past 2 days, I finally figured how to use ast-grep to find code.
+ Here I will use it to find all extension methods of an class. The rule is configured below.</description>
+    </item>
+    
     <item>
       <title>Speeding Up DevSecOps: Rethinking the Shift-Left Approach</title>
       <link>https://jackliusr.github.io/posts/2025/02/speeding-up-devsecops-rethinking-the-shift-left-approach/</link>
