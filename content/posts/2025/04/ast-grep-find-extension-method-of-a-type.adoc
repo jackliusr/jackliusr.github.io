@@ -1,0 +1,41 @@
+---
+title: "Find all extension methods of a type in c# using ast-grep"
+date: 2025-04-06T22:10:00+08:00
+categories:
+- tech
+tags:
+- ast-grep
+- C#
+- codemod
+---
+
+Usually one will use simple find or more advanced regular expression based search to locate codes. How about use other options usig ast to get more accurate results and have the potential to use for codemod? In the past 2 days, I finally figured how to use ast-grep to find code. 
+
+Here I will use it to find all extension methods of an class. The rule is configured below. 
+
+[source, yaml]
+----
+rule:
+  kind: identifier
+  precedes:
+    kind: parameter_list
+  inside:
+    kind: method_declaration
+    all:
+      - has: 
+          kind: parameter_list
+          has:
+            nthChild: 1
+            kind: parameter
+            all: 
+              - has:
+                  kind: modifier
+                  regex: this
+              - has:
+                  kind: identifier
+                  field: type
+                  regex: IFhirEngineBuilder
+----
+
+An example is at the  
+https://ast-grep.github.io/playground.html#eyJtb2RlIjoiQ29uZmlnIiwibGFuZyI6ImNzaGFycCIsInF1ZXJ5IjoiIiwicmV3cml0ZSI6IiIsInN0cmljdG5lc3MiOiJjc3QiLCJzZWxlY3RvciI6IiIsImNvbmZpZyI6InJ1bGU6XG4gIGtpbmQ6IGlkZW50aWZpZXJcbiAgcHJlY2VkZXM6XG4gICAga2luZDogcGFyYW1ldGVyX2xpc3RcbiAgaW5zaWRlOlxuICAgIGtpbmQ6IG1ldGhvZF9kZWNsYXJhdGlvblxuICAgIGFsbDpcbiAgICAgIC0gaGFzOiBcbiAgICAgICAgICBraW5kOiBwYXJhbWV0ZXJfbGlzdFxuICAgICAgICAgIGhhczpcbiAgICAgICAgICAgIG50aENoaWxkOiAxXG4gICAgICAgICAgICBraW5kOiBwYXJhbWV0ZXJcbiAgICAgICAgICAgIGFsbDogXG4gICAgICAgICAgICAgIC0gaGFzOlxuICAgICAgICAgICAgICAgICAga2luZDogbW9kaWZpZXJcbiAgICAgICAgICAgICAgICAgIHJlZ2V4OiB0aGlzXG4gICAgICAgICAgICAgIC0gaGFzOlxuICAgICAgICAgICAgICAgICAga2luZDogaWRlbnRpZmllclxuICAgICAgICAgICAgICAgICAgZmllbGQ6IHR5cGVcbiAgICAgICAgICAgICAgICAgIHJlZ2V4OiBJRmhpckVuZ2luZUJ1aWxkZXJcbiIsInNvdXJjZSI6InB1YmxpYyBzdGF0aWMgY2xhc3MgRGlzdHJpYnV0ZWRDYWNoZVJlc291cmNlQ2FjaGluZ0ZoaXJFbmdpbmVCdWlsZGVyRXh0ZW5zaW9uc1xue1xuICAgIHB1YmxpYyBzdGF0aWMgSUZoaXJFbmdpbmVCdWlsZGVyIEFkZERpc3RyaWJ1dGVkQ2FjaGVSZXNvdXJjZUNhY2hpbmdIYW5kbGVycyh0aGlzIFxuICAgICAgIElGaGlyRW5naW5lQnVpbGRlciBidWlsZGVyLCBBY3Rpb248UmVzb3VyY2VDYWNoZU9wdGlvbnM+IGNvbmZpZ3VyZU9wdGlvbnMpXG4gICAge1xuICAgICBcbiAgICB9XG4gICAgcHVibGljIHN0YXRpYyBNdWx0aXRlbmFuY3lPcHRpb25zIE11bHRpdGVuYW5jeVN0b3JlQXV0b0NyZWF0ZSh0aGlzIE11bHRpdGVuYW5jeU9wdGlvbnMgb3B0aW9ucywgQWN0aW9uPERiQ29udGV4dE9wdGlvbnNCdWlsZGVyPiBkYk9wdGlvbnNCdWlsZGVyKXtcbiAgICAgICAgXG4gICAgfVxuICAgcHVibGljIHN0YXRpYyBJRmhpckVuZ2luZUJ1aWxkZXIgVGVzdChBY3Rpb248UmVzb3VyY2VDYWNoZU9wdGlvbnM+IGNvbmZpZ3VyZU9wdGlvbnMgKVxuICAgIHtcbiAgICAgICAgRW5zdXJlQXJnLklzTm90TnVsbChidWlsZGVyKTtcbiAgICAgICAgYnVpbGRlci5TZXJ2aWNlcy5Db25maWd1cmU8UmVzb3VyY2VDYWNoZU9wdGlvbnM+KGJ1aWxkZXIuQ29uZmlndXJhdGlvbik7XG4gICAgICAgIHJldHVybiBidWlsZGVyLkFkZERpc3RyaWJ1dGVkQ2FjaGVSZXNvdXJjZUNhY2hpbmdIYW5kbGVycyhvID0+IHsgfSk7XG4gICAgfVxufSJ9[playground]
