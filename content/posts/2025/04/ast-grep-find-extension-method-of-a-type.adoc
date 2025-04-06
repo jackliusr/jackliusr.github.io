@@ -1,5 +1,5 @@
 ---
-title: "Find all extension methods of a type in c# using ast-grep"
+title: "Find all extension methods of a type in csharp using ast-grep"
 date: 2025-04-06T22:10:00+08:00
 categories:
 - tech
