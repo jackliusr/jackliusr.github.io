@@ -1,0 +1,98 @@
+---
+title: "From Batch to Real-Time: Rethinking File Processing with Linux fanotify"
+date: 2025-09-18T20:10:00+08:00
+categories:
+- tech
+tags:
+- batch
+- real-time
+- fanotify
+---
+
+Traditionally, batch processing of files has been the default approach in many on-premise solutions. 
+Files are dropped into a directory, collected on a schedule, and processed in groups. 
+This model works fine for systems where latency is not critical, but once you start asking “How do we make this real-time?” the story becomes more interesting.
+
+At first, my answer was polling. After all, if we want near real-time, we can just keep checking the directory at short intervals. 
+But this has obvious inefficiencies—extra CPU cycles wasted, unnecessary I/O, and still not truly “real-time.”
+
+That question—"Is there a better way?"—stuck in my mind. If Dropbox, OneDrive, and other software can sync files 
+immediately when changes happen, there must be a way to achieve this at the server side.
+ 
+## File Change Notifications in Linux
+
+On Linux, we have two main interfaces for detecting file changes:
+
+. inotify: Provides file system event notifications. It’s commonly used but can have scaling limitations for very large file sets.
+
+. fanotify: A more powerful and efficient alternative, particularly well-suited for monitoring file access and modifications at scale.
+
+For real-time file processing solutions, fanotify is usually the more efficient choice.
+
+## Two Options for Real-Time File Processing
+
+By leveraging fanotify, we can design systems where file changes immediately trigger processing workflows. Below is a simplified view of two options:
+
+1. Message Queue Integration
+
+  * File change events trigger a message sent to a queue.
+
+  * A consumer reads the message, processes the file, and responds back.
+
+  * Response is correlated and sent back to the main system.
+
+1. Direct Method Invocation
+
+* File change event directly calls a service method with the file content.
+
+* The service processes it and returns the response immediately.
+
+Here’s a conceptual diagram:
+
+[plantuml, format="svg",opts="inline"]
+----
+@startuml
+
+participant mainFrm
+participant NFS
+
+mainFrm -> NFS : put file
+NFS -> NFS: fanotify
+alt mq config
+  NFS -> MQ
+  MQ -> Consumer
+  Consumer ->MQ
+  MQ -> NFS 
+  NFS-> mainFrm: resp
+else method call 
+  NFS -> Serfvice: resp:= service.method1(content)
+  NFS -> mainFrm: resp
+end
+@endduml
+----
+
+## Additional Considerations
+
+When moving from batch to real-time file processing, a few practical challenges must be addressed:
+
+1. Handling Partial Files
+
+* A file may not be fully written when the notification is triggered.
+
+* Common approaches:
+
+** Use checksums to verify integrity.
+
+** Use marker files (e.g., write file.done after the main file is complete).
+
+1. Communication Protocols via Files
+
+* Establish clear naming conventions.
+
+* Define how to correlate request and response files to avoid mismatches.
+
+## Final Thoughts
+
+Shifting from batch to real-time file processing isn’t just a performance optimisation—it can fundamentally change how applications interact. By leveraging Linux’s fanotify, we can eliminate polling and move closer to truly event-driven file workflows.
+
+The key is to not only handle notifications efficiently but also to design protocols for safe and predictable file exchange. With careful planning around partial file handling and file naming conventions, we can build robust, real-time server-side file processing solutions.
