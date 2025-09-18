@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>From Batch to Real-Time: Rethinking File Processing with Linux fanotify | My learning and diary</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="description"
+    content="Traditionally, batch processing of files has been the default approach in many on-premise solutions. Files are dropped into a directory, collected on a schedule, and processed in groups. This model works fine for systems where latency is not critical, but once you start asking “How do we make this real-time?” the story becomes more interesting.
+ At first, my answer was polling. After all, if we want near real-time, we can just keep checking the directory at short intervals.">
+  <meta name="generator" content="Hugo 0.99.1" />
+  
+  
+  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+  
+
+  
+<link rel="stylesheet" href="/ananke/css/main.min.abe0b1c07d5e33565b0f9b998a7b1b5228b709f36af363e2766bc8035f2237b7.css" >
+
+
+
+
+  
+  
+
+  
+
+  
+
+  <meta property="og:title" content="From Batch to Real-Time: Rethinking File Processing with Linux fanotify" />
+<meta property="og:description" content="Traditionally, batch processing of files has been the default approach in many on-premise solutions. Files are dropped into a directory, collected on a schedule, and processed in groups. This model works fine for systems where latency is not critical, but once you start asking “How do we make this real-time?” the story becomes more interesting.
+ At first, my answer was polling. After all, if we want near real-time, we can just keep checking the directory at short intervals." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jackliusr.github.io/posts/2025/09/from-batch-to-real-time-rethinking-file-processing-with-linux-fanotify/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2025-09-18T20:10:00+08:00" />
+<meta property="article:modified_time" content="2025-09-18T21:32:46+08:00" />
+
+<meta itemprop="name" content="From Batch to Real-Time: Rethinking File Processing with Linux fanotify">
+<meta itemprop="description" content="Traditionally, batch processing of files has been the default approach in many on-premise solutions. Files are dropped into a directory, collected on a schedule, and processed in groups. This model works fine for systems where latency is not critical, but once you start asking “How do we make this real-time?” the story becomes more interesting.
+ At first, my answer was polling. After all, if we want near real-time, we can just keep checking the directory at short intervals."><meta itemprop="datePublished" content="2025-09-18T20:10:00+08:00" />
+<meta itemprop="dateModified" content="2025-09-18T21:32:46+08:00" />
+<meta itemprop="wordCount" content="432">
+<meta itemprop="keywords" content="batch,real-time,fanotify," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="From Batch to Real-Time: Rethinking File Processing with Linux fanotify"/>
+<meta name="twitter:description" content="Traditionally, batch processing of files has been the default approach in many on-premise solutions. Files are dropped into a directory, collected on a schedule, and processed in groups. This model works fine for systems where latency is not critical, but once you start asking “How do we make this real-time?” the story becomes more interesting.
+ At first, my answer was polling. After all, if we want near real-time, we can just keep checking the directory at short intervals."/>
+
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K49F8T19FK"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-K49F8T19FK', { 'anonymize_ip': false });
+}
+</script>
+
+  
+  
+
+
+
+
+
+
+</head>
+
+<body class="ma0 avenir bg-near-white production">
+
+  
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My learning and diary
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/notes/" title="Notes page">
+              Notes
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/portfolio/" title="Portfolio page">
+              Portfolio
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/readinglists/" title="Books page">
+              Books
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/categories/" title="Categories page">
+              Categories
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tags/" title="Tags page">
+              Tags
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+  <main class="pb7" role="main">
+    
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://jackliusr.github.io/posts/2025/09/from-batch-to-real-time-rethinking-file-processing-with-linux-fanotify/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://jackliusr.github.io/posts/2025/09/from-batch-to-real-time-rethinking-file-processing-with-linux-fanotify/&amp;text=From%20Batch%20to%20Real-Time:%20Rethinking%20File%20Processing%20with%20Linux%20fanotify" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://jackliusr.github.io/posts/2025/09/from-batch-to-real-time-rethinking-file-processing-with-linux-fanotify/&amp;title=From%20Batch%20to%20Real-Time:%20Rethinking%20File%20Processing%20with%20Linux%20fanotify" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">From Batch to Real-Time: Rethinking File Processing with Linux fanotify</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-09-18T20:10:00+08:00">September 18, 2025</time>
+
+      
+      
+        <span class="f6 mv4 dib tracked"> - 3 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 432 words</span>
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
+<p>Traditionally, batch processing of files has been the default approach in many on-premise solutions.
+Files are dropped into a directory, collected on a schedule, and processed in groups.
+This model works fine for systems where latency is not critical, but once you start asking “How do we make this real-time?” the story becomes more interesting.</p>
+</div>
+<div class="paragraph">
+<p>At first, my answer was polling. After all, if we want near real-time, we can just keep checking the directory at short intervals.
+But this has obvious inefficiencies—extra CPU cycles wasted, unnecessary I/O, and still not truly “real-time.”</p>
+</div>
+<div class="paragraph">
+<p>That question—&#34;Is there a better way?&#34;—stuck in my mind. If Dropbox, OneDrive, and other software can sync files
+immediately when changes happen, there must be a way to achieve this at the server side.</p>
+</div>
+<div class="sect1">
+<h2 id="_file_change_notifications_in_linux"><a class="anchor" href="#_file_change_notifications_in_linux"></a><a class="link" href="#_file_change_notifications_in_linux">File Change Notifications in Linux</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On Linux, we have two main interfaces for detecting file changes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>inotify: Provides file system event notifications. It’s commonly used but can have scaling limitations for very large file sets.</p>
+</li>
+<li>
+<p>fanotify: A more powerful and efficient alternative, particularly well-suited for monitoring file access and modifications at scale.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>For real-time file processing solutions, fanotify is usually the more efficient choice.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_two_options_for_real_time_file_processing"><a class="anchor" href="#_two_options_for_real_time_file_processing"></a><a class="link" href="#_two_options_for_real_time_file_processing">Two Options for Real-Time File Processing</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By leveraging fanotify, we can design systems where file changes immediately trigger processing workflows. Below is a simplified view of two options:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Message Queue Integration</p>
+<div class="ulist">
+<ul>
+<li>
+<p>File change events trigger a message sent to a queue.</p>
+</li>
+<li>
+<p>A consumer reads the message, processes the file, and responds back.</p>
+</li>
+<li>
+<p>Response is correlated and sent back to the main system.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Direct Method Invocation</p>
+<div class="ulist">
+<ul>
+<li>
+<p>File change event directly calls a service method with the file content.</p>
+</li>
+<li>
+<p>The service processes it and returns the response immediately.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Here’s a conceptual diagram:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<svg contentstyletype="text/css" preserveAspectRatio="none" version="1.1" viewBox="0 0 411 352" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" zoomAndPan="magnify" width="411" height="352"><defs></defs><g><rect height="175.3359" style="stroke:#000000;stroke-width:1.5;fill:none;" width="394.5" x="10" y="124.5625"></rect><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="56" x2="56" y1="36.2969" y2="316.8984"></line><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="123" x2="123" y1="36.2969" y2="316.8984"></line><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="184" x2="184" y1="36.2969" y2="316.8984"></line><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="256" x2="256" y1="36.2969" y2="316.8984"></line><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="360.5" x2="360.5" y1="36.2969" y2="316.8984"></line><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="73" x="20" y="5"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="27" y="24.9951">mainFrm</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="73" x="20" y="315.8984"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="27" y="335.8936">mainFrm</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="41" x="103" y="5"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="110" y="24.9951">NFS</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="41" x="103" y="315.8984"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="110" y="335.8936">NFS</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="37" x="166" y="5"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="23" x="173" y="24.9951">MQ</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="37" x="166" y="315.8984"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="23" x="173" y="335.8936">MQ</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="86" x="213" y="5"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="220" y="24.9951">Consumer</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="86" x="213" y="315.8984"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="220" y="335.8936">Consumer</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="68" x="326.5" y="5"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54" x="333.5" y="24.9951">Serfvice</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="68" x="326.5" y="315.8984"></rect><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54" x="333.5" y="335.8936">Serfvice</text><polygon fill="#181818" points="111.5,63.4297,121.5,67.4297,111.5,71.4297,115.5,67.4297" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="56.5" x2="117.5" y1="67.4297" y2="67.4297"></line><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43" x="63.5" y="62.3638">put file</text><line style="stroke:#181818;stroke-width:1.0;" x1="123.5" x2="165.5" y1="96.5625" y2="96.5625"></line><line style="stroke:#181818;stroke-width:1.0;" x1="165.5" x2="165.5" y1="96.5625" y2="109.5625"></line><line style="stroke:#181818;stroke-width:1.0;" x1="124.5" x2="165.5" y1="109.5625" y2="109.5625"></line><polygon fill="#181818" points="134.5,105.5625,124.5,109.5625,134.5,113.5625,130.5,109.5625" style="stroke:#181818;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="47" x="130.5" y="91.4966">fanotify</text><path d="M10,124.5625 L74,124.5625 L74,131.6953 L64,141.6953 L10,141.6953 L10,124.5625 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"></path><rect fill="none" height="175.3359" style="stroke:#000000;stroke-width:1.5;" width="394.5" x="10" y="124.5625"></rect><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="19" x="25" y="137.6294">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="73" x="89" y="136.7729">[mq config]</text><polygon fill="#181818" points="172.5,143.6953,182.5,147.6953,172.5,151.6953,176.5,147.6953" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="123.5" x2="178.5" y1="147.6953" y2="147.6953"></line><polygon fill="#181818" points="244,157.6953,254,161.6953,244,165.6953,248,161.6953" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="184.5" x2="250" y1="161.6953" y2="161.6953"></line><polygon fill="#181818" points="195.5,171.6953,185.5,175.6953,195.5,179.6953,191.5,175.6953" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="189.5" x2="255" y1="175.6953" y2="175.6953"></line><polygon fill="#181818" points="134.5,185.6953,124.5,189.6953,134.5,193.6953,130.5,189.6953" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="128.5" x2="183.5" y1="189.6953" y2="189.6953"></line><polygon fill="#181818" points="67.5,214.8281,57.5,218.8281,67.5,222.8281,63.5,218.8281" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="61.5" x2="122.5" y1="218.8281" y2="218.8281"></line><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="28" x="73.5" y="213.7622">resp</text><line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="10" x2="404.5" y1="227.8281" y2="227.8281"></line><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="85" x="15" y="238.0386">[method call]</text><polygon fill="#181818" points="348.5,258.7656,358.5,262.7656,348.5,266.7656,352.5,262.7656" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="123.5" x2="354.5" y1="262.7656" y2="262.7656"></line><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="213" x="130.5" y="257.6997">resp:= service.method1(content)</text><polygon fill="#181818" points="67.5,287.8984,57.5,291.8984,67.5,295.8984,63.5,291.8984" style="stroke:#181818;stroke-width:1.0;"></polygon><line style="stroke:#181818;stroke-width:1.0;" x1="61.5" x2="122.5" y1="291.8984" y2="291.8984"></line><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="28" x="73.5" y="286.8325">resp</text></g></svg>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_considerations"><a class="anchor" href="#_additional_considerations"></a><a class="link" href="#_additional_considerations">Additional Considerations</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When moving from batch to real-time file processing, a few practical challenges must be addressed:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Handling Partial Files</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A file may not be fully written when the notification is triggered.</p>
+</li>
+<li>
+<p>Common approaches:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Use checksums to verify integrity.</p>
+</li>
+<li>
+<p>Use marker files (e.g., write file.done after the main file is complete).</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Communication Protocols via Files</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Establish clear naming conventions.</p>
+</li>
+<li>
+<p>Define how to correlate request and response files to avoid mismatches.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_final_thoughts"><a class="anchor" href="#_final_thoughts"></a><a class="link" href="#_final_thoughts">Final Thoughts</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Shifting from batch to real-time file processing isn’t just a performance optimisation—it can fundamentally change how applications interact. By leveraging Linux’s fanotify, we can eliminate polling and move closer to truly event-driven file workflows.</p>
+</div>
+<div class="paragraph">
+<p>The key is to not only handle notifications efficiently but also to design protocols for safe and predictable file exchange. With careful planning around partial file handling and file naming conventions, we can build robust, real-time server-side file processing solutions.</p>
+</div>
+</div>
+</div>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/batch" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">batch</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/real-time" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">real-time</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/fanotify" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">fanotify</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jackliusr-gh" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+  </main>
+  <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jackliusr.github.io" >
+    &copy;  My learning and diary 2025 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+<script>
+ MathJax = {
+     tex: {
+         inlineMath: [['$', '$'], ['\\(', '\\)']]
+     }
+ };
+ </script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<link href="/css/prism.css" rel="stylesheet" />
+<script src="/js/prism.js"></script>
+
+
+
+
+  
+  <p style="font-size: small; color: grey;">Page version: e210d016264962de43fe403c42dee897ac75a787 2025-09-18</p>
+</body>
+
+</html>

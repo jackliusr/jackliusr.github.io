@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>batch on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/batch/</link>
+    <description>Recent content in batch on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Sep 2025 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/batch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>From Batch to Real-Time: Rethinking File Processing with Linux fanotify</title>
+      <link>https://jackliusr.github.io/posts/2025/09/from-batch-to-real-time-rethinking-file-processing-with-linux-fanotify/</link>
+      <pubDate>Thu, 18 Sep 2025 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2025/09/from-batch-to-real-time-rethinking-file-processing-with-linux-fanotify/</guid>
+      <description>Traditionally, batch processing of files has been the default approach in many on-premise solutions. Files are dropped into a directory, collected on a schedule, and processed in groups. This model works fine for systems where latency is not critical, but once you start asking “How do we make this real-time?” the story becomes more interesting.
+ At first, my answer was polling. After all, if we want near real-time, we can just keep checking the directory at short intervals.</description>
+    </item>
+    
+  </channel>
+</rss>
