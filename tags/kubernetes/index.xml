@@ -6,7 +6,17 @@
     <description>Recent content in kubernetes on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Mar 2024 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Nov 2025 08:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Airgapped Kubernetes Cluster with containerd</title>
+      <link>https://jackliusr.github.io/posts/2025/11/airgapped-kubernetes-cluster-with-containerd/</link>
+      <pubDate>Sat, 15 Nov 2025 08:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2025/11/airgapped-kubernetes-cluster-with-containerd/</guid>
+      <description>After evaluating several local Kubernetes solutions I encountered repeated manual steps (downloading bootstrap images, pulling images from registry mirrors and retagging them, and loading images into clusters) that were time-consuming and error-prone. I decided to set up a properly air-gapped Kubernetes cluster using kubeadm and containerd, leveraging containerd’s registry mirror support. This post documents the steps I followed.
+ Prerequisites This guide assumes a Debian/Ubuntu host. Installing the latest Docker Engine will also provide containerd as a dependency.</description>
+    </item>
+    
     <item>
       <title>Setup kind cluster using cilium cni in wsl2</title>
       <link>https://jackliusr.github.io/posts/2024/03/setup-kind-cluster-using-cilium-cni-in-wsl2/</link>
