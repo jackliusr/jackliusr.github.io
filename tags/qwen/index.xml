@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Qwen on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/qwen/</link>
+    <description>Recent content in Qwen on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 31 Jan 2026 22:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/qwen/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>setup vllm on macbook m4</title>
+      <link>https://jackliusr.github.io/posts/2026/01/setup-vllm-on-macbook-m4/</link>
+      <pubDate>Sat, 31 Jan 2026 22:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/01/setup-vllm-on-macbook-m4/</guid>
+      <description>Introduction Several days ago, I setup ollama on my MacBook M4, and it works pretty well. At that time, I tried to use it with copilt with local models codegemma:7b and qwen3:8b. My expectation was not so high as the hardware configuration of my macbook pro m4 is just a entry level, just want to see how it works. I also learned there are other options such as vllm. After comparing the two, I found vllm is more flexible, powerful, product-ready, used widely in enterprises.</description>
+    </item>
+    
+  </channel>
+</rss>
