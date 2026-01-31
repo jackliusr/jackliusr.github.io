@@ -1,0 +1,118 @@
+---
+title: "setup vllm on macbook m4"
+date: 2026-01-31T22:10:00+08:00
+categories:
+- tech
+tags:
+- vllm
+- osx
+- vllm-metal
+- Qwen
+- ollama
+---
+
+## Introduction
+
+Several days ago, I setup ollama on my MacBook M4, and it works pretty well. At that time, I tried to use it with copilt with local models codegemma:7b and qwen3:8b. My expectation was not so high as the hardware configuration of my macbook pro m4 is just a entry level, just want to see how it works. I also learned there are other options such as vllm. After comparing the two, I found vllm is more flexible, powerful, product-ready, used widely in enterprises. So I decided to give it a try. Here is how I set it up.
+
+To get the full performance of vllm on MacBook M4, we need to install the vllm-metal package. The installation process is not very straightforward and I don't find any clear documentation on the web, so I will provide a step-by-step guide after I read the integration scripts of vllm-metal and setup my vllm successfully.
+
+## Setup Steps
+
+[source, bash]
+----
+brew install uv
+curl -fsSL https://raw.githubusercontent.com/vllm-project/vllm-metal/main/install.sh | bash
+source ~/.venv-vllm-metal/bin/activate
+uv pip install transformers>=4.56,<5
+uv pip install torchvision
+----
+
+## Test the Setup
+
+After the installation is done, we can test the setup by running the following command to serve a model and test it with a client.
+
+[source, bash]
+----
+vllm serve --model Qwen/Qwen2.5-1.5B-Instruct
+----
+
+In another terminal, we can run the following command to test the server.
+[source, bash]
+----
+curl http://localhost:8000/v1/chat/completions \
+    -H "Content-Type: application/json" \
+    -d '{
+        "model": "Qwen/Qwen2.5-1.5B-Instruct",
+        "messages": [
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": "Who won the world series in 2020?"}
+        ]
+    }' | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1009  100   771  100   238    134     41  0:00:05  0:00:05 --:--:--   170
+{
+  "id": "chatcmpl-8d83c9f9e4933680",
+  "object": "chat.completion",
+  "created": 1769869870,
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "The New York Yankees won the World Series in 2020. They defeated the Tampa Bay Rays in five games to win their seventh championship of the decade and eighth overall.",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [],
+        "reasoning": null,
+        "reasoning_content": null
+      },
+      "logprobs": null,
+      "finish_reason": "stop",
+      "stop_reason": null,
+      "token_ids": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "prompt_tokens": 31,
+    "total_tokens": 68,
+    "completion_tokens": 37,
+    "prompt_tokens_details": null
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "kv_transfer_params": null
+}
+----
+
+## Issues and Solutions
+
+### ImportError: cannot import name 'ALLOWED_LAYER_TYPES'
+
+When I first tried to run vllm with a local model, I encountered the following error:
+
+ImportError: cannot import name 'ALLOWED_LAYER_TYPES' from 'transformers.configuration_utils' (~/.venv-vllm-metal/lib/python3.12/site-packages/transformers/configuration_utils.py). Did you mean: 'ALLOWED_MLP_LAYER_TYPES'?
+
+Gemina and chatgpt give the solution "pip install transformers>=4.56,<5" however don't consider the setup of vllm-metal. I used the following command to make sure the transformers version is compatible with vllm-metal after I read https://github.com/vllm-project/vllm-metal/issues/83#issuecomment-3806268763 .
+
+[source, bash]
+----
+source ~/.venv-vllm-metal/bin/activate
+uv pip install transformers>=4.56,<5
+----
+
+
+### RuntimeError: operator torchvision::nms does not exist
+
+When I run the "vllm serve --model Qwen/Qwen2.5-1.5B-Instruct" command to serve the model, I encountered the above error. This is because the torchvision package is not installed in the vllm-metal virtual environment. To fix this, I used the following command:
+
+[source, bash]
+----
+uv pip install torchvision
+----
