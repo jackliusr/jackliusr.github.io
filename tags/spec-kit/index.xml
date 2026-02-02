@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>spec-kit on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/spec-kit/</link>
+    <description>Recent content in spec-kit on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Feb 2026 20:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/spec-kit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>spec-kit: iteration workflow in a feature</title>
+      <link>https://jackliusr.github.io/posts/2026/02/spec-kit-iteration-workflow-in-a-feature/</link>
+      <pubDate>Mon, 02 Feb 2026 20:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/02/spec-kit-iteration-workflow-in-a-feature/</guid>
+      <description>Building with LLMs: How Spec-Kit Changed My Workflow Over the past three years, I’ve used LLMs—such as ChatGPT, Copilot, and Claude—primarily as assistants to generate code snippets for very specific requirements. They were useful, but always in a limited way: small pieces of logic, isolated helpers, or syntax scaffolding.
+What I didn’t do until recently was build an entire system around an LLM.
+The main reason was simple: most of my real work lives inside internal frameworks, legacy systems, and opinionated architectures.</description>
+    </item>
+    
+  </channel>
+</rss>

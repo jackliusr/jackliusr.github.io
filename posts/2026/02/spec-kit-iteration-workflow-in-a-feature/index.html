@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>spec-kit: iteration workflow in a feature | My learning and diary</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="description"
+    content="Building with LLMs: How Spec-Kit Changed My Workflow Over the past three years, I’ve used LLMs—such as ChatGPT, Copilot, and Claude—primarily as assistants to generate code snippets for very specific requirements. They were useful, but always in a limited way: small pieces of logic, isolated helpers, or syntax scaffolding.
+What I didn’t do until recently was build an entire system around an LLM.
+The main reason was simple: most of my real work lives inside internal frameworks, legacy systems, and opinionated architectures.">
+  <meta name="generator" content="Hugo 0.99.1" />
+  
+  
+  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+  
+
+  
+<link rel="stylesheet" href="/ananke/css/main.min.abe0b1c07d5e33565b0f9b998a7b1b5228b709f36af363e2766bc8035f2237b7.css" >
+
+
+
+
+  
+  
+
+  
+
+  
+
+  <meta property="og:title" content="spec-kit: iteration workflow in a feature" />
+<meta property="og:description" content="Building with LLMs: How Spec-Kit Changed My Workflow Over the past three years, I’ve used LLMs—such as ChatGPT, Copilot, and Claude—primarily as assistants to generate code snippets for very specific requirements. They were useful, but always in a limited way: small pieces of logic, isolated helpers, or syntax scaffolding.
+What I didn’t do until recently was build an entire system around an LLM.
+The main reason was simple: most of my real work lives inside internal frameworks, legacy systems, and opinionated architectures." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jackliusr.github.io/posts/2026/02/spec-kit-iteration-workflow-in-a-feature/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2026-02-02T20:10:00+08:00" />
+<meta property="article:modified_time" content="2026-02-02T22:04:16+08:00" />
+
+<meta itemprop="name" content="spec-kit: iteration workflow in a feature">
+<meta itemprop="description" content="Building with LLMs: How Spec-Kit Changed My Workflow Over the past three years, I’ve used LLMs—such as ChatGPT, Copilot, and Claude—primarily as assistants to generate code snippets for very specific requirements. They were useful, but always in a limited way: small pieces of logic, isolated helpers, or syntax scaffolding.
+What I didn’t do until recently was build an entire system around an LLM.
+The main reason was simple: most of my real work lives inside internal frameworks, legacy systems, and opinionated architectures."><meta itemprop="datePublished" content="2026-02-02T20:10:00+08:00" />
+<meta itemprop="dateModified" content="2026-02-02T22:04:16+08:00" />
+<meta itemprop="wordCount" content="560">
+<meta itemprop="keywords" content="spec-kit,sdd," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="spec-kit: iteration workflow in a feature"/>
+<meta name="twitter:description" content="Building with LLMs: How Spec-Kit Changed My Workflow Over the past three years, I’ve used LLMs—such as ChatGPT, Copilot, and Claude—primarily as assistants to generate code snippets for very specific requirements. They were useful, but always in a limited way: small pieces of logic, isolated helpers, or syntax scaffolding.
+What I didn’t do until recently was build an entire system around an LLM.
+The main reason was simple: most of my real work lives inside internal frameworks, legacy systems, and opinionated architectures."/>
+
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K49F8T19FK"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-K49F8T19FK', { 'anonymize_ip': false });
+}
+</script>
+
+  
+  
+
+
+
+
+
+
+</head>
+
+<body class="ma0 avenir bg-near-white production">
+
+  
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My learning and diary
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/notes/" title="Notes page">
+              Notes
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/portfolio/" title="Portfolio page">
+              Portfolio
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/readinglists/" title="Books page">
+              Books
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/categories/" title="Categories page">
+              Categories
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tags/" title="Tags page">
+              Tags
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+  <main class="pb7" role="main">
+    
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://jackliusr.github.io/posts/2026/02/spec-kit-iteration-workflow-in-a-feature/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://jackliusr.github.io/posts/2026/02/spec-kit-iteration-workflow-in-a-feature/&amp;text=spec-kit:%20iteration%20workflow%20in%20a%20feature" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://jackliusr.github.io/posts/2026/02/spec-kit-iteration-workflow-in-a-feature/&amp;title=spec-kit:%20iteration%20workflow%20in%20a%20feature" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">spec-kit: iteration workflow in a feature</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2026-02-02T20:10:00+08:00">February 2, 2026</time>
+
+      
+      
+        <span class="f6 mv4 dib tracked"> - 3 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 560 words</span>
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="building-with-llms-how-spec-kit-changed-my-workflow">Building with LLMs: How Spec-Kit Changed My Workflow</h1>
+<p>Over the past three years, I’ve used LLMs—such as ChatGPT, Copilot, and Claude—primarily as <em>assistants</em> to generate code snippets for very specific requirements. They were useful, but always in a limited way: small pieces of logic, isolated helpers, or syntax scaffolding.</p>
+<p>What I <strong>didn’t</strong> do until recently was build an entire system <em>around</em> an LLM.</p>
+<p>The main reason was simple: most of my real work lives inside internal frameworks, legacy systems, and opinionated architectures. General-purpose LLM tools weren’t a great fit for those constraints. They could help locally, but they didn’t shape the system.</p>
+<p>That changed last week.</p>
+<p>Using <strong>spec-kit</strong> fundamentally shifted how I think about building software with LLMs. Instead of treating the model as a code generator, spec-kit positions it as a <strong>workflow engine</strong>—one that participates in requirements clarification, specification refinement, and implementation planning.</p>
+<p>In this post, I’ll share how I iteratively built a small spec-kit–based system, and why the iteration model matters more than “getting it right the first time”.</p>
+<hr>
+<h2 id="requirements-are-never-right-the-first-time">Requirements Are Never Right the First Time</h2>
+<p>Anyone who’s worked on real systems knows this:</p>
+<ul>
+<li>Requirements evolve</li>
+<li>Specifications inherit ambiguity from requirements</li>
+<li>The “first draft” is almost never correct</li>
+</ul>
+<p>Specifications are not a static artifact—they’re a living document. Treating them as final is usually where things go wrong.</p>
+<p>When you run: /speckit.specify, spec-kit creates a new feature specification. In practice, that initial output is <em>rarely</em> exactly what you want. And that’s okay.</p>
+<p>The mistake is assuming the workflow must be strictly linear.</p>
+<hr>
+<h2 id="the-traditional-workflow">The Traditional Workflow</h2>
+<p>The conventional spec-kit flow looks like this:</p>
+<div class="mermaid">flowchart LR
+    specify --> plan --> task --> implement
+</div>
+<p>This mirrors classic software delivery thinking:</p>
+<ol>
+<li>
+<p>Specify the feature</p>
+</li>
+<li>
+<p>Plan the approach</p>
+</li>
+<li>
+<p>Break it into tasks</p>
+</li>
+<li>
+<p>Implement</p>
+</li>
+</ol>
+<p>This works well only if each step is already correct—which almost never happens in reality.</p>
+<h2 id="embracing-an-iteration-workflow">Embracing an Iteration Workflow</h2>
+<p>Instead of restarting from scratch when something feels off, I use an iteration-first workflow.</p>
+<p>In this approach, I freely modify any artifact:</p>
+<ul>
+<li>
+<p>spec.md</p>
+</li>
+<li>
+<p>plan.md</p>
+</li>
+<li>
+<p>tasks.md</p>
+</li>
+</ul>
+<p>Then I ask spec-kit to continue from that change, rather than rerunning the entire pipeline.</p>
+<p>My go-to prompt looks like this:</p>
+<pre tabindex="0"><code>/speckit.analyze I changed [spec.md|plan.md|task.md], do things accordingly.
+</code></pre><p>Why this works:</p>
+<ul>
+<li>
+<p>I can’t guarantee consistency between my edits and existing artifacts</p>
+</li>
+<li>
+<p>spec-kit re-analyzes context holistically</p>
+</li>
+<li>
+<p>Each phase stays loosely coupled but logically aligned</p>
+</li>
+</ul>
+<h2 id="iterative-state-model">Iterative State Model</h2>
+<p>Conceptually, I think of the workflow like this:</p>
+<pre tabindex="0"><code class="language-mermdaid" data-lang="mermdaid">stateDiagram-v2
+    [*] --&gt; Specify
+    Change_Spec --&gt; Plan
+    Specify --&gt; Plan
+    Change_Plan --&gt; Task
+    Plan --&gt; Task
+    Change_Task --&gt; Implement
+    Task --&gt; Implement
+    Implement --&gt; [*]
+</code></pre><p>Key idea:</p>
+<p>Any artifact change becomes a new entry point into the workflow.</p>
+<p>You’re no longer locked into a strict forward-only pipeline. Instead, you move forward from wherever clarity improves.</p>
+<h2 id="why-this-changed-my-perspective">Why This Changed My Perspective</h2>
+<p>Spec-kit isn’t just about generating specs—it enforces thinking in phases while still allowing iteration.</p>
+<p>For the first time, I felt like:</p>
+<ul>
+<li>
+<p>The LLM was collaborating on system design, not just code</p>
+</li>
+<li>
+<p>Iteration was a first-class concept, not a workaround</p>
+</li>
+<li>
+<p>Legacy and internal constraints could be respected incrementally</p>
+</li>
+</ul>
+<p>This is the missing piece I hadn’t found in other LLM tools.</p>
+<h2 id="closing-thoughts">Closing Thoughts</h2>
+<p>LLMs are great at producing answers.
+Spec-kit is good at supporting process.</p>
+<p>Once you accept that specifications are never perfect, an iterative workflow stops being a compromise—and becomes the strategy.</p>
+<p>If you’re working with real systems, not toy demos, that difference matters.</p>
+
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+        <script>
+          mermaid.initialize({ startOnLoad: true });
+        </script>
+      <ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/spec-kit" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">spec-kit</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/sdd" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">sdd</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jackliusr-gh" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+  </main>
+  <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jackliusr.github.io" >
+    &copy;  My learning and diary 2026 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+<script>
+ MathJax = {
+     tex: {
+         inlineMath: [['$', '$'], ['\\(', '\\)']]
+     }
+ };
+ </script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<link href="/css/prism.css" rel="stylesheet" />
+<script src="/js/prism.js"></script>
+
+
+
+
+  
+  <p style="font-size: small; color: grey;">Page version: bcc52aaf0ba88bd9a6400560ee37d0b54d5d5579 2026-02-02</p>
+</body>
+
+</html>
