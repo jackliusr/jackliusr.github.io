@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kimi on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/kimi/</link>
+    <description>Recent content in kimi on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Feb 2026 22:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/kimi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>setup openclaw hetzner</title>
+      <link>https://jackliusr.github.io/posts/2026/02/setup-openclaw-hetzner/</link>
+      <pubDate>Wed, 04 Feb 2026 22:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/02/setup-openclaw-hetzner/</guid>
+      <description>Things are changing incredibly fast, and AI is undeniably the hottest topic right now. There’s no real option to stand still—the only sensible choice is to embrace the change and learn by doing.
+ Recently, OpenClaw has stood out as one of the most exciting personal AI assistant projects. After following the project for several days and spending time reading through its documentation—especially around skills and agents—I decided to try it out myself.</description>
+    </item>
+    
+  </channel>
+</rss>
