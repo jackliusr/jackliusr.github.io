@@ -1,0 +1,110 @@
+---
+title: "setup openclaw hetzner"
+date: 2026-02-04T22:10:00+08:00
+categories:
+- tech
+tags:
+- openclaw
+- hetzner
+- kimi
+---
+
+# Setting Up OpenClaw on a Hetzner Cloud Server
+
+Things are changing incredibly fast, and AI is undeniably the hottest topic right now. There’s no real option to stand still—the only sensible choice is to embrace the change and learn by doing.
+
+Recently, **OpenClaw** has stood out as one of the most exciting personal AI assistant projects. After following the project for several days and spending time reading through its documentation—especially around **skills** and **agents**—I decided to try it out myself. To keep things flexible and production-like, I deployed it on a **Hetzner Cloud** server.
+
+This article documents how I set up OpenClaw step by step and shares some initial impressions.
+
+---
+
+## Why OpenClaw?
+
+OpenClaw is designed as a modular personal AI assistant, with a clear separation between:
+- **Agents** – reasoning and orchestration
+- **Skills** – concrete capabilities
+- **Gateways** – how requests flow in and out
+
+That architecture made it particularly interesting for experimentation and future extension.
+
+---
+
+## Setup Overview
+
+The setup consists of three main stages:
+
+1. Creating and securing a Hetzner Cloud server  
+2. Installing OpenClaw  
+3. Configuring the model provider and gateway  
+
+---
+
+## 1. Create and Harden a Hetzner Cloud Server
+
+I started by creating a new Ubuntu server on **Hetzner Cloud**. Before installing anything AI-related, I focused on basic security hardening.
+
+I followed Hetzner’s official community guide:
+
+> https://community.hetzner.com/tutorials/security-ubuntu-settings-firewall-tools
+
+Key hardening steps included:
+- Creating a non-root user with sudo access  
+- Disabling password-based SSH login  
+- Enforcing SSH key authentication  
+- Configuring a firewall (UFW) with minimal open ports  
+- Applying basic system updates and security tools  
+
+This ensures the server is reasonably secure before exposing any services.
+
+---
+
+## 2. Install OpenClaw
+
+Next, I installed OpenClaw by following the official documentation:
+
+> https://docs.openclaw.ai/start/getting-started
+
+The installation process was straightforward and well-documented. After cloning the repository and installing dependencies, I was able to bring up the core services without major issues.
+
+---
+
+## 3. Model Provider and Gateway Configuration
+
+For the initial setup, I made the following choices:
+
+- **Gateway**: Local gateway  
+- **Model provider**: Kimi  
+
+The local gateway made debugging and iteration easier, especially for a first deployment. Kimi was selected as the initial model provider due to its availability and performance.
+
+In future experiments, I plan to test additional providers, including:
+- Claude  
+- OpenAI  
+
+This will help compare response quality, latency, and cost trade-offs across models.
+
+---
+
+## Running OpenClaw on Hetzner
+
+Once everything was configured, OpenClaw ran smoothly on the Hetzner Cloud server. The setup felt stable and responsive, making it a solid base for further experimentation with agents and skills.
+
+Below are some screenshots of OpenClaw running on the Hetzner Cloud server:
+
+{{< imgur id="zvKNrat" >}}
+
+{{< imgur id="ZVCSnPK" >}}
+
+---
+
+## Final Thoughts
+
+Deploying OpenClaw on a cloud server was a great hands-on way to understand its architecture and capabilities. The combination of a clean design, flexible model provider support, and clear documentation makes it an excellent project to explore if you’re interested in building or extending a personal AI assistant.
+
+Next steps for me will be:
+- Experimenting with different model providers  
+- Adding custom skills  
+- Exploring more advanced agent workflows  
+
+If you’re also navigating the fast-moving AI landscape, projects like OpenClaw are well worth a closer look.
