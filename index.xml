@@ -6,7 +6,17 @@
     <description>Recent content on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Feb 2026 22:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Mar 2026 22:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Claude Code with OpenRouter</title>
+      <link>https://jackliusr.github.io/posts/2026/03/claude-code-with-openrouter/</link>
+      <pubDate>Sun, 15 Mar 2026 22:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/03/claude-code-with-openrouter/</guid>
+      <description>I have been using GitHub Copilot and Copilot CLI for about one year. During that time, I also experimented with several developer tools and AI-assisted coding technologies. Recently I became interested in exploring Claude Code and related tools such as Claude Cowork.
+ However, I did not want to immediately commit to a subscription before understanding whether Claude Code actually fits my workflow. So I spent some time experimenting with different ways to run Claude Code without paying for a subscription first.</description>
+    </item>
+    
     <item>
       <title>setup openclaw hetzner</title>
       <link>https://jackliusr.github.io/posts/2026/02/setup-openclaw-hetzner/</link>
