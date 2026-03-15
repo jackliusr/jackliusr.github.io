@@ -1,0 +1,119 @@
+---
+title: "Claude Code with OpenRouter"
+date: 2026-03-15T22:10:00+08:00
+categories:
+- tech
+tags:
+- claude-code
+- openrouter
+---
+
+= Claude Code with OpenRouter
+
+I have been using GitHub Copilot and Copilot CLI for about one year. During that time, I also experimented with several developer tools and AI-assisted coding technologies. Recently I became interested in exploring *Claude Code* and related tools such as Claude Cowork.
+
+However, I did not want to immediately commit to a subscription before understanding whether Claude Code actually fits my workflow. So I spent some time experimenting with different ways to run Claude Code **without paying for a subscription first**.
+
+This post summarizes what I tried and what worked best for me.
+
+== Option 1: Running Claude Code with Local Models
+
+The first approach I experimented with was running local models and connecting them to Claude Code. Tools such as:
+
+* Ollama
+* vLLM
+* LM Studio
+
+make it possible to run local LLMs and expose them via APIs.
+
+To support this experiment, I purchased a small AI mini PC:
+
+*GMKtec NUCBOX EVO-X2 AI (Ryzen AI MAX+395)*
+
+My idea was to run models such as:
+
+* `qwen3`
+* `qwen3.5`
+* `qwen3-coder`
+
+and connect Claude Code to them.
+
+Example commands using Ollama:
+
+[source,bash]
+----
+ollama launch claude --model qwen3-coder
+ollama launch codex --model qwen3-coder
+----
+
+Unfortunately, the experience was not very good.
+
+Problems I encountered:
+
+* Inference was **quite slow**, especially for coding tasks.
+* Models sometimes produced **errors or unstable responses**.
+* The overall workflow was **not smooth enough for daily development**.
+
+For experimentation this setup was interesting, but for serious usage it was not practical.
+
+If someone wants to run coding models locally long-term, better options might include:
+
+* Renting GPU instances in the cloud
+* Buying a **high-end GPU workstation**
+* Using specialized inference setups
+
+For my mini PC, the performance was simply not strong enough.
+
+So I decided to move on to another approach.
+
+== Option 2: Using OpenRouter with Claude Code
+
+The second approach turned out to be **much more practical**.
+
+Instead of running local models, Claude Code can be configured to use **OpenRouter**. OpenRouter acts as a unified API layer that allows access to many different models.
+
+Advantages of using OpenRouter:
+
+* No subscription required to try different models
+* Ability to **experiment with multiple providers**
+* Pay-as-you-go pricing
+* Easy integration with Claude-compatible APIs
+
+To configure Claude Code with OpenRouter, I exported the following environment variables:
+
+[source,bash]
+----
+export OPENROUTER_API_KEY="sk-or-v1-"
+export ANTHROPIC_BASE_URL="https://openrouter.ai/api"
+export ANTHROPIC_AUTH_TOKEN="$OPENROUTER_API_KEY"
+export ANTHROPIC_API_KEY=""
+export ANTHROPIC_MODEL="deepseek/deepseek-v3.2"
+----
+
+With this configuration, Claude Code can interact with models provided by OpenRouter, such as:
+
+* DeepSeek
+* Claude models
+* Other frontier models supported by OpenRouter
+
+This setup allowed me to quickly test multiple models and evaluate how well they perform for coding tasks.
+
+== Final Thoughts
+
+If you want to try Claude Code **without committing to a subscription immediately**, there are a few possible approaches.
+
+Local models:
+
+* Good for experimentation
+* Requires strong hardware
+* Often slower for coding workflows
+
+OpenRouter:
+
+* Much easier to set up
+* Supports many models
+* Flexible and cost-effective for testing
+
+For my workflow, **OpenRouter is currently the most practical way to explore Claude Code** before deciding whether a full subscription is worth it.
+
+I will continue experimenting with different models and workflows to see how well Claude Code integrates into my development environment.
