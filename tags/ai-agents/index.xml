@@ -13,7 +13,7 @@
       <pubDate>Tue, 17 Mar 2026 16:00:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/posts/2026/03/spec-kit--ralph-loop-a-practical-workflow-for-ai-driven-development/</guid>
-      <description>I first came across the idea of the Ralph Loop around January, while following developments in LLMs and AI through multiple channels — video feeds, X, newsletters, GitHub repositories, news, and research papers.
+      <description>I first learnt the idea of the Ralph Loop around January, while following developments in LLMs and AI through multiple channels — video feeds, X, newsletters, GitHub repositories, news, and research papers.
  That sparked a question:
  What happens if we combine the Ralph Loop with spec-driven design to generate real, working applications?
  This blog is a reflection of that exploration.
