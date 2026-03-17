@@ -1,0 +1,267 @@
+---
+title: "Spec-Kit + Ralph Loop — A Practical Workflow for AI-Driven Development"
+date: 2026-03-17T16:00:00+08:00
+categories:
+- tech
+tags:
+- spec-kit
+- ralph-loop
+- ai-agents
+- software-engineering
+---
+
+= Spec-Kit + Ralph Loop — A Practical Workflow for AI-Driven Development
+
+I first came across the idea of the *Ralph Loop* around January, while following developments in LLMs and AI through multiple channels — video feeds, X, newsletters, GitHub repositories, news, and research papers.
+
+That sparked a question:
+
+*What happens if we combine the Ralph Loop with spec-driven design to generate real, working applications?*
+
+This blog is a reflection of that exploration.
+
+---
+
+== My Background with Spec-Kit
+
+Since December last year, I have been using *Spec-Kit* in both:
+
+* brownfield projects
+* greenfield projects
+
+One key constraint I imposed on myself:
+
+[quote]
+I intentionally did not touch a single line of code — everything was driven purely by prompts and coding agents.
+
+The results were surprisingly impressive.
+
+The coding agents were able to generate:
+
+* functional application code
+* specifications
+* user stories
+* unit tests
+* end-to-end tests
+* migration scripts
+
+Compared to traditional development approaches, this significantly reduced the effort required to deliver projects.
+
+---
+
+== Why Combine Spec-Kit with Ralph Loop?
+
+While using Spec-Kit, I began to realise something:
+
+[quote]
+Spec-Kit works well for structured generation, but Ralph Loop introduces iteration and refinement.
+
+When combined, they can potentially create a **closed-loop AI development system**.
+
+After following workflows similar to this example:
+
+https://github.com/mnriem/spec-kit-spring-react-demo
+
+I became convinced that:
+
+[quote]
+Spec-Kit + Ralph Loop can produce production-grade systems — at the cost of more time and tokens.
+
+---
+
+== Limitations in Existing Workflows
+
+Before designing my own workflow, I explored existing approaches:
+
+* https://prg.sh/ramblings/Spec-Kit-+-Ralph-Wiggum---The-Workflow-Nobody's-Talking-About#try-it-yourself
+* https://dominic-boettger.com/blog/speckit-ralph-loop-fresh-context-ai-development
+
+These were insightful, but I noticed a gap:
+
+[important]
+Most workflows **lack explicit clarification and analysis stages**.
+
+Without these steps:
+
+* requirements may be ambiguous  
+* generated plans may contain hidden issues  
+* implementation may drift from intent  
+
+---
+
+== My Ideal Spec-Kit + Ralph Loop Workflow
+
+Here is the workflow I propose, incorporating **clarification** and **analysis** as first-class steps.
+
+[plantuml, format="svg",opts="inline"]
+----
+@startuml
+[*] --> Specify
+Specify --> Clarify
+Clarify --> Clarify: issues?
+Clarify: /entry: do the suggested recommendataions.
+Clarify --> Plan : no issue
+
+Plan --> Task
+
+Task --> Analyse
+
+Analyse --> Analyse: issues?
+Analyse: /entry: fix all found issues and\n/entry: do the suggested recommendataions
+Analyse --> Implement
+
+Implement --> Test
+Test --> [*]
+Test: /entry: do all unit tests, integration tests and e2e testings\n/entry: fix all errors found
+@enduml
+----
+
+---
+
+== Breakdown of the Workflow
+
+=== 1. Specify
+Define the problem clearly.
+
+Artifacts:
+
+* requirements
+* constraints
+* acceptance criteria
+
+---
+
+=== 2. Clarify (Critical Step)
+This step ensures that ambiguity is removed early.
+
+Key actions:
+
+* ask follow-up questions  
+* refine unclear requirements  
+* resolve contradictions  
+
+[quote]
+This is where many workflows fail — skipping clarification leads to downstream errors.
+
+---
+
+=== 3. Plan
+Translate requirements into a structured plan.
+
+Artifacts:
+
+* architecture design  
+* component breakdown  
+* technology choices  
+
+---
+
+=== 4. Task
+Break the plan into executable units.
+
+Artifacts:
+
+* task list  
+* dependency graph  
+* execution order  
+
+---
+
+=== 5. Analyse (Another Missing Piece)
+Before implementation, validate everything.
+
+Key actions:
+
+* identify design flaws  
+* detect missing requirements  
+* check edge cases  
+
+[quote]
+This step dramatically reduces rework during implementation.
+
+---
+
+=== 6. Implement
+Use coding agents to generate code.
+
+Approach:
+
+* prompt-driven development  
+* no manual coding  
+* iterative refinement  
+
+---
+
+=== 7. Test
+Ensure quality through automated validation.
+
+Includes:
+
+* unit tests  
+* integration tests  
+* end-to-end tests  
+
+Fix issues before closing the loop.
+
+---
+
+== Key Insights
+
+=== 1. AI Can Replace Much of Traditional Coding
+With the right workflow, coding becomes:
+
+```text
+specification → prompts → generated system
+```
+
+=== 2. Structure Matters More Than Prompts
+The biggest improvement did not come from better prompts.
+
+It came from:
+
+adding clarification
+
+adding analysis
+
+enforcing workflow discipline
+
+=== 3. Trade-offs Exist
+
+Aspect	Impact
+Time	longer due to iterations
+Cost	higher token usage
+Quality	significantly improved
+Effort	dramatically reduced
+
+== Final Thoughts
+
+Combining Spec-Kit with Ralph Loop creates something powerful:
+
+[quote]
+A structured, iterative, AI-driven software development lifecycle.
+
+It shifts development from:
+
+manual coding → assisted coding → fully orchestrated AI workflows
+
+While still early, this approach shows strong potential for:
+
+rapid prototyping
+
+enterprise development
+
+autonomous coding systems
+
+== What’s Next?
+
+I plan to continue refining this workflow and explore:
+
+multi-agent orchestration
+
+automatic feedback loops
+
+cost optimisation strategies
+
+If you are experimenting with AI-driven development, I highly recommend trying this approach.
+
+You may be surprised how far you can go without writing a single line of code.
