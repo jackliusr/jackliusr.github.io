@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ai-agents on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/ai-agents/</link>
+    <description>Recent content in ai-agents on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Mar 2026 16:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/ai-agents/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spec-Kit &#43; Ralph Loop — A Practical Workflow for AI-Driven Development</title>
+      <link>https://jackliusr.github.io/posts/2026/03/spec-kit--ralph-loop-a-practical-workflow-for-ai-driven-development/</link>
+      <pubDate>Tue, 17 Mar 2026 16:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/03/spec-kit--ralph-loop-a-practical-workflow-for-ai-driven-development/</guid>
+      <description>I first came across the idea of the Ralph Loop around January, while following developments in LLMs and AI through multiple channels — video feeds, X, newsletters, GitHub repositories, news, and research papers.
+ That sparked a question:
+ What happens if we combine the Ralph Loop with spec-driven design to generate real, working applications?
+ This blog is a reflection of that exploration.
+    My Background with Spec-Kit Since December last year, I have been using Spec-Kit in both:</description>
+    </item>
+    
+  </channel>
+</rss>

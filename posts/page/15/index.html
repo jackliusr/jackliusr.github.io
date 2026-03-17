@@ -168,6 +168,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2022/05/workaround-the-limitation-of-authorization-header-of-webhook-in-argo-events/" class="link black dim">
+        Workaround the limitation of authorization header of webhook in argo-events
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Webhook of argo-events supports authentication, however the field is fixed in header. If your callers don’t do that way, you are screwed. Recently days, I was trying to integrate gitee with argo-workflow and argo-events. I hit the wall here.
+ TOKEN=&#34;Bearer af3qqs321f2ddwf1e2e67dfda3fs&#34; curl -X POST -H &#34;Authorization: $TOKEN&#34; -d &#34;{your data}&#34; http://xxxxx:12000/example   I kept reading the documents for serveral days and the knowledge sinked in, I got the idea that filters maybe can be used for that as a workaround solution.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2022/05/setup-bluetooth-mouses-in-mac-air-with-three-not-existing-devices/" class="link black dim">
         Setup bluetooth mouses in mac air with three not-existing devices
       </a>
@@ -303,22 +319,6 @@ if (!doNotTrack) {
       Keep WSA running WSA seems sometimes will exit after a while idle time. I need to run the following command to keep it running.
  adb connect YOUR_IP_ADDRESS     Run App According to How to use Windows Subsystem for Android as a development tool, there are several ways to run flutter apps in WSA.
  Android studio When I try to run a project of my company in Android studio, I kept get the error &#34;An unexpected packet was received before the handshake&#34;.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2022/04/reflection-on-the-usage-of-bazel/" class="link black dim">
-        Reflection on the usage of bazel
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      TLDR: Bazel is definitely worth to use on your projects even though it has minimum supports of some languages such as C#.
-   Prologue Before I was interested in bazel, I always thought why bother to learn a new building system even I knew that kubernetes once was built with bazel. 4 months ago, I was involved in a micro service structured project. I was dissatisfied with dev workflow using skaffold and I looked other options in the market.
     </div>
   </div>
 </div>

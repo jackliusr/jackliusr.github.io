@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>Spec-Kit &#43; Ralph Loop — A Practical Workflow for AI-Driven Development | My learning and diary</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="description"
+    content="I first came across the idea of the Ralph Loop around January, while following developments in LLMs and AI through multiple channels — video feeds, X, newsletters, GitHub repositories, news, and research papers.
+ That sparked a question:
+ What happens if we combine the Ralph Loop with spec-driven design to generate real, working applications?
+ This blog is a reflection of that exploration.
+    My Background with Spec-Kit Since December last year, I have been using Spec-Kit in both:">
+  <meta name="generator" content="Hugo 0.99.1" />
+  
+  
+  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+  
+
+  
+<link rel="stylesheet" href="/ananke/css/main.min.abe0b1c07d5e33565b0f9b998a7b1b5228b709f36af363e2766bc8035f2237b7.css" >
+
+
+
+
+  
+  
+
+  
+
+  
+
+  <meta property="og:title" content="Spec-Kit &#43; Ralph Loop — A Practical Workflow for AI-Driven Development" />
+<meta property="og:description" content="I first came across the idea of the Ralph Loop around January, while following developments in LLMs and AI through multiple channels — video feeds, X, newsletters, GitHub repositories, news, and research papers.
+ That sparked a question:
+ What happens if we combine the Ralph Loop with spec-driven design to generate real, working applications?
+ This blog is a reflection of that exploration.
+    My Background with Spec-Kit Since December last year, I have been using Spec-Kit in both:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jackliusr.github.io/posts/2026/03/spec-kit--ralph-loop-a-practical-workflow-for-ai-driven-development/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2026-03-17T16:00:00+08:00" />
+<meta property="article:modified_time" content="2026-03-17T21:12:21+08:00" />
+
+<meta itemprop="name" content="Spec-Kit &#43; Ralph Loop — A Practical Workflow for AI-Driven Development">
+<meta itemprop="description" content="I first came across the idea of the Ralph Loop around January, while following developments in LLMs and AI through multiple channels — video feeds, X, newsletters, GitHub repositories, news, and research papers.
+ That sparked a question:
+ What happens if we combine the Ralph Loop with spec-driven design to generate real, working applications?
+ This blog is a reflection of that exploration.
+    My Background with Spec-Kit Since December last year, I have been using Spec-Kit in both:"><meta itemprop="datePublished" content="2026-03-17T16:00:00+08:00" />
+<meta itemprop="dateModified" content="2026-03-17T21:12:21+08:00" />
+<meta itemprop="wordCount" content="614">
+<meta itemprop="keywords" content="spec-kit,ralph-loop,ai-agents,software-engineering," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spec-Kit &#43; Ralph Loop — A Practical Workflow for AI-Driven Development"/>
+<meta name="twitter:description" content="I first came across the idea of the Ralph Loop around January, while following developments in LLMs and AI through multiple channels — video feeds, X, newsletters, GitHub repositories, news, and research papers.
+ That sparked a question:
+ What happens if we combine the Ralph Loop with spec-driven design to generate real, working applications?
+ This blog is a reflection of that exploration.
+    My Background with Spec-Kit Since December last year, I have been using Spec-Kit in both:"/>
+
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K49F8T19FK"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-K49F8T19FK', { 'anonymize_ip': false });
+}
+</script>
+
+  
+  
+
+
+
+
+
+
+</head>
+
+<body class="ma0 avenir bg-near-white production">
+
+  
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My learning and diary
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/notes/" title="Notes page">
+              Notes
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/portfolio/" title="Portfolio page">
+              Portfolio
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/readinglists/" title="Books page">
+              Books
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/categories/" title="Categories page">
+              Categories
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tags/" title="Tags page">
+              Tags
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+  <main class="pb7" role="main">
+    
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://jackliusr.github.io/posts/2026/03/spec-kit--ralph-loop-a-practical-workflow-for-ai-driven-development/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://jackliusr.github.io/posts/2026/03/spec-kit--ralph-loop-a-practical-workflow-for-ai-driven-development/&amp;text=Spec-Kit%20&#43;%20Ralph%20Loop%20%e2%80%94%20A%20Practical%20Workflow%20for%20AI-Driven%20Development" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://jackliusr.github.io/posts/2026/03/spec-kit--ralph-loop-a-practical-workflow-for-ai-driven-development/&amp;title=Spec-Kit%20&#43;%20Ralph%20Loop%20%e2%80%94%20A%20Practical%20Workflow%20for%20AI-Driven%20Development" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Spec-Kit &#43; Ralph Loop — A Practical Workflow for AI-Driven Development</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2026-03-17T16:00:00+08:00">March 17, 2026</time>
+
+      
+      
+        <span class="f6 mv4 dib tracked"> - 3 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 614 words</span>
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>I first came across the idea of the <strong>Ralph Loop</strong> around January, while following developments in LLMs and AI through multiple channels — video feeds, X, newsletters, GitHub repositories, news, and research papers.</p>
+</div>
+<div class="paragraph">
+<p>That sparked a question:</p>
+</div>
+<div class="paragraph">
+<p><strong>What happens if we combine the Ralph Loop with spec-driven design to generate real, working applications?</strong></p>
+</div>
+<div class="paragraph">
+<p>This blog is a reflection of that exploration.</p>
+</div>
+<hr/>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_my_background_with_spec_kit"><a class="anchor" href="#_my_background_with_spec_kit"></a><a class="link" href="#_my_background_with_spec_kit">My Background with Spec-Kit</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Since December last year, I have been using <strong>Spec-Kit</strong> in both:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>brownfield projects</p>
+</li>
+<li>
+<p>greenfield projects</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>One key constraint I imposed on myself:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+I intentionally did not touch a single line of code — everything was driven purely by prompts and coding agents.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The results were surprisingly impressive.</p>
+</div>
+<div class="paragraph">
+<p>The coding agents were able to generate:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>functional application code</p>
+</li>
+<li>
+<p>specifications</p>
+</li>
+<li>
+<p>user stories</p>
+</li>
+<li>
+<p>unit tests</p>
+</li>
+<li>
+<p>end-to-end tests</p>
+</li>
+<li>
+<p>migration scripts</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Compared to traditional development approaches, this significantly reduced the effort required to deliver projects.</p>
+</div>
+<hr/>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_combine_spec_kit_with_ralph_loop"><a class="anchor" href="#_why_combine_spec_kit_with_ralph_loop"></a><a class="link" href="#_why_combine_spec_kit_with_ralph_loop">Why Combine Spec-Kit with Ralph Loop?</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>While using Spec-Kit, I began to realise something:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Spec-Kit works well for structured generation, but Ralph Loop introduces iteration and refinement.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>When combined, they can potentially create a <strong>closed-loop AI development system</strong>.</p>
+</div>
+<div class="paragraph">
+<p>After following workflows similar to this example:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/mnriem/spec-kit-spring-react-demo" class="bare">https://github.com/mnriem/spec-kit-spring-react-demo</a></p>
+</div>
+<div class="paragraph">
+<p>I became convinced that:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Spec-Kit + Ralph Loop can produce production-grade systems — at the cost of more time and tokens.
+</blockquote>
+</div>
+<hr/>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_limitations_in_existing_workflows"><a class="anchor" href="#_limitations_in_existing_workflows"></a><a class="link" href="#_limitations_in_existing_workflows">Limitations in Existing Workflows</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before designing my own workflow, I explored existing approaches:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://prg.sh/ramblings/Spec-Kit-+-Ralph-Wiggum---The-Workflow-Nobody’s-Talking-About#try-it-yourself" class="bare">https://prg.sh/ramblings/Spec-Kit-+-Ralph-Wiggum---The-Workflow-Nobody’s-Talking-About#try-it-yourself</a></p>
+</li>
+<li>
+<p><a href="https://dominic-boettger.com/blog/speckit-ralph-loop-fresh-context-ai-development" class="bare">https://dominic-boettger.com/blog/speckit-ralph-loop-fresh-context-ai-development</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These were insightful, but I noticed a gap:</p>
+</div>
+<div class="paragraph">
+<p>Most workflows <strong>lack explicit clarification and analysis stages</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Without these steps:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>requirements may be ambiguous</p>
+</li>
+<li>
+<p>generated plans may contain hidden issues</p>
+</li>
+<li>
+<p>implementation may drift from intent</p>
+</li>
+</ul>
+</div>
+<hr/>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_my_ideal_spec_kit_ralph_loop_workflow"><a class="anchor" href="#_my_ideal_spec_kit_ralph_loop_workflow"></a><a class="link" href="#_my_ideal_spec_kit_ralph_loop_workflow">My Ideal Spec-Kit + Ralph Loop Workflow</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here is the workflow I propose, incorporating <strong>clarification</strong> and <strong>analysis</strong> as first-class steps.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<svg contentstyletype="text/css" preserveAspectRatio="none" version="1.1" viewBox="0 0 483 947" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" zoomAndPan="magnify" width="483" height="947"><defs></defs><g><ellipse cx="215" cy="16" fill="#222222" rx="10" ry="10" style="stroke:none;stroke-width:1.0;"></ellipse><g id="Specify"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="69" x="180.5" y="87"></rect><line style="stroke:#181818;stroke-width:0.5;" x1="180.5" x2="249.5" y1="113.2969" y2="113.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="49" x="190.5" y="104.9951">Specify</text></g><g id="Clarify"><rect fill="#F1F1F1" height="52.5938" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="335" x="47.5" y="198"></rect><line style="stroke:#181818;stroke-width:0.5;" x1="47.5" x2="382.5" y1="224.2969" y2="224.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="195" y="215.9951">Clarify</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="315" x="52.5" y="242.292">/entry: do the suggested recommendataions.</text></g><g id="Plan"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="50" x="190" y="328"></rect><line style="stroke:#181818;stroke-width:0.5;" x1="190" x2="240" y1="354.2969" y2="354.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="200.5" y="345.9951">Plan</text></g><g id="Task"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="53" x="188.5" y="439"></rect><line style="stroke:#181818;stroke-width:0.5;" x1="188.5" x2="241.5" y1="465.2969" y2="465.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="33" x="198.5" y="456.9951">Task</text></g><g id="Analyse"><rect fill="#F1F1F1" height="68.8906" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="331" x="49.5" y="550"></rect><line style="stroke:#181818;stroke-width:0.5;" x1="49.5" x2="380.5" y1="576.2969" y2="576.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53" x="188.5" y="567.9951">Analyse</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="204" x="54.5" y="594.292">/entry: fix all found issues and</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="311" x="54.5" y="610.5889">/entry: do the suggested recommendataions</text></g><g id="Implement"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="93" x="168.5" y="680"></rect><line style="stroke:#181818;stroke-width:0.5;" x1="168.5" x2="261.5" y1="706.2969" y2="706.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="178.5" y="697.9951">Implement</text></g><g id="Test"><rect fill="#F1F1F1" height="68.8906" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="416" x="7" y="791"></rect><line style="stroke:#181818;stroke-width:0.5;" x1="7" x2="423" y1="817.2969" y2="817.2969"></line><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="199.5" y="808.9951">Test</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="396" x="12" y="835.292">/entry: do all unit tests, integration tests and e2e testings</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="170" x="12" y="851.5889">/entry: fix all errors found</text></g><ellipse cx="215" cy="931" fill="none" rx="10" ry="10" style="stroke:#222222;stroke-width:1.0;"></ellipse><ellipse cx="215.5" cy="931.5" fill="#222222" rx="6" ry="6" style="stroke:none;stroke-width:1.0;"></ellipse><g id="link_*start_Specify"><path d="M215,26.01 C215,38.7 215,62.41 215,81.57 " fill="none" id="*start-to-Specify" style="stroke:#181818;stroke-width:1.0;"></path><polygon fill="#181818" points="215,86.84,219,77.84,215,81.84,211,77.84,215,86.84" style="stroke:#181818;stroke-width:1.0;"></polygon></g><g id="link_Specify_Clarify"><path d="M215,137.25 C215,153.49 215,175 215,192.48 " fill="none" id="Specify-to-Clarify" style="stroke:#181818;stroke-width:1.0;"></path><polygon fill="#181818" points="215,197.77,219,188.77,215,192.77,211,188.77,215,197.77" style="stroke:#181818;stroke-width:1.0;"></polygon></g><g id="link_Clarify_Clarify"><path d="M382.6,215.36 C403.65,216.97 417.5,220.02 417.5,224.5 C417.5,228.6 405.93,231.5 387.86,233.2 " fill="none" id="Clarify-to-Clarify" style="stroke:#181818;stroke-width:1.0;"></path><polygon fill="#181818" points="382.6,233.64,391.9011,236.8788,387.5827,233.2248,391.2367,228.9064,382.6,233.64" style="stroke:#181818;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="47" x="423.5" y="229.0669">issues?</text></g><g id="link_Clarify_Plan"><path d="M215,251.1 C215,271.82 215,301.01 215,322.67 " fill="none" id="Clarify-to-Plan" style="stroke:#181818;stroke-width:1.0;"></path><polygon fill="#181818" points="215,327.73,219,318.73,215,322.73,211,318.73,215,327.73" style="stroke:#181818;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="53" x="216" y="294.0669">no issue</text></g><g id="link_Plan_Task"><path d="M215,378.19 C215,394.56 215,416.28 215,433.64 " fill="none" id="Plan-to-Task" style="stroke:#181818;stroke-width:1.0;"></path><polygon fill="#181818" points="215,438.88,219,429.88,215,433.88,211,429.88,215,438.88" style="stroke:#181818;stroke-width:1.0;"></polygon></g><g id="link_Task_Analyse"><path d="M215,489.27 C215,505.23 215,526.49 215,544.76 " fill="none" id="Task-to-Analyse" style="stroke:#181818;stroke-width:1.0;"></path><polygon fill="#181818" points="215,549.83,219,540.83,215,544.83,211,540.83,215,549.83" style="stroke:#181818;stroke-width:1.0;"></polygon></g><g id="link_Analyse_Analyse"><path d="M380.56,574.02 C401.62,575.85 415.5,579.34 415.5,584.5 C415.5,589.21 403.9,592.54 385.83,594.47 " fill="none" id="Analyse-to-Analyse" style="stroke:#181818;stroke-width:1.0;"></path><polygon fill="#181818" points="380.56,594.98,389.9063,598.0859,385.5363,594.4938,389.1284,590.1238,380.56,594.98" style="stroke:#181818;stroke-width:1.0;"></polygon><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="47" x="421.5" y="589.0669">issues?</text></g><g id="link_Analyse_Implement"><path d="M215,619.14 C215,636.63 215,657.8 215,674.62 " fill="none" id="Analyse-to-Implement" style="stroke:#181818;stroke-width:1.0;"></path><polygon fill="#181818" points="215,679.69,219,670.69,215,674.69,211,670.69,215,679.69" style="stroke:#181818;stroke-width:1.0;"></polygon></g><g id="link_Implement_Test"><path d="M215,730.27 C215,746.23 215,767.49 215,785.76 " fill="none" id="Implement-to-Test" style="stroke:#181818;stroke-width:1.0;"></path><polygon fill="#181818" points="215,790.83,219,781.83,215,785.83,211,781.83,215,790.83" style="stroke:#181818;stroke-width:1.0;"></polygon></g><g id="link_Test_*end"><path d="M215,860.1 C215,878.86 215,901.26 215,915.56 " fill="none" id="Test-to-*end" style="stroke:#181818;stroke-width:1.0;"></path><polygon fill="#181818" points="215,920.8,219,911.8,215,915.8,211,911.8,215,920.8" style="stroke:#181818;stroke-width:1.0;"></polygon></g></g></svg>
+</div>
+</div>
+<hr/>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_breakdown_of_the_workflow"><a class="anchor" href="#_breakdown_of_the_workflow"></a><a class="link" href="#_breakdown_of_the_workflow">Breakdown of the Workflow</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_1_specify"><a class="anchor" href="#_1_specify"></a><a class="link" href="#_1_specify">1. Specify</a></h3>
+<div class="paragraph">
+<p>Define the problem clearly.</p>
+</div>
+<div class="paragraph">
+<p>Artifacts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>requirements</p>
+</li>
+<li>
+<p>constraints</p>
+</li>
+<li>
+<p>acceptance criteria</p>
+</li>
+</ul>
+</div>
+<hr/>
+</div>
+<div class="sect2">
+<h3 id="_2_clarify_critical_step"><a class="anchor" href="#_2_clarify_critical_step"></a><a class="link" href="#_2_clarify_critical_step">2. Clarify (Critical Step)</a></h3>
+<div class="paragraph">
+<p>This step ensures that ambiguity is removed early.</p>
+</div>
+<div class="paragraph">
+<p>Key actions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ask follow-up questions</p>
+</li>
+<li>
+<p>refine unclear requirements</p>
+</li>
+<li>
+<p>resolve contradictions</p>
+</li>
+</ul>
+</div>
+<div class="quoteblock">
+<blockquote>
+This is where many workflows fail — skipping clarification leads to downstream errors.
+</blockquote>
+</div>
+<hr/>
+</div>
+<div class="sect2">
+<h3 id="_3_plan"><a class="anchor" href="#_3_plan"></a><a class="link" href="#_3_plan">3. Plan</a></h3>
+<div class="paragraph">
+<p>Translate requirements into a structured plan.</p>
+</div>
+<div class="paragraph">
+<p>Artifacts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>architecture design</p>
+</li>
+<li>
+<p>component breakdown</p>
+</li>
+<li>
+<p>technology choices</p>
+</li>
+</ul>
+</div>
+<hr/>
+</div>
+<div class="sect2">
+<h3 id="_4_task"><a class="anchor" href="#_4_task"></a><a class="link" href="#_4_task">4. Task</a></h3>
+<div class="paragraph">
+<p>Break the plan into executable units.</p>
+</div>
+<div class="paragraph">
+<p>Artifacts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>task list</p>
+</li>
+<li>
+<p>dependency graph</p>
+</li>
+<li>
+<p>execution order</p>
+</li>
+</ul>
+</div>
+<hr/>
+</div>
+<div class="sect2">
+<h3 id="_5_analyse_another_missing_piece"><a class="anchor" href="#_5_analyse_another_missing_piece"></a><a class="link" href="#_5_analyse_another_missing_piece">5. Analyse (Another Missing Piece)</a></h3>
+<div class="paragraph">
+<p>Before implementation, validate everything.</p>
+</div>
+<div class="paragraph">
+<p>Key actions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>identify design flaws</p>
+</li>
+<li>
+<p>detect missing requirements</p>
+</li>
+<li>
+<p>check edge cases</p>
+</li>
+</ul>
+</div>
+<div class="quoteblock">
+<blockquote>
+This step dramatically reduces rework during implementation.
+</blockquote>
+</div>
+<hr/>
+</div>
+<div class="sect2">
+<h3 id="_6_implement"><a class="anchor" href="#_6_implement"></a><a class="link" href="#_6_implement">6. Implement</a></h3>
+<div class="paragraph">
+<p>Use coding agents to generate code.</p>
+</div>
+<div class="paragraph">
+<p>Approach:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>prompt-driven development</p>
+</li>
+<li>
+<p>no manual coding</p>
+</li>
+<li>
+<p>iterative refinement</p>
+</li>
+</ul>
+</div>
+<hr/>
+</div>
+<div class="sect2">
+<h3 id="_7_test"><a class="anchor" href="#_7_test"></a><a class="link" href="#_7_test">7. Test</a></h3>
+<div class="paragraph">
+<p>Ensure quality through automated validation.</p>
+</div>
+<div class="paragraph">
+<p>Includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>unit tests</p>
+</li>
+<li>
+<p>integration tests</p>
+</li>
+<li>
+<p>end-to-end tests</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Fix issues before closing the loop.</p>
+</div>
+<hr/>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_key_insights"><a class="anchor" href="#_key_insights"></a><a class="link" href="#_key_insights">Key Insights</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_1_ai_can_replace_much_of_traditional_coding"><a class="anchor" href="#_1_ai_can_replace_much_of_traditional_coding"></a><a class="link" href="#_1_ai_can_replace_much_of_traditional_coding">1. AI Can Replace Much of Traditional Coding</a></h3>
+<div class="paragraph">
+<p>With the right workflow, coding becomes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">specification → prompts → generated system</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_structure_matters_more_than_prompts"><a class="anchor" href="#_2_structure_matters_more_than_prompts"></a><a class="link" href="#_2_structure_matters_more_than_prompts">2. Structure Matters More Than Prompts</a></h3>
+<div class="paragraph">
+<p>The biggest improvement did not come from better prompts.</p>
+</div>
+<div class="paragraph">
+<p>It came from:</p>
+</div>
+<div class="paragraph">
+<p>adding clarification</p>
+</div>
+<div class="paragraph">
+<p>adding analysis</p>
+</div>
+<div class="paragraph">
+<p>enforcing workflow discipline</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_trade_offs_exist"><a class="anchor" href="#_3_trade_offs_exist"></a><a class="link" href="#_3_trade_offs_exist">3. Trade-offs Exist</a></h3>
+<div class="paragraph">
+<p>Aspect	Impact
+Time	longer due to iterations
+Cost	higher token usage
+Quality	significantly improved
+Effort	dramatically reduced</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_final_thoughts"><a class="anchor" href="#_final_thoughts"></a><a class="link" href="#_final_thoughts">Final Thoughts</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Combining Spec-Kit with Ralph Loop creates something powerful:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+A structured, iterative, AI-driven software development lifecycle.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>It shifts development from:</p>
+</div>
+<div class="paragraph">
+<p>manual coding → assisted coding → fully orchestrated AI workflows</p>
+</div>
+<div class="paragraph">
+<p>While still early, this approach shows strong potential for:</p>
+</div>
+<div class="paragraph">
+<p>rapid prototyping</p>
+</div>
+<div class="paragraph">
+<p>enterprise development</p>
+</div>
+<div class="paragraph">
+<p>autonomous coding systems</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_whats_next"><a class="anchor" href="#_whats_next"></a><a class="link" href="#_whats_next">What’s Next?</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I plan to continue refining this workflow and explore:</p>
+</div>
+<div class="paragraph">
+<p>multi-agent orchestration</p>
+</div>
+<div class="paragraph">
+<p>automatic feedback loops</p>
+</div>
+<div class="paragraph">
+<p>cost optimisation strategies</p>
+</div>
+<div class="paragraph">
+<p>If you are experimenting with AI-driven development, I highly recommend trying this approach.</p>
+</div>
+<div class="paragraph">
+<p>You may be surprised how far you can go without writing a single line of code.</p>
+</div>
+</div>
+</div>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/spec-kit" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">spec-kit</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/ralph-loop" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ralph-loop</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/ai-agents" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ai-agents</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/software-engineering" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">software-engineering</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jackliusr-gh" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/2026/02/spec-kit-iteration-workflow-in-a-feature/">spec-kit: iteration workflow in a feature</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+  </main>
+  <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jackliusr.github.io" >
+    &copy;  My learning and diary 2026 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+<script>
+ MathJax = {
+     tex: {
+         inlineMath: [['$', '$'], ['\\(', '\\)']]
+     }
+ };
+ </script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<link href="/css/prism.css" rel="stylesheet" />
+<script src="/js/prism.js"></script>
+
+
+
+
+  
+  <p style="font-size: small; color: grey;">Page version: 9a03dd8ff15d2b04526fbf92591a5db96b6a8b95 2026-03-17</p>
+</body>
+
+</html>
