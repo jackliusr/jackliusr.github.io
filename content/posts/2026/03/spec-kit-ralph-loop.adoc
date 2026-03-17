@@ -12,7 +12,7 @@ tags:
 
 = Spec-Kit + Ralph Loop — A Practical Workflow for AI-Driven Development
 
-I first came across the idea of the *Ralph Loop* around January, while following developments in LLMs and AI through multiple channels — video feeds, X, newsletters, GitHub repositories, news, and research papers.
+I first learnt the idea of the *Ralph Loop* around January, while following developments in LLMs and AI through multiple channels — video feeds, X, newsletters, GitHub repositories, news, and research papers.
 
 That sparked a question:
 
