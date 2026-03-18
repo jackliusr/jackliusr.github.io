@@ -73,7 +73,7 @@ Spec-Kit + Ralph Loop can produce production-grade systems — at the cost of mo
 
 Before designing my own workflow, I explored existing approaches:
 
-* https://prg.sh/ramblings/Spec-Kit-+-Ralph-Wiggum---The-Workflow-Nobody's-Talking-About#try-it-yourself
+* https://prg.sh/ramblings/Spec-Kit-+-Ralph-Wiggum---The-Workflow-Nobody's-Talking-About
 * https://dominic-boettger.com/blog/speckit-ralph-loop-fresh-context-ai-development
 
 These were insightful, but I noticed a gap:
