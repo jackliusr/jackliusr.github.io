@@ -1,0 +1,219 @@
+---
+title: "Can Claude Code Use GitHub Copilot as a Backend? A Practical Exploration"
+date: 2026-03-23T19:10:00+08:00
+categories:
+- tech
+tags:
+- claude-code
+- github-copilot
+- claude-code-router
+- liteLLM
+---
+
+ = Can Claude Code Use GitHub Copilot as a Backend? A Practical Exploration
+:author: Jack Liu
+:revdate: 2026-03-23
+:toc:
+:toclevels: 3
+
+== Introduction
+
+Recently, I’ve been experimenting with a variety of LLM tooling ecosystems, including:
+
+- Claude Code
+- Codex via OpenRouter
+- Ollama
+- LM Studio
+- vLLM
+- LiteLLM
+
+My goal is to better understand the *underlying technologies* and explore how to operate these tools in *air-gapped or controlled environments*.
+
+In many enterprise settings, developers are allowed to use GitHub Copilot, but not Claude Code. This led me to an interesting question:
+
+[quote]
+____
+Since Claude models are already available behind GitHub Copilot, can Claude Code actually use GitHub Copilot as its backend?
+____
+
+This blog documents my investigation and findings.
+
+---
+
+== Initial Research
+
+As usual, I began with some quick searches:
+
+- "claude code github copilot integration"
+- "claude code call github copilot"
+
+I found a couple of promising guides:
+
+- https://blog.f12.no/wp/2025/09/22/using-claude-code-with-github-copilot-a-guide/
+- https://dev.to/allentcm/using-claude-code-with-github-copilot-subscription-2obj
+
+These guides suggested that integration might be possible.
+
+I was able to start Claude Code without any issues. However, when I executed:
+
+----
+/init
+----
+
+Claude Code started throwing errors, and the setup failed.
+
+---
+
+== Discovering Claude Code Router
+
+Further research led me to an interesting project:
+
+- https://github.com/musistudio/claude-code-router
+
+This project acts as a *routing layer* that allows Claude Code to send requests to different backend models — including GitHub Copilot.
+
+This seemed like the missing piece.
+
+=== Key Idea
+
+Instead of Claude Code directly calling a model, it can:
+
+1. Send requests to a router
+2. The router forwards requests to:
+   - Copilot
+   - OpenAI-compatible APIs
+   - Local models
+
+This abstraction enables flexibility in backend selection.
+
+---
+
+== The Problem: Official Setup Didn’t Work
+
+Although the repository provides documentation, the official setup did not work in my environment.
+
+At this point, I dug deeper into the GitHub issues and found a useful workaround:
+
+- Issue discussion:
+  https://github.com/musistudio/claude-code-router/issues/119#issuecomment-3863858388
+
+- Detailed workaround:
+  https://gist.github.com/dpearson2699/d7e797a85b4286a822dcb9d00f2bebe8
+
+This workaround turned out to be critical.
+
+---
+
+== Running in WSL: Another Issue
+
+I ran the workaround in WSL, but encountered a new error:
+
+----
+getaddrinfo ENOTFOUND github.com
+----
+
+This is typically a DNS or networking issue, especially common in controlled or proxied environments.
+
+---
+
+== Fixing the Networking Issue
+
+Instead of debugging manually, I asked GitHub Copilot for help.
+
+The solution was straightforward:
+
+Add proxy configuration directly into the Node.js environment before running `copilot-auth`:
+
+[source,javascript]
+----
+process.env.http_proxy = "http://your-proxy:port";
+process.env.https_proxy = "http://your-proxy:port";
+----
+
+This resolved the issue.
+
+NOTE: I intentionally did *not* include this modification in my repository to keep it aligned with the original gist.
+
+---
+
+== My Implementation
+
+I created my own implementation based on the workaround:
+
+- https://github.com/jackliusr/copilot-provider-4claude-code-router
+
+The goal was to:
+
+- Keep changes minimal
+- Stay close to the original approach
+- Make experimentation easier
+
+---
+
+== Notes on Model Configuration
+
+GitHub frequently updates available models.
+
+To use the latest models, you need to update your configuration:
+
+----
+config.json
+----
+
+Ensure that:
+
+- Model names match the latest Copilot-supported models
+- Routing configuration is aligned with your backend
+
+---
+
+== Key Takeaways
+
+- Claude Code does *not* natively support GitHub Copilot as a backend
+- However, it can be achieved indirectly via a routing layer
+- `claude-code-router` is the key enabler
+- Workarounds from community discussions are essential
+- Proxy/network issues are common in controlled environments
+
+---
+
+== Final Thoughts
+
+This experiment highlights an important pattern:
+
+[quote]
+____
+The future of AI tooling is not about a single provider — it's about flexible routing across multiple backends.
+____
+
+With tools like routers and OpenAI-compatible APIs, we are moving toward a *pluggable LLM architecture*, where:
+
+- Frontends (Claude Code, IDEs)
+- Routers (LiteLLM, custom proxies)
+- Backends (Copilot, local models, APIs)
+
+can be combined freely.
+
+This is especially powerful in enterprise and air-gapped environments.
+
+---
+
+== Next Steps
+
+Some areas worth exploring further:
+
+- Integrating LiteLLM as a unified router
+- Running fully local Copilot-like experiences with vLLM
+- Standardizing authentication flows across providers
+- Combining spec-driven development workflows with multi-backend routing
+
+---
+
+== References
+
+- https://github.com/musistudio/claude-code-router
+- https://gist.github.com/dpearson2699/d7e797a85b4286a822dcb9d00f2bebe8
+- https://github.com/musistudio/claude-code-router/issues/119
+- https://blog.f12.no/wp/2025/09/22/using-claude-code-with-github-copilot-a-guide/
+- https://dev.to/allentcm/using-claude-code-with-github-copilot-subscription-2obj
+- https://github.com/jackliusr/copilot-provider-4claude-code-router
