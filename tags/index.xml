@@ -6,7 +6,43 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Mar 2026 16:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Mar 2026 19:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>claude-code</title>
+      <link>https://jackliusr.github.io/tags/claude-code/</link>
+      <pubDate>Mon, 23 Mar 2026 19:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/claude-code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>claude-code-router</title>
+      <link>https://jackliusr.github.io/tags/claude-code-router/</link>
+      <pubDate>Mon, 23 Mar 2026 19:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/claude-code-router/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github-copilot</title>
+      <link>https://jackliusr.github.io/tags/github-copilot/</link>
+      <pubDate>Mon, 23 Mar 2026 19:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/github-copilot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>liteLLM</title>
+      <link>https://jackliusr.github.io/tags/litellm/</link>
+      <pubDate>Mon, 23 Mar 2026 19:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/litellm/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>ai-agents</title>
       <link>https://jackliusr.github.io/tags/ai-agents/</link>
@@ -40,15 +76,6 @@
       <pubDate>Tue, 17 Mar 2026 16:00:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/spec-kit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>claude-code</title>
-      <link>https://jackliusr.github.io/tags/claude-code/</link>
-      <pubDate>Sun, 15 Mar 2026 22:10:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/claude-code/</guid>
       <description></description>
     </item>
     
