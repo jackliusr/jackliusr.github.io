@@ -10,11 +10,6 @@ tags:
 - liteLLM
 ---
 
- = Can Claude Code Use GitHub Copilot as a Backend? A Practical Exploration
-:author: Jack Liu
-:revdate: 2026-03-23
-:toc:
-:toclevels: 3
 
 == Introduction
 
