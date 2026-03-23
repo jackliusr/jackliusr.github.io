@@ -13,14 +13,15 @@
       <pubDate>Mon, 23 Mar 2026 19:10:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/posts/2026/03/can-claude-code-use-github-copilot-as-a-backend-a-practical-exploration/</guid>
-      <description>= Can Claude Code Use GitHub Copilot as a Backend? A Practical Exploration :author: Jack Liu :revdate: 2026-03-23 :toc: :toclevels: 3   Introduction Recently, I’ve been experimenting with a variety of LLM tooling ecosystems, including:
+      <description>Introduction Recently, I’ve been experimenting with a variety of LLM tooling ecosystems, including:
    Claude Code
   Codex via OpenRouter
   Ollama
   LM Studio
   vLLM
   LiteLLM
-   My goal is to better understand the underlying technologies and explore how to operate these tools in air-gapped or controlled environments.</description>
+   My goal is to better understand the underlying technologies and explore how to operate these tools in air-gapped or controlled environments.
+ In many enterprise settings, developers are allowed to use GitHub Copilot, but not Claude Code.</description>
     </item>
     
     <item>

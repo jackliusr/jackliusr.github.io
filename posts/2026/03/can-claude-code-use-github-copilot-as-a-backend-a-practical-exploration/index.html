@@ -8,14 +8,15 @@
   <title>Can Claude Code Use GitHub Copilot as a Backend? A Practical Exploration | My learning and diary</title>
   <meta name="viewport" content="width=device-width,minimum-scale=1">
   <meta name="description"
-    content="= Can Claude Code Use GitHub Copilot as a Backend? A Practical Exploration :author: Jack Liu :revdate: 2026-03-23 :toc: :toclevels: 3   Introduction Recently, I’ve been experimenting with a variety of LLM tooling ecosystems, including:
+    content="Introduction Recently, I’ve been experimenting with a variety of LLM tooling ecosystems, including:
    Claude Code
   Codex via OpenRouter
   Ollama
   LM Studio
   vLLM
   LiteLLM
-   My goal is to better understand the underlying technologies and explore how to operate these tools in air-gapped or controlled environments.">
+   My goal is to better understand the underlying technologies and explore how to operate these tools in air-gapped or controlled environments.
+ In many enterprise settings, developers are allowed to use GitHub Copilot, but not Claude Code.">
   <meta name="generator" content="Hugo 0.99.1" />
   
   
@@ -36,40 +37,43 @@
   
 
   <meta property="og:title" content="Can Claude Code Use GitHub Copilot as a Backend? A Practical Exploration" />
-<meta property="og:description" content="= Can Claude Code Use GitHub Copilot as a Backend? A Practical Exploration :author: Jack Liu :revdate: 2026-03-23 :toc: :toclevels: 3   Introduction Recently, I’ve been experimenting with a variety of LLM tooling ecosystems, including:
+<meta property="og:description" content="Introduction Recently, I’ve been experimenting with a variety of LLM tooling ecosystems, including:
    Claude Code
   Codex via OpenRouter
   Ollama
   LM Studio
   vLLM
   LiteLLM
-   My goal is to better understand the underlying technologies and explore how to operate these tools in air-gapped or controlled environments." />
+   My goal is to better understand the underlying technologies and explore how to operate these tools in air-gapped or controlled environments.
+ In many enterprise settings, developers are allowed to use GitHub Copilot, but not Claude Code." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2026/03/can-claude-code-use-github-copilot-as-a-backend-a-practical-exploration/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2026-03-23T19:10:00+08:00" />
-<meta property="article:modified_time" content="2026-03-23T20:38:14+08:00" />
+<meta property="article:modified_time" content="2026-03-23T20:40:31+08:00" />
 
 <meta itemprop="name" content="Can Claude Code Use GitHub Copilot as a Backend? A Practical Exploration">
-<meta itemprop="description" content="= Can Claude Code Use GitHub Copilot as a Backend? A Practical Exploration :author: Jack Liu :revdate: 2026-03-23 :toc: :toclevels: 3   Introduction Recently, I’ve been experimenting with a variety of LLM tooling ecosystems, including:
+<meta itemprop="description" content="Introduction Recently, I’ve been experimenting with a variety of LLM tooling ecosystems, including:
    Claude Code
   Codex via OpenRouter
   Ollama
   LM Studio
   vLLM
   LiteLLM
-   My goal is to better understand the underlying technologies and explore how to operate these tools in air-gapped or controlled environments."><meta itemprop="datePublished" content="2026-03-23T19:10:00+08:00" />
-<meta itemprop="dateModified" content="2026-03-23T20:38:14+08:00" />
-<meta itemprop="wordCount" content="602">
+   My goal is to better understand the underlying technologies and explore how to operate these tools in air-gapped or controlled environments.
+ In many enterprise settings, developers are allowed to use GitHub Copilot, but not Claude Code."><meta itemprop="datePublished" content="2026-03-23T19:10:00+08:00" />
+<meta itemprop="dateModified" content="2026-03-23T20:40:31+08:00" />
+<meta itemprop="wordCount" content="581">
 <meta itemprop="keywords" content="claude-code,github-copilot,claude-code-router,liteLLM," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Can Claude Code Use GitHub Copilot as a Backend? A Practical Exploration"/>
-<meta name="twitter:description" content="= Can Claude Code Use GitHub Copilot as a Backend? A Practical Exploration :author: Jack Liu :revdate: 2026-03-23 :toc: :toclevels: 3   Introduction Recently, I’ve been experimenting with a variety of LLM tooling ecosystems, including:
+<meta name="twitter:description" content="Introduction Recently, I’ve been experimenting with a variety of LLM tooling ecosystems, including:
    Claude Code
   Codex via OpenRouter
   Ollama
   LM Studio
   vLLM
   LiteLLM
-   My goal is to better understand the underlying technologies and explore how to operate these tools in air-gapped or controlled environments."/>
+   My goal is to better understand the underlying technologies and explore how to operate these tools in air-gapped or controlled environments.
+ In many enterprise settings, developers are allowed to use GitHub Copilot, but not Claude Code."/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K49F8T19FK"></script>
@@ -230,19 +234,10 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 3 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 602 words</span>
+        <span class="f6 mv4 dib tracked"> - 581 words</span>
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="literalblock">
-<div class="content">
-<pre> = Can Claude Code Use GitHub Copilot as a Backend? A Practical Exploration
-:author: Jack Liu
-:revdate: 2026-03-23
-:toc:
-:toclevels: 3</pre>
-</div>
-</div>
-<div class="sect1">
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="sect1">
 <h2 id="_introduction"><a class="anchor" href="#_introduction"></a><a class="link" href="#_introduction">Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -754,7 +749,7 @@ I intentionally did <strong>not</strong> include this modification in my reposit
 
 
   
-  <p style="font-size: small; color: grey;">Page version: 3126b6afcab98bcbb25903ea7a52c758865a9978 2026-03-23</p>
+  <p style="font-size: small; color: grey;">Page version: 9137ea3d52f121ef62bce8283cc7dbefee0dee88 2026-03-23</p>
 </body>
 
 </html>
