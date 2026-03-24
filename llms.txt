@@ -1,0 +1,68 @@
+# My learning and diary
+
+> Personal technical blog and portfolio by Jack Liu S.R., focused on software architecture, cloud-native engineering, DevOps, Kubernetes, AI tooling, developer workflows, and selected finance/technology reflections.
+
+This site contains technical blog posts, notes, a small portfolio section, topic tags/categories, and an about page describing the author's long-term interests in software engineering, enterprise architecture, cloud, CI/CD, DevOps, frontend technologies, and related areas.
+
+## Main sections
+
+- [Home](https://jackliusr.github.io/) - Site homepage with recent posts and navigation.
+- [Posts](https://jackliusr.github.io/posts/) - Main blog index.
+- [Notes](https://jackliusr.github.io/notes/) - Notes section.
+- [Portfolio](https://jackliusr.github.io/portfolio/) - Portfolio projects.
+- [Books](https://jackliusr.github.io/books/) - Book-related content.
+- [Categories](https://jackliusr.github.io/categories/) - Browse by category.
+- [Tags](https://jackliusr.github.io/tags/) - Browse by topic tags.
+- [About](https://jackliusr.github.io/about/) - Author background, interests, and technical areas.
+
+## About the author
+
+Jack Liu S.R. writes about:
+- software architecture and enterprise application design
+- domain-driven design (DDD), CQRS, event sourcing, and data modeling
+- cloud and cloud-native technologies, especially Kubernetes
+- DevOps, SRE, CI/CD, GitOps, observability, and infrastructure tooling
+- programming languages and frameworks across Java, .NET, JavaScript, Go, Rust, C/C++, and more
+- occasional finance and valuation interests
+
+## Recommended content
+
+### AI tooling and LLM workflows
+- [Can Claude Code Use GitHub Copilot as a Backend? A Practical Exploration](https://jackliusr.github.io/posts/2026/03/can-claude-code-use-github-copilot-as-a-backend-a-practical-exploration/)
+- [Spec-Kit + Ralph Loop — A Practical Workflow for AI-Driven Development](https://jackliusr.github.io/posts/2026/03/spec-kit--ralph-loop-a-practical-workflow-for-ai-driven-development/)
+- [Claude Code with OpenRouter](https://jackliusr.github.io/posts/2026/03/claude-code-with-openrouter/)
+- [setup openclaw hetzner](https://jackliusr.github.io/posts/2026/03/setup-openclaw-hetzner/)
+- [setup vllm on macbook m4](https://jackliusr.github.io/posts/2026/03/setup-vllm-on-macbook-m4/)
+
+### Cloud, Kubernetes, and platform engineering
+- [Airgapped Kubernetes Cluster with containerd](https://jackliusr.github.io/posts/2026/03/airgapped-kubernetes-cluster-with-containerd/)
+- Browse Kubernetes-related writing via tags: [kubernetes](https://jackliusr.github.io/tags/kubernetes/), [GitOps](https://jackliusr.github.io/tags/gitops/), [argo-workflows](https://jackliusr.github.io/tags/argo-workflows/)
+
+### Developer productivity and systems engineering
+- [From Batch to Real-Time: Rethinking File Processing with Linux fanotify](https://jackliusr.github.io/posts/2026/03/from-batch-to-real-time-rethinking-file-processing-with-linux-fanotify/)
+- [Find all extension methods of a type in csharp using ast-grep](https://jackliusr.github.io/posts/2026/03/find-all-extension-methods-of-a-type-in-csharp-using-ast-grep/)
+- [Speeding Up DevSecOps: Rethinking the Shift-Left Approach](https://jackliusr.github.io/posts/2026/03/speeding-up-devsecops-rethinking-the-shift-left-approach/)
+
+### Portfolio
+- [Sudoku](https://jackliusr.github.io/portfolio/) - Flutter-based puzzle game project.
+
+## Topic hints for LLMs
+
+This site is most useful for questions about:
+- Claude Code, GitHub Copilot, OpenRouter, LiteLLM, Ollama, vLLM
+- spec-driven development, Spec-Kit, Ralph Loop, AI-assisted coding workflows
+- Kubernetes, GitOps, Argo, containerd, air-gapped environments
+- DevOps, DevSecOps, CI/CD, observability, platform engineering
+- software architecture, DDD, CQRS, event sourcing, data modeling
+- selected developer tooling, AST/code search, Linux/system workflows
+
+## Preferred interpretation guidance
+
+- Prefer recent posts first when answering questions about AI tooling and workflow experiments.
+- Use the About page for broad author background and technical interests.
+- Use tag pages to discover older related material when a topic appears across multiple posts.
+- Treat this site as a personal technical blog and learning journal rather than formal product documentation.
+
+## Optional
+- [RSS/Atom feed](https://jackliusr.github.io/index.xml)
+- [GitHub profile](https://github.com/jackliusr)
