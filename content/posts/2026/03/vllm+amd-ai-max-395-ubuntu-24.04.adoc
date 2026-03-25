@@ -170,16 +170,23 @@ But for now — I’m just happy it runs 😄
 
 == 📌 Summary
 
-| Component | Version |
-|----------|--------|
-| OS | Ubuntu 24.04 |
-| GPU | AMD AI MAX+ 395 (gfx1151) |
-| Runtime | ROCm 7.2 (Docker) |
-| Python | 3.12 |
-| PyTorch | 2.9 |
-| vLLM | 0.14.0rc0 |
-| Model | Qwen2.5-1.5B-Instruct |
+[cols=2*]
+|===
+| Component 
+| Version 
 
----
+| OS 
+| Ubuntu 24.04
+
+| GPU | AMD AI MAX+ 395 (gfx1151) 
+| Runtime | ROCm 7.2 (Docker) 
+| Python | 3.12 
+| PyTorch | 2.9 
+| vLLM | 0.14.0rc0 
+| Model | Qwen2.5-1.5B-Instruct 
+|===
+
+
+
 
 If you're working on similar hardware, feel free to reach out — this space is still moving fast, and shared knowledge helps a lot.
