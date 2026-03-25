@@ -1,0 +1,185 @@
+---
+title: "Running vLLM on AMD AI MAX+ 395 (ROCm, Ubuntu 24.04)"
+date: 2026-03-25T13:00:00+08:00
+categories:
+- tech
+tags:
+- vllm
+- amd-ai-max-395
+- ubuntu-24.04
+---
+
+Finally, I managed to get *vLLM running on my AMD AI MAX+ 395 GPU* on Ubuntu 24.04.
+
+It was **not straightforward** — ROCm support on Ryzen AI (gfx1151) is still evolving, and I ran into multiple low-level GPU faults before finding a stable setup.
+
+This post documents:
+- What *didn’t work*
+- The *errors I encountered*
+- The *working configuration*
+
+Hopefully this saves you a few hours (or days).
+
+== ✅ Final Working Setup
+
+Instead of fighting local installs, I used AMD’s **official ROCm + vLLM Docker image**.
+
+[source,bash]
+----
+docker run -it --rm \
+  --network=host \
+  --group-add=video \
+  --ipc=host \
+  --cap-add=SYS_PTRACE \
+  --security-opt seccomp=unconfined \
+  --device /dev/kfd \
+  --device /dev/dri \
+  -v ~/.cache/huggingface:/app/models \
+  -e HF_HOME="/app/models" \
+  rocm/vllm-dev:rocm7.2_navi_ubuntu24.04_py3.12_pytorch_2.9_vllm_0.14.0rc0
+----
+
+Inside the container:
+
+[source,bash]
+----
+vllm serve "Qwen/Qwen2.5-1.5B-Instruct" \
+  --dtype float16 \
+  --max-model-len 8192 \
+  --gpu-memory-utilization 0.4
+----
+
+This combination finally worked reliably.
+
+Key points:
+- ROCm 7.2 base image
+- Python 3.12 + PyTorch 2.9 (preconfigured)
+- FP16 instead of BF16
+- Conservative GPU memory usage (0.4)
+
+== ❌ What Didn’t Work
+
+Before reaching this setup, I tried both ROCm 7.2.0 and 7.1.1 manually.
+
+Both failed — but in different ways.
+
+== 🚨 Issue 1: ROCm 7.2.0 GPU Page Fault
+
+With ROCm 7.2.0, vLLM crashed during initialization with a **GPU memory access fault**.
+
+Error:
+
+----
+Memory access fault by GPU node-1
+Reason: Page not present or supervisor privilege
+----
+
+`dmesg` showed:
+
+[quote]
+----
+[ 131.104308] amdgpu: [gfxhub] page fault
+[ 131.104330] Process VLLM::EngineCor
+[ 131.104334] GCVM_L2_PROTECTION_FAULT_STATUS:0x00800932
+[ 131.104341] PERMISSION_FAULTS: 0x3
+[ 131.104342] MAPPING_ERROR: 0x1
+----
+
+This indicates:
+- GPU virtual memory mapping failure
+- Likely invalid or unmapped memory access
+- Happens inside ROCm/HSA layer, not user code
+
+In short: **hard crash at the driver/runtime level**
+
+== 🚨 Issue 2: ROCm 7.1.1 Silent Segfault
+
+Downgrading to ROCm 7.1.1 did not fix the issue.
+
+Instead, I got a **silent crash**:
+
+[quote]
+----
+VLLM::EngineCor: segfault in libhsa-runtime64.so
+----
+
+No useful logs from vLLM itself — only kernel-level signals.
+
+This is worse:
+- No clear error message
+- Happens inside `libhsa-runtime64`
+- Suggests runtime incompatibility with gfx1151
+
+== 🤔 Observations
+
+From these failures, a few patterns became clear:
+
+1. ROCm on Ryzen AI (gfx1151) is still maturing  
+2. Errors often occur in:
+   - HSA runtime (`libhsa-runtime64`)
+   - GPU VM (gfxhub faults)
+3. Different ROCm versions fail differently:
+   - 7.2.0 → explicit GPU page fault
+   - 7.1.1 → silent segfault
+
+This strongly suggests:
+- Not a vLLM issue
+- Not a model issue
+- But a **ROCm + driver + hardware interaction problem**
+
+== 💡 Why Docker Worked
+
+The AMD-provided Docker image solved the problem because it gives:
+
+- Matching versions:
+  - ROCm
+  - PyTorch
+  - vLLM
+- Correct build flags for gfx1151
+- Pre-tested environment
+
+This avoids:
+- ABI mismatches
+- Incorrect HIP/HSA configurations
+- Python environment inconsistencies
+
+== 🧠 Lessons Learned
+
+If you’re running vLLM on AMD AI MAX (or similar APU):
+
+1. **Don’t mix ROCm versions manually**
+2. Prefer **official AMD containers**
+3. Start with:
+   - small models (1B–7B)
+   - FP16
+   - low memory utilization
+4. If you see:
+   - `gfxhub page fault`
+   - `libhsa-runtime64.so segfault`
+
+👉 it’s *very likely not your code*
+
+== 🚀 What’s Next
+
+Now that vLLM is working:
+- Try larger models
+- Experiment with quantization (AWQ / GPTQ)
+- Benchmark vs CUDA setups
+
+But for now — I’m just happy it runs 😄
+
+== 📌 Summary
+
+| Component | Version |
+|----------|--------|
+| OS | Ubuntu 24.04 |
+| GPU | AMD AI MAX+ 395 (gfx1151) |
+| Runtime | ROCm 7.2 (Docker) |
+| Python | 3.12 |
+| PyTorch | 2.9 |
+| vLLM | 0.14.0rc0 |
+| Model | Qwen2.5-1.5B-Instruct |
+
+---
+
+If you're working on similar hardware, feel free to reach out — this space is still moving fast, and shared knowledge helps a lot.
