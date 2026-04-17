@@ -168,6 +168,21 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2020/10/setup-kubeflow-pipeline-on-local-kind-cluster/" class="link black dim">
+        Setup kubeflow pipeline on local KIND cluster
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      # https://www.kubeflow.org/docs/pipelines/installation/localcluster-deployment/#deploying-kubeflow-pipelines # env/platform-agnostic-pns hasn&#39;t been publically released, so we install from master temporarily export PIPELINE_VERSION=1.0.1 kubectl apply -k &#34;github.com/kubeflow/pipelines/manifests/kustomize/cluster-scoped-resources?ref=$PIPELINE_VERSION&#34; kubectl wait --for condition=established --timeout=60s crd/applications.app.k8s.io kubectl apply -k &#34;github.com/kubeflow/pipelines/manifests/kustomize/env/platform-agnostic-pns?ref=$PIPELINE_VERSION&#34; # expose gui kubectl port-forward -n kubeflow --address 0.0.0.0 svc/ml-pipeline-ui 8080:80   
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2020/09/create-a-multiple-nodes-kind-kubernetes-cluster/" class="link black dim">
         Create a multiple-nodes KIND kubernetes cluster
       </a>
@@ -317,33 +332,6 @@ if (!doNotTrack) {
       Chemical Bonding The Stable Electronic configuration of a noble gas An outer electron or outermost electron is also known as valence electron. Only outer electrons are involved in chemical reactions.
  In what way do noble gases behave differently from other chemistry ? Noble gases are unreactive because they have fully filled outer shells, that is, they have duplet or octet electronic configuration.
  How do atom achieve the electronic configuration of a noble gas?
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2019/02/kinetic-particle-theory/" class="link black dim">
-        Kinetic Particle Theory
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      States of Matter Matter is substance that has mass and occupies space. All living and non-living things are matter.
- State of matter: solid, liquid, gas
-     Property Solid Liquid Gas     Shape
- fixed
- not fixed
- not fixed
-   Volume
- fixed
- fixed
- not fixed
-   Compressibility
- Cannot be compressed
- cannot be compressed
     </div>
   </div>
 </div>

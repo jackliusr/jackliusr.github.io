@@ -6,7 +6,22 @@
     <description>Recent content in ollama on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 31 Jan 2026 22:10:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/ollama/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Apr 2026 13:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/ollama/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Running Qwen3.6 35B Locally with Ollama and VS Code Integration</title>
+      <link>https://jackliusr.github.io/posts/2026/04/running-qwen3.6-35b-locally-with-ollama-and-vs-code-integration/</link>
+      <pubDate>Fri, 17 Apr 2026 13:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/04/running-qwen3.6-35b-locally-with-ollama-and-vs-code-integration/</guid>
+      <description>Overview Running large language models locally is becoming increasingly practical, even for developers without access to massive GPU clusters.
+ In this post, I walk through how to:
+   Run Qwen3.6 35B (A3B, Q4_K_M quantized) locally using Ollama
+  Integrate the model into VS Code
+  Use it as a local coding assistant
+   This setup is especially useful for:
+   Air-gapped environments</description>
+    </item>
+    
     <item>
       <title>setup vllm on macbook m4</title>
       <link>https://jackliusr.github.io/posts/2026/01/setup-vllm-on-macbook-m4/</link>

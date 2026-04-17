@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>Running Qwen3.6 35B Locally with Ollama and VS Code Integration | My learning and diary</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="description"
+    content="Overview Running large language models locally is becoming increasingly practical, even for developers without access to massive GPU clusters.
+ In this post, I walk through how to:
+   Run Qwen3.6 35B (A3B, Q4_K_M quantized) locally using Ollama
+  Integrate the model into VS Code
+  Use it as a local coding assistant
+   This setup is especially useful for:
+   Air-gapped environments">
+  <meta name="generator" content="Hugo 0.99.1" />
+  
+  
+  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+  
+
+  
+<link rel="stylesheet" href="/ananke/css/main.min.abe0b1c07d5e33565b0f9b998a7b1b5228b709f36af363e2766bc8035f2237b7.css" >
+
+
+
+
+  
+  
+
+  
+
+  
+
+  <meta property="og:title" content="Running Qwen3.6 35B Locally with Ollama and VS Code Integration" />
+<meta property="og:description" content="Overview Running large language models locally is becoming increasingly practical, even for developers without access to massive GPU clusters.
+ In this post, I walk through how to:
+   Run Qwen3.6 35B (A3B, Q4_K_M quantized) locally using Ollama
+  Integrate the model into VS Code
+  Use it as a local coding assistant
+   This setup is especially useful for:
+   Air-gapped environments" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jackliusr.github.io/posts/2026/04/running-qwen3.6-35b-locally-with-ollama-and-vs-code-integration/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2026-04-17T13:00:00+08:00" />
+<meta property="article:modified_time" content="2026-04-17T23:41:36+08:00" />
+
+<meta itemprop="name" content="Running Qwen3.6 35B Locally with Ollama and VS Code Integration">
+<meta itemprop="description" content="Overview Running large language models locally is becoming increasingly practical, even for developers without access to massive GPU clusters.
+ In this post, I walk through how to:
+   Run Qwen3.6 35B (A3B, Q4_K_M quantized) locally using Ollama
+  Integrate the model into VS Code
+  Use it as a local coding assistant
+   This setup is especially useful for:
+   Air-gapped environments"><meta itemprop="datePublished" content="2026-04-17T13:00:00+08:00" />
+<meta itemprop="dateModified" content="2026-04-17T23:41:36+08:00" />
+<meta itemprop="wordCount" content="490">
+<meta itemprop="keywords" content="qwen,ollama,vscode," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Running Qwen3.6 35B Locally with Ollama and VS Code Integration"/>
+<meta name="twitter:description" content="Overview Running large language models locally is becoming increasingly practical, even for developers without access to massive GPU clusters.
+ In this post, I walk through how to:
+   Run Qwen3.6 35B (A3B, Q4_K_M quantized) locally using Ollama
+  Integrate the model into VS Code
+  Use it as a local coding assistant
+   This setup is especially useful for:
+   Air-gapped environments"/>
+
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K49F8T19FK"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-K49F8T19FK', { 'anonymize_ip': false });
+}
+</script>
+
+  
+  
+
+
+
+
+
+
+</head>
+
+<body class="ma0 avenir bg-near-white production">
+
+  
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My learning and diary
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/notes/" title="Notes page">
+              Notes
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/portfolio/" title="Portfolio page">
+              Portfolio
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/readinglists/" title="Books page">
+              Books
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/categories/" title="Categories page">
+              Categories
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tags/" title="Tags page">
+              Tags
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+  <main class="pb7" role="main">
+    
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://jackliusr.github.io/posts/2026/04/running-qwen3.6-35b-locally-with-ollama-and-vs-code-integration/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://jackliusr.github.io/posts/2026/04/running-qwen3.6-35b-locally-with-ollama-and-vs-code-integration/&amp;text=Running%20Qwen3.6%2035B%20Locally%20with%20Ollama%20and%20VS%20Code%20Integration" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://jackliusr.github.io/posts/2026/04/running-qwen3.6-35b-locally-with-ollama-and-vs-code-integration/&amp;title=Running%20Qwen3.6%2035B%20Locally%20with%20Ollama%20and%20VS%20Code%20Integration" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Running Qwen3.6 35B Locally with Ollama and VS Code Integration</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2026-04-17T13:00:00+08:00">April 17, 2026</time>
+
+      
+      
+        <span class="f6 mv4 dib tracked"> - 3 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 490 words</span>
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a><a class="link" href="#_overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Running large language models locally is becoming increasingly practical, even for developers without access to massive GPU clusters.</p>
+</div>
+<div class="paragraph">
+<p>In this post, I walk through how to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Run <strong>Qwen3.6 35B (A3B, Q4_K_M quantized)</strong> locally using Ollama</p>
+</li>
+<li>
+<p>Integrate the model into <strong>VS Code</strong></p>
+</li>
+<li>
+<p>Use it as a local coding assistant</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This setup is especially useful for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Air-gapped environments</p>
+</li>
+<li>
+<p>Cost control (no API usage)</p>
+</li>
+<li>
+<p>Experimenting with local LLM workflows</p>
+</li>
+</ul>
+</div>
+<hr/>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_architecture_overview"><a class="anchor" href="#_architecture_overview"></a><a class="link" href="#_architecture_overview">Architecture Overview</a></h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">VS Code
+   │
+   ▼
+Local LLM Extension / API Client
+   │
+   ▼
+Ollama Runtime
+   │
+   ▼
+Qwen3.6:35B-a3b-q4_K_M (local model)</code></pre>
+</div>
+</div>
+<hr/>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a><a class="link" href="#_prerequisites">Prerequisites</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>A machine with sufficient RAM / VRAM</p>
+</li>
+<li>
+<p>Q4_K_M quantization helps reduce memory usage</p>
+</li>
+<li>
+<p>Installed Ollama</p>
+</li>
+<li>
+<p>VS Code installed</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Optional but recommended:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>GPU acceleration (CUDA / ROCm depending on your setup)</p>
+</li>
+</ul>
+</div>
+<hr/>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_step_1_install_ollama"><a class="anchor" href="#_step_1_install_ollama"></a><a class="link" href="#_step_1_install_ollama">Step 1: Install Ollama</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Install Ollama from the official site:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -fsSL https://ollama.com/install.sh | sh</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Verify installation:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ollama --version</code></pre>
+</div>
+</div>
+<hr/>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_step_2_pull_qwen3_6_model"><a class="anchor" href="#_step_2_pull_qwen3_6_model"></a><a class="link" href="#_step_2_pull_qwen3_6_model">Step 2: Pull Qwen3.6 Model</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Pull the quantized model:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ollama pull qwen3.6:35b-a3b-q4_K_M</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>35b</code> → 35 billion parameters</p>
+</li>
+<li>
+<p><code>a3b</code> → architecture variant</p>
+</li>
+<li>
+<p><code>q4_K_M</code> → 4-bit quantization (balanced performance vs memory)</p>
+</li>
+</ul>
+</div>
+<hr/>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_step_3_run_the_model"><a class="anchor" href="#_step_3_run_the_model"></a><a class="link" href="#_step_3_run_the_model">Step 3: Run the Model</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Start the model:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ollama run qwen3.6:35b-a3b-q4_K_M</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can now interact with it directly in the terminal.</p>
+</div>
+<hr/>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_step_4_expose_ollama_api"><a class="anchor" href="#_step_4_expose_ollama_api"></a><a class="link" href="#_step_4_expose_ollama_api">Step 4: Expose Ollama API</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ollama runs a local API server by default:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">http://localhost:11434</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Test it:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl http://localhost:11434/api/generate \
+  -d &#39;{
+    &#34;model&#34;: &#34;qwen3.6:35b-a3b-q4_K_M&#34;,
+    &#34;prompt&#34;: &#34;Explain microservices architecture&#34;
+  }&#39;</code></pre>
+</div>
+</div>
+<hr/>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_step_5_add_local_model_to_vs_code"><a class="anchor" href="#_step_5_add_local_model_to_vs_code"></a><a class="link" href="#_step_5_add_local_model_to_vs_code">Step 5: Add Local Model to VS Code</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are multiple ways to integrate with VS Code.</p>
+</div>
+<div class="sect2">
+<h3 id="_option_1_use_an_llm_extension"><a class="anchor" href="#_option_1_use_an_llm_extension"></a><a class="link" href="#_option_1_use_an_llm_extension">Option 1: Use an LLM Extension</a></h3>
+<div class="paragraph">
+<p>Install an extension that supports custom endpoints, such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Continue</p>
+</li>
+<li>
+<p>CodeGPT</p>
+</li>
+<li>
+<p>OpenAI-compatible clients</p>
+</li>
+<li>
+<p>Copilot</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Configure it to point to Ollama, please follow the extension’s documentation for custom API endpoints. Here I only provide the one for copilot.</p>
+</div>
+<div class="paragraph">
+<div class="embed imgur-image">
+<blockquote class="imgur-embed-pub" lang="en" data-id="GuzU22C" data-context="false">
+<a href="//imgur.com/GuzU22C"></a>
+</blockquote>
+<script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+</div>
+
+</div>
+<hr/>
+</div>
+<div class="sect2">
+<h3 id="_option_2_openai_compatible_proxy_if_required"><a class="anchor" href="#_option_2_openai_compatible_proxy_if_required"></a><a class="link" href="#_option_2_openai_compatible_proxy_if_required">Option 2: OpenAI-Compatible Proxy (if required)</a></h3>
+<div class="paragraph">
+<p>Some extensions expect OpenAI format.</p>
+</div>
+<div class="paragraph">
+<p>You can use a lightweight proxy or adapter to map:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">/v1/chat/completions → Ollama /api/generate</code></pre>
+</div>
+</div>
+<hr/>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_step_6_using_the_model_in_vs_code"><a class="anchor" href="#_step_6_using_the_model_in_vs_code"></a><a class="link" href="#_step_6_using_the_model_in_vs_code">Step 6: Using the Model in VS Code</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once configured, you can:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Generate code</p>
+</li>
+<li>
+<p>Refactor functions</p>
+</li>
+<li>
+<p>Explain code</p>
+</li>
+<li>
+<p>Generate documentation</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example prompt:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">Refactor this Java method to improve readability and performance.</code></pre>
+</div>
+</div>
+<hr/>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_performance_considerations"><a class="anchor" href="#_performance_considerations"></a><a class="link" href="#_performance_considerations">Performance Considerations</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_memory"><a class="anchor" href="#_memory"></a><a class="link" href="#_memory">Memory</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Q4_K_M significantly reduces memory footprint</p>
+</li>
+<li>
+<p>Still requires substantial RAM for 35B models</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_speed"><a class="anchor" href="#_speed"></a><a class="link" href="#_speed">Speed</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>CPU: usable but slow</p>
+</li>
+<li>
+<p>GPU: much faster (recommended)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_trade_offs"><a class="anchor" href="#_trade_offs"></a><a class="link" href="#_trade_offs">Trade-offs</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;"/>
+<col style="width: 25%;"/>
+<col style="width: 25%;"/>
+<col style="width: 25%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Quantization</th>
+<th class="tableblock halign-left valign-top">Quality</th>
+<th class="tableblock halign-left valign-top">Memory</th>
+<th class="tableblock halign-left valign-top">Speed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Q4_K_M</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Low</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fast</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Q5 / Q6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Higher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Slower</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FP16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Best</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GPU required</p></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_when_to_use_this_setup"><a class="anchor" href="#_when_to_use_this_setup"></a><a class="link" href="#_when_to_use_this_setup">When to Use This Setup</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This setup is ideal if you:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Work in restricted enterprise environments</p>
+</li>
+<li>
+<p>Want to avoid API costs</p>
+</li>
+<li>
+<p>Need full control over data</p>
+</li>
+<li>
+<p>Experiment with local AI workflows</p>
+</li>
+</ul>
+</div>
+<hr/>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_limitations"><a class="anchor" href="#_limitations"></a><a class="link" href="#_limitations">Limitations</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Slower than cloud models</p>
+</li>
+<li>
+<p>Limited context compared to frontier models</p>
+</li>
+<li>
+<p>Requires tuning for best results</p>
+</li>
+</ul>
+</div>
+<hr/>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion"><a class="anchor" href="#_conclusion"></a><a class="link" href="#_conclusion">Conclusion</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Combining <strong>Ollama + Qwen3.6 35B + VS Code</strong> gives you a powerful local AI coding assistant.</p>
+</div>
+<div class="paragraph">
+<p>While not a full replacement for cloud-based models, it is:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Private</p>
+</li>
+<li>
+<p>Flexible</p>
+</li>
+<li>
+<p>Cost-efficient</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>And increasingly practical with modern hardware.</p>
+</div>
+<hr/>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a><a class="link" href="#_next_steps">Next Steps</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Add RAG (Retrieval-Augmented Generation)</p>
+</li>
+<li>
+<p>Integrate with your local codebase</p>
+</li>
+<li>
+<p>Experiment with fine-tuning or LoRA</p>
+</li>
+<li>
+<p>Compare with vLLM-based setups</p>
+</li>
+</ul>
+</div>
+<hr/>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_references"><a class="anchor" href="#_references"></a><a class="link" href="#_references">References</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Ollama documentation</p>
+</li>
+<li>
+<p>Qwen model releases</p>
+</li>
+<li>
+<p>VS Code extension marketplace</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/qwen" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">qwen</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/ollama" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ollama</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/vscode" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">vscode</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jackliusr-gh" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/2026/01/setup-vllm-on-macbook-m4/">setup vllm on macbook m4</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/2024/01/export-svg-from-plantuml-plugins-of-vscode-and-preview-svg/">Export svg from plantuml plugins of vscode and preview svg</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/2022/09/debug-flutter-ios-application-in-macos/">debug flutter iOS application in MacOS</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/2022/04/setup-vscode-development-for-dapr-in-wsl/">Setup vscode development for dapr in WSL</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/2020/11/vscode-debug-python-containers-running-kubernetes-via-attachment/">vscode debug python containers running kubernetes via attachment</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+  </main>
+  <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jackliusr.github.io" >
+    &copy;  My learning and diary 2026 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+<script>
+ MathJax = {
+     tex: {
+         inlineMath: [['$', '$'], ['\\(', '\\)']]
+     }
+ };
+ </script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<link href="/css/prism.css" rel="stylesheet" />
+<script src="/js/prism.js"></script>
+
+
+
+
+  
+  <p style="font-size: small; color: grey;">Page version: 3da3501d71a464cb1eb4de4782775236c8891a22 2026-04-17</p>
+</body>
+
+</html>
