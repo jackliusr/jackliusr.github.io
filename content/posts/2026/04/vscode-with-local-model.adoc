@@ -1,0 +1,257 @@
+---
+title: "Running Qwen3.6 35B Locally with Ollama and VS Code Integration"
+date: 2026-04-17T13:00:00+08:00
+categories:
+- tech
+tags:
+- qwen
+- ollama
+- vscode
+---
+
+
+
+== Overview
+
+Running large language models locally is becoming increasingly practical, even for developers without access to massive GPU clusters.
+
+In this post, I walk through how to:
+
+- Run *Qwen3.6 35B (A3B, Q4_K_M quantized)* locally using Ollama
+- Integrate the model into *VS Code*
+- Use it as a local coding assistant
+
+This setup is especially useful for:
+
+- Air-gapped environments
+- Cost control (no API usage)
+- Experimenting with local LLM workflows
+
+---
+
+== Architecture Overview
+
+[source]
+----
+VS Code
+   │
+   ▼
+Local LLM Extension / API Client
+   │
+   ▼
+Ollama Runtime
+   │
+   ▼
+Qwen3.6:35B-a3b-q4_K_M (local model)
+----
+
+---
+
+== Prerequisites
+
+- A machine with sufficient RAM / VRAM
+  - Q4_K_M quantization helps reduce memory usage
+- Installed Ollama
+- VS Code installed
+
+Optional but recommended:
+
+- GPU acceleration (CUDA / ROCm depending on your setup)
+
+---
+
+== Step 1: Install Ollama
+
+Install Ollama from the official site:
+
+[source,bash]
+----
+curl -fsSL https://ollama.com/install.sh | sh
+----
+
+Verify installation:
+
+[source,bash]
+----
+ollama --version
+----
+
+---
+
+== Step 2: Pull Qwen3.6 Model
+
+Pull the quantized model:
+
+[source,bash]
+----
+ollama pull qwen3.6:35b-a3b-q4_K_M
+----
+
+Notes:
+
+- `35b` → 35 billion parameters
+- `a3b` → architecture variant
+- `q4_K_M` → 4-bit quantization (balanced performance vs memory)
+
+---
+
+== Step 3: Run the Model
+
+Start the model:
+
+[source,bash]
+----
+ollama run qwen3.6:35b-a3b-q4_K_M
+----
+
+You can now interact with it directly in the terminal.
+
+---
+
+== Step 4: Expose Ollama API
+
+Ollama runs a local API server by default:
+
+[source]
+----
+http://localhost:11434
+----
+
+Test it:
+
+[source,bash]
+----
+curl http://localhost:11434/api/generate \
+  -d '{
+    "model": "qwen3.6:35b-a3b-q4_K_M",
+    "prompt": "Explain microservices architecture"
+  }'
+----
+
+---
+
+== Step 5: Add Local Model to VS Code
+
+There are multiple ways to integrate with VS Code.
+
+=== Option 1: Use an LLM Extension
+
+Install an extension that supports custom endpoints, such as:
+
+- Continue
+- CodeGPT
+- OpenAI-compatible clients
+- Copilot
+
+Configure it to point to Ollama, please follow the extension’s documentation for custom API endpoints. Here I only provide the one for copilot. 
+
+
+
+{{< imgur id="GuzU22C" >}}
+
+
+---
+
+=== Option 2: OpenAI-Compatible Proxy (if required)
+
+Some extensions expect OpenAI format.
+
+You can use a lightweight proxy or adapter to map:
+
+[source]
+----
+/v1/chat/completions → Ollama /api/generate
+----
+
+---
+
+== Step 6: Using the Model in VS Code
+
+Once configured, you can:
+
+- Generate code
+- Refactor functions
+- Explain code
+- Generate documentation
+
+Example prompt:
+
+[source]
+----
+Refactor this Java method to improve readability and performance.
+----
+
+---
+
+== Performance Considerations
+
+=== Memory
+
+- Q4_K_M significantly reduces memory footprint
+- Still requires substantial RAM for 35B models
+
+=== Speed
+
+- CPU: usable but slow
+- GPU: much faster (recommended)
+
+=== Trade-offs
+
+[cols="1,1,1,1"]
+|===
+| Quantization | Quality | Memory | Speed
+
+| Q4_K_M       | Medium | Low    | Fast 
+| Q5 / Q6      | Higher | Medium | Slower 
+| FP16         | Best   | High   | GPU required
+|===
+
+---
+
+== When to Use This Setup
+
+This setup is ideal if you:
+
+- Work in restricted enterprise environments
+- Want to avoid API costs
+- Need full control over data
+- Experiment with local AI workflows
+
+---
+
+== Limitations
+
+- Slower than cloud models
+- Limited context compared to frontier models
+- Requires tuning for best results
+
+---
+
+== Conclusion
+
+Combining *Ollama + Qwen3.6 35B + VS Code* gives you a powerful local AI coding assistant.
+
+While not a full replacement for cloud-based models, it is:
+
+- Private
+- Flexible
+- Cost-efficient
+
+And increasingly practical with modern hardware.
+
+---
+
+== Next Steps
+
+- Add RAG (Retrieval-Augmented Generation)
+- Integrate with your local codebase
+- Experiment with fine-tuning or LoRA
+- Compare with vLLM-based setups
+
+---
+
+== References
+
+- Ollama documentation
+- Qwen model releases
+- VS Code extension marketplace
