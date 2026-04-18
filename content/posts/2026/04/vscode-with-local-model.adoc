@@ -146,8 +146,9 @@ Install an extension that supports custom endpoints, such as:
 Configure it to point to Ollama, please follow the extension’s documentation for custom API endpoints. Here I only provide the one for copilot. 
 
 
-
-{{< imgur id="GuzU22C" >}}
+++++
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/GuzU22C"  ><a href="//imgur.com/a/GuzU22C">Setup local model for vscode copilot</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+++++
 
 
 ---
