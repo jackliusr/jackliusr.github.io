@@ -8,11 +8,11 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 27 Apr 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/ontology/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Exploring Knowledge Graph RAG with Ontologies and Domain Design Models</title>
-      <link>https://jackliusr.github.io/posts/2026/04/exploring-knowledge-graph-rag-with-ontologies-and-domain-design-models/</link>
+      <title>Exploring spec-driven development with Ontologies and Domain Design Models</title>
+      <link>https://jackliusr.github.io/posts/2026/04/exploring-spec-driven-development-with-ontologies-and-domain-design-models/</link>
       <pubDate>Mon, 27 Apr 2026 20:00:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/posts/2026/04/exploring-knowledge-graph-rag-with-ontologies-and-domain-design-models/</guid>
+      <guid>https://jackliusr.github.io/posts/2026/04/exploring-spec-driven-development-with-ontologies-and-domain-design-models/</guid>
       <description>Introduction One of the more interesting recent developments in Retrieval-Augmented Generation (RAG) is Knowledge Graph–based RAG. Unlike traditional vector-based retrieval, this approach introduces structured relationships between entities, enabling deeper reasoning and better contextual understanding.
  This naturally raises a question:
   Can we build more robust and reliable software systems by combining:
