@@ -1,5 +1,5 @@
 ---
-title: "Exploring Knowledge Graph RAG with Ontologies and Domain Design Models"
+title: "Exploring spec-driven development with Ontologies and Domain Design Models"
 date: 2026-04-27T20:00:00+08:00
 categories:
 - tech
@@ -50,7 +50,7 @@ These models provide:
 * Structured relationships between concepts  
 * Proven domain abstractions  
 
-Given my current work context, I started experimenting with applying these models in AI-assisted development workflows.
+Given my current work context, I started experimenting with applying BIAN in AI-assisted development workflows.
 
 ---
 
@@ -95,7 +95,6 @@ In this setup:
 
 This approach integrates:
 
-* Knowledge Graph–based RAG  
 * Domain design models (e.g., BIAN)  
 * Ontology-driven relationships  
 * Spec-driven development  
@@ -157,7 +156,7 @@ This reduces the need to “rediscover” architecture.
 
 ---
 
-=== 3. Knowledge Graph Enables Contextual Retrieval
+=== 3. Ontology Enables Contextual Retrieval
 
 Compared to vector search:
 
@@ -209,11 +208,11 @@ This pattern suggests a new direction:
 
 Instead of:
 
-*Prompt → LLM → Output*
+*Prompt → Coding Agent → Output*
 
 We move towards:
 
-*Prompt + Spec + Domain Model + Knowledge Graph → LLM → Structured Output*
+*Prompt + Spec + Domain Model + Ontology → Coding Agent → Structured Output*
 
 This is closer to how real-world systems are designed.
 
@@ -223,17 +222,13 @@ This is closer to how real-world systems are designed.
 
 Some interesting directions to explore:
 
-* Mapping BIAN → Knowledge Graph automatically  
-* Integrating DDD aggregates into ontology layers  
-* Using RAG for *architecture validation*  
+* Integrating DDD aggregates and microservcies into domain specific models 
+* Using ontology and domain specific models for *architecture validation*  
 * Combining with agentic workflows for iterative refinement  
 
 ---
 
 == Conclusion
-
-Knowledge Graph–based RAG is more than just an improvement in retrieval —  
-it opens the door to *structured, domain-aware AI systems*.
 
 By combining:
 
