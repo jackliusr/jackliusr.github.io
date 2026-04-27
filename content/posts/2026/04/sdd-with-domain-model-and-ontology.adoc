@@ -1,0 +1,249 @@
+---
+title: "Exploring Knowledge Graph RAG with Ontologies and Domain Design Models"
+date: 2026-04-27T20:00:00+08:00
+categories:
+- tech
+tags:
+- RAG
+- knowledge graph
+- ontology
+- domain models
+- BIAN
+- ACORD
+- TM Forum
+---
+
+
+== Introduction
+
+One of the more interesting recent developments in Retrieval-Augmented Generation (RAG) is *Knowledge Graph–based RAG*.  
+Unlike traditional vector-based retrieval, this approach introduces structured relationships between entities, enabling deeper reasoning and better contextual understanding.
+
+This naturally raises a question:
+
+____
+Can we build more *robust and reliable software systems* by combining:
+
+* Ontologies  
+* Domain-specific design models  
+* Spec-driven development (SDD)
+____
+
+This article explores that idea through a practical comparison.
+
+---
+
+== Motivation
+
+I have always been a strong advocate of **design models** and industry-standard frameworks.  
+Over the years, I’ve collected and studied several, including:
+
+* https://portal.bian.org/[BIAN] – Banking Industry Architecture Network  
+* https://www.ascm.org/corporate-solutions/standards-tools/scor-ds/[SCOR] – Supply Chain Operations Reference  
+* https://www.acord.org/standards-architecture/reference-architecture[ACORD] – Insurance domain architecture  
+* https://www.tmforum.org/resources/toolkit/agile-oss-information-data/[TM Forum] – Telecom data and process models  
+
+These models provide:
+
+* Standardised terminology  
+* Well-defined business capabilities  
+* Structured relationships between concepts  
+* Proven domain abstractions  
+
+Given my current work context, I started experimenting with applying these models in AI-assisted development workflows.
+
+---
+
+== Hypothesis
+
+The hypothesis is simple:
+
+____
+If we combine *knowledge graph RAG* with *domain design models* and *spec-driven development*,  
+we should be able to produce:
+
+* More consistent outputs  
+* Better structured designs  
+* Reduced ambiguity in terminology  
+* Stronger alignment with real-world domains
+____
+
+---
+
+== Two Approaches Compared
+
+To validate this idea, I experimented with two approaches:
+
+=== 1. Spec-Driven Development (SDD) Only
+
+In this setup:
+
+* System design is driven purely by specifications  
+* LLM generates outputs based on prompts and specs  
+* No formal domain model or ontology is enforced  
+
+*Observations:*
+
+* Inconsistent terminology across components  
+* Repeated re-interpretation of domain concepts  
+* Harder to maintain alignment across iterations  
+* Outputs depend heavily on prompt quality  
+
+---
+
+=== 2. Combined Approach
+
+This approach integrates:
+
+* Knowledge Graph–based RAG  
+* Domain design models (e.g., BIAN)  
+* Ontology-driven relationships  
+* Spec-driven development  
+
+*Architecture conceptually looks like:*
+
+[plantuml, format="svg",opts="inline"]
+----
+@startuml
+rectangle "User Spec" as A
+rectangle "Spec-driven Development" as B
+rectangle "Coding Agent" as C
+rectangle "Domain Model (BIAN/SCOR/etc)" as D
+rectangle "Ontology Layer" as E
+rectangle "Generated System Design" as G
+
+A --> B: input
+A --> D: refer
+A --> E: refer
+B --> C
+D -- E 
+C --> G
+@enduml
+----
+
+*Observations:*
+
+* Much more **consistent terminology**  
+* Outputs are **well-organised and structured**  
+* Domain concepts are reused instead of reinvented  
+* Improved traceability between requirements and design  
+* Easier to scale across teams and iterations  
+
+---
+
+== Why the Combination Works
+
+=== 1. Ontologies Provide Semantic Backbone
+
+Ontologies define:
+
+* Entities  
+* Relationships  
+* Constraints  
+
+This allows the system to “understand” meaning rather than just text similarity.
+
+---
+
+=== 2. Domain Models Provide Proven Structure
+
+Frameworks like BIAN or ACORD:
+
+* Encode years of industry knowledge  
+* Define canonical business capabilities  
+* Provide reusable design patterns  
+
+This reduces the need to “rediscover” architecture.
+
+---
+
+=== 3. Knowledge Graph Enables Contextual Retrieval
+
+Compared to vector search:
+
+* Relationships are explicit  
+* Multi-hop reasoning becomes possible  
+* Context is preserved across entities  
+
+---
+
+=== 4. Spec-Driven Development Keeps It Grounded
+
+Specs ensure:
+
+* Alignment with actual requirements  
+* Deterministic outputs  
+* Repeatability  
+
+---
+
+== Key Insights
+
+From this exploration:
+
+____
+The combination approach clearly produces better results than SDD alone.
+____
+
+Specifically:
+
+* Better organisation  
+* More consistent terminology  
+* Stronger domain alignment  
+* Reduced ambiguity  
+
+This is especially important in domains like:
+
+* Banking (BIAN)  
+* Insurance (ACORD)  
+* Supply chain (SCOR)  
+* Telecom (TM Forum)  
+
+---
+
+== Implications for AI-Native Architecture
+
+This pattern suggests a new direction:
+
+=== “Model-Augmented RAG”
+
+Instead of:
+
+*Prompt → LLM → Output*
+
+We move towards:
+
+*Prompt + Spec + Domain Model + Knowledge Graph → LLM → Structured Output*
+
+This is closer to how real-world systems are designed.
+
+---
+
+== Future Exploration
+
+Some interesting directions to explore:
+
+* Mapping BIAN → Knowledge Graph automatically  
+* Integrating DDD aggregates into ontology layers  
+* Using RAG for *architecture validation*  
+* Combining with agentic workflows for iterative refinement  
+
+---
+
+== Conclusion
+
+Knowledge Graph–based RAG is more than just an improvement in retrieval —  
+it opens the door to *structured, domain-aware AI systems*.
+
+By combining:
+
+* Ontologies  
+* Domain design models  
+* Spec-driven development  
+
+we can move closer to:
+
+____
+AI systems that generate not just code —  
+but *well-designed, domain-aligned software architectures*.
+____
