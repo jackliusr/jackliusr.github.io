@@ -6,7 +6,22 @@
     <description>Recent content on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Apr 2026 13:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Apr 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Knowledge Graph RAG with Ontologies and Domain Design Models</title>
+      <link>https://jackliusr.github.io/posts/2026/04/exploring-knowledge-graph-rag-with-ontologies-and-domain-design-models/</link>
+      <pubDate>Mon, 27 Apr 2026 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/04/exploring-knowledge-graph-rag-with-ontologies-and-domain-design-models/</guid>
+      <description>Introduction One of the more interesting recent developments in Retrieval-Augmented Generation (RAG) is Knowledge Graph–based RAG. Unlike traditional vector-based retrieval, this approach introduces structured relationships between entities, enabling deeper reasoning and better contextual understanding.
+ This naturally raises a question:
+  Can we build more robust and reliable software systems by combining:
+   Ontologies
+  Domain-specific design models
+  Spec-driven development (SDD)
+     This article explores that idea through a practical comparison.</description>
+    </item>
+    
     <item>
       <title>Running Qwen3.6 35B Locally with Ollama and VS Code Integration</title>
       <link>https://jackliusr.github.io/posts/2026/04/running-qwen3.6-35b-locally-with-ollama-and-vs-code-integration/</link>
