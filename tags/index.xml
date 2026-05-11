@@ -1133,7 +1133,7 @@
     </item>
     
     <item>
-      <title>API</title>
+      <title>api</title>
       <link>https://jackliusr.github.io/tags/api/</link>
       <pubDate>Tue, 20 Feb 2024 20:10:00 +0800</pubDate>
       
@@ -1561,6 +1561,15 @@
       <pubDate>Thu, 31 Aug 2023 00:10:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/typescript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linter</title>
+      <link>https://jackliusr.github.io/tags/linter/</link>
+      <pubDate>Thu, 17 Aug 2023 00:10:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/linter/</guid>
       <description></description>
     </item>
     

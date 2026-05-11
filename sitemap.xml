@@ -13,7 +13,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2026-04-27T20:17:26+08:00</lastmod>
+    <lastmod>2026-05-11T16:14:46+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -33,7 +33,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2026-04-27T20:17:26+08:00</lastmod>
+    <lastmod>2026-05-11T16:14:46+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -43,7 +43,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2026-04-27T20:17:26+08:00</lastmod>
+    <lastmod>2026-05-11T16:14:46+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -53,12 +53,12 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2026-04-27T20:17:26+08:00</lastmod>
+    <lastmod>2026-05-11T16:14:46+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/tech/</loc>
-    <lastmod>2026-04-27T20:17:26+08:00</lastmod>
+    <lastmod>2026-05-11T16:14:46+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -603,7 +603,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/javascript/</loc>
-    <lastmod>2024-06-13T20:29:02+08:00</lastmod>
+    <lastmod>2026-05-11T16:14:46+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -633,7 +633,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/chatgpt/</loc>
-    <lastmod>2024-05-12T22:36:58+08:00</lastmod>
+    <lastmod>2026-05-11T16:14:46+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -778,7 +778,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/openapi/</loc>
-    <lastmod>2024-04-04T23:44:18+08:00</lastmod>
+    <lastmod>2026-05-11T16:14:46+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -893,7 +893,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/api/</loc>
-    <lastmod>2024-02-20T23:19:54+08:00</lastmod>
+    <lastmod>2026-05-11T16:14:46+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -1253,17 +1253,22 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/2023/08/generate-a-customized-rule-of-spectral-using-chatgpt/</loc>
-    <lastmod>2023-08-17T22:18:55+08:00</lastmod>
+    <lastmod>2026-05-11T16:14:46+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/linter/</loc>
+    <lastmod>2026-05-11T16:14:46+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/nlp/</loc>
-    <lastmod>2023-08-17T22:18:55+08:00</lastmod>
+    <lastmod>2026-05-11T16:14:46+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/spectral/</loc>
-    <lastmod>2023-08-17T22:18:55+08:00</lastmod>
+    <lastmod>2026-05-11T16:14:46+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
