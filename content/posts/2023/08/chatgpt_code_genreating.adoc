@@ -9,6 +9,8 @@ tags:
 - javascript
 - openapi
 - nlp
+- api
+- linter
 ---
 
 ## Background
