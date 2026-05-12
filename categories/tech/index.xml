@@ -6,7 +6,19 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Apr 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 May 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reducing Architecture Drift in Spec-Driven Development with coding agents and LLMs</title>
+      <link>https://jackliusr.github.io/posts/2026/05/reducing-architecture-drift-in-spec-driven-development-with-coding-agents-and-llms/</link>
+      <pubDate>Tue, 12 May 2026 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/05/reducing-architecture-drift-in-spec-driven-development-with-coding-agents-and-llms/</guid>
+      <description>Introduction Spec-driven development is becoming increasingly popular in the era of AI-assisted software engineering. Instead of starting directly from implementation, teams define specifications, domain rules, contracts, and architectural intentions first, allowing Large Language Models (LLMs) and automation tools to generate significant parts of the system.
+ This approach can dramatically improve development speed, documentation quality, and alignment between business and engineering.
+ However, one important challenge emerges quickly:
+  Architecture drift.</description>
+    </item>
+    
     <item>
       <title>Exploring spec-driven development with Ontologies and Domain Design Models</title>
       <link>https://jackliusr.github.io/posts/2026/04/exploring-spec-driven-development-with-ontologies-and-domain-design-models/</link>

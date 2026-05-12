@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>Reducing Architecture Drift in Spec-Driven Development with coding agents and LLMs | My learning and diary</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="description"
+    content="Introduction Spec-driven development is becoming increasingly popular in the era of AI-assisted software engineering. Instead of starting directly from implementation, teams define specifications, domain rules, contracts, and architectural intentions first, allowing Large Language Models (LLMs) and automation tools to generate significant parts of the system.
+ This approach can dramatically improve development speed, documentation quality, and alignment between business and engineering.
+ However, one important challenge emerges quickly:
+  Architecture drift.">
+  <meta name="generator" content="Hugo 0.99.1" />
+  
+  
+  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+  
+
+  
+<link rel="stylesheet" href="/ananke/css/main.min.abe0b1c07d5e33565b0f9b998a7b1b5228b709f36af363e2766bc8035f2237b7.css" >
+
+
+
+
+  
+  
+
+  
+
+  
+
+  <meta property="og:title" content="Reducing Architecture Drift in Spec-Driven Development with coding agents and LLMs" />
+<meta property="og:description" content="Introduction Spec-driven development is becoming increasingly popular in the era of AI-assisted software engineering. Instead of starting directly from implementation, teams define specifications, domain rules, contracts, and architectural intentions first, allowing Large Language Models (LLMs) and automation tools to generate significant parts of the system.
+ This approach can dramatically improve development speed, documentation quality, and alignment between business and engineering.
+ However, one important challenge emerges quickly:
+  Architecture drift." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jackliusr.github.io/posts/2026/05/reducing-architecture-drift-in-spec-driven-development-with-coding-agents-and-llms/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2026-05-12T20:00:00+08:00" />
+<meta property="article:modified_time" content="2026-05-12T21:03:50+08:00" />
+
+<meta itemprop="name" content="Reducing Architecture Drift in Spec-Driven Development with coding agents and LLMs">
+<meta itemprop="description" content="Introduction Spec-driven development is becoming increasingly popular in the era of AI-assisted software engineering. Instead of starting directly from implementation, teams define specifications, domain rules, contracts, and architectural intentions first, allowing Large Language Models (LLMs) and automation tools to generate significant parts of the system.
+ This approach can dramatically improve development speed, documentation quality, and alignment between business and engineering.
+ However, one important challenge emerges quickly:
+  Architecture drift."><meta itemprop="datePublished" content="2026-05-12T20:00:00+08:00" />
+<meta itemprop="dateModified" content="2026-05-12T21:03:50+08:00" />
+<meta itemprop="wordCount" content="704">
+<meta itemprop="keywords" content="sdd,archunit,jMolecules,coding-agent,llm," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Reducing Architecture Drift in Spec-Driven Development with coding agents and LLMs"/>
+<meta name="twitter:description" content="Introduction Spec-driven development is becoming increasingly popular in the era of AI-assisted software engineering. Instead of starting directly from implementation, teams define specifications, domain rules, contracts, and architectural intentions first, allowing Large Language Models (LLMs) and automation tools to generate significant parts of the system.
+ This approach can dramatically improve development speed, documentation quality, and alignment between business and engineering.
+ However, one important challenge emerges quickly:
+  Architecture drift."/>
+
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K49F8T19FK"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-K49F8T19FK', { 'anonymize_ip': false });
+}
+</script>
+
+  
+  
+
+
+
+
+
+
+</head>
+
+<body class="ma0 avenir bg-near-white production">
+
+  
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My learning and diary
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/notes/" title="Notes page">
+              Notes
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/portfolio/" title="Portfolio page">
+              Portfolio
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/readinglists/" title="Books page">
+              Books
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/categories/" title="Categories page">
+              Categories
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tags/" title="Tags page">
+              Tags
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+  <main class="pb7" role="main">
+    
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://jackliusr.github.io/posts/2026/05/reducing-architecture-drift-in-spec-driven-development-with-coding-agents-and-llms/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://jackliusr.github.io/posts/2026/05/reducing-architecture-drift-in-spec-driven-development-with-coding-agents-and-llms/&amp;text=Reducing%20Architecture%20Drift%20in%20Spec-Driven%20Development%20with%20coding%20agents%20and%20LLMs" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://jackliusr.github.io/posts/2026/05/reducing-architecture-drift-in-spec-driven-development-with-coding-agents-and-llms/&amp;title=Reducing%20Architecture%20Drift%20in%20Spec-Driven%20Development%20with%20coding%20agents%20and%20LLMs" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Reducing Architecture Drift in Spec-Driven Development with coding agents and LLMs</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2026-05-12T20:00:00+08:00">May 12, 2026</time>
+
+      
+      
+        <span class="f6 mv4 dib tracked"> - 4 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 704 words</span>
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a><a class="link" href="#_introduction">Introduction</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spec-driven development is becoming increasingly popular in the era of AI-assisted software engineering.
+Instead of starting directly from implementation, teams define specifications, domain rules, contracts, and architectural intentions first, allowing Large Language Models (LLMs) and automation tools to generate significant parts of the system.</p>
+</div>
+<div class="paragraph">
+<p>This approach can dramatically improve development speed, documentation quality, and alignment between business and engineering.</p>
+</div>
+<div class="paragraph">
+<p>However, one important challenge emerges quickly:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Architecture drift.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Especially when LLMs are heavily involved in code generation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_problem_architecture_drift_in_ai_assisted_development"><a class="anchor" href="#_the_problem_architecture_drift_in_ai_assisted_development"></a><a class="link" href="#_the_problem_architecture_drift_in_ai_assisted_development">The Problem: Architecture Drift in AI-Assisted Development</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Traditional architecture drift already exists in large systems:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Developers bypass intended boundaries</p>
+</li>
+<li>
+<p>Modules become tightly coupled</p>
+</li>
+<li>
+<p>Domain rules are violated over time</p>
+</li>
+<li>
+<p>Infrastructure concerns leak into business logic</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>With LLM-assisted development, this problem can become even more severe because of the non-deterministic nature of LLM outputs.</p>
+</div>
+<div class="paragraph">
+<p>Even if:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the specification is correct,</p>
+</li>
+<li>
+<p>the prompts are detailed,</p>
+</li>
+<li>
+<p>the architecture diagrams are well-defined,</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>the generated code may still slowly diverge from the intended architecture.</p>
+</div>
+<div class="paragraph">
+<p>Examples include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Services directly accessing databases they should not access</p>
+</li>
+<li>
+<p>Domain models importing infrastructure libraries</p>
+</li>
+<li>
+<p>Circular dependencies appearing between bounded contexts</p>
+</li>
+<li>
+<p>REST controllers containing business logic</p>
+</li>
+<li>
+<p>Shared utility classes becoming hidden coupling points</p>
+</li>
+<li>
+<p>Event-driven architectures silently turning into synchronous request chains</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This happens because LLMs optimize for local correctness and probability, not long-term architectural integrity.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_specifications_alone_are_not_enough"><a class="anchor" href="#_why_specifications_alone_are_not_enough"></a><a class="link" href="#_why_specifications_alone_are_not_enough">Why Specifications Alone Are Not Enough</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Specifications define intentions.</p>
+</div>
+<div class="paragraph">
+<p>But intentions alone do not enforce constraints.</p>
+</div>
+<div class="paragraph">
+<p>LLMs are excellent at pattern completion, but architecture requires:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>structural consistency,</p>
+</li>
+<li>
+<p>boundary enforcement,</p>
+</li>
+<li>
+<p>semantic discipline,</p>
+</li>
+<li>
+<p>domain purity,</p>
+</li>
+<li>
+<p>long-term maintainability.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Without enforcement mechanisms, generated systems may initially look correct while gradually accumulating architectural erosion.</p>
+</div>
+<div class="paragraph">
+<p>This is similar to entropy in distributed systems:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Without constraints, systems naturally drift toward complexity and coupling.
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_learning_from_existing_technologies"><a class="anchor" href="#_learning_from_existing_technologies"></a><a class="link" href="#_learning_from_existing_technologies">Learning from Existing Technologies</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Fortunately, software engineering already has useful concepts that can help minimize architecture drift.</p>
+</div>
+<div class="paragraph">
+<p>Two particularly interesting examples are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ArchUnit</p>
+</li>
+<li>
+<p>jMolecules</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These technologies were originally designed for human-written systems, but their ideas are highly applicable to AI-generated systems as well.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_archunit_architecture_as_executable_tests"><a class="anchor" href="#_archunit_architecture_as_executable_tests"></a><a class="link" href="#_archunit_architecture_as_executable_tests">ArchUnit: Architecture as Executable Tests</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ArchUnit allows architects to define architectural rules as executable tests.</p>
+</div>
+<div class="paragraph">
+<p>Instead of relying purely on documentation, teams can encode architectural constraints directly into CI/CD pipelines.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">ArchRule rule = classes()
+    .that().resideInAPackage(&#34;..domain..&#34;)
+    .should().onlyDependOnClassesThat()
+    .resideInAnyPackage(
+        &#34;..domain..&#34;,
+        &#34;java..&#34;
+    );</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This transforms architecture into something verifiable.</p>
+</div>
+<div class="paragraph">
+<p>Benefits include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Detecting forbidden dependencies</p>
+</li>
+<li>
+<p>Preventing layering violations</p>
+</li>
+<li>
+<p>Enforcing modular boundaries</p>
+</li>
+<li>
+<p>Catching architectural regressions early</p>
+</li>
+<li>
+<p>Providing immediate feedback to AI-generated code</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In an AI-assisted workflow, ArchUnit-like validation becomes even more valuable because generated code can be continuously checked against intended architectural rules.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_jmolecules_making_architectural_intent_explicit"><a class="anchor" href="#_jmolecules_making_architectural_intent_explicit"></a><a class="link" href="#_jmolecules_making_architectural_intent_explicit">jMolecules: Making Architectural Intent Explicit</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>jMolecules focuses on expressing architectural and Domain-Driven Design (DDD) concepts explicitly in code.</p>
+</div>
+<div class="paragraph">
+<p>Examples include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Aggregate</p>
+</li>
+<li>
+<p>Entity</p>
+</li>
+<li>
+<p>Value Object</p>
+</li>
+<li>
+<p>Repository</p>
+</li>
+<li>
+<p>Service</p>
+</li>
+<li>
+<p>Bounded Context</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Instead of architecture existing only in diagrams or documentation, architectural semantics become part of the codebase itself.</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@AggregateRoot
+public class Order {
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This creates stronger alignment between:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>domain intent,</p>
+</li>
+<li>
+<p>generated code,</p>
+</li>
+<li>
+<p>tooling,</p>
+</li>
+<li>
+<p>validation systems,</p>
+</li>
+<li>
+<p>and developer understanding.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For LLM-based development, this is powerful because explicit semantics improve context quality for future generations.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_applying_these_ideas_to_spec_driven_development"><a class="anchor" href="#_applying_these_ideas_to_spec_driven_development"></a><a class="link" href="#_applying_these_ideas_to_spec_driven_development">Applying These Ideas to Spec-Driven Development</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spec-driven development should evolve beyond:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>prompt engineering,</p>
+</li>
+<li>
+<p>Markdown specifications,</p>
+</li>
+<li>
+<p>and code generation.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It should also include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>executable architecture constraints,</p>
+</li>
+<li>
+<p>semantic annotations,</p>
+</li>
+<li>
+<p>structural validation,</p>
+</li>
+<li>
+<p>dependency policies,</p>
+</li>
+<li>
+<p>and automated drift detection.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A possible workflow could look like this:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<svg contentstyletype="text/css" preserveAspectRatio="none" version="1.1" viewBox="0 0 645 696" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" zoomAndPan="magnify" width="645" height="696"><defs><filter height="300%" id="fzw26sdk1zt0o" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"></feGaussianBlur><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"></feColorMatrix><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"></feOffset><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"></feBlend></filter></defs><g><g id="cluster_SpecLayer"><rect fill="#E0F2FE" filter="url(#fzw26sdk1zt0o)" height="226" rx="9" ry="9" style="stroke:#334155;stroke-width:1.0;" width="180" x="7" y="147.5"></rect><text fill="#0F172A" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="150" x="22" y="162.4951">Specification Layer</text></g><g id="cluster_AILayer"><rect fill="#FEF3C7" filter="url(#fzw26sdk1zt0o)" height="97" rx="9" ry="9" style="stroke:#334155;stroke-width:1.0;" width="173" x="211" y="281.5"></rect><text fill="#0F172A" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="157" x="219" y="296.4951">AI Generation Layer</text></g><g id="cluster_ValidationLayer"><rect fill="#DCFCE7" filter="url(#fzw26sdk1zt0o)" height="113" rx="9" ry="9" style="stroke:#334155;stroke-width:1.0;" width="442" x="191" y="571.5"></rect><text fill="#0F172A" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="126" x="349" y="586.4951">Validation Layer</text></g><g id="cluster_ImplLayer"><rect fill="#FCE7F3" filter="url(#fzw26sdk1zt0o)" height="87" rx="9" ry="9" style="stroke:#334155;stroke-width:1.0;" width="202" x="369" y="427.5"></rect><text fill="#0F172A" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="170" x="385" y="442.4951">Implementation Layer</text></g><g id="elem_Specs"><path d="M95.5,191.5 L95.5,209.7969 A9,9 0 0 0 104.5,218.7969 L149.5,218.7969 A9,9 0 0 0 158.5,209.7969 L158.5,192.5 L148.5,182.5 L104.5,182.5 A9,9 0 0 0 95.5,191.5 " fill="#BAE6FD" filter="url(#fzw26sdk1zt0o)" style="stroke:#475569;stroke-width:0.5;"></path><path d="M148.5,182.5 L148.5,183.5 A9,9 0 0 0 157.5,192.5 L158.5,192.5 " fill="#BAE6FD" style="stroke:#475569;stroke-width:0.5;"></path><text fill="#0F172A" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="43" x="105.5" y="205.4951">Specs</text></g><g id="elem_Rules"><path d="M23.5,330.5 L23.5,348.7969 A9,9 0 0 0 32.5,357.7969 L161.5,357.7969 A9,9 0 0 0 170.5,348.7969 L170.5,331.5 L160.5,321.5 L32.5,321.5 A9,9 0 0 0 23.5,330.5 " fill="#BFDBFE" filter="url(#fzw26sdk1zt0o)" style="stroke:#475569;stroke-width:0.5;"></path><path d="M160.5,321.5 L160.5,322.5 A9,9 0 0 0 169.5,331.5 L170.5,331.5 " fill="#BFDBFE" style="stroke:#475569;stroke-width:0.5;"></path><text fill="#0F172A" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="127" x="33.5" y="344.4951">Architecture Rules</text></g><g id="elem_CodingAgent"><rect fill="#FDE68A" filter="url(#fzw26sdk1zt0o)" height="46.2969" rx="9" ry="9" style="stroke:#1E293B;stroke-width:0.5;" width="134" x="227" y="316.5"></rect><rect fill="#FDE68A" height="10" style="stroke:#1E293B;stroke-width:0.5;" width="15" x="341" y="321.5"></rect><rect fill="#FDE68A" height="2" style="stroke:#1E293B;stroke-width:0.5;" width="4" x="339" y="323.5"></rect><rect fill="#FDE68A" height="2" style="stroke:#1E293B;stroke-width:0.5;" width="4" x="339" y="327.5"></rect><text fill="#0F172A" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="94" x="242" y="349.4951">Coding Agent</text></g><g id="elem_ArchTests"><rect fill="#86EFAC" filter="url(#fzw26sdk1zt0o)" height="46.2969" rx="9" ry="9" style="stroke:#1E293B;stroke-width:0.5;" width="167" x="234.5" y="614.5"></rect><rect fill="#86EFAC" height="10" style="stroke:#1E293B;stroke-width:0.5;" width="15" x="381.5" y="619.5"></rect><rect fill="#86EFAC" height="2" style="stroke:#1E293B;stroke-width:0.5;" width="4" x="379.5" y="621.5"></rect><rect fill="#86EFAC" height="2" style="stroke:#1E293B;stroke-width:0.5;" width="4" x="379.5" y="625.5"></rect><text fill="#0F172A" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="127" x="249.5" y="647.4951">Architecture Tests</text></g><g id="elem_DepRules"><rect fill="#BBF7D0" filter="url(#fzw26sdk1zt0o)" height="46.2969" rx="9" ry="9" style="stroke:#1E293B;stroke-width:0.5;" width="172" x="437" y="614.5"></rect><rect fill="#BBF7D0" height="10" style="stroke:#1E293B;stroke-width:0.5;" width="15" x="589" y="619.5"></rect><rect fill="#BBF7D0" height="2" style="stroke:#1E293B;stroke-width:0.5;" width="4" x="587" y="621.5"></rect><rect fill="#BBF7D0" height="2" style="stroke:#1E293B;stroke-width:0.5;" width="4" x="587" y="625.5"></rect><text fill="#0F172A" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="132" x="452" y="647.4951">Dependency Rules</text></g><g id="elem_Codebase"><path d="M385.5,471.5 L385.5,489.7969 A9,9 0 0 0 394.5,498.7969 L545.5,498.7969 A9,9 0 0 0 554.5,489.7969 L554.5,472.5 L544.5,462.5 L394.5,462.5 A9,9 0 0 0 385.5,471.5 " fill="#F9A8D4" filter="url(#fzw26sdk1zt0o)" style="stroke:#475569;stroke-width:0.5;"></path><path d="M544.5,462.5 L544.5,463.5 A9,9 0 0 0 553.5,472.5 L554.5,472.5 " fill="#F9A8D4" style="stroke:#475569;stroke-width:0.5;"></path><text fill="#0F172A" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="149" x="395.5" y="485.4951">Generated Codebase</text></g><g id="elem_Developer"><ellipse cx="127" cy="14" fill="#DBEAFE" filter="url(#fzw26sdk1zt0o)" rx="8" ry="8" style="stroke:#2563EB;stroke-width:0.5;"></ellipse><path d="M127,22 L127,49 M114,30 L140,30 M127,49 L114,64 M127,49 L140,64 " fill="none" filter="url(#fzw26sdk1zt0o)" style="stroke:#2563EB;stroke-width:0.5;"></path><text fill="#1E3A8A" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="71" x="91.5" y="81.4951">Developer</text></g><g id="link_Developer_Specs"><path d="M127,84.73 C127,113.96 127,153.04 127,177.22 " fill="none" id="Developer-to-Specs" style="stroke:#181818;stroke-width:2.0;"></path><polygon fill="#181818" points="127,182.44,131,173.44,127,177.44,123,173.44,127,182.44" style="stroke:#181818;stroke-width:2.0;"></polygon><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="41" x="128" y="127.5669">Define</text></g><g id="link_Specs_CodingAgent"><path d="M147.81,218.57 C176.8,242.35 229.54,285.62 263.12,313.17 " fill="none" id="Specs-to-CodingAgent" style="stroke:#0EA5E9;stroke-width:2.0;"></path><polygon fill="#0EA5E9" points="267.12,316.45,262.6926,307.6524,263.2521,313.2815,257.623,313.841,267.12,316.45" style="stroke:#0EA5E9;stroke-width:2.0;"></polygon><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="108" x="201" y="261.5669">Drive Generation</text></g><g id="link_Rules_ArchTests"><path d="M97.24,357.64 C98.65,392.94 106.7,474.47 150,522.5 C176.03,551.37 198.24,534.58 231,555.5 C254.93,570.78 278.27,593.04 294.74,610.35 " fill="none" id="Rules-to-ArchTests" style="stroke:#22C55E;stroke-width:2.0;"></path><polygon fill="#22C55E" points="298.36,614.19,295.1045,604.8947,294.9332,610.549,289.2789,610.3777,298.36,614.19" style="stroke:#22C55E;stroke-width:2.0;"></polygon><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="48" x="151" y="485.0669">Enforce</text></g><g id="link_Specs_Rules"><path d="M123.26,218.57 C117.87,243.19 107.91,288.67 101.93,316 " fill="none" id="Specs-to-Rules" style="stroke:#0EA5E9;stroke-width:2.0;"></path><polygon fill="#0EA5E9" points="100.79,321.21,106.625,313.2757,101.861,316.3261,98.8107,311.5621,100.79,321.21" style="stroke:#0EA5E9;stroke-width:2.0;"></polygon><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="33" x="118" y="261.5669">Refer</text></g><g id="link_CodingAgent_Codebase"><path d="M321.89,362.52 C355.47,389.05 411.42,433.23 444.09,459.04 " fill="none" id="CodingAgent-to-Codebase" style="stroke:#F59E0B;stroke-width:2.0;"></path><polygon fill="#F59E0B" points="448.35,462.4,443.778,453.6766,444.4304,459.2958,438.8112,459.9481,448.35,462.4" style="stroke:#F59E0B;stroke-width:2.0;"></polygon><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="97" x="383" y="407.5669">Generate Code</text></g><g id="link_CodingAgent_ValidationLayer"><path d="M273.39,362.59 C260.61,377.54 244.97,398.35 236,419.5 C217.2,463.83 207.9425,517.09 203.3888,559.7512 C203.1041,562.4176 202.8379,565.0425 202.5889,567.6213 C202.4643,568.9106 202.3441,570.1885 202.228,571.4542 " fill="none" id="CodingAgent-to-ValidationLayer" style="stroke:#8B5CF6;stroke-width:2.0;"></path><polygon fill="#8B5CF6" points="202.228,571.4542,207.0332,562.8571,202.6847,566.4751,199.0667,562.1265,202.228,571.4542" style="stroke:#8B5CF6;stroke-width:2.0;"></polygon><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="131" x="237" y="485.0669">Generate Arch Tests</text></g><g id="link_Codebase_ArchTests"><path d="M449.44,502.47 C420.8,531.68 369.11,584.38 339.82,614.25 " fill="none" id="Codebase-backto-ArchTests" style="stroke:#10B981;stroke-width:2.0;"></path><polygon fill="#10B981" points="453.15,498.68,443.9864,502.2895,449.6431,502.2439,449.6887,507.9006,453.15,498.68" style="stroke:#10B981;stroke-width:2.0;"></polygon><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="52" x="421" y="543.5669">Validate</text></g><g id="link_Codebase_DepRules"><path d="M477.54,503.55 C487.6,532.96 505.3,584.74 515.39,614.25 " fill="none" id="Codebase-backto-DepRules" style="stroke:#EF4444;stroke-width:2.0;"></path><polygon fill="#EF4444" points="475.87,498.68,475.0188,508.492,477.4982,503.4075,482.5827,505.8869,475.87,498.68" style="stroke:#EF4444;stroke-width:2.0;"></polygon><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="52" x="492" y="543.5669">Validate</text></g></g></svg>
+</div>
+</div>
+<div class="paragraph">
+<p>In this model:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>LLMs generate implementation</p>
+</li>
+<li>
+<p>validation systems enforce architecture</p>
+</li>
+<li>
+<p>specifications define intent</p>
+</li>
+<li>
+<p>semantic markers improve consistency</p>
+</li>
+<li>
+<p>feedback loops reduce drift</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_key_insight"><a class="anchor" href="#_key_insight"></a><a class="link" href="#_key_insight">Key Insight</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The key lesson is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+AI-generated systems still require strong architectural governance.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Specifications alone are not enough.</p>
+</div>
+<div class="paragraph">
+<p>Borrowing ideas from technologies like ArchUnit and jMolecules can help transform architecture from passive documentation into active enforcement mechanisms.</p>
+</div>
+<div class="paragraph">
+<p>This becomes increasingly important as AI-generated codebases grow larger, faster, and more autonomous.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion"><a class="anchor" href="#_conclusion"></a><a class="link" href="#_conclusion">Conclusion</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>LLMs significantly accelerate software development, but they also introduce new risks around architectural consistency and long-term maintainability.</p>
+</div>
+<div class="paragraph">
+<p>Spec-driven development must therefore evolve to include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>executable architectural constraints,</p>
+</li>
+<li>
+<p>semantic modeling,</p>
+</li>
+<li>
+<p>continuous validation,</p>
+</li>
+<li>
+<p>and automated drift prevention.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>By combining:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>AI-assisted generation,</p>
+</li>
+<li>
+<p>specification-driven workflows,</p>
+</li>
+<li>
+<p>and architecture enforcement concepts from tools like ArchUnit and jMolecules,</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>teams can build systems that are not only generated faster, but also remain structurally healthy over time.</p>
+</div>
+<div class="paragraph">
+<p>The future of AI-native software engineering is not just code generation.</p>
+</div>
+<div class="paragraph">
+<p>It is architecture-aware generation.</p>
+</div>
+</div>
+</div>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/sdd" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">sdd</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/archunit" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">archunit</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/jmolecules" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">jMolecules</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/coding-agent" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">coding-agent</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/llm" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">llm</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jackliusr-gh" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/2026/02/spec-kit-iteration-workflow-in-a-feature/">spec-kit: iteration workflow in a feature</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+  </main>
+  <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jackliusr.github.io" >
+    &copy;  My learning and diary 2026 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+<script>
+ MathJax = {
+     tex: {
+         inlineMath: [['$', '$'], ['\\(', '\\)']]
+     }
+ };
+ </script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<link href="/css/prism.css" rel="stylesheet" />
+<script src="/js/prism.js"></script>
+
+
+
+
+  
+  <p style="font-size: small; color: grey;">Page version: b5c4e64ddcba30600f6f4cb3be44ad90e793977a 2026-05-12</p>
+</body>
+
+</html>

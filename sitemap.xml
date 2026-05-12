@@ -2,6 +2,61 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://jackliusr.github.io/tags/archunit/</loc>
+    <lastmod>2026-05-12T21:03:50+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/categories/</loc>
+    <lastmod>2026-05-12T21:03:50+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/coding-agent/</loc>
+    <lastmod>2026-05-12T21:03:50+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/jmolecules/</loc>
+    <lastmod>2026-05-12T21:03:50+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/llm/</loc>
+    <lastmod>2026-05-12T21:03:50+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/</loc>
+    <lastmod>2026-05-12T21:03:50+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/</loc>
+    <lastmod>2026-05-12T21:03:50+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2026/05/reducing-architecture-drift-in-spec-driven-development-with-coding-agents-and-llms/</loc>
+    <lastmod>2026-05-12T21:03:50+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/sdd/</loc>
+    <lastmod>2026-05-12T21:03:50+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/</loc>
+    <lastmod>2026-05-12T21:03:50+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/categories/tech/</loc>
+    <lastmod>2026-05-12T21:03:50+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://jackliusr.github.io/tags/acord/</loc>
     <lastmod>2026-04-27T20:17:26+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -9,11 +64,6 @@
   </url><url>
     <loc>https://jackliusr.github.io/tags/bian/</loc>
     <lastmod>2026-04-27T20:17:26+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2026-05-11T16:14:46+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -32,33 +82,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2026-05-11T16:14:46+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://jackliusr.github.io/tags/ontology/</loc>
     <lastmod>2026-04-27T20:17:26+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2026-05-11T16:14:46+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://jackliusr.github.io/tags/rag/</loc>
     <lastmod>2026-04-27T20:17:26+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2026-05-11T16:14:46+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/categories/tech/</loc>
-    <lastmod>2026-05-11T16:14:46+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -184,11 +214,6 @@
   </url><url>
     <loc>https://jackliusr.github.io/posts/2026/02/setup-openclaw-hetzner/</loc>
     <lastmod>2026-02-04T23:10:29+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/sdd/</loc>
-    <lastmod>2026-02-02T22:04:16+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
