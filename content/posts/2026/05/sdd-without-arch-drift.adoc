@@ -1,0 +1,283 @@
+---
+title: "Reducing Architecture Drift in Spec-Driven Development with coding agents and LLMs"
+date: 2026-05-12T20:00:00+08:00
+categories:
+- tech
+tags:
+- sdd
+- archunit
+- jMolecules
+- coding-agent
+- llm
+---
+
+== Introduction
+
+Spec-driven development is becoming increasingly popular in the era of AI-assisted software engineering.  
+Instead of starting directly from implementation, teams define specifications, domain rules, contracts, and architectural intentions first, allowing Large Language Models (LLMs) and automation tools to generate significant parts of the system.
+
+This approach can dramatically improve development speed, documentation quality, and alignment between business and engineering.
+
+However, one important challenge emerges quickly:
+
+[quote]
+Architecture drift.
+
+Especially when LLMs are heavily involved in code generation.
+
+== The Problem: Architecture Drift in AI-Assisted Development
+
+Traditional architecture drift already exists in large systems:
+
+* Developers bypass intended boundaries
+* Modules become tightly coupled
+* Domain rules are violated over time
+* Infrastructure concerns leak into business logic
+
+With LLM-assisted development, this problem can become even more severe because of the non-deterministic nature of LLM outputs.
+
+Even if:
+
+* the specification is correct,
+* the prompts are detailed,
+* the architecture diagrams are well-defined,
+
+the generated code may still slowly diverge from the intended architecture.
+
+Examples include:
+
+* Services directly accessing databases they should not access
+* Domain models importing infrastructure libraries
+* Circular dependencies appearing between bounded contexts
+* REST controllers containing business logic
+* Shared utility classes becoming hidden coupling points
+* Event-driven architectures silently turning into synchronous request chains
+
+This happens because LLMs optimize for local correctness and probability, not long-term architectural integrity.
+
+== Why Specifications Alone Are Not Enough
+
+Specifications define intentions.
+
+But intentions alone do not enforce constraints.
+
+LLMs are excellent at pattern completion, but architecture requires:
+
+* structural consistency,
+* boundary enforcement,
+* semantic discipline,
+* domain purity,
+* long-term maintainability.
+
+Without enforcement mechanisms, generated systems may initially look correct while gradually accumulating architectural erosion.
+
+This is similar to entropy in distributed systems:
+
+[quote]
+Without constraints, systems naturally drift toward complexity and coupling.
+
+== Learning from Existing Technologies
+
+Fortunately, software engineering already has useful concepts that can help minimize architecture drift.
+
+Two particularly interesting examples are:
+
+* ArchUnit
+* jMolecules
+
+These technologies were originally designed for human-written systems, but their ideas are highly applicable to AI-generated systems as well.
+
+== ArchUnit: Architecture as Executable Tests
+
+ArchUnit allows architects to define architectural rules as executable tests.
+
+Instead of relying purely on documentation, teams can encode architectural constraints directly into CI/CD pipelines.
+
+For example:
+
+[source,java]
+----
+ArchRule rule = classes()
+    .that().resideInAPackage("..domain..")
+    .should().onlyDependOnClassesThat()
+    .resideInAnyPackage(
+        "..domain..",
+        "java.."
+    );
+----
+
+This transforms architecture into something verifiable.
+
+Benefits include:
+
+* Detecting forbidden dependencies
+* Preventing layering violations
+* Enforcing modular boundaries
+* Catching architectural regressions early
+* Providing immediate feedback to AI-generated code
+
+In an AI-assisted workflow, ArchUnit-like validation becomes even more valuable because generated code can be continuously checked against intended architectural rules.
+
+== jMolecules: Making Architectural Intent Explicit
+
+jMolecules focuses on expressing architectural and Domain-Driven Design (DDD) concepts explicitly in code.
+
+Examples include:
+
+* Aggregate
+* Entity
+* Value Object
+* Repository
+* Service
+* Bounded Context
+
+Instead of architecture existing only in diagrams or documentation, architectural semantics become part of the codebase itself.
+
+Example:
+
+[source,java]
+----
+@AggregateRoot
+public class Order {
+}
+----
+
+This creates stronger alignment between:
+
+* domain intent,
+* generated code,
+* tooling,
+* validation systems,
+* and developer understanding.
+
+For LLM-based development, this is powerful because explicit semantics improve context quality for future generations.
+
+== Applying These Ideas to Spec-Driven Development
+
+Spec-driven development should evolve beyond:
+
+* prompt engineering,
+* Markdown specifications,
+* and code generation.
+
+It should also include:
+
+* executable architecture constraints,
+* semantic annotations,
+* structural validation,
+* dependency policies,
+* and automated drift detection.
+
+A possible workflow could look like this:
+
+[plantuml, format="svg",opts="inline"]
+----
+@startuml
+skinparam backgroundColor #F8FAFC
+skinparam shadowing true
+skinparam roundcorner 18
+skinparam defaultFontName Arial
+skinparam ArrowThickness 2
+
+skinparam rectangle {
+    BorderColor #334155
+    FontColor #0F172A
+    FontStyle bold
+}
+
+skinparam component {
+    BorderColor #1E293B
+    FontColor #0F172A
+    BackgroundColor #E2E8F0
+}
+
+skinparam file {
+    BorderColor #475569
+    FontColor #0F172A
+    BackgroundColor #FFFFFF
+}
+
+skinparam actor {
+    BorderColor #2563EB
+    BackgroundColor #DBEAFE
+    FontColor #1E3A8A
+}
+
+actor Developer #DBEAFE
+
+rectangle "Specification Layer" as SpecLayer #E0F2FE {
+  file "Specs" as Specs #BAE6FD
+  file "Architecture Rules" as Rules #BFDBFE
+}
+
+rectangle "AI Generation Layer" as AILayer #FEF3C7 {
+  component "Coding Agent" as CodingAgent #FDE68A
+}
+
+rectangle "Validation Layer" as ValidationLayer #DCFCE7 {
+  component "Architecture Tests" as ArchTests #86EFAC
+  component "Dependency Rules" as DepRules #BBF7D0
+}
+
+rectangle "Implementation Layer" as ImplLayer #FCE7F3 {
+  file "Generated Codebase" as Codebase #F9A8D4
+}
+
+Developer --> Specs : Define
+Specs -[#0EA5E9]-> CodingAgent : Drive Generation
+Rules -[#22C55E]-> ArchTests : Enforce
+Specs -[#0EA5E9]-> Rules: Refer
+
+CodingAgent -[#F59E0B]-> Codebase : Generate Code
+CodingAgent -[#8B5CF6]-> ValidationLayer : Generate Arch Tests
+
+Codebase <-[#10B981]- ArchTests : Validate
+Codebase <-[#EF4444]- DepRules : Validate
+@enduml
+----
+
+In this model:
+
+* LLMs generate implementation
+* validation systems enforce architecture
+* specifications define intent
+* semantic markers improve consistency
+* feedback loops reduce drift
+
+
+
+== Key Insight
+
+The key lesson is:
+
+[quote]
+AI-generated systems still require strong architectural governance.
+
+Specifications alone are not enough.
+
+Borrowing ideas from technologies like ArchUnit and jMolecules can help transform architecture from passive documentation into active enforcement mechanisms.
+
+This becomes increasingly important as AI-generated codebases grow larger, faster, and more autonomous.
+
+== Conclusion
+
+LLMs significantly accelerate software development, but they also introduce new risks around architectural consistency and long-term maintainability.
+
+Spec-driven development must therefore evolve to include:
+
+* executable architectural constraints,
+* semantic modeling,
+* continuous validation,
+* and automated drift prevention.
+
+By combining:
+
+* AI-assisted generation,
+* specification-driven workflows,
+* and architecture enforcement concepts from tools like ArchUnit and jMolecules,
+
+teams can build systems that are not only generated faster, but also remain structurally healthy over time.
+
+The future of AI-native software engineering is not just code generation.
+
+It is architecture-aware generation.
