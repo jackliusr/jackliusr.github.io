@@ -168,6 +168,24 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2026/05/working-around-rocm-pytorch-replacement-issues-with-uv-and-comfyui/" class="link black dim">
+        Working Around ROCm PyTorch Replacement Issues with uv and ComfyUI
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Introduction When working with AMD GPUs and ROCm-based AI workloads, one common issue appears when using uv for Python dependency management.
+ The problem becomes especially visible when setting up projects like ComfyUI on Linux with ROCm-enabled PyTorch builds.
+ Although ROCm-specific wheels are manually installed, running commands such as uv add or dependency synchronization may silently replace ROCm-enabled packages with standard PyPI versions that only support CUDA.
+ This leads to broken GPU acceleration and unexpected runtime failures.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2026/05/reducing-architecture-drift-in-spec-driven-development-with-coding-agents-and-llms/" class="link black dim">
         Reducing Architecture Drift in Spec-Driven Development with coding agents and LLMs
       </a>
@@ -328,21 +346,6 @@ if (!doNotTrack) {
       Building with LLMs: How Spec-Kit Changed My Workflow Over the past three years, I’ve used LLMs—such as ChatGPT, Copilot, and Claude—primarily as assistants to generate code snippets for very specific requirements. They were useful, but always in a limited way: small pieces of logic, isolated helpers, or syntax scaffolding.
 What I didn’t do until recently was build an entire system around an LLM.
 The main reason was simple: most of my real work lives inside internal frameworks, legacy systems, and opinionated architectures.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2026/01/setup-vllm-on-macbook-m4/" class="link black dim">
-        setup vllm on macbook m4
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Introduction Several days ago, I setup ollama on my MacBook M4, and it works pretty well. At that time, I tried to use it with copilt with local models codegemma:7b and qwen3:8b. My expectation was not so high as the hardware configuration of my macbook pro m4 is just a entry level, just want to see how it works. I also learned there are other options such as vllm. After comparing the two, I found vllm is more flexible, powerful, product-ready, used widely in enterprises.
     </div>
   </div>
 </div>

@@ -6,7 +6,19 @@
     <description>Recent content in tech on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 May 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 May 2026 06:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Working Around ROCm PyTorch Replacement Issues with uv and ComfyUI</title>
+      <link>https://jackliusr.github.io/posts/2026/05/working-around-rocm-pytorch-replacement-issues-with-uv-and-comfyui/</link>
+      <pubDate>Mon, 18 May 2026 06:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/05/working-around-rocm-pytorch-replacement-issues-with-uv-and-comfyui/</guid>
+      <description>Introduction When working with AMD GPUs and ROCm-based AI workloads, one common issue appears when using uv for Python dependency management.
+ The problem becomes especially visible when setting up projects like ComfyUI on Linux with ROCm-enabled PyTorch builds.
+ Although ROCm-specific wheels are manually installed, running commands such as uv add or dependency synchronization may silently replace ROCm-enabled packages with standard PyPI versions that only support CUDA.
+ This leads to broken GPU acceleration and unexpected runtime failures.</description>
+    </item>
+    
     <item>
       <title>Reducing Architecture Drift in Spec-Driven Development with coding agents and LLMs</title>
       <link>https://jackliusr.github.io/posts/2026/05/reducing-architecture-drift-in-spec-driven-development-with-coding-agents-and-llms/</link>
