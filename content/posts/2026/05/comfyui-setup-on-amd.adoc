@@ -1,0 +1,180 @@
+
+---
+title: "Working Around ROCm PyTorch Replacement Issues with uv and ComfyUI"
+date: 2026-05-18T06:00:00+08:00
+categories:
+- tech
+tags:
+- PyTorch
+- ROCm
+- ComfyUI
+- uv
+---
+== Introduction
+
+When working with AMD GPUs and ROCm-based AI workloads, one common issue appears when using `uv` for Python dependency management.
+
+The problem becomes especially visible when setting up projects like ComfyUI on Linux with ROCm-enabled PyTorch builds.
+
+Although ROCm-specific wheels are manually installed, running commands such as `uv add` or dependency synchronization may silently replace ROCm-enabled packages with standard PyPI versions that only support CUDA.
+
+This leads to broken GPU acceleration and unexpected runtime failures.
+
+== The Problem
+
+After installing ROCm-enabled PyTorch packages:
+
+[source,bash]
+----
+torch==2.12.0+rocm7.2
+torchaudio==2.11.0+rocm7.2
+torchvision==0.27.0+rocm7.2
+----
+
+running `uv add` or certain dependency resolution operations may replace them with generic PyPI versions:
+
+[source,diff]
+----
+- torch==2.12.0+rocm7.2
++ torch==2.12.0
+
+- torchaudio==2.11.0+rocm7.2
++ torchaudio==2.11.0
+
+- torchvision==0.27.0+rocm7.2
++ torchvision==0.27.0
+----
+
+The generic builds do not include ROCm support.
+
+Instead, they are typically:
+
+* CPU-only builds
+* CUDA-oriented builds
+* Missing AMD GPU acceleration support entirely
+
+As a result:
+
+* ROCm acceleration stops working
+* ComfyUI may fail to detect GPUs
+* Inference performance degrades significantly
+* Certain kernels and operators become unavailable
+
+== Why This Happens
+
+`uv` resolves dependencies using standard Python package indexes unless explicitly instructed otherwise.
+
+ROCm wheels are hosted separately by the PyTorch project:
+
+[source]
+----
+https://download.pytorch.org/whl/rocm7.2
+----
+
+During dependency resolution:
+
+* `uv add`
+* `uv sync`
+* transitive dependency updates
+
+may pull packages from the default PyPI index instead of the ROCm index.
+
+Since the package names are identical (`torch`, `torchvision`, `torchaudio`), the resolver replaces ROCm-specific builds with standard builds.
+
+== Recommended Workaround
+
+A practical workaround is to:
+
+1. Perform standard dependency synchronization first
+2. Reinstall ROCm PyTorch packages afterward
+3. Install additional requirements only after ROCm wheels are restored
+
+Example workflow:
+
+[source,bash]
+----
+uv sync
+
+uv pip install torch torchvision torchaudio \
+  --index-url https://download.pytorch.org/whl/rocm7.2
+
+uv pip install -r requirements.txt
+
+uv pip install -r manager_requirements.txt
+----
+
+This ensures:
+
+* ROCm-enabled PyTorch packages remain installed
+* AMD GPU acceleration works correctly
+* Additional dependencies do not overwrite ROCm wheels
+
+== Verifying ROCm Installation
+
+After installation, verify that PyTorch detects ROCm correctly.
+
+[source,python]
+----
+import torch
+
+print(torch.__version__)
+print(torch.cuda.is_available())
+print(torch.version.hip)
+----
+
+Expected output should include:
+
+[source,text]
+----
+2.12.0+rocm7.2
+True
+7.2.x
+----
+
+If `torch.cuda.is_available()` returns `False`, ROCm support was likely overwritten.
+
+
+== Additional Recommendations
+
+=== Pin Exact Versions
+
+To reduce unexpected replacements, pin exact versions in dependency files:
+
+[source,text]
+----
+torch==2.12.0+rocm7.2
+torchvision==0.27.0+rocm7.2
+torchaudio==2.11.0+rocm7.2
+----
+
+=== Separate GPU Dependencies
+
+Consider separating GPU-specific dependencies into a dedicated installation script:
+
+[source,bash]
+----
+install-rocm.sh
+----
+
+This avoids accidental replacement during normal development workflows.
+
+=== Avoid Blind `uv add`
+
+Be cautious when adding packages after ROCm installation.
+
+A simple `uv add some-package` may trigger dependency re-resolution and replace ROCm wheels again.
+
+== Conclusion
+
+ROCm environments still require careful dependency management compared to CUDA ecosystems.
+
+Although `uv` provides fast and modern Python dependency management, its default dependency resolution behavior can unintentionally replace ROCm-enabled PyTorch builds with incompatible standard versions.
+
+For AMD GPU workflows involving ComfyUI, Stable Diffusion, or AI inference systems, a reliable installation sequence and explicit ROCm wheel installation remain essential.
+
+Until dependency tooling gains better GPU-aware package resolution, manually restoring ROCm wheels after synchronization is often the safest approach.
+
+
+== Reference:
+
+https://github.com/Comfy-Org/ComfyUI/tree/v0.21.1#manual-install-windows-linux
