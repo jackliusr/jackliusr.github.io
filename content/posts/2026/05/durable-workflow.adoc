@@ -1,0 +1,320 @@
+---
+title: "Fault-Oblivious Stateful Workflows: Durable Execution Matters More Than Orchestration"
+date: 2026-05-24T16:00:00+08:00
+categories:
+- tech
+tags:
+- Conductor
+- Control-m
+- Ariflow
+- Temporal
+- Cadence
+---
+
+== Introduction
+
+Last year, I spent some time studying Oracle Banking Microservices Architecture (OBMA), together with enterprise schedulers and orchestration platforms such as Control-M .
+
+Part of the work involved understanding how to convert traditional Control-M jobs into Airflow DAGs. During this process, I started to observe an important architectural distinction:
+
+Not all workflows are the same.
+
+While studying OBMA, I noticed that Netflix Conductor was used as the workflow engine inside the architecture. At that time, I viewed Conductor mainly as a microservice orchestration platform.
+
+Recently, after spending around two weeks studying Temporal and comparing it with Conductor and Cadence, I started to realize something much deeper:
+
+The workflow space is evolving from orchestration into durable computation.
+
+Two features stood out immediately:
+
+* Durable execution
+* Replay semantics
+
+These two capabilities fundamentally change how distributed systems are designed.
+
+== Traditional Workflow Thinking
+
+Traditionally, many organizations treat workflows as:
+
+* task orchestration
+* batch scheduling
+* DAG execution
+* job dependencies
+* service coordination
+
+Platforms like:
+
+* Control-M
+* Airflow
+* Oozie
+* Jenkins pipelines
+
+are excellent for scheduling and orchestration problems.
+
+For example:
+
+## [source]
+
+## Task A -> Task B -> Task C
+
+This model works well for:
+
+* ETL pipelines
+* reporting jobs
+* batch processing
+* periodic automation
+
+However, microservices and distributed systems introduce a completely different challenge:
+
+What happens when failures occur halfway through execution?
+
+== Distributed Systems Reality
+
+In distributed systems:
+
+* services crash
+* networks fail
+* containers restart
+* messages duplicate
+* APIs timeout
+* partial failures occur constantly
+
+Most orchestration systems push this complexity back to developers.
+
+Developers then need to manually implement:
+
+* retries
+* idempotency
+* compensation logic
+* checkpointing
+* state persistence
+* recovery handling
+
+This creates enormous accidental complexity.
+
+== Fault-Oblivious Stateful Workflows
+
+One concept I now find increasingly important is:
+
+*fault-oblivious stateful workflows*
+
+The idea is simple:
+
+The platform should handle failures automatically without forcing application developers to constantly think about failures.
+
+This is where workflow engines start to diverge significantly.
+
+== Conductor vs Temporal/Cadence
+
+=== Netflix Conductor
+
+Netflix Conductor is extremely useful for:
+
+* microservice orchestration
+* API coordination
+* event-driven business flows
+* distributed task management
+
+Conductor excels at coordinating independent services.
+
+However, the workflow execution model is still relatively orchestration-centric.
+
+Developers often still need to think carefully about:
+
+* retries
+* state consistency
+* idempotency
+* recovery logic
+
+The workflow itself is usually modeled externally through JSON/YAML-like definitions.
+
+== Cadence and Temporal
+
+Cadence and Temporal introduced a much stronger abstraction:
+
+*durable execution*
+
+This changes everything.
+
+Instead of treating workflows as task graphs, Temporal/Cadence treat workflows almost like durable programs.
+
+Core concepts include:
+
+* workflow state persistence
+* event sourcing history
+* deterministic replay
+* workflow-as-code
+* automatic recovery
+* long-running execution
+
+A workflow can run for:
+
+* minutes
+* days
+* months
+* even years
+
+while surviving:
+
+* machine crashes
+* container restarts
+* process failures
+* network interruptions
+
+without losing execution state.
+
+== Replay Is the Game Changer
+
+Replay semantics may be one of the most underrated innovations in workflow systems.
+
+Temporal/Cadence persist workflow history as events.
+
+When failures occur, the workflow runtime reconstructs state through deterministic replay.
+
+This allows developers to write workflows almost as if they were normal synchronous code.
+
+Example:
+
+## [source,java]
+
+public void transferMoney() {
+    debitAccount();
+    creditAccount();
+    sendNotification();
+}
+-
+
+Underneath the hood:
+
+* execution state is persisted
+* activities are tracked
+* failures are replayed
+* retries are coordinated automatically
+
+The runtime handles distributed-system complexity.
+
+This is fundamentally different from traditional orchestration engines.
+
+== Durable Execution Changes Developer Experience
+
+Without durable execution, developers constantly worry about:
+
+* "What if this step crashes?"
+* "What if the service restarts?"
+* "How do I resume execution?"
+* "What if retries duplicate actions?"
+* "Where should checkpoints be stored?"
+
+With Temporal/Cadence-style workflows, much of this becomes part of the runtime abstraction.
+
+This is why I think durable execution is one of the most important ideas in modern distributed systems.
+
+== Stateful vs Stateless Workflows
+
+Another major distinction is:
+
+=== Stateless Workflow
+
+Typical orchestration engines coordinate tasks externally.
+
+State often lives outside the workflow runtime.
+
+Example:
+
+* DAG schedulers
+* task queues
+* cron-based orchestration
+
+=== Stateful Workflow
+
+Workflow state becomes a first-class runtime concept.
+
+The workflow itself maintains durable state across failures and restarts.
+
+This enables:
+
+* long-running business transactions
+* saga orchestration
+* human approval flows
+* durable agents
+* resilient AI workflows
+
+== Workflow Engines Are Not All the Same
+
+Today, the term "workflow engine" is overloaded.
+
+Different systems optimize for different goals.
+
+[cols="1,1,1"]
+|===
+|Capability |Conductor |Temporal/Cadence
+
+|Microservice orchestration
+|Strong
+|Strong
+
+|Durable execution
+|Limited
+|Core feature
+
+|Replay semantics
+|Limited
+|Core feature
+
+|Workflow as code
+|Partial
+|Strong
+
+|Deterministic replay
+|No
+|Yes
+
+|Long-running stateful workflows
+|Moderate
+|Excellent
+
+|Fault-oblivious programming model
+|Limited
+|Strong
+|===
+
+This does not mean one platform is universally better.
+
+It means they solve different classes of problems.
+
+== Why This Matters for the Future
+
+As systems become increasingly:
+
+* event-driven
+* distributed
+* AI-agentic
+* long-running
+* stateful
+
+workflow durability becomes more important than simple orchestration.
+
+Future systems may increasingly rely on:
+
+* durable agents
+* persistent execution contexts
+* replayable workflows
+* fault-oblivious runtimes
+
+The workflow runtime may evolve into something closer to a distributed operating system for long-running computation.
+
+== Final Thoughts
+
+My earlier view of workflow engines was mostly centered around orchestration and scheduling.
+
+But after studying Temporal and comparing it with Conductor and Cadence, I now think the real innovation is not orchestration itself.
+
+The real innovation is:
+
+*durable, replayable, fault-oblivious stateful execution*
+
+Not all workflows are the same.
+
+And not all workflow engines solve the same problem.
+
+Understanding this distinction is increasingly important when designing modern distributed systems.
