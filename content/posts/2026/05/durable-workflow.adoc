@@ -175,14 +175,14 @@ This allows developers to write workflows almost as if they were normal synchron
 
 Example:
 
-## [source,java]
-
+[source,java]
+----
 public void transferMoney() {
     debitAccount();
     creditAccount();
     sendNotification();
 }
--
+----
 
 Underneath the hood:
 
