@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>Fault-Oblivious Stateful Workflows: Durable Execution Matters More Than Orchestration | My learning and diary</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="description"
+    content="Introduction Last year, I spent some time studying Oracle Banking Microservices Architecture (OBMA), together with enterprise schedulers and orchestration platforms such as Control-M .
+ Part of the work involved understanding how to convert traditional Control-M jobs into Airflow DAGs. During this process, I started to observe an important architectural distinction:
+ Not all workflows are the same.
+ While studying OBMA, I noticed that Netflix Conductor was used as the workflow engine inside the architecture.">
+  <meta name="generator" content="Hugo 0.99.1" />
+  
+  
+  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+  
+
+  
+<link rel="stylesheet" href="/ananke/css/main.min.abe0b1c07d5e33565b0f9b998a7b1b5228b709f36af363e2766bc8035f2237b7.css" >
+
+
+
+
+  
+  
+
+  
+
+  
+
+  <meta property="og:title" content="Fault-Oblivious Stateful Workflows: Durable Execution Matters More Than Orchestration" />
+<meta property="og:description" content="Introduction Last year, I spent some time studying Oracle Banking Microservices Architecture (OBMA), together with enterprise schedulers and orchestration platforms such as Control-M .
+ Part of the work involved understanding how to convert traditional Control-M jobs into Airflow DAGs. During this process, I started to observe an important architectural distinction:
+ Not all workflows are the same.
+ While studying OBMA, I noticed that Netflix Conductor was used as the workflow engine inside the architecture." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jackliusr.github.io/posts/2026/05/fault-oblivious-stateful-workflows-durable-execution-matters-more-than-orchestration/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2026-05-24T16:00:00+08:00" />
+<meta property="article:modified_time" content="2026-05-24T19:47:47+08:00" />
+
+<meta itemprop="name" content="Fault-Oblivious Stateful Workflows: Durable Execution Matters More Than Orchestration">
+<meta itemprop="description" content="Introduction Last year, I spent some time studying Oracle Banking Microservices Architecture (OBMA), together with enterprise schedulers and orchestration platforms such as Control-M .
+ Part of the work involved understanding how to convert traditional Control-M jobs into Airflow DAGs. During this process, I started to observe an important architectural distinction:
+ Not all workflows are the same.
+ While studying OBMA, I noticed that Netflix Conductor was used as the workflow engine inside the architecture."><meta itemprop="datePublished" content="2026-05-24T16:00:00+08:00" />
+<meta itemprop="dateModified" content="2026-05-24T19:47:47+08:00" />
+<meta itemprop="wordCount" content="851">
+<meta itemprop="keywords" content="Conductor,Control-m,Ariflow,Temporal,Cadence," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Fault-Oblivious Stateful Workflows: Durable Execution Matters More Than Orchestration"/>
+<meta name="twitter:description" content="Introduction Last year, I spent some time studying Oracle Banking Microservices Architecture (OBMA), together with enterprise schedulers and orchestration platforms such as Control-M .
+ Part of the work involved understanding how to convert traditional Control-M jobs into Airflow DAGs. During this process, I started to observe an important architectural distinction:
+ Not all workflows are the same.
+ While studying OBMA, I noticed that Netflix Conductor was used as the workflow engine inside the architecture."/>
+
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K49F8T19FK"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-K49F8T19FK', { 'anonymize_ip': false });
+}
+</script>
+
+  
+  
+
+
+
+
+
+
+</head>
+
+<body class="ma0 avenir bg-near-white production">
+
+  
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My learning and diary
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/notes/" title="Notes page">
+              Notes
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/portfolio/" title="Portfolio page">
+              Portfolio
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/readinglists/" title="Books page">
+              Books
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/categories/" title="Categories page">
+              Categories
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tags/" title="Tags page">
+              Tags
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+  <main class="pb7" role="main">
+    
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://jackliusr.github.io/posts/2026/05/fault-oblivious-stateful-workflows-durable-execution-matters-more-than-orchestration/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://jackliusr.github.io/posts/2026/05/fault-oblivious-stateful-workflows-durable-execution-matters-more-than-orchestration/&amp;text=Fault-Oblivious%20Stateful%20Workflows:%20Durable%20Execution%20Matters%20More%20Than%20Orchestration" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://jackliusr.github.io/posts/2026/05/fault-oblivious-stateful-workflows-durable-execution-matters-more-than-orchestration/&amp;title=Fault-Oblivious%20Stateful%20Workflows:%20Durable%20Execution%20Matters%20More%20Than%20Orchestration" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Fault-Oblivious Stateful Workflows: Durable Execution Matters More Than Orchestration</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2026-05-24T16:00:00+08:00">May 24, 2026</time>
+
+      
+      
+        <span class="f6 mv4 dib tracked"> - 4 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 851 words</span>
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a><a class="link" href="#_introduction">Introduction</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Last year, I spent some time studying Oracle Banking Microservices Architecture (OBMA), together with enterprise schedulers and orchestration platforms such as Control-M .</p>
+</div>
+<div class="paragraph">
+<p>Part of the work involved understanding how to convert traditional Control-M jobs into Airflow DAGs. During this process, I started to observe an important architectural distinction:</p>
+</div>
+<div class="paragraph">
+<p>Not all workflows are the same.</p>
+</div>
+<div class="paragraph">
+<p>While studying OBMA, I noticed that Netflix Conductor was used as the workflow engine inside the architecture. At that time, I viewed Conductor mainly as a microservice orchestration platform.</p>
+</div>
+<div class="paragraph">
+<p>Recently, after spending around two weeks studying Temporal and comparing it with Conductor and Cadence, I started to realize something much deeper:</p>
+</div>
+<div class="paragraph">
+<p>The workflow space is evolving from orchestration into durable computation.</p>
+</div>
+<div class="paragraph">
+<p>Two features stood out immediately:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Durable execution</p>
+</li>
+<li>
+<p>Replay semantics</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These two capabilities fundamentally change how distributed systems are designed.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_traditional_workflow_thinking"><a class="anchor" href="#_traditional_workflow_thinking"></a><a class="link" href="#_traditional_workflow_thinking">Traditional Workflow Thinking</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Traditionally, many organizations treat workflows as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>task orchestration</p>
+</li>
+<li>
+<p>batch scheduling</p>
+</li>
+<li>
+<p>DAG execution</p>
+</li>
+<li>
+<p>job dependencies</p>
+</li>
+<li>
+<p>service coordination</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Platforms like:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Control-M</p>
+</li>
+<li>
+<p>Airflow</p>
+</li>
+<li>
+<p>Oozie</p>
+</li>
+<li>
+<p>Jenkins pipelines</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>are excellent for scheduling and orchestration problems.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_source"><a class="anchor" href="#_source"></a><a class="link" href="#_source">[source]</a></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_task_a_task_b_task_c"><a class="anchor" href="#_task_a_task_b_task_c"></a><a class="link" href="#_task_a_task_b_task_c">Task A → Task B → Task C</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This model works well for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ETL pipelines</p>
+</li>
+<li>
+<p>reporting jobs</p>
+</li>
+<li>
+<p>batch processing</p>
+</li>
+<li>
+<p>periodic automation</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>However, microservices and distributed systems introduce a completely different challenge:</p>
+</div>
+<div class="paragraph">
+<p>What happens when failures occur halfway through execution?</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_distributed_systems_reality"><a class="anchor" href="#_distributed_systems_reality"></a><a class="link" href="#_distributed_systems_reality">Distributed Systems Reality</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In distributed systems:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>services crash</p>
+</li>
+<li>
+<p>networks fail</p>
+</li>
+<li>
+<p>containers restart</p>
+</li>
+<li>
+<p>messages duplicate</p>
+</li>
+<li>
+<p>APIs timeout</p>
+</li>
+<li>
+<p>partial failures occur constantly</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Most orchestration systems push this complexity back to developers.</p>
+</div>
+<div class="paragraph">
+<p>Developers then need to manually implement:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>retries</p>
+</li>
+<li>
+<p>idempotency</p>
+</li>
+<li>
+<p>compensation logic</p>
+</li>
+<li>
+<p>checkpointing</p>
+</li>
+<li>
+<p>state persistence</p>
+</li>
+<li>
+<p>recovery handling</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This creates enormous accidental complexity.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_fault_oblivious_stateful_workflows"><a class="anchor" href="#_fault_oblivious_stateful_workflows"></a><a class="link" href="#_fault_oblivious_stateful_workflows">Fault-Oblivious Stateful Workflows</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One concept I now find increasingly important is:</p>
+</div>
+<div class="paragraph">
+<p><strong>fault-oblivious stateful workflows</strong></p>
+</div>
+<div class="paragraph">
+<p>The idea is simple:</p>
+</div>
+<div class="paragraph">
+<p>The platform should handle failures automatically without forcing application developers to constantly think about failures.</p>
+</div>
+<div class="paragraph">
+<p>This is where workflow engines start to diverge significantly.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conductor_vs_temporalcadence"><a class="anchor" href="#_conductor_vs_temporalcadence"></a><a class="link" href="#_conductor_vs_temporalcadence">Conductor vs Temporal/Cadence</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_netflix_conductor"><a class="anchor" href="#_netflix_conductor"></a><a class="link" href="#_netflix_conductor">Netflix Conductor</a></h3>
+<div class="paragraph">
+<p>Netflix Conductor is extremely useful for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>microservice orchestration</p>
+</li>
+<li>
+<p>API coordination</p>
+</li>
+<li>
+<p>event-driven business flows</p>
+</li>
+<li>
+<p>distributed task management</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Conductor excels at coordinating independent services.</p>
+</div>
+<div class="paragraph">
+<p>However, the workflow execution model is still relatively orchestration-centric.</p>
+</div>
+<div class="paragraph">
+<p>Developers often still need to think carefully about:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>retries</p>
+</li>
+<li>
+<p>state consistency</p>
+</li>
+<li>
+<p>idempotency</p>
+</li>
+<li>
+<p>recovery logic</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The workflow itself is usually modeled externally through JSON/YAML-like definitions.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cadence_and_temporal"><a class="anchor" href="#_cadence_and_temporal"></a><a class="link" href="#_cadence_and_temporal">Cadence and Temporal</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cadence and Temporal introduced a much stronger abstraction:</p>
+</div>
+<div class="paragraph">
+<p><strong>durable execution</strong></p>
+</div>
+<div class="paragraph">
+<p>This changes everything.</p>
+</div>
+<div class="paragraph">
+<p>Instead of treating workflows as task graphs, Temporal/Cadence treat workflows almost like durable programs.</p>
+</div>
+<div class="paragraph">
+<p>Core concepts include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>workflow state persistence</p>
+</li>
+<li>
+<p>event sourcing history</p>
+</li>
+<li>
+<p>deterministic replay</p>
+</li>
+<li>
+<p>workflow-as-code</p>
+</li>
+<li>
+<p>automatic recovery</p>
+</li>
+<li>
+<p>long-running execution</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A workflow can run for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>minutes</p>
+</li>
+<li>
+<p>days</p>
+</li>
+<li>
+<p>months</p>
+</li>
+<li>
+<p>even years</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>while surviving:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>machine crashes</p>
+</li>
+<li>
+<p>container restarts</p>
+</li>
+<li>
+<p>process failures</p>
+</li>
+<li>
+<p>network interruptions</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>without losing execution state.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_replay_is_the_game_changer"><a class="anchor" href="#_replay_is_the_game_changer"></a><a class="link" href="#_replay_is_the_game_changer">Replay Is the Game Changer</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Replay semantics may be one of the most underrated innovations in workflow systems.</p>
+</div>
+<div class="paragraph">
+<p>Temporal/Cadence persist workflow history as events.</p>
+</div>
+<div class="paragraph">
+<p>When failures occur, the workflow runtime reconstructs state through deterministic replay.</p>
+</div>
+<div class="paragraph">
+<p>This allows developers to write workflows almost as if they were normal synchronous code.</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sourcejava"><a class="anchor" href="#_sourcejava"></a><a class="link" href="#_sourcejava">[source,java]</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>public void transferMoney() {
+    debitAccount();
+    creditAccount();
+    sendNotification();
+}
+-</p>
+</div>
+<div class="paragraph">
+<p>Underneath the hood:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>execution state is persisted</p>
+</li>
+<li>
+<p>activities are tracked</p>
+</li>
+<li>
+<p>failures are replayed</p>
+</li>
+<li>
+<p>retries are coordinated automatically</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The runtime handles distributed-system complexity.</p>
+</div>
+<div class="paragraph">
+<p>This is fundamentally different from traditional orchestration engines.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_durable_execution_changes_developer_experience"><a class="anchor" href="#_durable_execution_changes_developer_experience"></a><a class="link" href="#_durable_execution_changes_developer_experience">Durable Execution Changes Developer Experience</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Without durable execution, developers constantly worry about:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&#34;What if this step crashes?&#34;</p>
+</li>
+<li>
+<p>&#34;What if the service restarts?&#34;</p>
+</li>
+<li>
+<p>&#34;How do I resume execution?&#34;</p>
+</li>
+<li>
+<p>&#34;What if retries duplicate actions?&#34;</p>
+</li>
+<li>
+<p>&#34;Where should checkpoints be stored?&#34;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>With Temporal/Cadence-style workflows, much of this becomes part of the runtime abstraction.</p>
+</div>
+<div class="paragraph">
+<p>This is why I think durable execution is one of the most important ideas in modern distributed systems.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_stateful_vs_stateless_workflows"><a class="anchor" href="#_stateful_vs_stateless_workflows"></a><a class="link" href="#_stateful_vs_stateless_workflows">Stateful vs Stateless Workflows</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Another major distinction is:</p>
+</div>
+<div class="sect2">
+<h3 id="_stateless_workflow"><a class="anchor" href="#_stateless_workflow"></a><a class="link" href="#_stateless_workflow">Stateless Workflow</a></h3>
+<div class="paragraph">
+<p>Typical orchestration engines coordinate tasks externally.</p>
+</div>
+<div class="paragraph">
+<p>State often lives outside the workflow runtime.</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>DAG schedulers</p>
+</li>
+<li>
+<p>task queues</p>
+</li>
+<li>
+<p>cron-based orchestration</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_stateful_workflow"><a class="anchor" href="#_stateful_workflow"></a><a class="link" href="#_stateful_workflow">Stateful Workflow</a></h3>
+<div class="paragraph">
+<p>Workflow state becomes a first-class runtime concept.</p>
+</div>
+<div class="paragraph">
+<p>The workflow itself maintains durable state across failures and restarts.</p>
+</div>
+<div class="paragraph">
+<p>This enables:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>long-running business transactions</p>
+</li>
+<li>
+<p>saga orchestration</p>
+</li>
+<li>
+<p>human approval flows</p>
+</li>
+<li>
+<p>durable agents</p>
+</li>
+<li>
+<p>resilient AI workflows</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_workflow_engines_are_not_all_the_same"><a class="anchor" href="#_workflow_engines_are_not_all_the_same"></a><a class="link" href="#_workflow_engines_are_not_all_the_same">Workflow Engines Are Not All the Same</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Today, the term &#34;workflow engine&#34; is overloaded.</p>
+</div>
+<div class="paragraph">
+<p>Different systems optimize for different goals.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;"/>
+<col style="width: 33.3333%;"/>
+<col style="width: 33.3334%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Capability</th>
+<th class="tableblock halign-left valign-top">Conductor</th>
+<th class="tableblock halign-left valign-top">Temporal/Cadence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Microservice orchestration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Strong</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Strong</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Durable execution</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Limited</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Core feature</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Replay semantics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Limited</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Core feature</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Workflow as code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Partial</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Strong</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deterministic replay</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Long-running stateful workflows</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Moderate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Excellent</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fault-oblivious programming model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Limited</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Strong</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This does not mean one platform is universally better.</p>
+</div>
+<div class="paragraph">
+<p>It means they solve different classes of problems.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_this_matters_for_the_future"><a class="anchor" href="#_why_this_matters_for_the_future"></a><a class="link" href="#_why_this_matters_for_the_future">Why This Matters for the Future</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As systems become increasingly:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>event-driven</p>
+</li>
+<li>
+<p>distributed</p>
+</li>
+<li>
+<p>AI-agentic</p>
+</li>
+<li>
+<p>long-running</p>
+</li>
+<li>
+<p>stateful</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>workflow durability becomes more important than simple orchestration.</p>
+</div>
+<div class="paragraph">
+<p>Future systems may increasingly rely on:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>durable agents</p>
+</li>
+<li>
+<p>persistent execution contexts</p>
+</li>
+<li>
+<p>replayable workflows</p>
+</li>
+<li>
+<p>fault-oblivious runtimes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The workflow runtime may evolve into something closer to a distributed operating system for long-running computation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_final_thoughts"><a class="anchor" href="#_final_thoughts"></a><a class="link" href="#_final_thoughts">Final Thoughts</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>My earlier view of workflow engines was mostly centered around orchestration and scheduling.</p>
+</div>
+<div class="paragraph">
+<p>But after studying Temporal and comparing it with Conductor and Cadence, I now think the real innovation is not orchestration itself.</p>
+</div>
+<div class="paragraph">
+<p>The real innovation is:</p>
+</div>
+<div class="paragraph">
+<p><strong>durable, replayable, fault-oblivious stateful execution</strong></p>
+</div>
+<div class="paragraph">
+<p>Not all workflows are the same.</p>
+</div>
+<div class="paragraph">
+<p>And not all workflow engines solve the same problem.</p>
+</div>
+<div class="paragraph">
+<p>Understanding this distinction is increasingly important when designing modern distributed systems.</p>
+</div>
+</div>
+</div>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/conductor" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Conductor</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/control-m" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Control-m</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/ariflow" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Ariflow</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/temporal" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Temporal</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/cadence" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Cadence</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jackliusr-gh" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+  </main>
+  <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jackliusr.github.io" >
+    &copy;  My learning and diary 2026 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+<script>
+ MathJax = {
+     tex: {
+         inlineMath: [['$', '$'], ['\\(', '\\)']]
+     }
+ };
+ </script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<link href="/css/prism.css" rel="stylesheet" />
+<script src="/js/prism.js"></script>
+
+
+
+
+  
+  <p style="font-size: small; color: grey;">Page version: c5fefd8f8644b72f2cc6c42df03e28b2cca3e011 2026-05-24</p>
+</body>
+
+</html>

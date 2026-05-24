@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cadence on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/cadence/</link>
+    <description>Recent content in Cadence on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 May 2026 16:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/cadence/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fault-Oblivious Stateful Workflows: Durable Execution Matters More Than Orchestration</title>
+      <link>https://jackliusr.github.io/posts/2026/05/fault-oblivious-stateful-workflows-durable-execution-matters-more-than-orchestration/</link>
+      <pubDate>Sun, 24 May 2026 16:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/05/fault-oblivious-stateful-workflows-durable-execution-matters-more-than-orchestration/</guid>
+      <description>Introduction Last year, I spent some time studying Oracle Banking Microservices Architecture (OBMA), together with enterprise schedulers and orchestration platforms such as Control-M .
+ Part of the work involved understanding how to convert traditional Control-M jobs into Airflow DAGs. During this process, I started to observe an important architectural distinction:
+ Not all workflows are the same.
+ While studying OBMA, I noticed that Netflix Conductor was used as the workflow engine inside the architecture.</description>
+    </item>
+    
+  </channel>
+</rss>

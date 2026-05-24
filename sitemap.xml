@@ -2,22 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2026-05-18T06:39:29+08:00</lastmod>
+    <loc>https://jackliusr.github.io/tags/ariflow/</loc>
+    <lastmod>2026-05-24T19:47:47+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/tags/comfyui/</loc>
-    <lastmod>2026-05-18T06:39:29+08:00</lastmod>
+    <loc>https://jackliusr.github.io/tags/cadence/</loc>
+    <lastmod>2026-05-24T19:47:47+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/categories/</loc>
+    <lastmod>2026-05-24T19:47:47+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/conductor/</loc>
+    <lastmod>2026-05-24T19:47:47+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/control-m/</loc>
+    <lastmod>2026-05-24T19:47:47+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2026/05/fault-oblivious-stateful-workflows-durable-execution-matters-more-than-orchestration/</loc>
+    <lastmod>2026-05-24T19:47:47+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2026-05-18T06:39:29+08:00</lastmod>
+    <lastmod>2026-05-24T19:47:47+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/</loc>
+    <lastmod>2026-05-24T19:47:47+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/</loc>
+    <lastmod>2026-05-24T19:47:47+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/categories/tech/</loc>
+    <lastmod>2026-05-24T19:47:47+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/temporal/</loc>
+    <lastmod>2026-05-24T19:47:47+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/comfyui/</loc>
     <lastmod>2026-05-18T06:39:29+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -28,16 +68,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/rocm/</loc>
-    <lastmod>2026-05-18T06:39:29+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2026-05-18T06:39:29+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/categories/tech/</loc>
     <lastmod>2026-05-18T06:39:29+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
