@@ -1,0 +1,120 @@
+---
+title: "Running Qwen3.6 MTP GGUF on AMD AI MAX 395 with llama.cpp ROCm"
+date: 2026-06-01T16:00:00+08:00
+categories:
+- tech
+tags:
+- llama
+- huggingface
+- Qwen
+---
+
+== Background
+
+MTP support was recently merged into llama.cpp through the following pull request:
+
+https://github.com/ggml-org/llama.cpp/pull/22673[MTP support merged into llama.cpp]
+
+After the merge, I wanted to test MTP models on my mini-PC powered by the AMD AI MAX 395. I tried several approaches, including manually building llama.cpp and using Unsloth GGUF models directly. However, despite multiple attempts, I could not get a stable working setup.
+
+I also searched through GitHub issues and asked several AI assistants, including ChatGPT, Gemini, and DeepSeek. Unfortunately, none of the suggested solutions worked reliably in my environment.
+
+As a last resort, I tried Claude. Claude recommended using the pre-built ROCm binaries from lemonade-sdk/llamacpp-rocm instead of continuing to debug the manual build process. That recommendation worked.
+
+This post documents my setup and the token generation speed I observed when running:
+
+Qwen3.6-35B-A3B-MTP-GGUF:UD-Q4_K_XL
+
+on AMD AI MAX 395.
+
+== Environment
+
+Hardware:
+
+Mini-PC with AMD AI MAX 395
+
+Software:
+
+Ubuntu with ROCm support
+Pre-built llama.cpp ROCm binary for gfx1151
+GGUF models from Unsloth
+Hugging Face CLI
+
+== Setup
+
+The following commands download and install the pre-built llama.cpp ROCm binary from lemonade-sdk/llamacpp-rocm.
+
+[source,bash]
+----
+cd /tmp
+
+wget https://github.com/lemonade-sdk/llamacpp-rocm/releases/download/b1282/llama-b1282-ubuntu-rocm-gfx1151-x64.zip
+
+mkdir llama
+mv llama-b1282-ubuntu-rocm-gfx1151-x64.zip llama
+
+cd llama
+unzip llama-b1282-ubuntu-rocm-gfx1151-x64.zip
+rm llama-b1282-ubuntu-rocm-gfx1151-x64.zip
+cd ..
+mv llama ~/.local/bin
+
+hf download unsloth/Qwen3.6-35B-A3B-MTP-GGUF Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf
+
+----
+
+
+[source,bash]
+
+== Running the Models
+
+I tested several models, all quantized with UD-Q4_K_XL.
+
+* unsloth/Qwen3.5-27B-GGUF
+* unsloth/Qwen3.5-4B-GGUF 
+* unsloth/Qwen3.5-9B-GGUF 
+* unsloth/Qwen3.5-9B-MTP-GGUF 
+* unsloth/Qwen3.6-27B-GGUF 
+* unsloth/Qwen3.6-27B-MTP-GGUF 
+* unsloth/Qwen3.6-35B-A3B-MTP-GGUF 
+
+[source, bash]
+----
+# command to serve mtp models
+llama-server  -hf unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q4_K_XL    \
+        -ngl 99 -c 131072 -fa on -np 1     \
+        --spec-type draft-mtp --spec-draft-n-max 2
+----
+
+== Test Prompt
+
+For consistency, I used the same prompt "mindmap of dspy in mermaid format" across the tested models:
+
+
+Among the models tested, Qwen3.6-35B-A3B-MTP-GGUF produced the best result. The 4B model entered an infinite loop during testing and was not usable for this prompt.
+
+== Performance Result
+
+Below is the token generation speed observed when using Qwen3.6-35B-A3B-MTP-GGUF:UD-Q4_K_XL.
+
+[source,text]
+
+The generation speed was generally around 60–66 tokens per second, which is quite impressive for this setup.
+
+== Notes
+
+A few observations from this experiment:
+
+Manually building llama.cpp for AMD AI MAX 395 was not straightforward in my environment.
+The pre-built lemonade-sdk/llamacpp-rocm binary worked immediately.
+Qwen3.6-35B-A3B-MTP-GGUF:UD-Q4_K_XL gave the best result among the models I tested.
+The 4B model did not behave correctly for my test prompt and entered an infinite loop.
+MTP with --spec-type draft-mtp and --spec-draft-n-max 2 worked successfully with the 35B MTP model.
+
+== Conclusion
+
+After several unsuccessful attempts with manual builds and different setup methods, the most reliable solution was to use the pre-built ROCm-enabled llama.cpp binary from lemonade-sdk/llamacpp-rocm.
+
+For AMD AI MAX 395 users who want to test MTP models with llama.cpp, this may be the fastest way to get started.
+
+In my test, Qwen3.6-35B-A3B-MTP-GGUF:UD-Q4_K_XL achieved around 60–66 tokens per second, making it a strong option for local inference experiments on this hardware.
