@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>huggingface on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/huggingface/</link>
+    <description>Recent content in huggingface on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jun 2026 16:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/huggingface/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Running Qwen3.6 MTP GGUF on AMD AI MAX 395 with llama.cpp ROCm</title>
+      <link>https://jackliusr.github.io/posts/2026/06/running-qwen3.6-mtp-gguf-on-amd-ai-max-395-with-llama.cpp-rocm/</link>
+      <pubDate>Mon, 01 Jun 2026 16:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/06/running-qwen3.6-mtp-gguf-on-amd-ai-max-395-with-llama.cpp-rocm/</guid>
+      <description>Background MTP support was recently merged into llama.cpp through the following pull request:
+ MTP support merged into llama.cpp
+ After the merge, I wanted to test MTP models on my mini-PC powered by the AMD AI MAX 395. I tried several approaches, including manually building llama.cpp and using Unsloth GGUF models directly. However, despite multiple attempts, I could not get a stable working setup.
+ I also searched through GitHub issues and asked several AI assistants, including ChatGPT, Gemini, and DeepSeek.</description>
+    </item>
+    
+  </channel>
+</rss>

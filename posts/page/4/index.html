@@ -168,6 +168,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2024/06/msbuild-custom-task-and-runtime-reflection/" class="link black dim">
+        msbuild custom task and runtime reflection
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Most information about custom task of msbuild are quite basic, it will get complicated when it is involved reflection. I tried several ways according searching results and answers from chatgpt: reflection, assemblyLoadContext and mono cecil. The most promising one is mono.cecil.
+ I tried directly loading assemblies and via AssemblyLoadContext. They all failed to load some microsoft assemblies. It looks awkward even I can change my build scripts to copy those assemblies.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2024/06/cicd/" class="link black dim">
         CICD
       </a>
@@ -307,22 +323,6 @@ if (!doNotTrack) {
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       I used mindmap in my logseq, however it show left to right side, the start node is always at the left side. I prefer to have the main concept shown in the center. Jsmind is the perfect fit after I saw its demos. Here is I create a shortcode in my hugo and try to create a demo mindmap using jsmind.
    "\n{\n \"meta\":{\n \"name\":\"jsMind remote\",\n \"author\":\"hizzgdev@163.com\",\n \"version\":\"0.2\"\n },\n \"
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2024/04/run-athena-and-pyspark-locally/" class="link black dim">
-        Run athena and pyspark locally
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Best practice or &#34;aws configure&#34; will put ~/.aws/config and ~/.aws/credentials in the 600 mode. however if you follow Developing using a Docker image, you will get several errors e.g. cant&#39; find region, reach endpoints, or no access to resources.
- I run docker command as a normal user, docker daemon run as root user. The below scripts will run a docker image which default user is glue_user (10000). the mounted volume ~/.
     </div>
   </div>
 </div>
