@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DSPy on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/dspy/</link>
+    <description>Recent content in DSPy on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Jun 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/dspy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>one GEPA report of DSPy</title>
+      <link>https://jackliusr.github.io/posts/2026/06/one-gepa-report-of-dspy/</link>
+      <pubDate>Tue, 02 Jun 2026 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/06/one-gepa-report-of-dspy/</guid>
+      <description>What is GEPA? GEPA stands for Graph-based Evolutionary Program Adaptation — a DSPy optimizer that automatically improves the prompts/instructions of a multi-module LLM program through evolutionary search. It iteratively mutates module instructions, evaluates the changes, and keeps the best-performing candidates on a Pareto front.
+   What’s Happening in This Run This file captures a GEPA optimization run on a financial news extraction system that classifies M&amp;amp;A (merger/acquisition) articles and extracts structured data from them.</description>
+    </item>
+    
+  </channel>
+</rss>

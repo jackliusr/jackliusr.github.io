@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>one GEPA report of DSPy | My learning and diary</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="description"
+    content="What is GEPA? GEPA stands for Graph-based Evolutionary Program Adaptation — a DSPy optimizer that automatically improves the prompts/instructions of a multi-module LLM program through evolutionary search. It iteratively mutates module instructions, evaluates the changes, and keeps the best-performing candidates on a Pareto front.
+   What’s Happening in This Run This file captures a GEPA optimization run on a financial news extraction system that classifies M&amp;A (merger/acquisition) articles and extracts structured data from them.">
+  <meta name="generator" content="Hugo 0.99.1" />
+  
+  
+  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+  
+
+  
+<link rel="stylesheet" href="/ananke/css/main.min.abe0b1c07d5e33565b0f9b998a7b1b5228b709f36af363e2766bc8035f2237b7.css" >
+
+
+
+
+  
+  
+
+  
+
+  
+
+  <meta property="og:title" content="one GEPA report of DSPy" />
+<meta property="og:description" content="What is GEPA? GEPA stands for Graph-based Evolutionary Program Adaptation — a DSPy optimizer that automatically improves the prompts/instructions of a multi-module LLM program through evolutionary search. It iteratively mutates module instructions, evaluates the changes, and keeps the best-performing candidates on a Pareto front.
+   What’s Happening in This Run This file captures a GEPA optimization run on a financial news extraction system that classifies M&amp;A (merger/acquisition) articles and extracts structured data from them." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jackliusr.github.io/posts/2026/06/one-gepa-report-of-dspy/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2026-06-02T20:00:00+08:00" />
+<meta property="article:modified_time" content="2026-06-02T20:21:40+08:00" />
+
+<meta itemprop="name" content="one GEPA report of DSPy">
+<meta itemprop="description" content="What is GEPA? GEPA stands for Graph-based Evolutionary Program Adaptation — a DSPy optimizer that automatically improves the prompts/instructions of a multi-module LLM program through evolutionary search. It iteratively mutates module instructions, evaluates the changes, and keeps the best-performing candidates on a Pareto front.
+   What’s Happening in This Run This file captures a GEPA optimization run on a financial news extraction system that classifies M&amp;A (merger/acquisition) articles and extracts structured data from them."><meta itemprop="datePublished" content="2026-06-02T20:00:00+08:00" />
+<meta itemprop="dateModified" content="2026-06-02T20:21:40+08:00" />
+<meta itemprop="wordCount" content="576">
+<meta itemprop="keywords" content="DSPy,GEPA,DeepSeek," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="one GEPA report of DSPy"/>
+<meta name="twitter:description" content="What is GEPA? GEPA stands for Graph-based Evolutionary Program Adaptation — a DSPy optimizer that automatically improves the prompts/instructions of a multi-module LLM program through evolutionary search. It iteratively mutates module instructions, evaluates the changes, and keeps the best-performing candidates on a Pareto front.
+   What’s Happening in This Run This file captures a GEPA optimization run on a financial news extraction system that classifies M&amp;A (merger/acquisition) articles and extracts structured data from them."/>
+
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K49F8T19FK"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-K49F8T19FK', { 'anonymize_ip': false });
+}
+</script>
+
+  
+  
+
+
+
+
+
+
+</head>
+
+<body class="ma0 avenir bg-near-white production">
+
+  
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My learning and diary
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/notes/" title="Notes page">
+              Notes
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/portfolio/" title="Portfolio page">
+              Portfolio
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/readinglists/" title="Books page">
+              Books
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/categories/" title="Categories page">
+              Categories
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tags/" title="Tags page">
+              Tags
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+  <main class="pb7" role="main">
+    
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://jackliusr.github.io/posts/2026/06/one-gepa-report-of-dspy/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://jackliusr.github.io/posts/2026/06/one-gepa-report-of-dspy/&amp;text=one%20GEPA%20report%20of%20DSPy" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://jackliusr.github.io/posts/2026/06/one-gepa-report-of-dspy/&amp;title=one%20GEPA%20report%20of%20DSPy" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">one GEPA report of DSPy</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2026-06-02T20:00:00+08:00">June 2, 2026</time>
+
+      
+      
+        <span class="f6 mv4 dib tracked"> - 3 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 576 words</span>
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="sect1">
+<h2 id="_what_is_gepa"><a class="anchor" href="#_what_is_gepa"></a><a class="link" href="#_what_is_gepa">What is GEPA?</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>GEPA</strong> stands for <strong>Graph-based Evolutionary Program Adaptation</strong> — a DSPy optimizer that automatically improves the prompts/instructions of a multi-module LLM program through evolutionary search. It iteratively mutates module instructions, evaluates the changes, and keeps the best-performing candidates on a <strong>Pareto front</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_whats_happening_in_this_run"><a class="anchor" href="#_whats_happening_in_this_run"></a><a class="link" href="#_whats_happening_in_this_run">What’s Happening in This Run</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This file captures a GEPA optimization run on a <strong>financial news extraction system</strong> that classifies M&amp;A (merger/acquisition) articles and extracts structured data from them.</p>
+</div>
+<div class="sect2">
+<h3 id="_the_program_being_optimized"><a class="anchor" href="#_the_program_being_optimized"></a><a class="link" href="#_the_program_being_optimized">The Program Being Optimized</a></h3>
+<div class="paragraph">
+<p>The system (defined in gepa_optimize.py and extract.py) has two main modules:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong><code>classifier</code></strong> — Determines if an article is a <strong>merger</strong>, <strong>acquisition</strong>, or <strong>Other</strong> (rumored/potential/non-deal)</p>
+</li>
+<li>
+<p><strong><code>merger_extractor</code></strong> / <strong><code>acquisition_extractor</code></strong> — Extracts structured fields like company names, tickers, deal amounts, and currencies</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_key_configuration"><a class="anchor" href="#_key_configuration"></a><a class="link" href="#_key_configuration">Key Configuration</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;"/>
+<col style="width: 50%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Task LM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>deepseek/deepseek-v4-flash</code> (generates extractions)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reflection LM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>deepseek/deepseek-v4-pro</code> (generates improved instructions)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optimizer mode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>auto=&#34;light&#34;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Threads</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Training set</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14 articles (IDs: 2,5,6,1,7,4,10,9,11,3,12,13,8,14)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validation set</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10 articles (IDs: 33,29,24,34,30,25,35,31,26,36)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_the_optimization_loop"><a class="anchor" href="#_the_optimization_loop"></a><a class="link" href="#_the_optimization_loop">The Optimization Loop</a></h3>
+<div class="paragraph">
+<p>Each <strong>iteration</strong> follows this cycle:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Select</strong> — Pick the best program from the Pareto front (the set of non-dominated candidates)</p>
+</li>
+<li>
+<p><strong>Sample</strong> — Evaluate on a small <strong>3-example</strong> subsample of the validation set</p>
+</li>
+<li>
+<p><strong>Reflect</strong> — Use the <code>reflection_lm</code> (DeepSeek V4 Pro) to analyze errors and propose <strong>improved instructions</strong> for underperforming modules</p>
+</li>
+<li>
+<p><strong>Propose</strong> — Generate a new candidate program with updated prompts</p>
+</li>
+<li>
+<p><strong>Validate</strong> — If the subsample score improves, run a <strong>full 10-example validation</strong> and add to the Pareto front</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_progress_highlights_from_the_log"><a class="anchor" href="#_progress_highlights_from_the_log"></a><a class="link" href="#_progress_highlights_from_the_log">Progress Highlights from the Log</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;"/>
+<col style="width: 16.6666%;"/>
+<col style="width: 16.6666%;"/>
+<col style="width: 16.6666%;"/>
+<col style="width: 16.6666%;"/>
+<col style="width: 16.667%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Iteration</th>
+<th class="tableblock halign-left valign-top">Module Updated</th>
+<th class="tableblock halign-left valign-top">Subsample Score</th>
+<th class="tableblock halign-left valign-top">Full Val Score</th>
+<th class="tableblock halign-left valign-top">Pareto Score</th>
+<th class="tableblock halign-left valign-top">Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 (base)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">84.3%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">84.3%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Starting baseline</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>classifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">81.0%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No improvement, skipped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>merger_extractor</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">82.7% → <strong>91.1%</strong> ✅</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">81.8%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">84.3%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Added to candidate pool (#1)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>acquisition_extractor</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">95.2% → <strong>100%</strong> ✅</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">82.9%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">84.3%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Added to pool (#2)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>classifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">61.9%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Regressed, skipped</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reflection failed (&#34;No valid predictions&#34;)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>acquisition_extractor</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">78.0%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No improvement</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>classifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">85.7%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No improvement</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100% on subsample</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skipped (perfect subsample)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>merger_extractor</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">61.9%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No improvement</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>10</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>acquisition_extractor</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">81.0% → <strong>100%</strong> ✅</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>88.6%</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>88.6%</strong> 🏆</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>New best!</strong> Added to pool (#3)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>classifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">90.5%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No improvement</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12+</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>continuing…​</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">—</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Still running</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_the_pareto_front_mechanism"><a class="anchor" href="#_the_pareto_front_mechanism"></a><a class="link" href="#_the_pareto_front_mechanism">The Pareto Front Mechanism</a></h3>
+<div class="paragraph">
+<p>GEPA maintains a <strong>Pareto front</strong>: a set of program candidates where no single candidate outperforms another on all 10 validation examples simultaneously. By iteration 10, the Pareto front had expanded to 4 candidates (indices 0–3), and program #3 became the new best with <strong>88.6% aggregate score</strong> — up from the baseline of <strong>84.3%</strong>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_notable_patterns"><a class="anchor" href="#_notable_patterns"></a><a class="link" href="#_notable_patterns">Notable Patterns</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><code>Failed to use structured output format, falling back to JSON mode.</code></strong> — This warning appears frequently because the BAMLAdapter couldn’t enforce structured output for the given LM, so it falls back to parsing JSON from free-form text.</p>
+</li>
+<li>
+<p><strong>Prompt evolution</strong> — You can see the instructions getting progressively more detailed and precise across iterations (e.g., the <code>acquisition_extractor</code> prompt goes from a few lines to multi-paragraph instructions with examples by iteration 10).</p>
+</li>
+<li>
+<p><strong>&#34;No valid predictions found&#34;</strong> at iteration 5 — The reflection LM couldn’t generate useful error feedback, so no mutation was proposed.</p>
+</li>
+<li>
+<p>The optimization was budgeted for <strong>1,195 metric calls</strong> (≈50 full evals) but only ~10% complete when this log was captured.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bottom_line"><a class="anchor" href="#_bottom_line"></a><a class="link" href="#_bottom_line">Bottom Line</a></h3>
+<div class="paragraph">
+<p>GEPA successfully improved the extraction system from <strong>84.3% → 88.6%</strong> accuracy on the validation set by evolving the prompt instructions for the <code>acquisition_extractor</code> module, with the best update found at iteration 10. The optimization was still running when the log ended.</p>
+</div>
+</div>
+</div>
+</div>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/dspy" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">DSPy</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/gepa" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">GEPA</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/deepseek" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">DeepSeek</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jackliusr-gh" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+  </main>
+  <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jackliusr.github.io" >
+    &copy;  My learning and diary 2026 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+<script>
+ MathJax = {
+     tex: {
+         inlineMath: [['$', '$'], ['\\(', '\\)']]
+     }
+ };
+ </script>
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<link href="/css/prism.css" rel="stylesheet" />
+<script src="/js/prism.js"></script>
+
+
+
+
+  
+  <p style="font-size: small; color: grey;">Page version: d6dec95d72192c360b5875b56d3b0f8396f6d9e3 2026-06-02</p>
+</body>
+
+</html>
