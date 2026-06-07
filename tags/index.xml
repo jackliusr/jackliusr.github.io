@@ -6,7 +6,34 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Jun 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Jun 2026 12:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PKM</title>
+      <link>https://jackliusr.github.io/tags/pkm/</link>
+      <pubDate>Sun, 07 Jun 2026 12:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/pkm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Second Brain</title>
+      <link>https://jackliusr.github.io/tags/second-brain/</link>
+      <pubDate>Sun, 07 Jun 2026 12:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/second-brain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spaced-repetition</title>
+      <link>https://jackliusr.github.io/tags/spaced-repetition/</link>
+      <pubDate>Sun, 07 Jun 2026 12:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/spaced-repetition/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>DeepSeek</title>
       <link>https://jackliusr.github.io/tags/deepseek/</link>
@@ -989,15 +1016,6 @@
     </item>
     
     <item>
-      <title>spaced-repetition</title>
-      <link>https://jackliusr.github.io/tags/spaced-repetition/</link>
-      <pubDate>Sun, 12 May 2024 20:10:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/spaced-repetition/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>aws</title>
       <link>https://jackliusr.github.io/tags/aws/</link>
       <pubDate>Wed, 01 May 2024 20:10:00 +0800</pubDate>
@@ -1840,15 +1858,6 @@
       <pubDate>Tue, 23 May 2023 20:01:10 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/logseq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PKM</title>
-      <link>https://jackliusr.github.io/tags/pkm/</link>
-      <pubDate>Tue, 23 May 2023 20:01:10 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/pkm/</guid>
       <description></description>
     </item>
     

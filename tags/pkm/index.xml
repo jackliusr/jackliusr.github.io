@@ -6,7 +6,19 @@
     <description>Recent content in PKM on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 May 2023 20:01:10 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/pkm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Jun 2026 12:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/pkm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I Keep Learning Without Forgetting Everything</title>
+      <link>https://jackliusr.github.io/posts/2026/06/how-i-keep-learning-without-forgetting-everything/</link>
+      <pubDate>Sun, 07 Jun 2026 12:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/06/how-i-keep-learning-without-forgetting-everything/</guid>
+      <description>Sometimes people look at my profile and wonder: “How can you keep learning so many things? What is your secret?”
+ The truth is, there is no magic. My approach is simple: I write things down, practise important skills repeatedly, and choose technologies carefully after real hands-on exploration.
+   1. I Write Down What I Learn Whenever I learn something useful, I try to capture it.
+ Sometimes I write it as a blog post.</description>
+    </item>
+    
     <item>
       <title>My choice of personal knowledge management (PKM): logseq</title>
       <link>https://jackliusr.github.io/posts/2023/05/my-choice-of-personal-knowledge-management-pkm-logseq/</link>
