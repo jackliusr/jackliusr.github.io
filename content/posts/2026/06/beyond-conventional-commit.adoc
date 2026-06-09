@@ -107,7 +107,7 @@ This does not mean Conventional Commits are obsolete. On the contrary, they rema
 
 A future-oriented workflow might look like this:
 
-image::images/SmartNote-pipeline.png[SmartNote Pipeline]
+image::/images/SmartNote-pipeline.png[SmartNote Pipeline]
 
 In this model, Conventional Commits are not the final output — they become one important input to a smarter, LLM-driven release-note generation process.
 
