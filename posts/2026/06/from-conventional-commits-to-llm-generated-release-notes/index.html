@@ -8,10 +8,9 @@
   <title>From Conventional Commits to LLM-Generated Release Notes | My learning and diary</title>
   <meta name="viewport" content="width=device-width,minimum-scale=1">
   <meta name="description"
-    content="Introduction For several years, I used Conventional Commits in my software projects.
- The idea was simple and practical: write commit messages in a structured format, then use tools to generate changelogs and release notes automatically.
+    content="Introduction For several years, I adopted Conventional Commits across my software projects. The premise was straightforward: write commit messages in a structured, machine-readable format, then leverage tooling to generate changelogs and release notes automatically.
  For example:
- feat: add user login fix: resolve payment retry issue docs: update API usage guide   This worked well. Tools such as Conventional Changelog could read these commit messages and generate release notes based on the commit history.">
+ feat: add user login fix: resolve payment retry issue docs: update API usage guide   This approach served me well. Tools like Conventional Changelog could parse commit history and produce structured release notes with minimal manual effort.">
   <meta name="generator" content="Hugo 0.99.1" />
   
   
@@ -32,28 +31,25 @@
   
 
   <meta property="og:title" content="From Conventional Commits to LLM-Generated Release Notes" />
-<meta property="og:description" content="Introduction For several years, I used Conventional Commits in my software projects.
- The idea was simple and practical: write commit messages in a structured format, then use tools to generate changelogs and release notes automatically.
+<meta property="og:description" content="Introduction For several years, I adopted Conventional Commits across my software projects. The premise was straightforward: write commit messages in a structured, machine-readable format, then leverage tooling to generate changelogs and release notes automatically.
  For example:
- feat: add user login fix: resolve payment retry issue docs: update API usage guide   This worked well. Tools such as Conventional Changelog could read these commit messages and generate release notes based on the commit history." />
+ feat: add user login fix: resolve payment retry issue docs: update API usage guide   This approach served me well. Tools like Conventional Changelog could parse commit history and produce structured release notes with minimal manual effort." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2026/06/from-conventional-commits-to-llm-generated-release-notes/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2026-06-09T10:00:00+08:00" />
-<meta property="article:modified_time" content="2026-06-09T11:23:44+08:00" />
+<meta property="article:modified_time" content="2026-06-09T11:56:23+08:00" />
 
 <meta itemprop="name" content="From Conventional Commits to LLM-Generated Release Notes">
-<meta itemprop="description" content="Introduction For several years, I used Conventional Commits in my software projects.
- The idea was simple and practical: write commit messages in a structured format, then use tools to generate changelogs and release notes automatically.
+<meta itemprop="description" content="Introduction For several years, I adopted Conventional Commits across my software projects. The premise was straightforward: write commit messages in a structured, machine-readable format, then leverage tooling to generate changelogs and release notes automatically.
  For example:
- feat: add user login fix: resolve payment retry issue docs: update API usage guide   This worked well. Tools such as Conventional Changelog could read these commit messages and generate release notes based on the commit history."><meta itemprop="datePublished" content="2026-06-09T10:00:00+08:00" />
-<meta itemprop="dateModified" content="2026-06-09T11:23:44+08:00" />
-<meta itemprop="wordCount" content="972">
+ feat: add user login fix: resolve payment retry issue docs: update API usage guide   This approach served me well. Tools like Conventional Changelog could parse commit history and produce structured release notes with minimal manual effort."><meta itemprop="datePublished" content="2026-06-09T10:00:00+08:00" />
+<meta itemprop="dateModified" content="2026-06-09T11:56:23+08:00" />
+<meta itemprop="wordCount" content="951">
 <meta itemprop="keywords" content="Conventional Commits,LLM,Conventional Changelog,SmartNote," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="From Conventional Commits to LLM-Generated Release Notes"/>
-<meta name="twitter:description" content="Introduction For several years, I used Conventional Commits in my software projects.
- The idea was simple and practical: write commit messages in a structured format, then use tools to generate changelogs and release notes automatically.
+<meta name="twitter:description" content="Introduction For several years, I adopted Conventional Commits across my software projects. The premise was straightforward: write commit messages in a structured, machine-readable format, then leverage tooling to generate changelogs and release notes automatically.
  For example:
- feat: add user login fix: resolve payment retry issue docs: update API usage guide   This worked well. Tools such as Conventional Changelog could read these commit messages and generate release notes based on the commit history."/>
+ feat: add user login fix: resolve payment retry issue docs: update API usage guide   This approach served me well. Tools like Conventional Changelog could parse commit history and produce structured release notes with minimal manual effort."/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K49F8T19FK"></script>
@@ -214,17 +210,14 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 5 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 972 words</span>
+        <span class="f6 mv4 dib tracked"> - 951 words</span>
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="sect1">
 <h2 id="_introduction"><a class="anchor" href="#_introduction"></a><a class="link" href="#_introduction">Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For several years, I used Conventional Commits in my software projects.</p>
-</div>
-<div class="paragraph">
-<p>The idea was simple and practical: write commit messages in a structured format, then use tools to generate changelogs and release notes automatically.</p>
+<p>For several years, I adopted <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> across my software projects. The premise was straightforward: write commit messages in a structured, machine-readable format, then leverage tooling to generate changelogs and release notes automatically.</p>
 </div>
 <div class="paragraph">
 <p>For example:</p>
@@ -237,10 +230,7 @@ docs: update API usage guide</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This worked well. Tools such as Conventional Changelog could read these commit messages and generate release notes based on the commit history.</p>
-</div>
-<div class="paragraph">
-<p>For a long time, I thought this was the status quo.</p>
+<p>This approach served me well. Tools like <a href="https://github.com/conventional-changelog/conventional-changelog">Conventional Changelog</a> could parse commit history and produce structured release notes with minimal manual effort. For years, I considered this the standard practice — the best we could do.</p>
 </div>
 </div>
 </div>
@@ -248,10 +238,7 @@ docs: update API usage guide</code></pre>
 <h2 id="_the_conventional_commits_era"><a class="anchor" href="#_the_conventional_commits_era"></a><a class="link" href="#_the_conventional_commits_era">The Conventional Commits Era</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Conventional Commits brought discipline to commit messages.</p>
-</div>
-<div class="paragraph">
-<p>Instead of writing vague messages like:</p>
+<p>Conventional Commits brought discipline to commit messages. Instead of vague entries like:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -261,7 +248,7 @@ change stuff</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>developers could write more meaningful and machine-readable messages:</p>
+<p>developers could write messages that were both meaningful to humans and parseable by machines:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -271,32 +258,7 @@ refactor(api): simplify error handling</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This made automation easier.</p>
-</div>
-<div class="paragraph">
-<p>Release notes could be grouped by type:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Features</p>
-</li>
-<li>
-<p>Bug fixes</p>
-</li>
-<li>
-<p>Refactoring</p>
-</li>
-<li>
-<p>Documentation updates</p>
-</li>
-<li>
-<p>Breaking changes</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>For engineering teams, this was a big improvement. It reduced manual effort and made the release process more consistent.</p>
+<p>This structure enabled automation. Release notes could be grouped by type — features, bug fixes, refactoring, documentation updates, and breaking changes — reducing manual effort and making the release process more consistent across engineering teams.</p>
 </div>
 </div>
 </div>
@@ -304,13 +266,7 @@ refactor(api): simplify error handling</code></pre>
 <h2 id="_the_limitation"><a class="anchor" href="#_the_limitation"></a><a class="link" href="#_the_limitation">The Limitation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>However, Conventional Commits still depend heavily on the quality of commit messages.</p>
-</div>
-<div class="paragraph">
-<p>If the commit message is too short, the generated changelog will also be shallow.</p>
-</div>
-<div class="paragraph">
-<p>For example:</p>
+<p>Despite these benefits, Conventional Commits remain heavily dependent on the quality of individual commit messages. A terse commit produces a terse changelog:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -318,61 +274,29 @@ refactor(api): simplify error handling</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This does not tell users much.</p>
+<p>This tells the reader almost nothing. What validation was corrected? Why did it matter? Who is affected? Is any migration required?</p>
 </div>
 <div class="paragraph">
-<p>What validation was fixed?</p>
-</div>
-<div class="paragraph">
-<p>Why did it matter?</p>
-</div>
-<div class="paragraph">
-<p>Who is affected?</p>
-</div>
-<div class="paragraph">
-<p>Is there any migration required?</p>
-</div>
-<div class="paragraph">
-<p>Traditional changelog generation tools can format commit messages nicely, but they usually cannot deeply understand the real context behind the change.</p>
-</div>
-<div class="paragraph">
-<p>They are good at structure, but limited in explanation.</p>
+<p>Traditional changelog tools can format commit messages elegantly, but they lack the ability to infer the deeper context behind a change. They excel at structure but fall short on explanation.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_the_moment_i_changed_my_view"><a class="anchor" href="#_the_moment_i_changed_my_view"></a><a class="link" href="#_the_moment_i_changed_my_view">The Moment I Changed My View</a></h2>
+<h2 id="_a_new_perspective"><a class="anchor" href="#_a_new_perspective"></a><a class="link" href="#_a_new_perspective">A New Perspective</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Recently, I was searching for:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">how to make llm generate thorough notes</code></pre>
-</div>
+<p>Recently, while researching how LLMs could be applied to technical documentation, I came across <a href="https://github.com/osslab-pku/SmartNote">SmartNote</a> — a research project from Peking University’s OSSLab that uses LLMs to generate thorough, context-rich release notes from pull requests and commit data.</p>
 </div>
 <div class="paragraph">
-<p>During that search, I found SmartNote. It appeared as the top result on the search result page.</p>
-</div>
-<div class="paragraph">
-<p>That made me think again about release notes.</p>
-</div>
-<div class="paragraph">
-<p>If an LLM can generate thorough notes from raw information, then why should release notes only be generated from structured commit messages?</p>
-</div>
-<div class="paragraph">
-<p>Maybe release notes can be much better.</p>
+<p>That discovery prompted me to reconsider the entire release-notes pipeline. If an LLM can synthesize raw development artefacts into coherent, detailed notes, then perhaps release notes should be more than a formatted dump of commit messages. Perhaps they can be substantially better.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_llm_changed_everything"><a class="anchor" href="#_llm_changed_everything"></a><a class="link" href="#_llm_changed_everything">LLM Changed Everything</a></h2>
+<h2 id="_how_llms_transform_release_notes"><a class="anchor" href="#_how_llms_transform_release_notes"></a><a class="link" href="#_how_llms_transform_release_notes">How LLMs Transform Release Notes</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>LLMs changed the way we think about documentation.</p>
-</div>
-<div class="paragraph">
-<p>Instead of only converting commit messages into a changelog, an LLM can help explain:</p>
+<p>LLMs fundamentally change what is possible in documentation generation. Rather than merely converting commit messages into a changelog, an LLM can help articulate:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -400,10 +324,7 @@ refactor(api): simplify error handling</code></pre>
 </ul>
 </div>
 <div class="paragraph">
-<p>This is very different from traditional changelog generation.</p>
-</div>
-<div class="paragraph">
-<p>A conventional changelog may say:</p>
+<p>The difference is substantial. Consider a conventional changelog entry:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -411,55 +332,39 @@ refactor(api): simplify error handling</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>A better LLM-generated release note could say:</p>
+<p>An LLM-generated release note, by contrast, could read:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">This release adds batch payment support, allowing users to submit multiple payment instructions in a single request. This reduces manual operation and improves processing efficiency for high-volume payment scenarios.
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">This release introduces batch payment support, enabling users to submit
+multiple payment instructions in a single request. This reduces manual
+operations and improves processing efficiency for high-volume payment
+scenarios.
 
-Developers should review the new batch payment API contract and ensure proper error handling for partial failures.</code></pre>
+Developers should review the new batch payment API contract and ensure
+proper error handling for partial failures.</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The second version is more useful to product users, developers, support teams, and stakeholders.</p>
+<p>The second version delivers far more value to product users, developers, support teams, and stakeholders alike.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_conventional_commits_are_still_useful"><a class="anchor" href="#_conventional_commits_are_still_useful"></a><a class="link" href="#_conventional_commits_are_still_useful">Conventional Commits Are Still Useful</a></h2>
+<h2 id="_conventional_commits_are_still_valuable"><a class="anchor" href="#_conventional_commits_are_still_valuable"></a><a class="link" href="#_conventional_commits_are_still_valuable">Conventional Commits Are Still Valuable</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This does not mean Conventional Commits are useless.</p>
+<p>This does not mean Conventional Commits are obsolete. On the contrary, they remain highly useful. Structured commits provide a strong input signal for automation, helping the LLM understand the type and scope of each change.</p>
 </div>
 <div class="paragraph">
-<p>Actually, they are still valuable.</p>
+<p>A future-oriented workflow might look like this:</p>
 </div>
 <div class="paragraph">
-<p>Structured commits provide a strong input signal for automation. They help the LLM understand the type and scope of changes.</p>
+<p>{{ $image := resources.Get &#34;images/SmartNote-pipeline.png&#34; }}
+&lt;img src=&#34;{{ $image.RelPermalink }}&#34; width=&#34;{{ $image.Width }}&#34; height=&#34;{{ $image.Height }}&#34;&gt;</p>
 </div>
 <div class="paragraph">
-<p>A good future workflow may look like this:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Conventional Commits
-        +
-Pull Requests
-        +
-Issue descriptions
-        +
-Code diff
-        +
-Documentation updates
-        ↓
-LLM-generated release notes</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>In this model, Conventional Commits are not the final output.</p>
-</div>
-<div class="paragraph">
-<p>They become one important input for a smarter release-note generation process.</p>
+<p>In this model, Conventional Commits are not the final output — they become one important input to a smarter, LLM-driven release-note generation process.</p>
 </div>
 </div>
 </div>
@@ -467,13 +372,7 @@ LLM-generated release notes</code></pre>
 <h2 id="_from_changelog_to_communication"><a class="anchor" href="#_from_changelog_to_communication"></a><a class="link" href="#_from_changelog_to_communication">From Changelog to Communication</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A changelog is usually written for developers.</p>
-</div>
-<div class="paragraph">
-<p>Release notes should be written for humans.</p>
-</div>
-<div class="paragraph">
-<p>That includes:</p>
+<p>A traditional changelog is typically written for developers. Release notes, however, should be written for people — a broad audience that includes:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -495,19 +394,10 @@ LLM-generated release notes</code></pre>
 </ul>
 </div>
 <div class="paragraph">
-<p>Different audiences need different levels of detail.</p>
+<p>Each audience has different needs. A developer cares about APIs, configuration changes, and migration paths. A business stakeholder cares about value, risk, and impact. An end user simply wants to know what is new and how it benefits them.</p>
 </div>
 <div class="paragraph">
-<p>A developer may care about APIs, configuration, and migration.</p>
-</div>
-<div class="paragraph">
-<p>A business stakeholder may care about value, risk, and impact.</p>
-</div>
-<div class="paragraph">
-<p>A user may only care about what is new and how it helps them.</p>
-</div>
-<div class="paragraph">
-<p>LLMs are useful because they can transform the same technical changes into different versions of release notes for different audiences.</p>
+<p>LLMs excel here because they can transform the same set of technical changes into multiple versions of release notes, each tailored to a different audience.</p>
 </div>
 </div>
 </div>
@@ -515,12 +405,12 @@ LLM-generated release notes</code></pre>
 <h2 id="_a_better_release_notes_workflow"><a class="anchor" href="#_a_better_release_notes_workflow"></a><a class="link" href="#_a_better_release_notes_workflow">A Better Release Notes Workflow</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A modern LLM-based release notes workflow could include the following steps:</p>
+<p>A modern, LLM-based release notes workflow could include the following steps:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Collect commits, pull requests, issues, and code changes.</p>
+<p>Collect commits, pull requests, issues, and code diffs.</p>
 </li>
 <li>
 <p>Ask the LLM to group changes by theme.</p>
@@ -535,46 +425,18 @@ LLM-generated release notes</code></pre>
 <p>Detect possible breaking changes.</p>
 </li>
 <li>
-<p>Add migration notes where needed.</p>
+<p>Add migration notes where applicable.</p>
 </li>
 <li>
-<p>Let humans review and edit the final result.</p>
+<p>Let humans review and refine the final result.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>This combines automation with human judgement.</p>
+<p>This approach combines automation with human judgement: the LLM handles the heavy drafting, while the team retains ownership of the final message.</p>
 </div>
 <div class="paragraph">
-<p>The LLM does the heavy drafting work, but the team still owns the final message.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_example_prompt"><a class="anchor" href="#_example_prompt"></a><a class="link" href="#_example_prompt">Example Prompt</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>A simple prompt could look like this:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Generate release notes based on the following commits, pull requests, and issue descriptions.
-
-Please include:
-- Executive summary
-- New features
-- Bug fixes
-- Breaking changes
-- Migration notes
-- Known limitations
-- Developer impact
-- User impact
-
-Write clearly for both technical and non-technical readers.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This kind of prompt can produce much richer output than a traditional changelog tool.</p>
+<p>Tools like SmartNote go further by generating release notes personalised to your project domain and audience type.</p>
 </div>
 </div>
 </div>
@@ -582,25 +444,13 @@ Write clearly for both technical and non-technical readers.</code></pre>
 <h2 id="_my_current_thinking"><a class="anchor" href="#_my_current_thinking"></a><a class="link" href="#_my_current_thinking">My Current Thinking</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Several years ago, I believed Conventional Commits plus Conventional Changelog represented the best practice.</p>
+<p>Several years ago, I believed that Conventional Commits paired with Conventional Changelog represented the best practice for release-note generation. Today, I see them as one part of a larger solution.</p>
 </div>
 <div class="paragraph">
-<p>Now I think they are only part of the solution.</p>
+<p>LLMs make it possible to generate release notes that are more complete, more readable, and more useful than what structured commits alone can produce.</p>
 </div>
 <div class="paragraph">
-<p>LLMs make it possible to generate release notes that are more complete, more readable, and more useful.</p>
-</div>
-<div class="paragraph">
-<p>The status quo is changing.</p>
-</div>
-<div class="paragraph">
-<p>Today, tools like SmartNote show one possible direction. Tomorrow, better options may appear.</p>
-</div>
-<div class="paragraph">
-<p>The important point is not one specific tool.</p>
-</div>
-<div class="paragraph">
-<p>The important point is the shift:</p>
+<p>The status quo is shifting. Tools like SmartNote demonstrate one promising direction; tomorrow, better options will inevitably emerge. The important insight is not any single tool — it is the transition itself:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -614,35 +464,23 @@ to intelligent release communication.</code></pre>
 <h2 id="_conclusion"><a class="anchor" href="#_conclusion"></a><a class="link" href="#_conclusion">Conclusion</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Conventional Commits helped teams standardise commit messages and automate changelog generation.</p>
+<p>Conventional Commits helped teams standardise commit messages and automate changelog generation. That was a meaningful step forward.</p>
 </div>
 <div class="paragraph">
-<p>That was a meaningful step forward.</p>
+<p>But LLMs have raised the bar. Release notes no longer need to be thin summaries of commit messages. They can become thoughtful explanations of product change, technical impact, and user value.</p>
 </div>
 <div class="paragraph">
-<p>But LLMs have changed the expectation.</p>
-</div>
-<div class="paragraph">
-<p>Release notes no longer need to be thin summaries of commit messages. They can become thoughtful explanations of product change, technical impact, and user value.</p>
-</div>
-<div class="paragraph">
-<p>Maybe Conventional Commits were the old foundation.</p>
-</div>
-<div class="paragraph">
-<p>LLM-generated release notes may become the next layer.</p>
-</div>
-<div class="paragraph">
-<p>And as better tools appear in the future, the way we write changelogs and release notes will continue to evolve.</p>
+<p>Conventional Commits were the foundation. LLM-generated release notes may well be the next layer. And as better tools continue to emerge, the way we write changelogs and release notes will keep evolving.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_reference"><a class="anchor" href="#_reference"></a><a class="link" href="#_reference">Reference:</a></h2>
+<h2 id="_references"><a class="anchor" href="#_references"></a><a class="link" href="#_references">References</a></h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commit</a></p>
+<p><a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a></p>
 </li>
 <li>
 <p><a href="https://github.com/conventional-changelog/conventional-changelog">Conventional Changelog</a></p>
@@ -754,7 +592,7 @@ to intelligent release communication.</code></pre>
 
 
   
-  <p style="font-size: small; color: grey;">Page version: 594f80c4320265c577ee36f932680091871deecf 2026-06-09</p>
+  <p style="font-size: small; color: grey;">Page version: 800db568eb506c179c4accdf7338a9ed828cf7d6 2026-06-09</p>
 </body>
 
 </html>
