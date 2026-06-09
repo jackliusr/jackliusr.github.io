@@ -6,7 +6,19 @@
     <description>Recent content in llm on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 May 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/llm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Jun 2026 10:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/llm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>From Conventional Commits to LLM-Generated Release Notes</title>
+      <link>https://jackliusr.github.io/posts/2026/06/from-conventional-commits-to-llm-generated-release-notes/</link>
+      <pubDate>Tue, 09 Jun 2026 10:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/06/from-conventional-commits-to-llm-generated-release-notes/</guid>
+      <description>Introduction For several years, I used Conventional Commits in my software projects.
+ The idea was simple and practical: write commit messages in a structured format, then use tools to generate changelogs and release notes automatically.
+ For example:
+ feat: add user login fix: resolve payment retry issue docs: update API usage guide   This worked well. Tools such as Conventional Changelog could read these commit messages and generate release notes based on the commit history.</description>
+    </item>
+    
     <item>
       <title>Reducing Architecture Drift in Spec-Driven Development with coding agents and LLMs</title>
       <link>https://jackliusr.github.io/posts/2026/05/reducing-architecture-drift-in-spec-driven-development-with-coding-agents-and-llms/</link>
