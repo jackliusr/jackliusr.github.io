@@ -4,7 +4,7 @@ date: 2026-06-09T10:00:00+08:00
 categories:
 - tech
 tags:
-- Conventional Commits 
+- Conventional Commits
 - LLM
 - Conventional Changelog
 - SmartNote
@@ -13,9 +13,7 @@ tags:
 
 == Introduction
 
-For several years, I used Conventional Commits in my software projects.
-
-The idea was simple and practical: write commit messages in a structured format, then use tools to generate changelogs and release notes automatically.
+For several years, I adopted https://www.conventionalcommits.org/en/v1.0.0/[Conventional Commits] across my software projects. The premise was straightforward: write commit messages in a structured, machine-readable format, then leverage tooling to generate changelogs and release notes automatically.
 
 For example:
 
@@ -26,15 +24,11 @@ fix: resolve payment retry issue
 docs: update API usage guide
 ----
 
-This worked well. Tools such as Conventional Changelog could read these commit messages and generate release notes based on the commit history.
-
-For a long time, I thought this was the status quo.
+This approach served me well. Tools like https://github.com/conventional-changelog/conventional-changelog[Conventional Changelog] could parse commit history and produce structured release notes with minimal manual effort. For years, I considered this the standard practice — the best we could do.
 
 == The Conventional Commits Era
 
-Conventional Commits brought discipline to commit messages.
-
-Instead of writing vague messages like:
+Conventional Commits brought discipline to commit messages. Instead of vague entries like:
 
 [source,text]
 ----
@@ -43,7 +37,7 @@ fix bug
 change stuff
 ----
 
-developers could write more meaningful and machine-readable messages:
+developers could write messages that were both meaningful to humans and parseable by machines:
 
 [source,text]
 ----
@@ -52,67 +46,30 @@ fix(auth): handle expired refresh token correctly
 refactor(api): simplify error handling
 ----
 
-This made automation easier.
-
-Release notes could be grouped by type:
-
-* Features
-* Bug fixes
-* Refactoring
-* Documentation updates
-* Breaking changes
-
-For engineering teams, this was a big improvement. It reduced manual effort and made the release process more consistent.
+This structure enabled automation. Release notes could be grouped by type — features, bug fixes, refactoring, documentation updates, and breaking changes — reducing manual effort and making the release process more consistent across engineering teams.
 
 == The Limitation
 
-However, Conventional Commits still depend heavily on the quality of commit messages.
-
-If the commit message is too short, the generated changelog will also be shallow.
-
-For example:
+Despite these benefits, Conventional Commits remain heavily dependent on the quality of individual commit messages. A terse commit produces a terse changelog:
 
 [source,text]
 ----
 fix: update validation
 ----
 
-This does not tell users much.
+This tells the reader almost nothing. What validation was corrected? Why did it matter? Who is affected? Is any migration required?
 
-What validation was fixed?
+Traditional changelog tools can format commit messages elegantly, but they lack the ability to infer the deeper context behind a change. They excel at structure but fall short on explanation.
 
-Why did it matter?
+== A New Perspective
 
-Who is affected?
+Recently, while researching how LLMs could be applied to technical documentation, I came across https://github.com/osslab-pku/SmartNote[SmartNote] — a research project from Peking University's OSSLab that uses LLMs to generate thorough, context-rich release notes from pull requests and commit data.
 
-Is there any migration required?
+That discovery prompted me to reconsider the entire release-notes pipeline. If an LLM can synthesize raw development artefacts into coherent, detailed notes, then perhaps release notes should be more than a formatted dump of commit messages. Perhaps they can be substantially better.
 
-Traditional changelog generation tools can format commit messages nicely, but they usually cannot deeply understand the real context behind the change.
+== How LLMs Transform Release Notes
 
-They are good at structure, but limited in explanation.
-
-== The Moment I Changed My View
-
-Recently, I was searching for:
-
-[source,text]
-----
-how to make llm generate thorough notes
-----
-
-During that search, I found SmartNote. It appeared as the top result on the search result page.
-
-That made me think again about release notes.
-
-If an LLM can generate thorough notes from raw information, then why should release notes only be generated from structured commit messages?
-
-Maybe release notes can be much better.
-
-== LLM Changed Everything
-
-LLMs changed the way we think about documentation.
-
-Instead of only converting commit messages into a changelog, an LLM can help explain:
+LLMs fundamentally change what is possible in documentation generation. Rather than merely converting commit messages into a changelog, an LLM can help articulate:
 
 * what changed
 * why it changed
@@ -122,62 +79,43 @@ Instead of only converting commit messages into a changelog, an LLM can help exp
 * what migration steps are required
 * what risks or limitations exist
 
-This is very different from traditional changelog generation.
-
-A conventional changelog may say:
+The difference is substantial. Consider a conventional changelog entry:
 
 [source,text]
 ----
 feat: add batch payment support
 ----
 
-A better LLM-generated release note could say:
+An LLM-generated release note, by contrast, could read:
 
 [source,text]
 ----
-This release adds batch payment support, allowing users to submit multiple payment instructions in a single request. This reduces manual operation and improves processing efficiency for high-volume payment scenarios.
+This release introduces batch payment support, enabling users to submit
+multiple payment instructions in a single request. This reduces manual
+operations and improves processing efficiency for high-volume payment
+scenarios.
 
-Developers should review the new batch payment API contract and ensure proper error handling for partial failures.
+Developers should review the new batch payment API contract and ensure
+proper error handling for partial failures.
 ----
 
-The second version is more useful to product users, developers, support teams, and stakeholders.
+The second version delivers far more value to product users, developers, support teams, and stakeholders alike.
 
-== Conventional Commits Are Still Useful
+== Conventional Commits Are Still Valuable
 
-This does not mean Conventional Commits are useless.
+This does not mean Conventional Commits are obsolete. On the contrary, they remain highly useful. Structured commits provide a strong input signal for automation, helping the LLM understand the type and scope of each change.
 
-Actually, they are still valuable.
+A future-oriented workflow might look like this:
 
-Structured commits provide a strong input signal for automation. They help the LLM understand the type and scope of changes.
+{{ $image := resources.Get "images/SmartNote-pipeline.png" }}
+<img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
 
-A good future workflow may look like this:
 
-[source,text]
-----
-Conventional Commits
-        +
-Pull Requests
-        +
-Issue descriptions
-        +
-Code diff
-        +
-Documentation updates
-        ↓
-LLM-generated release notes
-----
-
-In this model, Conventional Commits are not the final output.
-
-They become one important input for a smarter release-note generation process.
+In this model, Conventional Commits are not the final output — they become one important input to a smarter, LLM-driven release-note generation process.
 
 == From Changelog to Communication
 
-A changelog is usually written for developers.
-
-Release notes should be written for humans.
-
-That includes:
+A traditional changelog is typically written for developers. Release notes, however, should be written for people — a broad audience that includes:
 
 * developers
 * product managers
@@ -185,70 +123,33 @@ That includes:
 * business stakeholders
 * end users
 
-Different audiences need different levels of detail.
+Each audience has different needs. A developer cares about APIs, configuration changes, and migration paths. A business stakeholder cares about value, risk, and impact. An end user simply wants to know what is new and how it benefits them.
 
-A developer may care about APIs, configuration, and migration.
-
-A business stakeholder may care about value, risk, and impact.
-
-A user may only care about what is new and how it helps them.
-
-LLMs are useful because they can transform the same technical changes into different versions of release notes for different audiences.
+LLMs excel here because they can transform the same set of technical changes into multiple versions of release notes, each tailored to a different audience.
 
 == A Better Release Notes Workflow
 
-A modern LLM-based release notes workflow could include the following steps:
+A modern, LLM-based release notes workflow could include the following steps:
 
-. Collect commits, pull requests, issues, and code changes.
+. Collect commits, pull requests, issues, and code diffs.
 . Ask the LLM to group changes by theme.
 . Generate a user-friendly summary.
 . Generate a developer-focused technical section.
 . Detect possible breaking changes.
-. Add migration notes where needed.
-. Let humans review and edit the final result.
+. Add migration notes where applicable.
+. Let humans review and refine the final result.
 
-This combines automation with human judgement.
+This approach combines automation with human judgement: the LLM handles the heavy drafting, while the team retains ownership of the final message.
 
-The LLM does the heavy drafting work, but the team still owns the final message.
-
-== Example Prompt
-
-A simple prompt could look like this:
-
-[source,text]
-----
-Generate release notes based on the following commits, pull requests, and issue descriptions.
-
-Please include:
-- Executive summary
-- New features
-- Bug fixes
-- Breaking changes
-- Migration notes
-- Known limitations
-- Developer impact
-- User impact
-
-Write clearly for both technical and non-technical readers.
-----
-
-This kind of prompt can produce much richer output than a traditional changelog tool.
+Tools like SmartNote go further by generating release notes personalised to your project domain and audience type.
 
 == My Current Thinking
 
-Several years ago, I believed Conventional Commits plus Conventional Changelog represented the best practice.
+Several years ago, I believed that Conventional Commits paired with Conventional Changelog represented the best practice for release-note generation. Today, I see them as one part of a larger solution.
 
-Now I think they are only part of the solution.
+LLMs make it possible to generate release notes that are more complete, more readable, and more useful than what structured commits alone can produce.
 
-LLMs make it possible to generate release notes that are more complete, more readable, and more useful.
-
-The status quo is changing.
-
-Today, tools like SmartNote show one possible direction. Tomorrow, better options may appear.
-
-The important point is not one specific tool.
-
-The important point is the shift:
+The status quo is shifting. Tools like SmartNote demonstrate one promising direction; tomorrow, better options will inevitably emerge. The important insight is not any single tool — it is the transition itself:
 
 [source,text]
 ----
@@ -258,24 +159,17 @@ to intelligent release communication.
 
 == Conclusion
 
-Conventional Commits helped teams standardise commit messages and automate changelog generation.
+Conventional Commits helped teams standardise commit messages and automate changelog generation. That was a meaningful step forward.
 
-That was a meaningful step forward.
+But LLMs have raised the bar. Release notes no longer need to be thin summaries of commit messages. They can become thoughtful explanations of product change, technical impact, and user value.
 
-But LLMs have changed the expectation.
-
-Release notes no longer need to be thin summaries of commit messages. They can become thoughtful explanations of product change, technical impact, and user value.
-
-Maybe Conventional Commits were the old foundation.
-
-LLM-generated release notes may become the next layer.
-
-And as better tools appear in the future, the way we write changelogs and release notes will continue to evolve.
+Conventional Commits were the foundation. LLM-generated release notes may well be the next layer. And as better tools continue to emerge, the way we write changelogs and release notes will keep evolving.
 
 
 
-== Reference: 
-* https://www.conventionalcommits.org/en/v1.0.0/[Conventional Commit]
+== References
+
+* https://www.conventionalcommits.org/en/v1.0.0/[Conventional Commits]
 * https://github.com/conventional-changelog/conventional-changelog[Conventional Changelog]
 * https://arxiv.org/pdf/2201.06720[DeepRelease: Language-agnostic Release Notes Generation from Pull Requests of Open-source Software]
 * https://github.com/osslab-pku/SmartNote[SmartNote]
