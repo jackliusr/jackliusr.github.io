@@ -35,13 +35,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2026/07/how-to-run-a-pod-with-a-fixed-uid-outside-the-default-openshift-uid-range/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2026-07-16T20:00:00+08:00" />
-<meta property="article:modified_time" content="2026-07-16T20:43:12+08:00" />
+<meta property="article:modified_time" content="2026-07-16T22:34:49+08:00" />
 
 <meta itemprop="name" content="How to Run a Pod with a Fixed UID Outside the Default OpenShift UID Range">
 <meta itemprop="description" content="OpenShift enhances container security by assigning a random, non-root User ID (UID) to workloads by default. This helps isolate workloads running in different namespaces and prevents containers from running with predictable user IDs.
  While this security model works well for cloud-native applications, some third-party or legacy container images expect to run with a specific UID. A common example is the nginxinc/nginx-unprivileged image, which expects to run as UID 101."><meta itemprop="datePublished" content="2026-07-16T20:00:00+08:00" />
-<meta itemprop="dateModified" content="2026-07-16T20:43:12+08:00" />
-<meta itemprop="wordCount" content="746">
+<meta itemprop="dateModified" content="2026-07-16T22:34:49+08:00" />
+<meta itemprop="wordCount" content="832">
 <meta itemprop="keywords" content="openshift,scc," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="How to Run a Pod with a Fixed UID Outside the Default OpenShift UID Range"/>
 <meta name="twitter:description" content="OpenShift enhances container security by assigning a random, non-root User ID (UID) to workloads by default. This helps isolate workloads running in different namespaces and prevents containers from running with predictable user IDs.
@@ -206,7 +206,7 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 4 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 746 words</span>
+        <span class="f6 mv4 dib tracked"> - 832 words</span>
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
@@ -293,7 +293,21 @@ runAsGroup: 101</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">error from server (Forbidden): error when creating &#34;nginx.yaml&#34;: pods &#34;nginx-unprivileged-pod&#34; is forbidden: unable to validate against any security context constraint: [provider &#34;anyuid&#34;: Forbidden: not usable by user or serviceaccount, provider restricted-v2: .containers[0].runAsUser: Invalid value: 101: must be in the ranges: [1000660000, 1000669999], provider restricted-v3: .spec.hostUsers: Invalid value: null: Host Users must be set to false, provider restricted-v3: .containers[0].runAsUser: Invalid value: 101: must be in the ranges: [1000, 65534], provider &#34;restricted&#34;: Forbidden: not usable by user or serviceaccount, provider</code></pre>
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Error from server (Forbidden): error when creating &#34;nginx.yaml&#34;: pods &#34;nginx-unprivileged-pod&#34; is forbidden: unable to validate against any security context constraint: [
+provider &#34;anyuid&#34;: Forbidden: not usable by user or serviceaccount,
+provider restricted-v2: .containers[0].runAsUser: Invalid value: 101: must be in the ranges: [1000660000, 1000669999],
+provider restricted-v3: .containers[0].runAsUser: Invalid value: 101: must be in the ranges: [1000, 65534],
+provider &#34;restricted&#34;: Forbidden: not usable by user or serviceaccount,
+provider &#34;nested-container&#34;: Forbidden: not usable by user or serviceaccount,
+provider &#34;nonroot-v2&#34;: Forbidden: not usable by user or serviceaccount,
+provider &#34;nonroot&#34;: Forbidden: not usable by user or serviceaccount,
+provider &#34;hostmount-anyuid&#34;: Forbidden: not usable by user or serviceaccount,
+provider &#34;hostmount-anyuid-v2&#34;: Forbidden: not usable by user or serviceaccount,
+provider &#34;machine-api-termination-handler&#34;: Forbidden: not usable by user or serviceaccount, provider &#34;hostnetwork-v2&#34;: Forbidden: not usable by user or serviceaccount,
+provider &#34;hostnetwork&#34;: Forbidden: not usable by user or serviceaccount,
+provider &#34;hostaccess&#34;: Forbidden: not usable by user or serviceaccount,
+provider &#34;hostpath-provisioner&#34;: Forbidden: not usable by user or serviceaccount,
+provider &#34;privileged&#34;: Forbidden: not usable by user or serviceaccount]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -562,7 +576,7 @@ spec:
 
 
   
-  <p style="font-size: small; color: grey;">Page version: 8088e8ca5c528287428908bb9581cda2b44dc160 2026-07-16</p>
+  <p style="font-size: small; color: grey;">Page version: 626403a99a5ee967ddca5135c6672bd683ce594d 2026-07-16</p>
 </body>
 
 </html>
