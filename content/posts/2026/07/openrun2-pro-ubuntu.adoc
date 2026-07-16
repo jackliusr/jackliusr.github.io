@@ -1,0 +1,17 @@
+---
+title: "one GEPA report of DSPy"
+date: 2026-07-10T20:00:00+08:00
+categories:
+- tech
+tags:
+- openrun2-pro
+- ubuntu
+---
+
+
+[source, bash]
+----
+apt install wireplumber libspa-0.2-bluetooth
+systemctl --user --now disable pipewire-media-session
+systemctl --user --now enable wireplumber
+----

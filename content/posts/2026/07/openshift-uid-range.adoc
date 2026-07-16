@@ -1,0 +1,191 @@
+---
+title: "How to Run a Pod with a Fixed UID Outside the Default OpenShift UID Range"
+date: 2026-07-16T20:00:00+08:00
+categories:
+- tech
+tags:
+- openshift
+- scc
+---
+
+OpenShift enhances container security by assigning a random, non-root User ID (UID) to workloads by default. This helps isolate workloads running in different namespaces and prevents containers from running with predictable user IDs.
+
+While this security model works well for cloud-native applications, some third-party or legacy container images expect to run with a specific UID. A common example is the nginxinc/nginx-unprivileged image, which expects to run as UID 101.
+
+This article documents my experiments on running a pod with a fixed UID that is outside the default namespace UID range and explains why the solution works.
+
+== Test Environment
+
+The following environment was used during testing.
+
+[source,text]
+----
+CRC version: 2.62.0+70f0c9
+OpenShift version: 4.22.1
+MicroShift version: 4.22.0
+
+$ oc get users
+NAME        UID                                    FULL NAME   IDENTITIES
+developer   3f244f04-5e4d-4bc9-8490-ba9be209432b               developer:developer
+kubeadmin   fe876619-6f25-4b54-aabd-940ee2385a11               developer:kubeadmin
+
+----
+
+== Initial Test
+
+I started with the following pod specification.
+
+[source,yaml]
+----
+#filename:  nginx-0.yml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-unprivileged-pod
+  namespace: test
+spec:
+  hostUsers: false
+  securityContext:
+    runAsNonRoot: true
+  containers:
+  - name: nginx
+    image: nginxinc/nginx-unprivileged:latest
+    securityContext:
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: false # Set to true only if /tmp and /etc/nginx/conf.d are writable
+      runAsUser: 101
+      runAsGroup: 101
+      capabilities:
+        drop:
+        - ALL
+    ports:
+    - containerPort: 8080 # Note: The default port is 8080, NOT 80
+----
+
+Notice that the container explicitly requests:
+
+[quote]
+----
+runAsUser: 101
+runAsGroup: 101
+----
+
+Although this configuration works in many Kubernetes distributions, it is rejected by OpenShift's default Security Context Constraints (SCCs).
+
+== The Error
+
+Attempting to create the pod resulted in the following error.
+
+[source,text]
+----
+error from server (Forbidden): error when creating "nginx.yaml": pods "nginx-unprivileged-pod" is forbidden: unable to validate against any security context constraint: [provider "anyuid": Forbidden: not usable by user or serviceaccount, provider restricted-v2: .containers[0].runAsUser: Invalid value: 101: must be in the ranges: [1000660000, 1000669999], provider restricted-v3: .spec.hostUsers: Invalid value: null: Host Users must be set to false, provider restricted-v3: .containers[0].runAsUser: Invalid value: 101: must be in the ranges: [1000, 65534], provider "restricted": Forbidden: not usable by user or serviceaccount, provider
+----
+
+The important part is:
+
+[source,text]
+
+The default restricted-v2 SCC only allows UIDs that belong to the namespace's allocated UID range. Since UID 101 is outside that range, the pod is rejected during admission.
+
+== Understanding the Problem
+
+OpenShift uses Security Context Constraints (SCCs) to determine whether a pod is allowed to run.
+
+By default, the restricted-v3 SCC enforces namespace-specific UID ranges to provide strong multi-tenant isolation.
+
+If an application requires a fixed UID, it must use an SCC that explicitly permits that UID.
+
+After reading the excellent Red Hat article on managing SCCs, I realized that the built-in nonroot-v2 SCC already allows arbitrary non-root UIDs, making it a good fit for this use case.
+
+== Solution
+
+=== Step 1. Create a Service Account
+
+[source,bash]
+oc create serviceaccount sa-nonroot -n test
+
+=== Step 2. Grant the nonroot-v2 SCC
+
+[source,bash]
+oc adm policy add-scc-to-user nonroot-v2 -z sa-nonroot -n test
+
+=== Step 3. Update the Pod Specification
+
+Use the newly created ServiceAccount.
+
+[source,yaml]
+----
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-unprivileged-pod
+  namespace: test
+spec:
+  hostUsers: false
+  securityContext:
+    runAsNonRoot: true
+  containers:
+  - name: nginx
+    image: nginxinc/nginx-unprivileged:latest
+    serviceAccount: sa-nonroot
+    serviceAccountName: sa-nonroot
+    securityContext:
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: false # Set to true only if /tmp and /etc/nginx/conf.d are writable
+      runAsUser: 101
+      runAsGroup: 101
+      capabilities:
+        drop:
+        - ALL
+    ports:
+    - containerPort: 8080 # Note: The default port is 8080, NOT 80
+----
+
+Finally, deploy the pod.
+
+[source,bash]
+oc apply -f nginx.yaml --as=developer
+
+The pod should now start successfully while running as UID 101.
+
+== Why This Works
+
+The key difference between the two SCCs is their UID strategy.
+
+[cols="1,2",options="header"]
+|===
+|SCC
+|Allowed UID
+
+|restricted-v2
+|Only the namespace-assigned UID range
+
+|nonroot-v2
+|Any non-root UID
+
+|anyuid
+|Any UID, including root
+|===
+
+Using nonroot-v2 allows the pod to run with UID 101 while still preventing it from running as root. This provides a much better security posture than granting the more permissive anyuid SCC.
+
+== Best Practices
+
+If your application requires a fixed non-root UID:
+
+. Create a dedicated ServiceAccount.
+. Assign the nonroot-v2 SCC to that ServiceAccount.
+. Deploy only the required workloads using that ServiceAccount.
+. Avoid using the anyuid SCC unless root privileges are genuinely required.
+. Follow the principle of least privilege whenever possible.
+
+== Conclusion
+
+OpenShift's default SCCs intentionally prevent workloads from using arbitrary UIDs to improve security in multi-tenant environments. While this can cause compatibility issues with some container images, the built-in nonroot-v2 SCC provides a clean solution for applications that require a fixed non-root UID.
+
+Instead of relaxing security by granting the anyuid SCC, consider using a dedicated ServiceAccount with the nonroot-v2 SCC. This approach maintains strong security while allowing legacy or third-party applications to run successfully.
+
+== References
+
+https://www.redhat.com/en/blog/managing-sccs-in-openshift[Managing SCCs in OpenShift]
+https://docs.redhat.com/en/documentation/openshift_container_platform/latest/html/authentication_and_authorization/managing-pod-security-policies[OpenShift Security Context Constraints Documentation]
