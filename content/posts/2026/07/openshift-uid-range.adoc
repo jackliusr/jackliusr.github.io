@@ -78,7 +78,21 @@ Attempting to create the pod resulted in the following error.
 
 [source,text]
 ----
-error from server (Forbidden): error when creating "nginx.yaml": pods "nginx-unprivileged-pod" is forbidden: unable to validate against any security context constraint: [provider "anyuid": Forbidden: not usable by user or serviceaccount, provider restricted-v2: .containers[0].runAsUser: Invalid value: 101: must be in the ranges: [1000660000, 1000669999], provider restricted-v3: .spec.hostUsers: Invalid value: null: Host Users must be set to false, provider restricted-v3: .containers[0].runAsUser: Invalid value: 101: must be in the ranges: [1000, 65534], provider "restricted": Forbidden: not usable by user or serviceaccount, provider
+Error from server (Forbidden): error when creating "nginx.yaml": pods "nginx-unprivileged-pod" is forbidden: unable to validate against any security context constraint: [
+provider "anyuid": Forbidden: not usable by user or serviceaccount, 
+provider restricted-v2: .containers[0].runAsUser: Invalid value: 101: must be in the ranges: [1000660000, 1000669999], 
+provider restricted-v3: .containers[0].runAsUser: Invalid value: 101: must be in the ranges: [1000, 65534], 
+provider "restricted": Forbidden: not usable by user or serviceaccount, 
+provider "nested-container": Forbidden: not usable by user or serviceaccount, 
+provider "nonroot-v2": Forbidden: not usable by user or serviceaccount, 
+provider "nonroot": Forbidden: not usable by user or serviceaccount, 
+provider "hostmount-anyuid": Forbidden: not usable by user or serviceaccount, 
+provider "hostmount-anyuid-v2": Forbidden: not usable by user or serviceaccount, 
+provider "machine-api-termination-handler": Forbidden: not usable by user or serviceaccount, provider "hostnetwork-v2": Forbidden: not usable by user or serviceaccount, 
+provider "hostnetwork": Forbidden: not usable by user or serviceaccount, 
+provider "hostaccess": Forbidden: not usable by user or serviceaccount, 
+provider "hostpath-provisioner": Forbidden: not usable by user or serviceaccount, 
+provider "privileged": Forbidden: not usable by user or serviceaccount]
 ----
 
 The important part is:
