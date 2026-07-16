@@ -6,7 +6,26 @@
     <description>Recent content on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Jun 2026 10:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jul 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Run a Pod with a Fixed UID Outside the Default OpenShift UID Range</title>
+      <link>https://jackliusr.github.io/posts/2026/07/how-to-run-a-pod-with-a-fixed-uid-outside-the-default-openshift-uid-range/</link>
+      <pubDate>Thu, 16 Jul 2026 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/07/how-to-run-a-pod-with-a-fixed-uid-outside-the-default-openshift-uid-range/</guid>
+      <description>OpenShift enhances container security by assigning a random, non-root User ID (UID) to workloads by default. This helps isolate workloads running in different namespaces and prevents containers from running with predictable user IDs.
+ While this security model works well for cloud-native applications, some third-party or legacy container images expect to run with a specific UID. A common example is the nginxinc/nginx-unprivileged image, which expects to run as UID 101.</description>
+    </item>
+    
+    <item>
+      <title>one GEPA report of DSPy</title>
+      <link>https://jackliusr.github.io/posts/2026/07/one-gepa-report-of-dspy/</link>
+      <pubDate>Fri, 10 Jul 2026 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/07/one-gepa-report-of-dspy/</guid>
+      <description>apt install wireplumber libspa-0.2-bluetooth systemctl --user --now disable pipewire-media-session systemctl --user --now enable wireplumber   </description>
+    </item>
+    
     <item>
       <title>From Conventional Commits to LLM-Generated Release Notes</title>
       <link>https://jackliusr.github.io/posts/2026/06/from-conventional-commits-to-llm-generated-release-notes/</link>
@@ -2368,6 +2387,15 @@ skaffold debug     Import ptvsd in the python file to debug, add breakout() befo
       <guid>https://jackliusr.github.io/posts/2018/12/diagrams-samples/</guid>
       <description>Ditaa
  0 start1 q scans from start to end.....endrest of theallocated memory.....n    </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jackliusr.github.io/posts/1/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/1/01/</guid>
+      <description></description>
     </item>
     
   </channel>
