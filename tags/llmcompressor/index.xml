@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>llmcompressor on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/llmcompressor/</link>
+    <description>Recent content in llmcompressor on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Jul 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/llmcompressor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Optimize LLMs for vllm deployment</title>
+      <link>https://jackliusr.github.io/posts/2026/07/optimize-llms-for-vllm-deployment/</link>
+      <pubDate>Mon, 20 Jul 2026 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/07/optimize-llms-for-vllm-deployment/</guid>
+      <description>Quantization techniques were mentioned in huggingface and unsloth, and I used those quantized models in ollama and llama.cpp. I always wonder how to implement it for vllm. Today I learnt to use llmcompressor to optimized models for vllm.
+ import warnings warnings.filterwarnings(&amp;#34;ignore&amp;#34;) import os, gc, math, pathlib import torch from transformers import AutoTokenizer, AutoModelForCausalLM import warnings os.environ[&amp;#39;TOKENIZERS_PARALLELISM&amp;#39;] = &amp;#39;false&amp;#39; MODEL_DIR = &amp;#34;Qwen3-0.6B&amp;#34; OUTPUT_DIR = &amp;#34;Qwen3-0.6B-W4A16&amp;#34; print(f&amp;#34;Base model: {MODEL_DIR}&amp;#34;) print(f&amp;#34;Quantized model: {OUTPUT_DIR}&amp;#34;) from llmcompressor.</description>
+    </item>
+    
+  </channel>
+</rss>

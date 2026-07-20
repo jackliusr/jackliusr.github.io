@@ -3,16 +3,51 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2026-07-16T22:34:49+08:00</lastmod>
+    <lastmod>2026-07-20T23:45:51+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/posts/2026/07/how-to-run-a-pod-with-a-fixed-uid-outside-the-default-openshift-uid-range/</loc>
-    <lastmod>2026-07-16T22:34:49+08:00</lastmod>
+    <loc>https://jackliusr.github.io/tags/llmcompressor/</loc>
+    <lastmod>2026-07-20T23:45:51+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/</loc>
+    <lastmod>2026-07-20T23:45:51+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2026/07/optimize-llms-for-vllm-deployment/</loc>
+    <lastmod>2026-07-20T23:45:51+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/</loc>
+    <lastmod>2026-07-20T23:45:51+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/quantization/</loc>
+    <lastmod>2026-07-20T23:45:51+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/</loc>
+    <lastmod>2026-07-20T23:45:51+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/categories/tech/</loc>
+    <lastmod>2026-07-20T23:45:51+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/vllm/</loc>
+    <lastmod>2026-07-20T23:45:51+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2026/07/how-to-run-a-pod-with-a-fixed-uid-outside-the-default-openshift-uid-range/</loc>
     <lastmod>2026-07-16T22:34:49+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -22,22 +57,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2026-07-16T22:34:49+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://jackliusr.github.io/tags/scc/</loc>
-    <lastmod>2026-07-16T22:34:49+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2026-07-16T22:34:49+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/categories/tech/</loc>
     <lastmod>2026-07-16T22:34:49+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -288,11 +308,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/ubuntu-24.04/</loc>
-    <lastmod>2026-03-25T14:05:32+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/vllm/</loc>
     <lastmod>2026-03-25T14:05:32+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

@@ -173,6 +173,24 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2026/07/optimize-llms-for-vllm-deployment/" class="link black dim">
+        Optimize LLMs for vllm deployment
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Quantization techniques were mentioned in huggingface and unsloth, and I used those quantized models in ollama and llama.cpp. I always wonder how to implement it for vllm. Today I learnt to use llmcompressor to optimized models for vllm.
+ import warnings warnings.filterwarnings(&#34;ignore&#34;) import os, gc, math, pathlib import torch from transformers import AutoTokenizer, AutoModelForCausalLM import warnings os.environ[&#39;TOKENIZERS_PARALLELISM&#39;] = &#39;false&#39; MODEL_DIR = &#34;Qwen3-0.6B&#34; OUTPUT_DIR = &#34;Qwen3-0.6B-W4A16&#34; print(f&#34;Base model: {MODEL_DIR}&#34;) print(f&#34;Quantized model: {OUTPUT_DIR}&#34;) from llmcompressor.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2026/03/running-vllm-on-amd-ai-max-395-rocm-ubuntu-24.04/" class="link black dim">
         Running vLLM on AMD AI MAX&#43; 395 (ROCm, Ubuntu 24.04)
       </a>

@@ -168,6 +168,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2026/07/optimize-llms-for-vllm-deployment/" class="link black dim">
+        Optimize LLMs for vllm deployment
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Quantization techniques were mentioned in huggingface and unsloth, and I used those quantized models in ollama and llama.cpp. I always wonder how to implement it for vllm. Today I learnt to use llmcompressor to optimized models for vllm.
+ import warnings warnings.filterwarnings(&#34;ignore&#34;) import os, gc, math, pathlib import torch from transformers import AutoTokenizer, AutoModelForCausalLM import warnings os.environ[&#39;TOKENIZERS_PARALLELISM&#39;] = &#39;false&#39; MODEL_DIR = &#34;Qwen3-0.6B&#34; OUTPUT_DIR = &#34;Qwen3-0.6B-W4A16&#34; print(f&#34;Base model: {MODEL_DIR}&#34;) print(f&#34;Quantized model: {OUTPUT_DIR}&#34;) from llmcompressor.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2026/07/how-to-run-a-pod-with-a-fixed-uid-outside-the-default-openshift-uid-range/" class="link black dim">
         How to Run a Pod with a Fixed UID Outside the Default OpenShift UID Range
       </a>
@@ -313,27 +329,6 @@ if (!doNotTrack) {
  This approach can dramatically improve development speed, documentation quality, and alignment between business and engineering.
  However, one important challenge emerges quickly:
   Architecture drift.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2026/04/exploring-spec-driven-development-with-ontologies-and-domain-design-models/" class="link black dim">
-        Exploring spec-driven development with Ontologies and Domain Design Models
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Introduction One of the more interesting recent developments in Retrieval-Augmented Generation (RAG) is Knowledge Graph–based RAG. Unlike traditional vector-based retrieval, this approach introduces structured relationships between entities, enabling deeper reasoning and better contextual understanding.
- This naturally raises a question:
-  Can we build more robust and reliable software systems by combining:
-   Ontologies
-  Domain-specific design models
-  Spec-driven development (SDD)
-     This article explores that idea through a practical comparison.
     </div>
   </div>
 </div>

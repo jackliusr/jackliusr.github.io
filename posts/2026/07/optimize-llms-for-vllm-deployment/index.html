@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>Optimize LLMs for vllm deployment | My learning and diary</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="description"
+    content="Quantization techniques were mentioned in huggingface and unsloth, and I used those quantized models in ollama and llama.cpp. I always wonder how to implement it for vllm. Today I learnt to use llmcompressor to optimized models for vllm.
+ import warnings warnings.filterwarnings(&#34;ignore&#34;) import os, gc, math, pathlib import torch from transformers import AutoTokenizer, AutoModelForCausalLM import warnings os.environ[&#39;TOKENIZERS_PARALLELISM&#39;] = &#39;false&#39; MODEL_DIR = &#34;Qwen3-0.6B&#34; OUTPUT_DIR = &#34;Qwen3-0.6B-W4A16&#34; print(f&#34;Base model: {MODEL_DIR}&#34;) print(f&#34;Quantized model: {OUTPUT_DIR}&#34;) from llmcompressor.">
+  <meta name="generator" content="Hugo 0.99.1" />
+  
+  
+  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+  
+
+  
+<link rel="stylesheet" href="/ananke/css/main.min.abe0b1c07d5e33565b0f9b998a7b1b5228b709f36af363e2766bc8035f2237b7.css" >
+
+
+
+
+  
+  
+
+  
+
+  
+
+  <meta property="og:title" content="Optimize LLMs for vllm deployment" />
+<meta property="og:description" content="Quantization techniques were mentioned in huggingface and unsloth, and I used those quantized models in ollama and llama.cpp. I always wonder how to implement it for vllm. Today I learnt to use llmcompressor to optimized models for vllm.
+ import warnings warnings.filterwarnings(&#34;ignore&#34;) import os, gc, math, pathlib import torch from transformers import AutoTokenizer, AutoModelForCausalLM import warnings os.environ[&#39;TOKENIZERS_PARALLELISM&#39;] = &#39;false&#39; MODEL_DIR = &#34;Qwen3-0.6B&#34; OUTPUT_DIR = &#34;Qwen3-0.6B-W4A16&#34; print(f&#34;Base model: {MODEL_DIR}&#34;) print(f&#34;Quantized model: {OUTPUT_DIR}&#34;) from llmcompressor." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jackliusr.github.io/posts/2026/07/optimize-llms-for-vllm-deployment/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2026-07-20T20:00:00+08:00" />
+<meta property="article:modified_time" content="2026-07-20T23:45:51+08:00" />
+
+<meta itemprop="name" content="Optimize LLMs for vllm deployment">
+<meta itemprop="description" content="Quantization techniques were mentioned in huggingface and unsloth, and I used those quantized models in ollama and llama.cpp. I always wonder how to implement it for vllm. Today I learnt to use llmcompressor to optimized models for vllm.
+ import warnings warnings.filterwarnings(&#34;ignore&#34;) import os, gc, math, pathlib import torch from transformers import AutoTokenizer, AutoModelForCausalLM import warnings os.environ[&#39;TOKENIZERS_PARALLELISM&#39;] = &#39;false&#39; MODEL_DIR = &#34;Qwen3-0.6B&#34; OUTPUT_DIR = &#34;Qwen3-0.6B-W4A16&#34; print(f&#34;Base model: {MODEL_DIR}&#34;) print(f&#34;Quantized model: {OUTPUT_DIR}&#34;) from llmcompressor."><meta itemprop="datePublished" content="2026-07-20T20:00:00+08:00" />
+<meta itemprop="dateModified" content="2026-07-20T23:45:51+08:00" />
+<meta itemprop="wordCount" content="6538">
+<meta itemprop="keywords" content="llmcompressor,vllm,quantization," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Optimize LLMs for vllm deployment"/>
+<meta name="twitter:description" content="Quantization techniques were mentioned in huggingface and unsloth, and I used those quantized models in ollama and llama.cpp. I always wonder how to implement it for vllm. Today I learnt to use llmcompressor to optimized models for vllm.
+ import warnings warnings.filterwarnings(&#34;ignore&#34;) import os, gc, math, pathlib import torch from transformers import AutoTokenizer, AutoModelForCausalLM import warnings os.environ[&#39;TOKENIZERS_PARALLELISM&#39;] = &#39;false&#39; MODEL_DIR = &#34;Qwen3-0.6B&#34; OUTPUT_DIR = &#34;Qwen3-0.6B-W4A16&#34; print(f&#34;Base model: {MODEL_DIR}&#34;) print(f&#34;Quantized model: {OUTPUT_DIR}&#34;) from llmcompressor."/>
+
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K49F8T19FK"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-K49F8T19FK', { 'anonymize_ip': false });
+}
+</script>
+
+  
+  
+
+
+
+
+
+
+</head>
+
+<body class="ma0 avenir bg-near-white production">
+
+  
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My learning and diary
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/notes/" title="Notes page">
+              Notes
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/portfolio/" title="Portfolio page">
+              Portfolio
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/readinglists/" title="Books page">
+              Books
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/categories/" title="Categories page">
+              Categories
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tags/" title="Tags page">
+              Tags
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+  <main class="pb7" role="main">
+    
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://jackliusr.github.io/posts/2026/07/optimize-llms-for-vllm-deployment/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://jackliusr.github.io/posts/2026/07/optimize-llms-for-vllm-deployment/&amp;text=Optimize%20LLMs%20for%20vllm%20deployment" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://jackliusr.github.io/posts/2026/07/optimize-llms-for-vllm-deployment/&amp;title=Optimize%20LLMs%20for%20vllm%20deployment" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Optimize LLMs for vllm deployment</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2026-07-20T20:00:00+08:00">July 20, 2026</time>
+
+      
+      
+        <span class="f6 mv4 dib tracked"> - 31 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 6538 words</span>
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
+<p>Quantization techniques were mentioned in huggingface and unsloth, and I used those quantized models in ollama and llama.cpp. I always wonder how to implement it for vllm.  Today I learnt to use llmcompressor to optimized models for vllm.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">import warnings
+warnings.filterwarnings(&#34;ignore&#34;)
+import os, gc, math, pathlib
+import torch
+from transformers import AutoTokenizer, AutoModelForCausalLM
+import warnings
+os.environ[&#39;TOKENIZERS_PARALLELISM&#39;] = &#39;false&#39;
+MODEL_DIR = &#34;Qwen3-0.6B&#34;
+OUTPUT_DIR = &#34;Qwen3-0.6B-W4A16&#34;
+print(f&#34;Base model:      {MODEL_DIR}&#34;)
+print(f&#34;Quantized model: {OUTPUT_DIR}&#34;)
+
+
+from llmcompressor.modifiers.quantization import GPTQModifier
+recipe = GPTQModifier(
+   scheme=&#34;W4A16&#34;,
+   targets=&#34;Linear&#34;,
+   ignore=[&#34;lm_head&#34;],
+)
+print(f&#34;Recipe: {recipe}&#34;)
+
+
+from llmcompressor import oneshot
+if not os.path.isdir(OUTPUT_DIR):
+   oneshot(
+       model=&#34;Qwen/Qwen3-0.6B&#34;,
+       dataset=&#34;wikitext&#34;,
+       dataset_config_name=&#34;wikitext-2-raw-v1&#34;,
+       recipe=recipe,
+       output_dir=OUTPUT_DIR,
+       max_seq_length=4096,
+       num_calibration_samples=256,
+   )
+   print(f&#34;Quantization complete. Model saved to: {OUTPUT_DIR}&#34;)
+
+def folder_size(path):
+   p = pathlib.Path(path)
+   if not p.exists():
+       return 0
+   return sum(f.stat().st_size for f in p.rglob(&#34;*&#34;) if f.is_file())
+def format_size(nbytes):
+   if nbytes &lt; 1024**2:
+       return f&#34;{nbytes/1024:.1f} KB&#34;
+   if nbytes &lt; 1024**3:
+       return f&#34;{nbytes/1024**2:.1f} MB&#34;
+   return f&#34;{nbytes/1024**3:.2f} GB&#34;
+size_orig = folder_size(MODEL_DIR)
+size_q = folder_size(OUTPUT_DIR)
+reduction = (1 - size_q / size_orig) * 100 if size_orig &gt; 0 else 0
+print(&#34;Model Size Comparison&#34;)
+print(&#34;=&#34; * 45)
+print(f&#34;Original (BF16):    {format_size(size_orig)}&#34;)
+print(f&#34;Quantized (W4A16):  {format_size(size_q)}&#34;)
+print(f&#34;Reduction:          {reduction:.0f}%&#34;)
+
+prompt = &#34;Machine learning is a branch of&#34;
+tokenizer = AutoTokenizer.from_pretrained(MODEL_DIR)
+base_model = AutoModelForCausalLM.from_pretrained(
+   MODEL_DIR, device_map=&#34;cpu&#34;, dtype=torch.bfloat16,
+)
+inputs = tokenizer(prompt, return_tensors=&#34;pt&#34;)
+outputs = base_model.generate(
+   **inputs,
+   max_new_tokens=60,
+   do_sample=False,
+   pad_token_id=tokenizer.eos_token_id,
+)
+generated = outputs[0][inputs[&#34;input_ids&#34;].shape[-1]:]
+print(f&#34;Base Model ({MODEL_DIR})&#34;)
+print(f&#34;Prompt: {prompt}&#34;)
+print(f&#34;Response: {tokenizer.decode(generated,
+                                   skip_special_tokens=True)}&#34;)
+#del base_model; gc.collect()
+
+import logging
+logging.getLogger(&#34;llmcompressor&#34;).setLevel(logging.WARNING)
+quant_model = AutoModelForCausalLM.from_pretrained(
+   OUTPUT_DIR, device_map=&#34;cpu&#34;, dtype=torch.bfloat16,
+)
+inputs = tokenizer(prompt, return_tensors=&#34;pt&#34;)
+outputs = quant_model.generate(
+   **inputs,
+   max_new_tokens=60,
+   do_sample=False,
+   pad_token_id=tokenizer.eos_token_id,
+)
+generated = outputs[0][inputs[&#34;input_ids&#34;].shape[-1]:]
+print(f&#34;Quantized Model ({OUTPUT_DIR})&#34;)
+print(f&#34;Prompt: {prompt}&#34;)
+print(f&#34;Response: {tokenizer.decode(generated,
+                                   skip_special_tokens=True)}&#34;)
+
+from datasets import load_dataset
+def calculate_perplexity(
+       model, tokenizer, dataset, max_tokens=5000, stride=512):
+   encodings = tokenizer(
+       &#34;\n\n&#34;.join(dataset[&#34;text&#34;]),
+       return_tensors=&#34;pt&#34;, truncation=True, max_length=max_tokens,
+   )
+   input_ids = encodings.input_ids
+   nlls, prev_end = [], 0
+   for begin_loc in range(0, input_ids.size(1), stride):
+       end_loc = min(begin_loc + stride, input_ids.size(1))
+       trg_len = end_loc - prev_end
+       input_slice = input_ids[:, begin_loc:end_loc]
+       target_slice = input_slice.clone()
+       target_slice[:, :-trg_len] = -100
+       with torch.no_grad():
+           loss = model(input_slice, labels=target_slice).loss
+           nlls.append(loss * trg_len)
+       prev_end = end_loc
+   return math.exp(torch.stack(nlls).sum() / prev_end)
+test_data = load_dataset(&#34;wikitext&#34;, &#34;wikitext-2-raw-v1&#34;, split=&#34;test&#34;)
+print(f&#34;Loaded {len(test_data)} test samples&#34;)
+
+quant_ppl = calculate_perplexity(quant_model, tokenizer, test_data)
+print(f&#34;Quantized perplexity: {quant_ppl:.2f}&#34;)
+
+base_model = AutoModelForCausalLM.from_pretrained(
+   MODEL_DIR, device_map=&#34;cpu&#34;, dtype=torch.bfloat16,
+)
+base_ppl = calculate_perplexity(base_model, tokenizer, test_data)
+print(f&#34;Base perplexity: {base_ppl:.2f}&#34;)
+
+print(&#34;Perplexity Comparison&#34;)
+print(&#34;=&#34; * 40)
+print(f&#34;Base (BF16):       {base_ppl:.2f}&#34;)
+print(f&#34;Quantized (W4A16): {quant_ppl:.2f}&#34;)
+print(f&#34;Difference:        {quant_ppl - base_ppl:+.2f} ({(
+   quant_ppl/base_ppl - 1)*100:+.1f}%)&#34;)</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">jackl@jackl-NucBox-EVO-X2:~/prjs/agents/vllm/optimize-model-llm-compressor$ uv run main.py
+Resolving despite existing lockfile due to change in pre-release mode: `allow` vs. `if-necessary-or-explicit`
+Base model:      Qwen3-0.6B
+Quantized model: Qwen3-0.6B-W4A16
+2026-07-20T22:29:18.7956 | get_main_device | WARNING - No accelerator available! Compressing model on CPU instead
+Recipe: config_groups=None targets=[&#39;Linear&#39;] ignore=[&#39;lm_head&#39;] scheme=&#39;W4A16&#39; kv_cache_scheme=None weight_observer=None input_observer=None output_observer=None observer=None bypass_divisibility_checks=False index=None group=None start=None end=None update=None initialized_=False finalized_=False started_=False ended_=False block_size=128 dampening_frac=0.01 actorder=static offload_hessians=False
+Loading weights: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 311/311 [00:00&lt;00:00, 3751.52it/s]
+README.md: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10.5k/10.5k [00:00&lt;00:00, 12.0MB/s]
+wikitext-2-raw-v1/test-00000-of-00001.pa(…): downloading bytes: ███████████████████████████████████████████████████████████████████████████████████████████████████|  732kB, 70.1kB/s
+wikitext-2-raw-v1/test-00000-of-00001.pa(…): reconstructing file: 100%|███████████████████████████████████████████████████████████████████████████████████|  733kB /  733kB, 70.4kB/s
+wikitext-2-raw-v1/train-00000-of-00001.p(…): downloading bytes: ███████████████████████████████████████████████████████████████████████████████████████████████████| 6.35MB,  596kB/s
+wikitext-2-raw-v1/train-00000-of-00001.p(…): reconstructing file: 100%|███████████████████████████████████████████████████████████████████████████████████| 6.36MB / 6.36MB,  606kB/s
+wikitext-2-raw-v1/validation-00000-of-00(…): downloading bytes: ███████████████████████████████████████████████████████████████████████████████████████████████████|  657kB, 63.6kB/s
+wikitext-2-raw-v1/validation-00000-of-00(…): reconstructing file: 100%|███████████████████████████████████████████████████████████████████████████████████|  657kB /  657kB, 63.7kB/s
+Generating test split: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4358/4358 [00:00&lt;00:00, 221517.97 examples/s]
+Generating train split: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████| 36718/36718 [00:00&lt;00:00, 1485717.01 examples/s]
+Generating validation split: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 3760/3760 [00:00&lt;00:00, 998896.82 examples/s]
+Tokenizing: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4358/4358 [00:02&lt;00:00, 2081.69 examples/s]
+Tokenizing: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 36718/36718 [00:17&lt;00:00, 2075.17 examples/s]
+Tokenizing: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3760/3760 [00:01&lt;00:00, 2038.67 examples/s]
+Adding labels: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4358/4358 [00:06&lt;00:00, 666.17 examples/s]
+Adding labels: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 36718/36718 [00:55&lt;00:00, 660.39 examples/s]
+Adding labels: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3760/3760 [00:05&lt;00:00, 671.71 examples/s]
+2026-07-20T22:31:09.2914 | get_processed_dataset | WARNING - No split was specified, but a multi-split dataset was loaded. Falling back to the &#39;train&#39; split for calibration.
+2026-07-20T22:31:09.2918 | reset | INFO - Compression lifecycle reset
+2026-07-20T22:31:09.3136 | from_modifiers | INFO - Creating recipe from modifiers
+2026-07-20T22:31:09.3148 | get_main_device | WARNING - No accelerator available! Compressing model on CPU instead
+2026-07-20T22:31:09.3247 | get_main_device | WARNING - No accelerator available! Compressing model on CPU instead
+Applying quantization config: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 196/196 [00:00&lt;00:00, 13191.75it/s]
+2026-07-20T22:31:09.3512 | initialize | INFO - Compression lifecycle initialized for 1 modifiers
+2026-07-20T22:31:09.3513 | IndependentPipeline | INFO - Inferred `SequentialPipeline` for `GPTQModifier`
+2026-07-20T22:31:09.3514 | get_main_device | WARNING - No accelerator available! Compressing model on CPU instead
+W0720 22:31:09.386000 83345 .venv/lib/python3.13/site-packages/torch/fx/_symbolic_trace.py:56] is_fx_tracing will return true for both fx.symbolic_trace and torch.export. Please use is_fx_tracing_symbolic_tracing() for specifically fx.symbolic_trace or torch.compiler.is_compiling() for specifically torch.export/compile.
+(1/29): Calibrating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:00&lt;00:00, 438.25it/s]
+(1/29): Propagating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:00&lt;00:00, 371.96it/s]
+(2/29): Calibrating: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:17&lt;00:00,  3.29it/s]
+2026-07-20T22:32:29.1108 | compress_module_list | INFO - Quantizing model.layers.0.self_attn.q_proj using 256 samples
+2026-07-20T22:32:29.3618 | GPTQ | METRIC - time 0.25s
+2026-07-20T22:32:29.3620 | GPTQ | METRIC - error 70.67
+2026-07-20T22:32:29.3652 | compress_module_list | INFO - Quantizing model.layers.0.self_attn.k_proj using 256 samples
+2026-07-20T22:32:29.4800 | GPTQ | METRIC - time 0.11s
+2026-07-20T22:32:29.4801 | GPTQ | METRIC - error 31.20
+2026-07-20T22:32:29.4826 | compress_module_list | INFO - Quantizing model.layers.0.self_attn.v_proj using 256 samples
+2026-07-20T22:32:29.5940 | GPTQ | METRIC - time 0.11s
+2026-07-20T22:32:29.5941 | GPTQ | METRIC - error 23.87
+2026-07-20T22:32:29.5966 | compress_module_list | INFO - Quantizing model.layers.0.self_attn.o_proj using 256 samples
+2026-07-20T22:32:29.8676 | GPTQ | METRIC - time 0.27s
+2026-07-20T22:32:29.8678 | GPTQ | METRIC - error 91.91
+2026-07-20T22:32:29.8710 | compress_module_list | INFO - Quantizing model.layers.0.mlp.gate_proj using 256 samples
+2026-07-20T22:32:30.0729 | GPTQ | METRIC - time 0.20s
+2026-07-20T22:32:30.0730 | GPTQ | METRIC - error 6933.73
+2026-07-20T22:32:30.0760 | compress_module_list | INFO - Quantizing model.layers.0.mlp.up_proj using 256 samples
+2026-07-20T22:32:30.2810 | GPTQ | METRIC - time 0.20s
+2026-07-20T22:32:30.2812 | GPTQ | METRIC - error 3520.67
+2026-07-20T22:32:30.2843 | compress_module_list | INFO - Quantizing model.layers.0.mlp.down_proj using 256 samples
+2026-07-20T22:32:30.7277 | GPTQ | METRIC - time 0.44s
+2026-07-20T22:32:30.7278 | GPTQ | METRIC - error 153.25
+(2/29): Propagating: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:40&lt;00:00,  6.29it/s]
+(3/29): Calibrating: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:23&lt;00:00,  3.07it/s]
+2026-07-20T22:34:34.8434 | compress_module_list | INFO - Quantizing model.layers.1.self_attn.q_proj using 256 samples
+2026-07-20T22:34:34.9941 | GPTQ | METRIC - time 0.15s
+2026-07-20T22:34:34.9943 | GPTQ | METRIC - error 272.47
+2026-07-20T22:34:34.9975 | compress_module_list | INFO - Quantizing model.layers.1.self_attn.k_proj using 256 samples
+2026-07-20T22:34:35.0967 | GPTQ | METRIC - time 0.10s
+2026-07-20T22:34:35.0968 | GPTQ | METRIC - error 119.73
+2026-07-20T22:34:35.0992 | compress_module_list | INFO - Quantizing model.layers.1.self_attn.v_proj using 256 samples
+2026-07-20T22:34:35.1980 | GPTQ | METRIC - time 0.10s
+2026-07-20T22:34:35.1981 | GPTQ | METRIC - error 112.32
+2026-07-20T22:34:35.2005 | compress_module_list | INFO - Quantizing model.layers.1.self_attn.o_proj using 256 samples
+2026-07-20T22:34:35.4822 | GPTQ | METRIC - time 0.28s
+2026-07-20T22:34:35.4823 | GPTQ | METRIC - error 15.64
+2026-07-20T22:34:35.4856 | compress_module_list | INFO - Quantizing model.layers.1.mlp.gate_proj using 256 samples
+2026-07-20T22:34:35.8677 | GPTQ | METRIC - time 0.38s
+2026-07-20T22:34:35.8679 | GPTQ | METRIC - error 39499.16
+2026-07-20T22:34:35.8715 | compress_module_list | INFO - Quantizing model.layers.1.mlp.up_proj using 256 samples
+2026-07-20T22:34:36.0583 | GPTQ | METRIC - time 0.19s
+2026-07-20T22:34:36.0584 | GPTQ | METRIC - error 11664.51
+2026-07-20T22:34:36.0619 | compress_module_list | INFO - Quantizing model.layers.1.mlp.down_proj using 256 samples
+2026-07-20T22:34:36.4768 | GPTQ | METRIC - time 0.41s
+2026-07-20T22:34:36.4769 | GPTQ | METRIC - error 274.21
+(3/29): Propagating: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:41&lt;00:00,  6.14it/s]
+(4/29): Calibrating: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:20&lt;00:00,  3.20it/s]
+2026-07-20T22:36:38.2362 | compress_module_list | INFO - Quantizing model.layers.2.self_attn.q_proj using 256 samples
+2026-07-20T22:36:38.3815 | GPTQ | METRIC - time 0.15s
+2026-07-20T22:36:38.3817 | GPTQ | METRIC - error 483.22
+2026-07-20T22:36:38.3852 | compress_module_list | INFO - Quantizing model.layers.2.self_attn.k_proj using 256 samples
+2026-07-20T22:36:38.4859 | GPTQ | METRIC - time 0.10s
+2026-07-20T22:36:38.4860 | GPTQ | METRIC - error 203.07
+2026-07-20T22:36:38.4888 | compress_module_list | INFO - Quantizing model.layers.2.self_attn.v_proj using 256 samples
+2026-07-20T22:36:38.5894 | GPTQ | METRIC - time 0.10s
+2026-07-20T22:36:38.5895 | GPTQ | METRIC - error 198.07
+2026-07-20T22:36:38.5922 | compress_module_list | INFO - Quantizing model.layers.2.self_attn.o_proj using 256 samples
+2026-07-20T22:36:38.8807 | GPTQ | METRIC - time 0.29s
+2026-07-20T22:36:38.8808 | GPTQ | METRIC - error 27.42
+2026-07-20T22:36:38.8842 | compress_module_list | INFO - Quantizing model.layers.2.mlp.gate_proj using 256 samples
+2026-07-20T22:36:39.0883 | GPTQ | METRIC - time 0.20s
+2026-07-20T22:36:39.0884 | GPTQ | METRIC - error 27661.68
+2026-07-20T22:36:39.0919 | compress_module_list | INFO - Quantizing model.layers.2.mlp.up_proj using 256 samples
+2026-07-20T22:36:39.2958 | GPTQ | METRIC - time 0.20s
+2026-07-20T22:36:39.2959 | GPTQ | METRIC - error 10034.97
+2026-07-20T22:36:39.2993 | compress_module_list | INFO - Quantizing model.layers.2.mlp.down_proj using 256 samples
+2026-07-20T22:36:39.7088 | GPTQ | METRIC - time 0.41s
+2026-07-20T22:36:39.7090 | GPTQ | METRIC - error 10518.42
+(4/29): Propagating: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:41&lt;00:00,  6.16it/s]
+(5/29): Calibrating: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:24&lt;00:00,  3.04it/s]
+2026-07-20T22:38:45.3844 | compress_module_list | INFO - Quantizing model.layers.3.self_attn.q_proj using 256 samples
+2026-07-20T22:38:45.5226 | GPTQ | METRIC - time 0.14s
+2026-07-20T22:38:45.5228 | GPTQ | METRIC - error 3807.77
+2026-07-20T22:38:45.5262 | compress_module_list | INFO - Quantizing model.layers.3.self_attn.k_proj using 256 samples
+2026-07-20T22:38:45.6243 | GPTQ | METRIC - time 0.10s
+2026-07-20T22:38:45.6244 | GPTQ | METRIC - error 1853.68
+2026-07-20T22:38:45.6271 | compress_module_list | INFO - Quantizing model.layers.3.self_attn.v_proj using 256 samples
+2026-07-20T22:38:45.7250 | GPTQ | METRIC - time 0.10s
+2026-07-20T22:38:45.7251 | GPTQ | METRIC - error 1834.41
+2026-07-20T22:38:45.7278 | compress_module_list | INFO - Quantizing model.layers.3.self_attn.o_proj using 256 samples
+2026-07-20T22:38:45.9843 | GPTQ | METRIC - time 0.26s
+2026-07-20T22:38:45.9845 | GPTQ | METRIC - error 17.92
+2026-07-20T22:38:45.9878 | compress_module_list | INFO - Quantizing model.layers.3.mlp.gate_proj using 256 samples
+2026-07-20T22:38:46.1843 | GPTQ | METRIC - time 0.20s
+2026-07-20T22:38:46.1844 | GPTQ | METRIC - error 32716.53
+2026-07-20T22:38:46.1881 | compress_module_list | INFO - Quantizing model.layers.3.mlp.up_proj using 256 samples
+2026-07-20T22:38:46.3815 | GPTQ | METRIC - time 0.19s
+2026-07-20T22:38:46.3817 | GPTQ | METRIC - error 12754.72
+2026-07-20T22:38:46.3854 | compress_module_list | INFO - Quantizing model.layers.3.mlp.down_proj using 256 samples
+2026-07-20T22:38:46.7725 | GPTQ | METRIC - time 0.39s
+2026-07-20T22:38:46.7726 | GPTQ | METRIC - error 930.38
+(5/29): Propagating: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:45&lt;00:00,  5.61it/s]
+(6/29): Calibrating: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:17&lt;00:00,  3.30it/s]
+2026-07-20T22:40:50.0534 | compress_module_list | INFO - Quantizing model.layers.4.self_attn.q_proj using 256 samples
+2026-07-20T22:40:50.2215 | GPTQ | METRIC - time 0.17s
+2026-07-20T22:40:50.2216 | GPTQ | METRIC - error 2806.24
+2026-07-20T22:40:50.2250 | compress_module_list | INFO - Quantizing model.layers.4.self_attn.k_proj using 256 samples
+2026-07-20T22:40:50.3432 | GPTQ | METRIC - time 0.12s
+2026-07-20T22:40:50.3433 | GPTQ | METRIC - error 1320.21
+2026-07-20T22:40:50.3458 | compress_module_list | INFO - Quantizing model.layers.4.self_attn.v_proj using 256 samples
+2026-07-20T22:40:50.4634 | GPTQ | METRIC - time 0.12s
+2026-07-20T22:40:50.4635 | GPTQ | METRIC - error 1402.02
+2026-07-20T22:40:50.4661 | compress_module_list | INFO - Quantizing model.layers.4.self_attn.o_proj using 256 samples
+2026-07-20T22:40:50.7516 | GPTQ | METRIC - time 0.29s
+2026-07-20T22:40:50.7518 | GPTQ | METRIC - error 134.32
+2026-07-20T22:40:50.7552 | compress_module_list | INFO - Quantizing model.layers.4.mlp.gate_proj using 256 samples
+2026-07-20T22:40:50.9750 | GPTQ | METRIC - time 0.22s
+2026-07-20T22:40:50.9752 | GPTQ | METRIC - error 27155.72
+2026-07-20T22:40:50.9787 | compress_module_list | INFO - Quantizing model.layers.4.mlp.up_proj using 256 samples
+2026-07-20T22:40:51.1981 | GPTQ | METRIC - time 0.22s
+2026-07-20T22:40:51.1982 | GPTQ | METRIC - error 11957.13
+2026-07-20T22:40:51.2021 | compress_module_list | INFO - Quantizing model.layers.4.mlp.down_proj using 256 samples
+2026-07-20T22:40:51.6473 | GPTQ | METRIC - time 0.45s
+2026-07-20T22:40:51.6475 | GPTQ | METRIC - error 1050.98
+(6/29): Propagating: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:42&lt;00:00,  6.07it/s]
+(7/29): Calibrating: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:18&lt;00:00,  3.27it/s]
+2026-07-20T22:42:52.0707 | compress_module_list | INFO - Quantizing model.layers.5.self_attn.q_proj using 256 samples
+2026-07-20T22:42:52.2291 | GPTQ | METRIC - time 0.16s
+2026-07-20T22:42:52.2293 | GPTQ | METRIC - error 5918.65
+2026-07-20T22:42:52.2328 | compress_module_list | INFO - Quantizing model.layers.5.self_attn.k_proj using 256 samples
+2026-07-20T22:42:52.3385 | GPTQ | METRIC - time 0.11s
+2026-07-20T22:42:52.3386 | GPTQ | METRIC - error 2429.72
+2026-07-20T22:42:52.3413 | compress_module_list | INFO - Quantizing model.layers.5.self_attn.v_proj using 256 samples
+2026-07-20T22:42:52.4478 | GPTQ | METRIC - time 0.11s
+2026-07-20T22:42:52.4479 | GPTQ | METRIC - error 2524.46
+2026-07-20T22:42:52.4507 | compress_module_list | INFO - Quantizing model.layers.5.self_attn.o_proj using 256 samples
+2026-07-20T22:42:52.7129 | GPTQ | METRIC - time 0.26s
+2026-07-20T22:42:52.7131 | GPTQ | METRIC - error 51.09
+2026-07-20T22:42:52.7165 | compress_module_list | INFO - Quantizing model.layers.5.mlp.gate_proj using 256 samples
+2026-07-20T22:42:52.9279 | GPTQ | METRIC - time 0.21s
+2026-07-20T22:42:52.9280 | GPTQ | METRIC - error 20953.87
+2026-07-20T22:42:52.9317 | compress_module_list | INFO - Quantizing model.layers.5.mlp.up_proj using 256 samples
+2026-07-20T22:42:53.1414 | GPTQ | METRIC - time 0.21s
+2026-07-20T22:42:53.1416 | GPTQ | METRIC - error 12526.73
+2026-07-20T22:42:53.1453 | compress_module_list | INFO - Quantizing model.layers.5.mlp.down_proj using 256 samples
+2026-07-20T22:42:53.6066 | GPTQ | METRIC - time 0.46s
+2026-07-20T22:42:53.6067 | GPTQ | METRIC - error 1657.02
+(7/29): Propagating: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:42&lt;00:00,  6.05it/s]
+(8/29): Calibrating: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:20&lt;00:00,  3.20it/s]
+2026-07-20T22:44:56.0311 | compress_module_list | INFO - Quantizing model.layers.6.self_attn.q_proj using 256 samples
+2026-07-20T22:44:56.2013 | GPTQ | METRIC - time 0.17s
+2026-07-20T22:44:56.2014 | GPTQ | METRIC - error 4791.48
+2026-07-20T22:44:56.2048 | compress_module_list | INFO - Quantizing model.layers.6.self_attn.k_proj using 256 samples
+2026-07-20T22:44:56.3249 | GPTQ | METRIC - time 0.12s
+2026-07-20T22:44:56.3250 | GPTQ | METRIC - error 2097.75
+2026-07-20T22:44:56.3277 | compress_module_list | INFO - Quantizing model.layers.6.self_attn.v_proj using 256 samples
+2026-07-20T22:44:56.4465 | GPTQ | METRIC - time 0.12s
+2026-07-20T22:44:56.4466 | GPTQ | METRIC - error 2051.53
+2026-07-20T22:44:56.4494 | compress_module_list | INFO - Quantizing model.layers.6.self_attn.o_proj using 256 samples
+2026-07-20T22:44:56.6960 | GPTQ | METRIC - time 0.25s
+2026-07-20T22:44:56.6961 | GPTQ | METRIC - error 132.87
+2026-07-20T22:44:56.6996 | compress_module_list | INFO - Quantizing model.layers.6.mlp.gate_proj using 256 samples
+2026-07-20T22:44:56.9139 | GPTQ | METRIC - time 0.21s
+2026-07-20T22:44:56.9141 | GPTQ | METRIC - error 31237.00
+2026-07-20T22:44:56.9178 | compress_module_list | INFO - Quantizing model.layers.6.mlp.up_proj using 256 samples
+2026-07-20T22:44:57.1328 | GPTQ | METRIC - time 0.21s
+2026-07-20T22:44:57.1329 | GPTQ | METRIC - error 19707.88
+2026-07-20T22:44:57.1365 | compress_module_list | INFO - Quantizing model.layers.6.mlp.down_proj using 256 samples
+2026-07-20T22:44:57.6463 | GPTQ | METRIC - time 0.51s
+2026-07-20T22:44:57.6464 | GPTQ | METRIC - error 2715.92
+(8/29): Propagating: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:41&lt;00:00,  6.23it/s]
+(9/29): Calibrating: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:18&lt;00:00,  3.27it/s]
+2026-07-20T22:46:57.1253 | compress_module_list | INFO - Quantizing model.layers.7.self_attn.q_proj using 256 samples
+2026-07-20T22:46:57.2707 | GPTQ | METRIC - time 0.15s
+2026-07-20T22:46:57.2708 | GPTQ | METRIC - error 11145.78
+2026-07-20T22:46:57.2743 | compress_module_list | INFO - Quantizing model.layers.7.self_attn.k_proj using 256 samples
+2026-07-20T22:46:57.3708 | GPTQ | METRIC - time 0.10s
+2026-07-20T22:46:57.3709 | GPTQ | METRIC - error 4548.41
+2026-07-20T22:46:57.3737 | compress_module_list | INFO - Quantizing model.layers.7.self_attn.v_proj using 256 samples
+2026-07-20T22:46:57.4713 | GPTQ | METRIC - time 0.10s
+2026-07-20T22:46:57.4714 | GPTQ | METRIC - error 5147.34
+2026-07-20T22:46:57.4741 | compress_module_list | INFO - Quantizing model.layers.7.self_attn.o_proj using 256 samples
+2026-07-20T22:46:57.7151 | GPTQ | METRIC - time 0.24s
+2026-07-20T22:46:57.7152 | GPTQ | METRIC - error 100.19
+2026-07-20T22:46:57.7187 | compress_module_list | INFO - Quantizing model.layers.7.mlp.gate_proj using 256 samples
+2026-07-20T22:46:57.9156 | GPTQ | METRIC - time 0.20s
+2026-07-20T22:46:57.9157 | GPTQ | METRIC - error 40393.55
+2026-07-20T22:46:57.9193 | compress_module_list | INFO - Quantizing model.layers.7.mlp.up_proj using 256 samples
+2026-07-20T22:46:58.1138 | GPTQ | METRIC - time 0.19s
+2026-07-20T22:46:58.1140 | GPTQ | METRIC - error 25031.86
+2026-07-20T22:46:58.1176 | compress_module_list | INFO - Quantizing model.layers.7.mlp.down_proj using 256 samples
+2026-07-20T22:46:58.5879 | GPTQ | METRIC - time 0.47s
+2026-07-20T22:46:58.5880 | GPTQ | METRIC - error 3554.07
+(9/29): Propagating: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:41&lt;00:00,  6.10it/s]
+(10/29): Calibrating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:17&lt;00:00,  3.31it/s]
+2026-07-20T22:48:57.8084 | compress_module_list | INFO - Quantizing model.layers.8.self_attn.q_proj using 256 samples
+2026-07-20T22:48:57.9729 | GPTQ | METRIC - time 0.16s
+2026-07-20T22:48:57.9731 | GPTQ | METRIC - error 14565.95
+2026-07-20T22:48:57.9764 | compress_module_list | INFO - Quantizing model.layers.8.self_attn.k_proj using 256 samples
+2026-07-20T22:48:58.0908 | GPTQ | METRIC - time 0.11s
+2026-07-20T22:48:58.0910 | GPTQ | METRIC - error 6458.42
+2026-07-20T22:48:58.0936 | compress_module_list | INFO - Quantizing model.layers.8.self_attn.v_proj using 256 samples
+2026-07-20T22:48:58.2089 | GPTQ | METRIC - time 0.12s
+2026-07-20T22:48:58.2090 | GPTQ | METRIC - error 6282.23
+2026-07-20T22:48:58.2117 | compress_module_list | INFO - Quantizing model.layers.8.self_attn.o_proj using 256 samples
+2026-07-20T22:48:58.4906 | GPTQ | METRIC - time 0.28s
+2026-07-20T22:48:58.4907 | GPTQ | METRIC - error 130.40
+2026-07-20T22:48:58.4941 | compress_module_list | INFO - Quantizing model.layers.8.mlp.gate_proj using 256 samples
+2026-07-20T22:48:58.7076 | GPTQ | METRIC - time 0.21s
+2026-07-20T22:48:58.7077 | GPTQ | METRIC - error 46745.03
+2026-07-20T22:48:58.7113 | compress_module_list | INFO - Quantizing model.layers.8.mlp.up_proj using 256 samples
+2026-07-20T22:48:58.9258 | GPTQ | METRIC - time 0.21s
+2026-07-20T22:48:58.9259 | GPTQ | METRIC - error 30157.65
+2026-07-20T22:48:58.9296 | compress_module_list | INFO - Quantizing model.layers.8.mlp.down_proj using 256 samples
+2026-07-20T22:48:59.4197 | GPTQ | METRIC - time 0.49s
+2026-07-20T22:48:59.4198 | GPTQ | METRIC - error 5196.37
+(10/29): Propagating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:42&lt;00:00,  6.07it/s]
+(11/29): Calibrating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:21&lt;00:00,  3.15it/s]
+2026-07-20T22:51:02.7975 | compress_module_list | INFO - Quantizing model.layers.9.self_attn.q_proj using 256 samples
+2026-07-20T22:51:02.9292 | GPTQ | METRIC - time 0.13s
+2026-07-20T22:51:02.9293 | GPTQ | METRIC - error 30525.06
+2026-07-20T22:51:02.9328 | compress_module_list | INFO - Quantizing model.layers.9.self_attn.k_proj using 256 samples
+2026-07-20T22:51:03.0298 | GPTQ | METRIC - time 0.10s
+2026-07-20T22:51:03.0299 | GPTQ | METRIC - error 12171.27
+2026-07-20T22:51:03.0325 | compress_module_list | INFO - Quantizing model.layers.9.self_attn.v_proj using 256 samples
+2026-07-20T22:51:03.1308 | GPTQ | METRIC - time 0.10s
+2026-07-20T22:51:03.1310 | GPTQ | METRIC - error 12989.18
+2026-07-20T22:51:03.1336 | compress_module_list | INFO - Quantizing model.layers.9.self_attn.o_proj using 256 samples
+2026-07-20T22:51:03.3747 | GPTQ | METRIC - time 0.24s
+2026-07-20T22:51:03.3748 | GPTQ | METRIC - error 159.71
+2026-07-20T22:51:03.3782 | compress_module_list | INFO - Quantizing model.layers.9.mlp.gate_proj using 256 samples
+2026-07-20T22:51:03.5632 | GPTQ | METRIC - time 0.18s
+2026-07-20T22:51:03.5634 | GPTQ | METRIC - error 62443.04
+2026-07-20T22:51:03.5668 | compress_module_list | INFO - Quantizing model.layers.9.mlp.up_proj using 256 samples
+2026-07-20T22:51:03.7515 | GPTQ | METRIC - time 0.18s
+2026-07-20T22:51:03.7516 | GPTQ | METRIC - error 39477.82
+2026-07-20T22:51:03.7551 | compress_module_list | INFO - Quantizing model.layers.9.mlp.down_proj using 256 samples
+2026-07-20T22:51:04.1849 | GPTQ | METRIC - time 0.43s
+2026-07-20T22:51:04.1851 | GPTQ | METRIC - error 8344.31
+(11/29): Propagating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:41&lt;00:00,  6.18it/s]
+(12/29): Calibrating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:21&lt;00:00,  3.15it/s]
+2026-07-20T22:53:06.9153 | compress_module_list | INFO - Quantizing model.layers.10.self_attn.q_proj using 256 samples
+2026-07-20T22:53:07.0747 | GPTQ | METRIC - time 0.16s
+2026-07-20T22:53:07.0749 | GPTQ | METRIC - error 32045.04
+2026-07-20T22:53:07.0782 | compress_module_list | INFO - Quantizing model.layers.10.self_attn.k_proj using 256 samples
+2026-07-20T22:53:07.1802 | GPTQ | METRIC - time 0.10s
+2026-07-20T22:53:07.1803 | GPTQ | METRIC - error 13343.77
+2026-07-20T22:53:07.1828 | compress_module_list | INFO - Quantizing model.layers.10.self_attn.v_proj using 256 samples
+2026-07-20T22:53:07.2851 | GPTQ | METRIC - time 0.10s
+2026-07-20T22:53:07.2852 | GPTQ | METRIC - error 13787.35
+2026-07-20T22:53:07.2880 | compress_module_list | INFO - Quantizing model.layers.10.self_attn.o_proj using 256 samples
+2026-07-20T22:53:07.5311 | GPTQ | METRIC - time 0.24s
+2026-07-20T22:53:07.5312 | GPTQ | METRIC - error 117.44
+2026-07-20T22:53:07.5346 | compress_module_list | INFO - Quantizing model.layers.10.mlp.gate_proj using 256 samples
+2026-07-20T22:53:07.7268 | GPTQ | METRIC - time 0.19s
+2026-07-20T22:53:07.7270 | GPTQ | METRIC - error 65803.62
+2026-07-20T22:53:07.7305 | compress_module_list | INFO - Quantizing model.layers.10.mlp.up_proj using 256 samples
+2026-07-20T22:53:07.9222 | GPTQ | METRIC - time 0.19s
+2026-07-20T22:53:07.9223 | GPTQ | METRIC - error 41532.80
+2026-07-20T22:53:07.9257 | compress_module_list | INFO - Quantizing model.layers.10.mlp.down_proj using 256 samples
+2026-07-20T22:53:08.3111 | GPTQ | METRIC - time 0.39s
+2026-07-20T22:53:08.3113 | GPTQ | METRIC - error 10695.85
+(12/29): Propagating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:42&lt;00:00,  6.06it/s]
+(13/29): Calibrating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:22&lt;00:00,  3.11it/s]
+2026-07-20T22:55:12.7429 | compress_module_list | INFO - Quantizing model.layers.11.self_attn.q_proj using 256 samples
+2026-07-20T22:55:12.8813 | GPTQ | METRIC - time 0.14s
+2026-07-20T22:55:12.8815 | GPTQ | METRIC - error 60898.13
+2026-07-20T22:55:12.8850 | compress_module_list | INFO - Quantizing model.layers.11.self_attn.k_proj using 256 samples
+2026-07-20T22:55:12.9779 | GPTQ | METRIC - time 0.09s
+2026-07-20T22:55:12.9781 | GPTQ | METRIC - error 22520.04
+2026-07-20T22:55:12.9808 | compress_module_list | INFO - Quantizing model.layers.11.self_attn.v_proj using 256 samples
+2026-07-20T22:55:13.0749 | GPTQ | METRIC - time 0.09s
+2026-07-20T22:55:13.0750 | GPTQ | METRIC - error 21196.94
+2026-07-20T22:55:13.0776 | compress_module_list | INFO - Quantizing model.layers.11.self_attn.o_proj using 256 samples
+2026-07-20T22:55:13.3190 | GPTQ | METRIC - time 0.24s
+2026-07-20T22:55:13.3192 | GPTQ | METRIC - error 400.55
+2026-07-20T22:55:13.3227 | compress_module_list | INFO - Quantizing model.layers.11.mlp.gate_proj using 256 samples
+2026-07-20T22:55:13.5220 | GPTQ | METRIC - time 0.20s
+2026-07-20T22:55:13.5222 | GPTQ | METRIC - error 63562.16
+2026-07-20T22:55:13.5258 | compress_module_list | INFO - Quantizing model.layers.11.mlp.up_proj using 256 samples
+2026-07-20T22:55:13.7293 | GPTQ | METRIC - time 0.20s
+2026-07-20T22:55:13.7295 | GPTQ | METRIC - error 49106.24
+2026-07-20T22:55:13.7330 | compress_module_list | INFO - Quantizing model.layers.11.mlp.down_proj using 256 samples
+2026-07-20T22:55:14.2203 | GPTQ | METRIC - time 0.49s
+2026-07-20T22:55:14.2205 | GPTQ | METRIC - error 13916.51
+(13/29): Propagating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:42&lt;00:00,  6.07it/s]
+(14/29): Calibrating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:22&lt;00:00,  3.12it/s]
+2026-07-20T22:57:18.5752 | compress_module_list | INFO - Quantizing model.layers.12.self_attn.q_proj using 256 samples
+2026-07-20T22:57:18.7177 | GPTQ | METRIC - time 0.14s
+2026-07-20T22:57:18.7178 | GPTQ | METRIC - error 71522.99
+2026-07-20T22:57:18.7210 | compress_module_list | INFO - Quantizing model.layers.12.self_attn.k_proj using 256 samples
+2026-07-20T22:57:18.8186 | GPTQ | METRIC - time 0.10s
+2026-07-20T22:57:18.8188 | GPTQ | METRIC - error 25840.58
+2026-07-20T22:57:18.8213 | compress_module_list | INFO - Quantizing model.layers.12.self_attn.v_proj using 256 samples
+2026-07-20T22:57:18.9186 | GPTQ | METRIC - time 0.10s
+2026-07-20T22:57:18.9187 | GPTQ | METRIC - error 27092.99
+2026-07-20T22:57:18.9213 | compress_module_list | INFO - Quantizing model.layers.12.self_attn.o_proj using 256 samples
+2026-07-20T22:57:19.1621 | GPTQ | METRIC - time 0.24s
+2026-07-20T22:57:19.1622 | GPTQ | METRIC - error 192.07
+2026-07-20T22:57:19.1657 | compress_module_list | INFO - Quantizing model.layers.12.mlp.gate_proj using 256 samples
+2026-07-20T22:57:19.3592 | GPTQ | METRIC - time 0.19s
+2026-07-20T22:57:19.3594 | GPTQ | METRIC - error 54480.87
+2026-07-20T22:57:19.3629 | compress_module_list | INFO - Quantizing model.layers.12.mlp.up_proj using 256 samples
+2026-07-20T22:57:19.5560 | GPTQ | METRIC - time 0.19s
+2026-07-20T22:57:19.5561 | GPTQ | METRIC - error 45227.95
+2026-07-20T22:57:19.5598 | compress_module_list | INFO - Quantizing model.layers.12.mlp.down_proj using 256 samples
+2026-07-20T22:57:20.0519 | GPTQ | METRIC - time 0.49s
+2026-07-20T22:57:20.0520 | GPTQ | METRIC - error 12149.07
+(14/29): Propagating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:45&lt;00:00,  5.61it/s]
+(15/29): Calibrating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:25&lt;00:00,  3.01it/s]
+2026-07-20T22:59:30.7671 | compress_module_list | INFO - Quantizing model.layers.13.self_attn.q_proj using 256 samples
+2026-07-20T22:59:30.9322 | GPTQ | METRIC - time 0.16s
+2026-07-20T22:59:30.9324 | GPTQ | METRIC - error 69674.12
+2026-07-20T22:59:30.9356 | compress_module_list | INFO - Quantizing model.layers.13.self_attn.k_proj using 256 samples
+2026-07-20T22:59:31.0633 | GPTQ | METRIC - time 0.13s
+2026-07-20T22:59:31.0635 | GPTQ | METRIC - error 23686.17
+2026-07-20T22:59:31.0661 | compress_module_list | INFO - Quantizing model.layers.13.self_attn.v_proj using 256 samples
+2026-07-20T22:59:31.1958 | GPTQ | METRIC - time 0.13s
+2026-07-20T22:59:31.1959 | GPTQ | METRIC - error 28279.91
+2026-07-20T22:59:31.1985 | compress_module_list | INFO - Quantizing model.layers.13.self_attn.o_proj using 256 samples
+2026-07-20T22:59:31.4783 | GPTQ | METRIC - time 0.28s
+2026-07-20T22:59:31.4784 | GPTQ | METRIC - error 242.80
+2026-07-20T22:59:31.4819 | compress_module_list | INFO - Quantizing model.layers.13.mlp.gate_proj using 256 samples
+2026-07-20T22:59:31.6819 | GPTQ | METRIC - time 0.20s
+2026-07-20T22:59:31.6821 | GPTQ | METRIC - error 56488.29
+2026-07-20T22:59:31.6856 | compress_module_list | INFO - Quantizing model.layers.13.mlp.up_proj using 256 samples
+2026-07-20T22:59:31.8812 | GPTQ | METRIC - time 0.20s
+2026-07-20T22:59:31.8813 | GPTQ | METRIC - error 45988.02
+2026-07-20T22:59:31.8850 | compress_module_list | INFO - Quantizing model.layers.13.mlp.down_proj using 256 samples
+2026-07-20T22:59:32.3820 | GPTQ | METRIC - time 0.50s
+2026-07-20T22:59:32.3822 | GPTQ | METRIC - error 11444.95
+(15/29): Propagating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:42&lt;00:00,  5.96it/s]
+(16/29): Calibrating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:21&lt;00:00,  3.13it/s]
+2026-07-20T23:01:37.2238 | compress_module_list | INFO - Quantizing model.layers.14.self_attn.q_proj using 256 samples
+2026-07-20T23:01:37.3602 | GPTQ | METRIC - time 0.14s
+2026-07-20T23:01:37.3603 | GPTQ | METRIC - error 86275.33
+2026-07-20T23:01:37.3637 | compress_module_list | INFO - Quantizing model.layers.14.self_attn.k_proj using 256 samples
+2026-07-20T23:01:37.4535 | GPTQ | METRIC - time 0.09s
+2026-07-20T23:01:37.4536 | GPTQ | METRIC - error 31386.52
+2026-07-20T23:01:37.4562 | compress_module_list | INFO - Quantizing model.layers.14.self_attn.v_proj using 256 samples
+2026-07-20T23:01:37.5454 | GPTQ | METRIC - time 0.09s
+2026-07-20T23:01:37.5455 | GPTQ | METRIC - error 33220.38
+2026-07-20T23:01:37.5481 | compress_module_list | INFO - Quantizing model.layers.14.self_attn.o_proj using 256 samples
+2026-07-20T23:01:37.7871 | GPTQ | METRIC - time 0.24s
+2026-07-20T23:01:37.7872 | GPTQ | METRIC - error 222.93
+2026-07-20T23:01:37.7906 | compress_module_list | INFO - Quantizing model.layers.14.mlp.gate_proj using 256 samples
+2026-07-20T23:01:37.9799 | GPTQ | METRIC - time 0.19s
+2026-07-20T23:01:37.9801 | GPTQ | METRIC - error 60179.04
+2026-07-20T23:01:37.9836 | compress_module_list | INFO - Quantizing model.layers.14.mlp.up_proj using 256 samples
+2026-07-20T23:01:38.1745 | GPTQ | METRIC - time 0.19s
+2026-07-20T23:01:38.1746 | GPTQ | METRIC - error 49921.59
+2026-07-20T23:01:38.1781 | compress_module_list | INFO - Quantizing model.layers.14.mlp.down_proj using 256 samples
+2026-07-20T23:01:38.6151 | GPTQ | METRIC - time 0.44s
+2026-07-20T23:01:38.6153 | GPTQ | METRIC - error 15830.06
+(16/29): Propagating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:42&lt;00:00,  5.98it/s]
+(17/29): Calibrating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:21&lt;00:00,  3.15it/s]
+2026-07-20T23:03:42.6519 | compress_module_list | INFO - Quantizing model.layers.15.self_attn.q_proj using 256 samples
+2026-07-20T23:03:42.7943 | GPTQ | METRIC - time 0.14s
+2026-07-20T23:03:42.7945 | GPTQ | METRIC - error 170850.47
+2026-07-20T23:03:42.7981 | compress_module_list | INFO - Quantizing model.layers.15.self_attn.k_proj using 256 samples
+2026-07-20T23:03:42.9027 | GPTQ | METRIC - time 0.10s
+2026-07-20T23:03:42.9028 | GPTQ | METRIC - error 53586.55
+2026-07-20T23:03:42.9054 | compress_module_list | INFO - Quantizing model.layers.15.self_attn.v_proj using 256 samples
+2026-07-20T23:03:43.0043 | GPTQ | METRIC - time 0.10s
+2026-07-20T23:03:43.0044 | GPTQ | METRIC - error 68517.15
+2026-07-20T23:03:43.0071 | compress_module_list | INFO - Quantizing model.layers.15.self_attn.o_proj using 256 samples
+2026-07-20T23:03:43.2650 | GPTQ | METRIC - time 0.26s
+2026-07-20T23:03:43.2651 | GPTQ | METRIC - error 417.26
+2026-07-20T23:03:43.2686 | compress_module_list | INFO - Quantizing model.layers.15.mlp.gate_proj using 256 samples
+2026-07-20T23:03:43.4703 | GPTQ | METRIC - time 0.20s
+2026-07-20T23:03:43.4705 | GPTQ | METRIC - error 59763.46
+2026-07-20T23:03:43.4741 | compress_module_list | INFO - Quantizing model.layers.15.mlp.up_proj using 256 samples
+2026-07-20T23:03:43.6765 | GPTQ | METRIC - time 0.20s
+2026-07-20T23:03:43.6767 | GPTQ | METRIC - error 50531.65
+2026-07-20T23:03:43.6802 | compress_module_list | INFO - Quantizing model.layers.15.mlp.down_proj using 256 samples
+2026-07-20T23:03:44.0535 | GPTQ | METRIC - time 0.37s
+2026-07-20T23:03:44.0537 | GPTQ | METRIC - error 15542.14
+(17/29): Propagating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:43&lt;00:00,  5.92it/s]
+(18/29): Calibrating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:21&lt;00:00,  3.15it/s]
+2026-07-20T23:05:48.5515 | compress_module_list | INFO - Quantizing model.layers.16.self_attn.q_proj using 256 samples
+2026-07-20T23:05:48.7144 | GPTQ | METRIC - time 0.16s
+2026-07-20T23:05:48.7145 | GPTQ | METRIC - error 188003.16
+2026-07-20T23:05:48.7181 | compress_module_list | INFO - Quantizing model.layers.16.self_attn.k_proj using 256 samples
+2026-07-20T23:05:48.8297 | GPTQ | METRIC - time 0.11s
+2026-07-20T23:05:48.8298 | GPTQ | METRIC - error 64986.36
+2026-07-20T23:05:48.8324 | compress_module_list | INFO - Quantizing model.layers.16.self_attn.v_proj using 256 samples
+2026-07-20T23:05:48.9439 | GPTQ | METRIC - time 0.11s
+2026-07-20T23:05:48.9440 | GPTQ | METRIC - error 62314.33
+2026-07-20T23:05:48.9464 | compress_module_list | INFO - Quantizing model.layers.16.self_attn.o_proj using 256 samples
+2026-07-20T23:05:49.2232 | GPTQ | METRIC - time 0.28s
+2026-07-20T23:05:49.2233 | GPTQ | METRIC - error 648.28
+2026-07-20T23:05:49.2269 | compress_module_list | INFO - Quantizing model.layers.16.mlp.gate_proj using 256 samples
+2026-07-20T23:05:49.4330 | GPTQ | METRIC - time 0.21s
+2026-07-20T23:05:49.4331 | GPTQ | METRIC - error 55376.50
+2026-07-20T23:05:49.4368 | compress_module_list | INFO - Quantizing model.layers.16.mlp.up_proj using 256 samples
+2026-07-20T23:05:49.6439 | GPTQ | METRIC - time 0.21s
+2026-07-20T23:05:49.6441 | GPTQ | METRIC - error 50833.95
+2026-07-20T23:05:49.6478 | compress_module_list | INFO - Quantizing model.layers.16.mlp.down_proj using 256 samples
+2026-07-20T23:05:50.1541 | GPTQ | METRIC - time 0.51s
+2026-07-20T23:05:50.1543 | GPTQ | METRIC - error 19183.77
+(18/29): Propagating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:41&lt;00:00,  6.18it/s]
+(19/29): Calibrating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:22&lt;00:00,  3.10it/s]
+2026-07-20T23:07:54.2563 | compress_module_list | INFO - Quantizing model.layers.17.self_attn.q_proj using 256 samples
+2026-07-20T23:07:54.4073 | GPTQ | METRIC - time 0.15s
+2026-07-20T23:07:54.4074 | GPTQ | METRIC - error 444301.66
+2026-07-20T23:07:54.4109 | compress_module_list | INFO - Quantizing model.layers.17.self_attn.k_proj using 256 samples
+2026-07-20T23:07:54.5191 | GPTQ | METRIC - time 0.11s
+2026-07-20T23:07:54.5192 | GPTQ | METRIC - error 142058.25
+2026-07-20T23:07:54.5219 | compress_module_list | INFO - Quantizing model.layers.17.self_attn.v_proj using 256 samples
+2026-07-20T23:07:54.6290 | GPTQ | METRIC - time 0.11s
+2026-07-20T23:07:54.6291 | GPTQ | METRIC - error 174248.11
+2026-07-20T23:07:54.6318 | compress_module_list | INFO - Quantizing model.layers.17.self_attn.o_proj using 256 samples
+2026-07-20T23:07:54.9114 | GPTQ | METRIC - time 0.28s
+2026-07-20T23:07:54.9115 | GPTQ | METRIC - error 823.81
+2026-07-20T23:07:54.9150 | compress_module_list | INFO - Quantizing model.layers.17.mlp.gate_proj using 256 samples
+2026-07-20T23:07:55.1199 | GPTQ | METRIC - time 0.20s
+2026-07-20T23:07:55.1201 | GPTQ | METRIC - error 80403.43
+2026-07-20T23:07:55.1237 | compress_module_list | INFO - Quantizing model.layers.17.mlp.up_proj using 256 samples
+2026-07-20T23:07:55.3301 | GPTQ | METRIC - time 0.21s
+2026-07-20T23:07:55.3303 | GPTQ | METRIC - error 74881.66
+2026-07-20T23:07:55.3339 | compress_module_list | INFO - Quantizing model.layers.17.mlp.down_proj using 256 samples
+2026-07-20T23:07:55.7432 | GPTQ | METRIC - time 0.41s
+2026-07-20T23:07:55.7433 | GPTQ | METRIC - error 22525.04
+(19/29): Propagating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:45&lt;00:00,  5.68it/s]
+(20/29): Calibrating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:22&lt;00:00,  3.11it/s]
+2026-07-20T23:10:03.0196 | compress_module_list | INFO - Quantizing model.layers.18.self_attn.q_proj using 256 samples
+2026-07-20T23:10:03.1920 | GPTQ | METRIC - time 0.17s
+2026-07-20T23:10:03.1922 | GPTQ | METRIC - error 396524.09
+2026-07-20T23:10:03.1955 | compress_module_list | INFO - Quantizing model.layers.18.self_attn.k_proj using 256 samples
+2026-07-20T23:10:03.2928 | GPTQ | METRIC - time 0.10s
+2026-07-20T23:10:03.2929 | GPTQ | METRIC - error 124362.19
+2026-07-20T23:10:03.2956 | compress_module_list | INFO - Quantizing model.layers.18.self_attn.v_proj using 256 samples
+2026-07-20T23:10:03.3950 | GPTQ | METRIC - time 0.10s
+2026-07-20T23:10:03.3951 | GPTQ | METRIC - error 146682.77
+2026-07-20T23:10:03.3978 | compress_module_list | INFO - Quantizing model.layers.18.self_attn.o_proj using 256 samples
+2026-07-20T23:10:03.6838 | GPTQ | METRIC - time 0.29s
+2026-07-20T23:10:03.6840 | GPTQ | METRIC - error 703.95
+2026-07-20T23:10:03.6872 | compress_module_list | INFO - Quantizing model.layers.18.mlp.gate_proj using 256 samples
+2026-07-20T23:10:03.8915 | GPTQ | METRIC - time 0.20s
+2026-07-20T23:10:03.8917 | GPTQ | METRIC - error 92990.60
+2026-07-20T23:10:03.8951 | compress_module_list | INFO - Quantizing model.layers.18.mlp.up_proj using 256 samples
+2026-07-20T23:10:04.0987 | GPTQ | METRIC - time 0.20s
+2026-07-20T23:10:04.0988 | GPTQ | METRIC - error 87750.99
+2026-07-20T23:10:04.1023 | compress_module_list | INFO - Quantizing model.layers.18.mlp.down_proj using 256 samples
+2026-07-20T23:10:04.5407 | GPTQ | METRIC - time 0.44s
+2026-07-20T23:10:04.5408 | GPTQ | METRIC - error 32346.11
+(20/29): Propagating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:42&lt;00:00,  6.05it/s]
+(21/29): Calibrating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:21&lt;00:00,  3.14it/s]
+2026-07-20T23:12:08.4266 | compress_module_list | INFO - Quantizing model.layers.19.self_attn.q_proj using 256 samples
+2026-07-20T23:12:08.5853 | GPTQ | METRIC - time 0.16s
+2026-07-20T23:12:08.5855 | GPTQ | METRIC - error 675193.88
+2026-07-20T23:12:08.5888 | compress_module_list | INFO - Quantizing model.layers.19.self_attn.k_proj using 256 samples
+2026-07-20T23:12:08.7035 | GPTQ | METRIC - time 0.11s
+2026-07-20T23:12:08.7037 | GPTQ | METRIC - error 199498.28
+2026-07-20T23:12:08.7062 | compress_module_list | INFO - Quantizing model.layers.19.self_attn.v_proj using 256 samples
+2026-07-20T23:12:08.8163 | GPTQ | METRIC - time 0.11s
+2026-07-20T23:12:08.8164 | GPTQ | METRIC - error 245657.44
+2026-07-20T23:12:08.8189 | compress_module_list | INFO - Quantizing model.layers.19.self_attn.o_proj using 256 samples
+2026-07-20T23:12:09.0946 | GPTQ | METRIC - time 0.28s
+2026-07-20T23:12:09.0947 | GPTQ | METRIC - error 1000.07
+2026-07-20T23:12:09.0980 | compress_module_list | INFO - Quantizing model.layers.19.mlp.gate_proj using 256 samples
+2026-07-20T23:12:09.3042 | GPTQ | METRIC - time 0.21s
+2026-07-20T23:12:09.3044 | GPTQ | METRIC - error 93742.75
+2026-07-20T23:12:09.3081 | compress_module_list | INFO - Quantizing model.layers.19.mlp.up_proj using 256 samples
+2026-07-20T23:12:09.5166 | GPTQ | METRIC - time 0.21s
+2026-07-20T23:12:09.5168 | GPTQ | METRIC - error 102077.41
+2026-07-20T23:12:09.5204 | compress_module_list | INFO - Quantizing model.layers.19.mlp.down_proj using 256 samples
+2026-07-20T23:12:09.9397 | GPTQ | METRIC - time 0.42s
+2026-07-20T23:12:09.9399 | GPTQ | METRIC - error 56297.41
+(21/29): Propagating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:44&lt;00:00,  5.81it/s]
+(22/29): Calibrating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:25&lt;00:00,  2.99it/s]
+2026-07-20T23:14:19.6904 | compress_module_list | INFO - Quantizing model.layers.20.self_attn.q_proj using 256 samples
+2026-07-20T23:14:19.8476 | GPTQ | METRIC - time 0.16s
+2026-07-20T23:14:19.8477 | GPTQ | METRIC - error 784816.19
+2026-07-20T23:14:19.8513 | compress_module_list | INFO - Quantizing model.layers.20.self_attn.k_proj using 256 samples
+2026-07-20T23:14:19.9533 | GPTQ | METRIC - time 0.10s
+2026-07-20T23:14:19.9534 | GPTQ | METRIC - error 257868.34
+2026-07-20T23:14:19.9564 | compress_module_list | INFO - Quantizing model.layers.20.self_attn.v_proj using 256 samples
+2026-07-20T23:14:20.0671 | GPTQ | METRIC - time 0.11s
+2026-07-20T23:14:20.0673 | GPTQ | METRIC - error 307216.25
+2026-07-20T23:14:20.0704 | compress_module_list | INFO - Quantizing model.layers.20.self_attn.o_proj using 256 samples
+2026-07-20T23:14:20.3510 | GPTQ | METRIC - time 0.28s
+2026-07-20T23:14:20.3512 | GPTQ | METRIC - error 2552.68
+2026-07-20T23:14:20.3546 | compress_module_list | INFO - Quantizing model.layers.20.mlp.gate_proj using 256 samples
+2026-07-20T23:14:20.5694 | GPTQ | METRIC - time 0.21s
+2026-07-20T23:14:20.5695 | GPTQ | METRIC - error 96602.45
+2026-07-20T23:14:20.5733 | compress_module_list | INFO - Quantizing model.layers.20.mlp.up_proj using 256 samples
+2026-07-20T23:14:20.7891 | GPTQ | METRIC - time 0.22s
+2026-07-20T23:14:20.7893 | GPTQ | METRIC - error 110165.12
+2026-07-20T23:14:20.7930 | compress_module_list | INFO - Quantizing model.layers.20.mlp.down_proj using 256 samples
+2026-07-20T23:14:21.2097 | GPTQ | METRIC - time 0.42s
+2026-07-20T23:14:21.2099 | GPTQ | METRIC - error 56042.38
+(22/29): Propagating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:49&lt;00:00,  5.21it/s]
+(23/29): Calibrating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:31&lt;00:00,  2.81it/s]
+2026-07-20T23:16:41.3736 | compress_module_list | INFO - Quantizing model.layers.21.self_attn.q_proj using 256 samples
+2026-07-20T23:16:41.5457 | GPTQ | METRIC - time 0.17s
+2026-07-20T23:16:41.5459 | GPTQ | METRIC - error 1299583.38
+2026-07-20T23:16:41.5493 | compress_module_list | INFO - Quantizing model.layers.21.self_attn.k_proj using 256 samples
+2026-07-20T23:16:41.6726 | GPTQ | METRIC - time 0.12s
+2026-07-20T23:16:41.6728 | GPTQ | METRIC - error 424484.41
+2026-07-20T23:16:41.6756 | compress_module_list | INFO - Quantizing model.layers.21.self_attn.v_proj using 256 samples
+2026-07-20T23:16:41.8004 | GPTQ | METRIC - time 0.12s
+2026-07-20T23:16:41.8005 | GPTQ | METRIC - error 521595.34
+2026-07-20T23:16:41.8033 | compress_module_list | INFO - Quantizing model.layers.21.self_attn.o_proj using 256 samples
+2026-07-20T23:16:42.0609 | GPTQ | METRIC - time 0.26s
+2026-07-20T23:16:42.0611 | GPTQ | METRIC - error 7185.06
+2026-07-20T23:16:42.0647 | compress_module_list | INFO - Quantizing model.layers.21.mlp.gate_proj using 256 samples
+2026-07-20T23:16:42.2847 | GPTQ | METRIC - time 0.22s
+2026-07-20T23:16:42.2849 | GPTQ | METRIC - error 102087.42
+2026-07-20T23:16:42.2886 | compress_module_list | INFO - Quantizing model.layers.21.mlp.up_proj using 256 samples
+2026-07-20T23:16:42.5086 | GPTQ | METRIC - time 0.22s
+2026-07-20T23:16:42.5088 | GPTQ | METRIC - error 129447.70
+2026-07-20T23:16:42.5124 | compress_module_list | INFO - Quantizing model.layers.21.mlp.down_proj using 256 samples
+2026-07-20T23:16:42.9799 | GPTQ | METRIC - time 0.47s
+2026-07-20T23:16:42.9800 | GPTQ | METRIC - error 61827.54
+(23/29): Propagating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:46&lt;00:00,  5.52it/s]
+(24/29): Calibrating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:29&lt;00:00,  2.86it/s]
+2026-07-20T23:18:58.9375 | compress_module_list | INFO - Quantizing model.layers.22.self_attn.q_proj using 256 samples
+2026-07-20T23:18:59.1116 | GPTQ | METRIC - time 0.17s
+2026-07-20T23:18:59.1118 | GPTQ | METRIC - error 1314490.00
+2026-07-20T23:18:59.1153 | compress_module_list | INFO - Quantizing model.layers.22.self_attn.k_proj using 256 samples
+2026-07-20T23:18:59.2269 | GPTQ | METRIC - time 0.11s
+2026-07-20T23:18:59.2271 | GPTQ | METRIC - error 463420.19
+2026-07-20T23:18:59.2300 | compress_module_list | INFO - Quantizing model.layers.22.self_attn.v_proj using 256 samples
+2026-07-20T23:18:59.3471 | GPTQ | METRIC - time 0.12s
+2026-07-20T23:18:59.3473 | GPTQ | METRIC - error 609687.25
+2026-07-20T23:18:59.3501 | compress_module_list | INFO - Quantizing model.layers.22.self_attn.o_proj using 256 samples
+2026-07-20T23:18:59.6432 | GPTQ | METRIC - time 0.29s
+2026-07-20T23:18:59.6434 | GPTQ | METRIC - error 2561.68
+2026-07-20T23:18:59.6470 | compress_module_list | INFO - Quantizing model.layers.22.mlp.gate_proj using 256 samples
+2026-07-20T23:18:59.8751 | GPTQ | METRIC - time 0.23s
+2026-07-20T23:18:59.8753 | GPTQ | METRIC - error 103965.28
+2026-07-20T23:18:59.8790 | compress_module_list | INFO - Quantizing model.layers.22.mlp.up_proj using 256 samples
+2026-07-20T23:19:00.1000 | GPTQ | METRIC - time 0.22s
+2026-07-20T23:19:00.1002 | GPTQ | METRIC - error 134762.66
+2026-07-20T23:19:00.1041 | compress_module_list | INFO - Quantizing model.layers.22.mlp.down_proj using 256 samples
+2026-07-20T23:19:00.5612 | GPTQ | METRIC - time 0.46s
+2026-07-20T23:19:00.5614 | GPTQ | METRIC - error 56838.61
+(24/29): Propagating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:49&lt;00:00,  5.22it/s]
+(25/29): Calibrating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:26&lt;00:00,  2.95it/s]
+2026-07-20T23:21:16.5467 | compress_module_list | INFO - Quantizing model.layers.23.self_attn.q_proj using 256 samples
+2026-07-20T23:21:16.7183 | GPTQ | METRIC - time 0.17s
+2026-07-20T23:21:16.7184 | GPTQ | METRIC - error 1396332.12
+2026-07-20T23:21:16.7218 | compress_module_list | INFO - Quantizing model.layers.23.self_attn.k_proj using 256 samples
+2026-07-20T23:21:16.8390 | GPTQ | METRIC - time 0.12s
+2026-07-20T23:21:16.8392 | GPTQ | METRIC - error 585459.12
+2026-07-20T23:21:16.8419 | compress_module_list | INFO - Quantizing model.layers.23.self_attn.v_proj using 256 samples
+2026-07-20T23:21:16.9570 | GPTQ | METRIC - time 0.11s
+2026-07-20T23:21:16.9571 | GPTQ | METRIC - error 672785.69
+2026-07-20T23:21:16.9600 | compress_module_list | INFO - Quantizing model.layers.23.self_attn.o_proj using 256 samples
+2026-07-20T23:21:17.2376 | GPTQ | METRIC - time 0.28s
+2026-07-20T23:21:17.2377 | GPTQ | METRIC - error 4978.65
+2026-07-20T23:21:17.2412 | compress_module_list | INFO - Quantizing model.layers.23.mlp.gate_proj using 256 samples
+2026-07-20T23:21:17.4476 | GPTQ | METRIC - time 0.21s
+2026-07-20T23:21:17.4477 | GPTQ | METRIC - error 106700.66
+2026-07-20T23:21:17.4515 | compress_module_list | INFO - Quantizing model.layers.23.mlp.up_proj using 256 samples
+2026-07-20T23:21:17.6619 | GPTQ | METRIC - time 0.21s
+2026-07-20T23:21:17.6621 | GPTQ | METRIC - error 140934.03
+2026-07-20T23:21:17.6656 | compress_module_list | INFO - Quantizing model.layers.23.mlp.down_proj using 256 samples
+2026-07-20T23:21:18.0946 | GPTQ | METRIC - time 0.43s
+2026-07-20T23:21:18.0947 | GPTQ | METRIC - error 55741.90
+(25/29): Propagating:  11%|████████████▉                                                                                                              | 27/256 [00:04&lt;00:40,  5.59it/s]^(25/29): Propagating:  16%|███████████████████▋                                                                                                       | 41/256 [00:07&lt;00:36,  5.96it/s]^(25/29): Propagating:  71%|██████████████████████████████████████████████████████████████████████████████████████▋                                   | 182/256 [00:32&lt;00:13,  5.39it/s]^(25/29): Propagating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:46&lt;00:00,  5.53it/s]
+(26/29): Calibrating:  54%|█████████████████████████████████████████████████████████████████▎                                                        | 137/256 [(26/29): Calibrating:  54%|█████████████████████████████████████████████████████████████████▊                                                        | 138/256 [(26/29): Calibrating:  54%|██████████████████████████████████████████████████████████████████▏                                                       | 139/256 [(26/29): Calibrating:  55%|██████████████████████████████████████████████████████████████████▋                                                       | 140/256 [(26/29): Calibrating:  55%|███████████████████████████████████████████████████████████████████▏                                                      | 141/256 [(26/29): Calibrating:  55%|███████████████████████████████████████████████████████████████████▋                                                      | 142/256 [(26/29): Calibrating:  56%|████████████████████████████████████████████████████████████████████▏                                                     | 143/256 [(26/29): Calibrating:  56%|████████████████████████████████████████████████████████████████████▋                                                     | 144/256 [(26/29): Calibrating:  57%|█████████████████████████████████████████████████████████████████████                                                     | 145/256 [(26/29): Calibrating:  57%|█████████████████████████████████████████████████████████████████████▌                                                    | 146/256 [(26/29): Calibrating:  57%|██████████████████████████████████████████████████████████████████████                                                    | 147/256 [(26/29): Calibrating:  58%|██████████████████████████████████████████████████████████████████████▌                                                   | 148/256 [(26/29): Calibrating:  58%|███████████████████████████████████████████████████████████████████████                                                   | 149/256 [(26/29): Calibrating:  59%|███████████████████████████████████████████████████████████████████████▍                                                  | 150/256 [(26/29): Calibrating:  59%|███████████████████████████████████████████████████████████████████████▉                                                  | 151/256 [(26/29): Calibrating:  59%|████████████████████████████████████████████████████████████████████████▍                                                 | 152/256 [(26/29): Calibrating:  60%|████████████████████████████████████████████████████████████████████████▉                                                 | 153/256 [(26/29): Calibrating:  60%|█████████████████████████████████████████████████████████████████████████▍                                                | 154/256 [(26/29): Calibrating:  61%|█████████████████████████████████████████████████████████████████████████▊                                                | 155/256 [(26/29): Calibrating:  61%|█████████████████████████████████████████████████████████████(26/29): Calibrating:  74%|██████████████████████████████████████████████████████████████████████████████████████████▌                               | 1(26/29): Calibrating:  75%|███████████████████████████████████████████████████████████████████████████████████████████                               | 191/256 [(26/29): Calibrating:  75%|███████████████████████████████████████████████████████████████████████████████████████████▌                              | 192/256 [(26/29): Calibrating:  75%|███████████████████████████████████████████████████████████████████████████████████████████▉                              | 193/256 [(26/29): Calibrating:  76%|████████████████████████████████████████████████████████████████████████████████████████████▍                             | 194/256 [(26/29): Calibrating:  76%|████████████████████████████████████████████████████████████████████████████████████████████▉        (26/29): Calibrating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:26&lt;00:00,  2.98it/s]
+2026-07-20T23:23:30.4098 | compress_module_list | INFO - Quantizing model.layers.24.self_attn.q_proj using 256 samples
+2026-07-20T23:23:30.5853 | GPTQ | METRIC - time 0.18s
+2026-07-20T23:23:30.5855 | GPTQ | METRIC - error 2687077.25
+2026-07-20T23:23:30.5891 | compress_module_list | INFO - Quantizing model.layers.24.self_attn.k_proj using 256 samples
+2026-07-20T23:23:30.7124 | GPTQ | METRIC - time 0.12s
+2026-07-20T23:23:30.7126 | GPTQ | METRIC - error 935827.31
+2026-07-20T23:23:30.7155 | compress_module_list | INFO - Quantizing model.layers.24.self_attn.v_proj using 256 samples
+2026-07-20T23:23:30.8362 | GPTQ | METRIC - time 0.12s
+2026-07-20T23:23:30.8364 | GPTQ | METRIC - error 1008964.94
+2026-07-20T23:23:30.8393 | compress_module_list | INFO - Quantizing model.layers.24.self_attn.o_proj using 256 samples
+2026-07-20T23:23:31.1395 | GPTQ | METRIC - time 0.30s
+2026-07-20T23:23:31.1397 | GPTQ | METRIC - error 8131.36
+2026-07-20T23:23:31.1433 | compress_module_list | INFO - Quantizing model.layers.24.mlp.gate_proj using 256 samples
+2026-07-20T23:23:31.3579 | GPTQ | METRIC - time 0.21s
+2026-07-20T23:23:31.3580 | GPTQ | METRIC - error 91208.46
+2026-07-20T23:23:31.3619 | compress_module_list | INFO - Quantizing model.layers.24.mlp.up_proj using 256 samples
+2026-07-20T23:23:31.5728 | GPTQ | METRIC - time 0.21s
+2026-07-20T23:23:31.5730 | GPTQ | METRIC - error 125937.48
+2026-07-20T23:23:31.5766 | compress_module_list | INFO - Quantizing model.layers.24.mlp.down_proj using 256 samples
+2026-07-20T23:23:32.0301 | GPTQ | METRIC - time 0.45s
+2026-07-20T23:23:32.0302 | GPTQ | METRIC - error 56295.52
+(26/29): Propagating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:58&lt;00:00,  4.39it/s]
+(27/29): Calibrating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:26&lt;00:00,  2.98it/s]
+2026-07-20T23:25:56.3901 | compress_module_list | INFO - Quantizing model.layers.25.self_attn.q_proj using 256 samples
+2026-07-20T23:25:56.5503 | GPTQ | METRIC - time 0.16s
+2026-07-20T23:25:56.5505 | GPTQ | METRIC - error 3324756.00
+2026-07-20T23:25:56.5541 | compress_module_list | INFO - Quantizing model.layers.25.self_attn.k_proj using 256 samples
+2026-07-20T23:25:56.6626 | GPTQ | METRIC - time 0.11s
+2026-07-20T23:25:56.6627 | GPTQ | METRIC - error 1022022.50
+2026-07-20T23:25:56.6655 | compress_module_list | INFO - Quantizing model.layers.25.self_attn.v_proj using 256 samples
+2026-07-20T23:25:56.7730 | GPTQ | METRIC - time 0.11s
+2026-07-20T23:25:56.7731 | GPTQ | METRIC - error 1502511.38
+2026-07-20T23:25:56.7760 | compress_module_list | INFO - Quantizing model.layers.25.self_attn.o_proj using 256 samples
+2026-07-20T23:25:57.0466 | GPTQ | METRIC - time 0.27s
+2026-07-20T23:25:57.0468 | GPTQ | METRIC - error 11364.37
+2026-07-20T23:25:57.0501 | compress_module_list | INFO - Quantizing model.layers.25.mlp.gate_proj using 256 samples
+2026-07-20T23:25:57.2654 | GPTQ | METRIC - time 0.22s
+2026-07-20T23:25:57.2656 | GPTQ | METRIC - error 73525.36
+2026-07-20T23:25:57.2693 | compress_module_list | INFO - Quantizing model.layers.25.mlp.up_proj using 256 samples
+2026-07-20T23:25:57.4889 | GPTQ | METRIC - time 0.22s
+2026-07-20T23:25:57.4890 | GPTQ | METRIC - error 107189.48
+2026-07-20T23:25:57.4926 | compress_module_list | INFO - Quantizing model.layers.25.mlp.down_proj using 256 samples
+2026-07-20T23:25:57.9125 | GPTQ | METRIC - time 0.42s
+2026-07-20T23:25:57.9127 | GPTQ | METRIC - error 61101.39
+(27/29): Propagating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:46&lt;00:00,  5.52it/s]
+(28/29): Calibrating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:26&lt;00:00,  2.96it/s]
+2026-07-20T23:28:10.7054 | compress_module_list | INFO - Quantizing model.layers.26.self_attn.q_proj using 256 samples
+2026-07-20T23:28:10.8690 | GPTQ | METRIC - time 0.16s
+2026-07-20T23:28:10.8692 | GPTQ | METRIC - error 3511301.75
+2026-07-20T23:28:10.8727 | compress_module_list | INFO - Quantizing model.layers.26.self_attn.k_proj using 256 samples
+2026-07-20T23:28:10.9885 | GPTQ | METRIC - time 0.12s
+2026-07-20T23:28:10.9886 | GPTQ | METRIC - error 904326.25
+2026-07-20T23:28:10.9913 | compress_module_list | INFO - Quantizing model.layers.26.self_attn.v_proj using 256 samples
+2026-07-20T23:28:11.1073 | GPTQ | METRIC - time 0.12s
+2026-07-20T23:28:11.1074 | GPTQ | METRIC - error 1272709.88
+2026-07-20T23:28:11.1103 | compress_module_list | INFO - Quantizing model.layers.26.self_attn.o_proj using 256 samples
+2026-07-20T23:28:11.4045 | GPTQ | METRIC - time 0.29s
+2026-07-20T23:28:11.4047 | GPTQ | METRIC - error 13180.99
+2026-07-20T23:28:11.4080 | compress_module_list | INFO - Quantizing model.layers.26.mlp.gate_proj using 256 samples
+2026-07-20T23:28:11.6260 | GPTQ | METRIC - time 0.22s
+2026-07-20T23:28:11.6262 | GPTQ | METRIC - error 89015.69
+2026-07-20T23:28:11.6298 | compress_module_list | INFO - Quantizing model.layers.26.mlp.up_proj using 256 samples
+2026-07-20T23:28:11.8480 | GPTQ | METRIC - time 0.22s
+2026-07-20T23:28:11.8482 | GPTQ | METRIC - error 126346.23
+2026-07-20T23:28:11.8517 | compress_module_list | INFO - Quantizing model.layers.26.mlp.down_proj using 256 samples
+2026-07-20T23:28:12.3093 | GPTQ | METRIC - time 0.46s
+2026-07-20T23:28:12.3094 | GPTQ | METRIC - error 114652.27
+(28/29): Propagating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:46&lt;00:00,  5.50it/s]
+(29/29): Calibrating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [01:28&lt;00:00,  2.89it/s]
+2026-07-20T23:30:27.4089 | compress_module_list | INFO - Quantizing model.layers.27.self_attn.q_proj using 256 samples
+2026-07-20T23:30:27.5749 | GPTQ | METRIC - time 0.17s
+2026-07-20T23:30:27.5751 | GPTQ | METRIC - error 1556944.00
+2026-07-20T23:30:27.5787 | compress_module_list | INFO - Quantizing model.layers.27.self_attn.k_proj using 256 samples
+2026-07-20T23:30:27.6979 | GPTQ | METRIC - time 0.12s
+2026-07-20T23:30:27.6981 | GPTQ | METRIC - error 686707.19
+2026-07-20T23:30:27.7009 | compress_module_list | INFO - Quantizing model.layers.27.self_attn.v_proj using 256 samples
+2026-07-20T23:30:27.8186 | GPTQ | METRIC - time 0.12s
+2026-07-20T23:30:27.8188 | GPTQ | METRIC - error 851193.38
+2026-07-20T23:30:27.8216 | compress_module_list | INFO - Quantizing model.layers.27.self_attn.o_proj using 256 samples
+2026-07-20T23:30:28.0672 | GPTQ | METRIC - time 0.25s
+2026-07-20T23:30:28.0673 | GPTQ | METRIC - error 7997.87
+2026-07-20T23:30:28.0708 | compress_module_list | INFO - Quantizing model.layers.27.mlp.gate_proj using 256 samples
+2026-07-20T23:30:28.2806 | GPTQ | METRIC - time 0.21s
+2026-07-20T23:30:28.2808 | GPTQ | METRIC - error 238905.09
+2026-07-20T23:30:28.2844 | compress_module_list | INFO - Quantizing model.layers.27.mlp.up_proj using 256 samples
+2026-07-20T23:30:28.4923 | GPTQ | METRIC - time 0.21s
+2026-07-20T23:30:28.4924 | GPTQ | METRIC - error 263803.19
+2026-07-20T23:30:28.4960 | compress_module_list | INFO - Quantizing model.layers.27.mlp.down_proj using 256 samples
+2026-07-20T23:30:28.9486 | GPTQ | METRIC - time 0.45s
+2026-07-20T23:30:28.9488 | GPTQ | METRIC - error 209149.75
+(29/29): Propagating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 256/256 [00:46&lt;00:00,  5.45it/s]
+2026-07-20T23:31:15.9501 | finalize | INFO - Compression lifecycle finalized for 1 modifiers
+Compressing model: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 196/196 [00:00&lt;00:00, 916.89it/s]
+2026-07-20T23:31:16.1831 | _retie_embeddings | INFO - Re-tied input/output embeddings; saving a single shared table.
+Writing model shards: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00&lt;00:00, 11.29it/s]
+Dispatching model: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 427/427 [00:00&lt;00:00, 72700.13it/s]
+Quantization complete. Model saved to: Qwen3-0.6B-W4A16
+Model Size Comparison
+=============================================
+Original (BF16):    0.0 KB
+Quantized (W4A16):  524.4 MB
+Reduction:          0%</code></pre>
+</div>
+</div>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/llmcompressor" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">llmcompressor</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/vllm" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">vllm</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/quantization" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">quantization</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jackliusr-gh" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/2026/03/running-vllm-on-amd-ai-max-395-rocm-ubuntu-24.04/">Running vLLM on AMD AI MAX&#43; 395 (ROCm, Ubuntu 24.04)</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/2026/01/setup-vllm-on-macbook-m4/">setup vllm on macbook m4</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+  </main>
+  <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jackliusr.github.io" >
+    &copy;  My learning and diary 2026 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+<script>
+ MathJax = {
+     tex: {
+         inlineMath: [['$', '$'], ['\\(', '\\)']]
+     }
+ };
+ </script>
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<link href="/css/prism.css" rel="stylesheet" />
+<script src="/js/prism.js"></script>
+
+
+
+
+  
+  <p style="font-size: small; color: grey;">Page version: 43f09870393602427647eb6a3b9e561bd1f268b4 2026-07-20</p>
+</body>
+
+</html>
