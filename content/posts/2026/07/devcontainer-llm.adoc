@@ -1,6 +1,6 @@
 ---
 title: "Serving LLMs with Dev Containers: A New Rabbit Hole"
-date: 2026-07-20T20:00:00+08:00
+date: 2026-07-26T20:00:00+08:00
 categories:
 - ai
 - llm
