@@ -6,11 +6,11 @@
     <description>Recent content in Tags on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Jul 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Jul 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ai-inference</title>
       <link>https://jackliusr.github.io/tags/ai-inference/</link>
-      <pubDate>Mon, 20 Jul 2026 20:00:00 +0800</pubDate>
+      <pubDate>Sun, 26 Jul 2026 20:00:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/ai-inference/</guid>
       <description></description>
@@ -19,7 +19,7 @@
     <item>
       <title>devcontainer</title>
       <link>https://jackliusr.github.io/tags/devcontainer/</link>
-      <pubDate>Mon, 20 Jul 2026 20:00:00 +0800</pubDate>
+      <pubDate>Sun, 26 Jul 2026 20:00:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/devcontainer/</guid>
       <description></description>
@@ -28,9 +28,45 @@
     <item>
       <title>llama-cpp</title>
       <link>https://jackliusr.github.io/tags/llama-cpp/</link>
-      <pubDate>Mon, 20 Jul 2026 20:00:00 +0800</pubDate>
+      <pubDate>Sun, 26 Jul 2026 20:00:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/llama-cpp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ollama</title>
+      <link>https://jackliusr.github.io/tags/ollama/</link>
+      <pubDate>Sun, 26 Jul 2026 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/ollama/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openshift-ai</title>
+      <link>https://jackliusr.github.io/tags/openshift-ai/</link>
+      <pubDate>Sun, 26 Jul 2026 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/openshift-ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ramalama</title>
+      <link>https://jackliusr.github.io/tags/ramalama/</link>
+      <pubDate>Sun, 26 Jul 2026 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/ramalama/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vllm</title>
+      <link>https://jackliusr.github.io/tags/vllm/</link>
+      <pubDate>Sun, 26 Jul 2026 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/tags/vllm/</guid>
       <description></description>
     </item>
     
@@ -44,47 +80,11 @@
     </item>
     
     <item>
-      <title>ollama</title>
-      <link>https://jackliusr.github.io/tags/ollama/</link>
-      <pubDate>Mon, 20 Jul 2026 20:00:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/ollama/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>openshift-ai</title>
-      <link>https://jackliusr.github.io/tags/openshift-ai/</link>
-      <pubDate>Mon, 20 Jul 2026 20:00:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/openshift-ai/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>quantization</title>
       <link>https://jackliusr.github.io/tags/quantization/</link>
       <pubDate>Mon, 20 Jul 2026 20:00:00 +0800</pubDate>
       
       <guid>https://jackliusr.github.io/tags/quantization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ramalama</title>
-      <link>https://jackliusr.github.io/tags/ramalama/</link>
-      <pubDate>Mon, 20 Jul 2026 20:00:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/ramalama/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vllm</title>
-      <link>https://jackliusr.github.io/tags/vllm/</link>
-      <pubDate>Mon, 20 Jul 2026 20:00:00 +0800</pubDate>
-      
-      <guid>https://jackliusr.github.io/tags/vllm/</guid>
       <description></description>
     </item>
     

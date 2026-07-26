@@ -195,15 +195,15 @@ if (!doNotTrack) {
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2026/07/optimize-llms-for-vllm-deployment/" class="color-inherit dim link">
-            Optimize LLMs for vllm deployment
+          <a href="/posts/2026/07/serving-llms-with-dev-containers-a-new-rabbit-hole/" class="color-inherit dim link">
+            Serving LLMs with Dev Containers: A New Rabbit Hole
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Quantization techniques were mentioned in huggingface and unsloth, and I used those quantized models in ollama and llama.cpp. I always wonder how to implement it for vllm. Today I learnt to use llmcompressor to optimized models for vllm.
- import warnings warnings.filterwarnings(&#34;ignore&#34;) import os, gc, math, pathlib import torch from transformers import AutoTokenizer, AutoModelForCausalLM import warnings os.environ[&#39;TOKENIZERS_PARALLELISM&#39;] = &#39;false&#39; MODEL_DIR = &#34;Qwen3-0.6B&#34; OUTPUT_DIR = &#34;Qwen3-0.6B-W4A16&#34; print(f&#34;Base model: {MODEL_DIR}&#34;) print(f&#34;Quantized model: {OUTPUT_DIR}&#34;) from llmcompressor.
+          Serving LLMs with Dev Containers: A New Rabbit Hole One of the interesting things about working with AI is that you often discover new ideas when you’re exploring something completely different.
+ I never imagined I would write about serving Large Language Models (LLMs) using Dev Containers. Although I’ve been using the vLLM container for quite some time, I always thought of it simply as another containerized application running in Kubernetes or Docker.
         </div>
-          <a href="/posts/2026/07/optimize-llms-for-vllm-deployment/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+          <a href="/posts/2026/07/serving-llms-with-dev-containers-a-new-rabbit-hole/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
       </div>
     </div>
@@ -220,15 +220,15 @@ if (!doNotTrack) {
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2026/07/serving-llms-with-dev-containers-a-new-rabbit-hole/" class="color-inherit dim link">
-            Serving LLMs with Dev Containers: A New Rabbit Hole
+          <a href="/posts/2026/07/optimize-llms-for-vllm-deployment/" class="color-inherit dim link">
+            Optimize LLMs for vllm deployment
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Serving LLMs with Dev Containers: A New Rabbit Hole One of the interesting things about working with AI is that you often discover new ideas when you’re exploring something completely different.
- I never imagined I would write about serving Large Language Models (LLMs) using Dev Containers. Although I’ve been using the vLLM container for quite some time, I always thought of it simply as another containerized application running in Kubernetes or Docker.
+          Quantization techniques were mentioned in huggingface and unsloth, and I used those quantized models in ollama and llama.cpp. I always wonder how to implement it for vllm. Today I learnt to use llmcompressor to optimized models for vllm.
+ import warnings warnings.filterwarnings(&#34;ignore&#34;) import os, gc, math, pathlib import torch from transformers import AutoTokenizer, AutoModelForCausalLM import warnings os.environ[&#39;TOKENIZERS_PARALLELISM&#39;] = &#39;false&#39; MODEL_DIR = &#34;Qwen3-0.6B&#34; OUTPUT_DIR = &#34;Qwen3-0.6B-W4A16&#34; print(f&#34;Base model: {MODEL_DIR}&#34;) print(f&#34;Quantized model: {OUTPUT_DIR}&#34;) from llmcompressor.
         </div>
-          <a href="/posts/2026/07/serving-llms-with-dev-containers-a-new-rabbit-hole/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+          <a href="/posts/2026/07/optimize-llms-for-vllm-deployment/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
       </div>
     </div>
