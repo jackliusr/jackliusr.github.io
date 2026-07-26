@@ -168,6 +168,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2024/04/data-modeling-of-fhir-searchindices-in-aws-dynamodb/" class="link black dim">
+        Data modeling of FHIR searchindices in AWS dynamoDB
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Microsoft FHIR Server serialize searchindices this way in cosmosdb. How to model it in AWS DynamoDB?
+ { &#34;id&#34;: &#34;9240cda7-bbb7-4ad4-aa9f-971750a3dc71&#34;, &#34;searchIndices&#34;: [ { &#34;p&#34;: &#34;_id&#34;, &#34;c&#34;: &#34;9240cda7-bbb7-4ad4-aa9f-971750a3dc71&#34; }, { &#34;p&#34;: &#34;_lastUpdated&#34;, &#34;st&#34;: &#34;2018-08-22T23:37:56.1289012+00:00&#34;, &#34;et&#34;: &#34;2018-08-22T23:37:56.1289012+00:00&#34; }, { &#34;p&#34;: &#34;patient&#34;, &#34;r&#34;: &#34;Patient/example&#34; }, { &#34;p&#34;: &#34;performer&#34;, &#34;r&#34;: &#34;Practitioner/example&#34; }, { &#34;p&#34;: &#34;related&#34;, &#34;r_0&#34;: &#34;Observation/example-genetics-1&#34;, &#34;s_1&#34;: &#34;http://hl7.org/fhir/observation-relationshiptypes&#34;, &#34;c_1&#34;: &#34;derived-from&#34; }, { &#34;p&#34;: &#34;related-target&#34;, &#34;r&#34;: &#34;Observation/example-genetics-1&#34; }, { &#34;p&#34;: &#34;related-type&#34;, &#34;s&#34;: &#34;http://hl7.org/fhir/observation-relationshiptypes&#34;, &#34;c&#34;: &#34;derived-from&#34; }, { &#34;p&#34;: &#34;status&#34;, &#34;s&#34;: &#34;http://hl7.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2024/04/2-jsonschema-tricks/" class="link black dim">
         2 jsonschema tricks
       </a>
@@ -304,22 +320,6 @@ if (!doNotTrack) {
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       I learnt to extract npm package inform from https://registry.npmjs.org/ on 2023-08-31. Today I have more packages. The original query need to be optimized for better performance.
  In the old post, one can quickly spot that the package information is fetched twice. It is the place to optimize today. I will put selected fields into a column, and extract values from the column later. This way, It can spend less time.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2024/02/mount-configmap-as-volume-with-ini-files/" class="link black dim">
-        mount configmap as volume with ini files
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Today I spent about 1 hours in the task Deploy Lamp Stack on Kubernetes Cluster - Task. This task deepen my understanding of ini file handling and volume mounting with subpath. I think there are 2 tricky parts make the task interesting.
- First, the similarity between --from-literal=variables_order=EGPCS and variables_order = &#34;EGPCS&#34; in php.ini make one try to create a configmap at first. However it is not the case. the actual volumemount will mount each key as a file
     </div>
   </div>
 </div>

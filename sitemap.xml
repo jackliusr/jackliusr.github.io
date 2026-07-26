@@ -2,8 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://jackliusr.github.io/categories/ai/</loc>
+    <lastmod>2026-07-26T22:28:06+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/ai-inference/</loc>
+    <lastmod>2026-07-26T22:28:06+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2026-07-20T23:45:51+08:00</lastmod>
+    <lastmod>2026-07-26T22:28:06+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/devcontainer/</loc>
+    <lastmod>2026-07-26T22:28:06+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/llama-cpp/</loc>
+    <lastmod>2026-07-26T22:28:06+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/categories/llm/</loc>
+    <lastmod>2026-07-26T22:28:06+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -13,7 +38,17 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2026-07-20T23:45:51+08:00</lastmod>
+    <lastmod>2026-07-26T22:28:06+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/ollama/</loc>
+    <lastmod>2026-07-26T22:28:06+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/openshift-ai/</loc>
+    <lastmod>2026-07-26T22:28:06+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -23,7 +58,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2026-07-20T23:45:51+08:00</lastmod>
+    <lastmod>2026-07-26T22:28:06+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -32,18 +67,28 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://jackliusr.github.io/tags/ramalama/</loc>
+    <lastmod>2026-07-26T22:28:06+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2026/07/serving-llms-with-dev-containers-a-new-rabbit-hole/</loc>
+    <lastmod>2026-07-26T22:28:06+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2026-07-20T23:45:51+08:00</lastmod>
+    <lastmod>2026-07-26T22:28:06+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/categories/tech/</loc>
-    <lastmod>2026-07-20T23:45:51+08:00</lastmod>
+    <lastmod>2026-07-26T22:28:06+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/vllm/</loc>
-    <lastmod>2026-07-20T23:45:51+08:00</lastmod>
+    <lastmod>2026-07-26T22:28:06+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -279,11 +324,6 @@
   </url><url>
     <loc>https://jackliusr.github.io/tags/tm-forum/</loc>
     <lastmod>2026-04-27T20:17:26+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/ollama/</loc>
-    <lastmod>2026-04-18T10:46:49+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>

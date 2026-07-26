@@ -168,6 +168,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2025/11/airgapped-kubernetes-cluster-with-containerd/" class="link black dim">
+        Airgapped Kubernetes Cluster with containerd
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      After evaluating several local Kubernetes solutions I encountered repeated manual steps (downloading bootstrap images, pulling images from registry mirrors and retagging them, and loading images into clusters) that were time-consuming and error-prone. I decided to set up a properly air-gapped Kubernetes cluster using kubeadm and containerd, leveraging containerd’s registry mirror support. This post documents the steps I followed.
+ Prerequisites This guide assumes a Debian/Ubuntu host. Installing the latest Docker Engine will also provide containerd as a dependency.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2025/09/from-batch-to-real-time-rethinking-file-processing-with-linux-fanotify/" class="link black dim">
         From Batch to Real-Time: Rethinking File Processing with Linux fanotify
       </a>
@@ -307,22 +323,6 @@ if (!doNotTrack) {
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Several things learnt from recent preparation of data for testing.
  Question the way when it takes too long to process data sed: remove last n lines In the past I always thought sed is the fastest way to manipulate data. Is it true for all the cases? I generated 1T testing data in ndjson format, however the last lines of those files are corrupted json data. I had to remove the last line.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2024/08/mermaid-flow-with-subgraph-control/" class="link black dim">
-        Mermaid flow with subgraph control
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      One thing constantly bothered me since I used mermaid for flowchart, how to correctly group elements in a group. Only today I have a thought about what will happen if I put node in subgraph without links between them. Finally I got it works to correctly group elements in a group.
-Another things, mermaid diagram is natively supported in asciidoctor now. This one is my first example to use it.
     </div>
   </div>
 </div>

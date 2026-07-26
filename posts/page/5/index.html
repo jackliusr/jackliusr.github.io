@@ -168,6 +168,25 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2024/06/setup-nuget-local-packages-feed/" class="link black dim">
+        setup nuget local packages feed
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Nuget local feed Prerequisites nuget.exe is installed in C:\packages and in the command search path.
+  Setup local feed Assume C:\packages\.nuget-local\packages will be the locations to install local packages. and several local dev packages need to install.
+ Packages below: - &#34;C:\packages\test.4.1.0-beta-24159.1.nupkg&#34; - &#34;C:\packages\testa.4.1.0-beta-24159.1.nupkg&#34; - &#34;C:\packages\testb.S3.4.1.0-beta-24159.1.nupkg&#34;
+ Run below commands to install above packages into source C:\packages\.nuget-local\packages
+ REM run command line with C:\packages as working directory nuget.exe add tes.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2024/06/mach-micro-service-based-api-first-cloud-native-headless/" class="link black dim">
         MACH (micro service based, API first, cloud native, headless)
       </a>
@@ -303,22 +322,6 @@ if (!doNotTrack) {
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       When I was preparing a slides to recommend broad usage of JsonSchema, somethings I thought are good to have for general public usage. Those things troubled me for a while during I authored a JsonSchema.
  Versioning Currently there is no standard way how to define a version for a schema. I might use a version property for that. SemVer is good fit for the version content schema. Use if and else for different version.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2024/04/data-modeling-of-fhir-searchindices-in-aws-dynamodb/" class="link black dim">
-        Data modeling of FHIR searchindices in AWS dynamoDB
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Microsoft FHIR Server serialize searchindices this way in cosmosdb. How to model it in AWS DynamoDB?
- { &#34;id&#34;: &#34;9240cda7-bbb7-4ad4-aa9f-971750a3dc71&#34;, &#34;searchIndices&#34;: [ { &#34;p&#34;: &#34;_id&#34;, &#34;c&#34;: &#34;9240cda7-bbb7-4ad4-aa9f-971750a3dc71&#34; }, { &#34;p&#34;: &#34;_lastUpdated&#34;, &#34;st&#34;: &#34;2018-08-22T23:37:56.1289012+00:00&#34;, &#34;et&#34;: &#34;2018-08-22T23:37:56.1289012+00:00&#34; }, { &#34;p&#34;: &#34;patient&#34;, &#34;r&#34;: &#34;Patient/example&#34; }, { &#34;p&#34;: &#34;performer&#34;, &#34;r&#34;: &#34;Practitioner/example&#34; }, { &#34;p&#34;: &#34;related&#34;, &#34;r_0&#34;: &#34;Observation/example-genetics-1&#34;, &#34;s_1&#34;: &#34;http://hl7.org/fhir/observation-relationshiptypes&#34;, &#34;c_1&#34;: &#34;derived-from&#34; }, { &#34;p&#34;: &#34;related-target&#34;, &#34;r&#34;: &#34;Observation/example-genetics-1&#34; }, { &#34;p&#34;: &#34;related-type&#34;, &#34;s&#34;: &#34;http://hl7.org/fhir/observation-relationshiptypes&#34;, &#34;c&#34;: &#34;derived-from&#34; }, { &#34;p&#34;: &#34;status&#34;, &#34;s&#34;: &#34;http://hl7.
     </div>
   </div>
 </div>

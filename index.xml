@@ -18,6 +18,16 @@
     </item>
     
     <item>
+      <title>Serving LLMs with Dev Containers: A New Rabbit Hole</title>
+      <link>https://jackliusr.github.io/posts/2026/07/serving-llms-with-dev-containers-a-new-rabbit-hole/</link>
+      <pubDate>Mon, 20 Jul 2026 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/07/serving-llms-with-dev-containers-a-new-rabbit-hole/</guid>
+      <description>Serving LLMs with Dev Containers: A New Rabbit Hole One of the interesting things about working with AI is that you often discover new ideas when you’re exploring something completely different.
+ I never imagined I would write about serving Large Language Models (LLMs) using Dev Containers. Although I’ve been using the vLLM container for quite some time, I always thought of it simply as another containerized application running in Kubernetes or Docker.</description>
+    </item>
+    
+    <item>
       <title>How to Run a Pod with a Fixed UID Outside the Default OpenShift UID Range</title>
       <link>https://jackliusr.github.io/posts/2026/07/how-to-run-a-pod-with-a-fixed-uid-outside-the-default-openshift-uid-range/</link>
       <pubDate>Thu, 16 Jul 2026 20:00:00 +0800</pubDate>
