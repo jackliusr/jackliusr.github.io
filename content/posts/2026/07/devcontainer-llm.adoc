@@ -1,0 +1,124 @@
+---
+title: "Serving LLMs with Dev Containers: A New Rabbit Hole"
+date: 2026-07-20T20:00:00+08:00
+categories:
+- ai
+- llm
+- tech
+tags:
+- devcontainer
+- openshift-ai
+- vllm
+- ollama
+- llama-cpp
+- ramalama
+- ai-inference
+---
+
+== Serving LLMs with Dev Containers: A New Rabbit Hole
+
+One of the interesting things about working with AI is that you often discover new ideas when you're exploring something completely different.
+
+I never imagined I would write about serving Large Language Models (LLMs) using Dev Containers. Although I've been using the `vLLM` container for quite some time, I always thought of it simply as another containerized application running in Kubernetes or Docker.
+
+That changed today.
+
+While studying *OpenShift AI*, I noticed that it is actually possible to use a Dev Container as the environment for serving LLMs. That immediately caught my attention because it combines two technologies I'm already familiar with:
+
+* Containerized development environments
+* LLM inference servers
+
+It made me wonder:
+
+> Can a Dev Container become a portable, reproducible environment for both AI development and model serving?
+
+=== Possible Inference Engines
+
+There are already several popular options for serving LLMs locally or in Kubernetes.
+
+==== vLLM
+
+This is currently my preferred inference engine.
+
+I've used the official container multiple times for serving transformer models. It provides:
+
+* High throughput
+* Efficient KV cache management
+* Continuous batching
+* OpenAI-compatible APIs
+
+For production workloads, vLLM has become one of the most popular choices.
+
+==== RamaLama
+
+I've also experimented with RamaLama in a containerized environment.
+
+It provides a very convenient developer experience and makes it easy to run models without much manual configuration.
+
+==== Ollama
+
+Ollama has become extremely popular for local development.
+
+Although I haven't personally tried running it inside a Dev Container yet, it seems like a natural candidate. It already packages models, runtimes, and APIs into a simple developer workflow.
+
+It would be interesting to see how well it integrates with Dev Containers, especially for cloud-native development.
+
+==== llama.cpp
+
+Another option worth exploring is `llama.cpp`.
+
+It's lightweight, highly portable, and supports running quantized models efficiently on CPUs and GPUs.
+
+Like Ollama, I haven't experimented with it inside a Dev Container yet, but it's definitely on my research list.
+
+=== Why Dev Containers?
+
+Dev Containers were originally designed to provide reproducible development environments.
+
+Imagine extending that idea to AI inference:
+
+* identical runtime across every developer machine
+* consistent dependencies
+* version-controlled inference environment
+* easy onboarding
+* portable between local development and Kubernetes
+
+Instead of documenting dozens of setup steps, the environment itself becomes part of the repository.
+
+For AI projects, that sounds incredibly appealing.
+
+=== OpenShift AI Makes It Even More Interesting
+
+Discovering this while learning OpenShift AI opened up a new perspective.
+
+Rather than thinking of Dev Containers as just developer workspaces, they could also become lightweight environments for experimenting with different inference engines before deploying them into production.
+
+That could make prototyping much faster while maintaining consistency across the entire development lifecycle.
+
+=== What's Next?
+
+This is still very much the beginning of my exploration.
+
+With the help of modern deep research agents, I plan to investigate topics such as:
+
+* Running Ollama inside Dev Containers
+* Running llama.cpp inside Dev Containers
+* Comparing startup times
+* GPU support
+* Performance comparisons
+* Integration with OpenShift AI
+* Best practices for Kubernetes deployments
+
+Hopefully, this article will become the starting point of a series documenting what I learn along the way.
+
+=== Final Thoughts
+
+Sometimes the best ideas come from unexpected discoveries.
+
+I started the day learning about OpenShift AI and ended up exploring an entirely different topic: using Dev Containers as portable environments for serving LLMs.
+
+Whether the best choice ultimately turns out to be vLLM, Ollama, llama.cpp, or RamaLama remains to be seen.
+
+But that's exactly what makes this journey exciting.
+
+Stay tuned—there's plenty more to explore.
