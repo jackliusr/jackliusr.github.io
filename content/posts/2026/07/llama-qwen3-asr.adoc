@@ -1,0 +1,56 @@
+---
+title: "Serving LLMs with Dev Containers: A New Rabbit Hole"
+date: 2026-07-29T20:00:00+08:00
+categories:
+- ai
+- llm
+- tech
+tags:
+- llama-cpp
+- asr
+- qwen
+---
+
+Automatic Speech Recognition (ASR) has become an essential capability for many AI-powered applications. Whether it is transcribing meetings, generating subtitles, or enabling voice-based interactions, ASR is increasingly becoming a core feature of modern AI systems.
+
+As part of my ongoing learning journey with AI technologies, I decided to start exploring the ASR capabilities available today. My first stop is Qwen3-ASR, one of the latest speech recognition models from the Qwen family.
+
+== Why Qwen3-ASR?
+
+There are many open-source ASR models available today, but Qwen3-ASR caught my attention because it extends the Qwen ecosystem into speech understanding. Since I have already been experimenting with various LLMs and inference engines, it felt natural to begin my ASR exploration with this model.
+
+Rather than diving straight into benchmarks, I wanted to understand the fundamentals:
+
+How to run the model locally
+What the inference workflow looks like
+How well it performs on real audio samples
+How easy it is to integrate into future AI applications
+
+This exploration is only the beginning, but it provides a solid foundation for understanding modern speech recognition models.
+
+== Recording the Journey
+
+To document the setup process, I recorded the entire terminal session using https://asciinema.org/[Asciinema].
+
+Unfortunately, Asciinema is currently unavailable, so I cannot host the recording there.
+
+Instead, I will publish the recording on my own blog: {{< asciinema key="llama-cpp-qwen3-asr" >}}
+
+https://jackliusr.github.io[https://jackliusr.github.io]
+
+Hopefully this makes the walkthrough available to anyone interested in reproducing the setup.
+
+== What's Next?
+
+This is the first article in what I expect will become a small series on ASR.
+
+Some topics I plan to explore include:
+
+Running Qwen3-ASR with different inference backends
+Comparing transcription quality with other open-source ASR models
+Performance optimization
+Integrating ASR into AI agents and voice-enabled applications
+Building practical speech-to-text workflows
+
+Stay tuned as I continue exploring the rapidly evolving world of open-source speech recognition.
+
