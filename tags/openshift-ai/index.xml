@@ -17,5 +17,16 @@
  I never imagined I would write about serving Large Language Models (LLMs) using Dev Containers. Although I’ve been using the vLLM container for quite some time, I always thought of it simply as another containerized application running in Kubernetes or Docker.</description>
     </item>
     
+    <item>
+      <title>Install Red Hat OpenShift AI on OpenShift Local (formerly CRC)</title>
+      <link>https://jackliusr.github.io/posts/2026/07/install-red-hat-openshift-ai-on-openshift-local-formerly-crc/</link>
+      <pubDate>Fri, 17 Jul 2026 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/07/install-red-hat-openshift-ai-on-openshift-local-formerly-crc/</guid>
+      <description>Login in as kubeadmin in openshift local, Ecosystem-→ Software Catalog, Search &amp;#34;AI&amp;#34; and install &amp;#34;Red Hat OpenShift AI&amp;#34;
+ # default unit MiB crc config set memory 32000 crc stop crc start   OpenShift AI Operator Installation Prerequisite Operators: Navigate to OperatorHub in the OpenShift web console and install required dependencies including Logical Volume Manager Storage (LVMS) and Node Feature Discovery (NFD).
+ Ensure your host machine has at least 4 physical CPU cores, 16 GB to 32 GB of RAM, and roughly 30 GB to 35 GB of free disk space.</description>
+    </item>
+    
   </channel>
 </rss>

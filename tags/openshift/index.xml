@@ -6,7 +6,18 @@
     <description>Recent content in openshift on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Jul 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/openshift/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Jul 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/openshift/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Red Hat OpenShift AI on OpenShift Local (formerly CRC)</title>
+      <link>https://jackliusr.github.io/posts/2026/07/install-red-hat-openshift-ai-on-openshift-local-formerly-crc/</link>
+      <pubDate>Fri, 17 Jul 2026 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/07/install-red-hat-openshift-ai-on-openshift-local-formerly-crc/</guid>
+      <description>Login in as kubeadmin in openshift local, Ecosystem-→ Software Catalog, Search &amp;#34;AI&amp;#34; and install &amp;#34;Red Hat OpenShift AI&amp;#34;
+ # default unit MiB crc config set memory 32000 crc stop crc start   OpenShift AI Operator Installation Prerequisite Operators: Navigate to OperatorHub in the OpenShift web console and install required dependencies including Logical Volume Manager Storage (LVMS) and Node Feature Discovery (NFD).
+ Ensure your host machine has at least 4 physical CPU cores, 16 GB to 32 GB of RAM, and roughly 30 GB to 35 GB of free disk space.</description>
+    </item>
+    
     <item>
       <title>How to Run a Pod with a Fixed UID Outside the Default OpenShift UID Range</title>
       <link>https://jackliusr.github.io/posts/2026/07/how-to-run-a-pod-with-a-fixed-uid-outside-the-default-openshift-uid-range/</link>

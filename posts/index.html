@@ -173,6 +173,22 @@ if (!doNotTrack) {
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Automatic Speech Recognition (ASR) has become an essential capability for many AI-powered applications. Whether it is transcribing meetings, generating subtitles, or enabling voice-based interactions, ASR is increasingly becoming a core feature of modern AI systems.
+ As part of my ongoing learning journey with AI technologies, I decided to start exploring the ASR capabilities available today. My first stop is Qwen3-ASR, one of the latest speech recognition models from the Qwen family.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/2026/07/serving-llms-with-dev-containers-a-new-rabbit-hole/" class="link black dim">
+        Serving LLMs with Dev Containers: A New Rabbit Hole
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
       Serving LLMs with Dev Containers: A New Rabbit Hole One of the interesting things about working with AI is that you often discover new ideas when you’re exploring something completely different.
  I never imagined I would write about serving Large Language Models (LLMs) using Dev Containers. Although I’ve been using the vLLM container for quite some time, I always thought of it simply as another containerized application running in Kubernetes or Docker.
     </div>
@@ -191,6 +207,23 @@ if (!doNotTrack) {
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Quantization techniques were mentioned in huggingface and unsloth, and I used those quantized models in ollama and llama.cpp. I always wonder how to implement it for vllm. Today I learnt to use llmcompressor to optimized models for vllm.
  import warnings warnings.filterwarnings(&#34;ignore&#34;) import os, gc, math, pathlib import torch from transformers import AutoTokenizer, AutoModelForCausalLM import warnings os.environ[&#39;TOKENIZERS_PARALLELISM&#39;] = &#39;false&#39; MODEL_DIR = &#34;Qwen3-0.6B&#34; OUTPUT_DIR = &#34;Qwen3-0.6B-W4A16&#34; print(f&#34;Base model: {MODEL_DIR}&#34;) print(f&#34;Quantized model: {OUTPUT_DIR}&#34;) from llmcompressor.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/2026/07/install-red-hat-openshift-ai-on-openshift-local-formerly-crc/" class="link black dim">
+        Install Red Hat OpenShift AI on OpenShift Local (formerly CRC)
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Login in as kubeadmin in openshift local, Ecosystem-→ Software Catalog, Search &#34;AI&#34; and install &#34;Red Hat OpenShift AI&#34;
+ # default unit MiB crc config set memory 32000 crc stop crc start   OpenShift AI Operator Installation Prerequisite Operators: Navigate to OperatorHub in the OpenShift web console and install required dependencies including Logical Volume Manager Storage (LVMS) and Node Feature Discovery (NFD).
+ Ensure your host machine has at least 4 physical CPU cores, 16 GB to 32 GB of RAM, and roughly 30 GB to 35 GB of free disk space.
     </div>
   </div>
 </div>
@@ -291,42 +324,6 @@ if (!doNotTrack) {
  MTP support merged into llama.cpp
  After the merge, I wanted to test MTP models on my mini-PC powered by the AMD AI MAX 395. I tried several approaches, including manually building llama.cpp and using Unsloth GGUF models directly. However, despite multiple attempts, I could not get a stable working setup.
  I also searched through GitHub issues and asked several AI assistants, including ChatGPT, Gemini, and DeepSeek.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2026/05/fault-oblivious-stateful-workflows-durable-execution-matters-more-than-orchestration/" class="link black dim">
-        Fault-Oblivious Stateful Workflows: Durable Execution Matters More Than Orchestration
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Introduction Last year, I spent some time studying Oracle Banking Microservices Architecture (OBMA), together with enterprise schedulers and orchestration platforms such as Control-M .
- Part of the work involved understanding how to convert traditional Control-M jobs into Airflow DAGs. During this process, I started to observe an important architectural distinction:
- Not all workflows are the same.
- While studying OBMA, I noticed that Netflix Conductor was used as the workflow engine inside the architecture.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2026/05/working-around-rocm-pytorch-replacement-issues-with-uv-and-comfyui/" class="link black dim">
-        Working Around ROCm PyTorch Replacement Issues with uv and ComfyUI
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Introduction When working with AMD GPUs and ROCm-based AI workloads, one common issue appears when using uv for Python dependency management.
- The problem becomes especially visible when setting up projects like ComfyUI on Linux with ROCm-enabled PyTorch builds.
- Although ROCm-specific wheels are manually installed, running commands such as uv add or dependency synchronization may silently replace ROCm-enabled packages with standard PyPI versions that only support CUDA.
- This leads to broken GPU acceleration and unexpected runtime failures.
     </div>
   </div>
 </div>
