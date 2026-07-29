@@ -9,6 +9,7 @@ tags:
 - llama-cpp
 - asr
 - qwen
+asciinema: true
 ---
 
 Automatic Speech Recognition (ASR) has become an essential capability for many AI-powered applications. Whether it is transcribing meetings, generating subtitles, or enabling voice-based interactions, ASR is increasingly becoming a core feature of modern AI systems.
