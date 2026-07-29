@@ -34,7 +34,9 @@ To document the setup process, I recorded the entire terminal session using http
 
 Unfortunately, Asciinema is currently unavailable, so I cannot host the recording there.
 
-Instead, I will publish the recording on my own blog: {{< asciinema key="1261931" >}}
+Instead, I will publish the recording on my own blog: 
+
+{{< asciinema key="1261931" >}}
 
 https://jackliusr.github.io[https://jackliusr.github.io]
 
