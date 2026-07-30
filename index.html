@@ -196,6 +196,33 @@ if (!doNotTrack) {
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/2026/07/running-a-local-reranker-with-llama.cpp/" class="color-inherit dim link">
+            Running a Local Reranker with llama.cpp
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Over the past few days, I’ve been using reranker models through cloud APIs as part of my RAG experiments. After successfully running several LLMs locally with llama.cpp, I started wondering:
+  Can I also run a reranker model locally?
+   The answer is yes.
+ It turns out that llama-server can host embedding models, reranker models, and chat models behind the same OpenAI-compatible API. This makes it easy to build a completely local RAG pipeline without relying on external services.
+        </div>
+          <a href="/posts/2026/07/running-a-local-reranker-with-llama.cpp/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/2026/07/automatic-speech-recognition-asr-with-llama.cpp-and-qwen3-asr/" class="color-inherit dim link">
             Automatic Speech Recognition (ASR) with llama.cpp and Qwen3-ASR
             </a>
@@ -238,37 +265,18 @@ if (!doNotTrack) {
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2026/07/optimize-llms-for-vllm-deployment/" class="color-inherit dim link">
-            Optimize LLMs for vllm deployment
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Quantization techniques were mentioned in huggingface and unsloth, and I used those quantized models in ollama and llama.cpp. I always wonder how to implement it for vllm. Today I learnt to use llmcompressor to optimized models for vllm.
- import warnings warnings.filterwarnings(&#34;ignore&#34;) import os, gc, math, pathlib import torch from transformers import AutoTokenizer, AutoModelForCausalLM import warnings os.environ[&#39;TOKENIZERS_PARALLELISM&#39;] = &#39;false&#39; MODEL_DIR = &#34;Qwen3-0.6B&#34; OUTPUT_DIR = &#34;Qwen3-0.6B-W4A16&#34; print(f&#34;Base model: {MODEL_DIR}&#34;) print(f&#34;Quantized model: {OUTPUT_DIR}&#34;) from llmcompressor.
-        </div>
-          <a href="/posts/2026/07/optimize-llms-for-vllm-deployment/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/2026/07/optimize-llms-for-vllm-deployment/" class="link black dim">
+              Optimize LLMs for vllm deployment
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2026/07/install-red-hat-openshift-ai-on-openshift-local-formerly-crc/" class="link black dim">
@@ -285,12 +293,6 @@ if (!doNotTrack) {
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2026/07/one-gepa-report-of-dspy/" class="link black dim">
               one GEPA report of DSPy
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/2026/06/from-conventional-commits-to-llm-generated-release-notes/" class="link black dim">
-              From Conventional Commits to LLM-Generated Release Notes
             </a>
           </h2>
         
