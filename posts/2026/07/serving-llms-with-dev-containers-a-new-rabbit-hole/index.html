@@ -7,9 +7,10 @@
   
   <title>Serving LLMs with Dev Containers: A New Rabbit Hole | My learning and diary</title>
   <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <meta name="description"
-    content="Serving LLMs with Dev Containers: A New Rabbit Hole One of the interesting things about working with AI is that you often discover new ideas when you’re exploring something completely different.
- I never imagined I would write about serving Large Language Models (LLMs) using Dev Containers. Although I’ve been using the vLLM container for quite some time, I always thought of it simply as another containerized application running in Kubernetes or Docker.">
+    content="Automatic Speech Recognition (ASR) has become an essential capability for many AI-powered applications. Whether it is transcribing meetings, generating subtitles, or enabling voice-based interactions, ASR is increasingly becoming a core feature of modern AI systems.
+ As part of my ongoing learning journey with AI technologies, I decided to start exploring the ASR capabilities available today. My first stop is Qwen3-ASR, one of the latest speech recognition models from the Qwen family.">
   <meta name="generator" content="Hugo 0.99.1" />
   
   
@@ -30,22 +31,22 @@
   
 
   <meta property="og:title" content="Serving LLMs with Dev Containers: A New Rabbit Hole" />
-<meta property="og:description" content="Serving LLMs with Dev Containers: A New Rabbit Hole One of the interesting things about working with AI is that you often discover new ideas when you’re exploring something completely different.
- I never imagined I would write about serving Large Language Models (LLMs) using Dev Containers. Although I’ve been using the vLLM container for quite some time, I always thought of it simply as another containerized application running in Kubernetes or Docker." />
+<meta property="og:description" content="Automatic Speech Recognition (ASR) has become an essential capability for many AI-powered applications. Whether it is transcribing meetings, generating subtitles, or enabling voice-based interactions, ASR is increasingly becoming a core feature of modern AI systems.
+ As part of my ongoing learning journey with AI technologies, I decided to start exploring the ASR capabilities available today. My first stop is Qwen3-ASR, one of the latest speech recognition models from the Qwen family." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2026/07/serving-llms-with-dev-containers-a-new-rabbit-hole/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2026-07-26T20:00:00+08:00" />
-<meta property="article:modified_time" content="2026-07-26T22:37:03+08:00" />
+<meta property="article:published_time" content="2026-07-29T20:00:00+08:00" />
+<meta property="article:modified_time" content="2026-07-29T21:51:36+08:00" />
 
 <meta itemprop="name" content="Serving LLMs with Dev Containers: A New Rabbit Hole">
-<meta itemprop="description" content="Serving LLMs with Dev Containers: A New Rabbit Hole One of the interesting things about working with AI is that you often discover new ideas when you’re exploring something completely different.
- I never imagined I would write about serving Large Language Models (LLMs) using Dev Containers. Although I’ve been using the vLLM container for quite some time, I always thought of it simply as another containerized application running in Kubernetes or Docker."><meta itemprop="datePublished" content="2026-07-26T20:00:00+08:00" />
-<meta itemprop="dateModified" content="2026-07-26T22:37:03+08:00" />
-<meta itemprop="wordCount" content="578">
-<meta itemprop="keywords" content="devcontainer,openshift-ai,vllm,ollama,llama-cpp,ramalama,ai-inference," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="Automatic Speech Recognition (ASR) has become an essential capability for many AI-powered applications. Whether it is transcribing meetings, generating subtitles, or enabling voice-based interactions, ASR is increasingly becoming a core feature of modern AI systems.
+ As part of my ongoing learning journey with AI technologies, I decided to start exploring the ASR capabilities available today. My first stop is Qwen3-ASR, one of the latest speech recognition models from the Qwen family."><meta itemprop="datePublished" content="2026-07-29T20:00:00+08:00" />
+<meta itemprop="dateModified" content="2026-07-29T21:51:36+08:00" />
+<meta itemprop="wordCount" content="301">
+<meta itemprop="keywords" content="llama-cpp,asr,qwen," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Serving LLMs with Dev Containers: A New Rabbit Hole"/>
-<meta name="twitter:description" content="Serving LLMs with Dev Containers: A New Rabbit Hole One of the interesting things about working with AI is that you often discover new ideas when you’re exploring something completely different.
- I never imagined I would write about serving Large Language Models (LLMs) using Dev Containers. Although I’ve been using the vLLM container for quite some time, I always thought of it simply as another containerized application running in Kubernetes or Docker."/>
+<meta name="twitter:description" content="Automatic Speech Recognition (ASR) has become an essential capability for many AI-powered applications. Whether it is transcribing meetings, generating subtitles, or enabling voice-based interactions, ASR is increasingly becoming a core feature of modern AI systems.
+ As part of my ongoing learning journey with AI technologies, I decided to start exploring the ASR capabilities available today. My first stop is Qwen3-ASR, one of the latest speech recognition models from the Qwen family."/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K49F8T19FK"></script>
@@ -66,6 +67,8 @@ if (!doNotTrack) {
 
 
 
+
+<link rel="stylesheet" type="text/css" href="https://jackliusr.github.io/css/asciinema-player.css" />
 
 </head>
 
@@ -201,247 +204,115 @@ if (!doNotTrack) {
       <h1 class="f1 athelas mt3 mb1">Serving LLMs with Dev Containers: A New Rabbit Hole</h1>
       
       
-      <time class="f6 mv4 dib tracked" datetime="2026-07-26T20:00:00+08:00">July 26, 2026</time>
+      <time class="f6 mv4 dib tracked" datetime="2026-07-29T20:00:00+08:00">July 29, 2026</time>
 
       
       
-        <span class="f6 mv4 dib tracked"> - 3 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 578 words</span>
+        <span class="f6 mv4 dib tracked"> - 2 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 301 words</span>
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="sect1">
-<h2 id="_serving_llms_with_dev_containers_a_new_rabbit_hole"><a class="anchor" href="#_serving_llms_with_dev_containers_a_new_rabbit_hole"></a><a class="link" href="#_serving_llms_with_dev_containers_a_new_rabbit_hole">Serving LLMs with Dev Containers: A New Rabbit Hole</a></h2>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
+<p>Automatic Speech Recognition (ASR) has become an essential capability for many AI-powered applications. Whether it is transcribing meetings, generating subtitles, or enabling voice-based interactions, ASR is increasingly becoming a core feature of modern AI systems.</p>
+</div>
+<div class="paragraph">
+<p>As part of my ongoing learning journey with AI technologies, I decided to start exploring the ASR capabilities available today. My first stop is Qwen3-ASR, one of the latest speech recognition models from the Qwen family.</p>
+</div>
+<div class="sect1">
+<h2 id="_why_qwen3_asr"><a class="anchor" href="#_why_qwen3_asr"></a><a class="link" href="#_why_qwen3_asr">Why Qwen3-ASR?</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>One of the interesting things about working with AI is that you often discover new ideas when you’re exploring something completely different.</p>
+<p>There are many open-source ASR models available today, but Qwen3-ASR caught my attention because it extends the Qwen ecosystem into speech understanding. Since I have already been experimenting with various LLMs and inference engines, it felt natural to begin my ASR exploration with this model.</p>
 </div>
 <div class="paragraph">
-<p>I never imagined I would write about serving Large Language Models (LLMs) using Dev Containers. Although I’ve been using the <code>vLLM</code> container for quite some time, I always thought of it simply as another containerized application running in Kubernetes or Docker.</p>
+<p>Rather than diving straight into benchmarks, I wanted to understand the fundamentals:</p>
 </div>
 <div class="paragraph">
-<p>That changed today.</p>
+<p>How to run the model locally
+What the inference workflow looks like
+How well it performs on real audio samples
+How easy it is to integrate into future AI applications</p>
 </div>
 <div class="paragraph">
-<p>While studying <strong>OpenShift AI</strong>, I noticed that it is actually possible to use a Dev Container as the environment for serving LLMs. That immediately caught my attention because it combines two technologies I’m already familiar with:</p>
+<p>This exploration is only the beginning, but it provides a solid foundation for understanding modern speech recognition models.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Containerized development environments</p>
-</li>
-<li>
-<p>LLM inference servers</p>
-</li>
-</ul>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_recording_the_journey"><a class="anchor" href="#_recording_the_journey"></a><a class="link" href="#_recording_the_journey">Recording the Journey</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To document the setup process, I recorded the entire terminal session using <a href="https://asciinema.org/">Asciinema</a>.</p>
 </div>
 <div class="paragraph">
-<p>It made me wonder:</p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>Can a Dev Container become a portable, reproducible environment for both AI development and model serving?</p>
-</div>
-</blockquote>
-</div>
-<div class="sect2">
-<h3 id="_possible_inference_engines"><a class="anchor" href="#_possible_inference_engines"></a><a class="link" href="#_possible_inference_engines">Possible Inference Engines</a></h3>
-<div class="paragraph">
-<p>There are already several popular options for serving LLMs locally or in Kubernetes.</p>
-</div>
-<div class="sect3">
-<h4 id="_vllm"><a class="anchor" href="#_vllm"></a><a class="link" href="#_vllm">vLLM</a></h4>
-<div class="paragraph">
-<p>This is currently my preferred inference engine.</p>
+<p>Unfortunately, Asciinema is currently unavailable, so I cannot host the recording there.</p>
 </div>
 <div class="paragraph">
-<p>I’ve used the official container multiple times for serving transformer models. It provides:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>High throughput</p>
-</li>
-<li>
-<p>Efficient KV cache management</p>
-</li>
-<li>
-<p>Continuous batching</p>
-</li>
-<li>
-<p>OpenAI-compatible APIs</p>
-</li>
-</ul>
+<p>Instead, I will publish the recording on my own blog:</p>
 </div>
 <div class="paragraph">
-<p>For production workloads, vLLM has become one of the most popular choices.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_ramalama"><a class="anchor" href="#_ramalama"></a><a class="link" href="#_ramalama">RamaLama</a></h4>
-<div class="paragraph">
-<p>I’ve also experimented with RamaLama in a containerized environment.</p>
-</div>
-<div class="paragraph">
-<p>It provides a very convenient developer experience and makes it easy to run models without much manual configuration.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_ollama"><a class="anchor" href="#_ollama"></a><a class="link" href="#_ollama">Ollama</a></h4>
-<div class="paragraph">
-<p>Ollama has become extremely popular for local development.</p>
-</div>
-<div class="paragraph">
-<p>Although I haven’t personally tried running it inside a Dev Container yet, it seems like a natural candidate. It already packages models, runtimes, and APIs into a simple developer workflow.</p>
-</div>
-<div class="paragraph">
-<p>It would be interesting to see how well it integrates with Dev Containers, especially for cloud-native development.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_llama_cpp"><a class="anchor" href="#_llama_cpp"></a><a class="link" href="#_llama_cpp">llama.cpp</a></h4>
-<div class="paragraph">
-<p>Another option worth exploring is <code>llama.cpp</code>.</p>
+<div id='1261931'></div>
+<script src="https://jackliusr.github.io/js/asciinema-player.min.js"></script>
+<script>
+    AsciinemaPlayer.create('/casts/1261931.cast', document.getElementById('1261931'), {
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+     });
+</script>
 </div>
 <div class="paragraph">
-<p>It’s lightweight, highly portable, and supports running quantized models efficiently on CPUs and GPUs.</p>
+<p><a href="https://jackliusr.github.io">https://jackliusr.github.io</a></p>
 </div>
 <div class="paragraph">
-<p>Like Ollama, I haven’t experimented with it inside a Dev Container yet, but it’s definitely on my research list.</p>
+<p>Hopefully this makes the walkthrough available to anyone interested in reproducing the setup.</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_why_dev_containers"><a class="anchor" href="#_why_dev_containers"></a><a class="link" href="#_why_dev_containers">Why Dev Containers?</a></h3>
+<div class="sect1">
+<h2 id="_whats_next"><a class="anchor" href="#_whats_next"></a><a class="link" href="#_whats_next">What’s Next?</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Dev Containers were originally designed to provide reproducible development environments.</p>
-</div>
-<div class="paragraph">
-<p>Imagine extending that idea to AI inference:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>identical runtime across every developer machine</p>
-</li>
-<li>
-<p>consistent dependencies</p>
-</li>
-<li>
-<p>version-controlled inference environment</p>
-</li>
-<li>
-<p>easy onboarding</p>
-</li>
-<li>
-<p>portable between local development and Kubernetes</p>
-</li>
-</ul>
+<p>This is the first article in what I expect will become a small series on ASR.</p>
 </div>
 <div class="paragraph">
-<p>Instead of documenting dozens of setup steps, the environment itself becomes part of the repository.</p>
+<p>Some topics I plan to explore include:</p>
 </div>
 <div class="paragraph">
-<p>For AI projects, that sounds incredibly appealing.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_openshift_ai_makes_it_even_more_interesting"><a class="anchor" href="#_openshift_ai_makes_it_even_more_interesting"></a><a class="link" href="#_openshift_ai_makes_it_even_more_interesting">OpenShift AI Makes It Even More Interesting</a></h3>
-<div class="paragraph">
-<p>Discovering this while learning OpenShift AI opened up a new perspective.</p>
+<p>Running Qwen3-ASR with different inference backends
+Comparing transcription quality with other open-source ASR models
+Performance optimization
+Integrating ASR into AI agents and voice-enabled applications
+Building practical speech-to-text workflows</p>
 </div>
 <div class="paragraph">
-<p>Rather than thinking of Dev Containers as just developer workspaces, they could also become lightweight environments for experimenting with different inference engines before deploying them into production.</p>
-</div>
-<div class="paragraph">
-<p>That could make prototyping much faster while maintaining consistency across the entire development lifecycle.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_whats_next"><a class="anchor" href="#_whats_next"></a><a class="link" href="#_whats_next">What’s Next?</a></h3>
-<div class="paragraph">
-<p>This is still very much the beginning of my exploration.</p>
-</div>
-<div class="paragraph">
-<p>With the help of modern deep research agents, I plan to investigate topics such as:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Running Ollama inside Dev Containers</p>
-</li>
-<li>
-<p>Running llama.cpp inside Dev Containers</p>
-</li>
-<li>
-<p>Comparing startup times</p>
-</li>
-<li>
-<p>GPU support</p>
-</li>
-<li>
-<p>Performance comparisons</p>
-</li>
-<li>
-<p>Integration with OpenShift AI</p>
-</li>
-<li>
-<p>Best practices for Kubernetes deployments</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Hopefully, this article will become the starting point of a series documenting what I learn along the way.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_final_thoughts"><a class="anchor" href="#_final_thoughts"></a><a class="link" href="#_final_thoughts">Final Thoughts</a></h3>
-<div class="paragraph">
-<p>Sometimes the best ideas come from unexpected discoveries.</p>
-</div>
-<div class="paragraph">
-<p>I started the day learning about OpenShift AI and ended up exploring an entirely different topic: using Dev Containers as portable environments for serving LLMs.</p>
-</div>
-<div class="paragraph">
-<p>Whether the best choice ultimately turns out to be vLLM, Ollama, llama.cpp, or RamaLama remains to be seen.</p>
-</div>
-<div class="paragraph">
-<p>But that’s exactly what makes this journey exciting.</p>
-</div>
-<div class="paragraph">
-<p>Stay tuned—there’s plenty more to explore.</p>
-</div>
+<p>Stay tuned as I continue exploring the rapidly evolving world of open-source speech recognition.</p>
 </div>
 </div>
 </div>
 <ul class="pa0">
   
    <li class="list">
-     <a href="/tags/devcontainer" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">devcontainer</a>
-   </li>
-  
-   <li class="list">
-     <a href="/tags/openshift-ai" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">openshift-ai</a>
-   </li>
-  
-   <li class="list">
-     <a href="/tags/vllm" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">vllm</a>
-   </li>
-  
-   <li class="list">
-     <a href="/tags/ollama" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ollama</a>
-   </li>
-  
-   <li class="list">
      <a href="/tags/llama-cpp" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">llama-cpp</a>
    </li>
   
    <li class="list">
-     <a href="/tags/ramalama" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ramalama</a>
+     <a href="/tags/asr" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">asr</a>
    </li>
   
    <li class="list">
-     <a href="/tags/ai-inference" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ai-inference</a>
+     <a href="/tags/qwen" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">qwen</a>
    </li>
   
 </ul>
@@ -482,23 +353,11 @@ if (!doNotTrack) {
     <ul class="pa0 list">
 	   
 	     <li  class="mb2">
-          <a href="/posts/2026/01/setup-vllm-on-macbook-m4/">setup vllm on macbook m4</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/posts/2026/07/optimize-llms-for-vllm-deployment/">Optimize LLMs for vllm deployment</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/posts/2026/07/install-red-hat-openshift-ai-on-openshift-local-formerly-crc/">Install Red Hat OpenShift AI on OpenShift Local (formerly CRC)</a>
+          <a href="/posts/2026/07/serving-llms-with-dev-containers-a-new-rabbit-hole/">Serving LLMs with Dev Containers: A New Rabbit Hole</a>
         </li>
 	    
 	     <li  class="mb2">
           <a href="/posts/2026/04/running-qwen3.6-35b-locally-with-ollama-and-vs-code-integration/">Running Qwen3.6 35B Locally with Ollama and VS Code Integration</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/posts/2026/03/running-vllm-on-amd-ai-max-395-rocm-ubuntu-24.04/">Running vLLM on AMD AI MAX&#43; 395 (ROCm, Ubuntu 24.04)</a>
         </li>
 	    
     </ul>
@@ -550,7 +409,7 @@ if (!doNotTrack) {
 
 
   
-  <p style="font-size: small; color: grey;">Page version: cc449e79c3e1afcc398e7cf503413dd5e4bce724 2026-07-26</p>
+  <p style="font-size: small; color: grey;">Page version: f89049f941cfabc24932a697e34e0d98d72ad529 2026-07-29</p>
 </body>
 
 </html>

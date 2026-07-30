@@ -7,6 +7,7 @@
   
   <title>Airgapped Kubernetes Cluster with containerd | My learning and diary</title>
   <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <meta name="description"
     content="After evaluating several local Kubernetes solutions I encountered repeated manual steps (downloading bootstrap images, pulling images from registry mirrors and retagging them, and loading images into clusters) that were time-consuming and error-prone. I decided to set up a properly air-gapped Kubernetes cluster using kubeadm and containerd, leveraging containerd’s registry mirror support. This post documents the steps I followed.
  Prerequisites This guide assumes a Debian/Ubuntu host. Installing the latest Docker Engine will also provide containerd as a dependency.">
@@ -441,11 +442,11 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config</code></pre>
         </li>
 	    
 	     <li  class="mb2">
-          <a href="/notes/kubelet/">Kubelet architecture</a>
+          <a href="/notes/k8s-metrics/">kubernetes metrics options</a>
         </li>
 	    
 	     <li  class="mb2">
-          <a href="/notes/k8s-metrics/">kubernetes metrics options</a>
+          <a href="/notes/kubelet/">Kubelet architecture</a>
         </li>
 	    
 	     <li  class="mb2">

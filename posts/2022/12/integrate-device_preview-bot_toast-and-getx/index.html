@@ -7,6 +7,7 @@
   
   <title>Integrate device_preview, bot_toast and getx | My learning and diary</title>
   <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <meta name="description"
     content="void main() =&gt; runApp( DevicePreview( enabled: !kReleaseMode, builder: (context) =&gt; MyApp(), // Wrap your app ), ); class MyApp extends StatelessWidget { final botToastBuilder = BotToastInit(); @override Widget build(BuildContext context) { return GetMaterialApp.router( useInheritedMediaQuery: true, locale: DevicePreview.locale(context), builder: (context, child) { child = DevicePreview.appBuilder(context, child); child = botToastBuilder(context, child); return child; }, theme: ThemeData.light(), darkTheme: ThemeData.dark(), home: const HomePage(), ); } }   Reference:   https://pub.dev/packages/bot_toast
   https://stackoverflow.">

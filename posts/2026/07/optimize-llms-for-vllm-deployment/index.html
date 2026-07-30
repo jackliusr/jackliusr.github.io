@@ -7,6 +7,7 @@
   
   <title>Optimize LLMs for vllm deployment | My learning and diary</title>
   <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <meta name="description"
     content="Quantization techniques were mentioned in huggingface and unsloth, and I used those quantized models in ollama and llama.cpp. I always wonder how to implement it for vllm. Today I learnt to use llmcompressor to optimized models for vllm.
  import warnings warnings.filterwarnings(&#34;ignore&#34;) import os, gc, math, pathlib import torch from transformers import AutoTokenizer, AutoModelForCausalLM import warnings os.environ[&#39;TOKENIZERS_PARALLELISM&#39;] = &#39;false&#39; MODEL_DIR = &#34;Qwen3-0.6B&#34; OUTPUT_DIR = &#34;Qwen3-0.6B-W4A16&#34; print(f&#34;Base model: {MODEL_DIR}&#34;) print(f&#34;Quantized model: {OUTPUT_DIR}&#34;) from llmcompressor.">

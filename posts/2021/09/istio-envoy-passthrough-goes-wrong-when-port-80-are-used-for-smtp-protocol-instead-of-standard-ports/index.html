@@ -7,6 +7,7 @@
   
   <title>Istio Envoy passthrough goes wrong when port 80 are used for SMTP protocol instead of standard ports | My learning and diary</title>
   <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <meta name="description"
     content="TLDR: if your external SMTP is using port 80 instead of standard ports in an istio mesh, create a Service Entry for the external SMTP.
  These two days, a strange timeout issue happened in one of our kubernetes clusters when trying to send emails via SMTP even though the same configuration works perfectly on our development machines.

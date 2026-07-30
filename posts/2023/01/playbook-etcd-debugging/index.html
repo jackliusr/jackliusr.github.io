@@ -7,6 +7,7 @@
   
   <title>Playbook: etcd debugging | My learning and diary</title>
   <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <meta name="description"
     content="etcd debugging flowchart, copy the flowchat from &ldquo;Stories from the Playbook&rdquo; for easy reference and put here to make it searchable in my site.
 flowchart TD oversized{MVCC DB oversized}--|Yes|logIntoContainer(log into container) logIntoContainer -- checkSize(check size of db) checkSize -- compatOrDefrag(compat or defrag) compatOrDefrag -- resizeDisk(resize machine disk) resizeDisk -- triggerRepair(Trigger repair) triggerRepair -- END oversized --|No|crashLoop{crash looping} crashLoop --|Yes| moreTime2Init(allow etc more time to init) moreTime2Init -- upgradeVersion(upgrade version) upgradeVersion -- resizeDisk crashLoop --|No| leaderElectionIssue{Leader Election Issue?">
