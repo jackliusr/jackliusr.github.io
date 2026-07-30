@@ -8,11 +8,11 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 29 Jul 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Serving LLMs with Dev Containers: A New Rabbit Hole</title>
-      <link>https://jackliusr.github.io/posts/2026/07/serving-llms-with-dev-containers-a-new-rabbit-hole/</link>
+      <title>Automatic Speech Recognition (ASR) with llama.cpp and Qwen3-ASR</title>
+      <link>https://jackliusr.github.io/posts/2026/07/automatic-speech-recognition-asr-with-llama.cpp-and-qwen3-asr/</link>
       <pubDate>Wed, 29 Jul 2026 20:00:00 +0800</pubDate>
       
-      <guid>https://jackliusr.github.io/posts/2026/07/serving-llms-with-dev-containers-a-new-rabbit-hole/</guid>
+      <guid>https://jackliusr.github.io/posts/2026/07/automatic-speech-recognition-asr-with-llama.cpp-and-qwen3-asr/</guid>
       <description>Automatic Speech Recognition (ASR) has become an essential capability for many AI-powered applications. Whether it is transcribing meetings, generating subtitles, or enabling voice-based interactions, ASR is increasingly becoming a core feature of modern AI systems.
  As part of my ongoing learning journey with AI technologies, I decided to start exploring the ASR capabilities available today. My first stop is Qwen3-ASR, one of the latest speech recognition models from the Qwen family.</description>
     </item>
