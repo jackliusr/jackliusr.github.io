@@ -3,6 +3,7 @@ title: "OpenStack: Create a VM and SSH into it"
 date: 2026-09-02T20:00:00+08:00
 categories:
 - tech
+asciinema: true
 tags:
 - OpenStack
 - opencode
