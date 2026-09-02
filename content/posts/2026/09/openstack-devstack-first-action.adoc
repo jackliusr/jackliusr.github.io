@@ -1,0 +1,60 @@
+---
+title: "OpenStack: Create a VM and SSH into it"
+date: 2026-09-02T20:00:00+08:00
+categories:
+- tech
+tags:
+- OpenStack
+- opencode
+- deepseek
+- devops
+- claude
+- devstack
+---
+
+In March, I attempted to run DevStack on my newly bought mini PC, but something was wrong and I couldn't get it started. Since then, I poured all my attention into AI‑related studies. During lunch today, OpenStack came up in conversation, and the idea popped into my head: *“Why not use a coding agent to make it work, since I’ve already used one for several issues in my WSL environment?”* This post is the result.
+
+== The Problem
+
+I cleaned and reinstalled DevStack, but it returned errors like:
+
+----
+echo 'Didn'\''t find service registered by hostname after 60 seconds'
+Didn't find service registered by hostname after 60 seconds devstack
+----
+
+The logs at `/opt/stack/logs/worlddump-*.txt` held the clues, but manually digging through them was tedious. That’s when I turned to +opencode+.
+
+== Letting the Agent Debug
+
+I asked +opencode+ to analyse the worlddump logs and resolve the issues. It quickly identified that a virtual machine created by +crc+ (CodeReady Containers) was interfering with DevStack’s networking. The agent deleted that VM, fixed two other minor configuration glitches, and – just like that – my DevStack environment started successfully.
+
+== Creating a VM and SSH Access
+
+With DevStack up and running, I followed the official guide at https://docs.openstack.org/devstack/latest/networking.html#ssh[OpenStack Networking – SSH], supplemented by help from +claude+.
+
+The steps were straightforward:
+
+. Source the OpenStack credentials.
+. Create a keypair and inject it into a new instance.
+. Allocate a floating IP and associate it.
+. Use +ssh+ to connect to the VM.
+
+Within minutes, I had a working VM and could log in:
+
+----
+$ ssh -i mykey.pem cirros@<floating-ip>
+----
+
+My screen recording is here. 
+
+{{< asciinema key="1264465" >}}
+
+== Conclusion
+
+It was a satisfying experience to combine a modern coding agent (+opencode+) with a classic infrastructure tool (OpenStack). The agent saved me hours of manual log analysis and allowed me to focus on actually using the cloud, not just fighting its setup.
+
+If you’re struggling with DevStack or any complex deployment, don’t hesitate to let an AI assistant do the heavy lifting – it might just get you over the hump faster than you expect.
+
+
+
