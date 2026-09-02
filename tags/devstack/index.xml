@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>devstack on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/devstack/</link>
+    <description>Recent content in devstack on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 02 Sep 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/devstack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenStack: Create a VM and SSH into it</title>
+      <link>https://jackliusr.github.io/posts/2026/09/openstack-create-a-vm-and-ssh-into-it/</link>
+      <pubDate>Wed, 02 Sep 2026 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/09/openstack-create-a-vm-and-ssh-into-it/</guid>
+      <description>In March, I attempted to run DevStack on my newly bought mini PC, but something was wrong and I couldn’t get it started. Since then, I poured all my attention into AI‑related studies. During lunch today, OpenStack came up in conversation, and the idea popped into my head: “Why not use a coding agent to make it work, since I’ve already used one for several issues in my WSL environment?” This post is the result.</description>
+    </item>
+    
+  </channel>
+</rss>
