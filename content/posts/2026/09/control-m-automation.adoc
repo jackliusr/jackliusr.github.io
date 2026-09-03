@@ -1,0 +1,179 @@
+---
+title: "Control-M: Setting Up BMC Control-M Workbench 9.20.200"
+date: 2026-09-03T20:00:00+08:00
+categories:
+- tech
+tags:
+- Control-M
+- ctm
+- automation
+- mise
+---
+
+== Overview
+
+This document outlines the procedure for deploying the **BMC Control-M Workbench** (version `9.20.200`) within a Docker environment. 
+
+The Workbench provides a local development sandbox for the Control-M Automation API, allowing users to test workload automation jobs and orchestration flows without connecting to a production Control-M Server.
+
+[NOTE]
+====
+The official BMC distribution currently provides access to the Workbench image without requiring a commercial license for evaluation purposes. 
+However, as of the writing of this guide, **only version `9.20.200`** is available via the public repository.
+====
+
+*Reference:* 
+https://docs.bmc.com/xwiki/bin/view/Control-M-Orchestration/Control-M/workloadautomation/Control-M-Automation-API/ctmapi9202/Tutorials/Tutorials-Setting-up-the-prerequisites/[Official BMC Documentation]
+
+== Prerequisites
+
+Ensure the following tools are installed on the target host:
+
+* **Docker Engine** (>= 20.10) and **Docker Compose** (>= 2.0).
+* **Curl** for downloading artifacts.
+* **Node.js** (see <<cli-tooling>> for specific version requirements).
+* **Mise** (or `nvm`) if managing multiple Node.js versions locally.
+
+== Procedure
+
+=== Step 1: Download the Container Image
+
+Download the compressed container image directly from the BMC AWS S3 bucket.
+
+[source, bash]
+----
+curl -fLO https://controlm-appdev.s3-us-west-2.amazonaws.com/release/v9.20.200/controlm-workbench-9.20.200.xz
+----
+
+Once the download is complete, load the image into the local Docker daemon:
+
+[source, bash]
+----
+docker load -i controlm-workbench-9.20.200.xz
+----
+
+=== Step 2: Define the Docker Compose Service
+
+Create a `docker-compose.yml` file to manage the container lifecycle. 
+
+The configuration below addresses several specific runtime constraints:
+
+* **`hostname`**: The internal Control-M services resolve database connectivity via the hostname `workbench`. Overriding this is mandatory to avoid "could not translate host name" errors.
+* **`cap_add`**: Required to bypass PAM session failures when the container's internal `sudo` process attempts to initialize.
+* **`ulimits`**: The Java-based Control-M server forks numerous threads. Raising the `nproc` limit prevents intermittent `fork failed` errors encountered under default container constraints.
+
+[source, yaml]
+----
+services:
+  bench:
+    image: controlm-workbench:9.20.200
+    hostname: workbench
+    stdin_open: true
+    tty: true
+    cap_add:
+      - ALL
+    ulimits:
+      nproc: 65535
+    ports:
+      - "8443:8443" # Web UI and Automation API endpoints
+      - "7005:7005"
+    restart: unless-stopped
+----
+
+Launch the service in detached mode:
+
+[source, bash]
+----
+docker compose up -d
+----
+
+=== Step 3: Access the Web Interface
+
+Once the container is running, the Workbench UI and API documentation are accessible via the following URL:
+
+https://localhost:8443/automation-api/startHere.html
+
+[NOTE]
+====
+Depending on your local Docker networking configuration, you may need to replace `localhost` with the IP address of your Docker host.
+====
+
+=== Step 4: Installing the Control-M CLI ((cli-tooling))
+
+The `ctm` command-line utility is distributed via the embedded web server.
+
+==== Managing the Node.js Runtime
+
+The `ctm-cli` distribution has a hard dependency on **Node.js version 20**. It is incompatible with later releases (e.g., Node.js 22 or 23). 
+
+To manage this without affecting system-wide Node.js installations, we recommend using **mise-en-place**:
+
+[source, bash]
+----
+# Set Node.js 20 for the current directory
+mise use node@20
+----
+
+Alternatively, declare the tool version statically by creating a `mise.toml` file in your project root:
+
+[source, toml]
+----
+[tools]
+node = "20"
+----
+
+==== Downloading and Installing the CLI
+
+Download the `ctm-cli.tgz` package from the Workbench endpoint:
+
+[source, bash]
+----
+curl -LO https://localhost:8443/automation-api/ctm-cli.tgz
+----
+
+[WARNING]
+====
+If you encounter SSL certificate errors during the `curl` command, bypass the verification using `-k` (for internal/test environments only), or ensure the local CA trust store is updated.
+====
+
+Install the package globally via `npm`:
+
+[source, bash]
+----
+npm install -g ./ctm-cli.tgz
+----
+
+Verify the installation by checking the version:
+
+[source, bash]
+----
+ctm --version
+----
+
+== Troubleshooting Summary
+
+[cols="1,1,1"]
+|===
+| Symptom 
+| Likely Cause 
+| Resolution
+
+
+| Container exits immediately 
+| Missing TTY/Interactive flags 
+| Ensure `stdin_open: true` and `tty: true` are set in the Compose file. 
+
+| `fork failed: Resource temporarily unavailable` 
+| Insufficient process limits 
+| Increase the `nproc` ulimit to `65535` as shown in the Compose example. 
+
+| CLI fails with obscure `Segmentation fault` or syntax errors 
+| Incorrect Node.js version 
+| Use `mise use node@20` to switch to the supported runtime.
+|===
+
+== References
+
+* https://docs.bmc.com/xwiki/bin/view/Control-M-Orchestration/Control-M/workloadautomation/Control-M-Automation-API/ctmapi9202/Installation/[BMC Control-M Automation API Installation Guide]
+* https://mise.jdx.dev/[mise-en-place Documentation]
+* https://docs.docker.com/compose/[Docker Compose Documentation]
