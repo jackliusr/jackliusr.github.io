@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gnucobol on My learning and diary</title>
+    <link>https://jackliusr.github.io/tags/gnucobol/</link>
+    <description>Recent content in gnucobol on My learning and diary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 17 Sep 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/tags/gnucobol/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Revisiting COBOL After 26 Years</title>
+      <link>https://jackliusr.github.io/posts/2026/09/revisiting-cobol-after-26-years/</link>
+      <pubDate>Thu, 17 Sep 2026 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/09/revisiting-cobol-after-26-years/</guid>
+      <description>From COBOL to Modern Programming Languages About 26 years ago, I learnt COBOL using the book 《COBOL 语言》（上、下册） by 谭浩强 (Tan Haoqiang). Here is a portion of my transcript.
+   At the time, I developed a simple MIS (Management Information System) using COBOL. It was one of the programming languages I worked with early in my career.
+ Since then, I never really had the opportunity to work with COBOL professionally.</description>
+    </item>
+    
+  </channel>
+</rss>

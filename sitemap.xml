@@ -2,12 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jackliusr.github.io/tags/automation/</loc>
-    <lastmod>2026-09-03T20:56:48+08:00</lastmod>
+    <loc>https://jackliusr.github.io/categories/</loc>
+    <lastmod>2026-09-17T21:36:27+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://jackliusr.github.io/categories/</loc>
+    <loc>https://jackliusr.github.io/tags/cobol/</loc>
+    <lastmod>2026-09-17T21:36:27+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/copilot/</loc>
+    <lastmod>2026-09-17T21:36:27+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/gnucobol/</loc>
+    <lastmod>2026-09-17T21:36:27+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/</loc>
+    <lastmod>2026-09-17T21:36:27+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/</loc>
+    <lastmod>2026-09-17T21:36:27+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2026/09/revisiting-cobol-after-26-years/</loc>
+    <lastmod>2026-09-17T21:36:27+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/</loc>
+    <lastmod>2026-09-17T21:36:27+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/categories/tech/</loc>
+    <lastmod>2026-09-17T21:36:27+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/vscode/</loc>
+    <lastmod>2026-09-17T21:36:27+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/z/</loc>
+    <lastmod>2026-09-17T21:36:27+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/zxplore/</loc>
+    <lastmod>2026-09-17T21:36:27+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/automation/</loc>
     <lastmod>2026-09-03T20:56:48+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -28,26 +83,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/mise/</loc>
-    <lastmod>2026-09-03T20:56:48+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2026-09-03T20:56:48+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2026-09-03T20:56:48+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2026-09-03T20:56:48+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/categories/tech/</loc>
     <lastmod>2026-09-03T20:56:48+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -423,11 +458,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/posts/2026/04/running-qwen3.6-35b-locally-with-ollama-and-vs-code-integration/</loc>
-    <lastmod>2026-04-18T10:46:49+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/vscode/</loc>
     <lastmod>2026-04-18T10:46:49+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -1109,11 +1139,6 @@
   </url><url>
     <loc>https://jackliusr.github.io/tags/openapi/</loc>
     <lastmod>2026-05-11T16:14:46+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/copilot/</loc>
-    <lastmod>2024-04-02T22:49:21+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -3289,6 +3314,11 @@
   </url><url>
     <loc>https://jackliusr.github.io/posts/1/01/</loc>
     <lastmod>2026-07-16T20:43:12+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/1/01/</loc>
+    <lastmod>2026-09-17T21:36:27+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
