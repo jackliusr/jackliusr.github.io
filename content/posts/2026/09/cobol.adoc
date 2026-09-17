@@ -1,0 +1,85 @@
+---
+title: "Revisiting COBOL After 26 Years"
+date: 2026-09-17T20:00:00+08:00
+categories:
+- tech
+tags:
+- COBOL
+- copilot
+- vscode
+- z
+- zxplore
+- gnucobol
+---
+
+
+
+== From COBOL to Modern Programming Languages
+
+About 26 years ago, I learnt COBOL using the book 《COBOL 语言》（上、下册） by 谭浩强 (Tan Haoqiang). Here is a portion of my transcript. 
+
+image::/images/cobol-transcript.png[COBOL Score]
+
+At the time, I developed a simple MIS (Management Information System) using COBOL. It was one of the programming languages I worked with early in my career.
+
+Since then, I never really had the opportunity to work with COBOL professionally.
+
+Until recently.
+
+== Back to COBOL
+
+I started working with COBOL again, and surprisingly, I could still make things work with only a little help from GitHub Copilot.
+
+Of course, Copilot wasn't nearly as helpful as it is with many mainstream modern programming languages. The suggestions were sometimes limited, and I had to rely much more on my own understanding of the language, its syntax and cobol source code in github.
+
+But that was actually part of the fun.
+
+The knowledge I acquired more than two decades ago wasn't completely gone. Once I refreshed the syntax and structure, many things started coming back.
+
+== Brushing Up My COBOL Skills
+
+To refresh my COBOL skills, I used two approaches:
+
+* https://ibmzxplore.ibm.com/[IBM Z Xplore]
+* https://www.zowe.org/[Zowe Explorer] + https://gnucobol.sourceforge.io/[GnuCOBOL] on Linux
+
+Using GnuCOBOL on Linux made it surprisingly easy to experiment with COBOL without needing access to a traditional mainframe environment.
+
+IBM Z Xplore, on the other hand, gave me a chance to get closer to the IBM Z ecosystem and understand how COBOL fits into the modern mainframe world.
+
+== COBOL Feels Very Different Today
+
+Coming back to COBOL after years of working with languages such as C++, Java, C#, Python, TypeScript, Go and others was quite an experience.
+
+The programming model feels *very* different.
+
+After getting used to modern programming languages, frameworks, IDEs and developer tooling, COBOL can initially look rather verbose and old-fashioned.
+
+Even simple things can require considerably more code and ceremony than I would normally expect today.
+
+But there is another side to it.
+
+The structure and explicitness of COBOL also make the code relatively straightforward to follow once you understand its conventions. And it is fascinating to see a language that was designed decades ago still playing an important role in enterprise systems.
+
+== 26 Years Later
+
+What surprised me most wasn't how much COBOL had changed.
+
+It was how much *I* had changed as a programmer.
+
+The language I once learnt from a pair of textbooks now looks very different from the programming environments I work with today. Yet the fundamental programming skills — understanding requirements, designing data structures, controlling program flow, debugging and reasoning about a system — are still transferable.
+
+Perhaps that is why I could pick it up again relatively quickly.
+
+Twenty-six years later, I'm not becoming a COBOL developer again.
+
+But revisiting COBOL has been a great reminder that programming languages are tools, while the underlying engineering skills are much more durable.
+
+And sometimes, going back to an old language is a surprisingly good way to appreciate how far software development has come.
+
+== Resources
+
+* https://ibmzxplore.ibm.com/[IBM Z Xplore]
+* https://www.zowe.org/[Zowe]
+* https://gnucobol.sourceforge.io/[GnuCOBOL]
+
