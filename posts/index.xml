@@ -6,7 +6,18 @@
     <description>Recent content in Posts on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Sep 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Sep 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI at scale in another sense with agent &#43; sandbox &#43; self-evolving &#43; PTC</title>
+      <link>https://jackliusr.github.io/posts/2026/09/ai-at-scale-in-another-sense-with-agent--sandbox--self-evolving--ptc/</link>
+      <pubDate>Fri, 25 Sep 2026 20:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/09/ai-at-scale-in-another-sense-with-agent--sandbox--self-evolving--ptc/</guid>
+      <description>When talking about AI at scale, I have always thought about it from the model-serving infrastructure perspective:
+ How many GPUs do we need? How do we scale inference? How do we reduce latency and cost? How do we serve millions of concurrent requests? How do we efficiently distribute models across GPU clusters?  But there is another way to think about AI at scale.
+Instead of scaling the AI model itself, what if we scale software development across ordinary users?</description>
+    </item>
+    
     <item>
       <title>Revisiting COBOL After 26 Years</title>
       <link>https://jackliusr.github.io/posts/2026/09/revisiting-cobol-after-26-years/</link>

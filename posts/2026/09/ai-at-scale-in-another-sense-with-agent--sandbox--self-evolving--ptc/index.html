@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>AI at scale in another sense with agent &#43; sandbox &#43; self-evolving &#43; PTC | My learning and diary</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta name="description"
+    content="When talking about AI at scale, I have always thought about it from the model-serving infrastructure perspective:
+ How many GPUs do we need? How do we scale inference? How do we reduce latency and cost? How do we serve millions of concurrent requests? How do we efficiently distribute models across GPU clusters?  But there is another way to think about AI at scale.
+Instead of scaling the AI model itself, what if we scale software development across ordinary users?">
+  <meta name="generator" content="Hugo 0.99.1" />
+  
+  
+  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+  
+
+  
+<link rel="stylesheet" href="/ananke/css/main.min.abe0b1c07d5e33565b0f9b998a7b1b5228b709f36af363e2766bc8035f2237b7.css" >
+
+
+
+
+  
+  
+
+  
+
+  
+
+  <meta property="og:title" content="AI at scale in another sense with agent &#43; sandbox &#43; self-evolving &#43; PTC" />
+<meta property="og:description" content="When talking about AI at scale, I have always thought about it from the model-serving infrastructure perspective:
+ How many GPUs do we need? How do we scale inference? How do we reduce latency and cost? How do we serve millions of concurrent requests? How do we efficiently distribute models across GPU clusters?  But there is another way to think about AI at scale.
+Instead of scaling the AI model itself, what if we scale software development across ordinary users?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jackliusr.github.io/posts/2026/09/ai-at-scale-in-another-sense-with-agent--sandbox--self-evolving--ptc/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2026-09-25T20:00:00+08:00" />
+<meta property="article:modified_time" content="2026-09-25T23:22:38+08:00" />
+
+<meta itemprop="name" content="AI at scale in another sense with agent &#43; sandbox &#43; self-evolving &#43; PTC">
+<meta itemprop="description" content="When talking about AI at scale, I have always thought about it from the model-serving infrastructure perspective:
+ How many GPUs do we need? How do we scale inference? How do we reduce latency and cost? How do we serve millions of concurrent requests? How do we efficiently distribute models across GPU clusters?  But there is another way to think about AI at scale.
+Instead of scaling the AI model itself, what if we scale software development across ordinary users?"><meta itemprop="datePublished" content="2026-09-25T20:00:00+08:00" />
+<meta itemprop="dateModified" content="2026-09-25T23:22:38+08:00" />
+<meta itemprop="wordCount" content="1474">
+<meta itemprop="keywords" content="coding-agent,scale,sandbox,Self-Evolving," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="AI at scale in another sense with agent &#43; sandbox &#43; self-evolving &#43; PTC"/>
+<meta name="twitter:description" content="When talking about AI at scale, I have always thought about it from the model-serving infrastructure perspective:
+ How many GPUs do we need? How do we scale inference? How do we reduce latency and cost? How do we serve millions of concurrent requests? How do we efficiently distribute models across GPU clusters?  But there is another way to think about AI at scale.
+Instead of scaling the AI model itself, what if we scale software development across ordinary users?"/>
+
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K49F8T19FK"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-K49F8T19FK', { 'anonymize_ip': false });
+}
+</script>
+
+  
+  
+
+
+
+
+
+
+</head>
+
+<body class="ma0 avenir bg-near-white production">
+
+  
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My learning and diary
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/notes/" title="Notes page">
+              Notes
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/portfolio/" title="Portfolio page">
+              Portfolio
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/readinglists/" title="Books page">
+              Books
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/categories/" title="Categories page">
+              Categories
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tags/" title="Tags page">
+              Tags
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+  <main class="pb7" role="main">
+    
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://jackliusr.github.io/posts/2026/09/ai-at-scale-in-another-sense-with-agent--sandbox--self-evolving--ptc/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://jackliusr.github.io/posts/2026/09/ai-at-scale-in-another-sense-with-agent--sandbox--self-evolving--ptc/&amp;text=AI%20at%20scale%20in%20another%20sense%20with%20agent%20&#43;%20sandbox%20&#43;%20self-evolving%20&#43;%20PTC" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://jackliusr.github.io/posts/2026/09/ai-at-scale-in-another-sense-with-agent--sandbox--self-evolving--ptc/&amp;title=AI%20at%20scale%20in%20another%20sense%20with%20agent%20&#43;%20sandbox%20&#43;%20self-evolving%20&#43;%20PTC" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">AI at scale in another sense with agent &#43; sandbox &#43; self-evolving &#43; PTC</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2026-09-25T20:00:00+08:00">September 25, 2026</time>
+
+      
+      
+        <span class="f6 mv4 dib tracked"> - 7 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 1474 words</span>
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>When talking about <strong>AI at scale</strong>, I have always thought about it from the model-serving infrastructure perspective:</p>
+<ul>
+<li>How many GPUs do we need?</li>
+<li>How do we scale inference?</li>
+<li>How do we reduce latency and cost?</li>
+<li>How do we serve millions of concurrent requests?</li>
+<li>How do we efficiently distribute models across GPU clusters?</li>
+</ul>
+<p>But there is another way to think about <em>AI at scale</em>.</p>
+<p>Instead of scaling the AI model itself, what if we scale <strong>software development across ordinary users</strong>?</p>
+<p>The goal is not simply to make software engineers more productive. It is to make software-building capability available to people who are not software engineers.</p>
+<p>A useful way to frame this is:</p>
+<blockquote>
+<p>AI at scale = Agent + Sandbox + Self-Evolving + PTC + Tools</p>
+</blockquote>
+<h2 id="from-scaling-models-to-scaling-engineering-capability">From Scaling Models to Scaling Engineering Capability</h2>
+<p>Traditional AI-at-scale discussions usually look something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Users
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    v
+</span></span><span style="display:flex;"><span>AI Application
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    v
+</span></span><span style="display:flex;"><span>Model Serving
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    +-- GPU Cluster
+</span></span><span style="display:flex;"><span>    +-- Inference Engine
+</span></span><span style="display:flex;"><span>    +-- Load Balancing
+</span></span><span style="display:flex;"><span>    +-- Caching
+</span></span><span style="display:flex;"><span>    +-- Autoscaling
+</span></span></code></pre></div><p>This is about scaling the <em>AI computation</em>.</p>
+<p>But coding agents introduce another possibility:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Human
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    v
+</span></span><span style="display:flex;"><span>Intent / Specification
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    v
+</span></span><span style="display:flex;"><span>Coding Agent
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    v
+</span></span><span style="display:flex;"><span>Software
+</span></span></code></pre></div><p>The agent is not merely answering questions. It can plan, implement, execute, test, diagnose failures, and repair the implementation.</p>
+<p>Once we give the agent a sandboxed runtime and the ability to orchestrate tools programmatically, the architecture becomes much more interesting.</p>
+<h2 id="ai-engineering-runtime">AI Engineering Runtime</h2>
+<p>The architecture I have in mind looks like this:</p>
+<div class="mermaid">flowchart TB
+    H["Human"]
+    I["Intent / Specification"]
+    A["Agent<br/>Plan<br/>Implement<br/>Test<br/>Diagnose<br/>Repair"]
+    P["PTC / Tool Calls"]
+    S["Sandbox<br/>Code<br/>Dependencies<br/>Runtime<br/>DB / Services<br/>Browser<br/>Tests"]
+    O["Observe / Evaluate"]
+    E["Self-Evolving<br/>Skills<br/>AGENTS.md<br/>Tests<br/>Patterns<br/>Runtime"]
+
+    H --> I --> A --> P --> S --> O --> E
+    E -->|Next iteration| A
+</div>
+<p>The important part is that this is not simply:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Prompt -&gt; LLM -&gt; Code
+</span></span></code></pre></div><p>It is an <strong>engineering loop</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    Specify
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    v
+</span></span><span style="display:flex;"><span>    Plan
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    v
+</span></span><span style="display:flex;"><span>    Implement
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    v
+</span></span><span style="display:flex;"><span>    Execute
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    v
+</span></span><span style="display:flex;"><span>    Observe
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    v
+</span></span><span style="display:flex;"><span>    Evaluate
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    v
+</span></span><span style="display:flex;"><span>    Repair
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    v
+</span></span><span style="display:flex;"><span>    Learn
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    +----&gt; Next iteration
+</span></span></code></pre></div><p>The agent can operate inside an environment where it can actually <em>do</em> things rather than just describe what should be done.</p>
+<h2 id="1-agent">1. Agent</h2>
+<p>The agent is responsible for the engineering loop.</p>
+<p>It can:</p>
+<ul>
+<li>understand the specification</li>
+<li>inspect an existing codebase</li>
+<li>create or modify code</li>
+<li>run commands</li>
+<li>execute tests</li>
+<li>inspect errors</li>
+<li>diagnose failures</li>
+<li>make corrections</li>
+<li>verify the result</li>
+</ul>
+<p>This changes the role of the LLM.</p>
+<p>It is no longer simply a code generator.</p>
+<p>It becomes an <strong>engineering controller</strong> operating over a software environment.</p>
+<h2 id="2-sandbox">2. Sandbox</h2>
+<p>The sandbox provides a controlled execution environment.</p>
+<p>It might contain:</p>
+<ul>
+<li>source code</li>
+<li>package dependencies</li>
+<li>compilers and interpreters</li>
+<li>databases</li>
+<li>external services</li>
+<li>browsers</li>
+<li>test frameworks</li>
+<li>build tools</li>
+<li>observability tools</li>
+</ul>
+<p>This is important because an agent needs somewhere to <em>experiment</em>.</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    Agent
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    +-- modify code
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    +-- run application
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    +-- execute tests
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    +-- inspect failure
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    +-- modify code again
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    +-- run tests again
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    +-- verify
+</span></span></code></pre></div><p>The sandbox makes failure cheap and recoverable.</p>
+<p>The agent can try something, observe the result, and iterate.</p>
+<h2 id="3-ptc">3. PTC</h2>
+<p>PTC, or <strong>Programmatic Tool Calling</strong>, is another important piece of this architecture.</p>
+<p>Instead of requiring the model to make every tool call individually through the conversational interface, the agent can generate and execute a program that orchestrates multiple tools.</p>
+<p>Conceptually:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    Agent
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        | generate execution program
+</span></span><span style="display:flex;"><span>        v
+</span></span><span style="display:flex;"><span>    PTC Runtime
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        +-- inspect repository
+</span></span><span style="display:flex;"><span>        +-- modify files
+</span></span><span style="display:flex;"><span>        +-- run compiler
+</span></span><span style="display:flex;"><span>        +-- execute tests
+</span></span><span style="display:flex;"><span>        +-- query database
+</span></span><span style="display:flex;"><span>        +-- start services
+</span></span><span style="display:flex;"><span>        +-- interact with browser
+</span></span><span style="display:flex;"><span>        +-- collect results
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        v
+</span></span><span style="display:flex;"><span>    Agent
+</span></span></code></pre></div><p>The program might be written in Python, JavaScript, or another supported language and executed inside the sandboxed environment.</p>
+<p>This turns tools from isolated functions into <strong>composable building blocks</strong>.</p>
+<p>Even relatively small tools can become surprisingly powerful when they can be composed programmatically.</p>
+<p>This is one reason I find the architecture of agents such as Pi interesting: a relatively small set of primitives can provide a lot of capability when the agent can combine them effectively.</p>
+<h2 id="why-ptc-matters">Why PTC Matters</h2>
+<p>Without programmatic orchestration, an agent may need to repeatedly perform a sequence like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    LLM
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    +--&gt; tool call
+</span></span><span style="display:flex;"><span>    |       |
+</span></span><span style="display:flex;"><span>    |       v
+</span></span><span style="display:flex;"><span>    |    result
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    +--&gt; LLM
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    +--&gt; tool call
+</span></span><span style="display:flex;"><span>    |       |
+</span></span><span style="display:flex;"><span>    |       v
+</span></span><span style="display:flex;"><span>    |    result
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    +--&gt; LLM
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    +--&gt; tool call
+</span></span></code></pre></div><p>With PTC, the agent can instead construct a small execution workflow:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>inspect_repo()
+</span></span><span style="display:flex;"><span>modify_files()
+</span></span><span style="display:flex;"><span>run_tests()
+</span></span><span style="display:flex;"><span>collect_logs()
+</span></span><span style="display:flex;"><span>run_diagnostics()
+</span></span></code></pre></div><p>The runtime executes the workflow and returns the relevant results.</p>
+<p>The model therefore spends more of its reasoning budget on <strong>what should happen</strong>, rather than micromanaging every individual tool interaction.</p>
+<h2 id="4-self-evolving">4. Self-Evolving</h2>
+<p>The most interesting part for me is <strong>self-evolution</strong>.</p>
+<p>Self-evolving does not necessarily mean modifying the underlying model.</p>
+<p>The surrounding engineering system can evolve instead.</p>
+<p>For example, an agent encounters a recurring problem:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    Application starts before PostgreSQL is ready
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    v
+</span></span><span style="display:flex;"><span>    Integration tests fail
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    v
+</span></span><span style="display:flex;"><span>    Agent diagnoses the problem
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    v
+</span></span><span style="display:flex;"><span>    Creates a reusable pattern:
+</span></span><span style="display:flex;"><span>    &#34;wait for service health&#34;
+</span></span><span style="display:flex;"><span>    |
+</span></span><span style="display:flex;"><span>    v
+</span></span><span style="display:flex;"><span>    Future agents use the pattern
+</span></span></code></pre></div><p>The accumulated knowledge might take many forms:</p>
+<ul>
+<li><code>AGENTS.md</code></li>
+<li>reusable skills</li>
+<li>scripts</li>
+<li>tests</li>
+<li>architectural patterns</li>
+<li>runtime configuration</li>
+<li>troubleshooting procedures</li>
+<li>domain-specific knowledge</li>
+<li>evaluation criteria</li>
+</ul>
+<p>The next agent therefore does not necessarily start from zero.</p>
+<p>The system becomes progressively better at solving the class of problems it encounters.</p>
+<h2 id="the-engineering-feedback-loop">The Engineering Feedback Loop</h2>
+<p>This creates an interesting feedback loop:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    Experience
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        v
+</span></span><span style="display:flex;"><span>    Observe
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        v
+</span></span><span style="display:flex;"><span>    Evaluate
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        v
+</span></span><span style="display:flex;"><span>    Extract Pattern
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        v
+</span></span><span style="display:flex;"><span>    Update Skills / Rules / Tests
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        v
+</span></span><span style="display:flex;"><span>    Next Agent
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        v
+</span></span><span style="display:flex;"><span>    Better Execution
+</span></span></code></pre></div><p>In this sense, the <strong>software engineering environment itself becomes a form of memory</strong>.</p>
+<p><code>AGENTS.md</code>, skills, tests, runtime conventions, and previous solutions can encode the accumulated engineering knowledge.</p>
+<p>The model does not need to remember everything.</p>
+<p>The environment remembers.</p>
+<h2 id="5-tools">5. Tools</h2>
+<p>The final component is tools.</p>
+<p>Interestingly, I don&rsquo;t think we necessarily need hundreds of tools.</p>
+<p>A small number of well-designed primitives can be enough:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>filesystem
+</span></span><span style="display:flex;"><span>shell
+</span></span><span style="display:flex;"><span>git
+</span></span><span style="display:flex;"><span>browser
+</span></span><span style="display:flex;"><span>database
+</span></span><span style="display:flex;"><span>HTTP
+</span></span><span style="display:flex;"><span>search
+</span></span><span style="display:flex;"><span>runtime
+</span></span></code></pre></div><p>The power comes from <strong>composition</strong>.</p>
+<p>A tool that looks trivial in isolation can become powerful when an agent can combine it with other tools inside a sandbox.</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    git
+</span></span><span style="display:flex;"><span>    +
+</span></span><span style="display:flex;"><span>    filesystem
+</span></span><span style="display:flex;"><span>    +
+</span></span><span style="display:flex;"><span>    shell
+</span></span><span style="display:flex;"><span>    +
+</span></span><span style="display:flex;"><span>    browser
+</span></span><span style="display:flex;"><span>    +
+</span></span><span style="display:flex;"><span>    tests
+</span></span><span style="display:flex;"><span>    +
+</span></span><span style="display:flex;"><span>    database
+</span></span></code></pre></div><p>can become a complete software development workflow.</p>
+<p>This is similar to the Unix philosophy:</p>
+<blockquote>
+<p>Small tools + composition = powerful system.</p>
+</blockquote>
+<p>The difference is that the agent dynamically decides how to compose them.</p>
+<h2 id="scaling-beyond-engineers">Scaling Beyond Engineers</h2>
+<p>This leads to a different interpretation of <em>AI at scale</em>.</p>
+<p>Today:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    Software engineer
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        v
+</span></span><span style="display:flex;"><span>    Software
+</span></span></code></pre></div><p>With coding agents:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    Software engineer
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        +---- AI agent
+</span></span><span style="display:flex;"><span>                    |
+</span></span><span style="display:flex;"><span>                    v
+</span></span><span style="display:flex;"><span>                Software
+</span></span></code></pre></div><p>But with an AI engineering runtime:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    Domain expert
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        v
+</span></span><span style="display:flex;"><span>    Intent / Specification
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        v
+</span></span><span style="display:flex;"><span>    AI Engineering Runtime
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        +-- Agent
+</span></span><span style="display:flex;"><span>        +-- PTC
+</span></span><span style="display:flex;"><span>        +-- Sandbox
+</span></span><span style="display:flex;"><span>        +-- Tools
+</span></span><span style="display:flex;"><span>        +-- Skills
+</span></span><span style="display:flex;"><span>        +-- Evaluation
+</span></span><span style="display:flex;"><span>        +-- Self-evolution
+</span></span><span style="display:flex;"><span>        |
+</span></span><span style="display:flex;"><span>        v
+</span></span><span style="display:flex;"><span>    Software
+</span></span></code></pre></div><p>The human does not necessarily need to know how to implement the software.</p>
+<p>They need to know <strong>what they want</strong>, what constraints matter, and what a successful result looks like.</p>
+<p>This potentially moves software development from an <strong>engineering-capacity problem</strong> toward a <strong>specification-and-runtime problem</strong>.</p>
+<h2 id="ai-at-scale-a-different-definition">AI at Scale: A Different Definition</h2>
+<p>This gives me a second definition of AI at scale.</p>
+<p>The traditional definition is approximately:</p>
+<blockquote>
+<p>How do we scale AI inference to serve more users?</p>
+</blockquote>
+<p>The alternative is:</p>
+<blockquote>
+<p>How do we scale software-engineering capability to enable more people to build software?</p>
+</blockquote>
+<p>The first scales <strong>model execution</strong>.</p>
+<p>The second scales <strong>engineering capability</strong>.</p>
+<p>And the architecture for the second might look surprisingly simple:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>        Intent
+</span></span><span style="display:flex;"><span>           |
+</span></span><span style="display:flex;"><span>           v
+</span></span><span style="display:flex;"><span>        Agent
+</span></span><span style="display:flex;"><span>           |
+</span></span><span style="display:flex;"><span>           v
+</span></span><span style="display:flex;"><span>         PTC
+</span></span><span style="display:flex;"><span>           |
+</span></span><span style="display:flex;"><span>           v
+</span></span><span style="display:flex;"><span>       Sandbox
+</span></span><span style="display:flex;"><span>           |
+</span></span><span style="display:flex;"><span>           v
+</span></span><span style="display:flex;"><span>   Observe / Evaluate
+</span></span><span style="display:flex;"><span>           |
+</span></span><span style="display:flex;"><span>           v
+</span></span><span style="display:flex;"><span>    Self-Evolving
+</span></span><span style="display:flex;"><span>           |
+</span></span><span style="display:flex;"><span>           +------&gt; Agent
+</span></span></code></pre></div><p>The interesting question is no longer only:</p>
+<blockquote>
+<p><em>How many users can my model serve?</em></p>
+</blockquote>
+<p>It becomes:</p>
+<blockquote>
+<p><em>How many people can my engineering runtime enable to build useful software?</em></p>
+</blockquote>
+<h2 id="not-every-workload-needs-this">Not Every Workload Needs This</h2>
+<p>This architecture is not suitable for every AI workload.</p>
+<p>In particular, it is not necessarily appropriate for <strong>latency-sensitive applications</strong> where the additional agentic planning, tool execution, sandbox startup, and iterative evaluation introduce unacceptable latency.</p>
+<p>The model is much more interesting for workloads where:</p>
+<ul>
+<li>correctness matters more than milliseconds</li>
+<li>tasks require multiple steps</li>
+<li>software must be created or modified</li>
+<li>experimentation is useful</li>
+<li>failures can be detected and repaired</li>
+<li>execution can happen asynchronously</li>
+<li>the environment can be isolated</li>
+</ul>
+<p>Examples might include internal tools, automation, data workflows, developer tooling, prototypes, domain applications, and long-running software-engineering tasks.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>I used to think of <strong>AI at scale</strong> primarily as a model-serving problem.</p>
+<p>Now I think there is another dimension.</p>
+<p>The interesting scaling opportunity may not only be:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>more GPUs
+</span></span><span style="display:flex;"><span>more inference
+</span></span><span style="display:flex;"><span>more users
+</span></span></code></pre></div><p>but:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>more people
+</span></span><span style="display:flex;"><span>more software
+</span></span><span style="display:flex;"><span>more autonomous engineering
+</span></span></code></pre></div><p>An <strong>Agent + Sandbox + PTC + Tools + Self-Evolving environment</strong> provides a possible foundation for this.</p>
+<p>The ultimate abstraction may be neither a chatbot nor a coding assistant.</p>
+<p>It may be an <strong>AI Engineering Runtime</strong>:</p>
+<blockquote>
+<p>Give the system an intent, a constrained environment, tools, and a definition of success — and let it build, execute, evaluate, repair, and improve the software.</p>
+</blockquote>
+<p>That is a very different way of thinking about <strong>AI at scale</strong>.</p>
+
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+        <script>
+          mermaid.initialize({ startOnLoad: true });
+        </script>
+      <ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/coding-agent" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">coding-agent</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/scale" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">scale</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/sandbox" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">sandbox</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/self-evolving" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Self-Evolving</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jackliusr-gh" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/2026/05/reducing-architecture-drift-in-spec-driven-development-with-coding-agents-and-llms/">Reducing Architecture Drift in Spec-Driven Development with coding agents and LLMs</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+  </main>
+  <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jackliusr.github.io" >
+    &copy;  My learning and diary 2026 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+<script>
+ MathJax = {
+     tex: {
+         inlineMath: [['$', '$'], ['\\(', '\\)']]
+     }
+ };
+ </script>
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<link href="/css/prism.css" rel="stylesheet" />
+<script src="/js/prism.js"></script>
+
+
+
+
+  
+  <p style="font-size: small; color: grey;">Page version: 06863f2b801ff5cb4366ae9e695eb3ae1ac110bc 2026-09-25</p>
+</body>
+
+</html>
