@@ -32,7 +32,7 @@ A useful way to frame this is:
 
 Traditional AI-at-scale discussions usually look something like this:
 
-```text
+```
 Users
     |
     v
@@ -52,7 +52,7 @@ This is about scaling the *AI computation*.
 
 But coding agents introduce another possibility:
 
-```text
+```
 Human
     |
     v
@@ -89,13 +89,13 @@ flowchart TB
 
 The important part is that this is not simply:
 
-```text
+```
 Prompt -> LLM -> Code
 ```
 
 It is an **engineering loop**:
 
-```text
+```
     Specify
     |
     v
@@ -166,7 +166,7 @@ This is important because an agent needs somewhere to *experiment*.
 
 For example:
 
-```text
+```
     Agent
     |
     +-- modify code
@@ -196,7 +196,7 @@ Instead of requiring the model to make every tool call individually through the 
 
 Conceptually:
 
-```text
+```
     Agent
         |
         | generate execution program
@@ -228,7 +228,7 @@ This is one reason I find the architecture of agents such as Pi interesting: a r
 
 Without programmatic orchestration, an agent may need to repeatedly perform a sequence like:
 
-```text
+```
     LLM
     |
     +--> tool call
@@ -272,7 +272,7 @@ The surrounding engineering system can evolve instead.
 
 For example, an agent encounters a recurring problem:
 
-```text
+```
     Application starts before PostgreSQL is ready
     |
     v
@@ -309,7 +309,7 @@ The system becomes progressively better at solving the class of problems it enco
 
 This creates an interesting feedback loop:
 
-```text
+```
     Experience
         |
         v
@@ -347,7 +347,7 @@ Interestingly, I don't think we necessarily need hundreds of tools.
 
 A small number of well-designed primitives can be enough:
 
-```text
+```
 filesystem
 shell
 git
@@ -364,7 +364,7 @@ A tool that looks trivial in isolation can become powerful when an agent can com
 
 For example:
 
-```text
+```
     git
     +
     filesystem
@@ -392,7 +392,7 @@ This leads to a different interpretation of *AI at scale*.
 
 Today:
 
-```text
+```
     Software engineer
         |
         v
@@ -401,7 +401,7 @@ Today:
 
 With coding agents:
 
-```text
+```
     Software engineer
         |
         +---- AI agent
@@ -412,7 +412,7 @@ With coding agents:
 
 But with an AI engineering runtime:
 
-```text
+```
     Domain expert
         |
         v
@@ -457,7 +457,7 @@ The second scales **engineering capability**.
 
 And the architecture for the second might look surprisingly simple:
 
-```text
+```
         Intent
            |
            v
@@ -512,7 +512,7 @@ Now I think there is another dimension.
 
 The interesting scaling opportunity may not only be:
 
-```text
+```
 more GPUs
 more inference
 more users
@@ -520,7 +520,7 @@ more users
 
 but:
 
-```text
+```
 more people
 more software
 more autonomous engineering
