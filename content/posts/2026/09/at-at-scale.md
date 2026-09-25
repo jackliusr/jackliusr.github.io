@@ -250,7 +250,7 @@ Without programmatic orchestration, an agent may need to repeatedly perform a se
 
 With PTC, the agent can instead construct a small execution workflow:
 
-```python
+```
 inspect_repo()
 modify_files()
 run_tests()
