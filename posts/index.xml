@@ -6,7 +6,18 @@
     <description>Recent content in Posts on My learning and diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Sep 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Oct 2026 13:00:00 +0800</lastBuildDate><atom:link href="https://jackliusr.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testing Magnitude vs llama.cpp: Is It Really 2x Faster?</title>
+      <link>https://jackliusr.github.io/posts/2026/10/testing-magnitude-vs-llama.cpp-is-it-really-2x-faster/</link>
+      <pubDate>Sat, 03 Oct 2026 13:00:00 +0800</pubDate>
+      
+      <guid>https://jackliusr.github.io/posts/2026/10/testing-magnitude-vs-llama.cpp-is-it-really-2x-faster/</guid>
+      <description>Several days ago, I came across a claim from Magnitude stating that it&amp;rsquo;s up to 2x faster than llama.cpp, and—more interestingly for me—that it supports AMD GPUs as well.
+Naturally, I was skeptical. A 2x speedup over llama.cpp is a bold claim, especially on AMD hardware where the ROCm ecosystem can be hit-or-miss. So today, I decided to give it a try and run my own benchmarks.
+Setup I used the following build for Magnitude:</description>
+    </item>
+    
     <item>
       <title>AI at scale in another sense with agent &#43; sandbox &#43; self-evolving &#43; PTC</title>
       <link>https://jackliusr.github.io/posts/2026/09/ai-at-scale-in-another-sense-with-agent--sandbox--self-evolving--ptc/</link>
