@@ -9,9 +9,9 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
   <link rel="icon" type="image/png" href="/favicon.png">
   <meta name="description"
-    content="Several days ago, I came across a claim from Magnitude stating that it&rsquo;s up to 2x faster than llama.cpp, and—more interestingly for me—that it supports AMD GPUs as well.
-Naturally, I was skeptical. A 2x speedup over llama.cpp is a bold claim, especially on AMD hardware where the ROCm ecosystem can be hit-or-miss. So today, I decided to give it a try and run my own benchmarks.
-Setup I used the following build for Magnitude:">
+    content="Several days ago, I came across a claim from Magnitude stating that it’s up to 2x faster than llama.cpp, and—more interestingly for me—that it supports AMD GPUs as well.
+ Naturally, I was skeptical. A 2x speedup over llama.cpp is a bold claim, especially on AMD hardware where the ROCm ecosystem can be hit-or-miss. So today, I decided to give it a try and run my own benchmarks.
+ Setup I used the following build for Magnitude:">
   <meta name="generator" content="Hugo 0.99.1" />
   
   
@@ -32,25 +32,25 @@ Setup I used the following build for Magnitude:">
   
 
   <meta property="og:title" content="Testing Magnitude vs llama.cpp: Is It Really 2x Faster?" />
-<meta property="og:description" content="Several days ago, I came across a claim from Magnitude stating that it&rsquo;s up to 2x faster than llama.cpp, and—more interestingly for me—that it supports AMD GPUs as well.
-Naturally, I was skeptical. A 2x speedup over llama.cpp is a bold claim, especially on AMD hardware where the ROCm ecosystem can be hit-or-miss. So today, I decided to give it a try and run my own benchmarks.
-Setup I used the following build for Magnitude:" />
+<meta property="og:description" content="Several days ago, I came across a claim from Magnitude stating that it’s up to 2x faster than llama.cpp, and—more interestingly for me—that it supports AMD GPUs as well.
+ Naturally, I was skeptical. A 2x speedup over llama.cpp is a bold claim, especially on AMD hardware where the ROCm ecosystem can be hit-or-miss. So today, I decided to give it a try and run my own benchmarks.
+ Setup I used the following build for Magnitude:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jackliusr.github.io/posts/2026/10/testing-magnitude-vs-llama.cpp-is-it-really-2x-faster/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2026-10-03T13:00:00+08:00" />
-<meta property="article:modified_time" content="2026-10-03T18:47:20+08:00" />
+<meta property="article:modified_time" content="2026-10-03T19:20:05+08:00" />
 
 <meta itemprop="name" content="Testing Magnitude vs llama.cpp: Is It Really 2x Faster?">
-<meta itemprop="description" content="Several days ago, I came across a claim from Magnitude stating that it&rsquo;s up to 2x faster than llama.cpp, and—more interestingly for me—that it supports AMD GPUs as well.
-Naturally, I was skeptical. A 2x speedup over llama.cpp is a bold claim, especially on AMD hardware where the ROCm ecosystem can be hit-or-miss. So today, I decided to give it a try and run my own benchmarks.
-Setup I used the following build for Magnitude:"><meta itemprop="datePublished" content="2026-10-03T13:00:00+08:00" />
-<meta itemprop="dateModified" content="2026-10-03T18:47:20+08:00" />
-<meta itemprop="wordCount" content="871">
+<meta itemprop="description" content="Several days ago, I came across a claim from Magnitude stating that it’s up to 2x faster than llama.cpp, and—more interestingly for me—that it supports AMD GPUs as well.
+ Naturally, I was skeptical. A 2x speedup over llama.cpp is a bold claim, especially on AMD hardware where the ROCm ecosystem can be hit-or-miss. So today, I decided to give it a try and run my own benchmarks.
+ Setup I used the following build for Magnitude:"><meta itemprop="datePublished" content="2026-10-03T13:00:00+08:00" />
+<meta itemprop="dateModified" content="2026-10-03T19:20:05+08:00" />
+<meta itemprop="wordCount" content="869">
 <meta itemprop="keywords" content="llamapp.cpp,magnitude,dflash," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Testing Magnitude vs llama.cpp: Is It Really 2x Faster?"/>
-<meta name="twitter:description" content="Several days ago, I came across a claim from Magnitude stating that it&rsquo;s up to 2x faster than llama.cpp, and—more interestingly for me—that it supports AMD GPUs as well.
-Naturally, I was skeptical. A 2x speedup over llama.cpp is a bold claim, especially on AMD hardware where the ROCm ecosystem can be hit-or-miss. So today, I decided to give it a try and run my own benchmarks.
-Setup I used the following build for Magnitude:"/>
+<meta name="twitter:description" content="Several days ago, I came across a claim from Magnitude stating that it’s up to 2x faster than llama.cpp, and—more interestingly for me—that it supports AMD GPUs as well.
+ Naturally, I was skeptical. A 2x speedup over llama.cpp is a bold claim, especially on AMD hardware where the ROCm ecosystem can be hit-or-miss. So today, I decided to give it a try and run my own benchmarks.
+ Setup I used the following build for Magnitude:"/>
 
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K49F8T19FK"></script>
@@ -211,106 +211,175 @@ if (!doNotTrack) {
       
       
         <span class="f6 mv4 dib tracked"> - 5 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 871 words</span>
+        <span class="f6 mv4 dib tracked"> - 869 words</span>
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Several days ago, I came across a claim from Magnitude stating that it&rsquo;s up to 2x faster than llama.cpp, and—more interestingly for me—that it supports AMD GPUs as well.</p>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
+<p>Several days ago, I came across a claim from Magnitude stating that it’s up to 2x faster than llama.cpp, and—more interestingly for me—that it supports AMD GPUs as well.</p>
+</div>
+<div class="paragraph">
 <p>Naturally, I was skeptical. A 2x speedup over llama.cpp is a bold claim, especially on AMD hardware where the ROCm ecosystem can be hit-or-miss. So today, I decided to give it a try and run my own benchmarks.</p>
-<h2 id="setup">Setup</h2>
+</div>
+<div class="sect1">
+<h2 id="_setup"><a class="anchor" href="#_setup"></a><a class="link" href="#_setup">Setup</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
 <p>I used the following build for Magnitude:</p>
+</div>
+<div class="ulist">
 <ul>
-<li>llama-b11368-bin-ubuntu-rocm-10.0-x64.tar.gz</li>
-<li>magnitude-desktop_0.2.4-54_amd64.deb</li>
+<li>
+<p>llama-b11368-bin-ubuntu-rocm-10.0-x64.tar.gz</p>
+</li>
+<li>
+<p>magnitude-desktop_0.2.4-54_amd64.deb</p>
+</li>
 </ul>
+</div>
+<div class="paragraph">
 <p>The test model was Qwen3.6-35B-A3B:</p>
+</div>
+<div class="ulist">
 <ul>
-<li>Main model: unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q8_K_XL</li>
-<li>Draft model: Qwen3.6-35B-A3B-DFlash-Q8_0.gguf</li>
+<li>
+<p>Main model: unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q8_K_XL</p>
+</li>
+<li>
+<p>Draft model: Qwen3.6-35B-A3B-DFlash-Q8_0.gguf</p>
+</li>
 </ul>
+</div>
+<div class="paragraph">
 <p>The idea was to test both engines with and without speculative decoding (the DFlash draft model), to see where the performance gap actually shows up.</p>
-<h2 id="results">Results</h2>
-<table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_results"><a class="anchor" href="#_results"></a><a class="link" href="#_results">Results</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;"/>
+<col style="width: 60%;"/>
+<col style="width: 20%;"/>
+</colgroup>
 <thead>
 <tr>
-<th>Engine</th>
-<th>Model</th>
-<th>Tokens/s</th>
+<th class="tableblock halign-left valign-top">Engine</th>
+<th class="tableblock halign-left valign-top">Model</th>
+<th class="tableblock halign-left valign-top">Tokens/s</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>llama-server</td>
-<td>unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q8_K_XL</td>
-<td>42</td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">llama-server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q8_K_XL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">42</p></td>
 </tr>
 <tr>
-<td>llama-server</td>
-<td>unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q8_K_XL + Qwen3.6-35B-A3B-DFlash-Q8_0.gguf</td>
-<td>84</td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">llama-server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q8_K_XL + Qwen3.6-35B-A3B-DFlash-Q8_0.gguf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">84</p></td>
 </tr>
 <tr>
-<td>magnitudedev</td>
-<td>unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q8_K_XL + Qwen3.6-35B-A3B-DFlash-Q8_0.gguf</td>
-<td>78</td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">magnitudedev</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q8_K_XL + Qwen3.6-35B-A3B-DFlash-Q8_0.gguf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">78</p></td>
 </tr>
 </tbody>
 </table>
-<h3 id="llama-server--qwen36-35b-a3b-mtp-ggufud-q8_k_xl">llama-server | Qwen3.6-35B-A3B-MTP-GGUF:UD-Q8_K_XL</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>llama-server <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -hf unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q8_K_XL <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --ctx-size <span style="color:#ae81ff">262144</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --flash-attn on <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --cache-type-k q8_0 <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --cache-type-v q8_0 <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --batch-size <span style="color:#ae81ff">2048</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --ubatch-size <span style="color:#ae81ff">1024</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --n-gpu-layers <span style="color:#ae81ff">999</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --jinja <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --temp 0.6 <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --top-k <span style="color:#ae81ff">20</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --top-p 0.95 <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --min-p 0.05 <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --repeat-penalty 1.0
-</span></span><span style="display:flex;"><span>curl http://localhost:8080/v1/chat/completions   <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span>    <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   -d <span style="color:#e6db74">&#39;{&#34;messages&#34;: [{&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: &#34;Hello!&#34;}]}&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span><span style="color:#e6db74">&#34;choices&#34;</span>:<span style="color:#f92672">[{</span><span style="color:#e6db74">&#34;finish_reason&#34;</span>:<span style="color:#e6db74">&#34;stop&#34;</span>,<span style="color:#e6db74">&#34;index&#34;</span>:0,<span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;role&#34;</span>:<span style="color:#e6db74">&#34;assistant&#34;</span>,<span style="color:#e6db74">&#34;content&#34;</span>:<span style="color:#e6db74">&#34;Hello! How can I help you today? 😊&#34;</span>,<span style="color:#e6db74">&#34;reasoning_content&#34;</span>:<span style="color:#e6db74">&#34;Here&#39;s a thinking process:\n\n1.  **Analyze User Input:**\n   - User said: \&#34;Hello!\&#34;\n   - This is a simple greeting, no specific question or request attached.\n\n2.  **Identify Intent:**\n   - The user is initiating a conversation.\n   - Expected response: A friendly greeting back, possibly asking how I can help.\n\n3.  **Determine Response Strategy:**\n   - Acknowledge the greeting warmly.\n   - Offer assistance.\n   - Keep it concise and open-ended.\n\n4.  **Draft Response (Mental):**\n   Hello! How can I assist you today?\n\n5.  **Refine Response:**\n   - Matches tone: Friendly, professional.\n   - Matches intent: Opens the door for the user to ask a question or make a request.\n   - No extra fluff.\n\n6.  **Final Output Generation:** (matches the refined draft)\n   \&#34;Hello! How can I help you today?\&#34;✅\n&#34;</span><span style="color:#f92672">}}]</span>,<span style="color:#e6db74">&#34;created&#34;</span>:1791011322,<span style="color:#e6db74">&#34;model&#34;</span>:<span style="color:#e6db74">&#34;unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q8_K_XL&#34;</span>,<span style="color:#e6db74">&#34;system_fingerprint&#34;</span>:<span style="color:#e6db74">&#34;b11368-1fb7ef3e3&#34;</span>,<span style="color:#e6db74">&#34;object&#34;</span>:<span style="color:#e6db74">&#34;chat.completion&#34;</span>,<span style="color:#e6db74">&#34;usage&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;completion_tokens&#34;</span>:226,<span style="color:#e6db74">&#34;prompt_tokens&#34;</span>:12,<span style="color:#e6db74">&#34;total_tokens&#34;</span>:238,<span style="color:#e6db74">&#34;prompt_tokens_details&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;cached_tokens&#34;</span>:0<span style="color:#f92672">}}</span>,<span style="color:#e6db74">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;chatcmpl-6bxgsDyw75MLnWrOgac0YPFZOqDdQEYV&#34;</span>,<span style="color:#e6db74">&#34;timings&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;cache_n&#34;</span>:0,<span style="color:#e6db74">&#34;prompt_n&#34;</span>:12,<span style="color:#e6db74">&#34;prompt_ms&#34;</span>:320.421,<span style="color:#e6db74">&#34;prompt_per_token_ms&#34;</span>:26.70175,<span style="color:#e6db74">&#34;prompt_per_second&#34;</span>:37.45072888481092,<span style="color:#e6db74">&#34;predicted_n&#34;</span>:226,<span style="color:#e6db74">&#34;predicted_ms&#34;</span>:5333.842,<span style="color:#e6db74">&#34;predicted_per_token_ms&#34;</span>:23.705964444444444,<span style="color:#e6db74">&#34;predicted_per_second&#34;</span>:42.18347675090489<span style="color:#f92672">}}</span>
-</span></span></code></pre></div><h3 id="llama-server--unslothqwen36-35b-a3b-mtp-ggufud-q8_k_xl--qwen36-35b-a3b-dflash-q8_0gguf">llama-server | unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q8_K_XL + Qwen3.6-35B-A3B-DFlash-Q8_0.gguf</h3>
-<p>image::/images/Qwen3.6_MTP_magnitude.png[unsloth/Qwen3.6-35B-A3B-MTP-GGUF]</p>
-<p>image::/images/Qwen3.6_magnitude_dflash[Qwen3.6-35B-A3B-DFlash-Q8_0]</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hf download unsloth/Qwen3.6-35B-A3B-MTP-GGUF Qwen3.6-35B-A3B-UD-Q8_K_XL.gguf --local-dir ~/models
-</span></span><span style="display:flex;"><span>hf download magnitudedev/Qwen3.6-35B-A3B-DFlash-GGUF Qwen3.6-35B-A3B-DFlash-Q8_0.gguf --local-dir ~/models
-</span></span><span style="display:flex;"><span>llama-server <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -m  ~/models/Qwen3.6-35B-A3B-UD-Q8_K_XL.gguf <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -md ~/models/Qwen3.6-35B-A3B-DFlash-Q8_0.gguf <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --spec-type draft-dflash <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --spec-draft-n-max <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -ngl <span style="color:#ae81ff">999</span> -fa on -c <span style="color:#ae81ff">262144</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>curl http://localhost:8080/v1/chat/completions   <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span>    <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   -d <span style="color:#e6db74">&#39;{&#34;messages&#34;: [{&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: &#34;Hello!&#34;}]}&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span><span style="color:#e6db74">&#34;choices&#34;</span>:<span style="color:#f92672">[{</span><span style="color:#e6db74">&#34;finish_reason&#34;</span>:<span style="color:#e6db74">&#34;stop&#34;</span>,<span style="color:#e6db74">&#34;index&#34;</span>:0,<span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;role&#34;</span>:<span style="color:#e6db74">&#34;assistant&#34;</span>,<span style="color:#e6db74">&#34;content&#34;</span>:<span style="color:#e6db74">&#34;Hello! How can I assist you today? 😊&#34;</span>,<span style="color:#e6db74">&#34;reasoning_content&#34;</span>:<span style="color:#e6db74">&#34;Here&#39;s a thinking process:\n\n1.  **Analyze User Input:**\n   - User said: \&#34;Hello!\&#34;\n   - This is a simple greeting, no specific question or request attached.\n\n2.  **Identify Intent:**\n   - The user is initiating a conversation.\n   - Expected response: A friendly greeting back, possibly asking how I can help.\n\n3.  **Determine Response Strategy:**\n   - Acknowledge the greeting warmly.\n   - Offer assistance.\n   - Keep it concise and open-ended.\n   - Match the tone (friendly, professional).\n\n4.  **Draft Response (Mental):**\n   - \&#34;Hello! How can I assist you today?\&#34;\n   - Alternative: \&#34;Hi there! What can I help you with?\&#34;\n   - Both are appropriate. I&#39;ll go with a clear, friendly version.\n\n5.  **Refine Response:**\n   - \&#34;Hello! 👋 How can I help you today?\&#34; (Adding a subtle emoji for warmth, though optional. I&#39;ll keep it text-only for professionalism unless the context suggests otherwise. Actually, standard AI practice is to keep it clean and professional.)\n   - Final: \&#34;Hello! How can I assist you today?\&#34;\n\n6.  **Self-Correction/Verification:**\n   - Does it match the user&#39;s tone? Yes.\n   - Is it open-ended? Yes.\n   - Does it invite further interaction? Yes.\n   - No overcomplication needed.\n\n   All good. Proceed.✅\n&#34;</span><span style="color:#f92672">}}]</span>,<span style="color:#e6db74">&#34;created&#34;</span>:1791021548,<span style="color:#e6db74">&#34;model&#34;</span>:<span style="color:#e6db74">&#34;/home/jackl/models/Qwen3.6-35B-A3B-UD-Q8_K_XL.gguf&#34;</span>,<span style="color:#e6db74">&#34;system_fingerprint&#34;</span>:<span style="color:#e6db74">&#34;b11368-1fb7ef3e3&#34;</span>,<span style="color:#e6db74">&#34;object&#34;</span>:<span style="color:#e6db74">&#34;chat.completion&#34;</span>,<span style="color:#e6db74">&#34;usage&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;completion_tokens&#34;</span>:336,<span style="color:#e6db74">&#34;prompt_tokens&#34;</span>:12,<span style="color:#e6db74">&#34;total_tokens&#34;</span>:348,<span style="color:#e6db74">&#34;prompt_tokens_details&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;cached_tokens&#34;</span>:0<span style="color:#f92672">}}</span>,<span style="color:#e6db74">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;chatcmpl-ltl9YEXZFMZMi9tdfzxHvWI6yDgi0n7A&#34;</span>,<span style="color:#e6db74">&#34;timings&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;cache_n&#34;</span>:0,<span style="color:#e6db74">&#34;prompt_n&#34;</span>:12,<span style="color:#e6db74">&#34;prompt_ms&#34;</span>:246.589,<span style="color:#e6db74">&#34;prompt_per_token_ms&#34;</span>:20.549083333333332,<span style="color:#e6db74">&#34;prompt_per_second&#34;</span>:48.663971223371675,<span style="color:#e6db74">&#34;predicted_n&#34;</span>:336,<span style="color:#e6db74">&#34;predicted_ms&#34;</span>:3967.447,<span style="color:#e6db74">&#34;predicted_per_token_ms&#34;</span>:11.84312537313433,<span style="color:#e6db74">&#34;predicted_per_second&#34;</span>:84.4371708053063,<span style="color:#e6db74">&#34;draft_n&#34;</span>:312,<span style="color:#e6db74">&#34;draft_n_accepted&#34;</span>:257<span style="color:#f92672">}}</span>
-</span></span></code></pre></div><h3 id="magnitudedev--unslothqwen36-35b-a3b-mtp-ggufud-q8_k_xl--qwen36-35b-a3b-dflash-q8_0gguf">magnitudedev | unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q8_K_XL + Qwen3.6-35B-A3B-DFlash-Q8_0.gguf</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># </span>
-</span></span><span style="display:flex;"><span>curl http://127.0.0.1:10100/inference/v1/chat/completions <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#39;{&#34;model&#34;:&#34;qwen3.6-35b-a3b:gguf:q8&#34;,&#34;messages&#34;:[{&#34;role&#34;:&#34;user&#34;,&#34;content&#34;:&#34;Hello&#34;}]}&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span><span style="color:#e6db74">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;chatcmpl-icn-1&#34;</span>,<span style="color:#e6db74">&#34;object&#34;</span>:<span style="color:#e6db74">&#34;chat.completion&#34;</span>,<span style="color:#e6db74">&#34;created&#34;</span>:1791006357,<span style="color:#e6db74">&#34;model&#34;</span>:<span style="color:#e6db74">&#34;qwen3.6-35b-a3b:gguf:q8&#34;</span>,<span style="color:#e6db74">&#34;choices&#34;</span>:<span style="color:#f92672">[{</span><span style="color:#e6db74">&#34;index&#34;</span>:0,<span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;role&#34;</span>:<span style="color:#e6db74">&#34;assistant&#34;</span>,<span style="color:#e6db74">&#34;content&#34;</span>:<span style="color:#e6db74">&#34;Hello! How can I assist you today? Feel free to ask me anything or let me know what you&#39;d like help with. 😊&#34;</span>,<span style="color:#e6db74">&#34;reasoning_content&#34;</span>:<span style="color:#e6db74">&#34;Here&#39;s a thinking process:\n\n1.  **Analyze User Input:**\n   - User said: \&#34;Hello\&#34;\n   - This is a standard greeting, no specific question or request attached.\n\n2.  **Identify Intent:**\n   - The user is initiating a conversation.\n   - Expected response: A friendly greeting, acknowledgment, and an invitation to ask a question or state their needs.\n\n3.  **Determine Response Strategy:**\n   - Keep it warm and professional.\n   - Acknowledge the greeting.\n   - Offer assistance.\n   - Keep it concise.\n\n4.  **Draft Response (Mental):**\n   Hello! How can I assist you today? Feel free to ask me anything or let me know what you&#39;d like help with.\n\n5.  **Refine Response:**\n   - Check tone: Friendly, helpful, open-ended.\n   - Check length: Concise.\n   - Matches expected AI behavior: Yes.\n\n   Final version: \&#34;Hello! How can I assist you today? Feel free to ask me anything or let me know what you&#39;d like help with.\&#34;\n\n6.  **Output Generation:** (Proceeds to output)✅\n&#34;</span><span style="color:#f92672">}</span>,<span style="color:#e6db74">&#34;finish_reason&#34;</span>:<span style="color:#e6db74">&#34;stop&#34;</span><span style="color:#f92672">}]</span>,<span style="color:#e6db74">&#34;usage&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;prompt_tokens&#34;</span>:11,<span style="color:#e6db74">&#34;completion_tokens&#34;</span>:283,<span style="color:#e6db74">&#34;total_tokens&#34;</span>:294,<span style="color:#e6db74">&#34;prompt_tokens_details&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;cached_tokens&#34;</span>:0<span style="color:#f92672">}}</span>,<span style="color:#e6db74">&#34;timings&#34;</span>:<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;cache_n&#34;</span>:0,<span style="color:#e6db74">&#34;prompt_n&#34;</span>:11,<span style="color:#e6db74">&#34;prompt_ms&#34;</span>:129.006136,<span style="color:#e6db74">&#34;time_to_first_token_ms&#34;</span>:374.97332700000004,<span style="color:#e6db74">&#34;prompt_per_token_ms&#34;</span>:11.727830545454545,<span style="color:#e6db74">&#34;prompt_per_second&#34;</span>:85.26726201612612,<span style="color:#e6db74">&#34;predicted_n&#34;</span>:283,<span style="color:#e6db74">&#34;predicted_ms&#34;</span>:3620.254794,<span style="color:#e6db74">&#34;predicted_per_token_ms&#34;</span>:12.792419766784452,<span style="color:#e6db74">&#34;predicted_per_second&#34;</span>:78.17129348714012,<span style="color:#e6db74">&#34;sampler_ms&#34;</span>:0.0,<span style="color:#e6db74">&#34;parser_ms&#34;</span>:2.80891,<span style="color:#e6db74">&#34;draft_n&#34;</span>:249,<span style="color:#e6db74">&#34;draft_n_accepted&#34;</span>:199<span style="color:#f92672">}}</span>
-</span></span></code></pre></div><h2 id="analysis">Analysis</h2>
+<div class="sect2">
+<h3 id="_llama_server_qwen3_6_35b_a3b_mtp_ggufud_q8_k_xl"><a class="anchor" href="#_llama_server_qwen3_6_35b_a3b_mtp_ggufud_q8_k_xl"></a><a class="link" href="#_llama_server_qwen3_6_35b_a3b_mtp_ggufud_q8_k_xl">llama-server | Qwen3.6-35B-A3B-MTP-GGUF:UD-Q8_K_XL</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">llama-server \
+  -hf unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q8_K_XL \
+  --ctx-size 262144 \
+  --flash-attn on \
+  --cache-type-k q8_0 \
+  --cache-type-v q8_0 \
+  --batch-size 2048 \
+  --ubatch-size 1024 \
+  --n-gpu-layers 999 \
+  --jinja \
+  --temp 0.6 \
+  --top-k 20 \
+  --top-p 0.95 \
+  --min-p 0.05 \
+  --repeat-penalty 1.0
+curl http://localhost:8080/v1/chat/completions   \
+  -H &#34;Content-Type: application/json&#34;    \
+   -d &#39;{&#34;messages&#34;: [{&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: &#34;Hello!&#34;}]}&#39;
+{&#34;choices&#34;:[{&#34;finish_reason&#34;:&#34;stop&#34;,&#34;index&#34;:0,&#34;message&#34;:{&#34;role&#34;:&#34;assistant&#34;,&#34;content&#34;:&#34;Hello! How can I help you today? 😊&#34;,&#34;reasoning_content&#34;:&#34;Here&#39;s a thinking process:\n\n1.  **Analyze User Input:**\n   - User said: \&#34;Hello!\&#34;\n   - This is a simple greeting, no specific question or request attached.\n\n2.  **Identify Intent:**\n   - The user is initiating a conversation.\n   - Expected response: A friendly greeting back, possibly asking how I can help.\n\n3.  **Determine Response Strategy:**\n   - Acknowledge the greeting warmly.\n   - Offer assistance.\n   - Keep it concise and open-ended.\n\n4.  **Draft Response (Mental):**\n   Hello! How can I assist you today?\n\n5.  **Refine Response:**\n   - Matches tone: Friendly, professional.\n   - Matches intent: Opens the door for the user to ask a question or make a request.\n   - No extra fluff.\n\n6.  **Final Output Generation:** (matches the refined draft)\n   \&#34;Hello! How can I help you today?\&#34;✅\n&#34;}}],&#34;created&#34;:1791011322,&#34;model&#34;:&#34;unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q8_K_XL&#34;,&#34;system_fingerprint&#34;:&#34;b11368-1fb7ef3e3&#34;,&#34;object&#34;:&#34;chat.completion&#34;,&#34;usage&#34;:{&#34;completion_tokens&#34;:226,&#34;prompt_tokens&#34;:12,&#34;total_tokens&#34;:238,&#34;prompt_tokens_details&#34;:{&#34;cached_tokens&#34;:0}},&#34;id&#34;:&#34;chatcmpl-6bxgsDyw75MLnWrOgac0YPFZOqDdQEYV&#34;,&#34;timings&#34;:{&#34;cache_n&#34;:0,&#34;prompt_n&#34;:12,&#34;prompt_ms&#34;:320.421,&#34;prompt_per_token_ms&#34;:26.70175,&#34;prompt_per_second&#34;:37.45072888481092,&#34;predicted_n&#34;:226,&#34;predicted_ms&#34;:5333.842,&#34;predicted_per_token_ms&#34;:23.705964444444444,&#34;predicted_per_second&#34;:42.18347675090489}}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_llama_server_unslothqwen3_6_35b_a3b_mtp_ggufud_q8_k_xl_qwen3_6_35b_a3b_dflash_q8_0_gguf"><a class="anchor" href="#_llama_server_unslothqwen3_6_35b_a3b_mtp_ggufud_q8_k_xl_qwen3_6_35b_a3b_dflash_q8_0_gguf"></a><a class="link" href="#_llama_server_unslothqwen3_6_35b_a3b_mtp_ggufud_q8_k_xl_qwen3_6_35b_a3b_dflash_q8_0_gguf">llama-server | unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q8_K_XL + Qwen3.6-35B-A3B-DFlash-Q8_0.gguf</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="/images/Qwen3.6_MTP_magnitude.png" alt="unsloth/Qwen3.6-35B-A3B-MTP-GGUF"/>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/Qwen3.6_magnitude_dflash.png" alt="Qwen3.6-35B-A3B-DFlash-Q8_0"/>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">hf download unsloth/Qwen3.6-35B-A3B-MTP-GGUF Qwen3.6-35B-A3B-UD-Q8_K_XL.gguf --local-dir ~/models
+hf download magnitudedev/Qwen3.6-35B-A3B-DFlash-GGUF Qwen3.6-35B-A3B-DFlash-Q8_0.gguf --local-dir ~/models
+llama-server \
+  -m  ~/models/Qwen3.6-35B-A3B-UD-Q8_K_XL.gguf \
+  -md ~/models/Qwen3.6-35B-A3B-DFlash-Q8_0.gguf \
+  --spec-type draft-dflash \
+  --spec-draft-n-max 4 \
+  -ngl 999 -fa on -c 262144
+
+
+curl http://localhost:8080/v1/chat/completions   \
+  -H &#34;Content-Type: application/json&#34;    \
+   -d &#39;{&#34;messages&#34;: [{&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: &#34;Hello!&#34;}]}&#39;
+{&#34;choices&#34;:[{&#34;finish_reason&#34;:&#34;stop&#34;,&#34;index&#34;:0,&#34;message&#34;:{&#34;role&#34;:&#34;assistant&#34;,&#34;content&#34;:&#34;Hello! How can I assist you today? 😊&#34;,&#34;reasoning_content&#34;:&#34;Here&#39;s a thinking process:\n\n1.  **Analyze User Input:**\n   - User said: \&#34;Hello!\&#34;\n   - This is a simple greeting, no specific question or request attached.\n\n2.  **Identify Intent:**\n   - The user is initiating a conversation.\n   - Expected response: A friendly greeting back, possibly asking how I can help.\n\n3.  **Determine Response Strategy:**\n   - Acknowledge the greeting warmly.\n   - Offer assistance.\n   - Keep it concise and open-ended.\n   - Match the tone (friendly, professional).\n\n4.  **Draft Response (Mental):**\n   - \&#34;Hello! How can I assist you today?\&#34;\n   - Alternative: \&#34;Hi there! What can I help you with?\&#34;\n   - Both are appropriate. I&#39;ll go with a clear, friendly version.\n\n5.  **Refine Response:**\n   - \&#34;Hello! 👋 How can I help you today?\&#34; (Adding a subtle emoji for warmth, though optional. I&#39;ll keep it text-only for professionalism unless the context suggests otherwise. Actually, standard AI practice is to keep it clean and professional.)\n   - Final: \&#34;Hello! How can I assist you today?\&#34;\n\n6.  **Self-Correction/Verification:**\n   - Does it match the user&#39;s tone? Yes.\n   - Is it open-ended? Yes.\n   - Does it invite further interaction? Yes.\n   - No overcomplication needed.\n\n   All good. Proceed.✅\n&#34;}}],&#34;created&#34;:1791021548,&#34;model&#34;:&#34;/home/jackl/models/Qwen3.6-35B-A3B-UD-Q8_K_XL.gguf&#34;,&#34;system_fingerprint&#34;:&#34;b11368-1fb7ef3e3&#34;,&#34;object&#34;:&#34;chat.completion&#34;,&#34;usage&#34;:{&#34;completion_tokens&#34;:336,&#34;prompt_tokens&#34;:12,&#34;total_tokens&#34;:348,&#34;prompt_tokens_details&#34;:{&#34;cached_tokens&#34;:0}},&#34;id&#34;:&#34;chatcmpl-ltl9YEXZFMZMi9tdfzxHvWI6yDgi0n7A&#34;,&#34;timings&#34;:{&#34;cache_n&#34;:0,&#34;prompt_n&#34;:12,&#34;prompt_ms&#34;:246.589,&#34;prompt_per_token_ms&#34;:20.549083333333332,&#34;prompt_per_second&#34;:48.663971223371675,&#34;predicted_n&#34;:336,&#34;predicted_ms&#34;:3967.447,&#34;predicted_per_token_ms&#34;:11.84312537313433,&#34;predicted_per_second&#34;:84.4371708053063,&#34;draft_n&#34;:312,&#34;draft_n_accepted&#34;:257}}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_magnitudedev_unslothqwen3_6_35b_a3b_mtp_ggufud_q8_k_xl_qwen3_6_35b_a3b_dflash_q8_0_gguf"><a class="anchor" href="#_magnitudedev_unslothqwen3_6_35b_a3b_mtp_ggufud_q8_k_xl_qwen3_6_35b_a3b_dflash_q8_0_gguf"></a><a class="link" href="#_magnitudedev_unslothqwen3_6_35b_a3b_mtp_ggufud_q8_k_xl_qwen3_6_35b_a3b_dflash_q8_0_gguf">magnitudedev | unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q8_K_XL + Qwen3.6-35B-A3B-DFlash-Q8_0.gguf</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">#
+curl http://127.0.0.1:10100/inference/v1/chat/completions \
+  -H &#34;Content-Type: application/json&#34; \
+  -d &#39;{&#34;model&#34;:&#34;qwen3.6-35b-a3b:gguf:q8&#34;,&#34;messages&#34;:[{&#34;role&#34;:&#34;user&#34;,&#34;content&#34;:&#34;Hello&#34;}]}&#39;
+{&#34;id&#34;:&#34;chatcmpl-icn-1&#34;,&#34;object&#34;:&#34;chat.completion&#34;,&#34;created&#34;:1791006357,&#34;model&#34;:&#34;qwen3.6-35b-a3b:gguf:q8&#34;,&#34;choices&#34;:[{&#34;index&#34;:0,&#34;message&#34;:{&#34;role&#34;:&#34;assistant&#34;,&#34;content&#34;:&#34;Hello! How can I assist you today? Feel free to ask me anything or let me know what you&#39;d like help with. 😊&#34;,&#34;reasoning_content&#34;:&#34;Here&#39;s a thinking process:\n\n1.  **Analyze User Input:**\n   - User said: \&#34;Hello\&#34;\n   - This is a standard greeting, no specific question or request attached.\n\n2.  **Identify Intent:**\n   - The user is initiating a conversation.\n   - Expected response: A friendly greeting, acknowledgment, and an invitation to ask a question or state their needs.\n\n3.  **Determine Response Strategy:**\n   - Keep it warm and professional.\n   - Acknowledge the greeting.\n   - Offer assistance.\n   - Keep it concise.\n\n4.  **Draft Response (Mental):**\n   Hello! How can I assist you today? Feel free to ask me anything or let me know what you&#39;d like help with.\n\n5.  **Refine Response:**\n   - Check tone: Friendly, helpful, open-ended.\n   - Check length: Concise.\n   - Matches expected AI behavior: Yes.\n\n   Final version: \&#34;Hello! How can I assist you today? Feel free to ask me anything or let me know what you&#39;d like help with.\&#34;\n\n6.  **Output Generation:** (Proceeds to output)✅\n&#34;},&#34;finish_reason&#34;:&#34;stop&#34;}],&#34;usage&#34;:{&#34;prompt_tokens&#34;:11,&#34;completion_tokens&#34;:283,&#34;total_tokens&#34;:294,&#34;prompt_tokens_details&#34;:{&#34;cached_tokens&#34;:0}},&#34;timings&#34;:{&#34;cache_n&#34;:0,&#34;prompt_n&#34;:11,&#34;prompt_ms&#34;:129.006136,&#34;time_to_first_token_ms&#34;:374.97332700000004,&#34;prompt_per_token_ms&#34;:11.727830545454545,&#34;prompt_per_second&#34;:85.26726201612612,&#34;predicted_n&#34;:283,&#34;predicted_ms&#34;:3620.254794,&#34;predicted_per_token_ms&#34;:12.792419766784452,&#34;predicted_per_second&#34;:78.17129348714012,&#34;sampler_ms&#34;:0.0,&#34;parser_ms&#34;:2.80891,&#34;draft_n&#34;:249,&#34;draft_n_accepted&#34;:199}}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_analysis"><a class="anchor" href="#_analysis"></a><a class="link" href="#_analysis">Analysis</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
 <p>A few observations from the numbers:</p>
-<ol>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>Speculative decoding is the real winner here. Adding the DFlash draft model doubled llama.cpp&rsquo;s throughput from 42 → 84 tokens/sec. That&rsquo;s the ~2x improvement, and it comes from the draft model, not from Magnitude.</p>
+<p>Speculative decoding is the real winner here. Adding the DFlash draft model doubled llama.cpp’s throughput from 42 → 84 tokens/sec. That’s the ~2x improvement, and it comes from the draft model, not from Magnitude.</p>
 </li>
 <li>
-<p>Magnitude did not beat llama.cpp in this test. With the same model + draft configuration, Magnitude clocked in at 78 tok/s vs llama.cpp&rsquo;s 84 tok/s—roughly 7% slower. Maybe it indeed is faster on meta and cuda. I don&rsquo;t have a machine to run them and ask one of my friends to check if it is faster meta.</p>
+<p>Magnitude did not beat llama.cpp in this test. With the same model + draft configuration, Magnitude clocked in at 78 tok/s vs llama.cpp’s 84 tok/s—roughly 7% slower. Maybe it indeed is faster on meta and cuda. I don’t have a machine to run them and ask one of my friends to check if it is faster meta.</p>
 </li>
 <li>
-<p>The &ldquo;2x faster&rdquo; claim likely refers to a different comparison. It&rsquo;s possible Magnitude was comparing against llama.cpp without speculative decoding, in which case 78 vs 42 would indeed be close to 2x. But that&rsquo;s an apples-to-oranges comparison if llama.cpp is also capable of running the same draft model.</p>
+<p>The &#34;2x faster&#34; claim likely refers to a different comparison. It’s possible Magnitude was comparing against llama.cpp without speculative decoding, in which case 78 vs 42 would indeed be close to 2x. But that’s an apples-to-oranges comparison if llama.cpp is also capable of running the same draft model.</p>
 </li>
 </ol>
+</div>
+</div>
+</div>
 <ul class="pa0">
   
    <li class="list">
@@ -404,7 +473,7 @@ if (!doNotTrack) {
 
 
   
-  <p style="font-size: small; color: grey;">Page version: 140e59c8a27b2502511063096cbeaae158cade51 2026-10-03</p>
+  <p style="font-size: small; color: grey;">Page version: cc4601028aab63aaa93b61a80daa6e1e2ecdd96d 2026-10-03</p>
 </body>
 
 </html>
