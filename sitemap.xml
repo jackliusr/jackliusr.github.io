@@ -3,7 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jackliusr.github.io/categories/</loc>
-    <lastmod>2026-10-03T19:20:05+08:00</lastmod>
+    <lastmod>2026-10-10T23:18:22+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/cordis/</loc>
+    <lastmod>2026-10-10T23:18:22+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/dsh/</loc>
+    <lastmod>2026-10-10T23:18:22+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/2026/10/dsh-first-try/</loc>
+    <lastmod>2026-10-10T23:18:22+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/</loc>
+    <lastmod>2026-10-10T23:18:22+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/plugin/</loc>
+    <lastmod>2026-10-10T23:18:22+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/posts/</loc>
+    <lastmod>2026-10-10T23:18:22+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/tags/</loc>
+    <lastmod>2026-10-10T23:18:22+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://jackliusr.github.io/categories/tech/</loc>
+    <lastmod>2026-10-10T23:18:22+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -18,26 +58,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://jackliusr.github.io/tags/magnitude/</loc>
-    <lastmod>2026-10-03T19:20:05+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/</loc>
-    <lastmod>2026-10-03T19:20:05+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/posts/</loc>
-    <lastmod>2026-10-03T19:20:05+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/tags/</loc>
-    <lastmod>2026-10-03T19:20:05+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://jackliusr.github.io/categories/tech/</loc>
     <lastmod>2026-10-03T19:20:05+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

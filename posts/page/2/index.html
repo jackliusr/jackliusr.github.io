@@ -169,6 +169,22 @@ if (!doNotTrack) {
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2026/07/optimize-llms-for-vllm-deployment/" class="link black dim">
+        Optimize LLMs for vllm deployment
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Quantization techniques were mentioned in huggingface and unsloth, and I used those quantized models in ollama and llama.cpp. I always wonder how to implement it for vllm. Today I learnt to use llmcompressor to optimized models for vllm.
+ import warnings warnings.filterwarnings(&#34;ignore&#34;) import os, gc, math, pathlib import torch from transformers import AutoTokenizer, AutoModelForCausalLM import warnings os.environ[&#39;TOKENIZERS_PARALLELISM&#39;] = &#39;false&#39; MODEL_DIR = &#34;Qwen3-0.6B&#34; OUTPUT_DIR = &#34;Qwen3-0.6B-W4A16&#34; print(f&#34;Base model: {MODEL_DIR}&#34;) print(f&#34;Quantized model: {OUTPUT_DIR}&#34;) from llmcompressor.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/2026/07/install-red-hat-openshift-ai-on-openshift-local-formerly-crc/" class="link black dim">
         Install Red Hat OpenShift AI on OpenShift Local (formerly CRC)
       </a>
@@ -313,24 +329,6 @@ if (!doNotTrack) {
  The problem becomes especially visible when setting up projects like ComfyUI on Linux with ROCm-enabled PyTorch builds.
  Although ROCm-specific wheels are manually installed, running commands such as uv add or dependency synchronization may silently replace ROCm-enabled packages with standard PyPI versions that only support CUDA.
  This leads to broken GPU acceleration and unexpected runtime failures.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2026/05/reducing-architecture-drift-in-spec-driven-development-with-coding-agents-and-llms/" class="link black dim">
-        Reducing Architecture Drift in Spec-Driven Development with coding agents and LLMs
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Introduction Spec-driven development is becoming increasingly popular in the era of AI-assisted software engineering. Instead of starting directly from implementation, teams define specifications, domain rules, contracts, and architectural intentions first, allowing Large Language Models (LLMs) and automation tools to generate significant parts of the system.
- This approach can dramatically improve development speed, documentation quality, and alignment between business and engineering.
- However, one important challenge emerges quickly:
-  Architecture drift.
     </div>
   </div>
 </div>
