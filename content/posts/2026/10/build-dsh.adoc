@@ -1,0 +1,38 @@
+---
+title: "DSH: first try"
+date: 2026-10-10T23:00:00+08:00
+categories:
+- tech
+tags:
+- dsh
+- plugin
+- cordis
+---
+
+
+
+deepseek harness is quite promising considering MIT license, plugin-based architecutre and harness optimization. Today I tried to work on how to write plugins for cordis and deepseek-harness.  In the past I built it from source and run it. however I got below issues this time  when I tried to develop somethings following develop guide. 
+
+[source, bash]
+----
+# following the steps mentioned in readme.md
+pnpm install 
+pnpm run build
+ERROR Error: [@deepseek-ai/dsh-root] Cannot find entry: ["lib/types/{index,invariant,startup}.js"]
+at resolveEntry (file:///home/jackl/prjs/deepseek-harness/node_modules/.pnpm/tsdown@0.22.2_oxc-resolver@11.20.0_publint@0.3.21_tsx@4.22.4_typescript@6.0.3/node_modules/tsdown/dist/options-DWGUHu4D.mjs:83:34)
+at async resolveUserConfig (file:///home/jackl/prjs/deepseek-harness/node_modules/.pnpm/tsdown@0.22.2_oxc-resolver@11.20.0_publint@0.3.21_tsx@4.22.4_typescript@6.0.3/node_modules/tsdown/dist/options-DWGUHu4D.mjs:740:40)
+at async Promise.all (index 100)
+at async file:///home/jackl/prjs/deepseek-harness/node_modules/.pnpm/tsdown@0.22.2_oxc-resolver@11.20.0_publint@0.3.21_tsx@4.22.4_typescript@6.0.3/node_modules/tsdown/dist/build-BxT2lm9L.mjs:98:20
+at async Promise.all (index 0)
+at async resolveConfig (file:///home/jackl/prjs/deepseek-harness/node_modules/.pnpm/tsdown@0.22.2_oxc-resolver@11.20.0_publint@0.3.21_tsx@4.22.4_typescript@6.0.3/node_modules/tsdown/dist/build-BxT2lm9L.mjs:95:19)
+at async build$1 (file:///home/jackl/prjs/deepseek-harness/node_modules/.pnpm/tsdown@0.22.2_oxc-resolver@11.20.0_publint@0.3.21_tsx@4.22.4_typescript@6.0.3/node_modules/tsdown/dist/build-BxT2lm9L.mjs:718:40)
+at async CAC.<anonymous> (file:///home/jackl/prjs/deepseek-harness/node_modules/.pnpm/tsdown@0.22.2_oxc-resolver@11.20.0_publint@0.3.21_tsx@4.22.4_typescript@6.0.3/node_modules/tsdown/dist/run.mjs:21:2)
+at async runCLI (file:///home/jackl/prjs/deepseek-harness/node_modules/.pnpm/tsdown@0.22.2_oxc-resolver@11.20.0_publint@0.3.21_tsx@4.22.4_typescript@6.0.3/node_modules/tsdown/dist/run.mjs:45:3)
+----
+
+I let copilot fix the issue and later I found the reason. For first usage after clone, below command should be run according to https://github.com/deepseek-ai/deepseek-harness/blob/d743267388641bc76f17c45ce8b4c231aed1d32c/docs/development.md#first-time-setup
+
+[source, bash]
+----
+pnpm run typecheck
+----
